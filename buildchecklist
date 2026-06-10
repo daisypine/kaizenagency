@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaizen — Foundation Setup Checklist</title>
+<style>
+  :root{
+    --ink:#14160F;
+    --ink-soft:#5C6052;
+    --paper:#F4F5EF;
+    --surface:#FFFFFF;
+    --line:#E4E6DB;
+    --lime:#C3E84C;
+    --lime-deep:#7E9C1F;
+    --done-bg:#F4F8E3;
+    --done-line:#DCE8B6;
+    --shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Sticky header ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:var(--ink);color:#fff;
+    border-bottom:3px solid var(--lime);
+  }
+  .topbar-inner{
+    max-width:920px;margin:0 auto;padding:14px 22px;
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;
+  }
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .pill{
+    display:inline-block;background:#fff;color:var(--ink);
+    font-weight:800;letter-spacing:.04em;font-size:12px;
+    padding:5px 11px;border-radius:999px;border:2px solid var(--ink);
+    box-shadow:0 2px 0 var(--lime);
+  }
+  .brand h1{font-size:15px;font-weight:700;margin:0;letter-spacing:.01em}
+  .brand .eyebrow{
+    display:block;font-size:10px;font-weight:700;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--lime);margin-bottom:1px;
+  }
+
+  .client-field{display:flex;align-items:center;gap:8px}
+  .client-field label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#b9bcae;font-weight:700}
+  .client-field input{
+    background:#1f221a;border:1px solid #3a3e30;color:#fff;
+    border-radius:9px;padding:8px 11px;font-size:14px;min-width:170px;font-family:inherit;
+  }
+  .client-field input::placeholder{color:#80836f}
+  .client-field input:focus-visible{outline:2px solid var(--lime);outline-offset:1px;border-color:var(--lime)}
+
+  .btn{
+    border:1px solid #3a3e30;background:#1f221a;color:#fff;
+    font-family:inherit;font-size:13px;font-weight:600;
+    padding:8px 13px;border-radius:9px;cursor:pointer;
+  }
+  .btn:hover{border-color:var(--lime)}
+  .btn-lime{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:700}
+  .btn-lime:hover{background:#d4f06a}
+  .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+
+  /* ---------- Progress ---------- */
+  .progress-wrap{max-width:920px;margin:0 auto;padding:0 22px 14px}
+  .progress-row{display:flex;align-items:center;gap:14px}
+  .progress-track{flex:1;height:10px;background:#2b2f24;border-radius:999px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:var(--lime);border-radius:999px;transition:width .3s ease}
+  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:118px;text-align:right}
+  .progress-pct b{color:var(--lime)}
+  .save-flag{font-size:11px;color:var(--lime);opacity:0;transition:opacity .2s;font-weight:700;letter-spacing:.04em}
+  .save-flag.show{opacity:1}
+
+  /* ---------- Page body ---------- */
+  main{max-width:920px;margin:0 auto;padding:26px 22px 80px}
+  .intro{color:var(--ink-soft);font-size:14.5px;margin:2px 0 24px;max-width:680px}
+  .intro b{color:var(--ink)}
+
+  .section{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;
+  }
+  .section-head{
+    display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;
+    border-bottom:1px solid transparent;user-select:none;
+  }
+  .section.open .section-head{border-bottom-color:var(--line)}
+  .sec-letter{
+    flex:none;width:34px;height:34px;border-radius:9px;
+    display:grid;place-items:center;background:var(--ink);color:var(--lime);
+    font-weight:800;font-size:15px;letter-spacing:.02em;
+  }
+  .section.complete .sec-letter{background:var(--lime);color:var(--ink)}
+  .sec-title{font-weight:700;font-size:16px;margin:0;flex:1}
+  .sec-count{font-size:12.5px;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .sec-count.done{color:var(--lime-deep)}
+  .chev{flex:none;width:18px;height:18px;color:var(--ink-soft);transition:transform .2s}
+  .section.open .chev{transform:rotate(90deg)}
+
+  .items{padding:6px 20px 14px;display:none}
+  .section.open .items{display:block}
+
+  .item{
+    display:flex;gap:13px;align-items:flex-start;
+    padding:11px 12px;border-radius:10px;margin:2px -6px;
+    transition:background .15s;
+  }
+  .item:hover{background:#fafbf5}
+  .item.checked{background:var(--done-bg)}
+  .item input{position:absolute;opacity:0;width:1px;height:1px}
+  .box{
+    flex:none;margin-top:1px;width:21px;height:21px;border-radius:6px;
+    border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;
+    transition:all .15s;
+  }
+  .box svg{width:13px;height:13px;opacity:0;transform:scale(.6);transition:all .15s}
+  .item.checked .box{background:var(--lime);border-color:var(--lime-deep)}
+  .item.checked .box svg{opacity:1;transform:scale(1)}
+  .item input:focus-visible + .box{outline:2px solid var(--ink);outline-offset:2px}
+  .label-wrap{flex:1;cursor:pointer}
+  .label-main{font-size:14.5px;line-height:1.4}
+  .item.checked .label-main{color:var(--ink-soft)}
+  .label-hint{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+  .tag{
+    display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    padding:2px 7px;border-radius:5px;margin-left:8px;vertical-align:middle;
+  }
+  .tag-off{background:#efe2e2;color:#9a3b3b}
+  .tag-crit{background:var(--ink);color:var(--lime)}
+  .tag-once{background:#e7ecd6;color:var(--lime-deep)}
+
+  footer{max-width:920px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px}
+
+  @media (max-width:620px){
+    .client-field{order:3;width:100%}
+    .client-field input{flex:1}
+    .progress-pct{min-width:auto}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;scroll-behavior:auto}
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    body{background:#fff}
+    .topbar{position:static;border-bottom:2px solid #000}
+    .no-print,.chev,.btn,.save-flag{display:none !important}
+    .progress-track{border:1px solid #000}
+    .section{break-inside:avoid;box-shadow:none;border-color:#999}
+    .items{display:block !important}
+    .item:hover{background:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="pill">KAIZEN</span>
+      <div>
+        <span class="eyebrow">Site Build</span>
+        <h1>Foundation Setup Checklist</h1>
+      </div>
+    </div>
+    <div class="client-field no-print">
+      <label for="client">Client / Site</label>
+      <input id="client" list="clientlist" placeholder="e.g. Sunwest Painting" autocomplete="off">
+      <datalist id="clientlist"></datalist>
+    </div>
+    <button class="btn no-print" id="newBtn">New site</button>
+    <button class="btn no-print" id="resetBtn">Reset</button>
+    <button class="btn no-print" id="printBtn">Print</button>
+  </div>
+  <div class="progress-wrap no-print">
+    <div class="progress-row">
+      <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+      <span class="progress-pct"><b id="pctNum">0%</b> · <span id="countNum">0/0</span></span>
+      <span class="save-flag" id="saveFlag">Saved</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="intro">Your foundation work — hosting, plugins, license keys, security, performance — before handing the build to the devs. Pick the client above; <b>progress saves per client</b> so you can run several builds at once. Pair with the <b>Build &amp; SEO Checklist</b> the dev team follows.</p>
+  <div id="sections"></div>
+</main>
+
+<footer>
+  Kaizen Agency · keep this in step with your current standard stack. Saving works once the file is opened directly or hosted on your own site.
+</footer>
+
+<script>
+const DATA = [
+  {id:"A", title:"Hosting & Staging Setup", items:[
+    {t:"Decide the build path", h:"Domain ready → point to SiteGround now, build on a Staging copy, Push to Live (preferred). Not ready → build on a temp URL / subdomain you control and plan the migration (Section H)."},
+    {t:"WordPress installed (latest version)"},
+    {t:"SSL issued (Let's Encrypt) + Force HTTPS on"},
+    {t:"Admin user is NOT \u201cadmin\u201d; strong password set"},
+    {t:"Delete default content", h:"Hello World post, sample page, unused default plugins & themes."},
+    {t:"Permalinks set to Post name"},
+    {t:"Timezone set to America/Los_Angeles"},
+  ]},
+  {id:"B", title:"Theme", items:[
+    {t:"Install Astra as the base theme", h:"Keep it as the lightweight foundation."},
+    {t:"All headers/footers/templates built in Elementor Pro Theme Builder", h:"Do NOT also build them in Astra — one system only."},
+  ]},
+  {id:"C", title:"Plugins — Install + Activate", items:[
+    {t:"Elementor + Elementor Pro \u2192 activate Expert license on this domain"},
+    {t:"Unlimited Elements \u2192 activate Business license", h:"Confirm this is the ONLY widget library active (no Ultimate Addons unless a specific widget needs it)."},
+    {t:"AIOSEO", h:"SEO clients (Adapt, Sunwest, Falcon, Silicon Pro, JDH): install Pro + license key. Everyone else: install free AIOSEO from the directory."},
+    {t:"WPConsent (free) — cookie banner"},
+    {t:"SiteGround Security (free)"},
+    {t:"UpdraftPlus (free) — offsite backups"},
+    {t:"Seraphinite Accelerator (free)", h:"Installed now, configured as a finishing step (Section F)."},
+    {t:"Do NOT add a separate forms plugin", tag:"off", h:"Elementor Pro Form widget handles it."},
+    {t:"Do NOT add a separate redirect plugin", tag:"off", h:"AIOSEO Redirection Manager on SEO clients."},
+    {t:"Do NOT install on-server Broken Link Checker", tag:"off"},
+    {t:"Do NOT add a second caching/security plugin", tag:"off", h:"No Wordfence firewall on top of SiteGround Security."},
+  ]},
+  {id:"D", title:"Security Lockdown (SiteGround Security)", items:[
+    {t:"Custom Login URL \u2192 change /wp-admin to a private path", h:"e.g. /kz-login. Bookmark it. Stops casual access to the login page."},
+    {t:"Limit Login Attempts \u2192 ON"},
+    {t:"Two-Factor Authentication (2FA) \u2192 ON for all admins"},
+    {t:"Disable XML-RPC (if nothing needs it)"},
+  ]},
+  {id:"E", title:"SEO Foundation (AIOSEO)", items:[
+    {t:"Run the AIOSEO setup wizard"},
+    {t:"XML sitemap enabled (reachable at /sitemap.xml)"},
+    {t:"Breadcrumbs enabled"},
+    {t:"LocalBusiness schema configured", h:"Name, address, hours, service area, phone — let AIOSEO handle local schema."},
+    {t:"Image SEO alt-text fallback template set", h:"Devs/content still write alt text by hand on key images."},
+    {t:"SEO clients only: enable Redirection Manager"},
+    {t:"Sunwest only: crawl the OLD site \u2192 map every old URL \u2192 new URL as 301s", h:"Use Screaming Frog / Ahrefs first so no URL is missed."},
+  ]},
+  {id:"F", title:"Performance — SG Optimizer + Seraphinite (No Overlap)", items:[
+    {t:"SG Optimizer: Dynamic Caching ON"},
+    {t:"SG Optimizer: Memcached ON"},
+    {t:"SG Optimizer: Frontend Optimization \u2014 ALL OFF", h:"Minify, combine, defer, lazy load, web fonts all off — Seraphinite owns these."},
+    {t:"SG Optimizer: Media / WebP \u2014 OFF"},
+    {t:"Seraphinite: Page/HTML caching \u2014 OFF", h:"SG handles caching."},
+    {t:"Seraphinite: Minify + combine CSS/JS \u2014 ON"},
+    {t:"Seraphinite: Critical CSS / remove render-blocking \u2014 ON"},
+    {t:"Seraphinite: Defer JS \u2014 ON"},
+    {t:"Seraphinite: Lazy load images/iframes \u2014 ON"},
+    {t:"Seraphinite: Image optimization / WebP \u2014 ON"},
+    {t:"Host fonts locally \u2014 ON"},
+    {t:"Test every page after enabling Seraphinite", h:"Broken layout/JS = exclude the offending file."},
+    {t:"Purge BOTH caches after any change"},
+    {t:"Run PageSpeed Insights (mobile) \u2014 Core Web Vitals healthy"},
+  ]},
+  {id:"G", title:"Tracking, Backups, Privacy", items:[
+    {t:"Google Site Kit installed \u2192 connect GA4 + Search Console"},
+    {t:"UpdraftPlus \u2192 weekly backup to Google Drive (offsite copy)"},
+    {t:"WPConsent banner styled to brand", h:"Confirm it blocks Statistics/Marketing scripts until consent."},
+    {t:"Privacy Policy + Terms pages exist and are linked in footer"},
+    {t:"Forms: Elementor honeypot ON", h:"Add hCaptcha/Turnstile keys if extra spam protection wanted."},
+    {t:"CallRail tracking number installed + billed through", tag:"once", h:"SEO / retained clients only."},
+  ]},
+  {id:"H", title:"Going Live — if built on a temp URL/subdomain", items:[
+    {t:"Search-and-replace database: old temp URL \u2192 new domain", h:"SiteGround tool or Better Search Replace plugin. Skipping this breaks images & links."},
+    {t:"Re-issue SSL for the real domain + force HTTPS"},
+    {t:"Point domain at SiteGround (nameservers/A record)", h:"Allow up to 48h propagation."},
+  ]},
+  {id:"I", title:"Go-Live Double-Check", items:[
+    {t:"\u201cDiscourage search engines\u201d is UNCHECKED", tag:"crit", h:"#1 launch mistake — staging is noindexed; if it carries over the site never ranks."},
+    {t:"Purge all caches (SG + Seraphinite)"},
+    {t:"Re-save Permalinks"},
+    {t:"SSL valid + HTTPS forced"},
+    {t:"All images load, all internal links work", h:"No 404s, no temp-URL leftovers."},
+    {t:"Every form tested: entry stored + email received"},
+    {t:"All phone numbers correct + click-to-call works on mobile"},
+    {t:"NAP matches Google Business Profile exactly"},
+    {t:"Verify live domain in Search Console + submit sitemap"},
+    {t:"Sunwest: 301 redirects live and tested"},
+    {t:"Mobile render checked on a real phone"},
+  ]},
+  {id:"J", title:"While the Devs Build — Periodic Checks", items:[
+    {t:"Only one widget library active (UE) — no creeping additions"},
+    {t:"No second forms/redirect/caching/security plugin got installed"},
+    {t:"Headers/footers in Elementor Theme Builder, not duplicated in Astra"},
+    {t:"Images compressed/resized before upload (not raw 5MB photos)"},
+    {t:"Alt text present on key images"},
+    {t:"Staging stays password-protected + noindexed until launch"},
+  ]},
+  {id:"K", title:"Post-Launch (within 48h)", items:[
+    {t:"Re-crawl live site (Screaming Frog) — no broken links / redirect loops"},
+    {t:"GA4 + Search Console receiving live data"},
+    {t:"Request indexing of key pages in Search Console"},
+    {t:"Final backup of the launched site"},
+    {t:"Add site to MainWP dashboard", tag:"once", h:"Optional, as you scale."},
+  ]},
+];
+
+const STORE_KEY = "kz_checklist_v1";
+const CHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+const CHEV  = `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+const TAGS = {off:`<span class="tag tag-off">leave off</span>`, crit:`<span class="tag tag-crit">critical</span>`, once:`<span class="tag tag-once">when applicable</span>`};
+
+let store = loadStore();
+let current = store.lastClient || "";
+
+function loadStore(){
+  try{ return JSON.parse(localStorage.getItem(STORE_KEY)) || {clients:{},lastClient:""}; }
+  catch(e){ return {clients:{},lastClient:""}; }
+}
+function saveStore(){
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify(store)); flashSaved(); }
+  catch(e){ /* sandbox: saving disabled */ }
+}
+function stateFor(name){
+  if(!store.clients[name]) store.clients[name] = {};
+  return store.clients[name];
+}
+
+const totalItems = DATA.reduce((n,s)=>n+s.items.length,0);
+
+function render(){
+  const root = document.getElementById("sections");
+  root.innerHTML = "";
+  DATA.forEach((sec,si)=>{
+    const el = document.createElement("section");
+    el.className = "section" + (si===0 ? " open":"");
+    el.dataset.sec = sec.id;
+    el.innerHTML = `
+      <div class="section-head" role="button" tabindex="0" aria-expanded="${si===0}">
+        <span class="sec-letter">${sec.id}</span>
+        <h2 class="sec-title">${sec.title}</h2>
+        <span class="sec-count" data-count="${sec.id}">0/${sec.items.length}</span>
+        ${CHEV}
+      </div>
+      <div class="items">
+        ${sec.items.map((it,ii)=>{
+          const id = `${sec.id}-${ii}`;
+          return `<label class="item" data-id="${id}">
+            <input type="checkbox" id="${id}">
+            <span class="box">${CHECK}</span>
+            <span class="label-wrap">
+              <span class="label-main">${it.t}${it.tag?TAGS[it.tag]:""}</span>
+              ${it.h?`<span class="label-hint">${it.h}</span>`:""}
+            </span>
+          </label>`;
+        }).join("")}
+      </div>`;
+    root.appendChild(el);
+
+    const head = el.querySelector(".section-head");
+    head.addEventListener("click", ()=>toggleSection(el,head));
+    head.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleSection(el,head);} });
+  });
+
+  root.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+    cb.addEventListener("change", onCheck);
+  });
+  applyState();
+}
+
+function toggleSection(el,head){
+  el.classList.toggle("open");
+  head.setAttribute("aria-expanded", el.classList.contains("open"));
+}
+
+function onCheck(e){
+  const st = stateFor(current || "Untitled site");
+  if(!current){ current = "Untitled site"; document.getElementById("client").value = current; }
+  if(e.target.checked) st[e.target.id]=true; else delete st[e.target.id];
+  store.lastClient = current;
+  saveStore();
+  refreshClientList();
+  applyState();
+}
+
+function applyState(){
+  const st = current ? (store.clients[current]||{}) : {};
+  let done=0;
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+    const on = !!st[cb.id];
+    cb.checked = on;
+    cb.closest(".item").classList.toggle("checked", on);
+    if(on) done++;
+  });
+  // per-section counts
+  DATA.forEach(sec=>{
+    let d=0;
+    sec.items.forEach((_,ii)=>{ if(st[`${sec.id}-${ii}`]) d++; });
+    const badge = document.querySelector(`[data-count="${sec.id}"]`);
+    badge.textContent = `${d}/${sec.items.length}`;
+    badge.classList.toggle("done", d===sec.items.length);
+    badge.closest(".section").classList.toggle("complete", d===sec.items.length && sec.items.length>0);
+  });
+  const pct = totalItems? Math.round(done/totalItems*100):0;
+  document.getElementById("fill").style.width = pct+"%";
+  document.getElementById("pctNum").textContent = pct+"%";
+  document.getElementById("countNum").textContent = `${done}/${totalItems}`;
+}
+
+function refreshClientList(){
+  const dl = document.getElementById("clientlist");
+  dl.innerHTML = Object.keys(store.clients).map(n=>`<option value="${n.replace(/"/g,'&quot;')}">`).join("");
+}
+
+let flagT;
+function flashSaved(){
+  const f = document.getElementById("saveFlag");
+  f.classList.add("show");
+  clearTimeout(flagT);
+  flagT = setTimeout(()=>f.classList.remove("show"),1100);
+}
+
+// ---- controls ----
+const clientInput = document.getElementById("client");
+clientInput.value = current;
+clientInput.addEventListener("change",()=>{
+  current = clientInput.value.trim();
+  store.lastClient = current;
+  saveStore();
+  applyState();
+});
+
+document.getElementById("newBtn").addEventListener("click",()=>{
+  current = "";
+  clientInput.value = "";
+  clientInput.focus();
+  applyState();
+});
+
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  if(!current){ alert("Pick a client first."); return; }
+  if(confirm(`Clear all checks for "${current}"?`)){
+    store.clients[current] = {};
+    saveStore();
+    applyState();
+  }
+});
+
+document.getElementById("printBtn").addEventListener("click",()=>window.print());
+
+render();
+refreshClientList();
+</script>
+</body>
+</html>
