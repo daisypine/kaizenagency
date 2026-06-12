@@ -1,0 +1,296 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#13233B;          /* deep slate blue */
+    --blue:#1E5FAA;         /* kaizen blue */
+    --lime:#9DCB1B;         /* kaizen lime */
+    --lime-deep:#5E8A10;    /* lime for text on light */
+    --lime-tint:#EDF5D6;
+    --paper:#F6F7F2;        /* faint cool paper */
+    --card:#FFFFFF;
+    --line:#E5E8DF;
+    --muted:#6E7568;
+    --amber:#B26206;
+    --amber-tint:#FBEEDA;
+    --grey-tint:#EDEFE9;
+    --shadow:0 1px 2px rgba(19,35,59,.04), 0 8px 24px rgba(19,35,59,.05);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.45;
+    padding:24px 16px 64px;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  /* ---- top bar ---- */
+  .brandbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .wordmark{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.02em;font-size:14px;color:var(--ink)}
+  .dot{width:11px;height:11px;border-radius:3px;background:var(--lime);box-shadow:0 0 0 3px var(--lime-tint)}
+  .saved{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;opacity:0;transition:opacity .25s}
+  .saved.show{opacity:1}
+  .saved svg{width:13px;height:13px}
+
+  /* ---- hero ---- */
+  .hero{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);margin-bottom:18px}
+  .heromain{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .meter{position:relative;width:118px;height:118px;flex:0 0 auto}
+  .meter svg{transform:rotate(-90deg)}
+  .meter .pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .meter .pctnum{font-family:'Fraunces',serif;font-weight:600;font-size:34px;line-height:1;color:var(--ink)}
+  .meter .pctlbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .herotext{flex:1 1 240px;min-width:220px}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime-deep);font-weight:600;margin-bottom:6px}
+  .clientname{font-family:'Fraunces',serif;font-weight:600;font-size:30px;line-height:1.05;letter-spacing:-.01em;margin:0 0 8px;border:none;background:transparent;color:var(--ink);width:100%;padding:0}
+  .clientname:focus{outline:none;box-shadow:0 2px 0 var(--lime)}
+  .subline{font-size:13.5px;color:var(--muted);margin:0}
+  .counts{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .chip{font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px;display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff}
+  .chip b{font-weight:700}
+  .chip .sw{width:9px;height:9px;border-radius:50%}
+  .sw-have{background:var(--lime)} .sw-need{background:var(--amber)} .sw-na{background:#B9BFB2}
+
+  .heroactions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .btn{font-family:inherit;font-size:13px;font-weight:600;border-radius:9px;padding:8px 14px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:.15s}
+  .btn:hover{border-color:var(--ink)}
+  .btn.ghost{color:var(--muted)}
+  .btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+  /* ---- categories ---- */
+  .cat{margin-top:22px}
+  .cathead{display:flex;align-items:baseline;justify-content:space-between;margin:0 4px 10px}
+  .cattitle{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink)}
+  .catmeta{font-size:12px;color:var(--muted)}
+  .rows{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+  .row{display:grid;grid-template-columns:1fr 200px;gap:14px;align-items:center;padding:13px 16px;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row.done .label{color:var(--muted)}
+  .rowleft{min-width:0}
+  .label{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+  .label .x{opacity:0;border:none;background:transparent;color:var(--muted);cursor:pointer;font-size:15px;line-height:1;padding:2px 4px;border-radius:5px;transition:.12s}
+  .row:hover .label .x{opacity:1}
+  .label .x:hover{background:var(--grey-tint);color:var(--amber)}
+  .notes{margin-top:5px;width:100%;font-family:inherit;font-size:12.5px;color:var(--muted);border:none;background:transparent;padding:2px 0;resize:none}
+  .notes::placeholder{color:#A9AEA0}
+  .notes:focus{outline:none;color:var(--ink);box-shadow:0 1px 0 var(--line)}
+
+  /* segmented status control */
+  .seg{display:inline-flex;background:var(--grey-tint);border-radius:9px;padding:3px;gap:3px;justify-self:end}
+  .seg button{font-family:inherit;font-size:11.5px;font-weight:600;border:none;background:transparent;color:var(--muted);padding:6px 10px;border-radius:7px;cursor:pointer;transition:.14s;white-space:nowrap}
+  .seg button:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+  .seg button[aria-pressed="true"][data-s="have"]{background:#fff;color:var(--lime-deep);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .seg button[aria-pressed="true"][data-s="need"]{background:#fff;color:var(--amber);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .seg button[aria-pressed="true"][data-s="na"]{background:#fff;color:var(--muted);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+
+  .additem{display:flex;gap:8px;padding:11px 16px;border-top:1px dashed var(--line);background:#FCFDFA}
+  .additem input{flex:1;font-family:inherit;font-size:13px;border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:#fff}
+  .additem input:focus{outline:none;border-color:var(--blue)}
+  .additem button{font-family:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:#fff;border-radius:8px;padding:0 14px;cursor:pointer;color:var(--ink)}
+  .additem button:hover{border-color:var(--ink)}
+
+  .loading{text-align:center;color:var(--muted);padding:60px 0;font-size:14px}
+  .foot{margin-top:26px;text-align:center;font-size:11.5px;color:var(--muted)}
+  .foot b{color:var(--lime-deep)}
+
+  @media (max-width:560px){
+    .row{grid-template-columns:1fr;gap:10px}
+    .seg{justify-self:start}
+    .meter{width:96px;height:96px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="brandbar">
+    <div class="wordmark"><span class="dot"></span> KAIZEN AGENCY</div>
+    <div class="saved" id="saved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Saved</div>
+  </div>
+
+  <div id="app"><div class="loading">Loading tracker…</div></div>
+
+  <div class="foot">Client onboarding tracker · changes save automatically · <b>Kaizen Agency</b></div>
+</div>
+
+<script>
+const KEY = "kaizen_tracker_jdh_v1";
+const app = document.getElementById('app');
+const savedEl = document.getElementById('saved');
+
+const DEFAULTS = {
+  clientName: "JDH Garden Services",
+  categories: [
+    { id:"brand", name:"Brand & creative assets", items:[
+      { id:"logo",   label:"Logo files (vector / SVG / EPS preferred)", notes:"", status:"need" },
+      { id:"colors", label:"Brand colors (hex codes) & fonts",          notes:"", status:"need" },
+      { id:"photos", label:"Photos — projects, before/after, team, trucks", notes:"", status:"need" },
+      { id:"mktg",   label:"Existing marketing material (cards, flyers, wrap)", notes:"", status:"need" },
+      { id:"reviews",label:"Google reviews / testimonials to feature",   notes:"", status:"need" },
+    ]},
+    { id:"access", name:"Accounts & access", items:[
+      { id:"domain", label:"Domain registrar (owns jdhgardenservices.com)", notes:"Client keeps ownership", status:"need" },
+      { id:"wix",    label:"Current Wix site (editor access)",            notes:"To pull content + migrate", status:"need" },
+      { id:"gbp",    label:"Google Business Profile",                     notes:"Reclaim / clean up listing", status:"need" },
+      { id:"jobber", label:"Jobber (CRM) — being set up",                notes:"Lead routing + reviews", status:"need" },
+      { id:"hosting",label:"Hosting (Kaizen covers Year 1)",             notes:"Provision new", status:"need" },
+      { id:"ga",     label:"Google Analytics / Search Console",          notes:"Create if missing", status:"need" },
+      { id:"social", label:"Social profiles (FB / IG / Yelp / Nextdoor)",notes:"Citations + NAP", status:"need" },
+      { id:"email",  label:"Main inquiry email",                         notes:"Where leads land", status:"need" },
+    ]},
+  ]
+};
+
+let state = null;
+let saveTimer = null;
+
+function uid(){ return 'i'+Math.random().toString(36).slice(2,8); }
+
+async function load(){
+  try{
+    const res = await window.storage.get(KEY);
+    if(res && res.value){ state = JSON.parse(res.value); }
+  }catch(e){ /* no saved state yet — fall through to defaults */ }
+  if(!state || !state.categories){ state = structuredClone(DEFAULTS); }
+  render();
+}
+
+async function save(){
+  state.updatedAt = Date.now();
+  try{
+    await window.storage.set(KEY, JSON.stringify(state));
+    flashSaved();
+  }catch(e){ console.error('save failed', e); }
+}
+function queueSave(){ clearTimeout(saveTimer); saveTimer = setTimeout(save, 350); }
+function flashSaved(){ savedEl.classList.add('show'); clearTimeout(flashSaved._t); flashSaved._t = setTimeout(()=>savedEl.classList.remove('show'), 1400); }
+
+function counts(){
+  let have=0,need=0,na=0;
+  state.categories.forEach(c=>c.items.forEach(i=>{ if(i.status==='have')have++; else if(i.status==='need')need++; else na++; }));
+  const tracked = have+need;
+  const pct = tracked? Math.round(have/tracked*100):0;
+  return {have,need,na,tracked,pct};
+}
+
+function donut(pct){
+  const r=52, c=2*Math.PI*r, off=c*(1-pct/100);
+  return `<svg width="118" height="118" viewBox="0 0 118 118">
+    <circle cx="59" cy="59" r="${r}" fill="none" stroke="#ECEFE6" stroke-width="11"/>
+    <circle cx="59" cy="59" r="${r}" fill="none" stroke="var(--lime)" stroke-width="11"
+      stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"
+      style="transition:stroke-dashoffset .5s ease"/>
+  </svg>`;
+}
+
+function render(){
+  const k = counts();
+  const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+
+  let html = `
+  <div class="hero">
+    <div class="heromain">
+      <div class="meter">${donut(k.pct)}
+        <div class="pct"><div class="pctnum">${k.pct}%</div><div class="pctlbl">collected</div></div>
+      </div>
+      <div class="herotext">
+        <div class="eyebrow">Onboarding tracker</div>
+        <input class="clientname" id="cname" value="${esc(state.clientName)}" aria-label="Client name" />
+        <p class="subline">What we have vs. what we still need to start the build.</p>
+        <div class="counts">
+          <span class="chip"><span class="sw sw-have"></span> Have <b>${k.have}</b></span>
+          <span class="chip"><span class="sw sw-need"></span> Need <b>${k.need}</b></span>
+          <span class="chip"><span class="sw sw-na"></span> N/A <b>${k.na}</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="heroactions">
+      <button class="btn" id="addcat">+ Add category</button>
+      <button class="btn ghost" id="reset">Reset to defaults</button>
+    </div>
+  </div>`;
+
+  state.categories.forEach(cat=>{
+    const done = cat.items.filter(i=>i.status==='have').length;
+    const tot  = cat.items.filter(i=>i.status!=='na').length;
+    html += `<div class="cat" data-cat="${cat.id}">
+      <div class="cathead">
+        <span class="cattitle">${esc(cat.name)}</span>
+        <span class="catmeta">${done} / ${tot} collected</span>
+      </div>
+      <div class="rows">`;
+    cat.items.forEach(it=>{
+      html += `<div class="row ${it.status==='have'?'done':''}" data-cat="${cat.id}" data-id="${it.id}">
+        <div class="rowleft">
+          <div class="label">${esc(it.label)} <button class="x" data-act="del" title="Remove">×</button></div>
+          <input class="notes" data-act="notes" placeholder="Add a note — who holds it, what's blocking…" value="${esc(it.notes)}" />
+        </div>
+        <div class="seg" role="group" aria-label="Status">
+          <button data-s="have" data-act="status" aria-pressed="${it.status==='have'}">Have</button>
+          <button data-s="need" data-act="status" aria-pressed="${it.status==='need'}">Need</button>
+          <button data-s="na"   data-act="status" aria-pressed="${it.status==='na'}">N/A</button>
+        </div>
+      </div>`;
+    });
+    html += `<div class="additem">
+        <input data-act="additem-input" placeholder="Add an item to ${esc(cat.name)}…" aria-label="New item" />
+        <button data-act="additem-btn">Add</button>
+      </div></div></div>`;
+  });
+
+  app.innerHTML = html;
+  wire();
+}
+
+function findItem(catId,id){
+  const cat = state.categories.find(c=>c.id===catId);
+  return [cat, cat.items.find(i=>i.id===id)];
+}
+
+function wire(){
+  document.getElementById('cname').addEventListener('input', e=>{ state.clientName=e.target.value; queueSave(); });
+  document.getElementById('reset').addEventListener('click', ()=>{
+    if(confirm('Reset this tracker to the default checklist? Your notes and statuses will be cleared.')){
+      state = structuredClone(DEFAULTS); save(); render();
+    }
+  });
+  document.getElementById('addcat').addEventListener('click', ()=>{
+    const name = prompt('Name the new category:');
+    if(name && name.trim()){ state.categories.push({id:uid(),name:name.trim(),items:[]}); save(); render(); }
+  });
+
+  app.querySelectorAll('.row').forEach(row=>{
+    const catId=row.dataset.cat, id=row.dataset.id;
+    row.querySelectorAll('[data-act="status"]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const [,it]=findItem(catId,id); it.status=btn.dataset.s; save(); render();
+      });
+    });
+    const notes=row.querySelector('[data-act="notes"]');
+    notes.addEventListener('input', ()=>{ const [,it]=findItem(catId,id); it.notes=notes.value; queueSave(); });
+    row.querySelector('[data-act="del"]').addEventListener('click', ()=>{
+      const [cat]=findItem(catId,id); cat.items=cat.items.filter(i=>i.id!==id); save(); render();
+    });
+  });
+
+  app.querySelectorAll('.cat').forEach(catEl=>{
+    const catId=catEl.dataset.cat;
+    const input=catEl.querySelector('[data-act="additem-input"]');
+    const add=()=>{
+      const v=input.value.trim(); if(!v)return;
+      state.categories.find(c=>c.id===catId).items.push({id:uid(),label:v,notes:"",status:"need"});
+      save(); render();
+    };
+    catEl.querySelector('[data-act="additem-btn"]').addEventListener('click', add);
+    input.addEventListener('keydown', e=>{ if(e.key==='Enter') add(); });
+  });
+}
+
+load();
+</script>
