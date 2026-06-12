@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaizen — Developer Checklist</title>
+<style>
+  :root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--done-bg:#F4F8E3;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;--warn:#B5532E;}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
+  .topbar-inner{max-width:920px;margin:0 auto;padding:14px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
+  .brand h1{font-size:15px;font-weight:700;margin:0}
+  .brand .eyebrow{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1px}
+  .btn{border:1px solid #3a3e30;background:#1f221a;color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:8px 13px;border-radius:9px;cursor:pointer}
+  .btn:hover{border-color:var(--lime)} .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+  .progress-wrap{max-width:920px;margin:0 auto;padding:0 22px 14px}
+  .progress-row{display:flex;align-items:center;gap:14px}
+  .progress-track{flex:1;height:10px;background:#2b2f24;border-radius:999px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:var(--lime);border-radius:999px;transition:width .3s ease}
+  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:112px;text-align:right}
+  .progress-pct b{color:var(--lime)}
+  .save-flag{font-size:11px;color:var(--lime);opacity:0;transition:opacity .2s;font-weight:700}
+  .save-flag.show{opacity:1}
+  main{max-width:920px;margin:0 auto;padding:26px 22px 80px}
+  .intro{color:var(--ink-soft);font-size:14.5px;margin:2px 0 22px;max-width:700px}
+  .intro b{color:var(--ink)}
+  .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+  .section.donot{border-color:#e3c7bb}
+  .section-head{display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;border-bottom:1px solid transparent;user-select:none}
+  .section.open .section-head{border-bottom-color:var(--line)}
+  .sec-letter{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:800;font-size:15px}
+  .section.donot .sec-letter{background:var(--warn);color:#fff}
+  .section.complete .sec-letter{background:var(--lime);color:var(--ink)}
+  .section.donot.complete .sec-letter{background:var(--warn);color:#fff}
+  .sec-title{font-weight:700;font-size:16px;margin:0;flex:1}
+  .sec-count{font-size:12.5px;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .sec-count.done{color:var(--lime-deep)}
+  .chev{flex:none;width:18px;height:18px;color:var(--ink-soft);transition:transform .2s}
+  .section.open .chev{transform:rotate(90deg)}
+  .items{padding:6px 20px 14px;display:none} .section.open .items{display:block}
+  .item{display:flex;gap:13px;align-items:flex-start;padding:11px 12px;border-radius:10px;margin:2px -6px;transition:background .15s}
+  .item:hover{background:#fafbf5} .item.checked{background:var(--done-bg)}
+  .item input{position:absolute;opacity:0;width:1px;height:1px}
+  .box{flex:none;margin-top:1px;width:21px;height:21px;border-radius:6px;border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;transition:all .15s}
+  .box svg{width:13px;height:13px;opacity:0;transform:scale(.6);transition:all .15s}
+  .item.checked .box{background:var(--lime);border-color:var(--lime-deep)}
+  .item.checked .box svg{opacity:1;transform:scale(1)}
+  .item input:focus-visible + .box{outline:2px solid var(--ink);outline-offset:2px}
+  .label-wrap{flex:1;cursor:pointer}
+  .label-main{font-size:14.5px;line-height:1.4} .item.checked .label-main{color:var(--ink-soft)}
+  .label-hint{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-left:8px;vertical-align:middle}
+  .tag-seo{background:#e7ecd6;color:var(--lime-deep)} .tag-last{background:var(--ink);color:var(--lime)}
+  footer{max-width:920px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px}
+  @media (max-width:620px){.progress-pct{min-width:auto}}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto}}
+  @media print{body{background:#fff}.topbar{position:static;border-bottom:2px solid #000}.no-print,.chev,.btn,.save-flag{display:none !important}.progress-track{border:1px solid #000}.section{break-inside:avoid;box-shadow:none;border-color:#999}.items{display:block !important}.item:hover{background:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="pill">KAIZEN</span><div><span class="eyebrow">Designers + Developers</span><h1>Developer Checklist</h1></div></div>
+    <button class="btn no-print" id="resetBtn">Reset</button>
+    <button class="btn no-print" id="printBtn">Print</button>
+  </div>
+  <div class="progress-wrap no-print"><div class="progress-row">
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <span class="progress-pct"><b id="pctNum">0%</b> · <span id="countNum">0/0</span></span>
+    <span class="save-flag" id="saveFlag">Saved</span>
+  </div></div>
+</header>
+<main>
+  <p class="intro">The site is set up and plugins are installed. You have the design + Daisy's copy doc, so build as you normally would — this list is the <b>config, SEO, and finishing</b> that's on you. <b>SEO tags apply to SEO clients.</b> Reset between projects.</p>
+  <div id="sections"></div>
+</main>
+<footer>Kaizen Agency · single reference list. Hit Reset when you start a new site. Launch (domain migration, SSL, CDN, security) is handled by Daisy after you hand back.</footer>
+<script>
+const DATA=[
+  {id:"1",title:"Do Not Touch",donot:true,items:[
+    {t:"Don't change Speed Optimizer — caching stays ON, Frontend Optimization stays OFF",h:"Seraphinite owns all frontend optimization (configured last). Running both breaks layouts."},
+    {t:"Don't change login or security settings",h:"Daisy runs the security lockdown at launch — leave it alone so no one gets locked out mid-build."},
+  ]},
+  {id:"2",title:"Build",items:[
+    {t:"Use Unlimited Elements as the only widget library — no other addon packs"},
+    {t:"Build all pages + templates to the approved design + Daisy's copy doc",h:"Header/footer/templates in Elementor Pro Theme Builder."},
+    {t:"Linking rule for pages not built yet: create the page, link to its real URL",h:"Even just an H1 / \u201ccoming soon\u201d — link buttons to its permanent slug, no re-linking later. If it can't be stubbed yet, use a \u201c#\u201d placeholder. NEVER point unbuilt links to the homepage, and try not to leave a dead/404 link."},
+    {t:"Forms — Elementor Pro Form widget: Submissions ON (stores in WP), file upload where needed, honeypot ON (hCaptcha/Turnstile optional)"},
+    {t:"Compress/resize images before upload; descriptive alt text on key images"},
+    {t:"Host fonts locally"},
+    {t:"Branded 404 page (links to home + key services)"},
+  ]},
+  {id:"3",title:"On-Page SEO (keep it friendly)",items:[
+    {t:"One H1 per page using that page's keyword; logical H2 \u2192 H3 order"},
+    {t:"Add the SEO title + meta description Daisy provides for each page (AIOSEO fields)"},
+    {t:"Internal links between related pages; no orphan pages"},
+    {t:"Alt text on images"},
+  ]},
+  {id:"4",title:"AIOSEO Config",items:[
+    {t:"Run the AIOSEO setup wizard (use the provided assets)"},
+    {t:"XML sitemap ON (/sitemap.xml); breadcrumbs ON"},
+    {t:"Configure LocalBusiness schema (name, address, hours, service area, phone)",tag:"seo"},
+    {t:"Enable the Redirection Manager",tag:"seo"},
+    {t:"Redesign/transfer: crawl the OLD site \u2192 map old\u2192new URLs as 301s",tag:"seo",h:"Only if there's an existing live site with URLs to preserve."},
+  ]},
+  {id:"5",title:"Cookie Banner — WPConsent",items:[
+    {t:"Open WPConsent \u2192 run the scan/setup so it detects the site's cookies"},
+    {t:"Set banner style to match the brand; position as a bottom bar"},
+    {t:"Enable script blocking: Essential always on; Statistics + Marketing OFF until consent",h:"This is the piece that actually protects the client — scripts must not fire before consent."},
+    {t:"Link the Privacy Policy + Cookie Policy pages in the banner"},
+    {t:"Enable Google Consent Mode if GA4 is used"},
+    {t:"Test in an incognito window: banner appears, Accept/Reject works, no tracking fires before consent"},
+  ]},
+  {id:"6",title:"Performance — Seraphinite (LAST, after build)",tag:"last",items:[
+    {t:"Confirm SG Optimizer Frontend Optimization is OFF before configuring Seraphinite"},
+    {t:"Seraphinite: minify + combine CSS/JS, critical CSS, defer JS, lazy load, WebP \u2192 ON"},
+    {t:"Seraphinite's own page caching \u2192 OFF (SiteGround handles caching)"},
+    {t:"Test every page after enabling; broken layout/JS \u2192 exclude that file"},
+    {t:"Purge BOTH caches after changes"},
+    {t:"PageSpeed Insights (mobile) — Core Web Vitals healthy"},
+  ]},
+  {id:"7",title:"Backups — UpdraftPlus",items:[
+    {t:"Schedule a weekly backup \u2192 Google Drive",h:"Set this at/around launch, once real content is in."},
+  ]},
+  {id:"8",title:"Hand Back to Daisy",items:[
+    {t:"Confirm: build done, forms tested, AIOSEO configured, WPConsent live, Seraphinite tuned"},
+    {t:"Confirm no leftover dead links — every \u201c#\u201d placeholder is built out or flagged to Daisy",h:"A quick crawl (Screaming Frog) should surface only intentional placeholders, nothing 404ing."},
+    {t:"Notify Daisy for launch",h:"She handles domain migration, SSL, CDN, and the security lockdown."},
+  ]},
+];
+const STORE_KEY="kz_dev_v2";
+const CHECK=`<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+const CHEV=`<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+const TAGS={seo:`<span class="tag tag-seo">SEO client</span>`};
+let state=load();
+function load(){try{return JSON.parse(localStorage.getItem(STORE_KEY))||{};}catch(e){return{};}}
+function save(){try{localStorage.setItem(STORE_KEY,JSON.stringify(state));flashSaved();}catch(e){}}
+const totalItems=DATA.reduce((n,s)=>n+s.items.length,0);
+function render(){const root=document.getElementById("sections");root.innerHTML="";DATA.forEach((sec,si)=>{const el=document.createElement("section");el.className="section"+(si===0?" open":"")+(sec.donot?" donot":"");el.innerHTML=`<div class="section-head" role="button" tabindex="0" aria-expanded="${si===0}"><span class="sec-letter">${sec.id}</span><h2 class="sec-title">${sec.title}${sec.tag==="last"?`<span class="tag tag-last">do last</span>`:""}</h2><span class="sec-count" data-count="${sec.id}">0/${sec.items.length}</span>${CHEV}</div><div class="items">${sec.items.map((it,ii)=>{const id=`${sec.id}-${ii}`;return `<label class="item" data-id="${id}"><input type="checkbox" id="${id}"><span class="box">${CHECK}</span><span class="label-wrap"><span class="label-main">${it.t}${it.tag?TAGS[it.tag]:""}</span>${it.h?`<span class="label-hint">${it.h}</span>`:""}</span></label>`;}).join("")}</div>`;root.appendChild(el);const head=el.querySelector(".section-head");head.addEventListener("click",()=>toggle(el,head));head.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle(el,head);}});});root.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener("change",onCheck));applyState();}
+function toggle(el,head){el.classList.toggle("open");head.setAttribute("aria-expanded",el.classList.contains("open"));}
+function onCheck(e){if(e.target.checked)state[e.target.id]=true;else delete state[e.target.id];save();applyState();}
+function applyState(){let done=0;document.querySelectorAll('input[type="checkbox"]').forEach(cb=>{const on=!!state[cb.id];cb.checked=on;cb.closest(".item").classList.toggle("checked",on);if(on)done++;});DATA.forEach(sec=>{let d=0;sec.items.forEach((_,ii)=>{if(state[`${sec.id}-${ii}`])d++;});const b=document.querySelector(`[data-count="${sec.id}"]`);b.textContent=`${d}/${sec.items.length}`;b.classList.toggle("done",d===sec.items.length);b.closest(".section").classList.toggle("complete",d===sec.items.length&&sec.items.length>0);});const pct=totalItems?Math.round(done/totalItems*100):0;document.getElementById("fill").style.width=pct+"%";document.getElementById("pctNum").textContent=pct+"%";document.getElementById("countNum").textContent=`${done}/${totalItems}`;}
+let ft;function flashSaved(){const f=document.getElementById("saveFlag");f.classList.add("show");clearTimeout(ft);ft=setTimeout(()=>f.classList.remove("show"),1100);}
+document.getElementById("resetBtn").addEventListener("click",()=>{if(confirm("Clear all checks on this list?")){state={};save();applyState();}});
+document.getElementById("printBtn").addEventListener("click",()=>window.print());
+render();
+</script>
+</body>
+</html>
