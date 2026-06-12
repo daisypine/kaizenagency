@@ -3,451 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaizen — Foundation Setup Checklist</title>
+<title>Kaizen — Staging Site Setup</title>
 <style>
-  :root{
-    --ink:#14160F;
-    --ink-soft:#5C6052;
-    --paper:#F4F5EF;
-    --surface:#FFFFFF;
-    --line:#E4E6DB;
-    --lime:#C3E84C;
-    --lime-deep:#7E9C1F;
-    --done-bg:#F4F8E3;
-    --done-line:#DCE8B6;
-    --shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);
-    --radius:14px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-size:16px;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  /* ---------- Sticky header ---------- */
-  .topbar{
-    position:sticky;top:0;z-index:20;
-    background:var(--ink);color:#fff;
-    border-bottom:3px solid var(--lime);
-  }
-  .topbar-inner{
-    max-width:920px;margin:0 auto;padding:14px 22px;
-    display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;
-  }
+  :root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--done-bg:#F4F8E3;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
+  .topbar-inner{max-width:940px;margin:0 auto;padding:14px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
   .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
-  .pill{
-    display:inline-block;background:#fff;color:var(--ink);
-    font-weight:800;letter-spacing:.04em;font-size:12px;
-    padding:5px 11px;border-radius:999px;border:2px solid var(--ink);
-    box-shadow:0 2px 0 var(--lime);
-  }
+  .pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
   .brand h1{font-size:15px;font-weight:700;margin:0;letter-spacing:.01em}
-  .brand .eyebrow{
-    display:block;font-size:10px;font-weight:700;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--lime);margin-bottom:1px;
-  }
-
+  .brand .eyebrow{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1px}
   .client-field{display:flex;align-items:center;gap:8px}
   .client-field label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#b9bcae;font-weight:700}
-  .client-field input{
-    background:#1f221a;border:1px solid #3a3e30;color:#fff;
-    border-radius:9px;padding:8px 11px;font-size:14px;min-width:170px;font-family:inherit;
-  }
+  .client-field input{background:#1f221a;border:1px solid #3a3e30;color:#fff;border-radius:9px;padding:8px 11px;font-size:14px;min-width:160px;font-family:inherit}
   .client-field input::placeholder{color:#80836f}
   .client-field input:focus-visible{outline:2px solid var(--lime);outline-offset:1px;border-color:var(--lime)}
-
-  .btn{
-    border:1px solid #3a3e30;background:#1f221a;color:#fff;
-    font-family:inherit;font-size:13px;font-weight:600;
-    padding:8px 13px;border-radius:9px;cursor:pointer;
-  }
-  .btn:hover{border-color:var(--lime)}
-  .btn-lime{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:700}
-  .btn-lime:hover{background:#d4f06a}
-  .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
-
-  /* ---------- Progress ---------- */
-  .progress-wrap{max-width:920px;margin:0 auto;padding:0 22px 14px}
+  .btn{border:1px solid #3a3e30;background:#1f221a;color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:8px 13px;border-radius:9px;cursor:pointer}
+  .btn:hover{border-color:var(--lime)} .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+  .progress-wrap{max-width:940px;margin:0 auto;padding:0 22px 14px}
   .progress-row{display:flex;align-items:center;gap:14px}
   .progress-track{flex:1;height:10px;background:#2b2f24;border-radius:999px;overflow:hidden}
   .progress-fill{height:100%;width:0;background:var(--lime);border-radius:999px;transition:width .3s ease}
-  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:118px;text-align:right}
+  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:112px;text-align:right}
   .progress-pct b{color:var(--lime)}
   .save-flag{font-size:11px;color:var(--lime);opacity:0;transition:opacity .2s;font-weight:700;letter-spacing:.04em}
   .save-flag.show{opacity:1}
-
-  /* ---------- Page body ---------- */
-  main{max-width:920px;margin:0 auto;padding:26px 22px 80px}
-  .intro{color:var(--ink-soft);font-size:14.5px;margin:2px 0 24px;max-width:680px}
+  main{max-width:940px;margin:0 auto;padding:24px 22px 80px}
+  .intro{color:var(--ink-soft);font-size:14.5px;margin:2px 0 18px;max-width:700px}
   .intro b{color:var(--ink)}
-
-  .section{
-    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;
-  }
-  .section-head{
-    display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;
-    border-bottom:1px solid transparent;user-select:none;
-  }
+  .routes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin-bottom:16px}
+  .routes h3{margin:0 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft)}
+  .routes p{margin:0 0 14px;font-size:13px;color:var(--ink-soft)}
+  .route-grp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:9px 0}
+  .route-grp .glabel{font-size:12.5px;font-weight:700;min-width:90px;color:var(--ink)}
+  .seg{display:inline-flex;background:#eef0e6;border-radius:9px;padding:3px;gap:3px;flex-wrap:wrap}
+  .seg button{border:none;background:transparent;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-soft);padding:6px 11px;border-radius:7px;cursor:pointer}
+  .seg button.on{background:var(--ink);color:var(--lime)}
+  .seg button:focus-visible{outline:2px solid var(--lime);outline-offset:1px}
+  .ledger{background:#1b1d16;color:#e9ebe0;border-radius:var(--radius);padding:0;margin-bottom:16px;overflow:hidden;border:1px solid #2b2f24}
+  .ledger summary{cursor:pointer;list-style:none;padding:13px 18px;font-size:13px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;gap:9px}
+  .ledger summary::-webkit-details-marker{display:none}
+  .ledger summary .lk{color:var(--lime)}
+  .ledger .body{padding:2px 18px 16px;font-size:13px;line-height:1.6}
+  .ledger .row{padding:9px 0;border-top:1px solid #2b2f24}
+  .ledger .row:first-child{border-top:none}
+  .ledger b{color:#fff} .ledger .lime{color:var(--lime);font-weight:700} .ledger .muted{color:#9a9d8c}
+  .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+  .section.hide{display:none}
+  .section-head{display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;border-bottom:1px solid transparent;user-select:none}
   .section.open .section-head{border-bottom-color:var(--line)}
-  .sec-letter{
-    flex:none;width:34px;height:34px;border-radius:9px;
-    display:grid;place-items:center;background:var(--ink);color:var(--lime);
-    font-weight:800;font-size:15px;letter-spacing:.02em;
-  }
+  .sec-letter{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:800;font-size:15px}
   .section.complete .sec-letter{background:var(--lime);color:var(--ink)}
   .sec-title{font-weight:700;font-size:16px;margin:0;flex:1}
   .sec-count{font-size:12.5px;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
   .sec-count.done{color:var(--lime-deep)}
   .chev{flex:none;width:18px;height:18px;color:var(--ink-soft);transition:transform .2s}
   .section.open .chev{transform:rotate(90deg)}
-
-  .items{padding:6px 20px 14px;display:none}
-  .section.open .items{display:block}
-
-  .item{
-    display:flex;gap:13px;align-items:flex-start;
-    padding:11px 12px;border-radius:10px;margin:2px -6px;
-    transition:background .15s;
-  }
-  .item:hover{background:#fafbf5}
-  .item.checked{background:var(--done-bg)}
+  .items{padding:6px 20px 14px;display:none} .section.open .items{display:block}
+  .item{display:flex;gap:13px;align-items:flex-start;padding:11px 12px;border-radius:10px;margin:2px -6px;transition:background .15s}
+  .item.hide{display:none}
+  .item:hover{background:#fafbf5} .item.checked{background:var(--done-bg)}
   .item input{position:absolute;opacity:0;width:1px;height:1px}
-  .box{
-    flex:none;margin-top:1px;width:21px;height:21px;border-radius:6px;
-    border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;
-    transition:all .15s;
-  }
+  .box{flex:none;margin-top:1px;width:21px;height:21px;border-radius:6px;border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;transition:all .15s}
   .box svg{width:13px;height:13px;opacity:0;transform:scale(.6);transition:all .15s}
   .item.checked .box{background:var(--lime);border-color:var(--lime-deep)}
   .item.checked .box svg{opacity:1;transform:scale(1)}
   .item input:focus-visible + .box{outline:2px solid var(--ink);outline-offset:2px}
   .label-wrap{flex:1;cursor:pointer}
-  .label-main{font-size:14.5px;line-height:1.4}
-  .item.checked .label-main{color:var(--ink-soft)}
+  .label-main{font-size:14.5px;line-height:1.4} .item.checked .label-main{color:var(--ink-soft)}
   .label-hint{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
-  .tag{
-    display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-    padding:2px 7px;border-radius:5px;margin-left:8px;vertical-align:middle;
-  }
-  .tag-off{background:#efe2e2;color:#9a3b3b}
-  .tag-crit{background:var(--ink);color:var(--lime)}
-  .tag-once{background:#e7ecd6;color:var(--lime-deep)}
-
-  footer{max-width:920px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px}
-
-  @media (max-width:620px){
-    .client-field{order:3;width:100%}
-    .client-field input{flex:1}
-    .progress-pct{min-width:auto}
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{transition:none !important;scroll-behavior:auto}
-  }
-
-  /* ---------- Print ---------- */
-  @media print{
-    body{background:#fff}
-    .topbar{position:static;border-bottom:2px solid #000}
-    .no-print,.chev,.btn,.save-flag{display:none !important}
-    .progress-track{border:1px solid #000}
-    .section{break-inside:avoid;box-shadow:none;border-color:#999}
-    .items{display:block !important}
-    .item:hover{background:none}
-  }
+  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-left:8px;vertical-align:middle}
+  .tag-route{background:#e7ecd6;color:var(--lime-deep)}
+  footer{max-width:940px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px}
+  @media (max-width:640px){.client-field{order:3;width:100%}.client-field input{flex:1}.progress-pct{min-width:auto}.route-grp .glabel{min-width:auto;width:100%}}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto}}
+  @media print{body{background:#fff}.topbar{position:static;border-bottom:2px solid #000}.no-print,.chev,.btn,.save-flag,.routes .seg button:not(.on){display:none !important}.ledger{color:#000;background:#fff;border:1px solid #999}.ledger .body{display:block!important}.progress-track{border:1px solid #000}.section{break-inside:avoid;box-shadow:none;border-color:#999}.items{display:block !important}.item:hover{background:none}.item.hide,.section.hide{display:none!important}}
 </style>
 </head>
 <body>
-
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand">
-      <span class="pill">KAIZEN</span>
-      <div>
-        <span class="eyebrow">Site Build</span>
-        <h1>Foundation Setup Checklist</h1>
-      </div>
-    </div>
-    <div class="client-field no-print">
-      <label for="client">Client / Site</label>
-      <input id="client" list="clientlist" placeholder="e.g. Sunwest Painting" autocomplete="off">
-      <datalist id="clientlist"></datalist>
-    </div>
+    <div class="brand"><span class="pill">KAIZEN</span><div><span class="eyebrow">You · before the devs</span><h1>Staging Site Setup</h1></div></div>
+    <div class="client-field no-print"><label for="client">Site</label><input id="client" list="clientlist" placeholder="e.g. Client name" autocomplete="off"><datalist id="clientlist"></datalist></div>
     <button class="btn no-print" id="newBtn">New site</button>
     <button class="btn no-print" id="resetBtn">Reset</button>
     <button class="btn no-print" id="printBtn">Print</button>
   </div>
-  <div class="progress-wrap no-print">
-    <div class="progress-row">
-      <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
-      <span class="progress-pct"><b id="pctNum">0%</b> · <span id="countNum">0/0</span></span>
-      <span class="save-flag" id="saveFlag">Saved</span>
-    </div>
-  </div>
+  <div class="progress-wrap no-print"><div class="progress-row">
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <span class="progress-pct"><b id="pctNum">0%</b> · <span id="countNum">0/0</span></span>
+    <span class="save-flag" id="saveFlag">Saved</span>
+  </div></div>
 </header>
-
 <main>
-  <p class="intro">Your foundation work — hosting, plugins, license keys, security, performance — before handing the build to the devs. Pick the client above; <b>progress saves per client</b> so you can run several builds at once. Pair with the <b>Build &amp; SEO Checklist</b> the dev team follows.</p>
+  <p class="intro">Your foundation work so the devs can build. Pick the site, <b>choose its route below</b>, and the steps adapt. This list ends at <b>handoff</b> — the devs configure SEO/cookies/speed, and launch lives on the post-dev list. Progress + route save <b>per site</b>.</p>
+  <div class="routes no-print" id="routeBox"><h3>Build route</h3><p>Set these first — they switch which steps appear.</p></div>
+  <details class="ledger">
+    <summary><span class="lk">◆</span> License tracker (reference)</summary>
+    <div class="body">
+      <div class="row"><b>Elementor Pro — Expert</b> · 25 sites · used: <span class="lime">2</span> · ~23 left · <span class="muted">renews ~Jun 2027 — confirm in my.elementor.com</span></div>
+      <div class="row"><b>Unlimited Elements — Business</b> · 100 sites · used: <span class="lime">2</span> · ~98 left · <span class="muted">every build gets UE Business · confirm renewal</span></div>
+      <div class="row"><b>AIOSEO Pro</b> · 10 sites · for SEO clients only (standard clients use free, no slot) · <span class="muted">renews ~$400 (intro $180)</span></div>
+      <div class="row muted">Update counts as you activate more sites.</div>
+    </div>
+  </details>
   <div id="sections"></div>
 </main>
-
-<footer>
-  Kaizen Agency · keep this in step with your current standard stack. Saving works once the file is opened directly or hosted on your own site.
-</footer>
-
+<footer>Kaizen Agency · one routed checklist. Security lockdown + launch are intentionally <b>post-dev</b> (separate list) so devs aren't locked out mid-build. Saving works once the file is opened directly or hosted.</footer>
 <script>
-const DATA = [
-  {id:"A", title:"Hosting & Staging Setup", items:[
-    {t:"Decide the build path", h:"Domain ready → point to SiteGround now, build on a Staging copy, Push to Live (preferred). Not ready → build on a temp URL / subdomain you control and plan the migration (Section H)."},
-    {t:"WordPress installed (latest version)"},
-    {t:"SSL issued (Let's Encrypt) + Force HTTPS on"},
-    {t:"Admin user is NOT \u201cadmin\u201d; strong password set"},
-    {t:"Delete default content", h:"Hello World post, sample page, unused default plugins & themes."},
-    {t:"Permalinks set to Post name"},
-    {t:"Timezone set to America/Los_Angeles"},
+const ROUTEDEF=[
+  {group:"domain",label:"Domain",options:[{v:"new",t:"New / ready — build on live"},{v:"temp",t:"Not ready / transfer — temp URL"}]},
+  {group:"client",label:"Client type",options:[{v:"standard",t:"Website only (AIOSEO free)"},{v:"seo",t:"SEO client (AIOSEO Pro)"}]},
+  {group:"tier",label:"Build tier",options:[{v:"premium",t:"Premium (Elementor Pro)"},{v:"budget",t:"Budget (Elementor free)"}]},
+];
+const DEFAULT_ROUTES={domain:"new",client:"standard",tier:"premium"};
+const DATA=[
+  {id:"1",title:"SiteGround — Hosting & Staging",items:[
+    {t:"Log into the correct SiteGround account",h:"Some clients sit on a separate account — confirm you're in the right one."},
+    {t:"Point the domain to SiteGround",when:["domain:new"],h:"Grab the exact NS from Server Details → set Custom DNS at the registrar. (A-record instead if the domain runs email.)"},
+    {t:"Create the site on a SiteGround temporary URL (sg-host.com)",when:["domain:temp"],h:"Build here; migrate to the real domain at launch."},
+    {t:"Install WordPress — strong password, admin username is NOT \u201cadmin\u201d"},
+    {t:"Skip \u201cInstall with WordPress Starter\u201d"},
+    {t:"Set the admin email to kaizenagencyacc@gmail.com (Settings \u2192 General)"},
+    {t:"Issue SSL (Let's Encrypt) + Force HTTPS",h:"Temp URL: immediate. New domain: only after DNS resolves."},
   ]},
-  {id:"B", title:"Theme", items:[
-    {t:"Install Astra as the base theme", h:"Keep it as the lightweight foundation."},
-    {t:"All headers/footers/templates built in Elementor Pro Theme Builder", h:"Do NOT also build them in Astra — one system only."},
+  {id:"2",title:"First Steps in WP Admin",items:[
+    {t:"Toggle \u201cDiscourage search engines\u201d ON (Settings \u2192 Reading)",h:"Before installing plugins. Comes OFF at launch."},
+    {t:"Deactivate \u201cAI Agent by SiteGround\u201d (Plugins)"},
   ]},
-  {id:"C", title:"Plugins — Install + Activate", items:[
-    {t:"Elementor + Elementor Pro \u2192 activate Expert license on this domain"},
-    {t:"Unlimited Elements \u2192 activate Business license", h:"Confirm this is the ONLY widget library active (no Ultimate Addons unless a specific widget needs it)."},
-    {t:"AIOSEO", h:"SEO clients (Adapt, Sunwest, Falcon, Silicon Pro, JDH): install Pro + license key. Everyone else: install free AIOSEO from the directory."},
-    {t:"WPConsent (free) — cookie banner"},
-    {t:"SiteGround Security (free)"},
-    {t:"UpdraftPlus (free) — offsite backups"},
-    {t:"Seraphinite Accelerator (free)", h:"Installed now, configured as a finishing step (Section F)."},
-    {t:"Do NOT add a separate forms plugin", tag:"off", h:"Elementor Pro Form widget handles it."},
-    {t:"Do NOT add a separate redirect plugin", tag:"off", h:"AIOSEO Redirection Manager on SEO clients."},
-    {t:"Do NOT install on-server Broken Link Checker", tag:"off"},
-    {t:"Do NOT add a second caching/security plugin", tag:"off", h:"No Wordfence firewall on top of SiteGround Security."},
+  {id:"3",title:"Performance Base (Speed Optimizer)",items:[
+    {t:"Dynamic Caching \u2192 ON"},
+    {t:"Memcached \u2192 ON (optional)",h:"Server-side in Site Tools first, then the WP toggle. Skip if it errors on a fresh site."},
+    {t:"Frontend Optimization \u2192 ALL OFF",h:"Seraphinite owns this after the build."},
+    {t:"Turn on SiteGround free CDN (Site Tools \u2192 Speed \u2192 CDN)",h:"Free tier. It's domain-specific, so you'll re-enable it for the real domain at launch."},
   ]},
-  {id:"D", title:"Security Lockdown (SiteGround Security)", items:[
-    {t:"Custom Login URL \u2192 change /wp-admin to a private path", h:"e.g. /kz-login. Bookmark it. Stops casual access to the login page."},
-    {t:"Limit Login Attempts \u2192 ON"},
-    {t:"Two-Factor Authentication (2FA) \u2192 ON for all admins"},
-    {t:"Disable XML-RPC (if nothing needs it)"},
+  {id:"4",title:"Theme",items:[
+    {t:"Appearance \u2192 Add Theme \u2192 install Astra \u2192 Activate"},
   ]},
-  {id:"E", title:"SEO Foundation (AIOSEO)", items:[
-    {t:"Run the AIOSEO setup wizard"},
-    {t:"XML sitemap enabled (reachable at /sitemap.xml)"},
-    {t:"Breadcrumbs enabled"},
-    {t:"LocalBusiness schema configured", h:"Name, address, hours, service area, phone — let AIOSEO handle local schema."},
-    {t:"Image SEO alt-text fallback template set", h:"Devs/content still write alt text by hand on key images."},
-    {t:"SEO clients only: enable Redirection Manager"},
-    {t:"Sunwest only: crawl the OLD site \u2192 map every old URL \u2192 new URL as 301s", h:"Use Screaming Frog / Ahrefs first so no URL is missed."},
+  {id:"5",title:"Install Plugins (install all first — configure later)",items:[
+    {t:"Elementor Pro \u2192 upload latest from your account \u2192 Connect & Activate",when:["tier:premium"],h:"Requires the free Elementor plugin active (install that first if needed). Uses 1 Expert slot."},
+    {t:"Elementor (free) \u2192 install + activate",when:["tier:budget"],h:"No Pro on budget builds."},
+    {t:"Unlimited Elements (Business) \u2192 activate",h:"Every build gets UE Business — you have plenty of slots. License: Unlimited Elements menu; if it shows \u201cChange License,\u201d it's active."},
+    {t:"AIOSEO Pro \u2192 upload from your account + enter license key (install only)",when:["client:seo"],h:"Devs configure the settings. Uses 1 of 10 Pro slots."},
+    {t:"AIOSEO (free) \u2192 install (install only)",when:["client:standard"],h:"Devs configure the settings."},
+    {t:"WPConsent (free) \u2192 install (devs configure/style)"},
+    {t:"UpdraftPlus (free) \u2192 install (devs schedule at launch)"},
+    {t:"Seraphinite Accelerator (free) \u2192 install only (devs configure post-build)"},
   ]},
-  {id:"F", title:"Performance — SG Optimizer + Seraphinite (No Overlap)", items:[
-    {t:"SG Optimizer: Dynamic Caching ON"},
-    {t:"SG Optimizer: Memcached ON"},
-    {t:"SG Optimizer: Frontend Optimization \u2014 ALL OFF", h:"Minify, combine, defer, lazy load, web fonts all off — Seraphinite owns these."},
-    {t:"SG Optimizer: Media / WebP \u2014 OFF"},
-    {t:"Seraphinite: Page/HTML caching \u2014 OFF", h:"SG handles caching."},
-    {t:"Seraphinite: Minify + combine CSS/JS \u2014 ON"},
-    {t:"Seraphinite: Critical CSS / remove render-blocking \u2014 ON"},
-    {t:"Seraphinite: Defer JS \u2014 ON"},
-    {t:"Seraphinite: Lazy load images/iframes \u2014 ON"},
-    {t:"Seraphinite: Image optimization / WebP \u2014 ON"},
-    {t:"Host fonts locally \u2014 ON"},
-    {t:"Test every page after enabling Seraphinite", h:"Broken layout/JS = exclude the offending file."},
-    {t:"Purge BOTH caches after any change"},
-    {t:"Run PageSpeed Insights (mobile) \u2014 Core Web Vitals healthy"},
+  {id:"6",title:"Wall It Off While Building",items:[
+    {t:"Elementor \u2192 Tools \u2192 Maintenance Mode \u2192 Coming Soon",when:["domain:new"],h:"Live domain — hide it during the build. Off at launch."},
+    {t:"Temp URL: Maintenance Mode optional",when:["domain:temp"],h:"Not public anyway; \u201cDiscourage search engines\u201d keeps it out of Google."},
   ]},
-  {id:"G", title:"Tracking, Backups, Privacy", items:[
-    {t:"Google Site Kit installed \u2192 connect GA4 + Search Console"},
-    {t:"UpdraftPlus \u2192 weekly backup to Google Drive (offsite copy)"},
-    {t:"WPConsent banner styled to brand", h:"Confirm it blocks Statistics/Marketing scripts until consent."},
-    {t:"Privacy Policy + Terms pages exist and are linked in footer"},
-    {t:"Forms: Elementor honeypot ON", h:"Add hCaptcha/Turnstile keys if extra spam protection wanted."},
-    {t:"CallRail tracking number installed + billed through", tag:"once", h:"SEO / retained clients only."},
-  ]},
-  {id:"H", title:"Going Live — if built on a temp URL/subdomain", items:[
-    {t:"Search-and-replace database: old temp URL \u2192 new domain", h:"SiteGround tool or Better Search Replace plugin. Skipping this breaks images & links."},
-    {t:"Re-issue SSL for the real domain + force HTTPS"},
-    {t:"Point domain at SiteGround (nameservers/A record)", h:"Allow up to 48h propagation."},
-  ]},
-  {id:"I", title:"Go-Live Double-Check", items:[
-    {t:"\u201cDiscourage search engines\u201d is UNCHECKED", tag:"crit", h:"#1 launch mistake — staging is noindexed; if it carries over the site never ranks."},
-    {t:"Purge all caches (SG + Seraphinite)"},
-    {t:"Re-save Permalinks"},
-    {t:"SSL valid + HTTPS forced"},
-    {t:"All images load, all internal links work", h:"No 404s, no temp-URL leftovers."},
-    {t:"Every form tested: entry stored + email received"},
-    {t:"All phone numbers correct + click-to-call works on mobile"},
-    {t:"NAP matches Google Business Profile exactly"},
-    {t:"Verify live domain in Search Console + submit sitemap"},
-    {t:"Sunwest: 301 redirects live and tested"},
-    {t:"Mobile render checked on a real phone"},
-  ]},
-  {id:"J", title:"While the Devs Build — Periodic Checks", items:[
-    {t:"Only one widget library active (UE) — no creeping additions"},
-    {t:"No second forms/redirect/caching/security plugin got installed"},
-    {t:"Headers/footers in Elementor Theme Builder, not duplicated in Astra"},
-    {t:"Images compressed/resized before upload (not raw 5MB photos)"},
-    {t:"Alt text present on key images"},
-    {t:"Staging stays password-protected + noindexed until launch"},
-  ]},
-  {id:"K", title:"Post-Launch (within 48h)", items:[
-    {t:"Re-crawl live site (Screaming Frog) — no broken links / redirect loops"},
-    {t:"GA4 + Search Console receiving live data"},
-    {t:"Request indexing of key pages in Search Console"},
-    {t:"Final backup of the launched site"},
-    {t:"Add site to MainWP dashboard", tag:"once", h:"Optional, as you scale."},
+  {id:"7",title:"Hand Off to Devs",items:[
+    {t:"Confirm all plugins are installed but UNCONFIGURED",h:"AIOSEO, WPConsent, Seraphinite, UpdraftPlus are all dev tasks."},
+    {t:"Send dev access + handoff recap + the Developer Checklist",h:"URL (temp or domain), username, password (separately). Security lockdown is post-launch so devs aren't locked out."},
   ]},
 ];
-
-const STORE_KEY = "kz_checklist_v1";
-const CHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-const CHEV  = `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
-const TAGS = {off:`<span class="tag tag-off">leave off</span>`, crit:`<span class="tag tag-crit">critical</span>`, once:`<span class="tag tag-once">when applicable</span>`};
-
-let store = loadStore();
-let current = store.lastClient || "";
-
-function loadStore(){
-  try{ return JSON.parse(localStorage.getItem(STORE_KEY)) || {clients:{},lastClient:""}; }
-  catch(e){ return {clients:{},lastClient:""}; }
-}
-function saveStore(){
-  try{ localStorage.setItem(STORE_KEY, JSON.stringify(store)); flashSaved(); }
-  catch(e){ /* sandbox: saving disabled */ }
-}
-function stateFor(name){
-  if(!store.clients[name]) store.clients[name] = {};
-  return store.clients[name];
-}
-
-const totalItems = DATA.reduce((n,s)=>n+s.items.length,0);
-
-function render(){
-  const root = document.getElementById("sections");
-  root.innerHTML = "";
-  DATA.forEach((sec,si)=>{
-    const el = document.createElement("section");
-    el.className = "section" + (si===0 ? " open":"");
-    el.dataset.sec = sec.id;
-    el.innerHTML = `
-      <div class="section-head" role="button" tabindex="0" aria-expanded="${si===0}">
-        <span class="sec-letter">${sec.id}</span>
-        <h2 class="sec-title">${sec.title}</h2>
-        <span class="sec-count" data-count="${sec.id}">0/${sec.items.length}</span>
-        ${CHEV}
-      </div>
-      <div class="items">
-        ${sec.items.map((it,ii)=>{
-          const id = `${sec.id}-${ii}`;
-          return `<label class="item" data-id="${id}">
-            <input type="checkbox" id="${id}">
-            <span class="box">${CHECK}</span>
-            <span class="label-wrap">
-              <span class="label-main">${it.t}${it.tag?TAGS[it.tag]:""}</span>
-              ${it.h?`<span class="label-hint">${it.h}</span>`:""}
-            </span>
-          </label>`;
-        }).join("")}
-      </div>`;
-    root.appendChild(el);
-
-    const head = el.querySelector(".section-head");
-    head.addEventListener("click", ()=>toggleSection(el,head));
-    head.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleSection(el,head);} });
-  });
-
-  root.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
-    cb.addEventListener("change", onCheck);
-  });
-  applyState();
-}
-
-function toggleSection(el,head){
-  el.classList.toggle("open");
-  head.setAttribute("aria-expanded", el.classList.contains("open"));
-}
-
-function onCheck(e){
-  const st = stateFor(current || "Untitled site");
-  if(!current){ current = "Untitled site"; document.getElementById("client").value = current; }
-  if(e.target.checked) st[e.target.id]=true; else delete st[e.target.id];
-  store.lastClient = current;
-  saveStore();
-  refreshClientList();
-  applyState();
-}
-
-function applyState(){
-  const st = current ? (store.clients[current]||{}) : {};
-  let done=0;
-  document.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
-    const on = !!st[cb.id];
-    cb.checked = on;
-    cb.closest(".item").classList.toggle("checked", on);
-    if(on) done++;
-  });
-  // per-section counts
-  DATA.forEach(sec=>{
-    let d=0;
-    sec.items.forEach((_,ii)=>{ if(st[`${sec.id}-${ii}`]) d++; });
-    const badge = document.querySelector(`[data-count="${sec.id}"]`);
-    badge.textContent = `${d}/${sec.items.length}`;
-    badge.classList.toggle("done", d===sec.items.length);
-    badge.closest(".section").classList.toggle("complete", d===sec.items.length && sec.items.length>0);
-  });
-  const pct = totalItems? Math.round(done/totalItems*100):0;
-  document.getElementById("fill").style.width = pct+"%";
-  document.getElementById("pctNum").textContent = pct+"%";
-  document.getElementById("countNum").textContent = `${done}/${totalItems}`;
-}
-
-function refreshClientList(){
-  const dl = document.getElementById("clientlist");
-  dl.innerHTML = Object.keys(store.clients).map(n=>`<option value="${n.replace(/"/g,'&quot;')}">`).join("");
-}
-
-let flagT;
-function flashSaved(){
-  const f = document.getElementById("saveFlag");
-  f.classList.add("show");
-  clearTimeout(flagT);
-  flagT = setTimeout(()=>f.classList.remove("show"),1100);
-}
-
-// ---- controls ----
-const clientInput = document.getElementById("client");
-clientInput.value = current;
-clientInput.addEventListener("change",()=>{
-  current = clientInput.value.trim();
-  store.lastClient = current;
-  saveStore();
-  applyState();
-});
-
-document.getElementById("newBtn").addEventListener("click",()=>{
-  current = "";
-  clientInput.value = "";
-  clientInput.focus();
-  applyState();
-});
-
-document.getElementById("resetBtn").addEventListener("click",()=>{
-  if(!current){ alert("Pick a client first."); return; }
-  if(confirm(`Clear all checks for "${current}"?`)){
-    store.clients[current] = {};
-    saveStore();
-    applyState();
-  }
-});
-
+const STORE_KEY="kz_staging_v3";
+const CHECK=`<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+const CHEV=`<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+let store=loadStore();let current=store.lastClient||"";
+function loadStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY))||{clients:{},lastClient:""};}catch(e){return{clients:{},lastClient:""};}}
+function saveStore(){try{localStorage.setItem(STORE_KEY,JSON.stringify(store));flashSaved();}catch(e){}}
+function recFor(n){if(!store.clients[n])store.clients[n]={checks:{},routes:Object.assign({},DEFAULT_ROUTES)};if(!store.clients[n].checks)store.clients[n].checks={};if(!store.clients[n].routes)store.clients[n].routes=Object.assign({},DEFAULT_ROUTES);return store.clients[n];}
+function curRoutes(){return current?recFor(current).routes:DEFAULT_ROUTES;}
+function curChecks(){return current?recFor(current).checks:{};}
+function buildRoutes(){const box=document.getElementById("routeBox");ROUTEDEF.forEach(g=>{const row=document.createElement("div");row.className="route-grp";row.innerHTML=`<span class="glabel">${g.label}</span>`;const seg=document.createElement("div");seg.className="seg";g.options.forEach(o=>{const b=document.createElement("button");b.type="button";b.textContent=o.t;b.dataset.group=g.group;b.dataset.val=o.v;b.addEventListener("click",()=>{if(!current){current="Untitled site";document.getElementById("client").value=current;}recFor(current).routes[g.group]=o.v;store.lastClient=current;saveStore();syncRouteButtons();applyVisibility();applyState();});seg.appendChild(b);});row.appendChild(seg);box.appendChild(row);});}
+function syncRouteButtons(){const r=curRoutes();document.querySelectorAll("#routeBox .seg button").forEach(b=>{b.classList.toggle("on",r[b.dataset.group]===b.dataset.val);});}
+function render(){const root=document.getElementById("sections");root.innerHTML="";DATA.forEach((sec,si)=>{const el=document.createElement("section");el.className="section"+(si===0?" open":"");el.dataset.sec=sec.id;el.innerHTML=`<div class="section-head" role="button" tabindex="0" aria-expanded="${si===0}"><span class="sec-letter">${sec.id}</span><h2 class="sec-title">${sec.title}</h2><span class="sec-count" data-count="${sec.id}">0/0</span>${CHEV}</div><div class="items">${sec.items.map((it,ii)=>{const id=`${sec.id}-${ii}`;const when=it.when?` data-when='${JSON.stringify(it.when)}'`:"";return `<label class="item" data-id="${id}"${when}><input type="checkbox" id="${id}"><span class="box">${CHECK}</span><span class="label-wrap"><span class="label-main">${it.t}${it.when?`<span class="tag tag-route">${it.when[0].split(":")[1]}</span>`:""}</span>${it.h?`<span class="label-hint">${it.h}</span>`:""}</span></label>`;}).join("")}</div>`;root.appendChild(el);const head=el.querySelector(".section-head");head.addEventListener("click",()=>toggle(el,head));head.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle(el,head);}});});root.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener("change",onCheck));}
+function toggle(el,head){el.classList.toggle("open");head.setAttribute("aria-expanded",el.classList.contains("open"));}
+function matches(w){if(!w)return true;const r=curRoutes();let a;try{a=JSON.parse(w);}catch(e){return true;}return a.every(tok=>{const[g,v]=tok.split(":");return r[g]===v;});}
+function applyVisibility(){document.querySelectorAll(".item").forEach(it=>{it.classList.toggle("hide",!matches(it.getAttribute("data-when")));});document.querySelectorAll(".section").forEach(sec=>{const vis=[...sec.querySelectorAll(".item")].some(i=>!i.classList.contains("hide"));sec.classList.toggle("hide",!vis);});}
+function onCheck(e){if(!current){current="Untitled site";document.getElementById("client").value=current;}const ch=recFor(current).checks;if(e.target.checked)ch[e.target.id]=true;else delete ch[e.target.id];store.lastClient=current;saveStore();refreshList();applyState();}
+function applyState(){const ch=curChecks();let done=0,total=0;document.querySelectorAll('.item').forEach(it=>{const cb=it.querySelector('input');const on=!!ch[cb.id];cb.checked=on;it.classList.toggle("checked",on);if(!it.classList.contains("hide")){total++;if(on)done++;}});DATA.forEach(sec=>{let d=0,t=0;sec.items.forEach((_,ii)=>{const it=document.querySelector(`.item[data-id="${sec.id}-${ii}"]`);if(it&&!it.classList.contains("hide")){t++;if(ch[`${sec.id}-${ii}`])d++;}});const b=document.querySelector(`[data-count="${sec.id}"]`);b.textContent=`${d}/${t}`;b.classList.toggle("done",t>0&&d===t);b.closest(".section").classList.toggle("complete",t>0&&d===t);});const pct=total?Math.round(done/total*100):0;document.getElementById("fill").style.width=pct+"%";document.getElementById("pctNum").textContent=pct+"%";document.getElementById("countNum").textContent=`${done}/${total}`;}
+function refreshList(){document.getElementById("clientlist").innerHTML=Object.keys(store.clients).map(n=>`<option value="${n.replace(/"/g,'&quot;')}">`).join("");}
+let ft;function flashSaved(){const f=document.getElementById("saveFlag");f.classList.add("show");clearTimeout(ft);ft=setTimeout(()=>f.classList.remove("show"),1100);}
+const ci=document.getElementById("client");ci.value=current;
+ci.addEventListener("change",()=>{current=ci.value.trim();store.lastClient=current;saveStore();syncRouteButtons();applyVisibility();applyState();});
+document.getElementById("newBtn").addEventListener("click",()=>{current="";ci.value="";ci.focus();syncRouteButtons();applyVisibility();applyState();});
+document.getElementById("resetBtn").addEventListener("click",()=>{if(!current){alert("Pick a site first.");return;}if(confirm(`Clear all checks for "${current}"? (Route choices stay.)`)){recFor(current).checks={};saveStore();applyState();}});
 document.getElementById("printBtn").addEventListener("click",()=>window.print());
-
-render();
-refreshClientList();
+buildRoutes();render();syncRouteButtons();applyVisibility();applyState();refreshList();
 </script>
 </body>
 </html>
