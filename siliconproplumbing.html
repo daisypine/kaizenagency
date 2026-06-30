@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silicon Pro Plumbing — Project Status</title>
+<style>
+  :root{
+    --ink:#14160F;
+    --ink-soft:#5C6052;
+    --paper:#F4F5EF;
+    --surface:#FFFFFF;
+    --line:#E4E6DB;
+    --lime:#C3E84C;
+    --lime-deep:#7E9C1F;
+    --done-bg:#F4F8E3;
+    --shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);
+    --radius:14px;
+    --warn:#B5532E;
+    --warn-bg:#FBEEE6;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .topbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:var(--ink);
+    color:#fff;
+    border-bottom:3px solid var(--lime);
+  }
+  .topbar-inner{
+    max-width:1040px;
+    margin:0 auto;
+    padding:14px 22px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:14px 18px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-right:auto;
+  }
+  .pill{
+    display:inline-block;
+    background:#fff;
+    color:var(--ink);
+    font-weight:800;
+    letter-spacing:.04em;
+    font-size:12px;
+    padding:5px 11px;
+    border-radius:999px;
+    border:2px solid var(--ink);
+    box-shadow:0 2px 0 var(--lime);
+  }
+  .brand h1{font-size:15px;font-weight:700;margin:0}
+  .brand .eyebrow{
+    display:block;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--lime);
+    margin-bottom:1px;
+  }
+
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tab-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid #3a3e30;
+    background:#1f221a;
+    color:#fff;
+    font-family:inherit;
+    font-size:13px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:9px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:border-color .15s, background .15s;
+  }
+  .tab-btn:hover{border-color:var(--lime);background:#272a20}
+  .tab-btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+  .tab-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+  .tab-btn .ext{
+    font-size:10px;
+    opacity:.5;
+    font-weight:500;
+    letter-spacing:.04em;
+  }
+
+  main{
+    max-width:1040px;
+    margin:0 auto;
+    padding:32px 22px 80px;
+  }
+
+  .summary{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:28px 30px;
+    margin-bottom:24px;
+  }
+  .summary-eyebrow{
+    display:block;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--lime-deep);
+    font-weight:800;
+    margin-bottom:8px;
+  }
+  .summary h2{
+    font-size:24px;
+    font-weight:700;
+    margin:0 0 24px;
+    letter-spacing:-.01em;
+  }
+  .summary-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    padding-top:24px;
+  }
+  .stat{
+    padding:0 18px;
+    border-right:1px solid var(--line);
+  }
+  .stat:first-child{padding-left:0}
+  .stat:last-child{border-right:none;padding-right:0}
+  .stat .num{
+    font-size:36px;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:6px;
+    color:var(--ink);
+    letter-spacing:-.02em;
+  }
+  .stat .num .total{
+    font-size:18px;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  .stat .lbl{
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+  }
+
+  .section{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .section.warn{border-color:#e3c7bb}
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:18px 22px;
+    cursor:pointer;
+    user-select:none;
+    border-bottom:1px solid transparent;
+  }
+  .section.open .section-head{border-bottom-color:var(--line)}
+  .sec-letter{
+    flex:none;
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    display:grid;
+    place-items:center;
+    background:var(--ink);
+    color:var(--lime);
+    font-weight:800;
+    font-size:15px;
+  }
+  .section.warn .sec-letter{background:var(--warn);color:#fff}
+  .sec-title{
+    flex:1;
+    font-weight:700;
+    font-size:16px;
+    margin:0;
+  }
+  .chev{
+    flex:none;
+    width:18px;
+    height:18px;
+    color:var(--ink-soft);
+    transition:transform .2s;
+  }
+  .section.open .chev{transform:rotate(90deg)}
+  .sec-body{
+    padding:6px 22px 22px;
+    display:none;
+  }
+  .section.open .sec-body{display:block}
+
+  .process{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:0;
+    margin:12px 0 16px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .proc-step{
+    padding:14px 12px;
+    text-align:center;
+    background:var(--surface);
+    border-right:1px solid var(--line);
+  }
+  .proc-step:last-child{border-right:none}
+  .proc-step.active{
+    background:var(--ink);
+    color:#fff;
+  }
+  .proc-step.active .step-num{color:var(--lime)}
+  .proc-step.done{background:var(--done-bg)}
+  .proc-step.done .step-num{color:var(--lime-deep)}
+  .step-num{
+    display:block;
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .step-name{font-size:12.5px;font-weight:600}
+  .process-note{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-bottom:18px;
+  }
+
+  .build-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:18px;
+  }
+  .buildcol{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    background:var(--surface);
+  }
+  .buildcol.done{border-left:4px solid var(--lime-deep)}
+  .buildcol.next{border-left:4px solid var(--warn)}
+  .buildcol h3{
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 4px;
+  }
+  .buildcol .sub{
+    font-size:10px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .buildcol ul{list-style:none;padding:0;margin:0}
+  .buildcol li{
+    padding:7px 0;
+    border-bottom:0.5px solid var(--line);
+    font-size:13.5px;
+  }
+  .buildcol li:last-child{border-bottom:none}
+  .buildcol li .url{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12.5px;
+    color:var(--ink);
+  }
+  .buildcol li.dash .url::before{
+    content:"— ";
+    color:var(--ink-soft);
+  }
+  .buildcol li .note{
+    display:block;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-top:3px;
+  }
+
+  .templates{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-top:8px;
+  }
+  .template{
+    background:var(--done-bg);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px;
+    text-align:left;
+  }
+  .template .num{
+    font-size:22px;
+    font-weight:800;
+    color:var(--lime-deep);
+    letter-spacing:-.02em;
+    line-height:1;
+    margin-bottom:8px;
+    display:block;
+  }
+  .template h4{
+    margin:0 0 4px;
+    font-size:13.5px;
+    font-weight:700;
+  }
+  .template .used{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.4;
+  }
+
+  .qa-list{list-style:none;padding:0;margin:0}
+  .qa-list li{
+    padding:10px 0;
+    padding-left:22px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    line-height:1.5;
+  }
+  .qa-list li:last-child{border-bottom:none}
+  .qa-list li::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:18px;
+    width:12px;
+    height:1.5px;
+    background:var(--warn);
+  }
+  .qa-list li strong{font-weight:700;color:var(--ink)}
+  .qa-list li code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12.5px;
+    background:rgba(0,0,0,.06);
+    padding:1px 6px;
+    border-radius:4px;
+  }
+
+  @media (max-width:760px){
+    .summary-stats{grid-template-columns:1fr;border-top:none}
+    .stat{
+      padding:18px 0;
+      border-right:none;
+      border-bottom:1px solid var(--line);
+    }
+    .stat:last-child{border-bottom:none}
+    .process{grid-template-columns:1fr}
+    .proc-step{border-right:none;border-bottom:1px solid var(--line)}
+    .proc-step:last-child{border-bottom:none}
+    .build-cols,.templates{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="pill">SILICON PRO</span>
+      <div>
+        <span class="eyebrow">Web Build · Status</span>
+        <h1>Project Dashboard</h1>
+      </div>
+    </div>
+    <div class="tabs">
+      <a class="tab-btn" href="https://www.siliconproplumbing.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1m4 0h1M9 13h1m4 0h1M9 17h6"/></svg>
+        Business Info <span class="ext">↗</span>
+      </a>
+      <a class="tab-btn" href="https://docs.google.com/spreadsheets/d/1HeycJ9SctDezeph5Xb3JovAA0UZ05otVb-t4wpbAs50/edit?usp=sharing" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Sitemap <span class="ext">↗ Sheets</span>
+      </a>
+      <a class="tab-btn" href="https://www.figma.com/design/TBBxMjEdmeyVfgxE1ujbS4/Silicon-Pro?node-id=0-1&p=f&t=3IepnA9PxEnao5Jj-0" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M5 5h7v14H8.5a3.5 3.5 0 010-7H5a3.5 3.5 0 010-7zm14 3.5A3.5 3.5 0 0115.5 12H12V5h3.5A3.5 3.5 0 0119 8.5z"/></svg>
+        Figma <span class="ext">↗ Designs</span>
+      </a>
+      <a class="tab-btn" href="https://daisypine.github.io/kaizenagency/developer" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Dev Checklist <span class="ext">↗</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="summary">
+    <span class="summary-eyebrow">Currently Active</span>
+    <h2>Phase 1 — Foundation Build</h2>
+    <div class="summary-stats">
+      <div class="stat">
+        <div class="num">109</div>
+        <div class="lbl">Page Sitemap</div>
+      </div>
+      <div class="stat">
+        <div class="num">11<span class="total">/17</span></div>
+        <div class="lbl">Phase 1 Built</div>
+      </div>
+      <div class="stat">
+        <div class="num">6</div>
+        <div class="lbl">Design Templates</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section open">
+    <div class="section-head" onclick="toggleSection(this)">
+      <span class="sec-letter">1</span>
+      <h3 class="sec-title">Phase 1 Build Process</h3>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="sec-body">
+      <div class="process">
+        <div class="proc-step done">
+          <span class="step-num">01</span>
+          <div class="step-name">Design Homepage</div>
+        </div>
+        <div class="proc-step active">
+          <span class="step-num">02</span>
+          <div class="step-name">Design Inner Pages</div>
+        </div>
+        <div class="proc-step">
+          <span class="step-num">03</span>
+          <div class="step-name">Dev / Plugin Stack</div>
+        </div>
+        <div class="proc-step">
+          <span class="step-num">04</span>
+          <div class="step-name">QA</div>
+        </div>
+        <div class="proc-step">
+          <span class="step-num">05</span>
+          <div class="step-name">Handoff to Daisy</div>
+        </div>
+      </div>
+      <p class="process-note">Currently in step 2 — designing inner pages alongside copy production.</p>
+
+      <div class="build-cols">
+        <div class="buildcol done">
+          <h3>Developed</h3>
+          <div class="sub">Live on staging</div>
+          <ul>
+            <li class="dash"><span class="url">/</span></li>
+            <li class="dash"><span class="url">/contact-us/</span></li>
+            <li class="dash"><span class="url">/plumbing-services/</span></li>
+            <li class="dash"><span class="url">/plumbing-services/water-softeners/</span><span class="note">Should be nested under /residential-plumbing/</span></li>
+            <li class="dash"><span class="url">/residential-plumbing/</span></li>
+            <li class="dash"><span class="url">/service-areas/</span></li>
+            <li class="dash"><span class="url">/sunnyvale-plumber/</span><span class="note">Should nest under /service-areas/</span></li>
+            <li class="dash"><span class="url">/privacy-policy/</span></li>
+            <li class="dash"><span class="url">/terms-and-conditions/</span></li>
+            <li class="dash"><span class="url">/cookie-policy/</span></li>
+            <li class="dash"><span class="url">/sample-page/</span><span class="note">Default WP page — remove before launch</span></li>
+          </ul>
+        </div>
+
+        <div class="buildcol next">
+          <h3>Next Up</h3>
+          <div class="sub">To complete Phase 1</div>
+          <ul>
+            <li class="dash"><span class="url">/medical-gas/</span></li>
+            <li class="dash"><span class="url">/about/</span></li>
+            <li class="dash"><span class="url">/resources/faqs/</span><span class="note">May not need custom design — text-based template</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section open">
+    <div class="section-head" onclick="toggleSection(this)">
+      <span class="sec-letter">2</span>
+      <h3 class="sec-title">Design Templates</h3>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="sec-body">
+      <div class="templates">
+        <div class="template">
+          <span class="num">01</span>
+          <h4>Homepage</h4>
+          <div class="used">Home only</div>
+        </div>
+        <div class="template">
+          <span class="num">02</span>
+          <h4>Service Hub</h4>
+          <div class="used">All pillar pages</div>
+        </div>
+        <div class="template">
+          <span class="num">03</span>
+          <h4>Service Page</h4>
+          <div class="used">All individual services</div>
+        </div>
+        <div class="template">
+          <span class="num">04</span>
+          <h4>Service Area Hub</h4>
+          <div class="used">/service-areas/ overview</div>
+        </div>
+        <div class="template">
+          <span class="num">05</span>
+          <h4>Service Area Page</h4>
+          <div class="used">Individual city pages</div>
+        </div>
+        <div class="template">
+          <span class="num">06</span>
+          <h4>Content</h4>
+          <div class="used">FAQs, blog, articles, compliance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section warn open">
+    <div class="section-head" onclick="toggleSection(this)">
+      <span class="sec-letter">3</span>
+      <h3 class="sec-title">QA Flags — Needs Review</h3>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="sec-body">
+      <ul class="qa-list">
+        <li><strong>Water softeners URL:</strong> Live at <code>/plumbing-services/water-softeners/</code> but should be <code>/residential-plumbing/water-softeners/</code>. Decide canonical, set 301 redirect.</li>
+        <li><strong>Sunnyvale page URL:</strong> Live at <code>/sunnyvale-plumber/</code> but should nest under <code>/service-areas/sunnyvale-plumber/</code>. Fix slug, set 301 redirect.</li>
+        <li><strong>Contact slug:</strong> Live as <code>/contact-us/</code> — sitemap calls for <code>/contact/</code>. Pick one.</li>
+        <li><strong>Terms slug:</strong> Live as <code>/terms-and-conditions/</code> — sitemap calls for <code>/terms-of-service/</code>. Pick one.</li>
+        <li><strong>Sample page:</strong> <code>/sample-page/</code> still live — remove before production.</li>
+        <li><strong>"-services" suffix cleanup:</strong> Top-level service categories drop the suffix going forward — <code>/medical-gas/</code> not <code>/medical-gas-services/</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<script>
+function toggleSection(head){
+  head.parentElement.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
