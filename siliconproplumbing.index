@@ -205,6 +205,169 @@
     color:var(--ink);
   }
 
+  /* ====== THIS WEEK ====== */
+  .this-week{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px 28px;
+    margin-bottom:24px;
+  }
+  .tw-header{margin-bottom:20px}
+  .tw-eyebrow{
+    display:block;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--lime-deep);
+    font-weight:800;
+    margin-bottom:4px;
+  }
+  .tw-header h2{
+    font-size:20px;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-.005em;
+  }
+  .tw-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .tw-person{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px 18px 16px;
+    background:var(--paper);
+  }
+  .tw-person-header{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:12px;
+  }
+  .tw-name-badge{
+    width:32px;
+    height:32px;
+    border-radius:8px;
+    display:grid;
+    place-items:center;
+    background:var(--ink);
+    color:var(--lime);
+    font-weight:800;
+    font-size:13px;
+    flex:none;
+  }
+  .tw-person-header h3{
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 2px;
+  }
+  .tw-role{
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+  }
+  .tw-tasks{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .tw-task{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:9px 0;
+    border-bottom:0.5px solid var(--line);
+    font-size:13.5px;
+    line-height:1.4;
+  }
+  .tw-task:last-child{border-bottom:none}
+  .tw-task-icon{
+    flex:none;
+    width:18px;
+    height:18px;
+    border-radius:5px;
+    margin-top:2px;
+    position:relative;
+  }
+  .tw-task.todo .tw-task-icon{
+    border:2px solid #c5c8ba;
+    background:#fff;
+  }
+  .tw-task.progress .tw-task-icon{
+    background:var(--ink);
+    border:2px solid var(--ink);
+  }
+  .tw-task.progress .tw-task-icon::after{
+    content:'';
+    position:absolute;
+    inset:3px;
+    background:var(--lime);
+    border-radius:2px;
+  }
+  .tw-task.done .tw-task-icon{
+    background:var(--lime);
+    border:2px solid var(--lime-deep);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314160F' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:10px;
+  }
+  .tw-task-content{flex:1}
+  .tw-task-title{
+    font-weight:600;
+    color:var(--ink);
+  }
+  .tw-task.done .tw-task-title{color:var(--ink-soft)}
+  .tw-task-meta{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.45;
+    margin-top:2px;
+  }
+  .tw-notes{
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px dashed var(--line);
+  }
+  .tw-notes-label{
+    display:block;
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:800;
+    margin-bottom:8px;
+  }
+  .tw-notes ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .tw-notes li{
+    padding:6px 0 6px 18px;
+    position:relative;
+    font-size:13px;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .tw-notes li::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:14px;
+    width:10px;
+    height:1.5px;
+    background:var(--ink-soft);
+  }
+  .tw-notes li b{color:var(--ink);font-weight:700}
+
   /* ====== PROCESS STEP (accordion) ====== */
   .step{
     background:var(--surface);
@@ -609,6 +772,7 @@
     .stat:last-child{border-bottom:none}
     .templates,.plugin-grid{grid-template-columns:1fr}
     .step-head{flex-wrap:wrap}
+    .tw-grid{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none !important;scroll-behavior:auto}
@@ -676,6 +840,92 @@
         <div class="num">6</div>
         <div class="lbl">Design Templates</div>
       </div>
+    </div>
+  </div>
+
+  <!-- ====== THIS WEEK ====== -->
+  <div class="this-week">
+    <div class="tw-header">
+      <span class="tw-eyebrow">This Week</span>
+      <h2>Active focus</h2>
+    </div>
+
+    <div class="tw-grid">
+
+      <div class="tw-person">
+        <div class="tw-person-header">
+          <span class="tw-name-badge">D</span>
+          <div>
+            <h3>Daisy</h3>
+            <div class="tw-role">Strategy &amp; Copy</div>
+          </div>
+        </div>
+        <ul class="tw-tasks">
+          <li class="tw-task todo">
+            <span class="tw-task-icon"></span>
+            <div class="tw-task-content">
+              <div class="tw-task-title">Provide About page copy</div>
+              <div class="tw-task-meta">Hand off to Basil</div>
+            </div>
+          </li>
+          <li class="tw-task todo">
+            <span class="tw-task-icon"></span>
+            <div class="tw-task-content">
+              <div class="tw-task-title">Get new photos from client</div>
+              <div class="tw-task-meta">Waiting on Felipe for fresh imagery</div>
+            </div>
+          </li>
+          <li class="tw-task done">
+            <span class="tw-task-icon"></span>
+            <div class="tw-task-content">
+              <div class="tw-task-title">Design notes for Basil</div>
+              <div class="tw-task-meta">Logged in Copy + Design Notes doc</div>
+            </div>
+          </li>
+          <li class="tw-task progress">
+            <span class="tw-task-icon"></span>
+            <div class="tw-task-content">
+              <div class="tw-task-title">Plan post-development cleanup</div>
+              <div class="tw-task-meta">Site hygiene, plugin config, anything else needing cleanup before launch</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tw-person">
+        <div class="tw-person-header">
+          <span class="tw-name-badge">B</span>
+          <div>
+            <h3>Basil</h3>
+            <div class="tw-role">Development</div>
+          </div>
+        </div>
+        <ul class="tw-tasks">
+          <li class="tw-task progress">
+            <span class="tw-task-icon"></span>
+            <div class="tw-task-content">
+              <div class="tw-task-title">Mobile responsiveness</div>
+              <div class="tw-task-meta">Pass on all built Phase 1 pages</div>
+            </div>
+          </li>
+          <li class="tw-task progress">
+            <span class="tw-task-icon"></span>
+            <div class="tw-task-content">
+              <div class="tw-task-title">Quality assurance walkthrough</div>
+              <div class="tw-task-meta">Working through the Step 4 QA checklist</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="tw-notes">
+      <span class="tw-notes-label">Notes</span>
+      <ul>
+        <li>Links don't need to be fully wired up yet — <b>we'll be transferring the domain soon</b>, so external links and redirects can wait.</li>
+        <li><b>Basil</b> — flag anything I'm missing or anything you need from me to keep moving.</li>
+      </ul>
     </div>
   </div>
 
