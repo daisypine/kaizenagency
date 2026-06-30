@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silicon Pro Plumbing — Project Status</title>
+<style>
+  :root{
+    --ink:#14160F;
+    --ink-soft:#5C6052;
+    --paper:#F4F5EF;
+    --surface:#FFFFFF;
+    --line:#E4E6DB;
+    --lime:#C3E84C;
+    --lime-deep:#7E9C1F;
+    --done-bg:#F4F8E3;
+    --shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);
+    --radius:14px;
+    --warn:#B5532E;
+    --warn-bg:#FBEEE6;
+    --pending:#A8AC9C;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ====== TOPBAR ====== */
+  .topbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:var(--ink);
+    color:#fff;
+    border-bottom:3px solid var(--lime);
+  }
+  .topbar-inner{
+    max-width:1040px;
+    margin:0 auto;
+    padding:14px 22px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:14px 18px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-right:auto;
+  }
+  .pill{
+    display:inline-block;
+    background:#fff;
+    color:var(--ink);
+    font-weight:800;
+    letter-spacing:.04em;
+    font-size:12px;
+    padding:5px 11px;
+    border-radius:999px;
+    border:2px solid var(--ink);
+    box-shadow:0 2px 0 var(--lime);
+  }
+  .brand h1{font-size:15px;font-weight:700;margin:0}
+  .brand .eyebrow{
+    display:block;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--lime);
+    margin-bottom:1px;
+  }
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tab-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid #3a3e30;
+    background:#1f221a;
+    color:#fff;
+    font-family:inherit;
+    font-size:13px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:9px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:border-color .15s, background .15s;
+  }
+  .tab-btn:hover{border-color:var(--lime);background:#272a20}
+  .tab-btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+  .tab-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+  .tab-btn .ext{
+    font-size:10px;
+    opacity:.5;
+    font-weight:500;
+    letter-spacing:.04em;
+  }
+
+  main{
+    max-width:1040px;
+    margin:0 auto;
+    padding:32px 22px 80px;
+  }
+
+  /* ====== INTRO NOTE ====== */
+  .intro-note{
+    background:var(--done-bg);
+    border:1px solid var(--line);
+    border-left:4px solid var(--lime-deep);
+    border-radius:var(--radius);
+    padding:20px 24px;
+    margin-bottom:24px;
+  }
+  .intro-note .label{
+    display:block;
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--lime-deep);
+    font-weight:800;
+    margin-bottom:6px;
+  }
+  .intro-note p{
+    margin:0;
+    font-size:14px;
+    color:var(--ink);
+    line-height:1.55;
+    max-width:780px;
+  }
+  .intro-note p b{font-weight:700}
+
+  /* ====== SUMMARY ====== */
+  .summary{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:28px 30px;
+    margin-bottom:24px;
+  }
+  .summary-eyebrow{
+    display:block;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--lime-deep);
+    font-weight:800;
+    margin-bottom:8px;
+  }
+  .summary h2{
+    font-size:24px;
+    font-weight:700;
+    margin:0 0 24px;
+    letter-spacing:-.01em;
+  }
+  .summary-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    padding-top:24px;
+  }
+  .stat{
+    padding:0 18px;
+    border-right:1px solid var(--line);
+  }
+  .stat:first-child{padding-left:0}
+  .stat:last-child{border-right:none;padding-right:0}
+  .stat .num{
+    font-size:36px;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:6px;
+    color:var(--ink);
+    letter-spacing:-.02em;
+  }
+  .stat .num .total{
+    font-size:18px;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  .stat .lbl{
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:700;
+  }
+
+  /* ====== SECTION HEADERS ====== */
+  .section-title{
+    font-size:18px;
+    font-weight:700;
+    margin:32px 0 14px;
+    letter-spacing:-.005em;
+    color:var(--ink);
+  }
+
+  /* ====== PROCESS STEP (accordion) ====== */
+  .step{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  .step.active{border-color:var(--ink)}
+  .step-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:18px 22px;
+    cursor:pointer;
+    user-select:none;
+    border-bottom:1px solid transparent;
+  }
+  .step.open .step-head{border-bottom-color:var(--line)}
+  .step-num{
+    flex:none;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    background:#e8eadc;
+    color:var(--ink-soft);
+    font-weight:800;
+    font-size:14px;
+    transition:all .15s;
+  }
+  .step.done .step-num{
+    background:var(--lime);
+    color:var(--ink);
+  }
+  .step.done .step-num::before{
+    content:'';
+    width:18px;
+    height:14px;
+    background:none;
+    border:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314160F' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+  }
+  .step.done .step-num-text{display:none}
+  .step.active .step-num{
+    background:var(--ink);
+    color:var(--lime);
+  }
+  .step-title{
+    flex:1;
+    font-weight:700;
+    font-size:16px;
+    margin:0;
+  }
+  .step-status{
+    font-size:10.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:800;
+    padding:4px 9px;
+    border-radius:5px;
+    background:#eef0e3;
+    color:var(--ink-soft);
+  }
+  .step.done .step-status{
+    background:var(--done-bg);
+    color:var(--lime-deep);
+  }
+  .step.active .step-status{
+    background:var(--ink);
+    color:var(--lime);
+  }
+  .chev{
+    flex:none;
+    width:18px;
+    height:18px;
+    color:var(--ink-soft);
+    transition:transform .2s;
+  }
+  .step.open .chev{transform:rotate(90deg)}
+  .step-body{
+    padding:8px 22px 22px;
+    display:none;
+  }
+  .step.open .step-body{display:block}
+
+  /* ====== STEP CONTENT: brief text ====== */
+  .step-body p.lead{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:8px 0 18px;
+    line-height:1.55;
+    max-width:680px;
+  }
+  .step-body p.lead b{color:var(--ink);font-weight:700}
+
+  /* ====== TEMPLATES GRID ====== */
+  .templates{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+  }
+  .template{
+    background:var(--done-bg);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px;
+  }
+  .template .num{
+    display:block;
+    font-size:22px;
+    font-weight:800;
+    color:var(--lime-deep);
+    letter-spacing:-.02em;
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .template h4{
+    margin:0 0 4px;
+    font-size:13.5px;
+    font-weight:700;
+  }
+  .template .used{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.4;
+  }
+
+  /* ====== PLUGIN STACK ====== */
+  .plugin-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+    margin-bottom:22px;
+  }
+  .plugin{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:3px solid var(--lime-deep);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+  .plugin.last{
+    border-left-color:var(--warn);
+    background:var(--warn-bg);
+  }
+  .plugin-icon{
+    flex:none;
+    width:30px;
+    height:30px;
+    border-radius:7px;
+    display:grid;
+    place-items:center;
+    background:var(--ink);
+    color:var(--lime);
+    font-size:11px;
+    font-weight:800;
+  }
+  .plugin.last .plugin-icon{background:var(--warn);color:#fff}
+  .plugin-name{
+    font-size:13px;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:2px;
+  }
+  .plugin-role{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    line-height:1.35;
+  }
+  .plugin-flag{
+    display:inline-block;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    background:var(--warn);
+    color:#fff;
+    padding:2px 6px;
+    border-radius:4px;
+    margin-left:6px;
+    vertical-align:middle;
+  }
+
+  /* ====== EMBEDDED CHECKLIST ====== */
+  .checklist-group{
+    margin-bottom:14px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    background:var(--surface);
+  }
+  .checklist-group.warn{border-color:#e3c7bb;background:var(--warn-bg)}
+  .checklist-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 14px;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    cursor:pointer;
+    user-select:none;
+  }
+  .checklist-group.warn .checklist-head{background:#f9e6da}
+  .checklist-letter{
+    flex:none;
+    width:24px;
+    height:24px;
+    border-radius:6px;
+    background:var(--ink);
+    color:var(--lime);
+    display:grid;
+    place-items:center;
+    font-size:11px;
+    font-weight:800;
+  }
+  .checklist-group.warn .checklist-letter{background:var(--warn);color:#fff}
+  .checklist-name{
+    flex:1;
+    font-size:13px;
+    font-weight:700;
+    margin:0;
+  }
+  .checklist-count{
+    font-size:11px;
+    font-weight:700;
+    color:var(--ink-soft);
+    font-variant-numeric:tabular-nums;
+  }
+  .checklist-count.done{color:var(--lime-deep)}
+  .checklist-items{
+    padding:6px 14px 12px;
+    display:none;
+  }
+  .checklist-group.open .checklist-items{display:block}
+  .check-item{
+    display:flex;
+    gap:11px;
+    align-items:flex-start;
+    padding:8px 6px;
+    border-radius:7px;
+    cursor:pointer;
+  }
+  .check-item:hover{background:rgba(0,0,0,.02)}
+  .check-item.checked{background:var(--done-bg)}
+  .check-item input{
+    position:absolute;
+    opacity:0;
+    width:1px;
+    height:1px;
+  }
+  .check-box{
+    flex:none;
+    margin-top:1px;
+    width:18px;
+    height:18px;
+    border-radius:5px;
+    border:2px solid #c5c8ba;
+    background:#fff;
+    display:grid;
+    place-items:center;
+    transition:all .15s;
+  }
+  .check-box svg{
+    width:11px;
+    height:11px;
+    opacity:0;
+    transform:scale(.6);
+    transition:all .15s;
+  }
+  .check-item.checked .check-box{
+    background:var(--lime);
+    border-color:var(--lime-deep);
+  }
+  .check-item.checked .check-box svg{
+    opacity:1;
+    transform:scale(1);
+  }
+  .check-label{
+    flex:1;
+    font-size:13px;
+    line-height:1.45;
+  }
+  .check-item.checked .check-label{color:var(--ink-soft)}
+  .check-hint{
+    display:block;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:3px;
+    line-height:1.45;
+  }
+
+  /* ====== HANDOFF ITEMS ====== */
+  .handoff-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .handoff-list li{
+    padding:10px 0 10px 28px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    line-height:1.5;
+  }
+  .handoff-list li:last-child{border-bottom:none}
+  .handoff-list li::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:13px;
+    width:18px;
+    height:18px;
+    border-radius:5px;
+    background:#eef0e3;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237E9C1F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'/%3E%3Cpolyline points='12 5 19 12 12 19'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:11px;
+  }
+
+  /* ====== NOTES SECTION (Daisy's notes) ====== */
+  .notes-section{
+    margin-top:40px;
+    padding-top:30px;
+    border-top:2px dashed var(--line);
+  }
+  .notes-eyebrow{
+    display:block;
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--warn);
+    font-weight:800;
+    margin-bottom:6px;
+  }
+  .notes-section h2{
+    font-size:18px;
+    font-weight:700;
+    margin:0 0 16px;
+  }
+  .qa-card{
+    background:var(--warn-bg);
+    border:1px solid #e3c7bb;
+    border-left:4px solid var(--warn);
+    border-radius:var(--radius);
+    padding:20px 24px;
+    margin-bottom:14px;
+  }
+  .qa-card h3{
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 14px;
+  }
+  .qa-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .qa-list li{
+    padding:10px 0 10px 22px;
+    position:relative;
+    border-bottom:1px solid rgba(181,83,46,.18);
+    font-size:13.5px;
+    line-height:1.5;
+  }
+  .qa-list li:last-child{border-bottom:none}
+  .qa-list li::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:18px;
+    width:12px;
+    height:1.5px;
+    background:var(--warn);
+  }
+  .qa-list li strong{font-weight:700;color:var(--ink)}
+  .qa-list li code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:12px;
+    background:rgba(0,0,0,.06);
+    padding:1px 5px;
+    border-radius:4px;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width:760px){
+    .summary-stats{grid-template-columns:1fr;border-top:none}
+    .stat{
+      padding:18px 0;
+      border-right:none;
+      border-bottom:1px solid var(--line);
+    }
+    .stat:last-child{border-bottom:none}
+    .templates,.plugin-grid{grid-template-columns:1fr}
+    .step-head{flex-wrap:wrap}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="pill">SILICON PRO</span>
+      <div>
+        <span class="eyebrow">Web Build · Status</span>
+        <h1>Project Dashboard</h1>
+      </div>
+    </div>
+    <div class="tabs">
+      <a class="tab-btn" href="https://www.siliconproplumbing.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1m4 0h1M9 13h1m4 0h1M9 17h6"/></svg>
+        Business Info <span class="ext">↗</span>
+      </a>
+      <a class="tab-btn" href="https://docs.google.com/spreadsheets/d/1AXDfEmYssjYnxG_dWO72h_nqUr_gyJbIapr4sdgQVgw/edit?usp=sharing" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Sitemap <span class="ext">↗ Sheets</span>
+      </a>
+      <a class="tab-btn" href="https://docs.google.com/document/d/1ZqZK8BZvQyd8n4VMd1VSgci33CTfFowV0lZzl-PnVT0/edit?usp=sharing" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/></svg>
+        Copy+Design Notes <span class="ext">↗ Doc</span>
+      </a>
+      <a class="tab-btn" href="https://www.figma.com/design/TBBxMjEdmeyVfgxE1ujbS4/Silicon-Pro?node-id=0-1&p=f&t=3IepnA9PxEnao5Jj-0" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M5 5h7v14H8.5a3.5 3.5 0 010-7H5a3.5 3.5 0 010-7zm14 3.5A3.5 3.5 0 0115.5 12H12V5h3.5A3.5 3.5 0 0119 8.5z"/></svg>
+        Figma <span class="ext">↗ Designs</span>
+      </a>
+      <a class="tab-btn" href="https://daisypine.github.io/kaizenagency/developer" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Dev Checklist <span class="ext">↗</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ====== INTRO NOTE FOR PM ====== -->
+  <div class="intro-note">
+    <span class="label">For the team</span>
+    <p>This dashboard tracks where we are in the <b>Silicon Pro Plumbing</b> web build. We're in <b>Phase 1, the foundation</b> — building the design system and 17 priority pages. Click each step in the build process below to expand the details: design progress, plugin stack, developer checklist, QA, and handoff notes. Use the tabs above to jump to the full sitemap, the <b>Copy + Design Notes doc</b> (all page copy, meta titles, descriptions, and design notes live there), the Figma file, and the Kaizen developer checklist.</p>
+  </div>
+
+  <!-- ====== SUMMARY ====== -->
+  <div class="summary">
+    <span class="summary-eyebrow">Currently Active</span>
+    <h2>Phase 1 — Foundation Build</h2>
+    <div class="summary-stats">
+      <div class="stat">
+        <div class="num">109</div>
+        <div class="lbl">Page Sitemap</div>
+      </div>
+      <div class="stat">
+        <div class="num">11<span class="total">/17</span></div>
+        <div class="lbl">Phase 1 Built</div>
+      </div>
+      <div class="stat">
+        <div class="num">6</div>
+        <div class="lbl">Design Templates</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Phase 1 Build Process</h2>
+
+  <!-- ====== STEP 1: DESIGN HOMEPAGE ====== -->
+  <div class="step done">
+    <div class="step-head" onclick="toggleStep(this)">
+      <span class="step-num"><span class="step-num-text">1</span></span>
+      <h3 class="step-title">Design Homepage</h3>
+      <span class="step-status">Done</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="step-body">
+      <p class="lead">The homepage is <b>designed and live on staging</b>. It sets the visual system — typography, color, spacing, component patterns — that every other page inherits.</p>
+    </div>
+  </div>
+
+  <!-- ====== STEP 2: DESIGN INNER PAGES ====== -->
+  <div class="step done open">
+    <div class="step-head" onclick="toggleStep(this)">
+      <span class="step-num"><span class="step-num-text">2</span></span>
+      <h3 class="step-title">Design Inner Page Templates</h3>
+      <span class="step-status">Done</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="step-body">
+      <p class="lead">All <b>6 design templates</b> are complete. Every page on the site uses one of these — no new templates needed going forward.</p>
+      <div class="templates">
+        <div class="template">
+          <span class="num">01</span>
+          <h4>Homepage</h4>
+          <div class="used">Home only</div>
+        </div>
+        <div class="template">
+          <span class="num">02</span>
+          <h4>Service Hub</h4>
+          <div class="used">All pillar pages</div>
+        </div>
+        <div class="template">
+          <span class="num">03</span>
+          <h4>Service Page</h4>
+          <div class="used">All individual services</div>
+        </div>
+        <div class="template">
+          <span class="num">04</span>
+          <h4>Service Area Hub</h4>
+          <div class="used">/service-areas/ overview</div>
+        </div>
+        <div class="template">
+          <span class="num">05</span>
+          <h4>Service Area Page</h4>
+          <div class="used">Individual city pages</div>
+        </div>
+        <div class="template">
+          <span class="num">06</span>
+          <h4>Content</h4>
+          <div class="used">FAQs, blog, articles, compliance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== STEP 3: DEV / PLUGIN STACK ====== -->
+  <div class="step active open">
+    <div class="step-head" onclick="toggleStep(this)">
+      <span class="step-num"><span class="step-num-text">3</span></span>
+      <h3 class="step-title">Development &amp; Plugin Stack</h3>
+      <span class="step-status">In Progress</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="step-body">
+      <p class="lead">The plugin stack is installed. The developer builds each page on top of the templates and follows this checklist in order. <b>Performance setup is last</b> — after everything else is built.</p>
+
+      <h4 style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin:18px 0 10px">Plugin Stack</h4>
+      <div class="plugin-grid">
+        <div class="plugin">
+          <div class="plugin-icon">SG</div>
+          <div>
+            <div class="plugin-name">Speed Optimizer</div>
+            <div class="plugin-role">SiteGround caching. Caching ON, Frontend Optimization OFF.</div>
+          </div>
+        </div>
+        <div class="plugin">
+          <div class="plugin-icon">EP</div>
+          <div>
+            <div class="plugin-name">Elementor Pro</div>
+            <div class="plugin-role">Page builder + Theme Builder for header, footer, templates.</div>
+          </div>
+        </div>
+        <div class="plugin">
+          <div class="plugin-icon">UE</div>
+          <div>
+            <div class="plugin-name">Unlimited Elements</div>
+            <div class="plugin-role">The only widget library — no other addon packs.</div>
+          </div>
+        </div>
+        <div class="plugin">
+          <div class="plugin-icon">AI</div>
+          <div>
+            <div class="plugin-name">AIOSEO</div>
+            <div class="plugin-role">SEO titles, meta, XML sitemap, schema, redirects.</div>
+          </div>
+        </div>
+        <div class="plugin">
+          <div class="plugin-icon">WC</div>
+          <div>
+            <div class="plugin-name">WPConsent</div>
+            <div class="plugin-role">GDPR cookie banner + script blocking until consent.</div>
+          </div>
+        </div>
+        <div class="plugin">
+          <div class="plugin-icon">UD</div>
+          <div>
+            <div class="plugin-name">UpdraftPlus</div>
+            <div class="plugin-role">Weekly backups to Google Drive.</div>
+          </div>
+        </div>
+        <div class="plugin last">
+          <div class="plugin-icon">SP</div>
+          <div>
+            <div class="plugin-name">Seraphinite <span class="plugin-flag">do last</span></div>
+            <div class="plugin-role">Performance: minify, defer, lazy load, WebP. Configure AFTER full build.</div>
+          </div>
+        </div>
+      </div>
+
+      <h4 style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin:22px 0 10px">Developer Checklist</h4>
+
+      <div class="checklist-group warn open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">!</span>
+          <h5 class="checklist-name">Do Not Touch</h5>
+          <span class="checklist-count" data-cl="dnt">0/2</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="dnt-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Leave Speed Optimizer alone — caching stays ON, Frontend Optimization stays OFF
+              <span class="check-hint">Seraphinite owns frontend optimization (configured last). Running both breaks layouts.</span>
+            </span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="dnt-2">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Don't change login or security settings
+              <span class="check-hint">Daisy runs the security lockdown at launch.</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="checklist-group open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">1</span>
+          <h5 class="checklist-name">Build Pages</h5>
+          <span class="checklist-count" data-cl="bp">0/5</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="bp-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Build pages + templates from Figma + copy doc</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="bp-2">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">For unbuilt pages: create the page, link to real URL
+              <span class="check-hint">Even a placeholder H1 — never point unbuilt links to homepage.</span>
+            </span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="bp-3">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Forms: Elementor Pro Form widget, Submissions ON, honeypot ON</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="bp-4">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Compress images, descriptive alt text, host fonts locally</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="bp-5">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Branded 404 page that links to home + key services</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="checklist-group open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">2</span>
+          <h5 class="checklist-name">On-Page SEO</h5>
+          <span class="checklist-count" data-cl="seo">0/4</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="seo-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">One H1 per page using that page's keyword; logical H2 → H3 order</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="seo-2">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Add SEO title + meta description (AIOSEO fields) per page</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="seo-3">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Internal links between related pages; no orphan pages</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="seo-4">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Alt text on all images</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="checklist-group open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">3</span>
+          <h5 class="checklist-name">AIOSEO Config</h5>
+          <span class="checklist-count" data-cl="aio">0/4</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="aio-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Run AIOSEO setup wizard</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="aio-2">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">XML sitemap ON (/sitemap.xml); breadcrumbs ON</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="aio-3">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Configure LocalBusiness schema (name, address, hours, phone, service area)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="aio-4">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Enable the Redirection Manager (for slug fixes from QA notes)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="checklist-group open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">4</span>
+          <h5 class="checklist-name">Cookie Banner (WPConsent)</h5>
+          <span class="checklist-count" data-cl="wpc">0/4</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="wpc-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Run scan/setup so it detects the site's cookies</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="wpc-2">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Banner style matches brand, positioned as a bottom bar</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="wpc-3">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Script blocking: Essential ON, Statistics + Marketing OFF until consent
+              <span class="check-hint">This protects the client — scripts must not fire before consent.</span>
+            </span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="wpc-4">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Test in incognito: banner shows, Accept/Reject works, no tracking before consent</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="checklist-group warn open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">5</span>
+          <h5 class="checklist-name">Performance — Seraphinite (LAST)</h5>
+          <span class="checklist-count" data-cl="perf">0/4</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="perf-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Confirm SG Optimizer Frontend Optimization is OFF before configuring</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="perf-2">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Seraphinite: minify + combine CSS/JS, critical CSS, defer JS, lazy load, WebP → ON</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="perf-3">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Seraphinite page caching → OFF (SiteGround handles caching)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="perf-4">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Test every page, purge BOTH caches, run PageSpeed Insights (mobile)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="checklist-group open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">6</span>
+          <h5 class="checklist-name">Backups (UpdraftPlus)</h5>
+          <span class="checklist-count" data-cl="bak">0/1</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="bak-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Schedule a weekly backup → Google Drive</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====== STEP 4: QA ====== -->
+  <div class="step">
+    <div class="step-head" onclick="toggleStep(this)">
+      <span class="step-num"><span class="step-num-text">4</span></span>
+      <h3 class="step-title">Quality Assurance</h3>
+      <span class="step-status">Pending</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="step-body">
+      <p class="lead">After development is complete, run through this checklist on every Phase 1 page before marking it ready for handoff.</p>
+
+      <div class="checklist-group open">
+        <div class="checklist-head" onclick="toggleChecklist(this)">
+          <span class="checklist-letter">✓</span>
+          <h5 class="checklist-name">Pre-Handoff QA</h5>
+          <span class="checklist-count" data-cl="qa">0/8</span>
+        </div>
+        <div class="checklist-items">
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-1">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">All Phase 1 page URLs match the approved sitemap exactly</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-2">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">QA flags resolved (water softeners, Sunnyvale, contact, terms slugs)
+              <span class="check-hint">See Notes section below — 6 items flagged from current staging.</span>
+            </span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-3">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">301 redirects in place for any URL changes</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-4">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">All forms tested — submissions land in WP + email</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-5">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Mobile responsive — verified on iPhone + Android viewports</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-6">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">Screaming Frog crawl — no 404s, no orphan pages, no broken links</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-7">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">/sample-page/ removed; XML sitemap reviewed</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" data-id="qa-8">
+            <span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <span class="check-label">PageSpeed Insights run on top 3 pages — Core Web Vitals healthy</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== STEP 5: HANDOFF ====== -->
+  <div class="step">
+    <div class="step-head" onclick="toggleStep(this)">
+      <span class="step-num"><span class="step-num-text">5</span></span>
+      <h3 class="step-title">Handoff to Daisy</h3>
+      <span class="step-status">Pending</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+    <div class="step-body">
+      <p class="lead">Once development and QA are complete, hand the site back to Daisy. She handles launch — domain migration, SSL, CDN, and security lockdown.</p>
+      <ul class="handoff-list">
+        <li>Confirm: build done, forms tested, AIOSEO configured, WPConsent live, Seraphinite tuned</li>
+        <li>Confirm no leftover dead links — every "#" placeholder is built out or flagged</li>
+        <li>Document any plugin settings or custom code the next person needs to know</li>
+        <li>Notify Daisy that the build is ready for launch</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ====== DAISY'S NOTES (separate) ====== -->
+  <section class="notes-section">
+    <span class="notes-eyebrow">Daisy's Notes</span>
+    <h2>Open items from current staging review</h2>
+
+    <div class="qa-card">
+      <h3>URL / slug issues to resolve</h3>
+      <ul class="qa-list">
+        <li><strong>Water softeners URL:</strong> Live at <code>/plumbing-services/water-softeners/</code> but should be <code>/residential-plumbing/water-softeners/</code>. Decide canonical, set 301 redirect.</li>
+        <li><strong>Sunnyvale page URL:</strong> Live at <code>/sunnyvale-plumber/</code> but should nest under <code>/service-areas/sunnyvale-plumber/</code>. Fix slug, set 301 redirect.</li>
+        <li><strong>Contact slug:</strong> Live as <code>/contact-us/</code> — sitemap calls for <code>/contact/</code>. Pick one.</li>
+        <li><strong>Terms slug:</strong> Live as <code>/terms-and-conditions/</code> — sitemap calls for <code>/terms-of-service/</code>. Pick one.</li>
+        <li><strong>Sample page:</strong> <code>/sample-page/</code> still live — remove before production.</li>
+        <li><strong>"-services" suffix cleanup:</strong> Top-level service categories drop the suffix going forward — <code>/medical-gas/</code> not <code>/medical-gas-services/</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<script>
+function toggleStep(head){
+  head.parentElement.classList.toggle('open');
+}
+function toggleChecklist(head){
+  head.parentElement.classList.toggle('open');
+}
+
+// Checklist state persistence
+const STORE_KEY = 'sp_dashboard_v4';
+let state = {};
+try { state = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch(e){}
+
+function saveState(){
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch(e){}
+}
+
+function applyState(){
+  document.querySelectorAll('.check-item input[type="checkbox"]').forEach(cb => {
+    const id = cb.dataset.id;
+    const checked = !!state[id];
+    cb.checked = checked;
+    cb.closest('.check-item').classList.toggle('checked', checked);
+  });
+  // Update group counts
+  document.querySelectorAll('[data-cl]').forEach(badge => {
+    const group = badge.closest('.checklist-group');
+    const items = group.querySelectorAll('input[type="checkbox"]');
+    const done = Array.from(items).filter(i => state[i.dataset.id]).length;
+    badge.textContent = `${done}/${items.length}`;
+    badge.classList.toggle('done', done === items.length && items.length > 0);
+  });
+}
+
+document.querySelectorAll('.check-item input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', e => {
+    const id = e.target.dataset.id;
+    if(e.target.checked) state[id] = true;
+    else delete state[id];
+    saveState();
+    applyState();
+  });
+});
+
+applyState();
+</script>
+
+</body>
+</html>
