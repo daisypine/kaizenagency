@@ -3,188 +3,640 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaizen — Staging Site Setup</title>
+<title>Kaizen — Build &amp; QA Checklist</title>
 <style>
-  :root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--done-bg:#F4F8E3;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;}
-  *{box-sizing:border-box} html{scroll-behavior:smooth}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  :root{
+    --ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;
+    --line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--done-bg:#F4F8E3;
+    --shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);
+    --radius:14px;--warn:#B5532E;--warn-soft:#e3c7bb;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
   .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
-  .topbar-inner{max-width:940px;margin:0 auto;padding:14px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
+  .topbar-inner{max-width:960px;margin:0 auto;padding:14px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
   .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
   .pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
-  .brand h1{font-size:15px;font-weight:700;margin:0;letter-spacing:.01em}
+  .brand h1{font-size:15px;font-weight:700;margin:0}
   .brand .eyebrow{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1px}
-  .client-field{display:flex;align-items:center;gap:8px}
-  .client-field label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#b9bcae;font-weight:700}
-  .client-field input{background:#1f221a;border:1px solid #3a3e30;color:#fff;border-radius:9px;padding:8px 11px;font-size:14px;min-width:160px;font-family:inherit}
-  .client-field input::placeholder{color:#80836f}
-  .client-field input:focus-visible{outline:2px solid var(--lime);outline-offset:1px;border-color:var(--lime)}
   .btn{border:1px solid #3a3e30;background:#1f221a;color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:8px 13px;border-radius:9px;cursor:pointer}
-  .btn:hover{border-color:var(--lime)} .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
-  .progress-wrap{max-width:940px;margin:0 auto;padding:0 22px 14px}
+  .btn:hover{border-color:var(--lime)}
+  .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+  .progress-wrap{max-width:960px;margin:0 auto;padding:0 22px 14px}
   .progress-row{display:flex;align-items:center;gap:14px}
   .progress-track{flex:1;height:10px;background:#2b2f24;border-radius:999px;overflow:hidden}
   .progress-fill{height:100%;width:0;background:var(--lime);border-radius:999px;transition:width .3s ease}
-  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:112px;text-align:right}
+  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:108px;text-align:right;font-variant-numeric:tabular-nums}
   .progress-pct b{color:var(--lime)}
-  .save-flag{font-size:11px;color:var(--lime);opacity:0;transition:opacity .2s;font-weight:700;letter-spacing:.04em}
-  .save-flag.show{opacity:1}
-  main{max-width:940px;margin:0 auto;padding:24px 22px 80px}
-  .intro{color:var(--ink-soft);font-size:14.5px;margin:2px 0 18px;max-width:700px}
-  .intro b{color:var(--ink)}
-  .routes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin-bottom:16px}
-  .routes h3{margin:0 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft)}
-  .routes p{margin:0 0 14px;font-size:13px;color:var(--ink-soft)}
-  .route-grp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:9px 0}
-  .route-grp .glabel{font-size:12.5px;font-weight:700;min-width:90px;color:var(--ink)}
+
+  main{max-width:960px;margin:0 auto;padding:18px 22px 70px}
+
+  .routes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:13px 18px;margin-bottom:16px}
+  .routes h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft)}
+  .route-grp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0}
+  .route-grp .glabel{font-size:12.5px;font-weight:700;min-width:74px;color:var(--ink)}
   .seg{display:inline-flex;background:#eef0e6;border-radius:9px;padding:3px;gap:3px;flex-wrap:wrap}
-  .seg button{border:none;background:transparent;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-soft);padding:6px 11px;border-radius:7px;cursor:pointer}
+  .seg button{border:none;background:transparent;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-soft);padding:6px 12px;border-radius:7px;cursor:pointer}
   .seg button.on{background:var(--ink);color:var(--lime)}
   .seg button:focus-visible{outline:2px solid var(--lime);outline-offset:1px}
-  .ledger{background:#1b1d16;color:#e9ebe0;border-radius:var(--radius);padding:0;margin-bottom:16px;overflow:hidden;border:1px solid #2b2f24}
-  .ledger summary{cursor:pointer;list-style:none;padding:13px 18px;font-size:13px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;gap:9px}
-  .ledger summary::-webkit-details-marker{display:none}
-  .ledger summary .lk{color:var(--lime)}
-  .ledger .body{padding:2px 18px 16px;font-size:13px;line-height:1.6}
-  .ledger .row{padding:9px 0;border-top:1px solid #2b2f24}
-  .ledger .row:first-child{border-top:none}
-  .ledger b{color:#fff} .ledger .lime{color:var(--lime);font-weight:700} .ledger .muted{color:#9a9d8c}
-  .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:18px;-webkit-overflow-scrolling:touch}
+  .tab{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:var(--surface);border:1.5px solid var(--line);border-radius:11px;padding:9px 15px;cursor:pointer;font-family:inherit;text-align:left;transition:.15s}
+  .tab .tab-owner{font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .tab .tab-title{font-size:14px;font-weight:700;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
+  .tab .tab-pct{font-size:10.5px;font-weight:800;color:var(--ink-soft);background:var(--paper);border-radius:20px;padding:1px 7px;font-variant-numeric:tabular-nums}
+  .tab:hover{border-color:#c9ccbe}
+  .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink)}
+  .tab[aria-selected="true"] .tab-owner{color:var(--lime)}
+  .tab[aria-selected="true"] .tab-title{color:#fff}
+  .tab[aria-selected="true"] .tab-pct{background:var(--lime);color:var(--ink)}
+  .tab.complete{border-color:var(--lime-deep)}
+  .tab.complete .tab-pct{color:var(--lime-deep)}
+  .tab[aria-selected="true"].complete .tab-pct{color:var(--ink)}
+
+  .stage{display:none}
+  .stage.active{display:block}
+  .stage-note{font-size:13px;color:var(--ink-soft);margin:0 2px 16px;line-height:1.5}
+  .stage-note b{color:var(--ink)}
+
+  .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden}
+  .section.donot{border-color:var(--warn-soft)}
   .section.hide{display:none}
-  .section-head{display:flex;align-items:center;gap:13px;padding:16px 20px;cursor:pointer;border-bottom:1px solid transparent;user-select:none}
+  .section-head{display:flex;align-items:center;gap:13px;padding:15px 18px;cursor:pointer;border-bottom:1px solid transparent;user-select:none}
   .section.open .section-head{border-bottom-color:var(--line)}
-  .sec-letter{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:800;font-size:15px}
+  .sec-letter{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:800;font-size:12px;text-align:center;line-height:1}
+  .section.donot .sec-letter{background:var(--warn);color:#fff}
   .section.complete .sec-letter{background:var(--lime);color:var(--ink)}
-  .sec-title{font-weight:700;font-size:16px;margin:0;flex:1}
-  .sec-count{font-size:12.5px;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .section.donot.complete .sec-letter{background:var(--warn);color:#fff}
+  .sec-title{font-weight:700;font-size:15.5px;margin:0;flex:1;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .sec-count{font-size:12px;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
   .sec-count.done{color:var(--lime-deep)}
-  .chev{flex:none;width:18px;height:18px;color:var(--ink-soft);transition:transform .2s}
+  .chev{flex:none;width:17px;height:17px;color:var(--ink-soft);transition:transform .2s}
   .section.open .chev{transform:rotate(90deg)}
-  .items{padding:6px 20px 14px;display:none} .section.open .items{display:block}
-  .item{display:flex;gap:13px;align-items:flex-start;padding:11px 12px;border-radius:10px;margin:2px -6px;transition:background .15s}
+  .items{padding:5px 18px 12px;display:none}
+  .section.open .items{display:block}
+
+  .item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;margin:2px -6px;transition:background .15s}
   .item.hide{display:none}
-  .item:hover{background:#fafbf5} .item.checked{background:var(--done-bg)}
+  .item:hover{background:#fafbf5}
+  .item.checked{background:var(--done-bg)}
   .item input{position:absolute;opacity:0;width:1px;height:1px}
-  .box{flex:none;margin-top:1px;width:21px;height:21px;border-radius:6px;border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;transition:all .15s}
-  .box svg{width:13px;height:13px;opacity:0;transform:scale(.6);transition:all .15s}
+  .box{flex:none;margin-top:1px;width:20px;height:20px;border-radius:6px;border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;transition:all .15s}
+  .box svg{width:12px;height:12px;opacity:0;transform:scale(.6);transition:all .15s}
   .item.checked .box{background:var(--lime);border-color:var(--lime-deep)}
   .item.checked .box svg{opacity:1;transform:scale(1)}
   .item input:focus-visible + .box{outline:2px solid var(--ink);outline-offset:2px}
-  .label-wrap{flex:1;cursor:pointer}
-  .label-main{font-size:14.5px;line-height:1.4} .item.checked .label-main{color:var(--ink-soft)}
+  .label-wrap{flex:1;cursor:pointer;min-width:0}
+  .label-main{font-size:14.5px;line-height:1.4}
+  .item.checked .label-main{color:var(--ink-soft)}
   .label-hint{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
-  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-left:8px;vertical-align:middle}
-  .tag-route{background:#e7ecd6;color:var(--lime-deep)}
-  footer{max-width:940px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px}
-  @media (max-width:640px){.client-field{order:3;width:100%}.client-field input{flex:1}.progress-pct{min-width:auto}.route-grp .glabel{min-width:auto;width:100%}}
+  .label-path{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#eef0e6;border-radius:5px;padding:1px 6px;color:#3a3d33;white-space:nowrap}
+
+  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:5px;vertical-align:middle}
+  .tag-seo{background:#e7ecd6;color:var(--lime-deep)}
+  .tag-live{background:#e6eefc;color:#2f5fb0}
+  .tag-opt{background:#efe8f5;color:#7a4ea8}
+
+  .stack-strip{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:13px 16px;margin:0 0 14px}
+  .stack-strip h4{margin:0 0 9px;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:800}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{display:inline-flex;align-items:baseline;gap:5px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font-size:12.5px}
+  .chip b{font-weight:700;color:var(--ink)}
+  .chip span{color:var(--ink-soft);font-size:11.5px}
+  .chip.adv{border-color:#d8c9e6;background:#f6f1fb}
+
+  /* roadmap tab */
+  .rm-banner{background:#f6f1fb;border:1px solid #d8c9e6;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:13.5px;color:#5a4a6e}
+  .rm-banner b{color:#4a2f6e}
+  .rm-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin:0 0 14px}
+  .rm-card h3{margin:0 0 3px;font-size:16px;font-weight:800;color:var(--ink)}
+  .rm-card .rm-sub{font-size:12.5px;color:var(--ink-soft);margin:0 0 10px}
+  .rm-card h4{margin:13px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--lime-deep);font-weight:800}
+  .rm-card ul{margin:0;padding-left:18px}
+  .rm-card li{margin:4px 0;line-height:1.45;font-size:14px}
+  .rm-card li b{color:var(--ink)}
+  .prompt{background:#1b1d16;border-radius:12px;margin:10px 0;overflow:hidden;border:1px solid #2b2f24}
+  .prompt .ph{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:#22241c}
+  .prompt .ph span{color:var(--lime);font-size:12px;font-weight:700;letter-spacing:.03em}
+  .prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font-family:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
+  .prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
+  .prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+
+  footer{max-width:960px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px;line-height:1.55}
+  footer b{color:var(--ink)}
+
+  @media (max-width:620px){.progress-pct{min-width:auto}.route-grp .glabel{min-width:auto;width:100%}}
   @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto}}
-  @media print{body{background:#fff}.topbar{position:static;border-bottom:2px solid #000}.no-print,.chev,.btn,.save-flag,.routes .seg button:not(.on){display:none !important}.ledger{color:#000;background:#fff;border:1px solid #999}.ledger .body{display:block!important}.progress-track{border:1px solid #000}.section{break-inside:avoid;box-shadow:none;border-color:#999}.items{display:block !important}.item:hover{background:none}.item.hide,.section.hide{display:none!important}}
+  @media print{
+    body{background:#fff}
+    .topbar{position:static;border-bottom:2px solid #000}
+    .no-print,.chev,.btn,.tabs,.seg button:not(.on),.prompt .copy{display:none !important}
+    .progress-track{border:1px solid #000}
+    .stage{display:block !important}
+    .section{break-inside:avoid;box-shadow:none;border-color:#999;margin-bottom:10px}
+    .section.hide,.item.hide{display:none !important}
+    .items{display:block !important}
+    .item:hover{background:none}
+    .prompt{border:1px solid #999}.prompt pre,.prompt .ph{color:#000;background:#f3f3f3}.prompt .ph span{color:#000}
+  }
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand"><span class="pill">KAIZEN</span><div><span class="eyebrow">You · before the devs</span><h1>Staging Site Setup</h1></div></div>
-    <div class="client-field no-print"><label for="client">Site</label><input id="client" list="clientlist" placeholder="e.g. Client name" autocomplete="off"><datalist id="clientlist"></datalist></div>
-    <button class="btn no-print" id="newBtn">New site</button>
+    <div class="brand">
+      <span class="pill">KAIZEN</span>
+      <div><span class="eyebrow">Build &amp; QA · by role</span><h1>Site Checklist</h1></div>
+    </div>
     <button class="btn no-print" id="resetBtn">Reset</button>
     <button class="btn no-print" id="printBtn">Print</button>
   </div>
   <div class="progress-wrap no-print"><div class="progress-row">
     <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
     <span class="progress-pct"><b id="pctNum">0%</b> · <span id="countNum">0/0</span></span>
-    <span class="save-flag" id="saveFlag">Saved</span>
   </div></div>
 </header>
+
 <main>
-  <p class="intro">Your foundation work so the devs can build. Pick the site, <b>choose its route below</b>, and the steps adapt. This list ends at <b>handoff</b> — the devs configure SEO/cookies/speed, and launch lives on the post-dev list. Progress + route save <b>per site</b>.</p>
-  <div class="routes no-print" id="routeBox"><h3>Build route</h3><p>Set these first — they switch which steps appear.</p></div>
-  <details class="ledger">
-    <summary><span class="lk">◆</span> License tracker (reference)</summary>
-    <div class="body">
-      <div class="row"><b>Elementor Pro — Expert</b> · 25 sites · used: <span class="lime">2</span> · ~23 left · <span class="muted">renews ~Jun 2027 — confirm in my.elementor.com</span></div>
-      <div class="row"><b>Unlimited Elements — Business</b> · 100 sites · used: <span class="lime">2</span> · ~98 left · <span class="muted">every build gets UE Business · confirm renewal</span></div>
-      <div class="row"><b>AIOSEO Pro</b> · 10 sites · for SEO clients only (standard clients use free, no slot) · <span class="muted">renews ~$400 (intro $180)</span></div>
-      <div class="row muted">Update counts as you activate more sites.</div>
-    </div>
-  </details>
-  <div id="sections"></div>
+  <div class="routes no-print" id="routeBox"><h3>Project settings — set these first, the steps adapt</h3></div>
+  <div class="tabs no-print" id="tabs" role="tablist"></div>
+  <div id="stages"></div>
 </main>
-<footer>Kaizen Agency · one routed checklist. Security lockdown + launch are intentionally <b>post-dev</b> (separate list) so devs aren't locked out mid-build. Saving works once the file is opened directly or hosted.</footer>
+
+<footer><b>Stack:</b> Astra · Elementor Pro · Unlimited Elements (Business) · AIOSEO · WPConsent · UpdraftPlus · Site Kit · Imagify (if needed) · Seraphinite (advanced) · SiteGround suite. No plugins outside this list. <b>Launch</b> (domain, SSL/HTTPS, CDN, security lockdown, Site Kit, client report) is Daisy's, after hand-back.</footer>
+
 <script>
+/* ---------------- ROUTES ---------------- */
 const ROUTEDEF=[
-  {group:"domain",label:"Domain",options:[{v:"new",t:"New / ready — build on live"},{v:"temp",t:"Not ready / transfer — temp URL"}]},
-  {group:"client",label:"Client type",options:[{v:"standard",t:"Website only (AIOSEO free)"},{v:"seo",t:"SEO client (AIOSEO Pro)"}]},
-  {group:"tier",label:"Build tier",options:[{v:"premium",t:"Premium (Elementor Pro)"},{v:"budget",t:"Budget (Elementor free)"}]},
+  {group:"type",label:"Project",options:[{v:"static",t:"Static / clean site"},{v:"seo",t:"SEO Focused"}]},
+  {group:"domain",label:"Domain",options:[{v:"staging",t:"Staging (not live yet)"},{v:"live",t:"Live domain"}]},
+  {group:"speed",label:"Speed",options:[{v:"imagify",t:"Standard"},{v:"seraphinite",t:"Advanced"}]},
 ];
-const DEFAULT_ROUTES={domain:"new",client:"standard",tier:"premium"};
-const DATA=[
-  {id:"1",title:"SiteGround — Hosting & Staging",items:[
-    {t:"Log into the correct SiteGround account",h:"Some clients sit on a separate account — confirm you're in the right one."},
-    {t:"Point the domain to SiteGround",when:["domain:new"],h:"Grab the exact NS from Server Details → set Custom DNS at the registrar. (A-record instead if the domain runs email.)"},
-    {t:"Create the site on a SiteGround temporary URL (sg-host.com)",when:["domain:temp"],h:"Build here; migrate to the real domain at launch."},
-    {t:"Install WordPress — strong password, admin username is NOT \u201cadmin\u201d"},
-    {t:"Skip \u201cInstall with WordPress Starter\u201d"},
-    {t:"Set the admin email to kaizenagencyacc@gmail.com (Settings \u2192 General)"},
-    {t:"Issue SSL (Let's Encrypt) + Force HTTPS",h:"Temp URL: immediate. New domain: only after DNS resolves."},
+const DEFAULT_ROUTES={type:"static",domain:"staging",speed:"imagify"};
+
+/* ---------------- ROADMAP HTML ---------------- */
+const ROADMAP_HTML=`
+<div class="rm-banner"><b>Not active yet \u2014 reference only.</b> The plan is to turn custom builds into a repeatable clone-and-toggle system. Currently testing the base approach on <b>JDH</b> and <b>Sunwest</b>.</div>
+
+<div class="rm-card">
+  <h3>1 \u00b7 Build the Kaizen Base Install (one-time)</h3>
+  <p class="rm-sub">On a fresh SiteGround temp URL \u2014 the master you only ever clone, never edit.</p>
+  <h4>Core WP</h4>
+  <ul>
+    <li>Install WP, strong admin, admin email = ops inbox, permalinks = Post name</li>
+    <li>Dynamic Caching ON, frontend OFF, Security Optimizer ON (default rules)</li>
+    <li>SSL + HTTPS forced, \u201cDiscourage search engines\u201d ON</li>
+  </ul>
+  <h4>The \u201calways\u201d stack (install)</h4>
+  <ul>
+    <li>Astra (child theme optional) \u00b7 Elementor (free) \u00b7 Unlimited Elements (Business, licensed) \u00b7 WPConsent</li>
+    <li>UpdraftPlus \u2192 Kaizen Google Drive + weekly schedule</li>
+    <li>Site Kit \u2014 installed, connected at launch \u00b7 Imagify \u2014 only if image-heavy \u00b7 Seraphinite \u2014 advanced sites only</li>
+  </ul>
+  <h4>Premium defaults</h4>
+  <ul>
+    <li>Elementor Pro + AIOSEO Pro installed &amp; licensed, minimal global config (title format, basic schema, XML sitemap ON, robots defaults)</li>
+    <li>Base 404, Privacy, Terms, Cookie pages</li>
+  </ul>
+  <h4>Global layout</h4>
+  <ul>
+    <li>One Header + Footer template (logo, nav, CTA) \u00b7 base Page template (no sidebar, full width)</li>
+    <li>Neutral \u201ccontractor\u201d typography + colors so every clone looks decent pre-branding</li>
+  </ul>
+  <h4>Page templates (structure-only)</h4>
+  <ul>
+    <li>Home \u00b7 Service \u00b7 City / Service-Area \u00b7 Gallery \u00b7 Reviews \u00b7 FAQ \u00b7 Contact (Elementor Pro Form) \u00b7 Blog Post</li>
+  </ul>
+  <h4>Snapshot</h4>
+  <ul>
+    <li>Full Updraft backup labeled <b>KAIZEN_BASE_PREMIUM_SEO</b></li>
+    <li>Optionally keep a SiteGround \u201cBase\u201d site you only ever CLONE</li>
+  </ul>
+</div>
+
+<div class="rm-card">
+  <h3>2 \u00b7 New client = clone + toggle</h3>
+  <ul>
+    <li><b>Clone base</b> \u2192 new temp URL; change site title, timezone, admin email</li>
+    <li><b>Choose flavor:</b> Full SEO = keep Elementor Pro + AIOSEO Pro \u00b7 Website-only/budget = drop AIOSEO Pro to free (and Elementor Pro to free after swapping Pro widgets)</li>
+    <li><b>License / hosting sanity check:</b> log Elementor / AIOSEO license use in Notion or a Sheet; confirm SiteGround account + plan</li>
+    <li>Net result: clone \u2192 rename \u2192 toggle \u2192 send to dev</li>
+  </ul>
+</div>
+
+<div class="rm-card">
+  <h3>3 \u00b7 AI Prompt Pack</h3>
+  <p class="rm-sub">Junior strategist / copywriter off the onboarding call. Tap Copy.</p>
+
+  <div class="prompt"><div class="ph"><span>Owner interview \u2192 brief</span><button class="copy" data-target="p1">Copy</button></div><pre id="p1">You are a senior home-services marketing strategist. Summarize this transcript into:
+- Company overview
+- Top 5 services
+- Ideal jobs / customers
+- Service area cities
+- Unique angles / proof (years, reviews, guarantees, photos)
+Output in bullet points, no fluff.</pre></div>
+
+  <div class="prompt"><div class="ph"><span>Sitemap generator</span><button class="copy" data-target="p2">Copy</button></div><pre id="p2">Using this brief, propose a 15-20 page sitemap for a local [ROOFER/PLUMBER/PAINTER/LANDSCAPER] targeting [CITY + REGION]. Use these tiers:
+- Tier 1 core pages
+- 6 service pages
+- 3-5 city pages
+- Trust/utility pages (FAQ, Financing if offered, Blog, Privacy, Terms, Thank-You)
+Output as a table: URL slug, Page name, Tier, Primary keyword.</pre></div>
+
+  <div class="prompt"><div class="ph"><span>Service page outline</span><button class="copy" data-target="p3">Copy</button></div><pre id="p3">Create an outline for a high-converting service page for a [SERVICE] in [CITY]. Include: H1, 4-6 H2s with bullets, 5 FAQs, and recommended proof sections (before/after, reviews, badges). No full copy yet, just structure.</pre></div>
+
+  <div class="prompt"><div class="ph"><span>Voice-tuned copy</span><button class="copy" data-target="p4">Copy</button></div><pre id="p4">Using this transcript and outline, write the full page copy in the owner's voice: conversational, professional, no jargon. Include CTA lines that match local home-service buyers.</pre></div>
+</div>
+`;
+
+/* ---------------- DATA ---------------- */
+const STAGES=[
+  {id:"1",owner:"Daisy · Basil · Design",title:"Setup, Design & Coordination",
+   note:"Daisy's setup + toggle reference, the design handoff, Basil's coordination, and launch. This is the \u201cbuild a clean site\u201d checklist \u2014 the toggles that are easy to forget.",
+   sections:[
+    {id:"1A",title:"Daisy \u2014 hand off the brief",items:[
+      {t:"Confirm project type (Static / SEO) + speed stack (Standard / Advanced)",h:"set the toggles above so the steps match"},
+      {t:"Hand off: design, copy doc, nav menu, URL structure"},
+      {t:"Hand off business details \u2014 social media links + Google Business Profile URL"},
+    ]},
+    {id:"1B",title:"Daisy \u2014 hosting + WP toggles",items:[
+      {t:"Log into the correct SiteGround account",h:"some clients sit on a separate account"},
+      {t:"Point the domain to SiteGround",when:["domain:live"],h:"exact NS from Server Details \u2192 Custom DNS at the registrar (A-record if the domain runs email)"},
+      {t:"Create the site on a SiteGround temp URL (sg-host.com)",when:["domain:staging"],h:"build here; migrate to the real domain at launch"},
+      {t:"Install WordPress \u2014 strong password, admin username is NOT \u201cadmin\u201d"},
+      {t:"Skip \u201cInstall with WordPress Starter\u201d"},
+      {t:"Admin email = kaizenagencyacc@gmail.com",p:"Settings \u2192 General"},
+      {t:"Permalinks = Post name",p:"Settings \u2192 Permalinks"},
+      {t:"Issue SSL (Let\u2019s Encrypt) + Force HTTPS",h:"temp URL: immediate. new domain: after DNS resolves."},
+      {t:"\u201cDiscourage search engines\u201d ON",p:"Settings \u2192 Reading",h:"before installing plugins; comes OFF at launch"},
+      {t:"Deactivate \u201cAI Agent by SiteGround\u201d"},
+    ]},
+    {id:"1C",title:"Daisy \u2014 SiteGround performance base",items:[
+      {t:"Dynamic Caching \u2192 ON"},
+      {t:"Memcached \u2192 ON (optional)",h:"server-side in Site Tools first, then the WP toggle; skip if it errors on a fresh site"},
+      {t:"SiteGround free CDN \u2192 ON",p:"Site Tools \u2192 Speed \u2192 CDN",h:"domain-specific \u2014 re-enable for the real domain at launch"},
+      {t:"Security Optimizer \u2192 ON (default rules)"},
+      {t:"Frontend optimization \u2014 leave for the Config/Speed step",h:"Standard = SiteGround handles it later; Advanced = Seraphinite owns it"},
+    ]},
+    {id:"1D",title:"Daisy \u2014 install the stack (configure later)",items:[
+      {t:"Astra \u2192 install + activate"},
+      {t:"Elementor Pro \u2192 upload from your account + Connect & Activate",h:"needs the free Elementor plugin active first. Budget builds: Elementor free instead."},
+      {t:"Unlimited Elements (Business) \u2192 activate",h:"if it shows \u201cChange License,\u201d it\u2019s active"},
+      {t:"AIOSEO Pro \u2192 install + license",tag:"seo",when:["type:seo"],h:"uses 1 of 10 Pro slots"},
+      {t:"AIOSEO (free) \u2192 install",when:["type:static"]},
+      {t:"WPConsent \u2192 install (Basil configures compliance post-dev)"},
+      {t:"UpdraftPlus \u2192 install (Daisy schedules at launch)"},
+      {t:"Site Kit by Google \u2192 install (Daisy connects per client after dev)"},
+      {t:"Imagify \u2192 install only if needed (image-heavy site)"},
+      {t:"Seraphinite \u2192 install",when:["speed:seraphinite"],h:"advanced sites only"},
+    ]},
+    {id:"1E",title:"Daisy \u2014 wall it off + hand off",items:[
+      {t:"Coming Soon / Maintenance Mode ON",when:["domain:live"],p:"Elementor \u2192 Tools",h:"hide the live domain during the build; off at launch"},
+      {t:"Temp URL: Maintenance Mode optional",when:["domain:staging"],h:"not public anyway"},
+      {t:"Confirm all plugins are installed but UNCONFIGURED"},
+      {t:"Send dev access + handoff recap + this checklist",h:"URL, username, password (separately). Security lockdown is post-launch so devs aren\u2019t locked out."},
+    ]},
+    {id:"1F",title:"Design",items:[
+      {t:"Templated pages that are needed are built"},
+      {t:"Animation placements are decided / noted"},
+      {t:"Favicon / Site Icon file delivered"},
+      {t:"Default social share image (1200\u00d7630) delivered"},
+      {t:"Fonts: if a font must be purchased to host it locally, flag Daisy",h:"we self-host fonts \u2014 a paid font needs a license that allows local hosting"},
+    ]},
+    {id:"1G",title:"Basil \u2014 coordinate",items:[
+      {t:"Brief the developer \u2014 design, copy doc, plugin stack, this checklist"},
+      {t:"Confirm the designer delivered ALL pages + assets before dev starts"},
+      {t:"Track each stage to done; flag blockers to Daisy; confirm no new plugins"},
+      {t:"Configure AIOSEO \u2014 wizard toggles, social links, connect accounts",h:"needs access to the company email: kaizenagencyacc@gmail.com"},
+    ]},
+    {id:"1H",title:"Daisy \u2014 after dev / launch",items:[
+      {t:"Connect Site Kit \u2014 Search Console + GA4 + Analytics \u2014 once the domain\u2019s ready",h:"done per client after dev; the domain often isn\u2019t live during the build"},
+      {t:"Schedule the UpdraftPlus weekly backup \u2192 Google Drive"},
+      {t:"Add myself as Manager on the client GBP",tag:"seo",when:["type:seo"]},
+      {t:"Add Broken Link Checker (my account) \u2014 SEO paid clients only, if needed",tag:"seo",when:["type:seo"],h:"e.g., cleaning up past broken links"},
+      {t:"Point domain / migrate, force HTTPS, fix mixed content"},
+      {t:"Security lockdown"},
+      {t:"Send the client a handoff report of everything we did",h:"pages built, SEO setup, speed, compliance, forms/CRM wiring \u2014 so the value is documented and we\u2019re covered"},
+    ]},
   ]},
-  {id:"2",title:"First Steps in WP Admin",items:[
-    {t:"Toggle \u201cDiscourage search engines\u201d ON (Settings \u2192 Reading)",h:"Before installing plugins. Comes OFF at launch."},
-    {t:"Deactivate \u201cAI Agent by SiteGround\u201d (Plugins)"},
+
+  {id:"2",owner:"Developer",title:"Build + SEO",showcase:true,
+   note:"Build to the design \u2014 don\u2019t divert. A few toggles and steps change with the project settings above.",
+   sections:[
+    {id:"2A",title:"Do Not Touch",donot:true,items:[
+      {t:"Don\u2019t change SiteGround caching \u2014 Dynamic Caching ON, Memcached ON"},
+      {t:"Don\u2019t change login or security settings",h:"Daisy runs the security lockdown at launch"},
+      {t:"Build on Astra \u2014 don\u2019t switch the theme mid-build",h:"Astra is the confirmed standard"},
+      {t:"Don\u2019t add new plugins \u2014 install only the stack shown above",h:"if something seems to need a plugin outside the stack, flag Daisy \u2014 don\u2019t install it"},
+      {t:"Don\u2019t divert from the approved design"},
+    ]},
+    {id:"2B",title:"WordPress settings \u2014 fill in the small stuff",items:[
+      {t:"Set the Site Title \u2014 replace the default \u201cMy WordPress\u201d",p:"Settings \u2192 General"},
+      {t:"Fill the Tagline \u2014 or clear it deliberately",p:"Settings \u2192 General"},
+      {t:"Upload the favicon / Site Icon (from the designer)"},
+      {t:"Set the homepage to a static page",p:"Settings \u2192 Reading"},
+      {t:"Delete default content \u2014 sample page, \u201cHello World\u201d post, default comment"},
+      {t:"Turn comments OFF site-wide \u2014 uncheck allow comments, pingbacks, trackbacks",p:"Settings \u2192 Discussion",h:"no comments = no comment spam. (Blog with real comments? require name+email, hold 2+ links, require prior approval.)"},
+      {t:"UNCHECK \u201cDiscourage search engines\u201d",p:"Settings \u2192 Reading",when:["domain:live"]},
+    ]},
+    {id:"2C",title:"Fonts \u2014 host locally",items:[
+      {t:"Enable Load Google Fonts Locally",p:"Elementor \u2192 Settings \u2192 Performance",h:"OFF by default since Elementor 3.32.1 \u2014 enable on every build, re-check after updates. Astra also has its own local-fonts toggle."},
+      {t:"Set Google Fonts Load = Swap",p:"Elementor \u2192 Editor \u2192 Settings \u2192 Advanced"},
+      {t:"Verify: no requests to fonts.googleapis.com / fonts.gstatic.com",h:"DevTools \u2192 Network \u2192 reload \u2192 filter \u201cfont\u201d"},
+    ]},
+    {id:"2D",title:"Build",items:[
+      {t:"Build on staging, not live",when:["domain:staging"]},
+      {t:"Building on the live domain \u2014 keep it in Coming Soon / maintenance mode until launch",when:["domain:live"]},
+      {t:"Use Unlimited Elements as the only widget library \u2014 no other addon packs"},
+      {t:"Build all pages + templates to the design + copy doc",h:"header / footer / templates in Elementor Pro Theme Builder"},
+      {t:"Implement animations per the notes"},
+      {t:"No horizontal scroll / white space \u2014 sections full-width, nothing past the viewport",h:"check every breakpoint while building"},
+      {t:"Reserve a min-height on carousels / marquees / sliders so the layout doesn\u2019t jump",h:"the #1 CLS cause \u2014 set min-height in Elementor \u2192 Advanced"},
+      {t:"Set explicit width/height on images",h:"prevents layout shift (CLS) as images load"},
+      {t:"Insert images at display size (not full-res); alt text on key images"},
+      {t:"Set a Featured Image per page",h:"share-card fallback"},
+      {t:"Linking rule for pages not built yet: create the page, link its real URL",h:"\u201c#\u201d only if it can\u2019t be stubbed; never link to the homepage; no 404s"},
+      {t:"Branded 404 page"},
+      {t:"All assets load over HTTPS \u2014 no mixed content"},
+      {t:"Link header/footer social icons + GBP button to the right destinations",h:"from Daisy\u2019s business details"},
+    ]},
+    {id:"2E",title:"Forms",items:[
+      {t:"Elementor Pro Form widget only: honeypot ON, file upload where needed"},
+      {t:"Form actions: add Email + Collect Submissions",p:"widget \u2192 Content \u2192 Form \u2192 Actions After Submit",h:"Email sends it to the client; Collect Submissions stores a copy in WP as a backup"},
+      {t:"Email action: To = client\u2019s inbox; Reply-To = the form\u2019s email field; From = a domain email (not Gmail)",h:"a free-mail From address often gets the whole email flagged as spam"},
+      {t:"Test the form live \u2014 client gets the email + it lands in Submissions",h:"if the client isn\u2019t getting emails, they\u2019re in spam: add free SMTP (SiteGround SMTP or WP Mail SMTP free) and flag Daisy"},
+      {t:"CRM clients: Webhook action \u2192 Zapier/Make \u2192 their CRM",h:"stays on Elementor Pro \u2014 no paid form plugin needed in most cases"},
+    ]},
+    {id:"2F",title:"Alt text \u2014 keep it easy",items:[
+      {t:"Meaningful images (hero, team, service shots): one short descriptive alt line each",h:"say what\u2019s in it; add service/location where natural"},
+      {t:"Decorative images (textures, dividers, icons): empty alt (alt=\u201c\u201d)",h:"lets screen readers + agents skip them"},
+      {t:"Bulk: AIOSEO Image SEO auto-fills alt/title from a template; override heroes by hand",tag:"seo",when:["type:seo"],h:"template-based, not AI vision \u2014 name files descriptively in Drive; write hero alts by hand"},
+    ]},
+    {id:"2G",title:"On-Page SEO",tag:"seo",when:["type:seo"],items:[
+      {t:"One H1 per page using that page\u2019s keyword; logical H2 \u2192 H3 order"},
+      {t:"Enter H1 / H2 / H3 into AIOSEO heading analysis"},
+      {t:"Add the SEO title + meta description per page from Daisy\u2019s map",p:"AIOSEO fields"},
+      {t:"Internal links between related pages; no orphan pages"},
+    ]},
+    {id:"2H",title:"Social share preview",items:[
+      {t:"Set the OG title + OG image",p:"AIOSEO \u2192 Social Networks",h:"the title + photo that pop up when the link is texted or shared"},
+      {t:"Set the designer\u2019s default share image as the fallback"},
+    ]},
+    {id:"2I",title:"AIOSEO config",items:[
+      {t:"Run the setup wizard \u2014 but fix the toggles, it pre-checks bloat",h:"Basil owns this with the company email; toggle guide below"},
+      {t:"Wizard ON (all sites): Optimized Search Appearance, Sitemaps"},
+      {t:"Wizard ON (Pro): Image SEO, Local SEO, Advanced Rich Snippets + Schema",tag:"seo",when:["type:seo"]},
+      {t:"Wizard OFF: Analytics, Conversion Tools, Multilingual, Email Reports, Author SEO, Video Sitemap",h:"these install extra plugins (MonsterInsights, OptinMonster, Universally) or duplicate GA4"},
+      {t:"After the wizard, delete any bloat it installed \u2014 MonsterInsights, OptinMonster, Universally",h:"none are in our stack"},
+      {t:"XML sitemap ON (/sitemap.xml); breadcrumbs ON"},
+      {t:"Schema: let AIOSEO own it \u2014 turn Astra\u2019s schema/breadcrumbs OFF",h:"running both = duplicate structured data"},
+      {t:"Add the business\u2019s social profile links",p:"AIOSEO \u2192 Social Networks",h:"from Daisy\u2019s business-info doc \u2014 also feeds sameAs schema"},
+      {t:"Configure LocalBusiness schema \u2014 name, address, hours, service area, phone",tag:"seo",when:["type:seo"]},
+      {t:"Enable the Redirection Manager",tag:"seo",when:["type:seo"]},
+      {t:"Redesign/transfer: crawl OLD site \u2192 map old\u2192new URLs as 301s",tag:"seo",when:["type:seo"]},
+    ]},
+    {id:"2J",title:"llms.txt (optional)",tag:"opt",when:["type:seo"],items:[
+      {t:"Add a simple llms.txt at the domain root",h:"a Markdown file \u2014 one H1, short summary, links to key pages. Cheap, passes the PageSpeed agentic check. NOT a ranking factor; skip if short on time."},
+    ]},
   ]},
-  {id:"3",title:"Performance Base (Speed Optimizer)",items:[
-    {t:"Dynamic Caching \u2192 ON"},
-    {t:"Memcached \u2192 ON (optional)",h:"Server-side in Site Tools first, then the WP toggle. Skip if it errors on a fresh site."},
-    {t:"Frontend Optimization \u2192 ALL OFF",h:"Seraphinite owns this after the build."},
-    {t:"Turn on SiteGround free CDN (Site Tools \u2192 Speed \u2192 CDN)",h:"Free tier. It's domain-specific, so you'll re-enable it for the real domain at launch."},
+
+  {id:"3",owner:"Basil + Daisy",title:"Config, Speed & QA",
+   note:"Final pass \u2014 confirm settings, compliance, QA, then hand back. The performance section swaps with the Speed toggle.",
+   sections:[
+    {id:"3A",title:"Performance \u2014 server (always)",items:[
+      {t:"SiteGround: Dynamic Caching ON, Memcached ON, CDN ON"},
+    ]},
+    {id:"3B",title:"Performance \u2014 Standard",when:["speed:imagify"],items:[
+      {t:"SiteGround Speed Optimizer: Frontend Optimization ON (minify/combine/defer CSS+JS)",h:"test pages for breakage; exclude any file that breaks"},
+      {t:"SiteGround Speed Optimizer: Images Optimization ON (compression + WebP)",h:"SiteGround handles images on standard sites \u2014 no separate image plugin needed by default"},
+      {t:"Imagify only if needed \u2014 image-heavy site where SiteGround isn\u2019t enough",h:"if you install Imagify, SiteGround auto-disables its Images Optimization (expected). Then: Aggressive, WebP+AVIF, resize ~1920px, Bulk Optimize."},
+      {t:"Confirm local fonts are ON"},
+    ]},
+    {id:"3C",title:"Performance \u2014 Advanced (Seraphinite)",when:["speed:seraphinite"],items:[
+      {t:"SiteGround Speed Optimizer Frontend + Media \u2192 OFF",h:"Seraphinite owns all frontend + media optimization \u2014 never run both"},
+      {t:"Seraphinite (extended/premium): minify + combine CSS/JS, critical CSS, defer JS, lazy load, WebP + AVIF \u2192 ON"},
+      {t:"Seraphinite page caching \u2192 OFF (SiteGround handles caching)"},
+      {t:"Skip Imagify on this site",h:"Seraphinite handles images"},
+      {t:"Test every page; broken layout/JS \u2192 exclude that file; purge BOTH caches"},
+    ]},
+    {id:"3D",title:"Compliance \u2014 Basil (post-dev)",items:[
+      {t:"Privacy Policy, Terms, and Cookie Policy pages exist and are linked in the footer",h:"Basil owns compliance post-dev \u2014 the dev doesn\u2019t configure this"},
+      {t:"WPConsent: run scan/setup; brand bottom-bar banner"},
+      {t:"Script blocking: Essential on; Statistics + Marketing OFF until consent"},
+      {t:"Link the Privacy + Cookie Policy pages in the banner"},
+      {t:"Enable Google Consent Mode if GA4 is used"},
+      {t:"California / CCPA privacy notice in place",h:"we\u2019re California-based \u2014 include the state privacy notice"},
+      {t:"Test in incognito: banner appears, Accept/Reject works, nothing fires before consent"},
+    ]},
+    {id:"3E",title:"QA \u2014 Layout + alignment",items:[
+      {t:"No horizontal scroll \u2014 scroll all the way left, zero white space, every breakpoint"},
+      {t:"Full-width sections are truly edge to edge \u2014 no stray margins"},
+      {t:"Desktop / tablet / mobile all aligned"},
+      {t:"Cross-browser: Chrome, Safari, mobile Safari"},
+    ]},
+    {id:"3F",title:"QA \u2014 The \u201cpops up wrong\u201d checks",items:[
+      {t:"Favicon shows in the browser tab \u2014 not the theme default"},
+      {t:"Site Title shows correctly in the tab + search \u2014 not \u201cMy WordPress\u201d"},
+      {t:"Share-preview test: paste the URL into iMessage / Slack \u2014 correct title + image appear"},
+      {t:"H1 / H2 / H3 hierarchy correct \u2014 one H1, logical order"},
+    ]},
+    {id:"3G",title:"QA \u2014 Agent / accessibility readiness",items:[
+      {t:"PageSpeed (mobile): CLS under 0.1",h:"if failing: carousels/marquees need reserved height, images need dimensions, fonts local"},
+      {t:"Accessibility tree clean: every link has discernible text, no image-link with empty alt"},
+      {t:"Comments confirmed OFF (no spam surface)"},
+    ]},
+    {id:"3H",title:"QA \u2014 Links + function",items:[
+      {t:"Every nav link works + matches the project\u2019s menu spec"},
+      {t:"No 404s; nothing pointing to the homepage; every \u201c#\u201d built or flagged"},
+      {t:"Forms submit \u2192 entry lands in Submissions \u2192 email notification arrives"},
+      {t:"All images load, none broken; animations fire as noted"},
+      {t:"Social icons + Google Business Profile link point to the right profiles"},
+    ]},
+    {id:"3I",title:"QA \u2014 Speed + indexing",items:[
+      {t:"PageSpeed Insights (mobile) healthy"},
+      {t:"\u201cSearch Engines Blocked\u201d is gone",when:["domain:live"]},
+    ]},
+    {id:"3J",title:"Hand back to Daisy",items:[
+      {t:"Build done, WP settings done, AIOSEO done, compliance done, speed configured"},
+      {t:"No leftover dead links \u2014 every \u201c#\u201d built out or flagged",h:"a quick Screaming Frog crawl should surface only intentional placeholders"},
+      {t:"Notify Daisy for launch",h:"she handles domain, SSL, CDN, security lockdown, Site Kit, and the client report"},
+    ]},
   ]},
-  {id:"4",title:"Theme",items:[
-    {t:"Appearance \u2192 Add Theme \u2192 install Astra \u2192 Activate"},
-  ]},
-  {id:"5",title:"Install Plugins (install all first — configure later)",items:[
-    {t:"Elementor Pro \u2192 upload latest from your account \u2192 Connect & Activate",when:["tier:premium"],h:"Requires the free Elementor plugin active (install that first if needed). Uses 1 Expert slot."},
-    {t:"Elementor (free) \u2192 install + activate",when:["tier:budget"],h:"No Pro on budget builds."},
-    {t:"Unlimited Elements (Business) \u2192 activate",h:"Every build gets UE Business — you have plenty of slots. License: Unlimited Elements menu; if it shows \u201cChange License,\u201d it's active."},
-    {t:"AIOSEO Pro \u2192 upload from your account + enter license key (install only)",when:["client:seo"],h:"Devs configure the settings. Uses 1 of 10 Pro slots."},
-    {t:"AIOSEO (free) \u2192 install (install only)",when:["client:standard"],h:"Devs configure the settings."},
-    {t:"WPConsent (free) \u2192 install (devs configure/style)"},
-    {t:"UpdraftPlus (free) \u2192 install (devs schedule at launch)"},
-    {t:"Seraphinite Accelerator (free) \u2192 install only (devs configure post-build)"},
-  ]},
-  {id:"6",title:"Wall It Off While Building",items:[
-    {t:"Elementor \u2192 Tools \u2192 Maintenance Mode \u2192 Coming Soon",when:["domain:new"],h:"Live domain — hide it during the build. Off at launch."},
-    {t:"Temp URL: Maintenance Mode optional",when:["domain:temp"],h:"Not public anyway; \u201cDiscourage search engines\u201d keeps it out of Google."},
-  ]},
-  {id:"7",title:"Hand Off to Devs",items:[
-    {t:"Confirm all plugins are installed but UNCONFIGURED",h:"AIOSEO, WPConsent, Seraphinite, UpdraftPlus are all dev tasks."},
-    {t:"Send dev access + handoff recap + the Developer Checklist",h:"URL (temp or domain), username, password (separately). Security lockdown is post-launch so devs aren't locked out."},
-  ]},
+
+  {id:"4",owner:"Daisy · roadmap",title:"Working On (Eventually)",roadmap:true,html:ROADMAP_HTML},
 ];
-const STORE_KEY="kz_staging_v3";
-const CHECK=`<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-const CHEV=`<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
-let store=loadStore();let current=store.lastClient||"";
-function loadStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY))||{clients:{},lastClient:""};}catch(e){return{clients:{},lastClient:""};}}
-function saveStore(){try{localStorage.setItem(STORE_KEY,JSON.stringify(store));flashSaved();}catch(e){}}
-function recFor(n){if(!store.clients[n])store.clients[n]={checks:{},routes:Object.assign({},DEFAULT_ROUTES)};if(!store.clients[n].checks)store.clients[n].checks={};if(!store.clients[n].routes)store.clients[n].routes=Object.assign({},DEFAULT_ROUTES);return store.clients[n];}
-function curRoutes(){return current?recFor(current).routes:DEFAULT_ROUTES;}
-function curChecks(){return current?recFor(current).checks:{};}
-function buildRoutes(){const box=document.getElementById("routeBox");ROUTEDEF.forEach(g=>{const row=document.createElement("div");row.className="route-grp";row.innerHTML=`<span class="glabel">${g.label}</span>`;const seg=document.createElement("div");seg.className="seg";g.options.forEach(o=>{const b=document.createElement("button");b.type="button";b.textContent=o.t;b.dataset.group=g.group;b.dataset.val=o.v;b.addEventListener("click",()=>{if(!current){current="Untitled site";document.getElementById("client").value=current;}recFor(current).routes[g.group]=o.v;store.lastClient=current;saveStore();syncRouteButtons();applyVisibility();applyState();});seg.appendChild(b);});row.appendChild(seg);box.appendChild(row);});}
-function syncRouteButtons(){const r=curRoutes();document.querySelectorAll("#routeBox .seg button").forEach(b=>{b.classList.toggle("on",r[b.dataset.group]===b.dataset.val);});}
-function render(){const root=document.getElementById("sections");root.innerHTML="";DATA.forEach((sec,si)=>{const el=document.createElement("section");el.className="section"+(si===0?" open":"");el.dataset.sec=sec.id;el.innerHTML=`<div class="section-head" role="button" tabindex="0" aria-expanded="${si===0}"><span class="sec-letter">${sec.id}</span><h2 class="sec-title">${sec.title}</h2><span class="sec-count" data-count="${sec.id}">0/0</span>${CHEV}</div><div class="items">${sec.items.map((it,ii)=>{const id=`${sec.id}-${ii}`;const when=it.when?` data-when='${JSON.stringify(it.when)}'`:"";return `<label class="item" data-id="${id}"${when}><input type="checkbox" id="${id}"><span class="box">${CHECK}</span><span class="label-wrap"><span class="label-main">${it.t}${it.when?`<span class="tag tag-route">${it.when[0].split(":")[1]}</span>`:""}</span>${it.h?`<span class="label-hint">${it.h}</span>`:""}</span></label>`;}).join("")}</div>`;root.appendChild(el);const head=el.querySelector(".section-head");head.addEventListener("click",()=>toggle(el,head));head.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle(el,head);}});});root.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener("change",onCheck));}
-function toggle(el,head){el.classList.toggle("open");head.setAttribute("aria-expanded",el.classList.contains("open"));}
-function matches(w){if(!w)return true;const r=curRoutes();let a;try{a=JSON.parse(w);}catch(e){return true;}return a.every(tok=>{const[g,v]=tok.split(":");return r[g]===v;});}
-function applyVisibility(){document.querySelectorAll(".item").forEach(it=>{it.classList.toggle("hide",!matches(it.getAttribute("data-when")));});document.querySelectorAll(".section").forEach(sec=>{const vis=[...sec.querySelectorAll(".item")].some(i=>!i.classList.contains("hide"));sec.classList.toggle("hide",!vis);});}
-function onCheck(e){if(!current){current="Untitled site";document.getElementById("client").value=current;}const ch=recFor(current).checks;if(e.target.checked)ch[e.target.id]=true;else delete ch[e.target.id];store.lastClient=current;saveStore();refreshList();applyState();}
-function applyState(){const ch=curChecks();let done=0,total=0;document.querySelectorAll('.item').forEach(it=>{const cb=it.querySelector('input');const on=!!ch[cb.id];cb.checked=on;it.classList.toggle("checked",on);if(!it.classList.contains("hide")){total++;if(on)done++;}});DATA.forEach(sec=>{let d=0,t=0;sec.items.forEach((_,ii)=>{const it=document.querySelector(`.item[data-id="${sec.id}-${ii}"]`);if(it&&!it.classList.contains("hide")){t++;if(ch[`${sec.id}-${ii}`])d++;}});const b=document.querySelector(`[data-count="${sec.id}"]`);b.textContent=`${d}/${t}`;b.classList.toggle("done",t>0&&d===t);b.closest(".section").classList.toggle("complete",t>0&&d===t);});const pct=total?Math.round(done/total*100):0;document.getElementById("fill").style.width=pct+"%";document.getElementById("pctNum").textContent=pct+"%";document.getElementById("countNum").textContent=`${done}/${total}`;}
-function refreshList(){document.getElementById("clientlist").innerHTML=Object.keys(store.clients).map(n=>`<option value="${n.replace(/"/g,'&quot;')}">`).join("");}
-let ft;function flashSaved(){const f=document.getElementById("saveFlag");f.classList.add("show");clearTimeout(ft);ft=setTimeout(()=>f.classList.remove("show"),1100);}
-const ci=document.getElementById("client");ci.value=current;
-ci.addEventListener("change",()=>{current=ci.value.trim();store.lastClient=current;saveStore();syncRouteButtons();applyVisibility();applyState();});
-document.getElementById("newBtn").addEventListener("click",()=>{current="";ci.value="";ci.focus();syncRouteButtons();applyVisibility();applyState();});
-document.getElementById("resetBtn").addEventListener("click",()=>{if(!current){alert("Pick a site first.");return;}if(confirm(`Clear all checks for "${current}"? (Route choices stay.)`)){recFor(current).checks={};saveStore();applyState();}});
+
+/* ---------------- HELPERS ---------------- */
+const STORE_KEY="kz_checklist_v9";
+const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+const STACK_HTML='<div class="stack-strip"><h4>The plugin stack \u2014 install only these</h4><div class="chips">'
++'<span class="chip"><b>Astra</b><span>theme</span></span>'
++'<span class="chip"><b>Elementor Pro</b><span>builder</span></span>'
++'<span class="chip"><b>Unlimited Elements</b><span>widgets</span></span>'
++'<span class="chip"><b>AIOSEO</b><span>SEO</span></span>'
++'<span class="chip"><b>WPConsent</b><span>cookies</span></span>'
++'<span class="chip"><b>UpdraftPlus</b><span>backups</span></span>'
++'<span class="chip"><b>Site Kit</b><span>GSC / GA4 / Analytics</span></span>'
++'<span class="chip"><b>Imagify</b><span>images (if needed)</span></span>'
++'<span class="chip"><b>SiteGround</b><span>caching \u00b7 security \u00b7 CDN</span></span>'
++'<span class="chip adv"><b>Seraphinite</b><span>advanced speed only</span></span>'
++'</div></div>';
+const SECTAGS={seo:'<span class="tag tag-seo">SEO</span>',opt:'<span class="tag tag-opt">optional</span>'};
+function itemTag(it){
+  if(it.tag==="seo")return ' <span class="tag tag-seo">SEO</span>';
+  if(it.when&&it.when.indexOf("domain:live")>-1)return ' <span class="tag tag-live">when live</span>';
+  return "";
+}
+
+let store=load();
+function load(){try{const s=JSON.parse(localStorage.getItem(STORE_KEY));return(s&&typeof s==="object")?s:{};}catch(e){return{};}}
+function save(){try{localStorage.setItem(STORE_KEY,JSON.stringify(store));}catch(e){}}
+store.checks=store.checks||{};
+store.routes=Object.assign({},DEFAULT_ROUTES,store.routes||{});
+
+function matches(when){
+  if(!when)return true;
+  return when.every(tok=>{const[g,v]=tok.split(":");return store.routes[g]===v;});
+}
+
+/* ---------------- RENDER ---------------- */
+const routeBox=document.getElementById("routeBox");
+const tabsEl=document.getElementById("tabs");
+const stagesEl=document.getElementById("stages");
+
+ROUTEDEF.forEach(g=>{
+  const row=document.createElement("div");row.className="route-grp";
+  row.innerHTML='<span class="glabel">'+g.label+'</span>';
+  const seg=document.createElement("div");seg.className="seg";
+  g.options.forEach(o=>{
+    const b=document.createElement("button");b.type="button";b.textContent=o.t;
+    b.dataset.group=g.group;b.dataset.val=o.v;
+    b.addEventListener("click",()=>{store.routes[g.group]=o.v;save();syncRoutes();applyVisibility();applyState();});
+    seg.appendChild(b);
+  });
+  row.appendChild(seg);routeBox.appendChild(row);
+});
+function syncRoutes(){
+  routeBox.querySelectorAll(".seg button").forEach(b=>b.classList.toggle("on",store.routes[b.dataset.group]===b.dataset.val));
+}
+
+STAGES.forEach((st,si)=>{
+  const tab=document.createElement("button");
+  tab.className="tab";tab.id="tab-"+st.id;tab.setAttribute("role","tab");
+  tab.setAttribute("aria-selected",si===0?"true":"false");
+  const pctChip=st.roadmap?'<span class="tab-pct">ref</span>':'<span class="tab-pct" id="tabpct-'+st.id+'">0%</span>';
+  tab.innerHTML='<span class="tab-owner">'+st.owner+'</span><span class="tab-title">'+st.title+' '+pctChip+'</span>';
+  tab.addEventListener("click",()=>selectStage(si));
+  tabsEl.appendChild(tab);
+
+  const stage=document.createElement("div");
+  stage.className="stage"+(si===0?" active":"");stage.id="stage-"+st.id;
+  if(st.note)stage.innerHTML='<p class="stage-note">'+st.note+'</p>';
+  if(st.showcase)stage.innerHTML+=STACK_HTML;
+
+  if(st.roadmap){
+    stage.innerHTML+=st.html;
+  }else{
+    st.sections.forEach((sec,sidx)=>{
+      const open=sidx===0;
+      const sectionEl=document.createElement("section");
+      sectionEl.className="section"+(open?" open":"")+(sec.donot?" donot":"");
+      if(sec.when)sectionEl.dataset.when=JSON.stringify(sec.when);
+      let head='<div class="section-head" role="button" tabindex="0" aria-expanded="'+open+'">'
+        +'<span class="sec-letter">'+sec.id.slice(1)+'</span>'
+        +'<h2 class="sec-title">'+sec.title+(sec.tag?(" "+SECTAGS[sec.tag]):"")+'</h2>'
+        +'<span class="sec-count" data-count="'+sec.id+'">0/'+sec.items.length+'</span>'+CHEV+'</div>';
+      let body='<div class="items">'+sec.items.map((it,ii)=>{
+        const id=sec.id+"-"+ii;
+        const w=it.when?" data-when='"+JSON.stringify(it.when)+"'":"";
+        let main='<span class="label-main">'+it.t+itemTag(it)
+          +(it.p?' <span class="label-path">'+it.p+'</span>':"")+'</span>';
+        if(it.h)main+='<span class="label-hint">'+it.h+'</span>';
+        return '<label class="item" data-id="'+id+'"'+w+'><input type="checkbox" id="'+id+'"><span class="box">'+CHECK+'</span><span class="label-wrap">'+main+'</span></label>';
+      }).join("")+'</div>';
+      sectionEl.innerHTML=head+body;
+      const h=sectionEl.querySelector(".section-head");
+      h.addEventListener("click",()=>toggleSec(sectionEl,h));
+      h.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleSec(sectionEl,h);}});
+      stage.appendChild(sectionEl);
+    });
+  }
+  stagesEl.appendChild(stage);
+});
+
+stagesEl.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener("change",onCheck));
+document.querySelectorAll(".prompt .copy").forEach(b=>{
+  b.addEventListener("click",()=>{
+    const pre=document.getElementById(b.dataset.target);
+    if(pre&&navigator.clipboard){navigator.clipboard.writeText(pre.textContent);const o=b.textContent;b.textContent="Copied";setTimeout(()=>b.textContent=o,1200);}
+  });
+});
+
+function selectStage(i){
+  document.querySelectorAll(".tab").forEach((t,k)=>t.setAttribute("aria-selected",k===i?"true":"false"));
+  document.querySelectorAll(".stage").forEach((s,k)=>s.classList.toggle("active",k===i));
+}
+function toggleSec(el,head){el.classList.toggle("open");head.setAttribute("aria-expanded",el.classList.contains("open"));}
+function onCheck(e){if(e.target.checked)store.checks[e.target.id]=true;else delete store.checks[e.target.id];save();applyState();}
+
+function applyVisibility(){
+  document.querySelectorAll(".item").forEach(it=>{it.classList.toggle("hide",!matches(it.dataset.when?JSON.parse(it.dataset.when):null));});
+  document.querySelectorAll(".section").forEach(sec=>{
+    let secHide=!matches(sec.dataset.when?JSON.parse(sec.dataset.when):null);
+    if(!secHide){
+      const anyVisible=[...sec.querySelectorAll(".item")].some(i=>!i.classList.contains("hide"));
+      secHide=!anyVisible;
+    }else{
+      sec.querySelectorAll(".item").forEach(i=>i.classList.add("hide"));
+    }
+    sec.classList.toggle("hide",secHide);
+  });
+}
+
+function applyState(){
+  let done=0,total=0;
+  document.querySelectorAll(".item").forEach(it=>{
+    const cb=it.querySelector("input");
+    const on=!!store.checks[cb.id];
+    cb.checked=on;
+    it.classList.toggle("checked",on);
+    if(!it.classList.contains("hide")){total++;if(on)done++;}
+  });
+  STAGES.forEach(st=>{
+    if(st.roadmap)return;
+    let sTotal=0,sDone=0;
+    st.sections.forEach(sec=>{
+      let t=0,d=0;
+      sec.items.forEach((_,ii)=>{
+        const it=document.querySelector('.item[data-id="'+sec.id+'-'+ii+'"]');
+        if(it&&!it.classList.contains("hide")){t++;if(store.checks[sec.id+"-"+ii])d++;}
+      });
+      sTotal+=t;sDone+=d;
+      const b=document.querySelector('[data-count="'+sec.id+'"]');
+      b.textContent=d+"/"+t;
+      b.classList.toggle("done",t>0&&d===t);
+      b.closest(".section").classList.toggle("complete",t>0&&d===t);
+    });
+    const pct=sTotal?Math.round(sDone/sTotal*100):0;
+    const pctEl=document.getElementById("tabpct-"+st.id);
+    if(pctEl)pctEl.textContent=pct+"%";
+    document.getElementById("tab-"+st.id).classList.toggle("complete",sTotal>0&&sDone===sTotal);
+  });
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById("fill").style.width=pct+"%";
+  document.getElementById("pctNum").textContent=pct+"%";
+  document.getElementById("countNum").textContent=done+"/"+total;
+}
+
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  if(confirm("Clear all checks on this list? (Project settings stay.)")){store.checks={};save();applyState();}
+});
 document.getElementById("printBtn").addEventListener("click",()=>window.print());
-buildRoutes();render();syncRouteButtons();applyVisibility();applyState();refreshList();
+
+syncRoutes();applyVisibility();applyState();
 </script>
 </body>
 </html>
