@@ -107,7 +107,6 @@
   .chip span{color:var(--ink-soft);font-size:11.5px}
   .chip.adv{border-color:#d8c9e6;background:#f6f1fb}
 
-  /* roadmap tab */
   .rm-banner{background:#f6f1fb;border:1px solid #d8c9e6;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:13.5px;color:#5a4a6e}
   .rm-banner b{color:#4a2f6e}
   .rm-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin:0 0 14px}
@@ -165,7 +164,7 @@
   <div id="stages"></div>
 </main>
 
-<footer><b>Stack:</b> Astra · Elementor Pro · Unlimited Elements (Business) · AIOSEO · WPConsent · UpdraftPlus · Site Kit · Imagify (if needed) · Seraphinite (advanced) · SiteGround suite. No plugins outside this list. <b>Launch</b> (domain, SSL/HTTPS, CDN, security lockdown, Site Kit, client report) is Daisy's, after hand-back.</footer>
+<footer><b>Stack:</b> Hello theme · Elementor Pro · Unlimited Elements (Business) · Rank Math · Complianz (post-dev) · UpdraftPlus · Imagify (only if needed) · Seraphinite (advanced) · SiteGround suite. No plugins outside this list. <b>Analytics</b> is connected per client through Rank Math (no Site Kit). <b>Launch</b> (domain, SSL/HTTPS, CDN, security lockdown, analytics, client report) is Daisy's, after hand-back.</footer>
 
 <script>
 /* ---------------- ROUTES ---------------- */
@@ -186,28 +185,30 @@ const ROADMAP_HTML=`
   <h4>Core WP</h4>
   <ul>
     <li>Install WP, strong admin, admin email = ops inbox, permalinks = Post name</li>
-    <li>Dynamic Caching ON, frontend OFF, Security Optimizer ON (default rules)</li>
+    <li>Dynamic Caching ON, frontend OFF (dev step), Security Optimizer ON (default rules)</li>
     <li>SSL + HTTPS forced, \u201cDiscourage search engines\u201d ON</li>
   </ul>
   <h4>The \u201calways\u201d stack (install)</h4>
   <ul>
-    <li>Astra (child theme optional) \u00b7 Elementor (free) \u00b7 Unlimited Elements (Business, licensed) \u00b7 WPConsent</li>
-    <li>UpdraftPlus \u2192 Kaizen Google Drive + weekly schedule</li>
-    <li>Site Kit \u2014 installed, connected at launch \u00b7 Imagify \u2014 only if image-heavy \u00b7 Seraphinite \u2014 advanced sites only</li>
+    <li>Hello theme \u00b7 Elementor (free) \u00b7 Unlimited Elements (Business, licensed) \u00b7 Complianz (configured post-dev)</li>
+    <li>UpdraftPlus \u2192 Kaizen Google Drive + weekly schedule (off-site copy)</li>
+    <li>Imagify \u2014 only if image-heavy; otherwise SiteGround handles images \u00b7 Seraphinite \u2014 advanced sites only</li>
   </ul>
   <h4>Premium defaults</h4>
   <ul>
-    <li>Elementor Pro + AIOSEO Pro installed &amp; licensed, minimal global config (title format, basic schema, XML sitemap ON, robots defaults)</li>
+    <li>Elementor Pro + Rank Math Pro installed &amp; licensed, minimal global config (title format, schema defaults, sitemap ON, robots defaults)</li>
     <li>Base 404, Privacy, Terms, Cookie pages</li>
   </ul>
-  <h4>Global layout</h4>
+  <h4>Global layout \u2014 Hello + Elementor</h4>
   <ul>
-    <li>One Header + Footer template (logo, nav, CTA) \u00b7 base Page template (no sidebar, full width)</li>
-    <li>Neutral \u201ccontractor\u201d typography + colors so every clone looks decent pre-branding</li>
+    <li>Global colors + fonts in Elementor \u2192 Site Settings (Hello ships none)</li>
+    <li>Theme Builder: one Header (logo, nav, CTA) + one Footer (NAP, links, hybrid CTA)</li>
+    <li>Base Page/Single template \u2014 full width, no sidebar \u00b7 neutral \u201ccontractor\u201d styling pre-branding</li>
   </ul>
-  <h4>Page templates (structure-only)</h4>
+  <h4>Page templates (structure-only, saved in Elementor)</h4>
   <ul>
     <li>Home \u00b7 Service \u00b7 City / Service-Area \u00b7 Gallery \u00b7 Reviews \u00b7 FAQ \u00b7 Contact (Elementor Pro Form) \u00b7 Blog Post</li>
+    <li>Build with Flexbox containers \u2014 lighter than legacy sections</li>
   </ul>
   <h4>Snapshot</h4>
   <ul>
@@ -220,15 +221,15 @@ const ROADMAP_HTML=`
   <h3>2 \u00b7 New client = clone + toggle</h3>
   <ul>
     <li><b>Clone base</b> \u2192 new temp URL; change site title, timezone, admin email</li>
-    <li><b>Choose flavor:</b> Full SEO = keep Elementor Pro + AIOSEO Pro \u00b7 Website-only/budget = drop AIOSEO Pro to free (and Elementor Pro to free after swapping Pro widgets)</li>
-    <li><b>License / hosting sanity check:</b> log Elementor / AIOSEO license use in Notion or a Sheet; confirm SiteGround account + plan</li>
+    <li><b>Choose flavor:</b> Full SEO = keep Elementor Pro + Rank Math Pro \u00b7 Website-only/budget = drop Rank Math Pro to free (and Elementor Pro to free after swapping Pro widgets)</li>
+    <li><b>License / hosting sanity check:</b> log Elementor / Rank Math license use in Notion or a Sheet; confirm SiteGround account + plan</li>
     <li>Net result: clone \u2192 rename \u2192 toggle \u2192 send to dev</li>
   </ul>
 </div>
 
 <div class="rm-card">
-  <h3>3 \u00b7 AI Prompt Pack</h3>
-  <p class="rm-sub">Junior strategist / copywriter off the onboarding call. Tap Copy.</p>
+  <h3>3 \u00b7 AI Prompt Pack \u2014 onboarding</h3>
+  <p class="rm-sub">Junior strategist off the onboarding call. Tap Copy.</p>
 
   <div class="prompt"><div class="ph"><span>Owner interview \u2192 brief</span><button class="copy" data-target="p1">Copy</button></div><pre id="p1">You are a senior home-services marketing strategist. Summarize this transcript into:
 - Company overview
@@ -249,10 +250,98 @@ Output as a table: URL slug, Page name, Tier, Primary keyword.</pre></div>
 
   <div class="prompt"><div class="ph"><span>Voice-tuned copy</span><button class="copy" data-target="p4">Copy</button></div><pre id="p4">Using this transcript and outline, write the full page copy in the owner's voice: conversational, professional, no jargon. Include CTA lines that match local home-service buyers.</pre></div>
 </div>
+
+<div class="rm-card">
+  <h3>4 \u00b7 Page-copy production prompt (Designer/Dev + SEO docs)</h3>
+  <p class="rm-sub">The project-level prompt for turning briefs into paste-ready copy. Set once per client project.</p>
+  <div class="prompt"><div class="ph"><span>Copywriter + SEO (Rank Math)</span><button class="copy" data-target="p5">Copy</button></div><pre id="p5">You are a senior website copywriter and SEO specialist producing launch-ready page copy for a local service business. You already have the client's business information, brand voice, and sitemap in this project. Your job is to turn rough drafts (or briefs) into two polished, paste-ready deliverables per page.
+
+Workflow: For each page I give you (a rough draft, a brief, or just a URL), produce two versions: a Designer + Dev copy doc and an SEO doc. I paste them into Google Docs myself, so you cannot edit files. Always show the full, finished copy in chat, formatted for easy copy-paste. Confirm alignment as we go, page by page. If I hand you client-approved copy, use it verbatim and never paraphrase it; only fix technical errors and fill gaps, and flag anything you change.
+
+Output formatting: Use clear section headings and bold field labels, not long bulleted lists. Separate sections with blank lines and heading sizes. Never use the em dash; use a short hyphen or rewrite naturally. On a revision, give the full page again so I can paste it in one go.
+
+Global standards: Do not repeat the global header/footer in page docs (installed globally). Primary CTA is always "Request a Free Estimate" to the estimate page. Hero secondary button is click-to-call unless a scroll button previews genuinely useful content. Every page footer CTA has a hybrid block: a 3-field quick form (Name, Phone, Service) plus click-to-call. Route all estimate CTAs to the single canonical estimate page. Add hero trust markers, per-section image suggestions, a Functional Element Placement note, and a Button Destinations list to every Designer + Dev doc. Use the client's real NAP, license number, and confirmed facts. Keep internal team names out of public CTAs.
+
+SEO doc fields (Rank Math): URL, canonical (self unless noted), robots (index, follow), focus keyword + 2-3 secondary keywords, meta title (<=60 chars), meta description (<=155), OG title/description (default to meta), schema type, breadcrumb, full heading hierarchy (H1 to H2 to H3), image alt text, internal links (live-now vs backlog), button destinations. Add FAQPage schema when a page has an FAQ. Service + BreadcrumbList for service pages, LocalBusiness for the site, ItemList for hub pages, BlogPosting for posts. Translate any non-schema.org type into the correct mechanism (e.g. areaServed + GeoCoordinates for city pages).
+
+Internal linking: hub-and-spoke silo. Home links down to service/area hubs, hubs to children, children up to parents, everything relevant to the estimate page. Only link to published pages; if a target isn't live, route to the estimate page or parent hub and log it in a backlog. On every publish, do the inbound reverse pass and swap temporary fallbacks. Blog posts link into relevant service/city pages.
+
+Breadcrumbs mirror the URL path, one crumb per segment, Home first and linked, current page last and unlinked. Every middle crumb must be a live page.
+
+QA (do this unprompted, every page): flag weak/redundant CTAs, near-duplicate copy across pages, keyword/meta-title cannibalization, inconsistent CTA labels, FAQ questions repeated across pages. Each page owns a distinct primary term and unique supporting copy + non-overlapping FAQs. Flag sitemap issues (children not nesting under a hub, hubs missing from the sitemap). Final consistency pass before build wraps.
+
+Legal pages: you may draft privacy/cookie/terms/accessibility from the client's real data flows, but state you are not a lawyer, mark placeholders, and tell me to have it reviewed by an attorney or compliant generator before publishing.
+
+Before you start: confirm you have the business info, brand voice, and full sitemap. If anything needed is missing (founding year, team size, service area, license status), ask or flag rather than invent. Then ask which page to start with.</pre></div>
+</div>
 `;
 
 /* ---------------- DATA ---------------- */
 const STAGES=[
+  {id:"5",owner:"Active incident",title:"Security & Recovery",
+   note:"One-time incident response \u2014 separate from the build flow. Confirmed entry point: a compromised shared admin login (KaizenAgency) \u2014 the attacker logged in as you and tried to upload a malicious plugin. The password was strong, so it wasn\u2019t guessed; it leaked, most likely via one shared login passed around the dev/SEO team (kitchen.co) or saved on an infected device. Structural cause: shared logins with no 2FA. Fix: individual accounts, least privilege, 2FA on everyone. Order: lock access \u2192 clean \u2192 harden \u2192 verify \u2192 launch.",
+   sections:[
+    {id:"5A",title:"A \u00b7 daisyp9.sg-host.com \u2014 cleaned, prep for launch",items:[
+      {t:"Malware cleanup done \u2014 2 files removed, permissions reset, users force-logged-out",h:"done by Expert Care"},
+      {t:"External Sucuri scan confirms: No Malware Found, not blacklisted"},
+      {t:"Change the KaizenAgency WP admin password \u2014 long, unique, in the password manager",h:"this login is the credential that was stolen"},
+      {t:"Enable 2FA + login-attempt limiting + custom login URL (Security Optimizer)"},
+      {t:"Update outdated plugins/theme: elementor, sg-security, seraphinite-accelerator, google-site-kit, sg-cachepress, wpconsent, Astra",h:"this is an old-stack site \u2014 update what\u2019s on it"},
+      {t:"Turn on auto-updates"},
+      {t:"Delete genuinely-unused plugins/themes",h:"keep AIOSEO / Unlimited Elements if the LIVE site needs them"},
+      {t:"Pre-launch hardening: HTTPS enforce/redirect + HSTS, confirm firewall active, add security headers (CSP / clickjacking / content-type)",h:"via Security Optimizer or a headers plugin (from the Sucuri report)"},
+      {t:"Only migrate to the live domain after all of the above"},
+    ]},
+    {id:"5B",title:"A \u00b7 Active fire \u2014 johnnywindows.com (finish hardening)",items:[
+      {t:"Expert Care cleanup complete \u2014 files, permissions, DB password rotated",h:"done by their team"},
+      {t:"Enable 2FA in Security Optimizer (Admin/Editor users)"},
+      {t:"Enable login-attempt limiting in Security Optimizer"},
+      {t:"Set a custom login URL in Security Optimizer"},
+      {t:"External Sucuri scan reads clean",p:"sitecheck.sucuri.net"},
+      {t:"Remove any leftover google[hash].html files from public_html"},
+      {t:"Confirm File Manager Advanced is DELETED (not just deactivated)"},
+      {t:"Verify no unknown admin users remain"},
+    ]},
+    {id:"5R",title:"B \u00b7 First \u2014 rotate the stolen login on EVERY site",items:[
+      {t:"Change the KaizenAgency WP admin password on every site it exists on",h:"this is the credential that was actually stolen, and it\u2019s likely reused across sites \u2014 separate from the SiteGround/Google passwords you already changed"},
+      {t:"Store each new password in the password manager, unique per site"},
+      {t:"Better fix: replace the shared login with per-person accounts (see Team access) so there\u2019s nothing shared to steal again"},
+    ]},
+    {id:"5C",title:"B \u00b7 Per-site audit \u2014 the 5 checks (run on every site)",items:[
+      {t:"site: search \u2014 site:thedomain.com",h:"gambling/Indonesian spam (slot, toto, gacor, maxwin, NEGOBOS, AGUSTOTO) = compromised; only real pages = good sign"},
+      {t:"WordPress Users \u2014 delete any Administrator you don\u2019t recognize",p:"wp-admin \u2192 Users"},
+      {t:"Plugins \u2014 look for File Manager Advanced or anything you didn\u2019t install",p:"wp-admin \u2192 Plugins"},
+      {t:"Root files \u2014 unfamiliar google[hash].html files (clusters with recent dates)",p:"File Manager \u2192 public_html"},
+      {t:"Search Console owners \u2014 any owner that isn\u2019t you",p:"Settings \u2192 Users and permissions",h:"extra important \u2014 shared Google account"},
+      {t:"Fast tell \u2014 grep for attacker filenames: FormGuard.php, speed-optimizer.php in a fake plugin folder, regenerate-import-widget folder",h:"View Source \u2192 find \u201cslot\u201d / \u201ctoto\u201d / \u201cgacor\u201d / \u201cmaxwin\u201d in injected schema"},
+    ]},
+    {id:"5D",title:"B \u00b7 Site tracker \u2014 audit each of the six",items:[
+      {t:"johnnywindows.com",h:"compromised \u2014 cleaned; finish hardening in section A"},
+      {t:"daisyp9.sg-host.com",h:"compromised \u2014 cleaned; prep for launch (section A)"},
+      {t:"daisyp10.sg-host.com",h:"check next \u2014 same install window as daisyp9"},
+      {t:"bryanknowslending.com",h:"looked clean \u2014 finish the 5 checks"},
+      {t:"mrs-cleaning.com",h:"not yet checked"},
+      {t:"organizing-pros.com",h:"looked clean \u2014 finish the 5 checks"},
+      {t:"daisyp9 / daisyp10 may be staging copies \u2014 check the LIVE versions too",h:"a compromised staging site can reinfect production"},
+    ]},
+    {id:"5E",title:"C \u00b7 Account-level hardening (the master keys)",items:[
+      {t:"Changed passwords on both Google accounts connected to SiteGround"},
+      {t:"2FA (authenticator app) on both Google accounts"},
+      {t:"Changed the SiteGround account password"},
+      {t:"2-step verification on SiteGround"},
+      {t:"Confirmed no unrecognized FTP/SSH accounts"},
+      {t:"Password manager (1Password / Bitwarden) \u2014 every site\u2019s credentials, unique per site"},
+      {t:"Map which email/account owns what \u2014 SiteGround login, each Search Console property, each site\u2019s notification email",h:"so you know where alerts land and what to secure"},
+      {t:"Have the dev + SEO team scan their computers for malware now",h:"an infostealer on one machine is the likely leak source \u2014 rotating passwords without cleaning the device just leaks the new one"},
+      {t:"Consider SiteGround Site Scanner Premium with file-upload quarantine",h:"catches malicious files at upload \u2014 exactly this attack\u2019s mechanism; worth it across a multi-site account"},
+    ]},
+    {id:"5F",title:"Post-clean SEO recovery (for sites that were hit)",items:[
+      {t:"Search Console: remove / monitor the spam URLs",h:"they drop out of the index as Google recrawls the clean site"},
+      {t:"Confirm injected schema (the AGUSTOTO / gambling Product markup) is gone from real pages"},
+      {t:"URL Inspection \u2192 Request Indexing on your real key pages to speed recrawl"},
+      {t:"Watch the Pages report for the spam pages falling out over the following weeks"},
+    ]},
+  ]},
   {id:"1",owner:"Daisy · Basil · Design",title:"Setup, Design & Coordination",
    note:"Daisy's setup + toggle reference, the design handoff, Basil's coordination, and launch. This is the \u201cbuild a clean site\u201d checklist \u2014 the toggles that are easy to forget.",
    sections:[
@@ -265,7 +354,8 @@ const STAGES=[
       {t:"Log into the correct SiteGround account",h:"some clients sit on a separate account"},
       {t:"Point the domain to SiteGround",when:["domain:live"],h:"exact NS from Server Details \u2192 Custom DNS at the registrar (A-record if the domain runs email)"},
       {t:"Create the site on a SiteGround temp URL (sg-host.com)",when:["domain:staging"],h:"build here; migrate to the real domain at launch"},
-      {t:"Install WordPress \u2014 strong password, admin username is NOT \u201cadmin\u201d"},
+      {t:"Install WordPress \u2014 admin username is NOT \u201cadmin\u201d and NOT the client\u2019s business name"},
+      {t:"Unique strong password per site, generated + stored in a password manager (1Password / Bitwarden) \u2014 never reused",h:"let the manager generate a 16+ char random password; store the WP admin + hosting + client logins there, tagged per client; turn on the manager\u2019s own 2FA to protect the vault"},
       {t:"Skip \u201cInstall with WordPress Starter\u201d"},
       {t:"Admin email = kaizenagencyacc@gmail.com",p:"Settings \u2192 General"},
       {t:"Permalinks = Post name",p:"Settings \u2192 Permalinks"},
@@ -278,18 +368,20 @@ const STAGES=[
       {t:"Memcached \u2192 ON (optional)",h:"server-side in Site Tools first, then the WP toggle; skip if it errors on a fresh site"},
       {t:"SiteGround free CDN \u2192 ON",p:"Site Tools \u2192 Speed \u2192 CDN",h:"domain-specific \u2014 re-enable for the real domain at launch"},
       {t:"Security Optimizer \u2192 ON (default rules)"},
-      {t:"Frontend optimization \u2014 leave for the Config/Speed step",h:"Standard = SiteGround handles it later; Advanced = Seraphinite owns it"},
+      {t:"Frontend + image optimization \u2014 leave for the Config/Speed step",h:"Standard = SiteGround handles it later; Advanced = Seraphinite owns it"},
     ]},
     {id:"1D",title:"Daisy \u2014 install the stack (configure later)",items:[
-      {t:"Astra \u2192 install + activate"},
+      {t:"Rule: every premium plugin/theme is from the official vendor with a paid license \u2014 never a nulled copy",h:"can\u2019t afford Pro on a build? use the free version"},
+      {t:"Free plugins: install from the WordPress.org dashboard search only",h:"a vendor\u2019s official .zip upload is fine + normal when the dashboard doesn\u2019t list it (Elementor, Unlimited Elements) \u2014 just never a \u201cfree download\u201d / nulled site"},
+      {t:"Hello theme \u2192 install + activate",h:"bare + fast; Elementor owns all layout, header, footer, templates"},
       {t:"Elementor Pro \u2192 upload from your account + Connect & Activate",h:"needs the free Elementor plugin active first. Budget builds: Elementor free instead."},
-      {t:"Unlimited Elements (Business) \u2192 activate",h:"if it shows \u201cChange License,\u201d it\u2019s active"},
-      {t:"AIOSEO Pro \u2192 install + license",tag:"seo",when:["type:seo"],h:"uses 1 of 10 Pro slots"},
-      {t:"AIOSEO (free) \u2192 install",when:["type:static"]},
-      {t:"WPConsent \u2192 install (Basil configures compliance post-dev)"},
-      {t:"UpdraftPlus \u2192 install (Daisy schedules at launch)"},
-      {t:"Site Kit by Google \u2192 install (Daisy connects per client after dev)"},
-      {t:"Imagify \u2192 install only if needed (image-heavy site)"},
+      {t:"Unlimited Elements (Business) \u2192 activate",h:"the only widget library; if it shows \u201cChange License,\u201d it\u2019s active"},
+      {t:"Rank Math Pro \u2192 install + license",tag:"seo",when:["type:seo"]},
+      {t:"Rank Math (free) \u2192 install",when:["type:static"]},
+      {t:"Complianz \u2192 install (Basil configures it post-dev)"},
+      {t:"Wordfence (free) \u2192 install + activate",h:"the one security plugin \u2014 firewall + login-attempt limiting; don\u2019t stack a second"},
+      {t:"UpdraftPlus \u2192 install",h:"off-site backup to Kaizen Drive + easy clone/migrate; Daisy schedules at launch"},
+      {t:"Imagify \u2192 install only if image-heavy",h:"default is SiteGround\u2019s own image optimization \u2014 no Imagify needed on most sites"},
       {t:"Seraphinite \u2192 install",when:["speed:seraphinite"],h:"advanced sites only"},
     ]},
     {id:"1E",title:"Daisy \u2014 wall it off + hand off",items:[
@@ -297,6 +389,17 @@ const STAGES=[
       {t:"Temp URL: Maintenance Mode optional",when:["domain:staging"],h:"not public anyway"},
       {t:"Confirm all plugins are installed but UNCONFIGURED"},
       {t:"Send dev access + handoff recap + this checklist",h:"URL, username, password (separately). Security lockdown is post-launch so devs aren\u2019t locked out."},
+    ]},
+    {id:"1T",title:"Team access model \u2014 the root-cause fix",items:[
+      {t:"One account per person under their own email \u2014 never a shared login, never under your email"},
+      {t:"Each person sets their own password + their own 2FA on their own device"},
+      {t:"Least privilege: Developers = Administrator only if they truly build/configure; SEO team = Editor, not Administrator",h:"a leaked Editor login can\u2019t install plugins or drop a backdoor \u2014 that alone would have blunted this attack"},
+      {t:"Retire the shared \u201cKaizenAgency\u201d login for daily use \u2014 keep one locked-down owner account that\u2019s yours"},
+      {t:"Stop sharing WordPress passwords via kitchen.co",h:"with individual accounts there\u2019s nothing to share"},
+      {t:"Genuinely shared secrets (hosting, license keys) \u2192 password manager with revocable sharing (1Password/Bitwarden), not a general tool"},
+      {t:"Hosting/SFTP scoped per person \u2014 never share the master SiteGround login"},
+      {t:"Have the dev + SEO team scan their own computers for malware",h:"an infostealer on one machine explains how a strong password leaked; changing passwords without cleaning the device just leaks the new one"},
+      {t:"Remove access when a person/project ends; audit accounts quarterly, delete anyone dormant"},
     ]},
     {id:"1F",title:"Design",items:[
       {t:"Templated pages that are needed are built"},
@@ -309,28 +412,53 @@ const STAGES=[
       {t:"Brief the developer \u2014 design, copy doc, plugin stack, this checklist"},
       {t:"Confirm the designer delivered ALL pages + assets before dev starts"},
       {t:"Track each stage to done; flag blockers to Daisy; confirm no new plugins"},
-      {t:"Configure AIOSEO \u2014 wizard toggles, social links, connect accounts",h:"needs access to the company email: kaizenagencyacc@gmail.com"},
+      {t:"Configure Rank Math \u2014 setup wizard, modules, social links, schema; then Complianz post-dev",h:"needs access to the company email: kaizenagencyacc@gmail.com"},
     ]},
     {id:"1H",title:"Daisy \u2014 after dev / launch",items:[
-      {t:"Connect Site Kit \u2014 Search Console + GA4 + Analytics \u2014 once the domain\u2019s ready",h:"done per client after dev; the domain often isn\u2019t live during the build"},
-      {t:"Schedule the UpdraftPlus weekly backup \u2192 Google Drive"},
+      {t:"Connect Rank Math Analytics \u2014 GA4 + Search Console \u2014 per client",h:"I set up the client\u2019s Google accounts through Rank Math; replaces Site Kit"},
+      {t:"Schedule the UpdraftPlus weekly backup \u2192 Google Drive",h:"off-site copy; SiteGround\u2019s own daily backups cover disaster recovery"},
       {t:"Add myself as Manager on the client GBP",tag:"seo",when:["type:seo"]},
       {t:"Add Broken Link Checker (my account) \u2014 SEO paid clients only, if needed",tag:"seo",when:["type:seo"],h:"e.g., cleaning up past broken links"},
+      {t:"Pre-launch: clean scan confirmed (SiteGround scan and/or Sucuri sitecheck)",h:"never migrate a site that isn\u2019t confirmed clean"},
+      {t:"Pre-launch: site: search shows only real pages \u2014 no spam URLs"},
+      {t:"Search Console: confirm you\u2019re the only owner (Settings \u2192 Users and permissions)"},
       {t:"Point domain / migrate, force HTTPS, fix mixed content"},
+      {t:"2FA on wp-admin \u2014 the single most important control",h:"Wordfence \u2192 Login Security \u2192 Two-Factor Authentication \u2192 scan the QR in an authenticator app (Google Authenticator / Authy / 1Password), download the recovery codes, enter the 6-digit code \u2192 Activate. Then Settings \u2192 Require 2FA for all administrators (only enforces after one admin has set it up, so you can\u2019t lock everyone out). Repeat for every admin."},
+      {t:"2FA on the hosting account too",h:"SiteGround \u2192 your profile \u2192 Security \u2192 Two-Factor Authentication \u2192 scan QR + save the backup codes"},
+      {t:"2FA on the shared Google account (Search Console / Analytics / GBP)",h:"this account sits ABOVE the sites \u2014 arguably the most important door. Better still: stop sharing one login \u2014 add each person as a manager on GBP + GA4 so you can revoke individual access."},
       {t:"Security lockdown"},
+      {t:"Confirm backups are running + do ONE test restore",h:"so you know the restore process actually works before you ever need it"},
       {t:"Send the client a handoff report of everything we did",h:"pages built, SEO setup, speed, compliance, forms/CRM wiring \u2014 so the value is documented and we\u2019re covered"},
     ]},
   ]},
 
   {id:"2",owner:"Developer",title:"Build + SEO",showcase:true,
-   note:"Build to the design \u2014 don\u2019t divert. A few toggles and steps change with the project settings above.",
+   note:"Build to the design \u2014 don\u2019t divert. Hello theme means Elementor owns all layout, so build the template system first. A few toggles change with the project settings above.",
    sections:[
-    {id:"2A",title:"Do Not Touch",donot:true,items:[
+    {id:"2A",title:"Do Not Touch + speed rules",donot:true,items:[
+      {t:"NEVER install a nulled / pirated premium plugin or theme \u2014 this is how sites get hacked",h:"premium comes from the official vendor with a paid license. No budget for Pro? Use the free version or a different builder \u2014 never a cracked copy."},
       {t:"Don\u2019t change SiteGround caching \u2014 Dynamic Caching ON, Memcached ON"},
       {t:"Don\u2019t change login or security settings",h:"Daisy runs the security lockdown at launch"},
-      {t:"Build on Astra \u2014 don\u2019t switch the theme mid-build",h:"Astra is the confirmed standard"},
+      {t:"Build on Hello + Elementor templates \u2014 don\u2019t switch the theme mid-build"},
       {t:"Don\u2019t add new plugins \u2014 install only the stack shown above",h:"if something seems to need a plugin outside the stack, flag Daisy \u2014 don\u2019t install it"},
       {t:"Don\u2019t divert from the approved design"},
+      {t:"SPEED: don\u2019t deactivate SiteGround Speed Optimizer",h:"a disabled Speed Optimizer is a top cause of a slow site"},
+      {t:"SPEED: don\u2019t disable local fonts; don\u2019t upload full-res images; no extra widget/animation libraries",h:"these are the usual load-time killers"},
+    ]},
+    {id:"2S",title:"Security hardening \u2014 every site (do not skip)",items:[
+      {t:"Standardize: same security plugin + same config on ALL sites",h:"set Wordfence 2FA + login limiting once, learn where the toggles are, then replicate the identical config on each site \u2014 one known-good baseline, easier to maintain"},
+      {t:"Delete every plugin + theme you\u2019re not using",h:"deactivated is NOT safe \u2014 dormant plugins still get exploited. Keep only the stack + one default WP theme."},
+      {t:"No \u201cadmin\u201d, business-name, or default admin account exists",h:"if one does: create a new admin with a non-obvious username, log in as that, reassign its posts to the new user, then delete the old account"},
+      {t:"Wordfence: turn the Web Application Firewall ON",h:"Wordfence \u2192 Firewall \u2192 set it to \u201cEnabled and Protecting\u201d; install the full Wordfence plugin (not the standalone Login Security one \u2014 it\u2019s discontinued ~July 2026)"},
+      {t:"Wordfence: enable login-attempt limiting (brute-force protection)",h:"Wordfence \u2192 Firewall \u2192 Brute Force Protection: lock out after ~5 failures, turn ON \u201cimmediately lock out invalid usernames\u201d + the generic login error. Confirm it\u2019s actually ON \u2014 a fresh install doesn\u2019t always set it."},
+      {t:"Let Wordfence own login security \u2014 don\u2019t also run SiteGround Security Optimizer\u2019s login limiting/2FA",h:"two tools fighting over logins causes lockouts and gaps \u2014 pick one owner"},
+      {t:"Optional: custom login URL to cut bot noise",tag:"opt",h:"use SiteGround Security Optimizer\u2019s built-in Custom Login URL \u2014 don\u2019t add WPS Hide Login or any new plugin. Obscurity only, never a substitute for 2FA."},
+      {t:"Optional: auto-logout idle sessions + hide login errors",tag:"opt",h:"the generic login error is already covered by Wordfence brute-force; idle-session logout is a low-priority toggle"},
+      {t:"Add define('DISALLOW_FILE_EDIT', true); to wp-config.php",h:"kills the built-in plugin/theme code editor so a compromised login can\u2019t inject code"},
+      {t:"File permissions sane \u2014 files 644, folders 755"},
+      {t:"Update WordPress core + all plugins/themes to current"},
+      {t:"Auto-updates ON for core + plugins",h:"premium plugins auto-update once the license is connected; UpdraftPlus backups are the safety net if an update breaks something"},
+      {t:"Confirm there are zero nulled / cracked plugins or themes on the site"},
     ]},
     {id:"2B",title:"WordPress settings \u2014 fill in the small stuff",items:[
       {t:"Set the Site Title \u2014 replace the default \u201cMy WordPress\u201d",p:"Settings \u2192 General"},
@@ -338,19 +466,27 @@ const STAGES=[
       {t:"Upload the favicon / Site Icon (from the designer)"},
       {t:"Set the homepage to a static page",p:"Settings \u2192 Reading"},
       {t:"Delete default content \u2014 sample page, \u201cHello World\u201d post, default comment"},
-      {t:"Turn comments OFF site-wide \u2014 uncheck allow comments, pingbacks, trackbacks",p:"Settings \u2192 Discussion",h:"no comments = no comment spam. (Blog with real comments? require name+email, hold 2+ links, require prior approval.)"},
+      {t:"Turn comments OFF site-wide \u2014 uncheck allow comments, pingbacks, trackbacks",p:"Settings \u2192 Discussion",h:"no comments = no comment spam"},
       {t:"UNCHECK \u201cDiscourage search engines\u201d",p:"Settings \u2192 Reading",when:["domain:live"]},
     ]},
     {id:"2C",title:"Fonts \u2014 host locally",items:[
-      {t:"Enable Load Google Fonts Locally",p:"Elementor \u2192 Settings \u2192 Performance",h:"OFF by default since Elementor 3.32.1 \u2014 enable on every build, re-check after updates. Astra also has its own local-fonts toggle."},
+      {t:"Enable Load Google Fonts Locally",p:"Elementor \u2192 Settings \u2192 Performance",h:"OFF by default since Elementor 3.32.1 \u2014 enable on every build, re-check after updates. Hello has no font system, so Elementor owns fonts."},
       {t:"Set Google Fonts Load = Swap",p:"Elementor \u2192 Editor \u2192 Settings \u2192 Advanced"},
       {t:"Verify: no requests to fonts.googleapis.com / fonts.gstatic.com",h:"DevTools \u2192 Network \u2192 reload \u2192 filter \u201cfont\u201d"},
     ]},
-    {id:"2D",title:"Build",items:[
+    {id:"2D",title:"Template system \u2014 Elementor (Hello has none)",items:[
+      {t:"Set global colors + fonts",p:"Elementor \u2192 Site Settings",h:"Hello ships no styling \u2014 define the palette + type here so everything inherits it"},
+      {t:"Header template",p:"Elementor \u2192 Templates \u2192 Theme Builder \u2192 Header",h:"logo, nav, CTA button; set display conditions = Entire Site"},
+      {t:"Footer template",p:"Theme Builder \u2192 Footer",h:"NAP, links, hybrid conversion CTA (3-field quick form + click-to-call)"},
+      {t:"Base Page / Single template \u2014 full width, no sidebar",p:"Theme Builder \u2192 Single"},
+      {t:"Save reusable page templates: Home, Service, City, Gallery, Reviews, FAQ, Contact, Blog Post"},
+      {t:"Build with Flexbox containers, not legacy sections",h:"fewer wrappers = lighter DOM = faster load"},
+    ]},
+    {id:"2E",title:"Build",items:[
       {t:"Build on staging, not live",when:["domain:staging"]},
       {t:"Building on the live domain \u2014 keep it in Coming Soon / maintenance mode until launch",when:["domain:live"]},
       {t:"Use Unlimited Elements as the only widget library \u2014 no other addon packs"},
-      {t:"Build all pages + templates to the design + copy doc",h:"header / footer / templates in Elementor Pro Theme Builder"},
+      {t:"Build all pages to the design + copy doc off the saved templates"},
       {t:"Implement animations per the notes"},
       {t:"No horizontal scroll / white space \u2014 sections full-width, nothing past the viewport",h:"check every breakpoint while building"},
       {t:"Reserve a min-height on carousels / marquees / sliders so the layout doesn\u2019t jump",h:"the #1 CLS cause \u2014 set min-height in Elementor \u2192 Advanced"},
@@ -362,56 +498,66 @@ const STAGES=[
       {t:"All assets load over HTTPS \u2014 no mixed content"},
       {t:"Link header/footer social icons + GBP button to the right destinations",h:"from Daisy\u2019s business details"},
     ]},
-    {id:"2E",title:"Forms",items:[
+    {id:"2F",title:"Forms",items:[
       {t:"Elementor Pro Form widget only: honeypot ON, file upload where needed"},
       {t:"Form actions: add Email + Collect Submissions",p:"widget \u2192 Content \u2192 Form \u2192 Actions After Submit",h:"Email sends it to the client; Collect Submissions stores a copy in WP as a backup"},
       {t:"Email action: To = client\u2019s inbox; Reply-To = the form\u2019s email field; From = a domain email (not Gmail)",h:"a free-mail From address often gets the whole email flagged as spam"},
       {t:"Test the form live \u2014 client gets the email + it lands in Submissions",h:"if the client isn\u2019t getting emails, they\u2019re in spam: add free SMTP (SiteGround SMTP or WP Mail SMTP free) and flag Daisy"},
       {t:"CRM clients: Webhook action \u2192 Zapier/Make \u2192 their CRM",h:"stays on Elementor Pro \u2014 no paid form plugin needed in most cases"},
     ]},
-    {id:"2F",title:"Alt text \u2014 keep it easy",items:[
+    {id:"2G",title:"Alt text \u2014 keep it easy",items:[
       {t:"Meaningful images (hero, team, service shots): one short descriptive alt line each",h:"say what\u2019s in it; add service/location where natural"},
-      {t:"Decorative images (textures, dividers, icons): empty alt (alt=\u201c\u201d)",h:"lets screen readers + agents skip them"},
-      {t:"Bulk: AIOSEO Image SEO auto-fills alt/title from a template; override heroes by hand",tag:"seo",when:["type:seo"],h:"template-based, not AI vision \u2014 name files descriptively in Drive; write hero alts by hand"},
+      {t:"Decorative images (textures, dividers, icons): empty alt (alt=\u201c\u201d)"},
+      {t:"Bulk: let Rank Math fill missing alt from the title/focus keyword, then override heroes by hand",tag:"seo",when:["type:seo"],h:"Rank Math \u2192 General Settings \u2192 Images; name files descriptively in Drive; write hero alts by hand"},
     ]},
-    {id:"2G",title:"On-Page SEO",tag:"seo",when:["type:seo"],items:[
+    {id:"2H",title:"On-Page SEO",tag:"seo",when:["type:seo"],items:[
       {t:"One H1 per page using that page\u2019s keyword; logical H2 \u2192 H3 order"},
-      {t:"Enter H1 / H2 / H3 into AIOSEO heading analysis"},
-      {t:"Add the SEO title + meta description per page from Daisy\u2019s map",p:"AIOSEO fields"},
+      {t:"Hit a green Rank Math score per page \u2014 focus keyword set, title, meta, first paragraph"},
+      {t:"Add the SEO title + meta description per page from Daisy\u2019s map",p:"Rank Math fields"},
       {t:"Internal links between related pages; no orphan pages"},
     ]},
-    {id:"2H",title:"Social share preview",items:[
-      {t:"Set the OG title + OG image",p:"AIOSEO \u2192 Social Networks",h:"the title + photo that pop up when the link is texted or shared"},
+    {id:"2I",title:"Social share preview",items:[
+      {t:"Set the OG title + OG image",p:"Rank Math \u2192 Titles & Meta / per-page Social tab",h:"the title + photo that pop up when the link is texted or shared"},
       {t:"Set the designer\u2019s default share image as the fallback"},
     ]},
-    {id:"2I",title:"AIOSEO config",items:[
-      {t:"Run the setup wizard \u2014 but fix the toggles, it pre-checks bloat",h:"Basil owns this with the company email; toggle guide below"},
-      {t:"Wizard ON (all sites): Optimized Search Appearance, Sitemaps"},
-      {t:"Wizard ON (Pro): Image SEO, Local SEO, Advanced Rich Snippets + Schema",tag:"seo",when:["type:seo"]},
-      {t:"Wizard OFF: Analytics, Conversion Tools, Multilingual, Email Reports, Author SEO, Video Sitemap",h:"these install extra plugins (MonsterInsights, OptinMonster, Universally) or duplicate GA4"},
-      {t:"After the wizard, delete any bloat it installed \u2014 MonsterInsights, OptinMonster, Universally",h:"none are in our stack"},
-      {t:"XML sitemap ON (/sitemap.xml); breadcrumbs ON"},
-      {t:"Schema: let AIOSEO own it \u2014 turn Astra\u2019s schema/breadcrumbs OFF",h:"running both = duplicate structured data"},
-      {t:"Add the business\u2019s social profile links",p:"AIOSEO \u2192 Social Networks",h:"from Daisy\u2019s business-info doc \u2014 also feeds sameAs schema"},
-      {t:"Configure LocalBusiness schema \u2014 name, address, hours, service area, phone",tag:"seo",when:["type:seo"]},
-      {t:"Enable the Redirection Manager",tag:"seo",when:["type:seo"]},
-      {t:"Redesign/transfer: crawl OLD site \u2192 map old\u2192new URLs as 301s",tag:"seo",when:["type:seo"]},
+    {id:"2J",title:"Rank Math config",items:[
+      {t:"Run the Rank Math setup wizard; connect a free Rank Math account"},
+      {t:"Migrating off AIOSEO? Use Rank Math\u2019s import tool first, THEN deactivate + DELETE AIOSEO",h:"never run two SEO plugins \u2014 delete, don\u2019t just deactivate"},
+      {t:"Modules ON: Sitemap, Schema, Redirections, Analytics",tag:"seo"},
+      {t:"Module ON: Local SEO",tag:"seo",when:["type:seo"]},
+      {t:"Sitemap ON (/sitemap_index.xml); breadcrumbs ON"},
+      {t:"Schema: Rank Math owns it \u2014 set LocalBusiness (site) + Service (service pages)",tag:"seo",when:["type:seo"],h:"Hello adds no schema, so no duplication to worry about"},
+      {t:"Add the business\u2019s social profile links",p:"Rank Math \u2192 Titles & Meta \u2192 Social Meta",h:"from Daisy\u2019s business-info doc \u2014 also feeds sameAs schema"},
+      {t:"Configure LocalBusiness \u2014 name, address, hours, service area, phone",tag:"seo",when:["type:seo"]},
+      {t:"Redesign/transfer: crawl OLD site \u2192 map old\u2192new URLs as 301s",p:"Rank Math \u2192 Redirections",tag:"seo",when:["type:seo"]},
     ]},
-    {id:"2J",title:"llms.txt (optional)",tag:"opt",when:["type:seo"],items:[
+    {id:"2K",title:"Rank Math Role Manager \u2014 team access",tag:"seo",when:["type:seo"],items:[
+      {t:"Enable the Role Manager module",p:"Rank Math \u2192 Dashboard",h:"SEO lead sets this \u2014 keeps writers/clients from breaking the SEO config"},
+      {t:"Admin / SEO Lead: all settings ON",h:"full control over API connections + schema"},
+      {t:"Editor / Marketing: View Analytics ON; Analytics Settings + General Settings OFF",h:"can see traffic + keywords, can\u2019t disconnect the Google account"},
+      {t:"Author / Writer: On-Page SEO + Analysis ON; View Analytics + Site Options OFF",h:"focused on content scoring, no client traffic data"},
+    ]},
+    {id:"2L",title:"Elementor SEO quick-view (optional)",tag:"opt",items:[
+      {t:"Show SEO Score to front-end, restricted to logged-in Editors/Admins",p:"Rank Math \u2192 General Settings \u2192 Other",h:"designers see the Rank Math score as a top-bar overlay on the live preview \u2014 no backend trip"},
+    ]},
+    {id:"2M",title:"llms.txt (optional)",tag:"opt",when:["type:seo"],items:[
       {t:"Add a simple llms.txt at the domain root",h:"a Markdown file \u2014 one H1, short summary, links to key pages. Cheap, passes the PageSpeed agentic check. NOT a ranking factor; skip if short on time."},
     ]},
   ]},
 
   {id:"3",owner:"Basil + Daisy",title:"Config, Speed & QA",
-   note:"Final pass \u2014 confirm settings, compliance, QA, then hand back. The performance section swaps with the Speed toggle.",
+   note:"Final pass \u2014 speed, compliance wiring, QA, then hand back. The performance section swaps with the Speed toggle; Complianz is Basil\u2019s post-dev job.",
    sections:[
     {id:"3A",title:"Performance \u2014 server (always)",items:[
       {t:"SiteGround: Dynamic Caching ON, Memcached ON, CDN ON"},
     ]},
-    {id:"3B",title:"Performance \u2014 Standard",when:["speed:imagify"],items:[
-      {t:"SiteGround Speed Optimizer: Frontend Optimization ON (minify/combine/defer CSS+JS)",h:"test pages for breakage; exclude any file that breaks"},
-      {t:"SiteGround Speed Optimizer: Images Optimization ON (compression + WebP)",h:"SiteGround handles images on standard sites \u2014 no separate image plugin needed by default"},
-      {t:"Imagify only if needed \u2014 image-heavy site where SiteGround isn\u2019t enough",h:"if you install Imagify, SiteGround auto-disables its Images Optimization (expected). Then: Aggressive, WebP+AVIF, resize ~1920px, Bulk Optimize."},
+    {id:"3B",title:"Performance \u2014 Standard (SiteGround images)",when:["speed:imagify"],items:[
+      {t:"Speed Optimizer \u2192 Frontend Optimization ON (minify/combine/defer CSS+JS)",h:"test pages for breakage; exclude any file that breaks"},
+      {t:"Speed Optimizer \u2192 Media: New Images Optimization ON",p:"Speed Optimizer \u2192 Media",h:"this is where SiteGround compresses images \u2014 no Imagify needed"},
+      {t:"Speed Optimizer \u2192 Media: run Bulk Optimization on existing images"},
+      {t:"Speed Optimizer \u2192 Media: Generate WebP Versions ON"},
+      {t:"Speed Optimizer \u2192 Media: Lazy Load Media ON"},
+      {t:"Only add Imagify if SiteGround\u2019s images aren\u2019t enough",h:"if you install Imagify, SiteGround auto-disables its own image optimization (expected)"},
       {t:"Confirm local fonts are ON"},
     ]},
     {id:"3C",title:"Performance \u2014 Advanced (Seraphinite)",when:["speed:seraphinite"],items:[
@@ -421,14 +567,17 @@ const STAGES=[
       {t:"Skip Imagify on this site",h:"Seraphinite handles images"},
       {t:"Test every page; broken layout/JS \u2192 exclude that file; purge BOTH caches"},
     ]},
-    {id:"3D",title:"Compliance \u2014 Basil (post-dev)",items:[
-      {t:"Privacy Policy, Terms, and Cookie Policy pages exist and are linked in the footer",h:"Basil owns compliance post-dev \u2014 the dev doesn\u2019t configure this"},
-      {t:"WPConsent: run scan/setup; brand bottom-bar banner"},
-      {t:"Script blocking: Essential on; Statistics + Marketing OFF until consent"},
-      {t:"Link the Privacy + Cookie Policy pages in the banner"},
-      {t:"Enable Google Consent Mode if GA4 is used"},
-      {t:"California / CCPA privacy notice in place",h:"we\u2019re California-based \u2014 include the state privacy notice"},
-      {t:"Test in incognito: banner appears, Accept/Reject works, nothing fires before consent"},
+    {id:"3D",title:"Compliance \u2014 Complianz + Rank Math (Basil, post-dev)",items:[
+      {t:"Rank Math \u2192 General Settings \u2192 Analytics: Install analytics code ON",h:"Rank Math places the GA4 framework; Complianz blocks it until consent"},
+      {t:"Enable cookieless tracking OFF",h:"GA4 needs real consent \u2014 in current Rank Math this toggle may not even appear anymore, which is fine"},
+      {t:"Anonymize IP addresses ON",h:"legacy UA setting, largely automatic in GA4 \u2014 harmless to leave on, don\u2019t rely on it for compliance"},
+      {t:"Make sure GA is placed ONLY by Rank Math \u2014 remove any duplicate GA (no manual tag, no Site Kit)",h:"double tags = broken consent + inflated data"},
+      {t:"Complianz wizard \u2192 Consent \u2192 Statistics: \u201cYes, with Google Analytics\u201d; who places the code = Rank Math"},
+      {t:"Complianz \u2192 Integrations \u2192 Plugins: Rank Math toggled ON",h:"Complianz finds the Rank Math GA4 tag and wraps it in its consent block"},
+      {t:"Enable Google Consent Mode v2 in Complianz",h:"required since 2024 to avoid data loss; Complianz sets it up mostly automatically"},
+      {t:"Regions: United States + California (CCPA/CPRA) \u2014 generate Privacy, Cookie, Terms docs",h:"we\u2019re California-based"},
+      {t:"Run the cookie scan; brand the banner; block Statistics + Marketing until consent"},
+      {t:"Incognito test: nothing fires before consent, Accept/Reject both work"},
     ]},
     {id:"3E",title:"QA \u2014 Layout + alignment",items:[
       {t:"No horizontal scroll \u2014 scroll all the way left, zero white space, every breakpoint"},
@@ -455,13 +604,13 @@ const STAGES=[
       {t:"Social icons + Google Business Profile link point to the right profiles"},
     ]},
     {id:"3I",title:"QA \u2014 Speed + indexing",items:[
-      {t:"PageSpeed Insights (mobile) healthy"},
+      {t:"PageSpeed Insights (mobile) healthy \u2014 Speed Optimizer active, images WebP, fonts local, CLS low",h:"if a live site is still slow, re-check these four first \u2014 they\u2019re the usual culprits"},
       {t:"\u201cSearch Engines Blocked\u201d is gone",when:["domain:live"]},
     ]},
     {id:"3J",title:"Hand back to Daisy",items:[
-      {t:"Build done, WP settings done, AIOSEO done, compliance done, speed configured"},
+      {t:"Build done, WP settings done, Rank Math done, speed configured"},
       {t:"No leftover dead links \u2014 every \u201c#\u201d built out or flagged",h:"a quick Screaming Frog crawl should surface only intentional placeholders"},
-      {t:"Notify Daisy for launch",h:"she handles domain, SSL, CDN, security lockdown, Site Kit, and the client report"},
+      {t:"Notify Daisy for launch",h:"she handles domain, SSL, CDN, security lockdown, analytics, Complianz sign-off, and the client report"},
     ]},
   ]},
 
@@ -469,24 +618,25 @@ const STAGES=[
 ];
 
 /* ---------------- HELPERS ---------------- */
-const STORE_KEY="kz_checklist_v9";
+const STORE_KEY="kz_checklist_v15";
 const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
 const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
 const STACK_HTML='<div class="stack-strip"><h4>The plugin stack \u2014 install only these</h4><div class="chips">'
-+'<span class="chip"><b>Astra</b><span>theme</span></span>'
-+'<span class="chip"><b>Elementor Pro</b><span>builder</span></span>'
++'<span class="chip"><b>Hello</b><span>theme (bare + fast)</span></span>'
++'<span class="chip"><b>Elementor Pro</b><span>builder + templates</span></span>'
 +'<span class="chip"><b>Unlimited Elements</b><span>widgets</span></span>'
-+'<span class="chip"><b>AIOSEO</b><span>SEO</span></span>'
-+'<span class="chip"><b>WPConsent</b><span>cookies</span></span>'
-+'<span class="chip"><b>UpdraftPlus</b><span>backups</span></span>'
-+'<span class="chip"><b>Site Kit</b><span>GSC / GA4 / Analytics</span></span>'
-+'<span class="chip"><b>Imagify</b><span>images (if needed)</span></span>'
-+'<span class="chip"><b>SiteGround</b><span>caching \u00b7 security \u00b7 CDN</span></span>'
++'<span class="chip"><b>Rank Math</b><span>SEO + analytics</span></span>'
++'<span class="chip"><b>Complianz</b><span>cookies \u00b7 post-dev</span></span>'
++'<span class="chip"><b>UpdraftPlus</b><span>off-site backup</span></span>'
++'<span class="chip"><b>Imagify</b><span>images (only if needed)</span></span>'
++'<span class="chip"><b>SiteGround</b><span>caching \u00b7 security \u00b7 CDN \u00b7 images</span></span>'
++'<span class="chip"><b>Wordfence</b><span>firewall + login security</span></span>'
 +'<span class="chip adv"><b>Seraphinite</b><span>advanced speed only</span></span>'
 +'</div></div>';
 const SECTAGS={seo:'<span class="tag tag-seo">SEO</span>',opt:'<span class="tag tag-opt">optional</span>'};
 function itemTag(it){
   if(it.tag==="seo")return ' <span class="tag tag-seo">SEO</span>';
+  if(it.tag==="opt")return ' <span class="tag tag-opt">optional</span>';
   if(it.when&&it.when.indexOf("domain:live")>-1)return ' <span class="tag tag-live">when live</span>';
   return "";
 }
@@ -639,4 +789,5 @@ document.getElementById("printBtn").addEventListener("click",()=>window.print())
 syncRoutes();applyVisibility();applyState();
 </script>
 </body>
+</html>
 </html>
