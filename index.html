@@ -278,70 +278,6 @@ Before you start: confirm you have the business info, brand voice, and full site
 
 /* ---------------- DATA ---------------- */
 const STAGES=[
-  {id:"5",owner:"Active incident",title:"Security & Recovery",
-   note:"One-time incident response \u2014 separate from the build flow. Confirmed entry point: a compromised shared admin login (KaizenAgency) \u2014 the attacker logged in as you and tried to upload a malicious plugin. The password was strong, so it wasn\u2019t guessed; it leaked, most likely via one shared login passed around the dev/SEO team (kitchen.co) or saved on an infected device. Structural cause: shared logins with no 2FA. Fix: individual accounts, least privilege, 2FA on everyone. Order: lock access \u2192 clean \u2192 harden \u2192 verify \u2192 launch.",
-   sections:[
-    {id:"5A",title:"A \u00b7 daisyp9.sg-host.com \u2014 cleaned, prep for launch",items:[
-      {t:"Malware cleanup done \u2014 2 files removed, permissions reset, users force-logged-out",h:"done by Expert Care"},
-      {t:"External Sucuri scan confirms: No Malware Found, not blacklisted"},
-      {t:"Change the KaizenAgency WP admin password \u2014 long, unique, in the password manager",h:"this login is the credential that was stolen"},
-      {t:"Enable 2FA + login-attempt limiting + custom login URL (Security Optimizer)"},
-      {t:"Update outdated plugins/theme: elementor, sg-security, seraphinite-accelerator, google-site-kit, sg-cachepress, wpconsent, Astra",h:"this is an old-stack site \u2014 update what\u2019s on it"},
-      {t:"Turn on auto-updates"},
-      {t:"Delete genuinely-unused plugins/themes",h:"keep AIOSEO / Unlimited Elements if the LIVE site needs them"},
-      {t:"Pre-launch hardening: HTTPS enforce/redirect + HSTS, confirm firewall active, add security headers (CSP / clickjacking / content-type)",h:"via Security Optimizer or a headers plugin (from the Sucuri report)"},
-      {t:"Only migrate to the live domain after all of the above"},
-    ]},
-    {id:"5B",title:"A \u00b7 Active fire \u2014 johnnywindows.com (finish hardening)",items:[
-      {t:"Expert Care cleanup complete \u2014 files, permissions, DB password rotated",h:"done by their team"},
-      {t:"Enable 2FA in Security Optimizer (Admin/Editor users)"},
-      {t:"Enable login-attempt limiting in Security Optimizer"},
-      {t:"Set a custom login URL in Security Optimizer"},
-      {t:"External Sucuri scan reads clean",p:"sitecheck.sucuri.net"},
-      {t:"Remove any leftover google[hash].html files from public_html"},
-      {t:"Confirm File Manager Advanced is DELETED (not just deactivated)"},
-      {t:"Verify no unknown admin users remain"},
-    ]},
-    {id:"5R",title:"B \u00b7 First \u2014 rotate the stolen login on EVERY site",items:[
-      {t:"Change the KaizenAgency WP admin password on every site it exists on",h:"this is the credential that was actually stolen, and it\u2019s likely reused across sites \u2014 separate from the SiteGround/Google passwords you already changed"},
-      {t:"Store each new password in the password manager, unique per site"},
-      {t:"Better fix: replace the shared login with per-person accounts (see Team access) so there\u2019s nothing shared to steal again"},
-    ]},
-    {id:"5C",title:"B \u00b7 Per-site audit \u2014 the 5 checks (run on every site)",items:[
-      {t:"site: search \u2014 site:thedomain.com",h:"gambling/Indonesian spam (slot, toto, gacor, maxwin, NEGOBOS, AGUSTOTO) = compromised; only real pages = good sign"},
-      {t:"WordPress Users \u2014 delete any Administrator you don\u2019t recognize",p:"wp-admin \u2192 Users"},
-      {t:"Plugins \u2014 look for File Manager Advanced or anything you didn\u2019t install",p:"wp-admin \u2192 Plugins"},
-      {t:"Root files \u2014 unfamiliar google[hash].html files (clusters with recent dates)",p:"File Manager \u2192 public_html"},
-      {t:"Search Console owners \u2014 any owner that isn\u2019t you",p:"Settings \u2192 Users and permissions",h:"extra important \u2014 shared Google account"},
-      {t:"Fast tell \u2014 grep for attacker filenames: FormGuard.php, speed-optimizer.php in a fake plugin folder, regenerate-import-widget folder",h:"View Source \u2192 find \u201cslot\u201d / \u201ctoto\u201d / \u201cgacor\u201d / \u201cmaxwin\u201d in injected schema"},
-    ]},
-    {id:"5D",title:"B \u00b7 Site tracker \u2014 audit each of the six",items:[
-      {t:"johnnywindows.com",h:"compromised \u2014 cleaned; finish hardening in section A"},
-      {t:"daisyp9.sg-host.com",h:"compromised \u2014 cleaned; prep for launch (section A)"},
-      {t:"daisyp10.sg-host.com",h:"check next \u2014 same install window as daisyp9"},
-      {t:"bryanknowslending.com",h:"looked clean \u2014 finish the 5 checks"},
-      {t:"mrs-cleaning.com",h:"not yet checked"},
-      {t:"organizing-pros.com",h:"looked clean \u2014 finish the 5 checks"},
-      {t:"daisyp9 / daisyp10 may be staging copies \u2014 check the LIVE versions too",h:"a compromised staging site can reinfect production"},
-    ]},
-    {id:"5E",title:"C \u00b7 Account-level hardening (the master keys)",items:[
-      {t:"Changed passwords on both Google accounts connected to SiteGround"},
-      {t:"2FA (authenticator app) on both Google accounts"},
-      {t:"Changed the SiteGround account password"},
-      {t:"2-step verification on SiteGround"},
-      {t:"Confirmed no unrecognized FTP/SSH accounts"},
-      {t:"Password manager (1Password / Bitwarden) \u2014 every site\u2019s credentials, unique per site"},
-      {t:"Map which email/account owns what \u2014 SiteGround login, each Search Console property, each site\u2019s notification email",h:"so you know where alerts land and what to secure"},
-      {t:"Have the dev + SEO team scan their computers for malware now",h:"an infostealer on one machine is the likely leak source \u2014 rotating passwords without cleaning the device just leaks the new one"},
-      {t:"Consider SiteGround Site Scanner Premium with file-upload quarantine",h:"catches malicious files at upload \u2014 exactly this attack\u2019s mechanism; worth it across a multi-site account"},
-    ]},
-    {id:"5F",title:"Post-clean SEO recovery (for sites that were hit)",items:[
-      {t:"Search Console: remove / monitor the spam URLs",h:"they drop out of the index as Google recrawls the clean site"},
-      {t:"Confirm injected schema (the AGUSTOTO / gambling Product markup) is gone from real pages"},
-      {t:"URL Inspection \u2192 Request Indexing on your real key pages to speed recrawl"},
-      {t:"Watch the Pages report for the spam pages falling out over the following weeks"},
-    ]},
-  ]},
   {id:"1",owner:"Daisy · Basil · Design",title:"Setup, Design & Coordination",
    note:"Daisy's setup + toggle reference, the design handoff, Basil's coordination, and launch. This is the \u201cbuild a clean site\u201d checklist \u2014 the toggles that are easy to forget.",
    sections:[
@@ -390,15 +326,15 @@ const STAGES=[
       {t:"Confirm all plugins are installed but UNCONFIGURED"},
       {t:"Send dev access + handoff recap + this checklist",h:"URL, username, password (separately). Security lockdown is post-launch so devs aren\u2019t locked out."},
     ]},
-    {id:"1T",title:"Team access model \u2014 the root-cause fix",items:[
-      {t:"One account per person under their own email \u2014 never a shared login, never under your email"},
+    {id:"1T",title:"Team access model",items:[
+      {t:"One account per person under their own email \u2014 never a shared team login, never under the owner\u2019s email"},
       {t:"Each person sets their own password + their own 2FA on their own device"},
-      {t:"Least privilege: Developers = Administrator only if they truly build/configure; SEO team = Editor, not Administrator",h:"a leaked Editor login can\u2019t install plugins or drop a backdoor \u2014 that alone would have blunted this attack"},
-      {t:"Retire the shared \u201cKaizenAgency\u201d login for daily use \u2014 keep one locked-down owner account that\u2019s yours"},
-      {t:"Stop sharing WordPress passwords via kitchen.co",h:"with individual accounts there\u2019s nothing to share"},
-      {t:"Genuinely shared secrets (hosting, license keys) \u2192 password manager with revocable sharing (1Password/Bitwarden), not a general tool"},
+      {t:"Least privilege: Developers = Administrator only if they truly build/configure; SEO/content = Editor, not Administrator",h:"a leaked Editor login can\u2019t install plugins or drop a backdoor"},
+      {t:"No shared team logins \u2014 if one exists, retire it and keep a single locked-down owner account that\u2019s yours"},
+      {t:"Never share WordPress passwords through chat or a general password-sharing tool"},
+      {t:"Genuinely shared secrets (hosting, license keys) \u2192 password manager with revocable sharing (1Password/Bitwarden)"},
       {t:"Hosting/SFTP scoped per person \u2014 never share the master SiteGround login"},
-      {t:"Have the dev + SEO team scan their own computers for malware",h:"an infostealer on one machine explains how a strong password leaked; changing passwords without cleaning the device just leaks the new one"},
+      {t:"Have the dev/SEO team scan their own devices for malware",h:"an infostealer on one machine leaks even a strong password; rotating without cleaning the device just leaks the new one"},
       {t:"Remove access when a person/project ends; audit accounts quarterly, delete anyone dormant"},
     ]},
     {id:"1F",title:"Design",items:[
@@ -419,8 +355,9 @@ const STAGES=[
       {t:"Schedule the UpdraftPlus weekly backup \u2192 Google Drive",h:"off-site copy; SiteGround\u2019s own daily backups cover disaster recovery"},
       {t:"Add myself as Manager on the client GBP",tag:"seo",when:["type:seo"]},
       {t:"Add Broken Link Checker (my account) \u2014 SEO paid clients only, if needed",tag:"seo",when:["type:seo"],h:"e.g., cleaning up past broken links"},
-      {t:"Pre-launch: clean scan confirmed (SiteGround scan and/or Sucuri sitecheck)",h:"never migrate a site that isn\u2019t confirmed clean"},
-      {t:"Pre-launch: site: search shows only real pages \u2014 no spam URLs"},
+      {t:"Pre-launch: run an external malware scan \u2014 sitecheck.sucuri.net (plus the SiteGround scan)",h:"never migrate a site that isn\u2019t confirmed clean"},
+      {t:"Pre-launch: no unknown admin users, no plugins you didn\u2019t install, no unfamiliar files in public_html",h:"quick compromise check \u2014 especially if inheriting an existing site"},
+      {t:"Pre-launch: site: search shows only real pages \u2014 no injected spam"},
       {t:"Search Console: confirm you\u2019re the only owner (Settings \u2192 Users and permissions)"},
       {t:"Point domain / migrate, force HTTPS, fix mixed content"},
       {t:"2FA on wp-admin \u2014 the single most important control",h:"Wordfence \u2192 Login Security \u2192 Two-Factor Authentication \u2192 scan the QR in an authenticator app (Google Authenticator / Authy / 1Password), download the recovery codes, enter the 6-digit code \u2192 Activate. Then Settings \u2192 Require 2FA for all administrators (only enforces after one admin has set it up, so you can\u2019t lock everyone out). Repeat for every admin."},
@@ -551,16 +488,22 @@ const STAGES=[
     {id:"3A",title:"Performance \u2014 server (always)",items:[
       {t:"SiteGround: Dynamic Caching ON, Memcached ON, CDN ON"},
     ]},
-    {id:"3B",title:"Performance \u2014 Standard (SiteGround images)",when:["speed:imagify"],items:[
-      {t:"Speed Optimizer \u2192 Frontend Optimization ON (minify/combine/defer CSS+JS)",h:"test pages for breakage; exclude any file that breaks"},
-      {t:"Speed Optimizer \u2192 Media: New Images Optimization ON",p:"Speed Optimizer \u2192 Media",h:"this is where SiteGround compresses images \u2014 no Imagify needed"},
-      {t:"Speed Optimizer \u2192 Media: run Bulk Optimization on existing images"},
-      {t:"Speed Optimizer \u2192 Media: Generate WebP Versions ON"},
-      {t:"Speed Optimizer \u2192 Media: Lazy Load Media ON"},
-      {t:"Only add Imagify if SiteGround\u2019s images aren\u2019t enough",h:"if you install Imagify, SiteGround auto-disables its own image optimization (expected)"},
-      {t:"Confirm local fonts are ON"},
+    {id:"3B",title:"Performance \u2014 PageSpeed SOP (SiteGround Speed Optimizer)",when:["speed:imagify"],items:[
+      {t:"One optimizer only \u2014 SiteGround Speed Optimizer; never stack Seraphinite/Imagify at the same time",h:"they fight each other and cause bugs. Keep caching ON \u2014 if a change doesn\u2019t show, Purge SG Cache, don\u2019t disable caching."},
+      {t:"1 \u00b7 Baseline first: PageSpeed Insights (mobile) \u2014 note LCP / FCP / Speed Index / TBT / CLS + screenshot",h:"aim for \u201cgood,\u201d not a perfect 100 \u2014 Elementor is heavy; target LCP under ~4s mobile"},
+      {t:"2 \u00b7 Images \u2192 Speed Optimizer \u2192 Media: Original Images Backups ON first",h:"so you can revert if compression looks bad"},
+      {t:"2 \u00b7 Image Compression \u2192 Edit \u2192 medium / balanced (not most aggressive) \u2192 save",h:"re-generates all existing images \u2014 let it finish on image-heavy sites"},
+      {t:"2 \u00b7 WebP Images ON; Lazy Load Media ON"},
+      {t:"3 \u00b7 Purge SG Cache \u2192 re-run PageSpeed \u2192 compare to baseline",h:"image savings + LCP should drop a lot"},
+      {t:"4 \u00b7 Render-blocking (Frontend), only if still flagged: Minify CSS+JS + Defer render-blocking JS; Combine CSS+JS is optional (can break layout)",h:"Purge, then check the live site \u2014 if styling/scripts break, turn the last toggle back off and re-test"},
+      {t:"5 \u00b7 Caching (Caching tab): confirm dynamic + file caching ON",h:"purge to see changes, never disable"},
+      {t:"6 \u00b7 Final: re-run PageSpeed mobile vs baseline; spot-check on a phone; confirm nothing broke"},
+      {t:"Confirm local fonts are ON (set in the Build tab)"},
+      {t:"Going forward: resize + compress new images before upload \u2014 no full-res camera files"},
+      {t:"Escalate to Imagify only if image-delivery savings are still large after all this",h:"high-res photography / big media libraries; a normal small-business Elementor site is fine on WebP + compression"},
     ]},
-    {id:"3C",title:"Performance \u2014 Advanced (Seraphinite)",when:["speed:seraphinite"],items:[
+    {id:"3C",title:"Performance \u2014 Advanced (Seraphinite \u2014 large/complex only)",when:["speed:seraphinite"],items:[
+      {t:"Only for genuinely large/complex sites that outgrow Speed Optimizer",h:"default is the Standard SOP; re-add Seraphinite only when Speed Optimizer isn\u2019t enough"},
       {t:"SiteGround Speed Optimizer Frontend + Media \u2192 OFF",h:"Seraphinite owns all frontend + media optimization \u2014 never run both"},
       {t:"Seraphinite (extended/premium): minify + combine CSS/JS, critical CSS, defer JS, lazy load, WebP + AVIF \u2192 ON"},
       {t:"Seraphinite page caching \u2192 OFF (SiteGround handles caching)"},
@@ -618,7 +561,7 @@ const STAGES=[
 ];
 
 /* ---------------- HELPERS ---------------- */
-const STORE_KEY="kz_checklist_v15";
+const STORE_KEY="kz_checklist_v17";
 const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
 const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
 const STACK_HTML='<div class="stack-strip"><h4>The plugin stack \u2014 install only these</h4><div class="chips">'
@@ -789,5 +732,4 @@ document.getElementById("printBtn").addEventListener("click",()=>window.print())
 syncRoutes();applyVisibility();applyState();
 </script>
 </body>
-</html>
 </html>
