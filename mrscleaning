@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statement of Work — Mrs. Cleaning · Kaizen Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7;--ink:#1B2A2E;--muted:#6B7671;--jade:#227560;
+    --jade-deep:#184F42;--tint:#EAF2EF;--line:#E4E0D6;--line-soft:#EEEBE3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:#EFEDE6;color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;padding:32px 16px;}
+  .lang-toggle{max-width:820px;margin:0 auto 16px;display:flex;justify-content:flex-end;gap:6px;}
+  .lang-toggle button{font-family:"Inter",sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:100px;cursor:pointer;transition:all .15s;}
+  .lang-toggle button.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .lang-toggle button:hover:not(.active){border-color:var(--jade);color:var(--jade);}
+  .sheet{max-width:820px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:0 18px 50px -24px rgba(24,40,36,.4);overflow:hidden;}
+  .head{position:relative;padding:52px 48px 40px;border-bottom:2px solid var(--ink);overflow:hidden;}
+  .kanji{position:absolute;top:-38px;right:-14px;font-family:"Fraunces",serif;font-size:230px;line-height:1;color:var(--jade);opacity:.06;user-select:none;pointer-events:none;}
+  .brand{display:flex;align-items:baseline;gap:10px;font-family:"Fraunces",serif;font-weight:600;font-size:24px;letter-spacing:-.01em;position:relative;}
+  .brand .dot{color:var(--jade);}
+  .brand small{font-family:"Inter",sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+  .doc-title{font-family:"Fraunces",serif;font-weight:600;font-size:40px;line-height:1.08;letter-spacing:-.02em;margin-top:26px;max-width:16ch;}
+  .doc-sub{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--jade);font-weight:600;margin-top:14px;}
+  .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 24px;margin-top:30px;border-top:1px solid var(--line-soft);padding-top:22px;}
+  .meta .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+  .meta .v{font-weight:500;font-size:14.5px;}
+  .body{padding:44px 48px 12px;}
+  section{margin-bottom:40px;}
+  .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .eyebrow .num{font-family:"Fraunces",serif;font-weight:600;font-size:13px;color:var(--jade);background:var(--tint);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
+  h2{font-family:"Fraunces",serif;font-weight:600;font-size:23px;letter-spacing:-.01em;}
+  p{margin-bottom:12px;}p:last-child{margin-bottom:0;}
+  .muted{color:var(--muted);}
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:6px;overflow:hidden;}
+  .svc .cell{background:var(--paper);padding:18px 20px;}
+  .svc h3{font-family:"Fraunces",serif;font-size:17px;font-weight:600;margin-bottom:5px;display:flex;align-items:center;gap:9px;}
+  .svc h3::before{content:"";width:7px;height:7px;background:var(--jade);border-radius:50%;flex:none;}
+  .svc p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.55;}
+  .flow{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+  .flow .step{flex:1 1 140px;border:1px solid var(--line);border-radius:6px;padding:14px 16px;position:relative;}
+  .flow .step .s{font-family:"Fraunces",serif;color:var(--jade);font-weight:600;font-size:13px;}
+  .flow .step .t{font-weight:600;font-size:14.5px;margin-top:2px;}
+  .flow .step .d{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.5;}
+  .tl{border-top:1px solid var(--line);}
+  .tl .row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:15px 12px;border-bottom:1px solid var(--line-soft);align-items:baseline;}
+  .tl .row.cur{background:linear-gradient(90deg,var(--tint),transparent);border-radius:6px;}
+  .tl .m{font-family:"Fraunces",serif;font-weight:600;font-size:15px;color:var(--jade-deep);}
+  .tl .row.cur .m{color:var(--jade);}
+  .tl .desc{font-size:14.5px;}
+  .badge{display:inline-block;font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--jade);padding:2px 8px;border-radius:100px;margin-left:8px;vertical-align:middle;}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;font-style:italic;}
+  .inv{background:var(--ink);color:#EAF0EE;border-radius:8px;padding:28px 30px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;}
+  .inv .big{font-family:"Fraunces",serif;font-size:38px;font-weight:600;line-height:1;color:#fff;}
+  .inv .big span{font-size:17px;color:#9FBDB4;font-weight:400;}
+  .inv .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8FAAA2;margin-bottom:6px;}
+  .inv .tot{text-align:right;}
+  .inv .tot .t2{font-family:"Fraunces",serif;font-size:22px;color:#fff;font-weight:500;}
+  .ongoing{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 16px;}
+  .ongoing .tier{border:1px solid var(--line);border-radius:8px;padding:18px 20px;}
+  .ongoing .tier.free{background:var(--tint);border-color:var(--jade);}
+  .ongoing .tier .yr{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+  .ongoing .tier .amt{font-family:"Fraunces",serif;font-size:27px;font-weight:600;margin-top:5px;line-height:1;}
+  .ongoing .tier .amt span{font-size:13.5px;color:var(--muted);font-weight:400;}
+  .ongoing .tier .sub{font-size:12.5px;color:var(--muted);margin-top:5px;}
+  ul.clean{list-style:none;margin-top:4px;}
+  ul.clean li{position:relative;padding-left:24px;margin-bottom:9px;font-size:14.5px;}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border:1.5px solid var(--jade);border-radius:2px;transform:rotate(45deg);}
+  .callout{background:var(--tint);border-left:3px solid var(--jade);border-radius:0 6px 6px 0;padding:16px 20px;font-size:14.5px;}
+  .callout strong{color:var(--jade-deep);}
+  .accept{border-top:2px solid var(--ink);margin-top:8px;padding-top:34px;}
+  .sig{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:26px;}
+  .sig .box .line{border-bottom:1.5px solid var(--ink);height:44px;margin-bottom:8px;}
+  .sig .box .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+  .sig .box .who{font-weight:600;font-size:14px;margin-top:2px;}
+  footer{background:var(--ink);color:#B7C9C3;padding:26px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;}
+  footer .tag{font-family:"Fraunces",serif;font-style:italic;color:#7FA398;}
+  footer a{color:#CFE0DA;text-decoration:none;}
+  @media (max-width:640px){
+    body{padding:14px 8px;}.head{padding:36px 24px 30px;}.body{padding:32px 24px 8px;}
+    .doc-title{font-size:30px;}.kanji{font-size:150px;top:-20px;}
+    .meta{grid-template-columns:1fr 1fr;gap:16px;}.svc{grid-template-columns:1fr;}
+    .sig{grid-template-columns:1fr;gap:30px;}.inv{flex-direction:column;align-items:flex-start;}
+    .inv .tot{text-align:left;}.ongoing{grid-template-columns:1fr;}footer{padding:22px 24px;}
+    .tl .row{grid-template-columns:92px 1fr;gap:14px;}
+  }
+  @media print{
+    body{background:#fff;padding:0;}.sheet{border:none;box-shadow:none;max-width:100%;}
+    .lang-toggle{display:none;}
+    .inv,footer{background:#1B2A2E !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    section{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button id="btn-es" class="active" onclick="setLang('es')">Español</button>
+  <button id="btn-en" onclick="setLang('en')">English</button>
+</div>
+
+<!-- ============ SPANISH ============ -->
+<div id="doc-es" class="sheet">
+  <header class="head">
+    <div class="kanji">改善</div>
+    <div class="brand">Kaizen<span class="dot">.</span>Agency &nbsp; <small>Continuous&nbsp;Improvement</small></div>
+    <h1 class="doc-title">Acuerdo de Alcance de Trabajo</h1>
+    <div class="doc-sub">Statement of Work · Presencia Digital</div>
+    <div class="meta">
+      <div><div class="k">Cliente</div><div class="v">Mrs. Cleaning</div></div>
+      <div><div class="k">A la atención de</div><div class="v">Brenda</div></div>
+      <div><div class="k">Preparado por</div><div class="v">Daisy Pineda</div></div>
+      <div><div class="k">Inicio / factura</div><div class="v">7 de mayo, 2026</div></div>
+      <div><div class="k">Duración</div><div class="v">6 meses</div></div>
+      <div><div class="k">Estado</div><div class="v">Mes 3 en curso (julio)</div></div>
+    </div>
+  </header>
+  <div class="body">
+    <section>
+      <div class="eyebrow"><span class="num">1</span><h2>Resumen del proyecto</h2></div>
+      <p>Este documento describe con claridad los servicios, el proceso de trabajo, el cronograma y la inversión del proyecto de presencia digital de <strong>Mrs. Cleaning</strong>, desarrollado por Kaizen Agency.</p>
+      <p class="muted">Su propósito es dejar por escrito lo que está incluido y las expectativas de ambas partes. El enfoque principal en este momento es dejar el sitio en vivo lo antes posible.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">2</span><h2>Alcance de servicios</h2></div>
+      <div class="svc">
+        <div class="cell"><h3>Sitio web</h3><p>Diseño y desarrollo de un sitio profesional y responsivo, optimizado para móviles y listo para recibir clientes.</p></div>
+        <div class="cell"><h3>Páginas del sitio</h3><p>Inicio, Servicios Comerciales, Residencial y Contacto, más el área de servicio.</p></div>
+        <div class="cell"><h3>Logo e identidad</h3><p>Diseño del logotipo de la marca — ya aprobado y listo.</p></div>
+        <div class="cell"><h3>Perfil de Google Business</h3><p>Configuración, optimización y actualización del perfil: fotos, respuestas a reseñas e información del negocio.</p></div>
+        <div class="cell"><h3>Apoyo en redes sociales</h3><p>Orientación y ayuda para tus cuentas. No creamos ni publicamos contenido, ya que esas cuentas te pertenecen por completo.</p></div>
+        <div class="cell"><h3>Acompañamiento</h3><p>Un solo punto de contacto durante todo el proyecto: Daisy.</p></div>
+      </div>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">3</span><h2>Proceso de diseño y aprobación</h2></div>
+      <p class="muted">Trabajamos el diseño primero y esperamos tu aprobación antes de construir y publicar el sitio en vivo. Así ajustamos sobre el diseño en lugar de desarrollar varios sitios completos — es más rápido, más económico en tiempo y evita retrabajo.</p>
+      <div class="flow">
+        <div class="step"><div class="s">01</div><div class="t">Diseño</div><div class="d">Creamos la propuesta visual del sitio.</div></div>
+        <div class="step"><div class="s">02</div><div class="t">Tu aprobación</div><div class="d">Revisas y confirmas la dirección final.</div></div>
+        <div class="step"><div class="s">03</div><div class="t">Desarrollo</div><div class="d">Construimos el sitio ya aprobado.</div></div>
+        <div class="step"><div class="s">04</div><div class="t">Publicación</div><div class="d">El sitio sale en vivo.</div></div>
+      </div>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">4</span><h2>Cronograma</h2></div>
+      <div class="tl">
+        <div class="row"><div class="m">Mes 1 · Mayo</div><div class="desc">Diseño y aprobación del logo + configuración y actualización del perfil de Google Business.</div></div>
+        <div class="row"><div class="m">Mes 2 · Junio</div><div class="desc">Diseño del sitio y desarrollo.</div></div>
+        <div class="row cur"><div class="m">Mes 3 · Julio</div><div class="desc">Publicación del sitio en vivo. <span class="badge">En curso</span></div></div>
+        <div class="row"><div class="m">Mes 4 · Agosto</div><div class="desc">Ajustes finos y correcciones al sitio.</div></div>
+        <div class="row"><div class="m">Mes 5 · Sept.</div><div class="desc">Apoyo y orientación con redes sociales.</div></div>
+        <div class="row"><div class="m">Mes 6 · Oct.</div><div class="desc">Optimizaciones finales y entrega.</div></div>
+      </div>
+      <p class="note">El enfoque principal es publicar el sitio lo antes posible. Las fechas pueden ajustarse según los tiempos de aprobación y los cambios que se soliciten.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">5</span><h2>Inversión y pagos</h2></div>
+      <div class="inv">
+        <div><div class="lab">Pago mensual</div><div class="big">$200<span> / mes</span></div></div>
+        <div class="tot"><div class="lab">Total · 6 meses</div><div class="t2">$1,200 <span style="font-size:13px;color:#8FAAA2;">todos los servicios incluidos</span></div></div>
+      </div>
+      <p class="muted" style="margin-top:14px;">El plan de pagos a 6 meses define también el tiempo proyectado para completar todos los servicios, ya que ese es el presupuesto con el que se coordina el trabajo del equipo.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">6</span><h2>Hosting y mantenimiento continuo</h2></div>
+      <p class="muted" style="margin-bottom:16px;">El <strong style="color:var(--ink)">primer año de hosting está incluido sin costo</strong>. A partir del segundo año, el mantenimiento continuo mantiene tu sitio en línea, seguro y actualizado.</p>
+      <div class="ongoing">
+        <div class="tier free"><div class="yr">Año 1</div><div class="amt">Gratis</div><div class="sub">Hosting incluido, sin costo adicional.</div></div>
+        <div class="tier"><div class="yr">Año 2 en adelante</div><div class="amt">$500<span> / año</span></div><div class="sub">o $50 / mes en plan mensual.</div></div>
+      </div>
+      <p class="muted" style="margin-bottom:8px;">El servicio continuo incluye:</p>
+      <ul class="clean">
+        <li>Hosting del sitio web</li>
+        <li>Actualizaciones y mantenimiento</li>
+        <li>Seguridad y respaldos</li>
+        <li>Gestión general del sitio</li>
+      </ul>
+      <p class="note">Servicio opcional. Puedes cancelarlo cuando quieras; el sitio siempre es tuyo.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">7</span><h2>Cambios y revisiones</h2></div>
+      <div class="callout">Revisamos y rediseñamos el sitio <strong>las veces que sean necesarias</strong> hasta que quede justo como lo quieres. Hasta ahora hemos hecho tres rediseños completos, y seguiremos ajustando. Los cambios de dirección importantes pueden mover un poco el cronograma, y siempre te avisaremos con anticipación.</div>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">8</span><h2>Responsabilidades del cliente</h2></div>
+      <ul class="clean">
+        <li>Mantener el acceso al perfil de Google Business para poder gestionarlo y actualizarlo.</li>
+        <li>Entregar el contenido, las fotos y los textos necesarios de forma oportuna.</li>
+        <li>Dar retroalimentación y aprobaciones dentro de un plazo razonable para mantener el cronograma en tiempo.</li>
+      </ul>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">9</span><h2>Propiedad de los activos</h2></div>
+      <p class="muted">Al completar el proyecto y los pagos, <strong style="color:var(--ink)">todos los activos son 100% tuyos</strong>: sitio web, logo, cuentas y diseños. Kaizen Agency no retiene el control ni bloquea tu acceso — sin ataduras.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">10</span><h2>Cancelación y reembolso</h2></div>
+      <p class="muted">Si en cualquier momento consideras que el cronograma o el alcance no se ajustan a lo que necesitas, puedes cancelar el proyecto. Kaizen Agency te reembolsará la parte proporcional de los servicios no completados y, además, ofrecerá una compensación de buena fe por cualquier malentendido en la comunicación.</p>
+    </section>
+    <section class="accept">
+      <div class="eyebrow"><span class="num" style="background:var(--ink);color:#fff;">✓</span><h2>Aceptación</h2></div>
+      <p class="muted">Al firmar, ambas partes confirman que están de acuerdo con el alcance, el cronograma y la inversión aquí descritos.</p>
+      <div class="sig">
+        <div class="box"><div class="line"></div><div class="lbl">Firma · Cliente</div><div class="who">Brenda — Mrs. Cleaning</div></div>
+        <div class="box"><div class="line"></div><div class="lbl">Firma · Kaizen Agency</div><div class="who">Daisy Pineda</div></div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div><div style="color:#EAF0EE;font-weight:600;">Kaizen Agency · Daisy Pineda</div><div><a href="mailto:Daisy@kaizenagency.org">Daisy@kaizenagency.org</a> · (408) 710-6718</div></div>
+    <div class="tag">when your site's being lazy, call Daisy</div>
+  </footer>
+</div>
+
+<!-- ============ ENGLISH ============ -->
+<div id="doc-en" class="sheet" style="display:none;">
+  <header class="head">
+    <div class="kanji">改善</div>
+    <div class="brand">Kaizen<span class="dot">.</span>Agency &nbsp; <small>Continuous&nbsp;Improvement</small></div>
+    <h1 class="doc-title">Statement of Work</h1>
+    <div class="doc-sub">Digital Presence Project</div>
+    <div class="meta">
+      <div><div class="k">Client</div><div class="v">Mrs. Cleaning</div></div>
+      <div><div class="k">Attn</div><div class="v">Brenda</div></div>
+      <div><div class="k">Prepared by</div><div class="v">Daisy Pineda</div></div>
+      <div><div class="k">Start / invoice</div><div class="v">May 7, 2026</div></div>
+      <div><div class="k">Duration</div><div class="v">6 months</div></div>
+      <div><div class="k">Status</div><div class="v">Month 3 in progress (July)</div></div>
+    </div>
+  </header>
+  <div class="body">
+    <section>
+      <div class="eyebrow"><span class="num">1</span><h2>Project overview</h2></div>
+      <p>This document clearly outlines the services, workflow, timeline, and investment for the digital presence project for <strong>Mrs. Cleaning</strong>, developed by Kaizen Agency.</p>
+      <p class="muted">Its purpose is to put in writing what's included and the expectations of both parties. The main focus right now is getting the site live as soon as possible.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">2</span><h2>Scope of services</h2></div>
+      <div class="svc">
+        <div class="cell"><h3>Website</h3><p>Design and development of a professional, responsive site — mobile-optimized and ready to bring in clients.</p></div>
+        <div class="cell"><h3>Site pages</h3><p>Home, Commercial Services, Residential, and Contact, plus the service area.</p></div>
+        <div class="cell"><h3>Logo &amp; identity</h3><p>Brand logo design — already approved and set.</p></div>
+        <div class="cell"><h3>Google Business Profile</h3><p>Setup, optimization, and refresh of the profile: photos, review responses, and business info.</p></div>
+        <div class="cell"><h3>Social media guidance</h3><p>Guidance and help with your accounts. We don't create or post content, since those accounts belong entirely to you.</p></div>
+        <div class="cell"><h3>Support</h3><p>A single point of contact throughout the project: Daisy.</p></div>
+      </div>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">3</span><h2>Design &amp; approval process</h2></div>
+      <p class="muted">We design first and get your approval before building and publishing the site live. This way we adjust on the design instead of developing several complete websites — it's faster, saves time, and avoids rework.</p>
+      <div class="flow">
+        <div class="step"><div class="s">01</div><div class="t">Design</div><div class="d">We create the visual proposal for the site.</div></div>
+        <div class="step"><div class="s">02</div><div class="t">Your approval</div><div class="d">You review and confirm the final direction.</div></div>
+        <div class="step"><div class="s">03</div><div class="t">Development</div><div class="d">We build the approved site.</div></div>
+        <div class="step"><div class="s">04</div><div class="t">Launch</div><div class="d">The site goes live.</div></div>
+      </div>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">4</span><h2>Timeline</h2></div>
+      <div class="tl">
+        <div class="row"><div class="m">Month 1 · May</div><div class="desc">Logo design &amp; approval + Google Business Profile setup and refresh.</div></div>
+        <div class="row"><div class="m">Month 2 · June</div><div class="desc">Website design and development.</div></div>
+        <div class="row cur"><div class="m">Month 3 · July</div><div class="desc">Website goes live. <span class="badge">In progress</span></div></div>
+        <div class="row"><div class="m">Month 4 · Aug.</div><div class="desc">Fine-tuning and site adjustments.</div></div>
+        <div class="row"><div class="m">Month 5 · Sept.</div><div class="desc">Social media support and guidance.</div></div>
+        <div class="row"><div class="m">Month 6 · Oct.</div><div class="desc">Final optimizations and handoff.</div></div>
+      </div>
+      <p class="note">The main focus is getting the site live as soon as possible. Dates may shift based on approval times and any changes requested.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">5</span><h2>Investment &amp; payment</h2></div>
+      <div class="inv">
+        <div><div class="lab">Monthly payment</div><div class="big">$200<span> / mo</span></div></div>
+        <div class="tot"><div class="lab">Total · 6 months</div><div class="t2">$1,200 <span style="font-size:13px;color:#8FAAA2;">all services included</span></div></div>
+      </div>
+      <p class="muted" style="margin-top:14px;">The 6-month payment plan also defines the projected time to complete all services, since that's the budget the team's work is coordinated around.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">6</span><h2>Ongoing hosting &amp; maintenance</h2></div>
+      <p class="muted" style="margin-bottom:16px;">The <strong style="color:var(--ink)">first year of hosting is included at no cost</strong>. Starting in year two, ongoing maintenance keeps your site online, secure, and up to date.</p>
+      <div class="ongoing">
+        <div class="tier free"><div class="yr">Year 1</div><div class="amt">Free</div><div class="sub">Hosting included, no additional cost.</div></div>
+        <div class="tier"><div class="yr">Year 2 onward</div><div class="amt">$500<span> / yr</span></div><div class="sub">or $50 / mo on a monthly plan.</div></div>
+      </div>
+      <p class="muted" style="margin-bottom:8px;">The ongoing service includes:</p>
+      <ul class="clean">
+        <li>Website hosting</li>
+        <li>Updates and maintenance</li>
+        <li>Security and backups</li>
+        <li>General site management</li>
+      </ul>
+      <p class="note">Optional service. Cancel anytime — the site is always yours.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">7</span><h2>Changes &amp; revisions</h2></div>
+      <div class="callout">We revise and redesign the site <strong>as many times as needed</strong> until it's exactly right. We've already done three full redesigns, and we'll keep refining. Major direction changes may shift the timeline slightly, and we'll always let you know in advance.</div>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">8</span><h2>Client responsibilities</h2></div>
+      <ul class="clean">
+        <li>Keep access to the Google Business Profile open so it can be managed and updated.</li>
+        <li>Deliver the necessary content, photos, and copy in a timely manner.</li>
+        <li>Give feedback and approvals within a reasonable timeframe to keep the timeline on track.</li>
+      </ul>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">9</span><h2>Asset ownership</h2></div>
+      <p class="muted">Upon completing the project and payments, <strong style="color:var(--ink)">all assets are 100% yours</strong>: website, logo, accounts, and designs. Kaizen Agency doesn't retain control or block your access — no strings attached.</p>
+    </section>
+    <section>
+      <div class="eyebrow"><span class="num">10</span><h2>Cancellation &amp; refund</h2></div>
+      <p class="muted">If at any point you feel the timeline or scope doesn't fit what you need, you can cancel the project. Kaizen Agency will refund the prorated portion of services not yet completed and, in addition, offer a good-faith compensation for any miscommunication.</p>
+    </section>
+    <section class="accept">
+      <div class="eyebrow"><span class="num" style="background:var(--ink);color:#fff;">✓</span><h2>Acceptance</h2></div>
+      <p class="muted">By signing, both parties confirm they agree with the scope, timeline, and investment described here.</p>
+      <div class="sig">
+        <div class="box"><div class="line"></div><div class="lbl">Signature · Client</div><div class="who">Brenda — Mrs. Cleaning</div></div>
+        <div class="box"><div class="line"></div><div class="lbl">Signature · Kaizen Agency</div><div class="who">Daisy Pineda</div></div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div><div style="color:#EAF0EE;font-weight:600;">Kaizen Agency · Daisy Pineda</div><div><a href="mailto:Daisy@kaizenagency.org">Daisy@kaizenagency.org</a> · (408) 710-6718</div></div>
+    <div class="tag">when your site's being lazy, call Daisy</div>
+  </footer>
+</div>
+
+<script>
+  function setLang(l){
+    document.getElementById('doc-es').style.display = (l==='es')?'block':'none';
+    document.getElementById('doc-en').style.display = (l==='en')?'block':'none';
+    document.getElementById('btn-es').classList.toggle('active', l==='es');
+    document.getElementById('btn-en').classList.toggle('active', l==='en');
+    document.documentElement.lang = l;
+  }
+</script>
+</body>
+</html>
