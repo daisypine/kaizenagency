@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call Sheet — Hollywood / Universal / Jon Bellion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#171A21;
+  --paper:#E9EBE6;
+  --card:#FCFCFA;
+  --rose:#B23A5A;
+  --teal:#14706A;
+  --brass:#8E7027;
+  --muted:#6B7280;
+  --rule:rgba(23,26,33,.14);
+  --rule-soft:rgba(23,26,33,.07);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:16.5px;line-height:1.55;
+}
+.wrap{max-width:940px;margin:0 auto;padding:28px 20px 90px}
+
+/* ---------- masthead ---------- */
+.mast{border-bottom:3px solid var(--ink);padding-bottom:18px;margin-bottom:26px}
+.eyebrow{
+  font-family:"Archivo",system-ui,sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin:0 0 10px
+}
+h1{
+  font-family:"Archivo",system-ui,sans-serif;font-weight:800;
+  font-size:clamp(30px,7.5vw,54px);line-height:.98;letter-spacing:-.02em;
+  text-transform:uppercase;margin:0 0 14px
+}
+h1 em{font-style:normal;display:block;color:var(--brass)}
+.mast-meta{
+  display:flex;flex-wrap:wrap;gap:8px 26px;
+  font-family:"Archivo",system-ui,sans-serif;font-size:12.5px;letter-spacing:.04em;color:var(--muted)
+}
+.mast-meta b{color:var(--ink);font-weight:600}
+.who{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.who span{
+  font-family:"Archivo",system-ui,sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 12px;border:1.5px solid;border-radius:2px;background:var(--card)
+}
+.who .d{color:var(--rose);border-color:var(--rose)}
+.who .r{color:var(--teal);border-color:var(--teal)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 44px}
+h2{
+  font-family:"Archivo",system-ui,sans-serif;font-weight:800;font-size:clamp(19px,4vw,25px);
+  letter-spacing:-.01em;text-transform:uppercase;margin:0 0 4px;
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap
+}
+h2 .date{font-weight:500;font-size:13px;letter-spacing:.12em;color:var(--brass)}
+.dayline{border-top:2px solid var(--ink);padding-top:14px;margin-top:6px}
+.subhead{font-style:italic;color:var(--muted);margin:0 0 20px;font-size:15.5px}
+h3{
+  font-family:"Archivo",system-ui,sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:.13em;text-transform:uppercase;margin:26px 0 10px;color:var(--brass)
+}
+
+/* ---------- timeline ---------- */
+.tl{margin:0}
+.row{display:grid;grid-template-columns:78px 1fr;gap:0}
+.t{
+  font-family:"Archivo",system-ui,sans-serif;font-variant-numeric:tabular-nums;
+  font-weight:600;font-size:13.5px;letter-spacing:.01em;
+  padding:14px 14px 14px 0;text-align:right;color:var(--brass);white-space:nowrap
+}
+.c{
+  padding:14px 0 16px 20px;border-left:2.5px solid var(--rule);
+  position:relative;border-top:1px solid var(--rule-soft)
+}
+.row:first-child .c{border-top:none}
+.c::before{
+  content:"";position:absolute;left:-6.5px;top:20px;width:11px;height:11px;
+  border-radius:50%;background:var(--paper);border:2.5px solid var(--rule)
+}
+.row.d .c{border-left-color:var(--rose)}
+.row.d .c::before{border-color:var(--rose)}
+.row.r .c{border-left-color:var(--teal)}
+.row.r .c::before{border-color:var(--teal)}
+.row.key .c{border-left-color:var(--ink)}
+.row.key .c::before{border-color:var(--ink);background:var(--ink)}
+.c h4{
+  font-family:"Archivo",system-ui,sans-serif;font-weight:600;font-size:16px;
+  letter-spacing:-.005em;margin:0 0 5px
+}
+.c p{margin:0 0 7px}
+.c p:last-child{margin-bottom:0}
+.tag{
+  display:inline-block;font-family:"Archivo",system-ui,sans-serif;font-size:9.5px;
+  font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  padding:2.5px 7px;border-radius:2px;vertical-align:2px;margin-left:8px
+}
+.tag.d{background:var(--rose);color:#fff}
+.tag.r{background:var(--teal);color:#fff}
+.tag.both{background:var(--ink);color:#fff}
+.addr{
+  font-family:"Archivo",system-ui,sans-serif;font-size:12.5px;color:var(--muted);
+  letter-spacing:.01em;display:block;margin-bottom:6px
+}
+.drive{
+  font-family:"Archivo",system-ui,sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--ink);
+  background:rgba(142,112,39,.13);padding:3px 8px;border-radius:2px;display:inline-block;margin:2px 0 8px
+}
+.note{font-size:15px;color:#3D434E}
+.note b{font-weight:500;color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:13.5px;letter-spacing:.02em}
+.cost{color:var(--brass);font-family:"Archivo",system-ui,sans-serif;font-weight:600;font-size:13.5px;font-variant-numeric:tabular-nums}
+
+/* ---------- callout ---------- */
+.box{
+  background:var(--card);border:1.5px solid var(--ink);border-radius:3px;
+  padding:22px 22px 20px;margin:22px 0
+}
+.box.brass{border-color:var(--brass);background:rgba(142,112,39,.06)}
+.box h3{margin-top:0}
+.box p{margin:0 0 10px}
+.box p:last-child{margin-bottom:0}
+.box ul{margin:0 0 10px;padding-left:20px}
+.box li{margin-bottom:7px}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;margin:14px 0 8px;font-size:15px}
+th{
+  font-family:"Archivo",system-ui,sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  text-align:left;padding:0 10px 8px 0;border-bottom:2px solid var(--ink)
+}
+th.num,td.num{text-align:right;padding-right:0;font-variant-numeric:tabular-nums}
+td{padding:9px 10px 9px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+td.num{font-family:"Archivo",system-ui,sans-serif;font-size:14.5px;font-weight:500;white-space:nowrap}
+tr.total td{border-top:2px solid var(--ink);border-bottom:none;padding-top:12px;font-weight:600}
+tr.total td.num{font-weight:700;font-size:16px}
+.strike{color:var(--muted);text-decoration:line-through}
+.win{color:var(--teal);font-weight:600}
+
+.legend{
+  font-family:"Archivo",system-ui,sans-serif;font-size:11.5px;color:var(--muted);
+  letter-spacing:.03em;border-top:1px solid var(--rule);padding-top:12px;margin-top:32px
+}
+
+@media (max-width:620px){
+  body{font-size:16px}
+  .wrap{padding:20px 15px 70px}
+  .row{grid-template-columns:1fr}
+  .t{
+    text-align:left;padding:16px 0 0;font-size:12px;letter-spacing:.09em;
+    text-transform:uppercase
+  }
+  .c{padding:6px 0 16px 16px;border-top:none}
+  .c::before{top:12px}
+  .row:first-child .t{padding-top:0}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{max-width:100%;padding:0}
+  section{break-inside:avoid}
+  .row{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Trip Call Sheet · Sep 22–25, 2026</p>
+  <h1>Hollywood<em>Universal · The Bowl</em></h1>
+  <div class="mast-meta">
+    <span><b>3 nights</b> · 2 hotels · 2 cars</span>
+    <span>Sunset Sep 22 <b>7:20 PM</b></span>
+    <span>Jon Bellion <b>Thu 9/24, 8:00 PM</b> · doors 6:00</span>
+  </div>
+  <div class="who">
+    <span class="d">Daisy — Gilroy, CA</span>
+    <span class="r">Rodni — St George, UT</span>
+  </div>
+</header>
+
+<!-- ============ PARKING ============ -->
+<section>
+  <h2>Read this first <span class="date">The parking math</span></h2>
+  <p class="subhead">You said you'd rather spend on food than parking. Here's how to get most of that money back.</p>
+
+  <table>
+    <thead>
+      <tr><th>Where</th><th>Sticker price</th><th>What to actually do</th><th class="num">Real cost</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hollywood Hotel<br><span class="addr">Tue night, 2 cars</span></td>
+        <td class="strike">$39–42 × 2 = $80</td>
+        <td>Pay for one car, street-park the other on the residential blocks east of Vermont. Check the sign for permit district + sweeping.</td>
+        <td class="num">$39</td>
+      </tr>
+      <tr>
+        <td>Universal Studios<br><span class="addr">Wed, all day</span></td>
+        <td class="strike">$40 × 2 = $80</td>
+        <td><b>Take one car. Buy the 7 PM AMC ticket in the AMC app before you leave the hotel</b> — the emailed barcode gets you the $5 cinema rate at the tollbooth on the way in, not on the way out.</td>
+        <td class="num win">$5</td>
+      </tr>
+      <tr>
+        <td>Hollywood Franklin<br><span class="addr">Wed + Thu, 2 cars</span></td>
+        <td class="strike">$35 × 2 nights × 2 = $140</td>
+        <td>Valet your car ($35/night, in-and-out included). Rodni's car doesn't move for 48 hrs — book it into a Vine St garage on SpotHero at a flat multi-day / no-in-out rate.</td>
+        <td class="num">$70 + ≈$40</td>
+      </tr>
+      <tr>
+        <td>Hollywood Bowl<br><span class="addr">Thu night</span></td>
+        <td class="strike">already bought</td>
+        <td><b>Walk it.</b> Hotel to Bowl is 0.8 mi / ~18 min up Highland. Bowl stacked parking can take 45+ min just to exit after the show.</td>
+        <td class="num">$0</td>
+      </tr>
+      <tr class="total">
+        <td>Total</td><td class="strike">≈$300</td><td></td><td class="num">≈$155</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box brass">
+    <h3>The one that matters most</h3>
+    <p>The $5 Universal parking is the biggest single win and it's the easiest to blow. Buy the movie ticket <em>the night before</em>, screenshot the barcode, and have it open at the tollbooth. If you show up without it you pay full price and then have to stand in the AMC box office line for a cash rebate.</p>
+    <p class="note"><b>Also worth knowing</b> Beverly Hills city garages give the first 2 hours free — good for a Rodeo Drive photo stop instead of feeding a meter.</p>
+  </div>
+</section>
+
+<!-- ============ DAY 1 ============ -->
+<section>
+  <div class="dayline"></div>
+  <h2>Day 1 — Getting there <span class="date">Tue · Sep 22</span></h2>
+  <p class="subhead">Two routes, roughly six hours each, landing within minutes of each other. The time zone does you a favor.</p>
+
+  <div class="tl">
+    <div class="row d">
+      <div class="t">7:30 AM<br>PT</div>
+      <div class="c">
+        <h4>Leave Gilroy <span class="tag d">Daisy</span></h4>
+        <span class="drive">≈330 mi · 5h10 free-flow · plan 6h15 door to door</span>
+        <p class="note"><b>Route</b> US-101 S the entire way — Salinas, Paso Robles, SLO, Santa Barbara, Ventura, then into the Valley and down through Hollywood.</p>
+        <p class="note"><b>Traffic</b> Clean until Ventura. The pinch is 101 through Woodland Hills / Sherman Oaks, which starts stacking up around 2:30 PM. Leaving at 7:30 puts you ahead of it. Leaving at 9 does not.</p>
+        <p class="note"><b>Alt</b> CA-152 → I-5 S over the Grapevine is 20–30 min faster on a good day and miserable on a bad one. 101 is the safer call for a day you can't be late.</p>
+      </div>
+    </div>
+
+    <div class="row r">
+      <div class="t">8:00 AM<br>MT</div>
+      <div class="c">
+        <h4>Leave St George <span class="tag r">Rodni</span></h4>
+        <span class="drive">≈385 mi · 5h50 free-flow · plan 6h45 door to door</span>
+        <p class="note"><b>Time zone</b> 8:00 AM in St George is 7:00 AM in LA. You gain the hour back on arrival — 6h45 of driving lands you at 1:45 PM Pacific.</p>
+        <p class="note"><b>Route</b> I-15 S through Mesquite, Vegas, Primm, Baker, Barstow → Cajon Pass → I-215 S → CA-210 W → CA-134 W → 101 S.</p>
+        <p class="note"><b>Gas</b> Fill in Mesquite or Vegas. Primm and Baker are the most expensive gas on the entire route and California prices start the second you cross.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">1:45 PM</div>
+      <div class="c">
+        <h4>Meet — Hollywood Hotel <span class="tag both">Both</span></h4>
+        <span class="addr">1160 N Vermont Ave, Los Angeles, CA 90029 · (323) 746-0444</span>
+        <p class="note"><b>Heads up on the address</b> The Google result you screenshotted was for "The Hotel Hollywood" on Yucca St — a completely different property. Yours is on Vermont, in East Hollywood near Los Feliz.</p>
+        <p class="note"><b>Check-in is 3:00</b> but the front desk will hold bags, and people do get let in early when rooms are ready. Ask. Worst case you sit by the pool for an hour.</p>
+        <p class="note"><b>Your room has a fridge</b> — that's what makes the burrito plan work later.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">2:15 PM</div>
+      <div class="c">
+        <h4>Hollywood Blvd — drive-through only</h4>
+        <span class="drive">15 min</span>
+        <p>Vermont → Franklin Ave west → drop onto Hollywood Blvd at Western and run it west to La Brea. You'll pass the Pantages, Capitol Records, the Walk of Fame, the Chinese Theatre. No stopping — it's better at night anyway and you'll be back Thursday on foot.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">2:40 PM</div>
+      <div class="c">
+        <h4>Sunset Strip → Beverly Hills → Rodeo Drive</h4>
+        <span class="drive">25 min to Rodeo</span>
+        <p>Hollywood Blvd → south to Sunset → west through the Strip and into Beverly Hills. Loop Rodeo via Santa Monica Blvd → Rodeo → Wilshire.</p>
+        <p class="note"><b>If you want photos</b> Park in a Beverly Hills city structure — first 2 hrs free, and it's a 2-minute walk to Rodeo. Meters on Rodeo itself are a waste of money.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">3:30 PM</div>
+      <div class="c">
+        <h4>Late lunch — pupusas, Westwood</h4>
+        <span class="addr">911 Broxton Ave, Los Angeles, CA 90024</span>
+        <span class="drive">15 min from Rodeo</span>
+        <p class="note"><b>Parking</b> Westwood Village structures are a few dollars for the first hour, cheaper and less stressful than circling Broxton for a meter.</p>
+        <p class="note"><b>Strategy</b> You have three food stops on the Westside within 3 miles of each other. Share a plate here rather than each getting a full order — you have two more in the next 90 minutes.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">4:35 PM</div>
+      <div class="c">
+        <h4>Ramen — Sawtelle Japantown</h4>
+        <span class="addr">2123 Sawtelle Blvd, Los Angeles, CA 90025</span>
+        <span class="drive">10 min</span>
+        <p>Sawtelle parking is genuinely tight — small lots tucked behind the buildings, metered street otherwise. Budget 10 extra minutes for the hunt. Split one bowl.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">5:20 PM</div>
+      <div class="c">
+        <h4>Burritos — and the extra one for tomorrow</h4>
+        <span class="addr">3118 S Sepulveda Blvd, Los Angeles, CA 90034</span>
+        <span class="drive">10 min</span>
+        <p class="note"><b>The tomorrow burrito, honestly</b> It has to survive overnight in the hotel fridge and then a hot morning. Best version: eat it in the car on the drive to Universal at 7 AM. If you want it for lunch inside the park, it needs an actual cooler bag with ice from the hotel machine — a burrito sitting in a parking structure until noon is a bad afternoon.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">5:50 PM</div>
+      <div class="c">
+        <h4>Santa Monica Pier</h4>
+        <span class="drive">15 min via I-10 W</span>
+        <p class="note"><b>Parking</b> The deck right on the pier is the most expensive option. The downtown structures on 2nd and 4th are cheaper and it's a 5-minute walk. <span class="cost">≈$15</span></p>
+        <p>One hour is enough — walk out to the end, look back at the coastline, skip the arcade unless you want it.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">7:00 PM</div>
+      <div class="c">
+        <h4>Venice Beach — sunset at 7:20</h4>
+        <span class="addr">Ocean Front Walk lot, 3099 Ocean Front Walk, Venice, CA 90291 · <span class="cost">$6</span></span>
+        <span class="drive">15 min down Ocean Ave</span>
+        <p>This is the right place to catch the sunset — over the water, not over Hollywood. Walk the boardwalk north toward the skate park while the light is good.</p>
+        <p class="note"><b>Timing + safety</b> The boardwalk empties out fast once it's fully dark. Be back at the car by 8:15, and don't leave anything visible in either car — this is the one lot on the whole trip where that matters most.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">8:15 PM</div>
+      <div class="c">
+        <h4>Decision point</h4>
+        <p class="note"><b>Option A — your original plan.</b> Drive back for the Walk of Fame lit up. I-10 E → La Brea north, ≈50 min in evening traffic, there by 9:10. Park in the Ovation Hollywood garage at Hollywood &amp; Highland. Back to the hotel around 10:30, which gives you about 7 hours before a 5:45 wake-up.</p>
+        <p class="note"><b>Option B — what I'd do.</b> Skip it tonight and drive straight back (≈40 min, in bed by 10). <b>Your Thursday hotel is three blocks from the Walk of Fame</b> — you can do it on foot, for free, with a whole free afternoon, instead of tacking an hour of night driving onto a day that started with a six-hour drive.</p>
+        <p>Same sights, better day, more sleep before the one morning that actually has a hard start time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 2 ============ -->
+<section>
+  <div class="dayline"></div>
+  <h2>Day 2 — Universal <span class="date">Wed · Sep 23</span></h2>
+  <p class="subhead">Park 9 AM–6 PM, early access at 8. This is the day with a real clock on it, and the day the two-hotel logistics get solved.</p>
+
+  <div class="box">
+    <h3>Before you sleep Tuesday night</h3>
+    <ul>
+      <li><b>Buy the 7 PM AMC movie ticket</b> in the app. Screenshot the parking barcode. This is your $5 parking.</li>
+      <li><b>Confirm the Super Nintendo World Early Access add-on.</b> It's a separate paid ticket, roughly $20–30 per person, and it sells out in advance — it is <em>not</em> included with admission. If you haven't bought it, buy it tonight or the 8 AM plan doesn't exist.</li>
+      <li><b>Call the Franklin</b> and confirm they'll hold luggage before check-in. Front desk is 24 hours.</li>
+      <li>Pack everything except what you're wearing. Nothing gets packed at 6 AM.</li>
+    </ul>
+  </div>
+
+  <div class="tl">
+    <div class="row key">
+      <div class="t">5:45 AM</div>
+      <div class="c">
+        <h4>Up</h4>
+        <p>Load both cars. Coffee wherever is open on Vermont, or hold out for CityWalk.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">6:35 AM</div>
+      <div class="c">
+        <h4>Check out, both cars to the Franklin</h4>
+        <span class="addr">The Hollywood Franklin Hotel · 6141 Franklin Ave, Hollywood, CA 90028 · (323) 464-5181</span>
+        <span class="drive">3.5 mi · 12 min</span>
+        <p><b>This is the move that solves everything.</b> Drop all luggage at the Franklin's front desk. Leave Rodni's car in its garage spot for the next two days. Take Daisy's car — and only Daisy's car — to Universal.</p>
+        <p class="note"><b>Fallback</b> If the desk won't take bags that early, luggage stays in Daisy's trunk in the Universal structure. It's a monitored garage, not a street, so it's an acceptable risk — but nothing visible through the windows.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">7:05 AM</div>
+      <div class="c">
+        <h4>Drive to Universal</h4>
+        <span class="drive">3.5 mi · 10 min via Highland → Cahuenga → 101 N</span>
+        <p>Barcode ready at the tollbooth. <span class="cost">$5</span></p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">7:20 AM</div>
+      <div class="c">
+        <h4>Park, then walk</h4>
+        <p>The walk from the structure to the front gate is longer than anyone expects — escalators, CityWalk, then the gate. Give it a full 15 minutes. Gates typically open around 7:30 for early access holders.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">8:00 AM</div>
+      <div class="c">
+        <h4>Super Nintendo World — early access hour</h4>
+        <p><b>Mario Kart: Bowser's Challenge first, immediately.</b> Later in the day this line hits 90+ minutes. Then Yoshi's Adventure, then the key challenges around the land.</p>
+        <p class="note"><b>The part people miss</b> Your Early Access ticket also includes one Express-lane ride on the Studio Tour, valid until 11 AM. Keep the ticket. Use it around 10:15 when the standby line is already 45–60 min.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">9:00 AM</div>
+      <div class="c">
+        <h4>Lower Lot, before it fills</h4>
+        <p>Everyone else is sprinting to Nintendo right now, which you've already done. Go down to Jurassic World: The Ride and Revenge of the Mummy while the Lower Lot is still quiet. You'll get soaked on Jurassic — worth planning your clothes around.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">10:15 AM</div>
+      <div class="c">
+        <h4>Studio Tour — Express lane</h4>
+        <p>About an hour. It's the thing Universal Hollywood has that no other park does, so don't treat it as filler.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">11:30 AM</div>
+      <div class="c">
+        <h4>Wizarding World</h4>
+        <p>Forbidden Journey, Flight of the Hippogriff, butterbeer. Ollivander's wand show if there's no line.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">1:00 PM</div>
+      <div class="c">
+        <h4>Lunch + the slow middle</h4>
+        <p>Transformers, The Simpsons Ride, and the WaterWorld stunt show — check show times in the app in the morning and build the afternoon around them, since it only runs a few times a day.</p>
+        <p class="note"><b>September note</b> Halloween Horror Nights runs select dates this month. On HHN nights the park clears day guests promptly at close, so don't count on lingering past 6.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">4:30 PM</div>
+      <div class="c">
+        <h4>Second lap</h4>
+        <p>Back to whatever you liked most. Nintendo again if the wait is reasonable. Buy souvenirs now, not at 5:58.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">6:00 PM</div>
+      <div class="c">
+        <h4>CityWalk + dinner</h4>
+        <p>Bubba Gump is right there and you have an hour, which is about right for it. CityWalk itself is free to walk and open late.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">7:00 PM</div>
+      <div class="c">
+        <h4>Movie — Universal Cinema AMC</h4>
+        <p>The ticket that paid for your parking. After ten hours on your feet, sitting in a reclining seat is the correct decision.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">9:45 PM</div>
+      <div class="c">
+        <h4>Late tacos, then check in</h4>
+        <span class="drive">10 min back over the hill</span>
+        <p>The taco trucks along Vine and around Hollywood/Western run late on weeknights — check hours in the moment rather than committing now. Then back to the Franklin, check in, collect the bags, sleep with no alarm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 3 ============ -->
+<section>
+  <div class="dayline"></div>
+  <h2>Day 3 — Erewhon &amp; the Bowl <span class="date">Thu · Sep 24</span></h2>
+  <p class="subhead">No alarm. One fixed point at 8 PM, and it's walking distance.</p>
+
+  <div class="tl">
+    <div class="row key">
+      <div class="t">Sleep in</div>
+      <div class="c">
+        <h4>Genuinely, sleep in</h4>
+        <p>You've done a six-hour drive, a fourteen-hour day, and a 5:45 wake-up back to back. This is the recovery morning and the schedule is built to let it be one.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">10:30 AM</div>
+      <div class="c">
+        <h4>Brunch at the diner attached to the hotel</h4>
+        <p>There's an adjoining door from the Franklin straight into the diner next door. On a slow morning that's the whole appeal — you don't move a car.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">12:15 PM</div>
+      <div class="c">
+        <h4>Erewhon — the $100 mission</h4>
+        <span class="addr">Erewhon Grove · 7660 Beverly Blvd, Los Angeles, CA 90036 · 15 min</span>
+        <span class="addr">Closer alt: 4121 Santa Monica Blvd, 90029 · 12 min, has complimentary valet</span>
+        <p>The Grove location is the bigger flagship if you want the full experience and the smoothies. The Santa Monica Blvd one is closer and easier to park at.</p>
+        <p class="note"><b>Spend it well</b> Don't just buy snacks — <b>build a picnic for the Bowl.</b> The Hollywood Bowl lets you bring your own food in for most shows, so a $100 Erewhon haul becomes dinner, concert snacks, and Friday's road food instead of just a shopping bag. Verify the food/alcohol policy on this specific event page, since promoter-rented shows sometimes restrict it.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">2:00 PM</div>
+      <div class="c">
+        <h4>Somewhere you haven't been</h4>
+        <p>If you want more Mexican food and something new at once: Grand Central Market downtown, or Olvera Street next to Union Station. Both are ~20 min and both are a different LA than the one you've seen so far this trip.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">4:00 PM</div>
+      <div class="c">
+        <h4>Walk of Fame — on foot, finally</h4>
+        <span class="drive">5 min walk from the hotel</span>
+        <p>Down Highland to Hollywood Blvd. TCL Chinese Theatre handprints, Ovation Hollywood, Dolby Theatre, the stars themselves. No parking, no meter, no circling. This is the payoff for skipping it Tuesday night.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">5:30 PM</div>
+      <div class="c">
+        <h4>Back to the room</h4>
+        <p>Shower, change, pack the picnic. It gets cool at the Bowl after dark even in September — bring a layer.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">6:30 PM</div>
+      <div class="c">
+        <h4>Walk to the Hollywood Bowl</h4>
+        <span class="addr">2301 N Highland Ave, Los Angeles, CA 90068</span>
+        <span class="drive">0.8 mi · ≈18 min · uphill at the end</span>
+        <p>Doors opened at 6:00. Getting there early is the move — people eat at the picnic tables before the show and it's half the experience.</p>
+        <p class="note"><b>On the parking you already bought</b> Bowl parking is mostly stacked, meaning you're blocked in until the cars around you leave. Walking in and out is faster than driving 0.8 miles, and you skip the post-show gridlock entirely. Treat the parking spend as sunk unless your lot happens to be somewhere convenient.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">8:00 PM</div>
+      <div class="c">
+        <h4>Jon Bellion</h4>
+        <p>The reason for the whole trip.</p>
+      </div>
+    </div>
+
+    <div class="row key">
+      <div class="t">10:30 PM</div>
+      <div class="c">
+        <h4>Walk back — downhill this time</h4>
+        <p>While several thousand people are still sitting in their cars.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 4 ============ -->
+<section>
+  <div class="dayline"></div>
+  <h2>Day 4 — Home <span class="date">Fri · Sep 25</span></h2>
+  <div class="tl">
+    <div class="row key">
+      <div class="t">10:00 AM</div>
+      <div class="c">
+        <h4>Check out</h4>
+        <p>Retrieve Rodni's car from the garage. Split whatever's left of the Erewhon haul as road food.</p>
+      </div>
+    </div>
+    <div class="row d">
+      <div class="t">10:30 AM</div>
+      <div class="c">
+        <h4>Gilroy <span class="tag d">Daisy</span></h4>
+        <span class="drive">≈330 mi · 6h · home ≈4:30 PM</span>
+        <p>Get out of the basin before noon. 101 N through the Valley after 3 PM Friday is the worst version of that drive.</p>
+      </div>
+    </div>
+    <div class="row r">
+      <div class="t">10:30 AM</div>
+      <div class="c">
+        <h4>St George <span class="tag r">Rodni</span></h4>
+        <span class="drive">≈385 mi · 6h30 · home ≈6:00 PM MT</span>
+        <p>You lose the hour back going east. Cajon Pass northbound and the Vegas stretch are both fine midday Friday — the risk window is leaving after 2 PM, when the whole 15 becomes the Vegas weekend exodus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSTS ============ -->
+<section>
+  <div class="dayline"></div>
+  <h2>What it costs</h2>
+
+  <h3>Booked and shared, split two ways</h3>
+  <table>
+    <thead><tr><th>Item</th><th class="num">Total</th><th class="num">Each</th></tr></thead>
+    <tbody>
+      <tr><td>Hollywood Hotel — Tue 9/22<br><span class="addr">$261.01 booked, less your $100 travel credit</span></td><td class="num">$161</td><td class="num">$80.50</td></tr>
+      <tr><td>Hollywood Franklin — Wed + Thu, 2 nights</td><td class="num">$420</td><td class="num">$210</td></tr>
+      <tr><td>Universal admission (promo)</td><td class="num">$60</td><td class="num">$30</td></tr>
+      <tr class="total"><td>Booked subtotal</td><td class="num">$641</td><td class="num">$320.50</td></tr>
+    </tbody>
+  </table>
+  <p class="note" style="margin-top:6px"><b>Check this</b> Is the $60 Universal figure for both of you or per person? If it's per person the shared subtotal is $701 and each of you is at $350.50.</p>
+
+  <h3>Everything else — estimated</h3>
+  <table>
+    <thead><tr><th>Item</th><th class="num">Total</th><th class="num">Each</th></tr></thead>
+    <tbody>
+      <tr><td>Parking, all three days (optimized)</td><td class="num">≈$155</td><td class="num">≈$78</td></tr>
+      <tr><td>Nintendo Early Access add-on, 2 people</td><td class="num">≈$50</td><td class="num">≈$25</td></tr>
+      <tr><td>Movie tickets</td><td class="num">≈$28</td><td class="num">≈$14</td></tr>
+      <tr><td>Beach parking — Santa Monica + Venice</td><td class="num">≈$21</td><td class="num">≈$11</td></tr>
+      <tr><td>Food across all four days, incl. $100 Erewhon</td><td class="num">≈$420</td><td class="num">≈$210</td></tr>
+      <tr><td>Gas — Daisy, ≈660 mi round trip</td><td class="num">≈$115</td><td class="num">—</td></tr>
+      <tr><td>Gas — Rodni, ≈770 mi round trip</td><td class="num">≈$115</td><td class="num">—</td></tr>
+      <tr class="total"><td>All-in, per person, incl. your own gas</td><td class="num"></td><td class="num">≈$770</td></tr>
+    </tbody>
+  </table>
+  <p class="note" style="margin-top:6px">Food is the loosest number here and the one you said you're happy to let run. Everything else is fairly tight. If you skip the Nintendo early access and eat cheaper, you're closer to $680 each.</p>
+</section>
+
+<!-- ============ PACK ============ -->
+<section>
+  <div class="dayline"></div>
+  <h2>Small things that make this work</h2>
+  <div class="box">
+    <ul>
+      <li><b>A soft cooler bag + a couple of ice packs.</b> Makes the extra burrito viable, keeps the Erewhon haul alive, and matters on a 6-hour drive each way.</li>
+      <li><b>SpotHero installed</b> before you leave, for Rodni's two-day garage spot.</li>
+      <li><b>Screenshot everything</b> — hotel confirmations, Universal tickets, the AMC parking barcode, Bowl tickets. Cell service at the Bowl gets rough when 17,000 people arrive at once.</li>
+      <li><b>Nothing visible in either car, ever.</b> Especially the Venice lot Tuesday and the street spot Wednesday–Friday.</li>
+      <li><b>A layer for Thursday night.</b> The Bowl is outdoors, in a canyon, after dark.</li>
+      <li><b>Comfortable shoes for Wednesday.</b> Universal is roughly 6–8 miles of walking with a serious hill between the Upper and Lower Lots.</li>
+    </ul>
+  </div>
+</section>
+
+<p class="legend">
+  Drive times are estimates for these specific days and departure times, not live traffic. Prices marked ≈ are estimates; hotel totals, the Bowl show time, and the Universal $5 cinema parking rate are confirmed. Park hours, Early Access availability, and the Bowl's outside-food policy should be re-checked the week of the trip.
+</p>
+
+</div>
+</body>
+</html>
