@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunwest Painting — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* --- Brand tokens, extracted from the Sunwest Painting Figma file --- */
+    --ember-50:#FCF3ED; --ember-100:#F8E2D3; --ember-200:#F1C4A7; --ember-300:#EAA77B;
+    --ember-400:#E58F57; --ember-500:#E07B39; --ember-600:#C25F1E; --ember-700:#9F4E19;
+    --ember-800:#7B3C13; --ember-900:#582B0E;
+    --sun-50:#FEF9EC; --sun-100:#FCF1CF; --sun-200:#FAE39E; --sun-300:#F7D56E;
+    --sun-400:#F5C947; --sun-500:#F5C842; --sun-600:#D5A20B; --sun-700:#AE8509;
+    --sun-800:#886707; --sun-900:#614A05;
+    --ink-900:#111111; --ink-700:#333333; --ink-500:#515151; --ink-300:#8A8A8A;
+    --ink-100:#E3E1DD; --ink-50:#F4F3F0; --white:#FFFFFF;
+    --brand-gradient: linear-gradient(102.43deg, #F5C842 6.67%, #E07B39 107.96%);
+
+    --page:#F4F3F0; --surface:#FFFFFF; --rule:#E3E1DD;
+    --border: rgba(17,17,17,.10);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; background:var(--page); color:var(--ink-900);
+    font-family:'Poppins', system-ui, sans-serif; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px 80px; }
+
+  /* masthead */
+  header.mast { background:var(--ink-900); color:#fff; padding:0; margin-bottom:32px; }
+  .mast-bar { height:8px; background:var(--brand-gradient); }
+  .mast-inner { max-width:960px; margin:0 auto; padding:48px 24px 40px; }
+  .eyebrow { font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+             color:var(--sun-400); font-weight:700; margin:0 0 14px; font-family:'Poppins',sans-serif; }
+  h1 { font-family:'Outfit',sans-serif; font-weight:900; font-size:56px; line-height:1.02;
+       letter-spacing:-.028em; text-transform:uppercase; margin:0 0 16px; }
+  .mast-inner .sub { font-size:16px; color:#C9C7C2; margin:0; max-width:620px; }
+  .mast-meta { margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,.14);
+               display:flex; flex-wrap:wrap; gap:28px; font-size:13px; color:#8A8A8A; }
+  .mast-meta b { color:#C9C7C2; font-weight:600; }
+
+  /* cards */
+  section.card { background:var(--surface); border:1px solid var(--border);
+                 border-radius:10px; padding:30px 32px; margin-bottom:22px; }
+  h2 { font-family:'Poppins',sans-serif; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+       color:var(--ink-300); font-weight:700; margin:0 0 20px; padding-bottom:11px;
+       border-bottom:1px solid var(--rule); }
+  h3 { font-family:'Outfit',sans-serif; font-weight:700; font-size:22px; text-transform:uppercase;
+       letter-spacing:-.02em; margin:30px 0 10px; }
+  h3:first-of-type { margin-top:0; }
+  h4 { font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; letter-spacing:.06em;
+       text-transform:uppercase; color:var(--ink-500); margin:22px 0 10px; }
+  p { margin:0 0 12px; color:var(--ink-700); font-size:15px; }
+  p:last-child { margin-bottom:0; }
+  strong { color:var(--ink-900); font-weight:600; }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px;
+         background:var(--ink-50); padding:2px 6px; border-radius:4px; color:var(--ink-700); }
+
+  /* gradient hero swatch */
+  .grad-hero { background:var(--brand-gradient); border-radius:10px; padding:34px 30px; color:#111; }
+  .grad-hero .gname { font-family:'Outfit',sans-serif; font-weight:900; font-size:30px;
+                      text-transform:uppercase; letter-spacing:-.02em; }
+  .grad-hero .gcode { font-family:ui-monospace,monospace; font-size:12.5px; margin-top:8px;
+                      color:rgba(17,17,17,.75); }
+
+  /* swatch grids */
+  .ramp { display:grid; grid-template-columns:repeat(10,1fr); gap:0; border-radius:8px;
+          overflow:hidden; border:1px solid var(--rule); }
+  .step { padding:14px 6px 12px; text-align:center; }
+  .step .n { font-size:10px; font-weight:700; letter-spacing:.05em; }
+  .step .h { font-size:8.5px; font-family:ui-monospace,monospace; margin-top:3px; opacity:.8;
+             letter-spacing:-.02em; }
+  .ramp-label { display:flex; justify-content:space-between; align-items:baseline;
+                margin:0 0 8px; }
+  .ramp-label .rn { font-family:'Outfit',sans-serif; font-weight:700; font-size:17px;
+                    text-transform:uppercase; letter-spacing:-.01em; }
+  .ramp-label .rd { font-size:12.5px; color:var(--ink-300); }
+  .ramp-wrap { margin-bottom:26px; }
+  .ramp-wrap:last-child { margin-bottom:0; }
+
+  /* neutrals */
+  .neutrals { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
+  .nsw { border-radius:8px; overflow:hidden; border:1px solid var(--rule); }
+  .nsw .chip { height:56px; }
+  .nsw .meta { padding:8px 10px; font-size:11px; }
+  .nsw .meta b { display:block; font-size:11.5px; }
+  .nsw .meta span { font-family:ui-monospace,monospace; font-size:10px; color:var(--ink-300); }
+
+  /* tables */
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+       color:var(--ink-300); font-weight:700; padding:0 12px 10px 0; border-bottom:1px solid var(--rule); }
+  td { padding:12px 12px 12px 0; border-bottom:1px solid var(--rule); color:var(--ink-700);
+       vertical-align:middle; }
+  tr:last-child td { border-bottom:none; }
+  .swatch-inline { display:inline-block; width:22px; height:22px; border-radius:5px;
+                   vertical-align:middle; margin-right:9px; border:1px solid var(--border); }
+  .pass { color:#0B7A0B; font-weight:700; font-size:12px; }
+  .fail { color:#C42B2B; font-weight:700; font-size:12px; }
+  .warn { color:#9A6B00; font-weight:700; font-size:12px; }
+  .mono { font-family:ui-monospace,monospace; font-size:12.5px; }
+
+  /* alert */
+  .alert { border-left:3px solid #C42B2B; background:#FDF2F2; padding:18px 22px;
+           border-radius:0 8px 8px 0; margin:20px 0; }
+  .alert .k { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+              color:#C42B2B; font-weight:700; margin-bottom:7px; }
+  .note { border-left:3px solid var(--ember-500); background:var(--ember-50);
+          padding:18px 22px; border-radius:0 8px 8px 0; margin:20px 0; }
+  .note .k { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+             color:var(--ember-700); font-weight:700; margin-bottom:7px; }
+
+  /* type specimens */
+  .spec { border:1px solid var(--rule); border-radius:8px; padding:22px 24px; margin-bottom:12px; }
+  .spec .tag { font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-300);
+               font-weight:700; margin-bottom:12px; display:flex; justify-content:space-between;
+               flex-wrap:wrap; gap:10px; }
+  .spec .tag .rt { font-family:ui-monospace,monospace; letter-spacing:0; text-transform:none;
+                   color:var(--ink-500); }
+  .d1 { font-family:'Outfit',sans-serif; font-weight:900; font-size:52px; line-height:1.05;
+        letter-spacing:-.02em; text-transform:uppercase; margin:0; }
+  .d2 { font-family:'Outfit',sans-serif; font-weight:900; font-size:38px; line-height:1.05;
+        letter-spacing:-.02em; text-transform:uppercase; margin:0; }
+  .h3s { font-family:'Outfit',sans-serif; font-weight:700; font-size:26px; line-height:1.25;
+         letter-spacing:-.02em; text-transform:uppercase; margin:0; }
+  .lead-t { font-family:'Poppins',sans-serif; font-weight:600; font-size:20px; line-height:1.35; margin:0; }
+  .body-t { font-family:'Poppins',sans-serif; font-weight:400; font-size:17px; line-height:1.39; margin:0; }
+  .small-t { font-family:'Poppins',sans-serif; font-weight:400; font-size:14px; line-height:1.5;
+             color:var(--ink-500); margin:0; }
+
+  /* buttons */
+  .btn-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin:6px 0 4px; }
+  .btn { font-family:'Poppins',sans-serif; font-weight:700; font-size:16px; text-transform:uppercase;
+         padding:16px 34px; border-radius:28px; border:none; cursor:default; letter-spacing:.01em; }
+  .btn-primary { background:var(--brand-gradient); color:#111; }
+  .btn-secondary { background:transparent; border:1.5px solid var(--ember-600); color:var(--ember-700); }
+  .btn-solid { background:var(--ember-700); color:#fff; }
+  .btn-dark { background:var(--ink-900); color:#fff; }
+  .on-dark { background:var(--ink-900); padding:22px 24px; border-radius:8px; margin-top:12px; }
+  .btn-ghost-dark { background:transparent; border:1.5px solid var(--sun-400); color:var(--sun-400); }
+
+  /* voice */
+  .vs { display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--rule);
+        border-radius:8px; overflow:hidden; }
+  .vs > div { padding:18px 20px; }
+  .vs .yes { background:#F4FBF4; border-right:1px solid var(--rule); }
+  .vs .no { background:#FDF6F6; }
+  .vs h5 { margin:0 0 10px; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+           font-weight:700; }
+  .vs .yes h5 { color:#0B7A0B; }
+  .vs .no h5 { color:#C42B2B; }
+  .vs ul { margin:0; padding-left:18px; font-size:14px; color:var(--ink-700); }
+  .vs li { margin-bottom:7px; }
+  .vs li:last-child { margin-bottom:0; }
+
+  ul.plain { list-style:none; margin:0; padding:0; }
+  ul.plain li { position:relative; padding:8px 0 8px 24px; font-size:15px; color:var(--ink-700);
+                border-bottom:1px solid var(--rule); }
+  ul.plain li:last-child { border-bottom:none; }
+  ul.plain li::before { content:'→'; position:absolute; left:0; top:8px;
+                        color:var(--ember-600); font-weight:700; }
+  ul.plain li b { color:var(--ink-900); font-weight:600; }
+
+  footer { text-align:center; font-size:13px; color:var(--ink-300); padding-top:14px; }
+  footer b { color:var(--ink-500); }
+
+  @media (max-width:800px){
+    .ramp { grid-template-columns:repeat(5,1fr); }
+    .neutrals { grid-template-columns:repeat(3,1fr); }
+    .vs { grid-template-columns:1fr; }
+    .vs .yes { border-right:none; border-bottom:1px solid var(--rule); }
+    h1 { font-size:36px; }
+    .d1 { font-size:34px; } .d2 { font-size:27px; }
+    section.card { padding:22px 20px; }
+  }
+  @media print { body{background:#fff} section.card{break-inside:avoid} }
+</style>
+</head>
+<body>
+
+<style>
+.kz-nav{position:sticky;top:0;z-index:50;background:#111;border-bottom:3px solid transparent;
+  border-image:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%) 1;
+  font-family:'Poppins',system-ui,sans-serif;}
+.kz-nav-in{max-width:960px;margin:0 auto;padding:11px 24px;display:flex;gap:8px;
+  align-items:center;flex-wrap:wrap}
+.kz-nav a{color:#C9C7C2;text-decoration:none;font-size:12.5px;font-weight:600;
+  padding:7px 13px;border-radius:20px;letter-spacing:.02em;white-space:nowrap}
+.kz-nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.kz-nav a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111;font-weight:700}
+.kz-nav .kz-home{color:#8A8A8A;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;margin-right:6px;padding-left:0}
+@media print{.kz-nav{display:none}}
+</style>
+<nav class="kz-nav"><div class="kz-nav-in">
+<a class="kz-home" href="./">Sunwest &nbsp;·&nbsp; Kaizen</a>
+<a href="./progress.html">Progress Report</a>
+<a href="./roadmap.html">Growth Roadmap</a>
+<a href="./brand.html" class="on">Brand Guide</a>
+</div></nav>
+
+
+<header class="mast">
+  <div class="mast-bar"></div>
+  <div class="mast-inner">
+    <p class="eyebrow">Kaizen Agency &nbsp;·&nbsp; Visual Identity System</p>
+    <h1>Sunwest Painting<br>Brand Guide</h1>
+    <p class="sub">The colors, type, and voice of the Sunwest brand — extracted directly from the approved website design so that every flyer, door hanger, postcard, and proposal looks like it came from the same company.</p>
+    <div class="mast-meta">
+      <span><b>Version</b> &nbsp;1.0</span>
+      <span><b>Source</b> &nbsp;Sunwest Painting — Home (Figma)</span>
+      <span><b>Prepared by</b> &nbsp;Kaizen Agency</span>
+      <span><b>Date</b> &nbsp;August 14, 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ WHY ============ -->
+  <section class="card">
+    <h2>Why This Exists</h2>
+    <p>Sunwest has been operating since 2001 with a logo, a rough color sense, and no written rules. That works when one person makes everything. It breaks the moment there's a website, a print vendor, a sign shop, and a mail house all producing work at once — which is exactly where the business is now.</p>
+    <p>Every value in this document was <strong>pulled from the approved homepage design</strong>, not invented. Nothing here changes the brand. It writes down what the brand already is, so it can be reproduced correctly by anyone.</p>
+  </section>
+
+  <!-- ============ LOGO ============ -->
+  <section class="card">
+    <h2>Logo</h2>
+    <h3>Usage Rules</h3>
+    <ul class="plain">
+      <li><b>Primary lockup</b> — the full horizontal Sunwest Painting logo. Use this everywhere there's room. On the site it sits at 257 × 49 px.</li>
+      <li><b>Clear space</b> — keep a margin equal to the height of the "S" on all four sides. Nothing intrudes: no text, no photo edge, no border.</li>
+      <li><b>Minimum size</b> — 120 px wide on screen, 1.25 inches wide in print. Below that the wordmark stops being legible.</li>
+      <li><b>On photography</b> — use the all-white version over a dark image, or place the logo on a solid panel. Never drop the full-color logo onto a busy photo.</li>
+      <li><b>Never</b> — stretch it, rotate it, recolor it, add a drop shadow or outline, place it on a color close to its own orange, or rebuild it from a screenshot.</li>
+    </ul>
+
+    <div class="alert">
+      <div class="k">Known issue — fix before the next print run</div>
+      <p style="margin:0">The version on the old website was a low-resolution file pulled from an old archive. <strong>Always source the logo from the master files in Drive or Figma</strong> — never from the website, a PDF, or an email. Vendors will use whatever you send them, and a soft logo on a 5,000-piece mailer is expensive to discover late.</p>
+    </div>
+  </section>
+
+  <!-- ============ COLOR ============ -->
+  <section class="card">
+    <h2>Color</h2>
+
+    <h3>The Signature Gradient</h3>
+    <p>The single most recognizable element of the brand. It runs warm yellow into burnt orange at a shallow diagonal, and it appears on every primary button, accent bar, and highlight.</p>
+    <div class="grad-hero">
+      <div class="gname">Sunwest Gradient</div>
+      <div class="gcode">linear-gradient(102.43deg, #F5C842 6.67%, #E07B39 107.96%)</div>
+    </div>
+    <p style="margin-top:14px">Use it on <strong>primary calls to action, accent bars, and section dividers</strong>. Do not use it as a full-page background, behind long body copy, or as a fill behind small text.</p>
+
+    <h3>Core Ramps</h3>
+    <p>Two brand hues, each stepped so there's always a legible option. <strong>500 is the brand color as it appears in the logo and design.</strong> The darker steps exist because the brand colors are bright — they're for text and for anything that has to be readable.</p>
+
+    <div class="ramp-wrap">
+      <div class="ramp-label"><span class="rn">Ember</span><span class="rd">Primary brand orange &nbsp;·&nbsp; base <span class="mono">#E07B39</span></span></div>
+      <div class="ramp">
+        <div class="step" style="background:#FCF3ED;color:#111"><div class="n">50</div><div class="h">FCF3ED</div></div>
+        <div class="step" style="background:#F8E2D3;color:#111"><div class="n">100</div><div class="h">F8E2D3</div></div>
+        <div class="step" style="background:#F1C4A7;color:#111"><div class="n">200</div><div class="h">F1C4A7</div></div>
+        <div class="step" style="background:#EAA77B;color:#111"><div class="n">300</div><div class="h">EAA77B</div></div>
+        <div class="step" style="background:#E58F57;color:#111"><div class="n">400</div><div class="h">E58F57</div></div>
+        <div class="step" style="background:#E07B39;color:#111"><div class="n">500</div><div class="h">E07B39</div></div>
+        <div class="step" style="background:#C25F1E;color:#fff"><div class="n">600</div><div class="h">C25F1E</div></div>
+        <div class="step" style="background:#9F4E19;color:#fff"><div class="n">700</div><div class="h">9F4E19</div></div>
+        <div class="step" style="background:#7B3C13;color:#fff"><div class="n">800</div><div class="h">7B3C13</div></div>
+        <div class="step" style="background:#582B0E;color:#fff"><div class="n">900</div><div class="h">582B0E</div></div>
+      </div>
+    </div>
+
+    <div class="ramp-wrap">
+      <div class="ramp-label"><span class="rn">Sun</span><span class="rd">Secondary brand yellow &nbsp;·&nbsp; base <span class="mono">#F5C842</span></span></div>
+      <div class="ramp">
+        <div class="step" style="background:#FEF9EC;color:#111"><div class="n">50</div><div class="h">FEF9EC</div></div>
+        <div class="step" style="background:#FCF1CF;color:#111"><div class="n">100</div><div class="h">FCF1CF</div></div>
+        <div class="step" style="background:#FAE39E;color:#111"><div class="n">200</div><div class="h">FAE39E</div></div>
+        <div class="step" style="background:#F7D56E;color:#111"><div class="n">300</div><div class="h">F7D56E</div></div>
+        <div class="step" style="background:#F5C947;color:#111"><div class="n">400</div><div class="h">F5C947</div></div>
+        <div class="step" style="background:#F5C842;color:#111"><div class="n">500</div><div class="h">F5C842</div></div>
+        <div class="step" style="background:#D5A20B;color:#111"><div class="n">600</div><div class="h">D5A20B</div></div>
+        <div class="step" style="background:#AE8509;color:#fff"><div class="n">700</div><div class="h">AE8509</div></div>
+        <div class="step" style="background:#886707;color:#fff"><div class="n">800</div><div class="h">886707</div></div>
+        <div class="step" style="background:#614A05;color:#fff"><div class="n">900</div><div class="h">614A05</div></div>
+      </div>
+    </div>
+
+    <h4>Neutrals</h4>
+    <div class="neutrals">
+      <div class="nsw"><div class="chip" style="background:#111111"></div><div class="meta"><b>Ink 900</b><span>#111111</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#333333"></div><div class="meta"><b>Ink 700</b><span>#333333</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#515151"></div><div class="meta"><b>Ink 500</b><span>#515151</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#8A8A8A"></div><div class="meta"><b>Ink 300</b><span>#8A8A8A</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#E3E1DD"></div><div class="meta"><b>Ink 100</b><span>#E3E1DD</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid #E3E1DD"></div><div class="meta"><b>White</b><span>#FFFFFF</span></div></div>
+    </div>
+    <p style="margin-top:12px;font-size:13.5px;color:var(--ink-300)"><span class="mono">#515151</span> is the card border color used throughout the site design. <span class="mono">#111111</span> is the near-black used for headings and dark panels.</p>
+  </section>
+
+  <!-- ============ ACCESSIBILITY ============ -->
+  <section class="card">
+    <h2>Color Accessibility — Read This Before Designing Anything</h2>
+
+    <div class="alert">
+      <div class="k">Real issue found in the current design</div>
+      <p><strong>White text on the brand orange does not meet accessibility standards.</strong> White on <span class="mono">#E07B39</span> measures a contrast ratio of <strong>2.97:1</strong>. The minimum for normal-size text is 4.5:1. On the yellow end of the gradient it's <strong>1.59:1</strong> — far worse.</p>
+      <p style="margin-bottom:0">This matters practically, not just technically: the primary "Request a Quote" button uses white 16px bold text on that gradient. It's the hardest-working element on the site and it's the least readable — especially outdoors on a phone, which is exactly how a homeowner looks at a painter's website.</p>
+    </div>
+
+    <h4>The fix — use near-black on the brand colors</h4>
+    <p>Black on the brand gradient is dramatically more legible and, on a warm yellow-orange, actually looks better and more premium than washed-out white.</p>
+
+    <table style="margin-top:10px">
+      <thead><tr><th>Combination</th><th>Ratio</th><th>Normal text</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td><span class="swatch-inline" style="background:#E07B39"></span>White on Ember 500</td><td class="mono">2.97:1</td><td><span class="fail">Fail</span></td><td>Don't use for text</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#F5C842"></span>White on Sun 500</td><td class="mono">1.59:1</td><td><span class="fail">Fail</span></td><td>Never use</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#E07B39"></span>Ink 900 on Ember 500</td><td class="mono">7.06:1</td><td><span class="pass">Pass AAA</span></td><td><strong>Recommended</strong></td></tr>
+        <tr><td><span class="swatch-inline" style="background:#F5C842"></span>Ink 900 on Sun 500</td><td class="mono">13.22:1</td><td><span class="pass">Pass AAA</span></td><td><strong>Recommended</strong></td></tr>
+        <tr><td><span class="swatch-inline" style="background:#9F4E19"></span>White on Ember 700</td><td class="mono">5.87:1</td><td><span class="pass">Pass AA</span></td><td>Use when white text is required</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#FFFFFF;border-color:#ccc"></span>Ember 700 on white</td><td class="mono">5.87:1</td><td><span class="pass">Pass AA</span></td><td>Links and accent text</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#FFFFFF;border-color:#ccc"></span>Ember 500 on white</td><td class="mono">2.97:1</td><td><span class="fail">Fail</span></td><td>Decoration only, never text</td></tr>
+        <tr><td><span class="swatch-inline" style="background:#FFFFFF;border-color:#ccc"></span>Ink 500 on white</td><td class="mono">7.94:1</td><td><span class="pass">Pass AAA</span></td><td>Body copy</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <div class="k">The simple rule</div>
+      <p style="margin:0"><strong>Bright brand colors (400–500) are for fills, bars, and shapes. Dark brand colors (700+) are for text.</strong> If a brand color has words sitting on top of it, either the words are near-black or the color is a 700-step or darker. This single rule prevents nearly every legibility problem.</p>
+    </div>
+  </section>
+
+  <!-- ============ TYPOGRAPHY ============ -->
+  <section class="card">
+    <h2>Typography</h2>
+    <p>Two typefaces, each with one job. Both are free through Google Fonts, so print vendors and sign shops can install them without a license purchase.</p>
+
+    <table style="margin:16px 0 24px">
+      <thead><tr><th>Typeface</th><th>Role</th><th>Weights in use</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Outfit';font-weight:900;font-size:17px">Outfit</td><td>Display — headlines, section titles, buttons on print, big numbers. Always uppercase, always tight tracking.</td><td>Black (900), Bold (700)</td></tr>
+        <tr><td style="font-family:'Poppins';font-weight:600;font-size:17px">Poppins</td><td>Body — paragraphs, navigation, labels, captions, web buttons. Sentence case.</td><td>Bold (700), SemiBold (600), Regular (400)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>The Scale</h3>
+
+    <div class="spec">
+      <div class="tag"><span>Display 1 — Hero headline</span><span class="rt">Outfit Black 900 · 74px · lh 1.05 · tracking −0.02em · uppercase</span></div>
+      <p class="d1">Commercial &amp; Residential Painters in San Jose</p>
+    </div>
+
+    <div class="spec">
+      <div class="tag"><span>Display 2 — Section headline</span><span class="rt">Outfit Black 900 · 52px · lh 1.05 · tracking −0.02em · uppercase</span></div>
+      <p class="d2">Professional Painting Services</p>
+    </div>
+
+    <div class="spec">
+      <div class="tag"><span>Heading 3 — Card &amp; service titles</span><span class="rt">Outfit Bold 700 · 26px · tracking −0.52px · uppercase</span></div>
+      <p class="h3s">Commercial Painting</p>
+    </div>
+
+    <div class="spec">
+      <div class="tag"><span>Lead — Trust statements, subheads</span><span class="rt">Poppins SemiBold 600 · 20px · lh 27px</span></div>
+      <p class="lead-t">Trusted by Property Managers &amp; Contractors</p>
+    </div>
+
+    <div class="spec">
+      <div class="tag"><span>Body — Paragraphs</span><span class="rt">Poppins Regular 400 · 17px · lh 1.39</span></div>
+      <p class="body-t">Large-scale, detail-oriented painting solutions for businesses and commercial properties. Family-owned and operated in San Jose since 2001.</p>
+    </div>
+
+    <div class="spec">
+      <div class="tag"><span>Small — Captions, legal, disclaimers</span><span class="rt">Poppins Regular 400 · 14px · lh 1.5</span></div>
+      <p class="small-t">CSLB License #807426 &nbsp;·&nbsp; Licensed, bonded and insured &nbsp;·&nbsp; EPA RRP Certified</p>
+    </div>
+
+    <h4>Typography rules</h4>
+    <ul class="plain">
+      <li><b>Headlines are always uppercase Outfit</b> with negative tracking. That compression is the brand's visual signature — lose it and it stops looking like Sunwest.</li>
+      <li><b>Never set body copy in Outfit</b> and never set a headline in Poppins. The contrast between the two is the system.</li>
+      <li><b>Print minimum is 9pt</b> for body copy. Door hangers and postcards get read at arm's length in bad light — go bigger than feels necessary.</li>
+      <li><b>One headline per piece.</b> A door hanger with three competing headlines communicates nothing.</li>
+    </ul>
+  </section>
+
+  <!-- ============ COMPONENTS ============ -->
+  <section class="card">
+    <h2>Buttons &amp; Components</h2>
+
+    <h4>Button styles</h4>
+    <div class="btn-row">
+      <span class="btn btn-primary">Request a Quote</span>
+      <span class="btn btn-solid">Get an Estimate</span>
+      <span class="btn btn-secondary">View Our Projects</span>
+    </div>
+    <div class="on-dark">
+      <div class="btn-row" style="margin:0">
+        <span class="btn btn-primary">Request a Quote</span>
+        <span class="btn btn-ghost-dark">View Our Projects</span>
+      </div>
+    </div>
+
+    <table style="margin-top:22px">
+      <thead><tr><th>Style</th><th>Spec</th><th>When to use</th></tr></thead>
+      <tbody>
+        <tr><td>Primary</td><td>Brand gradient fill, <strong>Ink 900 text</strong>, 28px radius (fully rounded), 16px Poppins Bold uppercase</td><td>The single most important action on any page or piece. One per screen.</td></tr>
+        <tr><td>Solid</td><td>Ember 700 fill, white text, 28px radius</td><td>When the design needs white button text — this is the only brand fill that supports it legibly.</td></tr>
+        <tr><td>Secondary</td><td>Transparent, 1.5px Ember 600 border, Ember 700 text</td><td>The alternative action beside a primary. Never two primaries side by side.</td></tr>
+        <tr><td>On dark</td><td>Gradient fill, or transparent with a Sun 400 border and Sun 400 text</td><td>Over photography and dark panels — hero sections, job-site banners.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <div class="k">Change from the current design</div>
+      <p style="margin:0">The primary button in the Figma file uses white text. This guide specifies <strong>Ink 900</strong> instead, for the contrast reason on the previous page. It's a one-line change in the theme, it applies everywhere at once, and it makes the most important button on the site substantially easier to read.</p>
+    </div>
+
+    <h4>Other components</h4>
+    <ul class="plain">
+      <li><b>Cards</b> — white fill, 0.58px <span class="mono">#515151</span> border, square corners. Photo on top, Outfit Bold title, Poppins body, full-width action bar at the bottom.</li>
+      <li><b>Trust badges</b> — 120px circle, icon centered, Poppins SemiBold 20px caption below. Four across: Trusted by Property Managers, Licensed and Insured, Family-Owned, Top Rated in the Bay Area.</li>
+      <li><b>Accent bars</b> — the gradient as a 6–8px rule. Use to break sections and to top-edge print pieces. The cheapest way to make anything instantly look like Sunwest.</li>
+    </ul>
+  </section>
+
+  <!-- ============ VOICE ============ -->
+  <section class="card">
+    <h2>Voice &amp; Messaging</h2>
+    <p>Sunwest doesn't compete on price and shouldn't sound like it does. Competitors currently undercut by $3,000–$5,000 on a typical home. The brand's job is to make that difference feel like a reason to choose Sunwest, not a reason to hesitate.</p>
+
+    <h4>Positioning in one line</h4>
+    <p style="font-family:'Outfit';font-weight:700;font-size:21px;text-transform:uppercase;letter-spacing:-.02em;color:var(--ink-900);line-height:1.3;margin:12px 0 6px">A professional painting company, not a crew with a truck.</p>
+    <p>Family-owned in San Jose since 2001. Detail-obsessed finish work, real project communication, and a walkthrough at the end. The kind of contractor you hire after a cheap one disappointed you.</p>
+
+    <h4>The three proof points — use these constantly</h4>
+    <ul class="plain">
+      <li><b>Craft.</b> They take the time. Trim, doors, custom homes, historic restorations. High-finish work that survives close inspection.</li>
+      <li><b>Communication.</b> Prep checklists, updates while the job runs, a final walkthrough and sign-off. Most competitors are owner-operators who show up and paint.</li>
+      <li><b>Credentials.</b> CSLB #807426. Licensed, bonded, insured. EPA RRP certified. In business since 2001.</li>
+    </ul>
+
+    <h4>How it sounds</h4>
+    <div class="vs">
+      <div class="yes">
+        <h5>✓ Do</h5>
+        <ul>
+          <li>Direct and plain. "We prep more than we paint."</li>
+          <li>Specific. Name the city, the building, the finish.</li>
+          <li>Confident about price. "We're not the cheapest bid. Here's what that buys you."</li>
+          <li>Warm but professional — a family business that runs like a real company.</li>
+          <li>Lead with the customer's problem, not the company's history.</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h5>✕ Don't</h5>
+        <ul>
+          <li>Generic contractor filler — "quality workmanship, satisfaction guaranteed."</li>
+          <li>Discount language, urgency gimmicks, or fake countdowns.</li>
+          <li>Overpromising timelines to win a bid.</li>
+          <li>Exclamation marks stacked in headlines.</li>
+          <li>Leading with "we" in every sentence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>Naming</h4>
+    <p>Written as <strong>Sunwest Painting</strong> — one word, capital S. Not "Sun West," not "SunWest." The legacy domain and some older material use the two-word form; standardize on one word going forward.</p>
+  </section>
+
+  <!-- ============ PHOTOGRAPHY ============ -->
+  <section class="card">
+    <h2>Photography</h2>
+    <p>The brand's biggest visual weakness right now is not design — it's <strong>a lack of real photography</strong>. Case study pages are built and waiting on images. Stock photos of generic painted walls actively undercut the premium positioning.</p>
+
+    <h4>What to shoot</h4>
+    <ul class="plain">
+      <li><b>Before and after pairs, same angle, same time of day.</b> The single most persuasive asset in this trade. Nothing else converts like it.</li>
+      <li><b>Detail shots.</b> Crisp cut lines, trim, doors, a clean edge against glass. This is the craft argument made visually — it can't be made in words.</li>
+      <li><b>Crew at work, in branded gear, on a clean and organized site.</b> Drop cloths down, materials staged. Sells professionalism more than any headline.</li>
+      <li><b>Wide exterior hero shots</b> in late-afternoon light. Straighten verticals.</li>
+      <li><b>Commercial scale</b> — lifts, large facades, after-hours interiors with the lights on. This is the work homeowners never see and property managers need to.</li>
+    </ul>
+
+    <h4>Treatment</h4>
+    <p>Natural color, no heavy filters, no fake blue skies. Warm afternoon light matches the palette naturally. Keep verticals straight — a leaning building reads as amateur. When placing the logo or text over a photo, darken the image behind it rather than adding an outline to the type.</p>
+  </section>
+
+  <!-- ============ APPLICATION ============ -->
+  <section class="card">
+    <h2>Applying This Across Print</h2>
+    <p>The same system, sized for each format. Every piece should be identifiable as Sunwest from ten feet away.</p>
+    <table>
+      <thead><tr><th>Piece</th><th>Anchor</th><th>Rules</th></tr></thead>
+      <tbody>
+        <tr><td>Business card</td><td>Gradient edge bar</td><td>Logo, name, title, mobile, email, CSLB #807426 in small type. White stock, no gloss over the type side.</td></tr>
+        <tr><td>Door hanger</td><td>One Outfit headline, one photo</td><td>Read in three seconds from a doorstep. Headline, before/after image, phone number, QR. Nothing else.</td></tr>
+        <tr><td>Flyer / one-pager</td><td>Gradient top bar</td><td>Headline, three proof points, two to three photos, one call to action, credentials footer.</td></tr>
+        <tr><td>Trifold</td><td>Cover headline + hero photo</td><td>Residential and commercial versions. Panel three is always credentials and contact.</td></tr>
+        <tr><td>Postcard / EDDM</td><td>Before-and-after, full bleed</td><td>Address side stays clean. Offer and phone number are the largest elements after the image.</td></tr>
+        <tr><td>Yard sign</td><td>Logo + phone, nothing else</td><td>Read at 30 feet from a moving car. Ink 900 on Sun 500 is the most visible combination in the palette at 13.22:1.</td></tr>
+        <tr><td>Vehicle</td><td>Logo, phone, one service line</td><td>Same rule as yard signs. Resist listing services — nobody reads them at 40 mph.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ TOKENS ============ -->
+  <section class="card">
+    <h2>Developer Tokens</h2>
+    <p>Drop-in CSS custom properties, matching every value in this document. Hand this to any developer or vendor.</p>
+    <pre style="background:#111;color:#E8E6E1;padding:22px;border-radius:8px;overflow-x:auto;font-family:ui-monospace,monospace;font-size:12px;line-height:1.7;margin:0"><code style="background:none;color:inherit;padding:0">:root {
+  /* Brand — Ember */
+  --ember-500: #E07B39;   /* brand orange — fills only  */
+  --ember-600: #C25F1E;
+  --ember-700: #9F4E19;   /* text-safe on white (5.87:1) */
+
+  /* Brand — Sun */
+  --sun-500:   #F5C842;   /* brand yellow — fills only  */
+  --sun-700:   #AE8509;
+
+  /* Signature gradient */
+  --brand-gradient: linear-gradient(102.43deg,
+                    #F5C842 6.67%, #E07B39 107.96%);
+
+  /* Neutrals */
+  --ink-900: #111111;     /* headings, text on brand fills */
+  --ink-700: #333333;
+  --ink-500: #515151;     /* body copy, card borders       */
+  --ink-300: #8A8A8A;
+  --ink-100: #E3E1DD;
+  --white:   #FFFFFF;
+
+  /* Type */
+  --font-display: 'Outfit', system-ui, sans-serif;   /* 700 / 900 */
+  --font-body:    'Poppins', system-ui, sans-serif;  /* 400/600/700 */
+
+  --radius-button: 28px;
+  --radius-card:   0px;
+  --border-card:   0.58px solid var(--ink-500);
+}</code></pre>
+  </section>
+
+  <footer>
+    <p><b>Sunwest Painting Brand Guide v1.0</b> &nbsp;·&nbsp; Kaizen Agency</p>
+    <p style="font-size:12px">All color and type values extracted from the approved Sunwest Painting homepage design in Figma. Contrast ratios calculated to WCAG 2.1.</p>
+  </footer>
+
+</div>
+</body>
+</html>

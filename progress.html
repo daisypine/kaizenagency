@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunwest Painting × Kaizen Agency — Progress Report & 90-Day Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --surface-1: #fcfcfb;
+    --page: #f4f3f0;
+    --ink-1: #0b0b0b;
+    --ink-2: #52514e;
+    --ink-muted: #898781;
+    --rule: #e1e0d9;
+    --accent: #eb6834;
+    --accent-deep: #b8461c;
+    --good: #0ca30c;
+    --warning: #fab219;
+    --serious: #ec835a;
+    --blue-450: #2a78d6;
+    --blue-150: #b7d3f6;
+    --border: rgba(11,11,11,0.10);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink-1);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ---------- masthead ---------- */
+  header.mast {
+    background: var(--surface-1);
+    border-bottom: 3px solid var(--accent);
+    padding: 44px 24px 36px;
+    margin-bottom: 32px;
+  }
+  .mast-inner { max-width: 940px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-deep); font-weight: 700; margin: 0 0 10px;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin: 0 0 12px; letter-spacing: -.02em; }
+  .sub { font-size: 16px; color: var(--ink-2); margin: 0; max-width: 640px; }
+  .meta-row {
+    margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule);
+    display: flex; flex-wrap: wrap; gap: 28px; font-size: 13px; color: var(--ink-muted);
+  }
+  .meta-row b { color: var(--ink-2); font-weight: 600; }
+
+  /* ---------- cards ---------- */
+  section.card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+  }
+  h2 {
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 700; margin: 0 0 18px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--rule);
+  }
+  h3 { font-size: 17px; margin: 26px 0 8px; letter-spacing: -.01em; }
+  h3:first-of-type { margin-top: 0; }
+  p { margin: 0 0 12px; color: var(--ink-2); font-size: 15px; }
+  p.lead { font-size: 17px; color: var(--ink-1); }
+  strong { color: var(--ink-1); font-weight: 650; }
+
+  /* ---------- stat tiles ---------- */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule);
+           border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+  .tile { background: var(--surface-1); padding: 20px 18px; }
+  .tile .val { font-size: 30px; font-weight: 700; letter-spacing: -.03em; line-height: 1.1; }
+  .tile .val .unit { font-size: 15px; font-weight: 600; color: var(--ink-muted); letter-spacing: 0; }
+  .tile .lbl { font-size: 12px; color: var(--ink-2); margin-top: 6px; line-height: 1.35; }
+
+  /* ---------- progress meters ---------- */
+  .meter-row { display: grid; grid-template-columns: 210px 1fr 86px; align-items: center;
+               gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--rule); }
+  .meter-row:last-child { border-bottom: none; }
+  .meter-name { font-size: 14px; font-weight: 600; }
+  .meter-name small { display: block; font-weight: 400; color: var(--ink-muted); font-size: 12px; }
+  .track { height: 10px; background: #eceae4; border-radius: 5px; overflow: hidden; }
+  .fill { height: 100%; border-radius: 5px; }
+  .meter-pct { font-size: 13px; color: var(--ink-2); text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* ---------- status pills ---------- */
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700;
+          letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px;
+          border: 1px solid; white-space: nowrap; }
+  .pill.done   { color: #096b09; border-color: #0ca30c66; background: #0ca30c14; }
+  .pill.active { color: var(--accent-deep); border-color: #eb683466; background: #eb683414; }
+  .pill.next   { color: #1c5cab; border-color: #2a78d666; background: #2a78d614; }
+
+  /* ---------- timeline ---------- */
+  .tl { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 2px solid var(--rule); }
+  .tl li { position: relative; padding: 0 0 22px 22px; }
+  .tl li:last-child { padding-bottom: 0; }
+  .tl li::before {
+    content: ''; position: absolute; left: -33px; top: 5px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--good); border: 2px solid var(--surface-1);
+    box-shadow: 0 0 0 2px var(--good);
+  }
+  .tl li.now::before { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+  .tl .when { font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+              color: var(--ink-muted); font-weight: 700; }
+  .tl .what { font-size: 15px; font-weight: 620; margin: 2px 0 3px; }
+  .tl .detail { font-size: 14px; color: var(--ink-2); margin: 0; }
+
+  /* ---------- lists ---------- */
+  ul.checks { list-style: none; margin: 0; padding: 0; }
+  ul.checks li { position: relative; padding: 7px 0 7px 26px; font-size: 15px; color: var(--ink-2);
+                 border-bottom: 1px solid var(--rule); }
+  ul.checks li:last-child { border-bottom: none; }
+  ul.checks li::before { content: '✓'; position: absolute; left: 0; top: 7px;
+                         color: var(--good); font-weight: 700; }
+  ul.checks li b { color: var(--ink-1); font-weight: 650; }
+
+  ul.arrows { list-style: none; margin: 0; padding: 0; }
+  ul.arrows li { position: relative; padding: 7px 0 7px 26px; font-size: 15px; color: var(--ink-2);
+                 border-bottom: 1px solid var(--rule); }
+  ul.arrows li:last-child { border-bottom: none; }
+  ul.arrows li::before { content: '→'; position: absolute; left: 0; top: 7px;
+                         color: var(--accent); font-weight: 700; }
+  ul.arrows li b { color: var(--ink-1); font-weight: 650; }
+
+  /* ---------- callout ---------- */
+  .callout {
+    background: #fdf6f2; border-left: 3px solid var(--accent);
+    padding: 18px 22px; border-radius: 0 8px 8px 0; margin: 18px 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .k { font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+                color: var(--accent-deep); font-weight: 700; margin-bottom: 6px; }
+
+  /* ---------- table ---------- */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+       color: var(--ink-muted); font-weight: 700; padding: 0 12px 9px 0; border-bottom: 1px solid var(--rule); }
+  td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--rule); color: var(--ink-2);
+       vertical-align: top; }
+  td:first-child { color: var(--ink-1); font-weight: 600; width: 30%; }
+  tr:last-child td { border-bottom: none; }
+
+  /* ---------- footer ---------- */
+  footer { text-align: center; font-size: 13px; color: var(--ink-muted); padding-top: 12px; }
+  footer b { color: var(--ink-2); }
+
+  @media (max-width: 700px) {
+    .tiles { grid-template-columns: repeat(2, 1fr); }
+    .meter-row { grid-template-columns: 1fr; gap: 6px; }
+    .meter-pct { text-align: left; }
+    h1 { font-size: 26px; }
+    section.card { padding: 22px 20px; }
+  }
+  @media print {
+    body { background: #fff; }
+    section.card { break-inside: avoid; border-color: #ddd; }
+    header.mast { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<style>
+.kz-nav{position:sticky;top:0;z-index:50;background:#111;border-bottom:3px solid transparent;
+  border-image:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%) 1;
+  font-family:'Poppins',system-ui,sans-serif;}
+.kz-nav-in{max-width:960px;margin:0 auto;padding:11px 24px;display:flex;gap:8px;
+  align-items:center;flex-wrap:wrap}
+.kz-nav a{color:#C9C7C2;text-decoration:none;font-size:12.5px;font-weight:600;
+  padding:7px 13px;border-radius:20px;letter-spacing:.02em;white-space:nowrap}
+.kz-nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.kz-nav a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111;font-weight:700}
+.kz-nav .kz-home{color:#8A8A8A;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;margin-right:6px;padding-left:0}
+@media print{.kz-nav{display:none}}
+</style>
+<nav class="kz-nav"><div class="kz-nav-in">
+<a class="kz-home" href="./">Sunwest &nbsp;·&nbsp; Kaizen</a>
+<a href="./progress.html" class="on">Progress Report</a>
+<a href="./roadmap.html">Growth Roadmap</a>
+<a href="./brand.html">Brand Guide</a>
+</div></nav>
+
+
+<header class="mast">
+  <div class="mast-inner">
+    <p class="eyebrow">Kaizen Agency &nbsp;·&nbsp; Client Progress Report</p>
+    <h1>Sunwest Painting — Where We Are &amp; What's Next</h1>
+    <p class="sub">A full account of the work completed since April, the current state of the new website, and the 60-day plan to turn the foundation into ranked, lead-generating pages.</p>
+    <div class="meta-row">
+      <span><b>Prepared for</b> &nbsp;Denise Artache</span>
+      <span><b>Prepared by</b> &nbsp;Daisy Pineda</span>
+      <span><b>Date</b> &nbsp;August 14, 2026</span>
+      <span><b>Engagement start</b> &nbsp;April 24, 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ SNAPSHOT ============ -->
+  <section class="card">
+    <h2>Snapshot</h2>
+    <div class="tiles">
+      <div class="tile">
+        <div class="val">27 <span class="unit">days</span></div>
+        <div class="lbl">New site live on sunwestpainting.net (since July 18)</div>
+      </div>
+      <div class="tile">
+        <div class="val">~100</div>
+        <div class="lbl">Page architecture mapped, researched &amp; prioritized</div>
+      </div>
+      <div class="tile">
+        <div class="val">6</div>
+        <div class="lbl">Core pages published and indexable today</div>
+      </div>
+      <div class="tile">
+        <div class="val">5</div>
+        <div class="lbl">Print pieces designed &amp; delivered for review</div>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:26px">The short version: <strong>the hard part is done.</strong> Your old site was actively working against you — broken templates, empty pages, duplicate content, no tracking, and a page builder that was throwing errors. That's been torn out and rebuilt. The new site went live four weeks ago on a clean, modern foundation.</p>
+    <p>What's left is the part that actually produces rankings: publishing the service, industry, and city pages that are already researched and written. That's the next 60 days.</p>
+  </section>
+
+  <!-- ============ PHASE PROGRESS ============ -->
+  <section class="card">
+    <h2>Phase Progress</h2>
+    <div class="meter-row">
+      <div class="meter-name">Phase 1 — Strategy &amp; Foundation<small>Audit, research, sitemap, brand positioning</small></div>
+      <div class="track"><div class="fill" style="width:100%;background:var(--good)"></div></div>
+      <div class="meter-pct"><span class="pill done">Complete</span></div>
+    </div>
+    <div class="meter-row">
+      <div class="meter-name">Phase 2 — Design &amp; Build<small>Templates, copy, development, go-live</small></div>
+      <div class="track"><div class="fill" style="width:100%;background:var(--good)"></div></div>
+      <div class="meter-pct"><span class="pill done">Complete</span></div>
+    </div>
+    <div class="meter-row">
+      <div class="meter-name">Phase 3 — Page Rollout<small>Publishing the ~100-page architecture</small></div>
+      <div class="track"><div class="fill" style="width:12%;background:var(--accent)"></div></div>
+      <div class="meter-pct"><span class="pill active">In&nbsp;Progress</span></div>
+    </div>
+    <div class="meter-row">
+      <div class="meter-name">Phase 4 — Systems &amp; Growth<small>CRM, tracking, reviews, content engine</small></div>
+      <div class="track"><div class="fill" style="width:20%;background:var(--blue-450)"></div></div>
+      <div class="meter-pct"><span class="pill next">Starting</span></div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S BEEN DONE ============ -->
+  <section class="card">
+    <h2>What's Been Built — April to August</h2>
+
+    <ol class="tl">
+      <li>
+        <div class="when">April</div>
+        <div class="what">Full technical audit of the old website</div>
+        <p class="detail">Crawled the existing site and documented what was broken: leftover theme demo pages (<em>home-8</em>, <em>home-9</em>) competing with your real pages in Google, six empty portfolio pages, duplicate project layouts, tag pages misrouting to unrelated content, an unused WooCommerce store, a WordPress logo in the browser tab, slow mobile load times, and no analytics or Search Console of any kind.</p>
+      </li>
+      <li>
+        <div class="when">April</div>
+        <div class="what">Discovery, positioning &amp; competitive research</div>
+        <p class="detail">Full discovery session documented across 25+ questions — revenue split, priority vs. non-priority services, commercial verticals, ideal client profiles, why bids are lost, and your end-to-end project process. Mapped three direct competitors, including one San Jose competitor ranking for 7,000+ keywords, and identified where they're weak.</p>
+      </li>
+      <li>
+        <div class="when">April</div>
+        <div class="what">Keyword research &amp; the ~100-page site architecture</div>
+        <p class="detail">Built the full sitemap around winnable keywords rather than guesses — including several with very low competition that no local competitor is targeting: <em>Commercial Painting San Jose</em>, <em>House Painters Palo Alto</em>, <em>After-Hours Painting</em>, and <em>Historic Home Restoration</em> in Los Gatos and Palo Alto. Architecture spans core pages, 10 services, 18 industry verticals, 20 city pages, 15 combined service-plus-city "money" pages, project case studies, and a blog.</p>
+      </li>
+      <li>
+        <div class="when">May</div>
+        <div class="what">Homepage design approved, inner templates built</div>
+        <p class="detail">Homepage design delivered and signed off on May 7. Five reusable page templates then designed — home, service hub, service page, industry page, city page, and project case study — so every future page is fast to produce and structurally consistent for SEO.</p>
+      </li>
+      <li>
+        <div class="when">May – June</div>
+        <div class="what">Website copy written from scratch</div>
+        <p class="detail">All page copy written around your actual differentiators — custom detail work, communication and walkthroughs, family ownership since 2001 — rather than generic painting-contractor language. Trust signals your old site was missing are now on every page: <strong>CSLB #807426</strong>, EPA RRP certification, and insurance.</p>
+      </li>
+      <li>
+        <div class="when">May – June</div>
+        <div class="what">Print &amp; brand collateral</div>
+        <p class="detail">Business cards (three team versions), flyer, trifold brochure, presentation folder, and door hangers — all designed, revised through your feedback round, and delivered.</p>
+      </li>
+      <li>
+        <div class="when">June – July</div>
+        <div class="what">Rebuilt on a stable platform</div>
+        <p class="detail">The old build was failing — the page builder was throwing save errors and the server's PHP version was out of date. Rather than patch it, the site was rebuilt on Elementor with a lightweight theme, and the SEO plugin was migrated to Rank Math Pro for better control over titles, descriptions, and indexing. No extra cost was passed to you for either change.</p>
+      </li>
+      <li class="now">
+        <div class="when">July 18 — Go-Live</div>
+        <div class="what">New site launched on sunwestpainting.net</div>
+        <p class="detail">Homepage, Residential Painting, Industries, Projects, Locations, and Request a Quote are live, each with proper page titles and descriptions written for search. The homepage now targets <em>"San Jose Painting Contractor | Sun West Painting Since 2001."</em> Quote forms and a click-to-call number appear throughout. Your existing project posts were preserved rather than deleted, so none of the site's history was thrown away.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ THE RANKING QUESTION ============ -->
+  <section class="card">
+    <h2>The Ranking Question — An Honest Answer</h2>
+
+    <p class="lead">The site has been live for four weeks. Four weeks is not a result yet — and anyone who tells you otherwise is selling you something.</p>
+
+    <p>Here's what's actually happening, in plain terms:</p>
+
+    <h3>1. Google is still re-reading the site</h3>
+    <p>When a site is rebuilt this substantially, Google has to re-crawl it, re-evaluate every page, and rebuild its understanding of what the business does. For a rebuild of this size the normal re-evaluation window is <strong>three to six months</strong>. We are at week four.</p>
+
+    <h3>2. You rank because of pages — and most of the pages aren't published yet</h3>
+    <p>This is the most important point. Nobody ranks for "commercial painting San Jose" without a page about commercial painting in San Jose. Right now <strong>six pages are live</strong>. The roughly ninety pages that target the searches your customers actually type — each city, each industry, each service — are researched, mapped, and largely written, but they aren't on the site yet.</p>
+    <p>That gap is the single biggest lever we have, and closing it is the entire focus of the next sixty days.</p>
+
+    <h3>3. What we removed was suppressing you</h3>
+    <p>The cleanup matters even though it isn't visible. Demo template pages competing with your real pages, empty portfolio URLs, duplicate project layouts, and tag pages pointing at the wrong content all told Google the site was low-quality and confusing to crawl. Removing that doesn't produce an overnight jump — it removes the ceiling.</p>
+
+    <div class="callout">
+      <div class="k">What to measure right now</div>
+      <p>At week four, rankings are the wrong scoreboard. The right ones are <strong>indexation</strong> (how many pages Google has accepted), <strong>impressions</strong> (how often you're being shown at all), and <strong>crawl coverage</strong>. Those move first; rankings follow, then calls. Search Console and Analytics are being set up now so we have a documented baseline from the launch date forward — which also means every future report shows real numbers, not opinions.</p>
+    </div>
+  </section>
+
+  <!-- ============ IN FLIGHT ============ -->
+  <section class="card">
+    <h2>Active Right Now — This Week</h2>
+    <ul class="arrows">
+      <li><b>Google Search Console &amp; Analytics 4 setup.</b> Verify the domain, submit the sitemap, and establish the baseline so every future report is measurable.</li>
+      <li><b>Sitemap corrections.</b> Two issues found in the current setup: your blog and project posts aren't included in the sitemap being sent to Google, and a leftover WordPress "sample page" is. Both get fixed this week so Google sees the real inventory.</li>
+      <li><b>Old-URL redirect map.</b> Making sure every legacy URL points somewhere useful, so nothing that already had value on Google gets dropped.</li>
+      <li><b>Internal linking on the Industries and Locations pages.</b> Both currently list your verticals and cities as plain text. As each child page publishes, it gets linked — which is how authority flows through the site.</li>
+      <li><b>Google Business Profile optimization.</b> Categories, services, service areas, and photos aligned to the new site. For local painting searches this is frequently the fastest-moving lever available.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 60-DAY PLAN ============ -->
+  <section class="card">
+    <h2>The Next 60 Days</h2>
+    <table>
+      <thead>
+        <tr><th>Window</th><th>What ships</th><th>Why it matters</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Weeks 1–2<br><span style="font-weight:400;color:var(--ink-muted);font-size:13px">Aug 15–29</span></td>
+          <td>Tracking live. Sitemap and redirects fixed. Commercial Painting, About Us, and Historic Home Restoration published. GBP optimized.</td>
+          <td>Establishes the measurement baseline and puts your two highest-margin services on the map.</td>
+        </tr>
+        <tr>
+          <td>Weeks 3–4<br><span style="font-weight:400;color:var(--ink-muted);font-size:13px">Sep 1–12</span></td>
+          <td>First city pages: San Jose, Los Gatos, Palo Alto, Santa Clara, Sunnyvale. Plus the first combined pages — Residential Painting San Jose, Commercial Painting San Jose.</td>
+          <td>Local search is where painting leads come from. These are the pages that compete for "painters near me" traffic.</td>
+        </tr>
+        <tr>
+          <td>Weeks 5–6<br><span style="font-weight:400;color:var(--ink-muted);font-size:13px">Sep 15–26</span></td>
+          <td>Priority industry pages: Property Management, HOA &amp; Multi-Family, Medical Facilities, Industrial &amp; Warehouse, Senior Living.</td>
+          <td>Property and facilities managers are your repeat, higher-value commercial accounts. Each vertical gets its own page instead of a bullet on a list.</td>
+        </tr>
+        <tr>
+          <td>Weeks 7–8<br><span style="font-weight:400;color:var(--ink-muted);font-size:13px">Sep 29–Oct 10</span></td>
+          <td>Project case studies with real photos. After-Hours Painting page. Review generation campaign launched. First monthly performance report.</td>
+          <td>Case studies close deals and rank at the same time. After-hours is a niche with almost no competition that you're already delivering for San Mateo County courts.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:24px">
+      <div class="k">Realistic expectations</div>
+      <p><strong>By 60 days:</strong> 30–40 pages live, indexation climbing, impressions measurably up, first rankings appearing on low-competition terms.<br>
+      <strong>By 90–120 days:</strong> meaningful movement on target keywords and the first attributable organic leads.<br>
+      <strong>By 6 months:</strong> the compounding effect — where a mature page architecture starts producing consistent inbound volume.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE NEED ============ -->
+  <section class="card">
+    <h2>What We Need From You</h2>
+    <p>Two of these are holding up work that's otherwise ready to go.</p>
+    <ul class="arrows">
+      <li><b>Project photos and video.</b> The biggest blocker. Case study pages are designed and waiting — they need real Sunwest work, not stock. Even phone photos of recent completed jobs work. If Jay has footage, we can use that too.</li>
+      <li><b>Print collateral sign-off.</b> Business cards, flyer, trifold, folder, and door hangers have been ready since late June. A yes or a revision list gets these to print.</li>
+      <li><b>Your 5–10 favorite projects.</b> Location, type of work, and what made it a good job. This directly determines which city and industry pages we build first.</li>
+      <li><b>Confirmation on two services.</b> Whether to build pages for cabinet refinishing and deck staining, or leave them off given the margin concerns you raised.</li>
+      <li><b>The 866-59-PAINT line.</b> Still reportedly ringing without routing to voicemail. Worth resolving before we drive more traffic to it — every missed call is a lost bid.</li>
+    </ul>
+  </section>
+
+  <!-- ============ ALSO DONE ============ -->
+  <section class="card">
+    <h2>Also Delivered Along the Way</h2>
+    <ul class="checks">
+      <li><b>Client portal</b> — live project tracker with tasks, timeline, documents, and copy, available to you at any time.</li>
+      <li><b>Organized asset library</b> — a structured Drive with photos, before-and-afters, brand guide, and graphic design files.</li>
+      <li><b>Brand consistency</b> — logo corrected across the site after the old one was pulling a low-resolution file, and the main site color matched to your Sunwest brand orange per your note in May.</li>
+      <li><b>Privacy compliance</b> — the site is built California-compliant, with no visitor data collected or transferred before opt-in.</li>
+      <li><b>Developer QA checklist</b> — every launch runs through a documented technical checklist rather than a spot check.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><b>Kaizen Agency</b> &nbsp;·&nbsp; Prepared by Daisy Pineda &nbsp;·&nbsp; August 14, 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>

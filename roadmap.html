@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunwest Painting — Beyond the Website: Your Full Marketing System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Sunwest brand tokens — from Brand Guide v1.0 */
+    --ember-50:#FCF3ED; --ember-100:#F8E2D3; --ember-200:#F1C4A7;
+    --ember-400:#E58F57; --ember-500:#E07B39; --ember-600:#C25F1E; --ember-700:#9F4E19;
+    --sun-50:#FEF9EC; --sun-100:#FCF1CF; --sun-400:#F5C947; --sun-500:#F5C842;
+    --sun-600:#D5A20B; --sun-700:#AE8509;
+    --ink-900:#111111; --ink-700:#333333; --ink-500:#515151; --ink-300:#8A8A8A;
+    --ink-100:#E3E1DD; --ink-50:#F4F3F0; --white:#FFFFFF;
+    --brand-gradient: linear-gradient(102.43deg, #F5C842 6.67%, #E07B39 107.96%);
+
+    --page:#F4F3F0; --surface:#FFFFFF; --rule:#E3E1DD;
+    --border: rgba(17,17,17,.10);
+    --good:#0B7A0B;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--page); color:var(--ink-900);
+    font-family:'Poppins', system-ui, sans-serif; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:960px; margin:0 auto; padding:0 24px 80px; }
+
+  /* masthead */
+  header.mast { background:var(--ink-900); color:#fff; padding:0; margin-bottom:32px; }
+  .mast-bar { height:8px; background:var(--brand-gradient); }
+  .mast-inner { max-width:960px; margin:0 auto; padding:48px 24px 40px; }
+  .eyebrow { font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+             color:var(--sun-400); font-weight:700; margin:0 0 14px; }
+  h1 { font-family:'Outfit',sans-serif; font-weight:900; font-size:52px; line-height:1.03;
+       letter-spacing:-.028em; text-transform:uppercase; margin:0 0 16px; max-width:16ch; }
+  .mast-inner .sub { font-size:16px; color:#C9C7C2; margin:0; max-width:640px; }
+  .mast-meta { margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,.14);
+               display:flex; flex-wrap:wrap; gap:28px; font-size:13px; color:#8A8A8A; }
+  .mast-meta b { color:#C9C7C2; font-weight:600; }
+
+  /* cards */
+  section.card { background:var(--surface); border:1px solid var(--border);
+                 border-radius:10px; padding:30px 32px; margin-bottom:22px; }
+  h2 { font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+       color:var(--ink-300); font-weight:700; margin:0 0 20px; padding-bottom:11px;
+       border-bottom:1px solid var(--rule); }
+  h3 { font-family:'Outfit',sans-serif; font-weight:700; font-size:24px; text-transform:uppercase;
+       letter-spacing:-.02em; margin:0 0 6px; line-height:1.2; }
+  p { margin:0 0 12px; color:var(--ink-700); font-size:15px; }
+  p:last-child { margin-bottom:0; }
+  p.lead { font-size:17.5px; color:var(--ink-900); }
+  strong { color:var(--ink-900); font-weight:600; }
+
+  /* engines */
+  .engines { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:6px; }
+  .engine { border:1px solid var(--rule); border-radius:8px; padding:20px 18px;
+            border-top:4px solid var(--ink-100); }
+  .engine.e1 { border-top-color:var(--good); }
+  .engine.e2 { border-top-color:var(--ember-500); }
+  .engine.e3 { border-top-color:var(--sun-500); }
+  .engine .num { font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+                 font-weight:700; color:var(--ink-300); }
+  .engine h4 { font-family:'Outfit',sans-serif; font-weight:900; font-size:20px;
+               text-transform:uppercase; letter-spacing:-.02em; margin:5px 0 9px; }
+  .engine p { font-size:13.5px; margin:0 0 12px; }
+  .state { font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+           padding:4px 10px; border-radius:20px; border:1px solid; display:inline-block; }
+  .state.on  { color:var(--good); border-color:#0B7A0B55; background:#0B7A0B12; }
+  .state.off { color:var(--ember-700); border-color:#9F4E1955; background:var(--ember-50); }
+
+  /* channel blocks */
+  .chan { border:1px solid var(--rule); border-radius:8px; padding:24px 26px; margin-bottom:14px; }
+  .chan:last-child { margin-bottom:0; }
+  .chan-head { display:flex; align-items:baseline; justify-content:space-between;
+               gap:16px; flex-wrap:wrap; margin-bottom:6px; }
+  .tagset { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+         padding:4px 9px; border-radius:4px; white-space:nowrap; }
+  .tag.ready { color:var(--good); background:#0B7A0B14; }
+  .tag.fast  { color:var(--ink-900); background:var(--sun-500); }
+  .tag.build { color:#fff; background:var(--ember-700); }
+  .chan .why { font-size:14.5px; color:var(--ink-700); margin:0 0 14px; }
+
+  ul.plays { list-style:none; margin:0; padding:0; }
+  ul.plays li { position:relative; padding:8px 0 8px 26px; font-size:14.5px; color:var(--ink-700);
+                border-bottom:1px solid var(--rule); }
+  ul.plays li:last-child { border-bottom:none; padding-bottom:0; }
+  ul.plays li::before { content:'→'; position:absolute; left:0; top:8px;
+                        color:var(--ember-600); font-weight:700; }
+  ul.plays li b { color:var(--ink-900); font-weight:600; }
+
+  /* callouts */
+  .callout { background:var(--ember-50); border-left:4px solid var(--ember-500);
+             padding:20px 24px; border-radius:0 8px 8px 0; margin:20px 0 0; }
+  .callout.sun { background:var(--sun-50); border-left-color:var(--sun-500); }
+  .callout .k { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+                color:var(--ember-700); font-weight:700; margin-bottom:7px; }
+  .callout.sun .k { color:var(--sun-700); }
+  .callout p { color:var(--ink-700); }
+
+  /* gradient hero strip */
+  .grad-strip { background:var(--brand-gradient); border-radius:10px; padding:28px 30px;
+                color:var(--ink-900); margin-top:4px; }
+  .grad-strip .gk { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+                    font-weight:700; color:rgba(17,17,17,.65); margin-bottom:8px; }
+  .grad-strip .gt { font-family:'Outfit',sans-serif; font-weight:900; font-size:26px;
+                    text-transform:uppercase; letter-spacing:-.022em; line-height:1.15;
+                    margin:0 0 10px; }
+  .grad-strip p { color:rgba(17,17,17,.82); font-size:15px; margin:0; }
+  .grad-strip strong { color:var(--ink-900); }
+
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+       color:var(--ink-300); font-weight:700; padding:0 12px 10px 0; border-bottom:1px solid var(--rule); }
+  td { padding:13px 12px 13px 0; border-bottom:1px solid var(--rule); color:var(--ink-700);
+       vertical-align:top; }
+  td:first-child { color:var(--ink-900); font-weight:600; width:24%; }
+  tr:last-child td { border-bottom:none; }
+  .sublabel { font-weight:400; color:var(--ink-300); font-size:12.5px; }
+
+  footer { text-align:center; font-size:13px; color:var(--ink-300); padding-top:14px; }
+  footer b { color:var(--ink-500); }
+
+  @media (max-width:800px){
+    .engines { grid-template-columns:1fr; }
+    h1 { font-size:34px; }
+    section.card { padding:22px 20px; }
+    .chan { padding:20px 18px; }
+  }
+  @media print { body{background:#fff} section.card,.chan{break-inside:avoid} }
+</style>
+</head>
+<body>
+
+<style>
+.kz-nav{position:sticky;top:0;z-index:50;background:#111;border-bottom:3px solid transparent;
+  border-image:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%) 1;
+  font-family:'Poppins',system-ui,sans-serif;}
+.kz-nav-in{max-width:960px;margin:0 auto;padding:11px 24px;display:flex;gap:8px;
+  align-items:center;flex-wrap:wrap}
+.kz-nav a{color:#C9C7C2;text-decoration:none;font-size:12.5px;font-weight:600;
+  padding:7px 13px;border-radius:20px;letter-spacing:.02em;white-space:nowrap}
+.kz-nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.kz-nav a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111;font-weight:700}
+.kz-nav .kz-home{color:#8A8A8A;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;margin-right:6px;padding-left:0}
+@media print{.kz-nav{display:none}}
+</style>
+<nav class="kz-nav"><div class="kz-nav-in">
+<a class="kz-home" href="./">Sunwest &nbsp;·&nbsp; Kaizen</a>
+<a href="./progress.html">Progress Report</a>
+<a href="./roadmap.html" class="on">Growth Roadmap</a>
+<a href="./brand.html">Brand Guide</a>
+</div></nav>
+
+
+<header class="mast">
+  <div class="mast-bar"></div>
+  <div class="mast-inner">
+    <p class="eyebrow">Kaizen Agency &nbsp;·&nbsp; Growth Roadmap</p>
+    <h1>Beyond the Website</h1>
+    <p class="sub">Search brings in people who are already looking for a painter. This is everything else — the channels that create demand from people who aren't searching yet, the database you already own and have never used, and the system that ties it together.</p>
+    <div class="mast-meta">
+      <span><b>Prepared for</b> &nbsp;Denise Artache, Sunwest Painting</span>
+      <span><b>Prepared by</b> &nbsp;Daisy Pineda, Kaizen Agency</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ THE FRAME ============ -->
+  <section class="card">
+    <h2>The Frame — Three Revenue Engines</h2>
+    <p class="lead">A painting company running only SEO is running on one of three engines — and it's the slowest of the three to spin up.</p>
+
+    <div class="engines">
+      <div class="engine e1">
+        <div class="num">Engine 01</div>
+        <h4>Inbound Search</h4>
+        <p>People actively typing "painters near me." Highest intent, slowest to build, compounds forever.</p>
+        <span class="state on">Running</span>
+      </div>
+      <div class="engine e2">
+        <div class="num">Engine 02</div>
+        <h4>Proximity</h4>
+        <p>The 200 homes around every job site you're already on. The warmest cold audience in this trade — and nearly free.</p>
+        <span class="state off">Not running</span>
+      </div>
+      <div class="engine e3">
+        <div class="num">Engine 03</div>
+        <h4>Your Database</h4>
+        <p>Twenty-five years of past customers and every property manager you've ever bid. Zero acquisition cost, highest ROI in the business.</p>
+        <span class="state off">Not running</span>
+      </div>
+    </div>
+
+    <div class="grad-strip">
+      <div class="gk">The single biggest opportunity in this document</div>
+      <p class="gt">Twenty-five years of customers, never marketed to</p>
+      <p>You've been in business since <strong>2001</strong>. Interior repaints cycle every 5–7 years; exteriors every 7–10. <strong>Every customer you painted between roughly 2016 and 2020 is due right now</strong> — and none of them have ever been contacted. That list is sitting in QuickBooks. It costs almost nothing to activate, and it converts better than anything we can buy.</p>
+    </div>
+
+    <div class="callout sun">
+      <div class="k">Why the timing matters</div>
+      <p>Q1 — January through March — is your slow season, and this spring was already unusually slow with competitors undercutting by $3,000–$5,000. Direct mail, email, and reactivation campaigns take 60–90 days to build and warm up. <strong>Build this September through December and Q1 2027 has something to sell into</strong> instead of waiting for the phone. Building it in January is too late.</p>
+    </div>
+  </section>
+
+  <!-- ============ BRAND FOUNDATION ============ -->
+  <section class="card">
+    <h2>The Foundation Underneath All of It — Brand Consistency</h2>
+    <p>Before any of the channels below are worth spending on, everything has to look like it came from the same company. A postcard that doesn't match the website doesn't build recognition — it splits it.</p>
+    <p>That's now handled. <strong>A complete Sunwest brand system has been documented</strong> — the signature yellow-to-orange gradient, the full color palette, the Outfit and Poppins type system, button and card specifications, photography direction, and voice guidelines. Every value was pulled from the approved website design, so print, mail, signage, and digital now all reference one source.</p>
+
+    <div class="grad-strip" style="margin-top:18px">
+      <div class="gk">What this unlocks</div>
+      <p class="gt">Any vendor can produce on-brand work without a design round</p>
+      <p>Sign shops, print vendors, and mail houses can be handed the guide and produce work that matches — no back-and-forth, no approximations, no "close enough" orange. <strong>Both typefaces are free through Google Fonts</strong>, so there's no license to buy and no vendor excuse for substituting something else.</p>
+    </div>
+
+    <div class="callout">
+      <div class="k">One fix included</div>
+      <p>The audit turned up a real accessibility issue: <strong>white text on the brand orange measures 2.97:1 contrast</strong>, well below the 4.5:1 standard. That's the primary "Request a Quote" button — the hardest-working element on the site, and the least readable, especially on a phone outdoors. Switching to near-black on the gradient measures <strong>7.06:1</strong> and looks more premium. It's a one-line change that applies everywhere at once.</p>
+    </div>
+  </section>
+
+  <!-- ============ PRINT & PHYSICAL ============ -->
+  <section class="card">
+    <h2>Print &amp; Physical Presence</h2>
+
+    <div class="chan">
+      <div class="chan-head">
+        <h3>Door Hangers</h3>
+        <div class="tagset"><span class="tag ready">Designed &amp; ready</span><span class="tag fast">Fastest to launch</span></div>
+      </div>
+      <p class="why">The highest-return piece of paper in the painting business, and yours are already designed and sitting in Drive. Your crews are already on the street — they just need something in their hands.</p>
+      <ul class="plays">
+        <li><b>Two versions, not one.</b> A "we're working on your street this week" drop before the job starts, and a "we just finished your neighbor's home" drop with a before-and-after photo when it wraps.</li>
+        <li><b>50–100 doors per job site.</b> Crews drop them at start and finish. No media spend, no list, no lead time.</li>
+        <li><b>Unique QR code per neighborhood</b> so we can measure which routes produce calls instead of guessing.</li>
+      </ul>
+    </div>
+
+    <div class="chan">
+      <div class="chan-head">
+        <h3>Direct Mail</h3>
+        <div class="tagset"><span class="tag build">Build in 30 days</span></div>
+      </div>
+      <p class="why">Four distinct campaigns, ranked by expected return. USPS Every Door Direct Mail runs <strong>$0.26 per piece in postage</strong> with no permit or annual fee; all-in with printing, budget roughly <strong>$0.32–$0.41 per piece</strong> depending on size and quantity.</p>
+      <ul class="plays">
+        <li><b>Job-site radius mailer.</b> 150–250 homes around every active job: "We're painting on your street." Neighbors have watched your crew work for two weeks — the highest-converting mail piece available to you.</li>
+        <li><b>Past-customer repaint reminder.</b> "It's been seven years since we painted your home." Targeted at the 2016–2020 cohort. The cheapest revenue you will ever generate.</li>
+        <li><b>EDDM to high-ticket carrier routes.</b> Los Gatos, Saratoga, Almaden Valley, Willow Glen, Palo Alto — the areas carrying your higher residential ticket. No list purchase required; USPS targets by carrier route.</li>
+        <li><b>Property manager &amp; HOA postcard.</b> A targeted list, quarterly touch, driving to the commercial bid page. Commercial pricing is consistent across cities, so geography matters less and repetition matters more.</li>
+      </ul>
+    </div>
+
+    <div class="chan">
+      <div class="chan-head">
+        <h3>Flyers, Folders &amp; One-Pagers</h3>
+        <div class="tagset"><span class="tag ready">Designed &amp; ready</span></div>
+      </div>
+      <p class="why">Your flyer, trifold, and presentation folder are done and waiting on sign-off. They're built for in-person prospecting — the channel where you're already strong through BNI.</p>
+      <ul class="plays">
+        <li><b>Property manager drop-off packet.</b> Folder + trifold + one-pager, hand-delivered to management companies. This is how commercial accounts actually get won in this trade.</li>
+        <li><b>Realtor pre-sale flyer.</b> Realtors need fast, reliable pre-listing paint jobs and refer the same painter repeatedly. A referral channel you aren't tapping.</li>
+        <li><b>BNI and networking leave-behind</b> — one-pager with a QR to a dedicated landing page, so referrals are trackable.</li>
+        <li><b>Every piece gets its own QR and landing page.</b> Print without tracking is a guess; print with tracking is a channel.</li>
+      </ul>
+    </div>
+
+    <div class="chan">
+      <div class="chan-head">
+        <h3>Posters, Signage &amp; Vehicles</h3>
+        <div class="tagset"><span class="tag fast">Cheapest recurring ad</span></div>
+      </div>
+      <p class="why">You already occupy physical space across the Bay Area every single day. Right now it isn't branded, and it isn't working for you.</p>
+      <ul class="plays">
+        <li><b>Yard signs at every active residential job.</b> Ask permission at contract signing so it's automatic. A sign sitting out for two weeks in Los Gatos pays for itself many times over. Black on the brand yellow is the most visible combination in the palette.</li>
+        <li><b>Job-site banners on commercial projects.</b> Weeks of exposure on a high-traffic building, seen by exactly the facilities and property managers you want.</li>
+        <li><b>Vehicle wraps or magnetic panels.</b> Your crews drive the peninsula daily. Free impressions you're currently giving away.</li>
+        <li><b>Community and trade posters</b> — hardware stores, community boards, and HOA clubhouses where posting is permitted.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL DIRECT ============ -->
+  <section class="card">
+    <h2>Email &amp; Text — Reaching People You Already Know</h2>
+
+    <div class="chan">
+      <div class="chan-head">
+        <h3>Email Marketing</h3>
+        <div class="tagset"><span class="tag build">Build in 30–60 days</span></div>
+      </div>
+      <p class="why">Mailchimp was used previously and nothing is active now. Five sequences, built once, then running on their own.</p>
+      <ul class="plays">
+        <li><b>Past-customer reactivation.</b> The flagship. Segment your QuickBooks history by job year and service type, then run repaint-cycle campaigns against it.</li>
+        <li><b>Estimate follow-up sequence.</b> You lose bids on price. A structured three-touch follow-up — value, not discount — recovers a real percentage of "we went with someone cheaper," because the cheap bid often falls apart.</li>
+        <li><b>Property manager nurture.</b> A monthly email that's genuinely useful: maintenance calendars, budget planning for the next fiscal year, compliance notes. Stay in the inbox until the repaint cycle comes around.</li>
+        <li><b>Post-project sequence.</b> Thank you → review request → referral ask → repaint reminder scheduled years out. Fully automated.</li>
+        <li><b>Seasonal campaigns.</b> Exterior season in spring, interior season in fall and winter, and a Q1 program to fill your slow months.</li>
+      </ul>
+    </div>
+
+    <div class="chan">
+      <div class="chan-head">
+        <h3>SMS / Text</h3>
+        <div class="tagset"><span class="tag build">Pairs with CRM</span></div>
+      </div>
+      <p class="why">Text response rates run dramatically higher than email for short, transactional messages. Used sparingly it's the highest-performing channel you have. Used carelessly it's a compliance problem — so we build it with written opt-in from the start.</p>
+      <ul class="plays">
+        <li><b>Estimate confirmations and reminders</b> — cuts no-shows on site visits, which are pure lost time for your estimator.</li>
+        <li><b>Review requests after final walkthrough.</b> Texted review requests substantially outperform emailed ones, and this directly feeds your local search rankings.</li>
+        <li><b>Project update texts.</b> Communication and updates are your stated differentiator versus owner-operators. Right now that's manual. Automating it means it happens on every job, without anyone remembering.</li>
+        <li><b>Consent handled properly</b> — opt-in captured at contract, documented, with easy opt-out.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CRM ============ -->
+  <section class="card">
+    <h2>The CRM — The Backbone Everything Plugs Into</h2>
+    <p class="lead">This is the piece that makes all of the above possible instead of theoretical.</p>
+    <p>Today the business runs on QuickBooks and memory. There's no pipeline, no automated follow-up, no way to segment past customers, and no reporting. With your parents moving toward retirement in two to three years and the goal being a business that <strong>runs like a machine rather than relying on family</strong>, this is the specific thing that gets you there.</p>
+
+    <div class="chan" style="margin-top:18px">
+      <div class="chan-head">
+        <h3>Recommended: Housecall Pro</h3>
+        <div class="tagset"><span class="tag ready">We've implemented it before</span></div>
+      </div>
+      <p class="why">Built for the trades, priced for a company your size, and we've already run a full implementation and data migration on it for another contractor client — so this isn't a first attempt on your dime.</p>
+      <ul class="plays">
+        <li><b>Pipeline and estimate tracking</b> — every bid visible, nothing falling through, follow-up triggered automatically instead of when someone remembers.</li>
+        <li><b>Automated review requests</b> after job completion. You built a strong review count years ago and it stopped when office support changed. This makes it structural instead of personal.</li>
+        <li><b>Customer database with history</b> — the asset that makes repaint-cycle marketing possible. Import twenty-five years of QuickBooks history, tag by service and year, and it becomes a marketing list.</li>
+        <li><b>Scheduling and crew dispatch</b> — multiple crews on one board.</li>
+        <li><b>Reporting</b> — close rate, average ticket, revenue by service and by city. Right now those numbers live in your head.</li>
+        <li><b>Phone hosting</b> — a potential fix for the (866) 59-PAINT line that's ringing without routing to voicemail. Every missed call is a lost bid, and that gets more expensive as traffic grows.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <div class="k">Sequencing note</div>
+      <p>The CRM should come <strong>before</strong> the email and text programs, not after. Email and SMS run off the customer database — building them first means building them twice.</p>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="card">
+    <h2>Reviews &amp; Google Business Profile</h2>
+    <p>Worth calling out separately because it's the <strong>fastest-moving lever in this entire document</strong>. Local painting searches are won largely on the map pack, and the map pack runs on review volume, review recency, and profile completeness — all of which move in weeks, not months.</p>
+    <ul class="plays" style="margin-top:12px">
+      <li><b>Restart the review engine.</b> Automated request after every final walkthrough, to Google and Yelp, by text and email.</li>
+      <li><b>We respond to reviews on your behalf.</b> Response rate is both a ranking signal and a trust signal to anyone reading.</li>
+      <li><b>Full profile optimization</b> — categories, services, service areas, and a steady stream of project photos.</li>
+      <li><b>Reactivate the backlog.</b> Every satisfied customer from the last two years is a review you never asked for.</li>
+    </ul>
+  </section>
+
+  <!-- ============ PACKAGING ============ -->
+  <section class="card">
+    <h2>How This Comes Together</h2>
+    <p>Five modules. The first two are already delivered or running. The rest can be added in any order, though the sequence below is the one that compounds fastest.</p>
+    <table>
+      <thead>
+        <tr><th>Module</th><th>What's included</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Foundation<br><span class="sublabel">Current engagement</span></td>
+          <td>Website, SEO, page rollout, content, technical maintenance, monthly reporting</td>
+          <td><span class="tag ready">Active</span></td>
+        </tr>
+        <tr>
+          <td>Brand System</td>
+          <td>Documented visual identity, color and type system, component specs, voice guidelines, print collateral, vendor-ready brand guide</td>
+          <td><span class="tag ready">Delivered</span></td>
+        </tr>
+        <tr>
+          <td>Local Presence</td>
+          <td>Door hanger program, yard signs and job-site signage, job-site radius mail, EDDM to high-value routes, Google Business Profile optimization, review engine</td>
+          <td><span class="tag fast">Fastest payback</span></td>
+        </tr>
+        <tr>
+          <td>Systems &amp; Database</td>
+          <td>Housecall Pro implementation and data migration, QuickBooks history import and segmentation, email sequences, SMS with compliant opt-in, estimate follow-up automation</td>
+          <td><span class="tag build">Highest long-term ROI</span></td>
+        </tr>
+        <tr>
+          <td>Commercial Outbound</td>
+          <td>Property manager and HOA list building, quarterly direct mail, monthly nurture email, drop-off packet program, realtor referral channel</td>
+          <td><span class="tag build">Repeat revenue</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grad-strip" style="margin-top:24px">
+      <div class="gk">The pitch, plainly</div>
+      <p class="gt">One team, one brand, every channel pointed the same direction</p>
+      <p>You don't need a web person, a print vendor, a CRM consultant, and someone to run email. You need one team that knows the business, owns the brand end to end, and can point every channel at the same message. The website and the brand system are done. <strong>This is the other half.</strong></p>
+    </div>
+  </section>
+
+  <!-- ============ NEXT ============ -->
+  <section class="card">
+    <h2>If You Want to Start Somewhere</h2>
+    <p>Ranked by speed to revenue, not by size of the engagement:</p>
+    <ul class="plays">
+      <li><b>1. Door hangers + yard signs.</b> Designs are done. Print cost only. Live within two weeks, and your crews are already standing where they need to be dropped.</li>
+      <li><b>2. Google Business Profile + review restart.</b> No print cost, no new tooling, and it moves local rankings faster than anything on the website will this quarter.</li>
+      <li><b>3. Housecall Pro + QuickBooks history import.</b> Unlocks every database campaign. Do this before email or SMS, not after.</li>
+      <li><b>4. Past-customer repaint campaign.</b> Once the list exists, this is the cheapest revenue available to you — and it lands right when Q1 would otherwise be quiet.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><b>Kaizen Agency</b> &nbsp;·&nbsp; Prepared by Daisy Pineda</p>
+    <p style="font-size:12px">EDDM postage and all-in per-piece figures sourced from current USPS EDDM rate guidance. Brand values referenced from Sunwest Painting Brand Guide v1.0.</p>
+  </footer>
+
+</div>
+</body>
+</html>
