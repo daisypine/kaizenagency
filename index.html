@@ -1,735 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaizen — Build &amp; QA Checklist</title>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunwest Painting × Kaizen Agency — Client Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;
-    --line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--done-bg:#F4F8E3;
-    --shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);
-    --radius:14px;--warn:#B5532E;--warn-soft:#e3c7bb;
+    --ember-500:#E07B39; --ember-600:#C25F1E; --ember-700:#9F4E19; --ember-50:#FCF3ED;
+    --sun-400:#F5C947; --sun-500:#F5C842; --sun-50:#FEF9EC;
+    --ink-900:#111111; --ink-700:#333333; --ink-500:#515151; --ink-300:#8A8A8A;
+    --ink-100:#E3E1DD; --page:#F4F3F0; --surface:#FFFFFF; --rule:#E3E1DD;
+    --brand-gradient:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);
+    --good:#0B7A0B;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{margin:0;background:var(--page);color:var(--ink-900);
+       font-family:'Poppins',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px 70px}
 
-  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
-  .topbar-inner{max-width:960px;margin:0 auto;padding:14px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
-  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
-  .pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
-  .brand h1{font-size:15px;font-weight:700;margin:0}
-  .brand .eyebrow{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1px}
-  .btn{border:1px solid #3a3e30;background:#1f221a;color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:8px 13px;border-radius:9px;cursor:pointer}
-  .btn:hover{border-color:var(--lime)}
-  .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
-  .progress-wrap{max-width:960px;margin:0 auto;padding:0 22px 14px}
-  .progress-row{display:flex;align-items:center;gap:14px}
-  .progress-track{flex:1;height:10px;background:#2b2f24;border-radius:999px;overflow:hidden}
-  .progress-fill{height:100%;width:0;background:var(--lime);border-radius:999px;transition:width .3s ease}
-  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:108px;text-align:right;font-variant-numeric:tabular-nums}
-  .progress-pct b{color:var(--lime)}
+  header.mast{background:var(--ink-900);color:#fff}
+  .mast-bar{height:8px;background:var(--brand-gradient)}
+  .mast-inner{max-width:960px;margin:0 auto;padding:54px 24px 46px}
+  .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+           color:var(--sun-400);font-weight:700;margin:0 0 14px}
+  h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:54px;line-height:1.02;
+     letter-spacing:-.028em;text-transform:uppercase;margin:0 0 16px;max-width:15ch}
+  .mast-inner .sub{font-size:16.5px;color:#C9C7C2;margin:0;max-width:620px}
+  .mast-meta{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
+             display:flex;flex-wrap:wrap;gap:28px;font-size:13px;color:#8A8A8A}
+  .mast-meta b{color:#C9C7C2;font-weight:600}
 
-  main{max-width:960px;margin:0 auto;padding:18px 22px 70px}
+  .intro{background:var(--surface);border:1px solid rgba(17,17,17,.1);border-radius:10px;
+         padding:28px 30px;margin:32px 0 22px}
+  .intro p{margin:0 0 12px;color:var(--ink-700);font-size:15.5px}
+  .intro p:last-child{margin-bottom:0}
+  .intro strong{color:var(--ink-900);font-weight:600}
 
-  .routes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:13px 18px;margin-bottom:16px}
-  .routes h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft)}
-  .route-grp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0}
-  .route-grp .glabel{font-size:12.5px;font-weight:700;min-width:74px;color:var(--ink)}
-  .seg{display:inline-flex;background:#eef0e6;border-radius:9px;padding:3px;gap:3px;flex-wrap:wrap}
-  .seg button{border:none;background:transparent;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-soft);padding:6px 12px;border-radius:7px;cursor:pointer}
-  .seg button.on{background:var(--ink);color:var(--lime)}
-  .seg button:focus-visible{outline:2px solid var(--lime);outline-offset:1px}
+  h2{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-300);
+     font-weight:700;margin:34px 0 16px}
 
-  .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:18px;-webkit-overflow-scrolling:touch}
-  .tab{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:var(--surface);border:1.5px solid var(--line);border-radius:11px;padding:9px 15px;cursor:pointer;font-family:inherit;text-align:left;transition:.15s}
-  .tab .tab-owner{font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-  .tab .tab-title{font-size:14px;font-weight:700;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
-  .tab .tab-pct{font-size:10.5px;font-weight:800;color:var(--ink-soft);background:var(--paper);border-radius:20px;padding:1px 7px;font-variant-numeric:tabular-nums}
-  .tab:hover{border-color:#c9ccbe}
-  .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink)}
-  .tab[aria-selected="true"] .tab-owner{color:var(--lime)}
-  .tab[aria-selected="true"] .tab-title{color:#fff}
-  .tab[aria-selected="true"] .tab-pct{background:var(--lime);color:var(--ink)}
-  .tab.complete{border-color:var(--lime-deep)}
-  .tab.complete .tab-pct{color:var(--lime-deep)}
-  .tab[aria-selected="true"].complete .tab-pct{color:var(--ink)}
+  .docs{display:grid;grid-template-columns:1fr;gap:14px}
+  a.doc{display:block;text-decoration:none;background:var(--surface);
+        border:1px solid rgba(17,17,17,.1);border-radius:10px;padding:26px 28px;
+        border-left:5px solid var(--ink-100);transition:transform .12s ease, box-shadow .12s ease}
+  a.doc:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(17,17,17,.09)}
+  a.doc.d1{border-left-color:var(--ember-500)}
+  a.doc.d2{border-left-color:var(--sun-500)}
+  a.doc.d3{border-left-color:var(--ink-900)}
+  .doc-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .doc h3{font-family:'Outfit',sans-serif;font-weight:900;font-size:26px;text-transform:uppercase;
+          letter-spacing:-.022em;margin:0;color:var(--ink-900);line-height:1.15}
+  .doc .n{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ink-300);
+          text-transform:uppercase}
+  .doc p{margin:9px 0 14px;color:var(--ink-700);font-size:15px}
+  .doc .chips{display:flex;gap:7px;flex-wrap:wrap}
+  .chip{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+        padding:4px 10px;border-radius:4px;background:var(--ink-100);color:var(--ink-500)}
+  .chip.hot{background:var(--sun-500);color:var(--ink-900)}
+  .chip.new{background:var(--ember-700);color:#fff}
+  .doc .go{margin-top:14px;font-size:13px;font-weight:700;color:var(--ember-700);
+           letter-spacing:.02em}
 
-  .stage{display:none}
-  .stage.active{display:block}
-  .stage-note{font-size:13px;color:var(--ink-soft);margin:0 2px 16px;line-height:1.5}
-  .stage-note b{color:var(--ink)}
+  footer{text-align:center;font-size:12.5px;color:var(--ink-300);padding-top:34px}
+  footer b{color:var(--ink-500)}
 
-  .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden}
-  .section.donot{border-color:var(--warn-soft)}
-  .section.hide{display:none}
-  .section-head{display:flex;align-items:center;gap:13px;padding:15px 18px;cursor:pointer;border-bottom:1px solid transparent;user-select:none}
-  .section.open .section-head{border-bottom-color:var(--line)}
-  .sec-letter{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:800;font-size:12px;text-align:center;line-height:1}
-  .section.donot .sec-letter{background:var(--warn);color:#fff}
-  .section.complete .sec-letter{background:var(--lime);color:var(--ink)}
-  .section.donot.complete .sec-letter{background:var(--warn);color:#fff}
-  .sec-title{font-weight:700;font-size:15.5px;margin:0;flex:1;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-  .sec-count{font-size:12px;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
-  .sec-count.done{color:var(--lime-deep)}
-  .chev{flex:none;width:17px;height:17px;color:var(--ink-soft);transition:transform .2s}
-  .section.open .chev{transform:rotate(90deg)}
-  .items{padding:5px 18px 12px;display:none}
-  .section.open .items{display:block}
-
-  .item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;margin:2px -6px;transition:background .15s}
-  .item.hide{display:none}
-  .item:hover{background:#fafbf5}
-  .item.checked{background:var(--done-bg)}
-  .item input{position:absolute;opacity:0;width:1px;height:1px}
-  .box{flex:none;margin-top:1px;width:20px;height:20px;border-radius:6px;border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;transition:all .15s}
-  .box svg{width:12px;height:12px;opacity:0;transform:scale(.6);transition:all .15s}
-  .item.checked .box{background:var(--lime);border-color:var(--lime-deep)}
-  .item.checked .box svg{opacity:1;transform:scale(1)}
-  .item input:focus-visible + .box{outline:2px solid var(--ink);outline-offset:2px}
-  .label-wrap{flex:1;cursor:pointer;min-width:0}
-  .label-main{font-size:14.5px;line-height:1.4}
-  .item.checked .label-main{color:var(--ink-soft)}
-  .label-hint{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
-  .label-path{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#eef0e6;border-radius:5px;padding:1px 6px;color:#3a3d33;white-space:nowrap}
-
-  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:5px;vertical-align:middle}
-  .tag-seo{background:#e7ecd6;color:var(--lime-deep)}
-  .tag-live{background:#e6eefc;color:#2f5fb0}
-  .tag-opt{background:#efe8f5;color:#7a4ea8}
-
-  .stack-strip{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:13px 16px;margin:0 0 14px}
-  .stack-strip h4{margin:0 0 9px;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:800}
-  .chips{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{display:inline-flex;align-items:baseline;gap:5px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font-size:12.5px}
-  .chip b{font-weight:700;color:var(--ink)}
-  .chip span{color:var(--ink-soft);font-size:11.5px}
-  .chip.adv{border-color:#d8c9e6;background:#f6f1fb}
-
-  .rm-banner{background:#f6f1fb;border:1px solid #d8c9e6;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:13.5px;color:#5a4a6e}
-  .rm-banner b{color:#4a2f6e}
-  .rm-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin:0 0 14px}
-  .rm-card h3{margin:0 0 3px;font-size:16px;font-weight:800;color:var(--ink)}
-  .rm-card .rm-sub{font-size:12.5px;color:var(--ink-soft);margin:0 0 10px}
-  .rm-card h4{margin:13px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--lime-deep);font-weight:800}
-  .rm-card ul{margin:0;padding-left:18px}
-  .rm-card li{margin:4px 0;line-height:1.45;font-size:14px}
-  .rm-card li b{color:var(--ink)}
-  .prompt{background:#1b1d16;border-radius:12px;margin:10px 0;overflow:hidden;border:1px solid #2b2f24}
-  .prompt .ph{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:#22241c}
-  .prompt .ph span{color:var(--lime);font-size:12px;font-weight:700;letter-spacing:.03em}
-  .prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font-family:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
-  .prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
-  .prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
-
-  footer{max-width:960px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px;line-height:1.55}
-  footer b{color:var(--ink)}
-
-  @media (max-width:620px){.progress-pct{min-width:auto}.route-grp .glabel{min-width:auto;width:100%}}
-  @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto}}
-  @media print{
-    body{background:#fff}
-    .topbar{position:static;border-bottom:2px solid #000}
-    .no-print,.chev,.btn,.tabs,.seg button:not(.on),.prompt .copy{display:none !important}
-    .progress-track{border:1px solid #000}
-    .stage{display:block !important}
-    .section{break-inside:avoid;box-shadow:none;border-color:#999;margin-bottom:10px}
-    .section.hide,.item.hide{display:none !important}
-    .items{display:block !important}
-    .item:hover{background:none}
-    .prompt{border:1px solid #999}.prompt pre,.prompt .ph{color:#000;background:#f3f3f3}.prompt .ph span{color:#000}
+  @media(max-width:700px){
+    h1{font-size:34px}
+    .doc h3{font-size:21px}
+    .mast-inner{padding:40px 24px 34px}
   }
 </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <span class="pill">KAIZEN</span>
-      <div><span class="eyebrow">Build &amp; QA · by role</span><h1>Site Checklist</h1></div>
+
+<header class="mast">
+  <div class="mast-bar"></div>
+  <div class="mast-inner">
+    <p class="eyebrow">Kaizen Agency &nbsp;·&nbsp; Client Hub</p>
+    <h1>Sunwest Painting</h1>
+    <p class="sub">Everything in one place — where the project stands, what the brand is, and where the growth comes from next.</p>
+    <div class="mast-meta">
+      <span><b>Client</b> &nbsp;Denise Artache, Sunwest Painting</span>
+      <span><b>Agency</b> &nbsp;Daisy Pineda, Kaizen Agency</span>
+      <span><b>Engagement start</b> &nbsp;April 2026</span>
     </div>
-    <button class="btn no-print" id="resetBtn">Reset</button>
-    <button class="btn no-print" id="printBtn">Print</button>
   </div>
-  <div class="progress-wrap no-print"><div class="progress-row">
-    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
-    <span class="progress-pct"><b id="pctNum">0%</b> · <span id="countNum">0/0</span></span>
-  </div></div>
 </header>
 
-<main>
-  <div class="routes no-print" id="routeBox"><h3>Project settings — set these first, the steps adapt</h3></div>
-  <div class="tabs no-print" id="tabs" role="tablist"></div>
-  <div id="stages"></div>
-</main>
+<div class="wrap">
 
-<footer><b>Stack:</b> Hello theme · Elementor Pro · Unlimited Elements (Business) · Rank Math · Complianz (post-dev) · UpdraftPlus · Imagify (only if needed) · Seraphinite (advanced) · SiteGround suite. No plugins outside this list. <b>Analytics</b> is connected per client through Rank Math (no Site Kit). <b>Launch</b> (domain, SSL/HTTPS, CDN, security lockdown, analytics, client report) is Daisy's, after hand-back.</footer>
+  <div class="intro">
+    <p>Three documents, meant to be read in order. The first covers <strong>what's been built and why the site isn't ranking yet</strong>. The second is the <strong>visual identity system</strong>, now written down for the first time. The third is <strong>everything beyond search</strong> — the channels that create demand instead of waiting for it.</p>
+    <p>This page stays live and gets updated as the project moves, so the link always points at the current version.</p>
+  </div>
 
-<script>
-/* ---------------- ROUTES ---------------- */
-const ROUTEDEF=[
-  {group:"type",label:"Project",options:[{v:"static",t:"Static / clean site"},{v:"seo",t:"SEO Focused"}]},
-  {group:"domain",label:"Domain",options:[{v:"staging",t:"Staging (not live yet)"},{v:"live",t:"Live domain"}]},
-  {group:"speed",label:"Speed",options:[{v:"imagify",t:"Standard"},{v:"seraphinite",t:"Advanced"}]},
-];
-const DEFAULT_ROUTES={type:"static",domain:"staging",speed:"imagify"};
+  <h2>Documents</h2>
 
-/* ---------------- ROADMAP HTML ---------------- */
-const ROADMAP_HTML=`
-<div class="rm-banner"><b>Not active yet \u2014 reference only.</b> The plan is to turn custom builds into a repeatable clone-and-toggle system. Currently testing the base approach on <b>JDH</b> and <b>Sunwest</b>.</div>
+  <div class="docs">
 
-<div class="rm-card">
-  <h3>1 \u00b7 Build the Kaizen Base Install (one-time)</h3>
-  <p class="rm-sub">On a fresh SiteGround temp URL \u2014 the master you only ever clone, never edit.</p>
-  <h4>Core WP</h4>
-  <ul>
-    <li>Install WP, strong admin, admin email = ops inbox, permalinks = Post name</li>
-    <li>Dynamic Caching ON, frontend OFF (dev step), Security Optimizer ON (default rules)</li>
-    <li>SSL + HTTPS forced, \u201cDiscourage search engines\u201d ON</li>
-  </ul>
-  <h4>The \u201calways\u201d stack (install)</h4>
-  <ul>
-    <li>Hello theme \u00b7 Elementor (free) \u00b7 Unlimited Elements (Business, licensed) \u00b7 Complianz (configured post-dev)</li>
-    <li>UpdraftPlus \u2192 Kaizen Google Drive + weekly schedule (off-site copy)</li>
-    <li>Imagify \u2014 only if image-heavy; otherwise SiteGround handles images \u00b7 Seraphinite \u2014 advanced sites only</li>
-  </ul>
-  <h4>Premium defaults</h4>
-  <ul>
-    <li>Elementor Pro + Rank Math Pro installed &amp; licensed, minimal global config (title format, schema defaults, sitemap ON, robots defaults)</li>
-    <li>Base 404, Privacy, Terms, Cookie pages</li>
-  </ul>
-  <h4>Global layout \u2014 Hello + Elementor</h4>
-  <ul>
-    <li>Global colors + fonts in Elementor \u2192 Site Settings (Hello ships none)</li>
-    <li>Theme Builder: one Header (logo, nav, CTA) + one Footer (NAP, links, hybrid CTA)</li>
-    <li>Base Page/Single template \u2014 full width, no sidebar \u00b7 neutral \u201ccontractor\u201d styling pre-branding</li>
-  </ul>
-  <h4>Page templates (structure-only, saved in Elementor)</h4>
-  <ul>
-    <li>Home \u00b7 Service \u00b7 City / Service-Area \u00b7 Gallery \u00b7 Reviews \u00b7 FAQ \u00b7 Contact (Elementor Pro Form) \u00b7 Blog Post</li>
-    <li>Build with Flexbox containers \u2014 lighter than legacy sections</li>
-  </ul>
-  <h4>Snapshot</h4>
-  <ul>
-    <li>Full Updraft backup labeled <b>KAIZEN_BASE_PREMIUM_SEO</b></li>
-    <li>Optionally keep a SiteGround \u201cBase\u201d site you only ever CLONE</li>
-  </ul>
+    <a class="doc d1" href="./progress.html">
+      <div class="doc-top">
+        <h3>Progress Report</h3>
+        <span class="n">01</span>
+      </div>
+      <p>The full account of the work completed since April, the current state of the new website, an honest answer on rankings, and the 60-day plan to turn the foundation into ranked, lead-generating pages.</p>
+      <div class="chips">
+        <span class="chip hot">Start here</span>
+        <span class="chip">Timeline</span>
+        <span class="chip">60-day plan</span>
+        <span class="chip">What we need from you</span>
+      </div>
+      <div class="go">Open the report &rarr;</div>
+    </a>
+
+    <a class="doc d2" href="./brand.html">
+      <div class="doc-top">
+        <h3>Brand Guide</h3>
+        <span class="n">02</span>
+      </div>
+      <p>The colors, type, components, and voice of the Sunwest brand — extracted from the approved website design so every flyer, door hanger, postcard, and sign looks like it came from the same company.</p>
+      <div class="chips">
+        <span class="chip new">New</span>
+        <span class="chip">Color system</span>
+        <span class="chip">Typography</span>
+        <span class="chip">Voice</span>
+        <span class="chip">Vendor-ready</span>
+      </div>
+      <div class="go">Open the guide &rarr;</div>
+    </a>
+
+    <a class="doc d3" href="./roadmap.html">
+      <div class="doc-top">
+        <h3>Growth Roadmap</h3>
+        <span class="n">03</span>
+      </div>
+      <p>Beyond the website — direct mail, door hangers, signage, email and text, and the CRM that ties it together. Including the twenty-five years of past customers sitting unused in QuickBooks.</p>
+      <div class="chips">
+        <span class="chip">Direct mail</span>
+        <span class="chip">Print &amp; signage</span>
+        <span class="chip">Email &amp; SMS</span>
+        <span class="chip">CRM</span>
+      </div>
+      <div class="go">Open the roadmap &rarr;</div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p><b>Kaizen Agency</b> &nbsp;·&nbsp; Prepared for Sunwest Painting</p>
+  </footer>
+
 </div>
-
-<div class="rm-card">
-  <h3>2 \u00b7 New client = clone + toggle</h3>
-  <ul>
-    <li><b>Clone base</b> \u2192 new temp URL; change site title, timezone, admin email</li>
-    <li><b>Choose flavor:</b> Full SEO = keep Elementor Pro + Rank Math Pro \u00b7 Website-only/budget = drop Rank Math Pro to free (and Elementor Pro to free after swapping Pro widgets)</li>
-    <li><b>License / hosting sanity check:</b> log Elementor / Rank Math license use in Notion or a Sheet; confirm SiteGround account + plan</li>
-    <li>Net result: clone \u2192 rename \u2192 toggle \u2192 send to dev</li>
-  </ul>
-</div>
-
-<div class="rm-card">
-  <h3>3 \u00b7 AI Prompt Pack \u2014 onboarding</h3>
-  <p class="rm-sub">Junior strategist off the onboarding call. Tap Copy.</p>
-
-  <div class="prompt"><div class="ph"><span>Owner interview \u2192 brief</span><button class="copy" data-target="p1">Copy</button></div><pre id="p1">You are a senior home-services marketing strategist. Summarize this transcript into:
-- Company overview
-- Top 5 services
-- Ideal jobs / customers
-- Service area cities
-- Unique angles / proof (years, reviews, guarantees, photos)
-Output in bullet points, no fluff.</pre></div>
-
-  <div class="prompt"><div class="ph"><span>Sitemap generator</span><button class="copy" data-target="p2">Copy</button></div><pre id="p2">Using this brief, propose a 15-20 page sitemap for a local [ROOFER/PLUMBER/PAINTER/LANDSCAPER] targeting [CITY + REGION]. Use these tiers:
-- Tier 1 core pages
-- 6 service pages
-- 3-5 city pages
-- Trust/utility pages (FAQ, Financing if offered, Blog, Privacy, Terms, Thank-You)
-Output as a table: URL slug, Page name, Tier, Primary keyword.</pre></div>
-
-  <div class="prompt"><div class="ph"><span>Service page outline</span><button class="copy" data-target="p3">Copy</button></div><pre id="p3">Create an outline for a high-converting service page for a [SERVICE] in [CITY]. Include: H1, 4-6 H2s with bullets, 5 FAQs, and recommended proof sections (before/after, reviews, badges). No full copy yet, just structure.</pre></div>
-
-  <div class="prompt"><div class="ph"><span>Voice-tuned copy</span><button class="copy" data-target="p4">Copy</button></div><pre id="p4">Using this transcript and outline, write the full page copy in the owner's voice: conversational, professional, no jargon. Include CTA lines that match local home-service buyers.</pre></div>
-</div>
-
-<div class="rm-card">
-  <h3>4 \u00b7 Page-copy production prompt (Designer/Dev + SEO docs)</h3>
-  <p class="rm-sub">The project-level prompt for turning briefs into paste-ready copy. Set once per client project.</p>
-  <div class="prompt"><div class="ph"><span>Copywriter + SEO (Rank Math)</span><button class="copy" data-target="p5">Copy</button></div><pre id="p5">You are a senior website copywriter and SEO specialist producing launch-ready page copy for a local service business. You already have the client's business information, brand voice, and sitemap in this project. Your job is to turn rough drafts (or briefs) into two polished, paste-ready deliverables per page.
-
-Workflow: For each page I give you (a rough draft, a brief, or just a URL), produce two versions: a Designer + Dev copy doc and an SEO doc. I paste them into Google Docs myself, so you cannot edit files. Always show the full, finished copy in chat, formatted for easy copy-paste. Confirm alignment as we go, page by page. If I hand you client-approved copy, use it verbatim and never paraphrase it; only fix technical errors and fill gaps, and flag anything you change.
-
-Output formatting: Use clear section headings and bold field labels, not long bulleted lists. Separate sections with blank lines and heading sizes. Never use the em dash; use a short hyphen or rewrite naturally. On a revision, give the full page again so I can paste it in one go.
-
-Global standards: Do not repeat the global header/footer in page docs (installed globally). Primary CTA is always "Request a Free Estimate" to the estimate page. Hero secondary button is click-to-call unless a scroll button previews genuinely useful content. Every page footer CTA has a hybrid block: a 3-field quick form (Name, Phone, Service) plus click-to-call. Route all estimate CTAs to the single canonical estimate page. Add hero trust markers, per-section image suggestions, a Functional Element Placement note, and a Button Destinations list to every Designer + Dev doc. Use the client's real NAP, license number, and confirmed facts. Keep internal team names out of public CTAs.
-
-SEO doc fields (Rank Math): URL, canonical (self unless noted), robots (index, follow), focus keyword + 2-3 secondary keywords, meta title (<=60 chars), meta description (<=155), OG title/description (default to meta), schema type, breadcrumb, full heading hierarchy (H1 to H2 to H3), image alt text, internal links (live-now vs backlog), button destinations. Add FAQPage schema when a page has an FAQ. Service + BreadcrumbList for service pages, LocalBusiness for the site, ItemList for hub pages, BlogPosting for posts. Translate any non-schema.org type into the correct mechanism (e.g. areaServed + GeoCoordinates for city pages).
-
-Internal linking: hub-and-spoke silo. Home links down to service/area hubs, hubs to children, children up to parents, everything relevant to the estimate page. Only link to published pages; if a target isn't live, route to the estimate page or parent hub and log it in a backlog. On every publish, do the inbound reverse pass and swap temporary fallbacks. Blog posts link into relevant service/city pages.
-
-Breadcrumbs mirror the URL path, one crumb per segment, Home first and linked, current page last and unlinked. Every middle crumb must be a live page.
-
-QA (do this unprompted, every page): flag weak/redundant CTAs, near-duplicate copy across pages, keyword/meta-title cannibalization, inconsistent CTA labels, FAQ questions repeated across pages. Each page owns a distinct primary term and unique supporting copy + non-overlapping FAQs. Flag sitemap issues (children not nesting under a hub, hubs missing from the sitemap). Final consistency pass before build wraps.
-
-Legal pages: you may draft privacy/cookie/terms/accessibility from the client's real data flows, but state you are not a lawyer, mark placeholders, and tell me to have it reviewed by an attorney or compliant generator before publishing.
-
-Before you start: confirm you have the business info, brand voice, and full sitemap. If anything needed is missing (founding year, team size, service area, license status), ask or flag rather than invent. Then ask which page to start with.</pre></div>
-</div>
-`;
-
-/* ---------------- DATA ---------------- */
-const STAGES=[
-  {id:"1",owner:"Daisy · Basil · Design",title:"Setup, Design & Coordination",
-   note:"Daisy's setup + toggle reference, the design handoff, Basil's coordination, and launch. This is the \u201cbuild a clean site\u201d checklist \u2014 the toggles that are easy to forget.",
-   sections:[
-    {id:"1A",title:"Daisy \u2014 hand off the brief",items:[
-      {t:"Confirm project type (Static / SEO) + speed stack (Standard / Advanced)",h:"set the toggles above so the steps match"},
-      {t:"Hand off: design, copy doc, nav menu, URL structure"},
-      {t:"Hand off business details \u2014 social media links + Google Business Profile URL"},
-    ]},
-    {id:"1B",title:"Daisy \u2014 hosting + WP toggles",items:[
-      {t:"Log into the correct SiteGround account",h:"some clients sit on a separate account"},
-      {t:"Point the domain to SiteGround",when:["domain:live"],h:"exact NS from Server Details \u2192 Custom DNS at the registrar (A-record if the domain runs email)"},
-      {t:"Create the site on a SiteGround temp URL (sg-host.com)",when:["domain:staging"],h:"build here; migrate to the real domain at launch"},
-      {t:"Install WordPress \u2014 admin username is NOT \u201cadmin\u201d and NOT the client\u2019s business name"},
-      {t:"Unique strong password per site, generated + stored in a password manager (1Password / Bitwarden) \u2014 never reused",h:"let the manager generate a 16+ char random password; store the WP admin + hosting + client logins there, tagged per client; turn on the manager\u2019s own 2FA to protect the vault"},
-      {t:"Skip \u201cInstall with WordPress Starter\u201d"},
-      {t:"Admin email = kaizenagencyacc@gmail.com",p:"Settings \u2192 General"},
-      {t:"Permalinks = Post name",p:"Settings \u2192 Permalinks"},
-      {t:"Issue SSL (Let\u2019s Encrypt) + Force HTTPS",h:"temp URL: immediate. new domain: after DNS resolves."},
-      {t:"\u201cDiscourage search engines\u201d ON",p:"Settings \u2192 Reading",h:"before installing plugins; comes OFF at launch"},
-      {t:"Deactivate \u201cAI Agent by SiteGround\u201d"},
-    ]},
-    {id:"1C",title:"Daisy \u2014 SiteGround performance base",items:[
-      {t:"Dynamic Caching \u2192 ON"},
-      {t:"Memcached \u2192 ON (optional)",h:"server-side in Site Tools first, then the WP toggle; skip if it errors on a fresh site"},
-      {t:"SiteGround free CDN \u2192 ON",p:"Site Tools \u2192 Speed \u2192 CDN",h:"domain-specific \u2014 re-enable for the real domain at launch"},
-      {t:"Security Optimizer \u2192 ON (default rules)"},
-      {t:"Frontend + image optimization \u2014 leave for the Config/Speed step",h:"Standard = SiteGround handles it later; Advanced = Seraphinite owns it"},
-    ]},
-    {id:"1D",title:"Daisy \u2014 install the stack (configure later)",items:[
-      {t:"Rule: every premium plugin/theme is from the official vendor with a paid license \u2014 never a nulled copy",h:"can\u2019t afford Pro on a build? use the free version"},
-      {t:"Free plugins: install from the WordPress.org dashboard search only",h:"a vendor\u2019s official .zip upload is fine + normal when the dashboard doesn\u2019t list it (Elementor, Unlimited Elements) \u2014 just never a \u201cfree download\u201d / nulled site"},
-      {t:"Hello theme \u2192 install + activate",h:"bare + fast; Elementor owns all layout, header, footer, templates"},
-      {t:"Elementor Pro \u2192 upload from your account + Connect & Activate",h:"needs the free Elementor plugin active first. Budget builds: Elementor free instead."},
-      {t:"Unlimited Elements (Business) \u2192 activate",h:"the only widget library; if it shows \u201cChange License,\u201d it\u2019s active"},
-      {t:"Rank Math Pro \u2192 install + license",tag:"seo",when:["type:seo"]},
-      {t:"Rank Math (free) \u2192 install",when:["type:static"]},
-      {t:"Complianz \u2192 install (Basil configures it post-dev)"},
-      {t:"Wordfence (free) \u2192 install + activate",h:"the one security plugin \u2014 firewall + login-attempt limiting; don\u2019t stack a second"},
-      {t:"UpdraftPlus \u2192 install",h:"off-site backup to Kaizen Drive + easy clone/migrate; Daisy schedules at launch"},
-      {t:"Imagify \u2192 install only if image-heavy",h:"default is SiteGround\u2019s own image optimization \u2014 no Imagify needed on most sites"},
-      {t:"Seraphinite \u2192 install",when:["speed:seraphinite"],h:"advanced sites only"},
-    ]},
-    {id:"1E",title:"Daisy \u2014 wall it off + hand off",items:[
-      {t:"Coming Soon / Maintenance Mode ON",when:["domain:live"],p:"Elementor \u2192 Tools",h:"hide the live domain during the build; off at launch"},
-      {t:"Temp URL: Maintenance Mode optional",when:["domain:staging"],h:"not public anyway"},
-      {t:"Confirm all plugins are installed but UNCONFIGURED"},
-      {t:"Send dev access + handoff recap + this checklist",h:"URL, username, password (separately). Security lockdown is post-launch so devs aren\u2019t locked out."},
-    ]},
-    {id:"1T",title:"Team access model",items:[
-      {t:"One account per person under their own email \u2014 never a shared team login, never under the owner\u2019s email"},
-      {t:"Each person sets their own password + their own 2FA on their own device"},
-      {t:"Least privilege: Developers = Administrator only if they truly build/configure; SEO/content = Editor, not Administrator",h:"a leaked Editor login can\u2019t install plugins or drop a backdoor"},
-      {t:"No shared team logins \u2014 if one exists, retire it and keep a single locked-down owner account that\u2019s yours"},
-      {t:"Never share WordPress passwords through chat or a general password-sharing tool"},
-      {t:"Genuinely shared secrets (hosting, license keys) \u2192 password manager with revocable sharing (1Password/Bitwarden)"},
-      {t:"Hosting/SFTP scoped per person \u2014 never share the master SiteGround login"},
-      {t:"Have the dev/SEO team scan their own devices for malware",h:"an infostealer on one machine leaks even a strong password; rotating without cleaning the device just leaks the new one"},
-      {t:"Remove access when a person/project ends; audit accounts quarterly, delete anyone dormant"},
-    ]},
-    {id:"1F",title:"Design",items:[
-      {t:"Templated pages that are needed are built"},
-      {t:"Animation placements are decided / noted"},
-      {t:"Favicon / Site Icon file delivered"},
-      {t:"Default social share image (1200\u00d7630) delivered"},
-      {t:"Fonts: if a font must be purchased to host it locally, flag Daisy",h:"we self-host fonts \u2014 a paid font needs a license that allows local hosting"},
-    ]},
-    {id:"1G",title:"Basil \u2014 coordinate",items:[
-      {t:"Brief the developer \u2014 design, copy doc, plugin stack, this checklist"},
-      {t:"Confirm the designer delivered ALL pages + assets before dev starts"},
-      {t:"Track each stage to done; flag blockers to Daisy; confirm no new plugins"},
-      {t:"Configure Rank Math \u2014 setup wizard, modules, social links, schema; then Complianz post-dev",h:"needs access to the company email: kaizenagencyacc@gmail.com"},
-    ]},
-    {id:"1H",title:"Daisy \u2014 after dev / launch",items:[
-      {t:"Connect Rank Math Analytics \u2014 GA4 + Search Console \u2014 per client",h:"I set up the client\u2019s Google accounts through Rank Math; replaces Site Kit"},
-      {t:"Schedule the UpdraftPlus weekly backup \u2192 Google Drive",h:"off-site copy; SiteGround\u2019s own daily backups cover disaster recovery"},
-      {t:"Add myself as Manager on the client GBP",tag:"seo",when:["type:seo"]},
-      {t:"Add Broken Link Checker (my account) \u2014 SEO paid clients only, if needed",tag:"seo",when:["type:seo"],h:"e.g., cleaning up past broken links"},
-      {t:"Pre-launch: run an external malware scan \u2014 sitecheck.sucuri.net (plus the SiteGround scan)",h:"never migrate a site that isn\u2019t confirmed clean"},
-      {t:"Pre-launch: no unknown admin users, no plugins you didn\u2019t install, no unfamiliar files in public_html",h:"quick compromise check \u2014 especially if inheriting an existing site"},
-      {t:"Pre-launch: site: search shows only real pages \u2014 no injected spam"},
-      {t:"Search Console: confirm you\u2019re the only owner (Settings \u2192 Users and permissions)"},
-      {t:"Point domain / migrate, force HTTPS, fix mixed content"},
-      {t:"2FA on wp-admin \u2014 the single most important control",h:"Wordfence \u2192 Login Security \u2192 Two-Factor Authentication \u2192 scan the QR in an authenticator app (Google Authenticator / Authy / 1Password), download the recovery codes, enter the 6-digit code \u2192 Activate. Then Settings \u2192 Require 2FA for all administrators (only enforces after one admin has set it up, so you can\u2019t lock everyone out). Repeat for every admin."},
-      {t:"2FA on the hosting account too",h:"SiteGround \u2192 your profile \u2192 Security \u2192 Two-Factor Authentication \u2192 scan QR + save the backup codes"},
-      {t:"2FA on the shared Google account (Search Console / Analytics / GBP)",h:"this account sits ABOVE the sites \u2014 arguably the most important door. Better still: stop sharing one login \u2014 add each person as a manager on GBP + GA4 so you can revoke individual access."},
-      {t:"Security lockdown"},
-      {t:"Confirm backups are running + do ONE test restore",h:"so you know the restore process actually works before you ever need it"},
-      {t:"Send the client a handoff report of everything we did",h:"pages built, SEO setup, speed, compliance, forms/CRM wiring \u2014 so the value is documented and we\u2019re covered"},
-    ]},
-  ]},
-
-  {id:"2",owner:"Developer",title:"Build + SEO",showcase:true,
-   note:"Build to the design \u2014 don\u2019t divert. Hello theme means Elementor owns all layout, so build the template system first. A few toggles change with the project settings above.",
-   sections:[
-    {id:"2A",title:"Do Not Touch + speed rules",donot:true,items:[
-      {t:"NEVER install a nulled / pirated premium plugin or theme \u2014 this is how sites get hacked",h:"premium comes from the official vendor with a paid license. No budget for Pro? Use the free version or a different builder \u2014 never a cracked copy."},
-      {t:"Don\u2019t change SiteGround caching \u2014 Dynamic Caching ON, Memcached ON"},
-      {t:"Don\u2019t change login or security settings",h:"Daisy runs the security lockdown at launch"},
-      {t:"Build on Hello + Elementor templates \u2014 don\u2019t switch the theme mid-build"},
-      {t:"Don\u2019t add new plugins \u2014 install only the stack shown above",h:"if something seems to need a plugin outside the stack, flag Daisy \u2014 don\u2019t install it"},
-      {t:"Don\u2019t divert from the approved design"},
-      {t:"SPEED: don\u2019t deactivate SiteGround Speed Optimizer",h:"a disabled Speed Optimizer is a top cause of a slow site"},
-      {t:"SPEED: don\u2019t disable local fonts; don\u2019t upload full-res images; no extra widget/animation libraries",h:"these are the usual load-time killers"},
-    ]},
-    {id:"2S",title:"Security hardening \u2014 every site (do not skip)",items:[
-      {t:"Standardize: same security plugin + same config on ALL sites",h:"set Wordfence 2FA + login limiting once, learn where the toggles are, then replicate the identical config on each site \u2014 one known-good baseline, easier to maintain"},
-      {t:"Delete every plugin + theme you\u2019re not using",h:"deactivated is NOT safe \u2014 dormant plugins still get exploited. Keep only the stack + one default WP theme."},
-      {t:"No \u201cadmin\u201d, business-name, or default admin account exists",h:"if one does: create a new admin with a non-obvious username, log in as that, reassign its posts to the new user, then delete the old account"},
-      {t:"Wordfence: turn the Web Application Firewall ON",h:"Wordfence \u2192 Firewall \u2192 set it to \u201cEnabled and Protecting\u201d; install the full Wordfence plugin (not the standalone Login Security one \u2014 it\u2019s discontinued ~July 2026)"},
-      {t:"Wordfence: enable login-attempt limiting (brute-force protection)",h:"Wordfence \u2192 Firewall \u2192 Brute Force Protection: lock out after ~5 failures, turn ON \u201cimmediately lock out invalid usernames\u201d + the generic login error. Confirm it\u2019s actually ON \u2014 a fresh install doesn\u2019t always set it."},
-      {t:"Let Wordfence own login security \u2014 don\u2019t also run SiteGround Security Optimizer\u2019s login limiting/2FA",h:"two tools fighting over logins causes lockouts and gaps \u2014 pick one owner"},
-      {t:"Optional: custom login URL to cut bot noise",tag:"opt",h:"use SiteGround Security Optimizer\u2019s built-in Custom Login URL \u2014 don\u2019t add WPS Hide Login or any new plugin. Obscurity only, never a substitute for 2FA."},
-      {t:"Optional: auto-logout idle sessions + hide login errors",tag:"opt",h:"the generic login error is already covered by Wordfence brute-force; idle-session logout is a low-priority toggle"},
-      {t:"Add define('DISALLOW_FILE_EDIT', true); to wp-config.php",h:"kills the built-in plugin/theme code editor so a compromised login can\u2019t inject code"},
-      {t:"File permissions sane \u2014 files 644, folders 755"},
-      {t:"Update WordPress core + all plugins/themes to current"},
-      {t:"Auto-updates ON for core + plugins",h:"premium plugins auto-update once the license is connected; UpdraftPlus backups are the safety net if an update breaks something"},
-      {t:"Confirm there are zero nulled / cracked plugins or themes on the site"},
-    ]},
-    {id:"2B",title:"WordPress settings \u2014 fill in the small stuff",items:[
-      {t:"Set the Site Title \u2014 replace the default \u201cMy WordPress\u201d",p:"Settings \u2192 General"},
-      {t:"Fill the Tagline \u2014 or clear it deliberately",p:"Settings \u2192 General"},
-      {t:"Upload the favicon / Site Icon (from the designer)"},
-      {t:"Set the homepage to a static page",p:"Settings \u2192 Reading"},
-      {t:"Delete default content \u2014 sample page, \u201cHello World\u201d post, default comment"},
-      {t:"Turn comments OFF site-wide \u2014 uncheck allow comments, pingbacks, trackbacks",p:"Settings \u2192 Discussion",h:"no comments = no comment spam"},
-      {t:"UNCHECK \u201cDiscourage search engines\u201d",p:"Settings \u2192 Reading",when:["domain:live"]},
-    ]},
-    {id:"2C",title:"Fonts \u2014 host locally",items:[
-      {t:"Enable Load Google Fonts Locally",p:"Elementor \u2192 Settings \u2192 Performance",h:"OFF by default since Elementor 3.32.1 \u2014 enable on every build, re-check after updates. Hello has no font system, so Elementor owns fonts."},
-      {t:"Set Google Fonts Load = Swap",p:"Elementor \u2192 Editor \u2192 Settings \u2192 Advanced"},
-      {t:"Verify: no requests to fonts.googleapis.com / fonts.gstatic.com",h:"DevTools \u2192 Network \u2192 reload \u2192 filter \u201cfont\u201d"},
-    ]},
-    {id:"2D",title:"Template system \u2014 Elementor (Hello has none)",items:[
-      {t:"Set global colors + fonts",p:"Elementor \u2192 Site Settings",h:"Hello ships no styling \u2014 define the palette + type here so everything inherits it"},
-      {t:"Header template",p:"Elementor \u2192 Templates \u2192 Theme Builder \u2192 Header",h:"logo, nav, CTA button; set display conditions = Entire Site"},
-      {t:"Footer template",p:"Theme Builder \u2192 Footer",h:"NAP, links, hybrid conversion CTA (3-field quick form + click-to-call)"},
-      {t:"Base Page / Single template \u2014 full width, no sidebar",p:"Theme Builder \u2192 Single"},
-      {t:"Save reusable page templates: Home, Service, City, Gallery, Reviews, FAQ, Contact, Blog Post"},
-      {t:"Build with Flexbox containers, not legacy sections",h:"fewer wrappers = lighter DOM = faster load"},
-    ]},
-    {id:"2E",title:"Build",items:[
-      {t:"Build on staging, not live",when:["domain:staging"]},
-      {t:"Building on the live domain \u2014 keep it in Coming Soon / maintenance mode until launch",when:["domain:live"]},
-      {t:"Use Unlimited Elements as the only widget library \u2014 no other addon packs"},
-      {t:"Build all pages to the design + copy doc off the saved templates"},
-      {t:"Implement animations per the notes"},
-      {t:"No horizontal scroll / white space \u2014 sections full-width, nothing past the viewport",h:"check every breakpoint while building"},
-      {t:"Reserve a min-height on carousels / marquees / sliders so the layout doesn\u2019t jump",h:"the #1 CLS cause \u2014 set min-height in Elementor \u2192 Advanced"},
-      {t:"Set explicit width/height on images",h:"prevents layout shift (CLS) as images load"},
-      {t:"Insert images at display size (not full-res); alt text on key images"},
-      {t:"Set a Featured Image per page",h:"share-card fallback"},
-      {t:"Linking rule for pages not built yet: create the page, link its real URL",h:"\u201c#\u201d only if it can\u2019t be stubbed; never link to the homepage; no 404s"},
-      {t:"Branded 404 page"},
-      {t:"All assets load over HTTPS \u2014 no mixed content"},
-      {t:"Link header/footer social icons + GBP button to the right destinations",h:"from Daisy\u2019s business details"},
-    ]},
-    {id:"2F",title:"Forms",items:[
-      {t:"Elementor Pro Form widget only: honeypot ON, file upload where needed"},
-      {t:"Form actions: add Email + Collect Submissions",p:"widget \u2192 Content \u2192 Form \u2192 Actions After Submit",h:"Email sends it to the client; Collect Submissions stores a copy in WP as a backup"},
-      {t:"Email action: To = client\u2019s inbox; Reply-To = the form\u2019s email field; From = a domain email (not Gmail)",h:"a free-mail From address often gets the whole email flagged as spam"},
-      {t:"Test the form live \u2014 client gets the email + it lands in Submissions",h:"if the client isn\u2019t getting emails, they\u2019re in spam: add free SMTP (SiteGround SMTP or WP Mail SMTP free) and flag Daisy"},
-      {t:"CRM clients: Webhook action \u2192 Zapier/Make \u2192 their CRM",h:"stays on Elementor Pro \u2014 no paid form plugin needed in most cases"},
-    ]},
-    {id:"2G",title:"Alt text \u2014 keep it easy",items:[
-      {t:"Meaningful images (hero, team, service shots): one short descriptive alt line each",h:"say what\u2019s in it; add service/location where natural"},
-      {t:"Decorative images (textures, dividers, icons): empty alt (alt=\u201c\u201d)"},
-      {t:"Bulk: let Rank Math fill missing alt from the title/focus keyword, then override heroes by hand",tag:"seo",when:["type:seo"],h:"Rank Math \u2192 General Settings \u2192 Images; name files descriptively in Drive; write hero alts by hand"},
-    ]},
-    {id:"2H",title:"On-Page SEO",tag:"seo",when:["type:seo"],items:[
-      {t:"One H1 per page using that page\u2019s keyword; logical H2 \u2192 H3 order"},
-      {t:"Hit a green Rank Math score per page \u2014 focus keyword set, title, meta, first paragraph"},
-      {t:"Add the SEO title + meta description per page from Daisy\u2019s map",p:"Rank Math fields"},
-      {t:"Internal links between related pages; no orphan pages"},
-    ]},
-    {id:"2I",title:"Social share preview",items:[
-      {t:"Set the OG title + OG image",p:"Rank Math \u2192 Titles & Meta / per-page Social tab",h:"the title + photo that pop up when the link is texted or shared"},
-      {t:"Set the designer\u2019s default share image as the fallback"},
-    ]},
-    {id:"2J",title:"Rank Math config",items:[
-      {t:"Run the Rank Math setup wizard; connect a free Rank Math account"},
-      {t:"Migrating off AIOSEO? Use Rank Math\u2019s import tool first, THEN deactivate + DELETE AIOSEO",h:"never run two SEO plugins \u2014 delete, don\u2019t just deactivate"},
-      {t:"Modules ON: Sitemap, Schema, Redirections, Analytics",tag:"seo"},
-      {t:"Module ON: Local SEO",tag:"seo",when:["type:seo"]},
-      {t:"Sitemap ON (/sitemap_index.xml); breadcrumbs ON"},
-      {t:"Schema: Rank Math owns it \u2014 set LocalBusiness (site) + Service (service pages)",tag:"seo",when:["type:seo"],h:"Hello adds no schema, so no duplication to worry about"},
-      {t:"Add the business\u2019s social profile links",p:"Rank Math \u2192 Titles & Meta \u2192 Social Meta",h:"from Daisy\u2019s business-info doc \u2014 also feeds sameAs schema"},
-      {t:"Configure LocalBusiness \u2014 name, address, hours, service area, phone",tag:"seo",when:["type:seo"]},
-      {t:"Redesign/transfer: crawl OLD site \u2192 map old\u2192new URLs as 301s",p:"Rank Math \u2192 Redirections",tag:"seo",when:["type:seo"]},
-    ]},
-    {id:"2K",title:"Rank Math Role Manager \u2014 team access",tag:"seo",when:["type:seo"],items:[
-      {t:"Enable the Role Manager module",p:"Rank Math \u2192 Dashboard",h:"SEO lead sets this \u2014 keeps writers/clients from breaking the SEO config"},
-      {t:"Admin / SEO Lead: all settings ON",h:"full control over API connections + schema"},
-      {t:"Editor / Marketing: View Analytics ON; Analytics Settings + General Settings OFF",h:"can see traffic + keywords, can\u2019t disconnect the Google account"},
-      {t:"Author / Writer: On-Page SEO + Analysis ON; View Analytics + Site Options OFF",h:"focused on content scoring, no client traffic data"},
-    ]},
-    {id:"2L",title:"Elementor SEO quick-view (optional)",tag:"opt",items:[
-      {t:"Show SEO Score to front-end, restricted to logged-in Editors/Admins",p:"Rank Math \u2192 General Settings \u2192 Other",h:"designers see the Rank Math score as a top-bar overlay on the live preview \u2014 no backend trip"},
-    ]},
-    {id:"2M",title:"llms.txt (optional)",tag:"opt",when:["type:seo"],items:[
-      {t:"Add a simple llms.txt at the domain root",h:"a Markdown file \u2014 one H1, short summary, links to key pages. Cheap, passes the PageSpeed agentic check. NOT a ranking factor; skip if short on time."},
-    ]},
-  ]},
-
-  {id:"3",owner:"Basil + Daisy",title:"Config, Speed & QA",
-   note:"Final pass \u2014 speed, compliance wiring, QA, then hand back. The performance section swaps with the Speed toggle; Complianz is Basil\u2019s post-dev job.",
-   sections:[
-    {id:"3A",title:"Performance \u2014 server (always)",items:[
-      {t:"SiteGround: Dynamic Caching ON, Memcached ON, CDN ON"},
-    ]},
-    {id:"3B",title:"Performance \u2014 PageSpeed SOP (SiteGround Speed Optimizer)",when:["speed:imagify"],items:[
-      {t:"One optimizer only \u2014 SiteGround Speed Optimizer; never stack Seraphinite/Imagify at the same time",h:"they fight each other and cause bugs. Keep caching ON \u2014 if a change doesn\u2019t show, Purge SG Cache, don\u2019t disable caching."},
-      {t:"1 \u00b7 Baseline first: PageSpeed Insights (mobile) \u2014 note LCP / FCP / Speed Index / TBT / CLS + screenshot",h:"aim for \u201cgood,\u201d not a perfect 100 \u2014 Elementor is heavy; target LCP under ~4s mobile"},
-      {t:"2 \u00b7 Images \u2192 Speed Optimizer \u2192 Media: Original Images Backups ON first",h:"so you can revert if compression looks bad"},
-      {t:"2 \u00b7 Image Compression \u2192 Edit \u2192 medium / balanced (not most aggressive) \u2192 save",h:"re-generates all existing images \u2014 let it finish on image-heavy sites"},
-      {t:"2 \u00b7 WebP Images ON; Lazy Load Media ON"},
-      {t:"3 \u00b7 Purge SG Cache \u2192 re-run PageSpeed \u2192 compare to baseline",h:"image savings + LCP should drop a lot"},
-      {t:"4 \u00b7 Render-blocking (Frontend), only if still flagged: Minify CSS+JS + Defer render-blocking JS; Combine CSS+JS is optional (can break layout)",h:"Purge, then check the live site \u2014 if styling/scripts break, turn the last toggle back off and re-test"},
-      {t:"5 \u00b7 Caching (Caching tab): confirm dynamic + file caching ON",h:"purge to see changes, never disable"},
-      {t:"6 \u00b7 Final: re-run PageSpeed mobile vs baseline; spot-check on a phone; confirm nothing broke"},
-      {t:"Confirm local fonts are ON (set in the Build tab)"},
-      {t:"Going forward: resize + compress new images before upload \u2014 no full-res camera files"},
-      {t:"Escalate to Imagify only if image-delivery savings are still large after all this",h:"high-res photography / big media libraries; a normal small-business Elementor site is fine on WebP + compression"},
-    ]},
-    {id:"3C",title:"Performance \u2014 Advanced (Seraphinite \u2014 large/complex only)",when:["speed:seraphinite"],items:[
-      {t:"Only for genuinely large/complex sites that outgrow Speed Optimizer",h:"default is the Standard SOP; re-add Seraphinite only when Speed Optimizer isn\u2019t enough"},
-      {t:"SiteGround Speed Optimizer Frontend + Media \u2192 OFF",h:"Seraphinite owns all frontend + media optimization \u2014 never run both"},
-      {t:"Seraphinite (extended/premium): minify + combine CSS/JS, critical CSS, defer JS, lazy load, WebP + AVIF \u2192 ON"},
-      {t:"Seraphinite page caching \u2192 OFF (SiteGround handles caching)"},
-      {t:"Skip Imagify on this site",h:"Seraphinite handles images"},
-      {t:"Test every page; broken layout/JS \u2192 exclude that file; purge BOTH caches"},
-    ]},
-    {id:"3D",title:"Compliance \u2014 Complianz + Rank Math (Basil, post-dev)",items:[
-      {t:"Rank Math \u2192 General Settings \u2192 Analytics: Install analytics code ON",h:"Rank Math places the GA4 framework; Complianz blocks it until consent"},
-      {t:"Enable cookieless tracking OFF",h:"GA4 needs real consent \u2014 in current Rank Math this toggle may not even appear anymore, which is fine"},
-      {t:"Anonymize IP addresses ON",h:"legacy UA setting, largely automatic in GA4 \u2014 harmless to leave on, don\u2019t rely on it for compliance"},
-      {t:"Make sure GA is placed ONLY by Rank Math \u2014 remove any duplicate GA (no manual tag, no Site Kit)",h:"double tags = broken consent + inflated data"},
-      {t:"Complianz wizard \u2192 Consent \u2192 Statistics: \u201cYes, with Google Analytics\u201d; who places the code = Rank Math"},
-      {t:"Complianz \u2192 Integrations \u2192 Plugins: Rank Math toggled ON",h:"Complianz finds the Rank Math GA4 tag and wraps it in its consent block"},
-      {t:"Enable Google Consent Mode v2 in Complianz",h:"required since 2024 to avoid data loss; Complianz sets it up mostly automatically"},
-      {t:"Regions: United States + California (CCPA/CPRA) \u2014 generate Privacy, Cookie, Terms docs",h:"we\u2019re California-based"},
-      {t:"Run the cookie scan; brand the banner; block Statistics + Marketing until consent"},
-      {t:"Incognito test: nothing fires before consent, Accept/Reject both work"},
-    ]},
-    {id:"3E",title:"QA \u2014 Layout + alignment",items:[
-      {t:"No horizontal scroll \u2014 scroll all the way left, zero white space, every breakpoint"},
-      {t:"Full-width sections are truly edge to edge \u2014 no stray margins"},
-      {t:"Desktop / tablet / mobile all aligned"},
-      {t:"Cross-browser: Chrome, Safari, mobile Safari"},
-    ]},
-    {id:"3F",title:"QA \u2014 The \u201cpops up wrong\u201d checks",items:[
-      {t:"Favicon shows in the browser tab \u2014 not the theme default"},
-      {t:"Site Title shows correctly in the tab + search \u2014 not \u201cMy WordPress\u201d"},
-      {t:"Share-preview test: paste the URL into iMessage / Slack \u2014 correct title + image appear"},
-      {t:"H1 / H2 / H3 hierarchy correct \u2014 one H1, logical order"},
-    ]},
-    {id:"3G",title:"QA \u2014 Agent / accessibility readiness",items:[
-      {t:"PageSpeed (mobile): CLS under 0.1",h:"if failing: carousels/marquees need reserved height, images need dimensions, fonts local"},
-      {t:"Accessibility tree clean: every link has discernible text, no image-link with empty alt"},
-      {t:"Comments confirmed OFF (no spam surface)"},
-    ]},
-    {id:"3H",title:"QA \u2014 Links + function",items:[
-      {t:"Every nav link works + matches the project\u2019s menu spec"},
-      {t:"No 404s; nothing pointing to the homepage; every \u201c#\u201d built or flagged"},
-      {t:"Forms submit \u2192 entry lands in Submissions \u2192 email notification arrives"},
-      {t:"All images load, none broken; animations fire as noted"},
-      {t:"Social icons + Google Business Profile link point to the right profiles"},
-    ]},
-    {id:"3I",title:"QA \u2014 Speed + indexing",items:[
-      {t:"PageSpeed Insights (mobile) healthy \u2014 Speed Optimizer active, images WebP, fonts local, CLS low",h:"if a live site is still slow, re-check these four first \u2014 they\u2019re the usual culprits"},
-      {t:"\u201cSearch Engines Blocked\u201d is gone",when:["domain:live"]},
-    ]},
-    {id:"3J",title:"Hand back to Daisy",items:[
-      {t:"Build done, WP settings done, Rank Math done, speed configured"},
-      {t:"No leftover dead links \u2014 every \u201c#\u201d built out or flagged",h:"a quick Screaming Frog crawl should surface only intentional placeholders"},
-      {t:"Notify Daisy for launch",h:"she handles domain, SSL, CDN, security lockdown, analytics, Complianz sign-off, and the client report"},
-    ]},
-  ]},
-
-  {id:"4",owner:"Daisy · roadmap",title:"Working On (Eventually)",roadmap:true,html:ROADMAP_HTML},
-];
-
-/* ---------------- HELPERS ---------------- */
-const STORE_KEY="kz_checklist_v17";
-const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#14160F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-const CHEV='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
-const STACK_HTML='<div class="stack-strip"><h4>The plugin stack \u2014 install only these</h4><div class="chips">'
-+'<span class="chip"><b>Hello</b><span>theme (bare + fast)</span></span>'
-+'<span class="chip"><b>Elementor Pro</b><span>builder + templates</span></span>'
-+'<span class="chip"><b>Unlimited Elements</b><span>widgets</span></span>'
-+'<span class="chip"><b>Rank Math</b><span>SEO + analytics</span></span>'
-+'<span class="chip"><b>Complianz</b><span>cookies \u00b7 post-dev</span></span>'
-+'<span class="chip"><b>UpdraftPlus</b><span>off-site backup</span></span>'
-+'<span class="chip"><b>Imagify</b><span>images (only if needed)</span></span>'
-+'<span class="chip"><b>SiteGround</b><span>caching \u00b7 security \u00b7 CDN \u00b7 images</span></span>'
-+'<span class="chip"><b>Wordfence</b><span>firewall + login security</span></span>'
-+'<span class="chip adv"><b>Seraphinite</b><span>advanced speed only</span></span>'
-+'</div></div>';
-const SECTAGS={seo:'<span class="tag tag-seo">SEO</span>',opt:'<span class="tag tag-opt">optional</span>'};
-function itemTag(it){
-  if(it.tag==="seo")return ' <span class="tag tag-seo">SEO</span>';
-  if(it.tag==="opt")return ' <span class="tag tag-opt">optional</span>';
-  if(it.when&&it.when.indexOf("domain:live")>-1)return ' <span class="tag tag-live">when live</span>';
-  return "";
-}
-
-let store=load();
-function load(){try{const s=JSON.parse(localStorage.getItem(STORE_KEY));return(s&&typeof s==="object")?s:{};}catch(e){return{};}}
-function save(){try{localStorage.setItem(STORE_KEY,JSON.stringify(store));}catch(e){}}
-store.checks=store.checks||{};
-store.routes=Object.assign({},DEFAULT_ROUTES,store.routes||{});
-
-function matches(when){
-  if(!when)return true;
-  return when.every(tok=>{const[g,v]=tok.split(":");return store.routes[g]===v;});
-}
-
-/* ---------------- RENDER ---------------- */
-const routeBox=document.getElementById("routeBox");
-const tabsEl=document.getElementById("tabs");
-const stagesEl=document.getElementById("stages");
-
-ROUTEDEF.forEach(g=>{
-  const row=document.createElement("div");row.className="route-grp";
-  row.innerHTML='<span class="glabel">'+g.label+'</span>';
-  const seg=document.createElement("div");seg.className="seg";
-  g.options.forEach(o=>{
-    const b=document.createElement("button");b.type="button";b.textContent=o.t;
-    b.dataset.group=g.group;b.dataset.val=o.v;
-    b.addEventListener("click",()=>{store.routes[g.group]=o.v;save();syncRoutes();applyVisibility();applyState();});
-    seg.appendChild(b);
-  });
-  row.appendChild(seg);routeBox.appendChild(row);
-});
-function syncRoutes(){
-  routeBox.querySelectorAll(".seg button").forEach(b=>b.classList.toggle("on",store.routes[b.dataset.group]===b.dataset.val));
-}
-
-STAGES.forEach((st,si)=>{
-  const tab=document.createElement("button");
-  tab.className="tab";tab.id="tab-"+st.id;tab.setAttribute("role","tab");
-  tab.setAttribute("aria-selected",si===0?"true":"false");
-  const pctChip=st.roadmap?'<span class="tab-pct">ref</span>':'<span class="tab-pct" id="tabpct-'+st.id+'">0%</span>';
-  tab.innerHTML='<span class="tab-owner">'+st.owner+'</span><span class="tab-title">'+st.title+' '+pctChip+'</span>';
-  tab.addEventListener("click",()=>selectStage(si));
-  tabsEl.appendChild(tab);
-
-  const stage=document.createElement("div");
-  stage.className="stage"+(si===0?" active":"");stage.id="stage-"+st.id;
-  if(st.note)stage.innerHTML='<p class="stage-note">'+st.note+'</p>';
-  if(st.showcase)stage.innerHTML+=STACK_HTML;
-
-  if(st.roadmap){
-    stage.innerHTML+=st.html;
-  }else{
-    st.sections.forEach((sec,sidx)=>{
-      const open=sidx===0;
-      const sectionEl=document.createElement("section");
-      sectionEl.className="section"+(open?" open":"")+(sec.donot?" donot":"");
-      if(sec.when)sectionEl.dataset.when=JSON.stringify(sec.when);
-      let head='<div class="section-head" role="button" tabindex="0" aria-expanded="'+open+'">'
-        +'<span class="sec-letter">'+sec.id.slice(1)+'</span>'
-        +'<h2 class="sec-title">'+sec.title+(sec.tag?(" "+SECTAGS[sec.tag]):"")+'</h2>'
-        +'<span class="sec-count" data-count="'+sec.id+'">0/'+sec.items.length+'</span>'+CHEV+'</div>';
-      let body='<div class="items">'+sec.items.map((it,ii)=>{
-        const id=sec.id+"-"+ii;
-        const w=it.when?" data-when='"+JSON.stringify(it.when)+"'":"";
-        let main='<span class="label-main">'+it.t+itemTag(it)
-          +(it.p?' <span class="label-path">'+it.p+'</span>':"")+'</span>';
-        if(it.h)main+='<span class="label-hint">'+it.h+'</span>';
-        return '<label class="item" data-id="'+id+'"'+w+'><input type="checkbox" id="'+id+'"><span class="box">'+CHECK+'</span><span class="label-wrap">'+main+'</span></label>';
-      }).join("")+'</div>';
-      sectionEl.innerHTML=head+body;
-      const h=sectionEl.querySelector(".section-head");
-      h.addEventListener("click",()=>toggleSec(sectionEl,h));
-      h.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleSec(sectionEl,h);}});
-      stage.appendChild(sectionEl);
-    });
-  }
-  stagesEl.appendChild(stage);
-});
-
-stagesEl.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener("change",onCheck));
-document.querySelectorAll(".prompt .copy").forEach(b=>{
-  b.addEventListener("click",()=>{
-    const pre=document.getElementById(b.dataset.target);
-    if(pre&&navigator.clipboard){navigator.clipboard.writeText(pre.textContent);const o=b.textContent;b.textContent="Copied";setTimeout(()=>b.textContent=o,1200);}
-  });
-});
-
-function selectStage(i){
-  document.querySelectorAll(".tab").forEach((t,k)=>t.setAttribute("aria-selected",k===i?"true":"false"));
-  document.querySelectorAll(".stage").forEach((s,k)=>s.classList.toggle("active",k===i));
-}
-function toggleSec(el,head){el.classList.toggle("open");head.setAttribute("aria-expanded",el.classList.contains("open"));}
-function onCheck(e){if(e.target.checked)store.checks[e.target.id]=true;else delete store.checks[e.target.id];save();applyState();}
-
-function applyVisibility(){
-  document.querySelectorAll(".item").forEach(it=>{it.classList.toggle("hide",!matches(it.dataset.when?JSON.parse(it.dataset.when):null));});
-  document.querySelectorAll(".section").forEach(sec=>{
-    let secHide=!matches(sec.dataset.when?JSON.parse(sec.dataset.when):null);
-    if(!secHide){
-      const anyVisible=[...sec.querySelectorAll(".item")].some(i=>!i.classList.contains("hide"));
-      secHide=!anyVisible;
-    }else{
-      sec.querySelectorAll(".item").forEach(i=>i.classList.add("hide"));
-    }
-    sec.classList.toggle("hide",secHide);
-  });
-}
-
-function applyState(){
-  let done=0,total=0;
-  document.querySelectorAll(".item").forEach(it=>{
-    const cb=it.querySelector("input");
-    const on=!!store.checks[cb.id];
-    cb.checked=on;
-    it.classList.toggle("checked",on);
-    if(!it.classList.contains("hide")){total++;if(on)done++;}
-  });
-  STAGES.forEach(st=>{
-    if(st.roadmap)return;
-    let sTotal=0,sDone=0;
-    st.sections.forEach(sec=>{
-      let t=0,d=0;
-      sec.items.forEach((_,ii)=>{
-        const it=document.querySelector('.item[data-id="'+sec.id+'-'+ii+'"]');
-        if(it&&!it.classList.contains("hide")){t++;if(store.checks[sec.id+"-"+ii])d++;}
-      });
-      sTotal+=t;sDone+=d;
-      const b=document.querySelector('[data-count="'+sec.id+'"]');
-      b.textContent=d+"/"+t;
-      b.classList.toggle("done",t>0&&d===t);
-      b.closest(".section").classList.toggle("complete",t>0&&d===t);
-    });
-    const pct=sTotal?Math.round(sDone/sTotal*100):0;
-    const pctEl=document.getElementById("tabpct-"+st.id);
-    if(pctEl)pctEl.textContent=pct+"%";
-    document.getElementById("tab-"+st.id).classList.toggle("complete",sTotal>0&&sDone===sTotal);
-  });
-  const pct=total?Math.round(done/total*100):0;
-  document.getElementById("fill").style.width=pct+"%";
-  document.getElementById("pctNum").textContent=pct+"%";
-  document.getElementById("countNum").textContent=done+"/"+total;
-}
-
-document.getElementById("resetBtn").addEventListener("click",()=>{
-  if(confirm("Clear all checks on this list? (Project settings stay.)")){store.checks={};save();applyState();}
-});
-document.getElementById("printBtn").addEventListener("click",()=>window.print());
-
-syncRoutes();applyVisibility();applyState();
-</script>
 </body>
 </html>
