@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Adapt — Master Links (Internal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#008067;--accent-d:#01584a;--accent-l:#E6F4F0;--mint:#7EC0B1;
+  --ink:#1B231B;--ink-2:#42504A;--ink-3:#6B7A73;
+  --surface:#fff;--page:#F5F7F6;--line:#E2E7E4;--line-2:#EFF2F0;
+  --warn:#C77F00;--warn-bg:#FDF4E6;--crit:#A81B10;--crit-bg:#FCEEEC;--info:#0B5C9E;--info-bg:#EDF4FA;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font-family:'Poppins',-apple-system,sans-serif;font-size:14.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Outfit',sans-serif;margin:0;line-height:1.2;font-weight:600}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px 80px}
+
+header{background:linear-gradient(140deg,#111A18,#0C2621 55%,#014034);color:#fff;padding:40px 0 34px}
+.eyebrow{font-family:'Outfit',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);font-weight:700}
+header h1{font-size:31px;color:#fff;margin-top:11px}
+header p{color:#B7CFC8;font-size:14.5px;margin-top:10px;max-width:680px}
+
+nav{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+nav .wrap{display:flex;gap:2px;overflow-x:auto;padding:0 24px}
+nav a{font-family:'Outfit',sans-serif;font-size:12.5px;font-weight:500;color:var(--ink-3);padding:13px 12px;white-space:nowrap;border-bottom:2px solid transparent}
+nav a:hover{color:var(--accent);border-bottom-color:var(--mint);text-decoration:none}
+
+section{margin-top:40px}
+section>h2{font-size:21px}
+.lede{color:var(--ink-3);margin:7px 0 18px;max-width:720px;font-size:13.5px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:14px}
+.card>h3{font-size:14px;padding:15px 22px 13px;border-bottom:1px solid var(--line-2)}
+.card>h3 small{font-family:'Poppins',sans-serif;font-weight:300;color:var(--ink-3);font-size:12.5px;margin-left:8px}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;font-family:'Outfit',sans-serif;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:11px 14px 9px;background:var(--page);border-bottom:1px solid var(--line)}
+td{padding:10px 14px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td.k{color:var(--ink);font-weight:500;white-space:nowrap}
+td code{background:var(--page);padding:1px 5px;border-radius:4px;font-size:12px;font-family:ui-monospace,Menlo,monospace;color:var(--accent-d);word-break:break-all}
+td a{word-break:break-all}
+
+.tag{display:inline-block;font-family:'Outfit',sans-serif;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.t-ok{background:var(--accent-l);color:var(--accent-d)}
+.t-fix{background:var(--crit-bg);color:var(--crit)}
+.t-chk{background:var(--warn-bg);color:var(--warn)}
+.t-new{background:var(--info-bg);color:var(--info)}
+
+.flag{border-left:3px solid var(--crit);background:var(--crit-bg);padding:15px 19px;border-radius:0 10px 10px 0;margin:12px 0;font-size:13.5px}
+.warn{border-left:3px solid var(--warn);background:var(--warn-bg);padding:15px 19px;border-radius:0 10px 10px 0;margin:12px 0;font-size:13.5px}
+.good{border-left:3px solid var(--accent);background:var(--accent-l);padding:15px 19px;border-radius:0 10px 10px 0;margin:12px 0;font-size:13.5px}
+.flag b,.warn b,.good b{font-family:'Outfit',sans-serif}
+
+footer{margin-top:52px;padding:24px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:12px}
+@media(max-width:760px){header h1{font-size:24px}td,th{padding:9px 10px}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Internal · Kaizen Agency</div>
+  <h1>Adapt Chiropractic &amp; Wellness — Master Links</h1>
+  <p>Every Drive folder, document, live page and platform for this project. Built for Basel and the incoming developer. All links verified August 14, 2026. Logins live in Bitwarden.</p>
+</div></header>
+
+
+<div class="wrap">
+
+<!-- ================================================= DRIVE ============= -->
+<section id="drive">
+  <h2>Google Drive</h2>
+  <p class="lede">Everything lives under one parent folder. Share <strong>that</strong> folder rather than the subfolders — new files then inherit access automatically and nobody has to chase permissions later.</p>
+
+  <div class="card">
+    <h3>⭐ Parent folder<small>Share this one with Basel and the developer</small></h3>
+    <table>
+      <tr><td class="k">Adapt Health Clinic</td><td><a href="https://drive.google.com/drive/folders/1pbCucjU85mISpiKVa4pnnpbYbT8LmO97" target="_blank" rel="noopener">drive.google.com/drive/folders/1pbCucjU85mISpiKVa4pnnpbYbT8LmO97</a></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Marketing materials<small>All design output</small></h3>
+    <table>
+      <tr><th style="width:210px">Folder</th><th>Link</th><th style="width:150px"></th></tr>
+      <tr><td class="k">Marketing Materials</td><td><a href="https://drive.google.com/drive/folders/1O6W0W6Ls8iiXbc1Mq9dDwH0gofOCZvZe" target="_blank" rel="noopener">Open folder</a></td><td>Parent</td></tr>
+      <tr><td class="k">Brand Guide</td><td><a href="https://drive.google.com/drive/folders/1fKMyP6xNv85a00MkSAwxcLaEpsypvmFA" target="_blank" rel="noopener">Open folder</a></td><td><span class="tag t-chk">Only the 2022 PDF</span></td></tr>
+      <tr><td class="k">↳ 2022 Branding PDF</td><td><a href="https://drive.google.com/file/d/1A63f1FoCYHoIfCJeWcxNtOxMc12q4WSz/view" target="_blank" rel="noopener">Open PDF</a></td><td>Most complete guide we have — old name</td></tr>
+      <tr><td class="k">Logo</td><td><a href="https://drive.google.com/drive/folders/14jcs7zpL2D-e8zsDSwWGOiUjXZAuLSlJ" target="_blank" rel="noopener">Open folder</a></td><td>Parent</td></tr>
+      <tr><td class="k">↳ New Logo</td><td><a href="https://drive.google.com/drive/folders/1qk-Pfsy0lWSEqEoPGTZ7iNjy6xFseOke" target="_blank" rel="noopener">Open folder</a></td><td><span class="tag t-ok">Current mark — use this</span></td></tr>
+      <tr><td class="k">↳ Old logo</td><td><a href="https://drive.google.com/drive/folders/1HfzHe2vCisbf0sjuzU2B_cdhqvqTS02I" target="_blank" rel="noopener">Open folder</a></td><td>Archive — do not use</td></tr>
+      <tr><td class="k">Tri-Fold</td><td><a href="https://drive.google.com/drive/folders/1VVSo72c1rWInw-xizCR28x7Ykmf-7QwD" target="_blank" rel="noopener">Open folder</a></td><td><span class="tag t-fix">Bleed fix needed</span></td></tr>
+      <tr><td class="k">Business Cards</td><td><a href="https://drive.google.com/drive/folders/1trPeHYRV2775Re1jMrzpL2T0D5Wo5kwD" target="_blank" rel="noopener">Open folder</a></td><td>Ready to preflight</td></tr>
+      <tr><td class="k">Gift Card</td><td><a href="https://drive.google.com/drive/folders/1HJI50CyXJ-5oJpIbDbGI_uV_9eZ-2PzW" target="_blank" rel="noopener">Open folder</a></td><td>October launch</td></tr>
+      <tr><td class="k">Social Media</td><td><a href="https://drive.google.com/drive/folders/1TttIqalNYLTdGXk6BpJycFXjXx7gDSiM" target="_blank" rel="noopener">Open folder</a></td><td>Posts and carousels</td></tr>
+      <tr><td class="k">Emails 2026</td><td><a href="https://drive.google.com/drive/folders/1tyRmDJUPBoltKGgq-4HZsFfxVzf7vIdQ" target="_blank" rel="noopener">Open folder</a></td><td>Campaign archive</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Photography<small>All being refreshed after the Aug 25 shoot</small></h3>
+    <table>
+      <tr><th style="width:210px">Folder</th><th>Link</th><th style="width:150px"></th></tr>
+      <tr><td class="k">ALL PHOTOS (organised)</td><td><a href="https://drive.google.com/drive/folders/104vn9Fq4wYax8NjQxzms364cT10qcpwC" target="_blank" rel="noopener">Open folder</a></td><td>Parent</td></tr>
+      <tr><td class="k">Team Photos / Headshots</td><td><a href="https://drive.google.com/drive/folders/1khxW7029n2UsPaO2_Vj6NQlmFgdwoRdI" target="_blank" rel="noopener">Open folder</a></td><td><span class="tag t-chk">Reshooting Aug 25</span></td></tr>
+      <tr><td class="k">Dr. Mike</td><td><a href="https://drive.google.com/drive/folders/1jgcUgIXGfXdDa-GGr-RZ5A0PPxD1Y8PH" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Dr. Kyndra</td><td><a href="https://drive.google.com/drive/folders/1uVL43xF5JlmH2ltAskUrcS2WRyjb7iZa" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Shockwave Therapy</td><td><a href="https://drive.google.com/drive/folders/1pmstD1yL39b79wrLLG5EuD4Qa1mD8kDz" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Laser Therapy</td><td><a href="https://drive.google.com/drive/folders/1uXtd1Q3PMo_Etf89rzU9Om0pmi7YDlnE" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Hyperbaric</td><td><a href="https://drive.google.com/drive/folders/1x76B_HdlfWfidLEFCpj3cUitKyYfHIpf" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Massage Therapy</td><td><a href="https://drive.google.com/drive/folders/1IR1_Ya5mNnD5JsI57JQSnGxHoRvcUgwL" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Pregnancy Massage</td><td><a href="https://drive.google.com/drive/folders/16kqJaB-hoFAmJvlZ-TDWnThTIJJnrG-i" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Prenatal Chiropractor</td><td><a href="https://drive.google.com/drive/folders/1P4ZNmjfM-fsPsprSA4JSTJFahqH8MslC" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Personal Training</td><td><a href="https://drive.google.com/drive/folders/1DN_00EAugnveHmUHlwNexil1bMmcKyqq" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Condition Pages</td><td><a href="https://drive.google.com/drive/folders/1wNmZ0QTKIoujd67w3gdH4i_AxeNQnWER" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Elbow</td><td><a href="https://drive.google.com/drive/folders/1gjRsrTZcpl1OIXu68va5J3ftaMQVzuaX" target="_blank" rel="noopener">Open folder</a></td><td></td></tr>
+      <tr><td class="k">Outside area</td><td><a href="https://drive.google.com/drive/folders/1Pf0d3myCddaYRMi1a-_6V1bJEKmng2Qf" target="_blank" rel="noopener">Open folder</a></td><td><span class="tag t-chk">Old office</span></td></tr>
+      <tr><td class="k">Outside / Office Area</td><td><a href="https://drive.google.com/drive/folders/1MLMwJswA_O-FtD9GHZGBJ-bQaUMUY-Bt" target="_blank" rel="noopener">Open folder</a></td><td><span class="tag t-chk">Old office</span></td></tr>
+      <tr><td class="k">Old photos (?)</td><td><a href="https://drive.google.com/drive/folders/12cQFGxsXXexGKuticIxnzrBs_ky6xqlP" target="_blank" rel="noopener">Open folder</a></td><td>Archive</td></tr>
+      <tr><td class="k">Video</td><td><a href="https://drive.google.com/drive/folders/155QraGGz_4f-x2QnC2EZLyiOyy28zNKQ" target="_blank" rel="noopener">Open folder</a></td><td>Existing clinic video</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Extra resources</h3>
+    <table>
+      <tr><th style="width:210px">Folder</th><th>Link</th><th style="width:150px"></th></tr>
+      <tr><td class="k">Extra Resources</td><td><a href="https://drive.google.com/drive/folders/1WsapZV7G1ac-wC1f01w0qpxviZAwPrWc" target="_blank" rel="noopener">Open folder</a></td><td>Parent</td></tr>
+      <tr><td class="k">Before + After [SEO Work]</td><td><a href="https://drive.google.com/drive/folders/1rXUQDi58_DiC3xUmSvxKAMV8sFLmNEtS" target="_blank" rel="noopener">Open folder</a></td><td>Good for case studies</td></tr>
+      <tr><td class="k">AHC — Email Content</td><td><a href="https://drive.google.com/drive/folders/1p0XJrDaUqQQLzdvU3c20a4LmG5I3BA2Y" target="_blank" rel="noopener">Open folder</a></td><td>Older email copy</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================================================= DOCS ============== -->
+<section id="docs">
+  <h2>Documents</h2>
+  <div class="card">
+    <table>
+      <tr><th style="width:230px">Document</th><th>Why it matters</th><th style="width:80px"></th></tr>
+      <tr><td class="k">Migration Structure</td><td><b>Source of truth for the 301 redirect map</b> — 20 core pages + 28 blog URLs. Note the planned URLs differ from what actually shipped.</td><td><a href="https://docs.google.com/spreadsheets/d/11GvjdZd0b3cY3uMrl9Td7JySiQCkzicMdIuWyDNIaw0/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">Sitemap — AHC</td><td>Planned site structure</td><td><a href="https://docs.google.com/spreadsheets/d/1FrtRXj2z1lV1f0hVg-CdUKL1r39O5oMksGFiGZzzKzU/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">Adapt Links</td><td>Fonts, hex codes, social URLs, form embed code, GA tag, Jane staff links</td><td><a href="https://docs.google.com/document/d/1vwYRmcNT2qJYZCjx3JCEWm4fEUJLDTn3JE6MUgpesyI/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">AHC Local Schema</td><td>Structured data reference — needs updating for the new name</td><td><a href="https://docs.google.com/document/d/1abOMS46RmjcABk_i8TStjP6Q5R6hZeXSXGm8j8qHj_g/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">Website Copy + Keywords</td><td>Existing copy and target terms</td><td><a href="https://docs.google.com/document/d/1llqz1LW_MzHlbOyb7kJAMNuFnVxHky42o-PdCS-VclY/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">Dr. Mike Story Notes</td><td><b>Read before writing any copy.</b> Origin story and brand positioning.</td><td><a href="https://docs.google.com/document/d/1B7rh5IUblfr9ItYptnyrIG5mOaqow0MwBqYtThwd_oM/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">AHC Transcript</td><td>Full recorded call with Dr. Mike — the raw voice source</td><td><a href="https://docs.google.com/document/d/1tEPYgV8pKeyUEew6cZ1cjx4blehD9nVZsCHwURXKbVk/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">Interview Q's Dr Mike</td><td>Question set from the earlier interview</td><td><a href="https://docs.google.com/document/d/1JXEP18KKWeH0_qwQk_fqzkPZfZI4bU-N1Rym0EM52MM/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">AHC — KPI's</td><td>Visits, revenue per visit, demand mix, capacity. Internal only.</td><td><a href="https://docs.google.com/document/d/1d7Au6j2BZQ6FwwcsPKuQG6K1qD7YoUwwLb7hhZuBWT0/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">AHC Restructure</td><td>Earlier site restructure planning</td><td><a href="https://docs.google.com/document/d/123aKzF4NFWjw4GEifw0Xsz6ZE8zZ0DQW06_6CrPZGFI/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">Social Pillars</td><td>Content themes for social</td><td><a href="https://docs.google.com/document/d/1drQvVr0QvEAi9xLxYdLrPh_-pKmgpsEI2WQdpKg-E6s/edit" target="_blank" rel="noopener">Open</a></td></tr>
+      <tr><td class="k">Original launch checklist</td><td>Pre-launch task list from June</td><td><a href="https://daisypine.github.io/kaizenagency/AHC-ACW/Launch.html" target="_blank" rel="noopener">Open</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================================================= LIVE SITE ========= -->
+<section id="site">
+  <h2>Live site — every page</h2>
+  <p class="lede">Crawled from the homepage nav and footer, Aug 14 2026.</p>
+
+  <div class="card">
+    <h3>Core</h3>
+    <table>
+      <tr><td class="k">Home</td><td><a href="https://adaptchiropracticwellness.com/" target="_blank" rel="noopener">adaptchiropracticwellness.com</a></td><td><span class="tag t-fix">Footer says old name</span></td></tr>
+      <tr><td class="k">About</td><td><a href="https://adaptchiropracticwellness.com/about/" target="_blank" rel="noopener">/about/</a></td><td></td></tr>
+      <tr><td class="k">Our Team</td><td><a href="https://adaptchiropracticwellness.com/our-team/" target="_blank" rel="noopener">/our-team/</a></td><td><span class="tag t-chk">Dr. Paris missing</span></td></tr>
+      <tr><td class="k">Dr. Michael Grossman</td><td><a href="https://adaptchiropracticwellness.com/our-team/dr-michael-grossman/" target="_blank" rel="noopener">/our-team/dr-michael-grossman/</a></td><td><span class="tag t-fix">Role line: old name</span></td></tr>
+      <tr><td class="k">Dr. Kyndra Cervantes</td><td><a href="https://adaptchiropracticwellness.com/our-team/dr-kyndra-cervantes/" target="_blank" rel="noopener">/our-team/dr-kyndra-cervantes/</a></td><td><span class="tag t-fix">Mixes both names</span></td></tr>
+      <tr><td class="k">Contact</td><td><a href="https://adaptchiropracticwellness.com/contact/" target="_blank" rel="noopener">/contact/</a></td><td></td></tr>
+      <tr><td class="k">Blog</td><td><a href="https://adaptchiropracticwellness.com/blog/" target="_blank" rel="noopener">/blog/</a></td><td></td></tr>
+      <tr><td class="k">Reviews</td><td><a href="https://adaptchiropracticwellness.com/reviews/" target="_blank" rel="noopener">/reviews/</a></td><td><span class="tag t-new">Newly found</span></td></tr>
+      <tr><td class="k">FAQ</td><td><a href="https://adaptchiropracticwellness.com/faq/" target="_blank" rel="noopener">/faq/</a></td><td><span class="tag t-new">Newly found</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Services<small>Shockwave is the best performer — its format is the template</small></h3>
+    <table>
+      <tr><td class="k">Services index</td><td><a href="https://adaptchiropracticwellness.com/services/" target="_blank" rel="noopener">/services/</a></td><td></td></tr>
+      <tr><td class="k">Chiropractic</td><td><a href="https://adaptchiropracticwellness.com/chiropractic-services" target="_blank" rel="noopener">/chiropractic-services</a></td><td><span class="tag t-chk">No trailing slash</span></td></tr>
+      <tr><td class="k">Shockwave Therapy</td><td><a href="https://adaptchiropracticwellness.com/shockwave-therapy/" target="_blank" rel="noopener">/shockwave-therapy/</a></td><td><span class="tag t-ok">Top performer</span></td></tr>
+      <tr><td class="k">Laser Therapy</td><td><a href="https://adaptchiropracticwellness.com/laser-therapy/" target="_blank" rel="noopener">/laser-therapy/</a></td><td></td></tr>
+      <tr><td class="k">Massage Therapy</td><td><a href="https://adaptchiropracticwellness.com/massage-therapy/" target="_blank" rel="noopener">/massage-therapy/</a></td><td><span class="tag t-fix">"Ferreyr" typo</span></td></tr>
+      <tr><td class="k">Hyperbaric Oxygen</td><td><a href="https://adaptchiropracticwellness.com/hyperbaric-oxygen-therapy/" target="_blank" rel="noopener">/hyperbaric-oxygen-therapy/</a></td><td><span class="tag t-chk">Compliance review</span></td></tr>
+      <tr><td class="k">Personal Training</td><td><a href="https://adaptchiropracticwellness.com/personal-training/" target="_blank" rel="noopener">/personal-training/</a></td><td></td></tr>
+      <tr><td class="k">Prenatal Chiropractor</td><td><a href="https://adaptchiropracticwellness.com/prenatal-chiropractor/" target="_blank" rel="noopener">/prenatal-chiropractor/</a></td><td><span class="tag t-fix">Duplicate</span></td></tr>
+      <tr><td class="k">Prenatal Chiro (Campbell)</td><td><a href="https://adaptchiropracticwellness.com/prenatal-chiropractor-campbell/" target="_blank" rel="noopener">/prenatal-chiropractor-campbell/</a></td><td><span class="tag t-fix">Duplicate</span></td></tr>
+      <tr><td class="k">Techniques</td><td><a href="https://adaptchiropracticwellness.com/techniques/" target="_blank" rel="noopener">/techniques/</a></td><td><span class="tag t-fix">Client asked to delete</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Conditions<small>Live pattern is /conditions/[name]/ — use this for all new pages</small></h3>
+    <table>
+      <tr><td class="k">Conditions index</td><td><a href="https://adaptchiropracticwellness.com/conditions/" target="_blank" rel="noopener">/conditions/</a></td><td></td></tr>
+      <tr><td class="k">Back Pain</td><td><a href="https://adaptchiropracticwellness.com/conditions/back-pain/" target="_blank" rel="noopener">/conditions/back-pain/</a></td><td><span class="tag t-ok">Format template</span></td></tr>
+      <tr><td class="k">Neck Pain</td><td><a href="https://adaptchiropracticwellness.com/conditions/neck-pain/" target="_blank" rel="noopener">/conditions/neck-pain/</a></td><td></td></tr>
+      <tr><td class="k">Shoulder Pain</td><td><a href="https://adaptchiropracticwellness.com/conditions/shoulder-pain/" target="_blank" rel="noopener">/conditions/shoulder-pain/</a></td><td></td></tr>
+      <tr><td class="k">Sciatica</td><td><a href="https://adaptchiropracticwellness.com/conditions/sciatica/" target="_blank" rel="noopener">/conditions/sciatica/</a></td><td></td></tr>
+      <tr><td class="k">Piriformis Syndrome</td><td><a href="https://adaptchiropracticwellness.com/conditions/piriformis-syndrome/" target="_blank" rel="noopener">/conditions/piriformis-syndrome/</a></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Local, utility &amp; domains</h3>
+    <table>
+      <tr><td class="k">Chiropractor San Jose</td><td><a href="https://adaptchiropracticwellness.com/chiropractor-san-jose-ca/" target="_blank" rel="noopener">/chiropractor-san-jose-ca/</a></td><td></td></tr>
+      <tr><td class="k">Service area: San Jose</td><td><a href="https://adaptchiropracticwellness.com/service-areas/san-jose/" target="_blank" rel="noopener">/service-areas/san-jose/</a></td><td><span class="tag t-new">Extensible pattern</span></td></tr>
+      <tr><td class="k">Partnerships</td><td><a href="https://adaptchiropracticwellness.com/partnerships/" target="_blank" rel="noopener">/partnerships/</a></td><td><span class="tag t-chk">Exists — audit content</span></td></tr>
+      <tr><td class="k">Privacy Policy</td><td><a href="https://adaptchiropracticwellness.com/privacy-policy/" target="_blank" rel="noopener">/privacy-policy/</a></td><td></td></tr>
+      <tr><td class="k">Terms &amp; Conditions</td><td><a href="https://adaptchiropracticwellness.com/terms-and-conditions/" target="_blank" rel="noopener">/terms-and-conditions/</a></td><td></td></tr>
+      <tr><td class="k">Accessibility</td><td><a href="https://adaptchiropracticwellness.com/accessibility-statement/" target="_blank" rel="noopener">/accessibility-statement/</a></td><td></td></tr>
+      <tr><td class="k">Old domain</td><td><a href="https://adapthealthclinic.com" target="_blank" rel="noopener">adapthealthclinic.com</a></td><td><span class="tag t-fix">Redirect map pending</span></td></tr>
+      <tr><td class="k">Booking — new</td><td><a href="https://adaptchiropracticwellness.janeapp.com/" target="_blank" rel="noopener">adaptchiropracticwellness.janeapp.com</a></td><td><span class="tag t-ok">Correct target</span></td></tr>
+      <tr><td class="k">Booking — old</td><td><a href="https://adapthealthclinic.janeapp.com/" target="_blank" rel="noopener">adapthealthclinic.janeapp.com</a></td><td><span class="tag t-fix">Still linked sitewide</span></td></tr>
+    </table>
+  </div>
+</section>
+
+
+<!-- ================================================= SOCIAL ============ -->
+<section id="social">
+  <h2>Social &amp; directory listings</h2>
+  <p class="lede">Every profile below is still under the old name. Display name, bio, website link and profile photo all need updating. Handles only change where it won't break existing links.</p>
+
+  <div class="card">
+    <h3>Social profiles</h3>
+    <table>
+      <tr><th style="width:140px">Platform</th><th>URL</th><th style="width:230px">Status</th></tr>
+      <tr><td class="k">Instagram</td><td><a href="https://www.instagram.com/adaptchiropracticwellness/" target="_blank" rel="noopener">instagram.com/adaptchiropracticwellness</a></td><td><span class="tag t-ok">Renamed</span> Primary channel — event posts go here</td></tr>
+      <tr><td class="k">Facebook</td><td><a href="https://www.facebook.com/adaptchiropracticwellness" target="_blank" rel="noopener">facebook.com/adaptchiropracticwellness</a></td><td><span class="tag t-ok">Renamed</span> Re-auth the TrustDrivenCare connection — expired May 9</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--ink-3);margin:12px 0 0">LinkedIn and YouTube parked for now. Both still sit on the old handle and neither is active — revisit later.</p>
+    <div class="warn" style="margin-top:12px">
+      <b>The website footer still links the old handles.</b> Site-wide social links point at <code>instagram.com/adapthealthclinic</code> and <code>facebook.com/adapthealthclinic</code>. Update these in the same pass as the rest of the footer cleanup.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Review &amp; map listings</h3>
+    <table>
+      <tr><th style="width:140px">Platform</th><th>Current URL</th><th style="width:240px">Status</th></tr>
+      <tr><td class="k">Google Business Profile</td><td><a href="https://maps.app.goo.gl/JETuZMdNq2VNt7bZ7" target="_blank" rel="noopener">maps.app.goo.gl/JETuZMdNq2VNt7bZ7</a></td><td><span class="tag t-ok">Renamed</span> Still needs: website URL, description, services list, new photos</td></tr>
+      <tr><td class="k">Google Maps — alt link</td><td><a href="https://maps.app.goo.gl/A2vHJcdCyQVCmqD76" target="_blank" rel="noopener">maps.app.goo.gl/A2vHJcdCyQVCmqD76</a></td><td><span class="tag t-fix">Verify</span> Second link in our records — confirm it's not a duplicate profile</td></tr>
+      <tr><td class="k">Yelp</td><td><a href="https://www.yelp.com/biz/adapt-health-clinic-campbell" target="_blank" rel="noopener">yelp.com/biz/adapt-health-clinic-campbell</a></td><td><span class="tag t-fix">Old name</span> Claim and rename</td></tr>
+      <tr><td class="k">Yelp — older listing</td><td><a href="https://www.yelp.com/biz/grossman-chiropractic-san-jose-10" target="_blank" rel="noopener">yelp.com/biz/grossman-chiropractic-san-jose-10</a></td><td><span class="tag t-fix">Two names behind</span> Request a merge</td></tr>
+      <tr><td class="k">Yahoo Local</td><td><a href="https://local.yahoo.com/info-210248692-adapt-health-clinic-campbell/" target="_blank" rel="noopener">local.yahoo.com/info-210248692-adapt-health-clinic-campbell</a></td><td><span class="tag t-chk">Partial</span> Title already shows the new name, URL slug and details still old</td></tr>
+      <tr><td class="k">Yellow Pages</td><td><a href="https://www.yellowpages.com/campbell-ca/mip/adapt-health-clinic-578643572" target="_blank" rel="noopener">yellowpages.com/campbell-ca/mip/adapt-health-clinic-578643572</a></td><td><span class="tag t-fix">Old name</span></td></tr>
+      <tr><td class="k">Apple Business Connect</td><td><a href="https://businessconnect.apple.com" target="_blank" rel="noopener">businessconnect.apple.com</a></td><td><span class="tag t-chk">Claim status unknown</span> Feeds Siri and Apple Maps</td></tr>
+      <tr><td class="k">Bing Places</td><td><a href="https://www.bingplaces.com" target="_blank" rel="noopener">bingplaces.com</a></td><td><span class="tag t-chk">Claim status unknown</span> Feeds Bing and Copilot</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Health directories — audit and update</h3>
+    <table>
+      <tr><th style="width:140px">Directory</th><th>Where to check</th><th style="width:240px">Notes</th></tr>
+      <tr><td class="k">Healthgrades</td><td><a href="https://www.healthgrades.com" target="_blank" rel="noopener">healthgrades.com</a></td><td>High-authority medical citation</td></tr>
+      <tr><td class="k">Vitals</td><td><a href="https://www.vitals.com" target="_blank" rel="noopener">vitals.com</a></td><td>Provider-level listings for Dr. Mike and Dr. Kyndra</td></tr>
+      <tr><td class="k">WebMD / Doctor directory</td><td><a href="https://doctor.webmd.com" target="_blank" rel="noopener">doctor.webmd.com</a></td><td>Practice listing</td></tr>
+      <tr><td class="k">Wellness.com</td><td><a href="https://www.wellness.com" target="_blank" rel="noopener">wellness.com</a></td><td>Common chiropractic citation</td></tr>
+      <tr><td class="k">ChiroDirectory</td><td><a href="https://www.chirodirectory.com" target="_blank" rel="noopener">chirodirectory.com</a></td><td>Industry-specific</td></tr>
+      <tr><td class="k">CA Chiropractic Assoc.</td><td><a href="https://www.calchiro.org" target="_blank" rel="noopener">calchiro.org</a></td><td>If they're members</td></tr>
+      <tr><td class="k">Nextdoor Business</td><td><a href="https://business.nextdoor.com" target="_blank" rel="noopener">business.nextdoor.com</a></td><td>Strong for hyperlocal in Campbell</td></tr>
+      <tr><td class="k">Penzu (legacy blog)</td><td><code>post.penzu.com</code></td><td><span class="tag t-fix">Retire</span> Old Adapt Health journal, still indexed</td></tr>
+    </table>
+    <div class="warn" style="margin-top:12px">
+      <b>Run a citation audit rather than working from this list alone.</b> Semrush Listing Management or Search Atlas will find the long tail of aggregator listings nobody remembers creating. Those are what keep the old name alive in Google's entity graph.
+    </div>
+  </div>
+
+  <div class="good">
+    <b>NAP to use everywhere, exactly:</b><br>
+    Adapt Chiropractic &amp; Wellness · 1475 S Bascom Ave, Suite 104, Campbell, CA 95008 · (408) 673-2432 · adaptchiropracticwellness.com<br>
+    Any variation — "Ste 104", "&amp;" vs "and", a different phone format — reads as a different business to Google.
+  </div>
+</section>
+
+<!-- ================================================= FINDINGS ========== -->
+<section id="findings">
+  <h2>What the crawl turned up</h2>
+  <p class="lede">Five things nobody had flagged. Two of them change the September plan.</p>
+
+  <div class="flag">
+    <b>1. Booking links on the live site still point at the old domain.</b><br>
+    Every "Book Online" button resolves to <code>adapthealthclinic.janeapp.com</code>. Working only because Jane is redirecting. If that lapses, bookings fail silently.
+  </div>
+  <div class="flag">
+    <b>2. Duplicate prenatal pages.</b><br>
+    <code>/prenatal-chiropractor/</code> and <code>/prenatal-chiropractor-campbell/</code> are both live, both targeting the same term, splitting their own ranking. Pick one, 301 the other into it.
+  </div>
+  <div class="flag">
+    <b>3. Two team page role lines still say "Adapt Health Clinic."</b><br>
+    Dr. Grossman's reads "Founder of Adapt Health Clinic." Dr. Kyndra's reads "Chiropractor at Adapt Health Clinic" and her body copy mixes both names.
+  </div>
+  <div class="warn">
+    <b>4. The Techniques page is still live</b> at <code>/techniques/</code>, despite Dr. Mike explicitly asking for it to be deleted — <em>"you're like using tools or tape or something. So I'd probably just delete that page altogether."</em>
+  </div>
+  <div class="warn">
+    <b>5. /partnerships/ already exists.</b><br>
+    It was on the September list as a page to build. It's live. Audit whether it has real content — that changes September from a build to a rewrite.
+  </div>
+  <div class="good">
+    <b>Also worth knowing:</b> condition URLs use <code>/conditions/[name]/</code>, not the <code>-campbell-ca</code> pattern in the old migration sheet. All new pages follow what shipped. And <code>/service-areas/san-jose/</code> exists — a pattern we could extend to other cities, carefully.
+  </div>
+</section>
+
+<footer>
+  Internal document — Kaizen Agency. Not for client distribution.<br>
+  All links verified August 14, 2026. Re-verify after the redirect work completes.
+</footer>
+
+</div>
+</body>
+</html>
