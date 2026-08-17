@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Adapt Chiropractic &amp; Wellness — Business Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#008067;--accent-d:#01584a;--accent-l:#E6F4F0;--mint:#7EC0B1;
+  --ink:#1B231B;--ink-2:#42504A;--ink-3:#6B7A73;
+  --surface:#fff;--page:#F5F7F6;--line:#E2E7E4;--line-2:#EFF2F0;
+  --warn:#C77F00;--warn-bg:#FDF4E6;--crit:#A81B10;--crit-bg:#FCEEEC;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:'Poppins',-apple-system,sans-serif;font-size:14.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;margin:0;line-height:1.2;font-weight:600}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px 70px}
+
+header{background:linear-gradient(140deg,#111A18,#0C2621 55%,#014034);color:#fff;padding:34px 0 30px}
+.eyebrow{font-family:'Outfit',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);font-weight:700}
+header h1{font-size:30px;color:#fff;margin-top:10px}
+
+section{margin-top:36px}
+section>h2{font-size:21px;margin-bottom:14px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 24px;margin-bottom:12px}
+.card h3{font-size:15.5px;margin-bottom:8px}
+.card h4{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:18px 0 10px;padding-top:15px;border-top:1px solid var(--line-2)}
+.card h4:first-child{margin-top:0;padding-top:0;border-top:none}
+.card p{margin:0 0 11px}
+.card p:last-child{margin-bottom:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px;margin-bottom:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+.tile .v{font-family:'Outfit',sans-serif;font-size:25px;font-weight:700;color:var(--accent);line-height:1.05}
+.tile .l{font-size:12px;color:var(--ink-3);margin-top:4px;line-height:1.35}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;font-family:'Outfit',sans-serif;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:0 12px 8px 0;border-bottom:1.5px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td.k{color:var(--ink);font-weight:500}
+code{background:var(--page);padding:1px 5px;border-radius:4px;font-size:12.5px;font-family:ui-monospace,Menlo,monospace;color:var(--accent-d)}
+.sw{display:inline-block;width:15px;height:15px;border-radius:4px;border:1px solid rgba(0,0,0,.12);vertical-align:-3px;margin-right:8px}
+
+.tl{position:relative;padding-left:24px}
+.tl:before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev{position:relative;padding:0 0 18px}
+.tl .ev:last-child{padding-bottom:0}
+.tl .ev:before{content:'';position:absolute;left:-23px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--mint);border:2px solid var(--surface);box-shadow:0 0 0 2px var(--line)}
+.tl .ev b{font-family:'Outfit',sans-serif;font-size:14.5px;display:block}
+.tl .ev .yr{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.tl .ev p{margin:4px 0 0;color:var(--ink-3);font-size:13.5px}
+
+.pill{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:11px}
+.pl{background:var(--page);border:1px solid var(--line);border-radius:11px;padding:14px 16px}
+.pl b{font-family:'Outfit',sans-serif;font-size:14px;display:block;margin-bottom:4px}
+.pl p{margin:0;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+
+.quote{border-left:3px solid var(--mint);padding:2px 0 2px 16px;margin:12px 0;font-style:italic;color:var(--ink-2);font-size:14px}
+
+.flag{border-left:3px solid var(--crit);background:var(--crit-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.warn{border-left:3px solid var(--warn);background:var(--warn-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.good{border-left:3px solid var(--accent);background:var(--accent-l);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.flag b,.warn b,.good b{font-family:'Outfit',sans-serif}
+
+footer{margin-top:44px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:12px}
+@media(max-width:720px){.two{grid-template-columns:1fr}header h1{font-size:24px}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Internal · Kaizen Agency</div>
+  <h1>Adapt Chiropractic &amp; Wellness</h1>
+</div></header>
+
+<div class="wrap">
+
+<section>
+  <h2>Overview of business</h2>
+  <div class="card">
+    <table>
+      <tr><td class="k" style="width:160px">Business</td><td>Adapt Chiropractic &amp; Wellness — chiropractic and wellness clinic, owner-operated</td></tr>
+      <tr><td class="k">Owner</td><td>Dr. Mike Grossman, D.C. — 10+ years clinical experience, focus on athletes and injury rehab</td></tr>
+      <tr><td class="k">Team</td><td>Dr. Mike Grossman, D.C. · Dr. Kyndra Cervantes, D.C. · Dr. Paris · Eli Killen (personal trainer, massage) · Nathalia Ferreyra (massage, health educator)</td></tr>
+      <tr><td class="k">Address</td><td>1475 S Bascom Ave, Suite 104, Campbell, CA 95008 — on the Campbell/San Jose city line</td></tr>
+      <tr><td class="k">Phone</td><td>(408) 673-2432</td></tr>
+      <tr><td class="k">Email</td><td>info@adaptcw.com</td></tr>
+      <tr><td class="k">Site</td><td><a href="https://adaptchiropracticwellness.com" target="_blank" rel="noopener">adaptchiropracticwellness.com</a> · short domain adaptcw.com</td></tr>
+      <tr><td class="k">Booking</td><td>Jane App</td></tr>
+      <tr><td class="k">Stack</td><td>WordPress on SiteGround · Elementor Pro · Astra Pro · All in One SEO Pro · Jane (booking/EHR) · GoHighLevel, white-labeled as TrustDrivenCare (CRM, email, SMS, forms)</td></tr>
+      <tr><td class="k">New patient offer</td><td>$225 first visit — exam, adjustment, therapy, rehab</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h4>Services promoted</h4>
+    <table>
+      <tr><td class="k" style="width:200px">Chiropractic care</td><td>Core offering</td></tr>
+      <tr><td class="k">Shockwave therapy</td><td>Best-performing page on the site — its format is the template for the rest</td></tr>
+      <tr><td class="k">Laser therapy</td><td></td></tr>
+      <tr><td class="k">Massage therapy</td><td>Eight modalities: deep tissue, lymphatic drainage, reflexology, shiatsu, Swedish, sports, prenatal, aromatherapy</td></tr>
+      <tr><td class="k">Hyperbaric oxygen (HBOT)</td><td>Real differentiator, barely explained anywhere on the site</td></tr>
+      <tr><td class="k">Personal training</td><td>Reflects the PT-first philosophy — exercise is part of care, not an upsell</td></tr>
+      <tr><td class="k">Physical therapy / rehab</td><td>Integrated into care rather than sold separately</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--ink-3);margin-top:12px"><b>Not promoted yet:</b> pregnancy massage and prenatal chiropractic. Pages exist, don't push them.</p>
+  </div>
+
+  <div class="card">
+    <h4>Conditions treated</h4>
+    <p style="margin:0;font-size:13.5px">Live pages: back pain · neck pain · shoulder pain · sciatica · piriformis syndrome. Coming: headaches &amp; migraines, sports injuries.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What the business has been through</h2>
+  <div class="card">
+    <div class="tl">
+      <div class="ev">
+        <span class="yr">Originally</span>
+        <b>Grossman Chiropractic</b>
+        <p>Founded and run under Dr. Mike's own name. Traces of this are still live — the Yelp listing is still <code>grossman-chiropractic-san-jose</code>, and old email signatures still link to <code>grossmanchiropractic.janeapp.com</code>.</p>
+      </div>
+      <div class="ev">
+        <span class="yr">Rebrand 1</span>
+        <b>Adapt Health Clinic</b>
+        <p>Moved off the founder's name to a brand that could hold a team and multiple services. The infinity mark and the 2022 brand guide date from here. This is the identity most of their existing signage, merch and printed material still carries.</p>
+      </div>
+      <div class="ev">
+        <span class="yr">Service expansion</span>
+        <b>From adjustments to a multi-modality clinic</b>
+        <p>Shockwave, laser, hyperbaric oxygen, massage and personal training were layered on over time. The clinic went from one chiropractor to five practitioners across four disciplines.</p>
+      </div>
+      <div class="ev">
+        <span class="yr">Office move</span>
+        <b>New space half a mile from the old one</b>
+        <p>Still Campbell, on the San Jose city line. Three-year lease, so they're settled. Most of the photography in Drive is from the previous office and needs replacing.</p>
+      </div>
+      <div class="ev">
+        <span class="yr">Website</span>
+        <b>Clinic Sites → WordPress</b>
+        <p>The Clinic Sites build was quoted at roughly a month and took eight. Dr. Mike got three months of fees credited back. That experience is why he's cautious about vendors and why he values "done" over "cheap" — his words: <em>"at the end of the day, I do want it done versus saving."</em> The site now runs on WordPress with Elementor.</p>
+      </div>
+      <div class="ev">
+        <span class="yr">July 2026</span>
+        <b>Rebrand 2 — Adapt Chiropractic &amp; Wellness</b>
+        <p>Forced, not chosen. Adapt Health, a national CPAP and medical-device company, created a name collision — patients were calling the clinic looking for CPAP supplies. Filed with the Clerk Recorder's office and launched in July.</p>
+        <p>The logo was deliberately kept and only modified. The infinity mark is on their signage, windows and merch, and a full redraw would have thrown away real equity. All design work happens inside the existing mark.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <b>Two rebrands in a few years leaves a long tail.</b> Three business names are still findable online, three domains are in play, and printed material across the office spans two identities. That's the context behind most of the cleanup work — it isn't tidying, it's telling Google and patients there's one business here, not three.
+  </div>
+</section>
+
+<section>
+  <h2>How the business actually runs</h2>
+  <div class="kpi">
+    <div class="tile"><div class="v">~225</div><div class="l">completed visits per month</div></div>
+    <div class="tile"><div class="v">$119</div><div class="l">avg revenue per visit</div></div>
+    <div class="tile"><div class="v">11–20</div><div class="l">new patients/wk spare capacity</div></div>
+    <div class="tile"><div class="v">$0</div><div class="l">ad spend</div></div>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h4>Where patients come from</h4>
+      <table>
+        <tr><td class="k" style="width:70px">57%</td><td>Referrals — word of mouth, networking</td></tr>
+        <tr><td class="k">22%</td><td>SEO / Google Business Profile</td></tr>
+        <tr><td class="k">9%</td><td>Partnerships — gyms, studios, workplaces</td></tr>
+        <tr><td class="k">7%</td><td>Physician referrals</td></tr>
+        <tr><td class="k">5%</td><td>Other</td></tr>
+      </table>
+      <p style="font-size:13px;color:var(--ink-3);margin-top:11px">Referrals are the engine. Search is the scalable channel. Growing the 22% without weakening the 57% is the whole strategy.</p>
+    </div>
+    <div class="card">
+      <h4>Who they treat</h4>
+      <table>
+        <tr><td class="k">Silicon Valley desk workers</td><td>Sedentary, neck and low back. Largest winnable segment.</td></tr>
+        <tr><td class="k">Athletes and runners</td><td>Dr. Kyndra's focus. Performance and recovery.</td></tr>
+        <tr><td class="k">Personal trainers</td><td>Already health-invested, want something customised.</td></tr>
+        <tr><td class="k">Entrepreneurs</td><td>Treat health as productivity infrastructure.</td></tr>
+        <tr><td class="k">Families</td><td>Infants through seniors.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Booking behaviour</h4>
+    <p style="margin:0;font-size:13.5px">Overwhelmingly staff-booked — roughly 1,141 staff bookings vs. 131 online over a six-month window. Front desk responds same day. Online booking exists and is underused, which is an opportunity rather than a problem.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Dr. Mike's story</h2>
+  <div class="card">
+    <p>High school. Riding his bike to the local pool, a bag caught in the front spokes, locked the wheel and sent him over the handlebars onto his head. The helmet split in half. C4 and C5 compressed. He lost all sensation in every limb for a minute or two before the tingling came back.</p>
+    <p>Kaiser gave him light physical therapy that didn't help much and medication he reacted badly to. His mother worked in workers' comp and nurse case management; through her he saw a chiropractor. The adjustments restored his range of motion and loosened joints that, in his words, <em>"just felt really stuck together."</em></p>
+    <p>He was already headed for physical therapy — working in a PT office at 18, applying to PT schools. Then he realised chiropractic let him do both.</p>
+    <div class="quote">"that's why my approach is the way it is is I was more focused on the physical therapy stuff and being able to do the chiropractic side in conjunction with it just made it like a win-win."</div>
+    <p style="margin-bottom:0">This is the reason the clinic practises the way it does, and no competitor can copy it. It should lead the About page and get referenced on condition pages where it fits — especially neck pain, headaches and sports injuries.</p>
+  </div>
+
+  <div class="card">
+    <h4>The anti-position</h4>
+    <p>"Rack and crack" — his recurring line at networking meetings. It describes chiropractors who adjust a patient and send them out the door with no consult, no explanation, no exercise, no plan.</p>
+    <p style="margin-bottom:0">He almost never criticises anyone. The one flat, unhedged judgement in 52 minutes of recorded conversation is about exactly this: <em>"They need to do better."</em> That's the tone ceiling.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Content pillars</h2>
+  <p style="color:var(--ink-3);font-size:13.5px;margin:-6px 0 14px">From the Social Pillars doc in Drive.</p>
+
+  <div class="card">
+    <h4>Objectives</h4>
+    <table>
+      <tr><td class="k" style="width:180px">Retain</td><td>Give current patients resources and build community so patient relationships last longer</td></tr>
+      <tr><td class="k">Nurture</td><td>Move interested people through the middle of the journey — get them messaging the account for rates or info</td></tr>
+    </table>
+    <h4>Explicitly not the objective</h4>
+    <table>
+      <tr><td class="k" style="width:180px">Follower count</td><td>No pure entertainment content. No crack-chiro videos.</td></tr>
+      <tr><td class="k">Going viral</td><td>Micro-influencer strategy inside the local Bay Area community instead.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h4>Archetype — the Caregiver</h4>
+    <p style="margin:0 0 10px;font-size:13.5px">Trust, support and compassion. Reference brands: WWF, Pampers, TOMS, Johnson &amp; Johnson. Reference people: Mr. Rogers, Steve Irwin, Keanu Reeves.</p>
+    <p style="margin:0;font-size:13px;color:var(--ink-3)">Use it as a gut check — if a piece of content doesn't fit that archetype, it's off-brand.</p>
+  </div>
+
+  <div class="card">
+    <h4>The five pillars</h4>
+    <div class="pill">
+      <div class="pl"><b>Healing &amp; Recovery</b><p>Innovative methods that get people back to what they love, faster and pain-free.</p></div>
+      <div class="pl"><b>Personalized Care</b><p>Every adjustment, recommendation and treatment built for that individual.</p></div>
+      <div class="pl"><b>Holistic Wellness</b><p>Beyond pain relief — long-term vitality. Massage and personal training sit here.</p></div>
+      <div class="pl"><b>Patient Empowerment</b><p>Educate and guide so people take charge. Notably: <em>"even though we love to see you, we want you to come in as few times as possible."</em></p></div>
+      <div class="pl"><b>Family &amp; Community</b><p>Kids through seniors. Never too late to make a change.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Emotional triggers</h4>
+    <table>
+      <tr><td class="k" style="width:190px">Safety &amp; trust</td><td>"You're in good hands."</td></tr>
+      <tr><td class="k">Relief &amp; comfort</td><td>"We'll help restore balance so you can move freely again."</td></tr>
+      <tr><td class="k">Hope &amp; encouragement</td><td>"You're never alone on this journey."</td></tr>
+      <tr><td class="k">Belonging</td><td>"More than a clinic — a community."</td></tr>
+      <tr><td class="k">Empowerment</td><td>"Your health is in your hands."</td></tr>
+      <tr><td class="k">Personalization</td><td>"No two patients are the same."</td></tr>
+    </table>
+  </div>
+
+  <div class="warn">
+    <b>The pillars doc and Dr. Mike's actual speech don't match — know which to use where.</b>
+    <p style="margin:8px 0 0">The pillars doc uses <em>holistic, healing, journey, empower</em>. In 3,400 recorded words Dr. Mike uses none of them. The pillars are agency-written positioning language; the transcript is how the man actually talks.</p>
+    <p style="margin:8px 0 0"><b>Use the pillars to decide what a piece of content is about. Use the transcript to decide how it's written.</b> Anything in first person or attributed to him follows the transcript.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Voice</h2>
+  <div class="card">
+    <p><b>We have full transcripts of Dr. Mike and Dr. Kyndra talking.</b> The voice profile built from them is packaged as a skill file — get it from Daisy before writing anything.</p>
+    <p>He understates constantly and hedges nearly every sentence. Superlatives read as fake in his voice. His explaining pattern is worth copying directly: name the anatomy plainly, say what it does to a person, then reach for a physical image. <em>"C4 and 5 compressed" → "I lost all sensation in my limbs" → "the joints just felt really stuck together."</em></p>
+    <p style="margin-bottom:0"><b>Banned in body copy:</b> holistic · wellness journey · root cause · optimal · empower · transform · comprehensive · tailored · cutting-edge · state-of-the-art · passionate about.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Brand assets</h2>
+  <div class="card">
+    <h4>Greens in circulation</h4>
+    <table>
+      <tr><th style="width:160px">Hex</th><th>Source</th></tr>
+      <tr><td class="k"><span class="sw" style="background:#007D66"></span><code>#007D66</code></td><td>2022 brand guide PDF</td></tr>
+      <tr><td class="k"><span class="sw" style="background:#008067"></span><code>#008067</code></td><td>Current website + Adapt Links doc</td></tr>
+      <tr><td class="k"><span class="sw" style="background:#019877"></span><code>#019877</code></td><td>Brochure brief spec</td></tr>
+      <tr><td class="k"><span class="sw" style="background:#7EC0B1"></span><code>#7EC0B1</code></td><td>Light green — current site</td></tr>
+      <tr><td class="k"><span class="sw" style="background:#1B231B"></span><code>#1B231B</code></td><td>Dark — current site</td></tr>
+    </table>
+    <h4>Typefaces in circulation</h4>
+    <table>
+      <tr><td class="k" style="width:230px">Questrial + Barlow</td><td>2022 brand guide</td></tr>
+      <tr><td class="k">Outfit · Poppins · Great Vibes</td><td>Adapt Links doc / current site</td></tr>
+      <tr><td class="k">Poppins + Arial</td><td>Brochure brief</td></tr>
+      <tr><td class="k">Barlow throughout</td><td>Printed tri-fold</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--ink-3);margin-top:12px">Pick one green and one type pairing, publish a single current guide. The most complete document is still the 2022 PDF, under the retired name.</p>
+  </div>
+</section>
+
+<footer>Internal — Kaizen Agency. Not for client distribution.</footer>
+
+</div>
+</body>
+</html>
