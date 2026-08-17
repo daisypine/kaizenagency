@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Adapt — Team Pages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#008067;--accent-d:#01584a;--accent-l:#E6F4F0;--mint:#7EC0B1;
+  --ink:#1B231B;--ink-2:#42504A;--ink-3:#6B7A73;
+  --surface:#fff;--page:#F5F7F6;--line:#E2E7E4;--line-2:#EFF2F0;
+  --warn:#C77F00;--warn-bg:#FDF4E6;--crit:#A81B10;--crit-bg:#FCEEEC;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:'Poppins',-apple-system,sans-serif;font-size:14.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;margin:0;line-height:1.2;font-weight:600}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px 70px}
+
+header{background:linear-gradient(140deg,#111A18,#0C2621 55%,#014034);color:#fff;padding:34px 0 30px}
+.eyebrow{font-family:'Outfit',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);font-weight:700}
+header h1{font-size:30px;color:#fff;margin-top:10px}
+
+section{margin-top:36px}
+section>h2{font-size:21px;margin-bottom:14px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 24px;margin-bottom:12px}
+.card h3{font-size:17px;margin-bottom:3px}
+.card .role{color:var(--ink-3);font-size:13.5px;margin-bottom:14px}
+.card h4{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:18px 0 9px;padding-top:14px;border-top:1px solid var(--line-2)}
+.card h4:first-of-type{border-top:none;padding-top:0;margin-top:0}
+
+.copy{background:var(--page);border:1px solid var(--line);border-left:3px solid var(--mint);border-radius:0 8px 8px 0;padding:15px 17px;font-size:14.5px;line-height:1.7}
+.copy p{margin:0 0 11px}
+.copy p:last-child{margin:0}
+.copy ul{margin:0;padding-left:19px}
+.copy li{margin:4px 0}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td{padding:8px 12px 8px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td.k{color:var(--ink);font-weight:500;white-space:nowrap;width:140px}
+code{background:var(--page);padding:1px 5px;border-radius:4px;font-size:12.5px;font-family:ui-monospace,Menlo,monospace;color:var(--accent-d);word-break:break-all}
+pre{background:#14191A;color:#D5E3DE;padding:15px 17px;border-radius:9px;overflow-x:auto;font-size:12px;line-height:1.55;font-family:ui-monospace,Menlo,monospace;margin:0}
+
+.flag{border-left:3px solid var(--crit);background:var(--crit-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.warn{border-left:3px solid var(--warn);background:var(--warn-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.good{border-left:3px solid var(--accent);background:var(--accent-l);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.flag b,.warn b,.good b{font-family:'Outfit',sans-serif}
+
+ol.n{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.n>li{position:relative;padding:10px 0 10px 34px;border-bottom:1px solid var(--line-2)}
+ol.n>li:last-child{border-bottom:none}
+ol.n>li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:11px;width:23px;height:23px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:11px}
+ol.n>li b{font-family:'Outfit',sans-serif}
+
+footer{margin-top:44px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:12px}
+@media(max-width:720px){header h1{font-size:24px}td.k{width:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Internal · Kaizen Agency</div>
+  <h1>Team Pages — copy ready to build</h1>
+</div></header>
+
+<div class="wrap">
+
+<section>
+  <div class="good">
+    <b>Need these done by Wednesday–Thursday ideally.</b> Event social posts go out the same window and the photoshoot is Aug 25.
+  </div>
+</section>
+
+<section>
+  <h2>Template</h2>
+  <div class="card">
+    <p style="margin:0 0 12px;font-size:13.5px">Pulled from <code>/our-team/dr-michael-grossman/</code> and <code>/our-team/dr-kyndra-cervantes/</code>. Duplicate one of those pages and swap the content — fastest route and keeps the format consistent. Just check every link in the duplicate points at the right place.</p>
+    <ol class="n">
+      <li><b>H1</b> — the person's name, with a role line beneath. Use the new clinic name, not the old one the existing pages still carry.</li>
+      <li><b>"Meet [First Name]:"</b> — two or three short paragraphs.</li>
+      <li><b>"Certifications:"</b> — bulleted.</li>
+      <li><b>"Specialties offered:"</b> — bulleted.</li>
+      <li><b>Service card grid</b> — only the services that person delivers, not all six.</li>
+      <li><b>Booking CTA × 3</b> — pointing at <code>adaptchiropracticwellness.janeapp.com</code>.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>1 · Eli Killen</h2>
+  <div class="card">
+    <h3>Eli Killen</h3>
+    <div class="role">Certified Personal Trainer &amp; Massage Therapist at Adapt Chiropractic &amp; Wellness</div>
+
+    <h4>Setup</h4>
+    <table>
+      <tr><td class="k">URL</td><td><code>/our-team/eli-killen/</code></td></tr>
+      <tr><td class="k">Title tag</td><td>Eli Killen, Personal Trainer &amp; Massage Therapist | Adapt Chiropractic</td></tr>
+      <tr><td class="k">Meta</td><td>Eli Killen is a certified personal trainer and licensed massage therapist in Campbell, CA, specialising in sports performance, injury recovery and mobility training.</td></tr>
+      <tr><td class="k">Links out</td><td>Personal Training · Massage Therapy</td></tr>
+      <tr><td class="k">Links in</td><td>Team page · Personal Training · Massage Therapy</td></tr>
+      <tr><td class="k">Service cards</td><td>Personal Training · Massage Therapy · Physical Therapy &amp; Rehabilitation. Three, not six.</td></tr>
+    </table>
+
+    <h4>Meet Eli</h4>
+    <div class="copy">
+      <p>Eli came to training the way a lot of the good ones do — through bodies that were already hurt. She earned her AA in Massage Therapy from De Anza College in 2019 and spent years working on athletes and adaptive physical education clients before she ever wrote a training program.</p>
+      <p>That order matters. She learned how tissue behaves before she learned how to load it, so her sessions start with what isn't moving well rather than with what you can lift. Swedish, myofascial release, sports massage — she'll use any of it, sometimes in the same hour as the strength work.</p>
+      <p>If someone has told you to just strengthen it and that didn't work, Eli is the one who figures out why.</p>
+    </div>
+
+    <h4>Certifications</h4>
+    <div class="copy">
+      <ul>
+        <li>AA in Massage Therapy — De Anza College, 2019</li>
+        <li>Certified Personal Trainer</li>
+        <li>Licensed Massage Therapist</li>
+        <li>Swedish, Myofascial Release (MFR) and Sports Massage</li>
+      </ul>
+    </div>
+
+    <h4>Specialties offered</h4>
+    <div class="copy">
+      <ul>
+        <li>Personal Training</li>
+        <li>Sports performance</li>
+        <li>Injury recovery and return to activity</li>
+        <li>Mobility and functional movement</li>
+        <li>Strength training</li>
+        <li>Massage Therapy — Swedish, myofascial release, sports massage</li>
+        <li>Adaptive physical education</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2 · Nathalia Ferreyra</h2>
+  <div class="card">
+    <h3>Nathalia Ferreyra</h3>
+    <div class="role">Licensed Massage Therapist &amp; Health Educator at Adapt Chiropractic &amp; Wellness</div>
+
+    <div class="warn"><b>Spelling error live now.</b> The Massage Therapy page reads "Nathalia Ferreyr" — missing the final <em>a</em>. Fix it there too.</div>
+
+    <h4>Setup</h4>
+    <table>
+      <tr><td class="k">URL</td><td><code>/our-team/nathalia-ferreyra/</code></td></tr>
+      <tr><td class="k">Title tag</td><td>Nathalia Ferreyra, Licensed Massage Therapist | Adapt Chiropractic</td></tr>
+      <tr><td class="k">Meta</td><td>Nathalia Ferreyra is a licensed massage therapist and health educator in Campbell, CA with over ten years in massage, naturopathy and acupuncture.</td></tr>
+      <tr><td class="k">Links out</td><td>Massage Therapy</td></tr>
+      <tr><td class="k">Links in</td><td>Team page · Massage Therapy</td></tr>
+      <tr><td class="k">Service cards</td><td>Massage Therapy. One card — pregnancy massage isn't being promoted yet.</td></tr>
+    </table>
+
+    <h4>Meet Nathalia</h4>
+    <div class="copy">
+      <p>Nathalia has been doing this for more than ten years. She trained in Brazil in massage therapy, naturopathy and acupuncture, and she brought all three with her.</p>
+      <p>She's also a health educator, and it shows in how she works — she'll tell you what she's finding as she goes rather than working in silence for an hour. Depending on what you come in with, she has eight modalities to reach for: deep tissue, lymphatic drainage, reflexology, shiatsu, Swedish, sports, prenatal and aromatherapy.</p>
+      <p>Most people book her for one thing and leave knowing something about how they've been holding themselves.</p>
+    </div>
+
+    <h4>Certifications</h4>
+    <div class="copy">
+      <ul>
+        <li>Licensed Massage Therapist</li>
+        <li>Certified Health Educator</li>
+        <li>10+ years in massage therapy, naturopathy and acupuncture</li>
+        <li>Trained in Brazil</li>
+      </ul>
+    </div>
+
+    <h4>Specialties offered</h4>
+    <div class="copy">
+      <ul>
+        <li>Deep tissue massage</li>
+        <li>Lymphatic drainage</li>
+        <li>Swedish massage</li>
+        <li>Sports massage</li>
+        <li>Reflexology</li>
+        <li>Shiatsu</li>
+        <li>Aromatherapy massage</li>
+      </ul>
+    </div>
+
+    <div class="flag">
+      <b>Check before publishing.</b> "Naturopath" and "acupuncturist" are regulated titles in California — naturopathic doctors need a CA NDBME licence, acupuncturists need a California Acupuncture Board licence. If her training is Brazilian and not licensed here, those titles can't go on a clinic site. The current live copy already uses both. Get documentation or describe the training rather than the title.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>3 · Dr. Paris</h2>
+  <div class="card">
+    <div class="flag">
+      <b>Blocked.</b> Not on the team page, not on any service page, no findable footprint. Can't write this one without input.
+    </div>
+
+    <h4>Need from Dr. Mike</h4>
+    <div class="copy">
+      <ul>
+        <li>Full name — is "Paris" the first name or surname? Determines the URL.</li>
+        <li>Credential letters — D.C., D.P.T., L.Ac., other</li>
+        <li>Discipline</li>
+        <li>Education — degrees, institutions, years</li>
+        <li>Licence number and state</li>
+        <li>Which services he delivers — determines service cards and internal links</li>
+        <li>Specialty or patient focus</li>
+        <li>Two or three sentences on why he does this work</li>
+        <li>Headshot — being taken Aug 25</li>
+      </ul>
+    </div>
+
+    <div class="good">
+      Fastest path is a five-minute voice memo from Dr. Paris covering those points. Page turns around in a day. Assembling it secondhand through Dr. Mike takes a week and produces a worse bio.
+    </div>
+
+    <h4>Meanwhile</h4>
+    <table>
+      <tr><td class="k">Team page</td><td>Add him with name, role and headshot now. Link the profile once it exists.</td></tr>
+      <tr><td class="k">URL</td><td>Don't publish a URL you'll have to redirect later.</td></tr>
+      <tr><td class="k">Order</td><td>Third — after Dr. Mike and Dr. Kyndra, before Eli and Nathalia.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Person schema — all five team pages</h2>
+  <div class="card">
+    <p style="margin:0 0 10px;font-size:13.5px">None of the existing team pages carry Person markup. AIOSEO Author SEO is already installed and handles this.</p>
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Eli Killen",
+  "jobTitle": "Certified Personal Trainer &amp; Massage Therapist",
+  "url": "https://adaptchiropracticwellness.com/our-team/eli-killen/",
+  "image": "https://adaptchiropracticwellness.com/[headshot].jpg",
+  "worksFor": {
+    "@type": "MedicalBusiness",
+    "name": "Adapt Chiropractic &amp; Wellness",
+    "url": "https://adaptchiropracticwellness.com",
+    "telephone": "+1-408-673-2432",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1475 S Bascom Ave, Suite 104",
+      "addressLocality": "Campbell",
+      "addressRegion": "CA",
+      "postalCode": "95008",
+      "addressCountry": "US"
+    }
+  },
+  "alumniOf": { "@type": "EducationalOrganization", "name": "De Anza College" },
+  "knowsAbout": ["Personal Training","Sports Massage","Myofascial Release",
+                 "Injury Recovery","Mobility Training"]
+}</pre>
+    <p style="font-size:13px;color:var(--ink-3);margin:10px 0 0">Swap <code>name</code>, <code>jobTitle</code>, <code>url</code>, <code>alumniOf</code> and <code>knowsAbout</code> per person. Validate each in Rich Results Test.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Old name still live on the site</h2>
+  <div class="card">
+    <table>
+      <tr><td class="k" style="width:200px">Footer</td><td>"Adapt Health Clinic" site-wide</td></tr>
+      <tr><td class="k">Dr. Grossman page</td><td>Role line: "Lead Chiropractor and Founder of Adapt Health Clinic"</td></tr>
+      <tr><td class="k">Dr. Kyndra page</td><td>Role line: "Chiropractor at Adapt Health Clinic". Body copy mixes both names.</td></tr>
+      <tr><td class="k">Team page</td><td>Title still references the old name</td></tr>
+      <tr><td class="k">Booking buttons</td><td>All point at <code>adapthealthclinic.janeapp.com</code></td></tr>
+      <tr><td class="k">Massage Therapy page</td><td>"Nathalia Ferreyr" typo</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--ink-3);margin:12px 0 0">All of these are handled by the Better Search Replace passes in the SEO cleanup doc.</p>
+  </div>
+</section>
+
+<footer>Internal — Kaizen Agency. Copy written against the Adapt voice profile.</footer>
+
+</div>
+</body>
+</html>
