@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunwest Painting — Client Overview &amp; Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ember-50:#FCF3ED;--ember-100:#F8E2D3;--ember-200:#F1C4A7;--ember-300:#EAA77B;
+    --ember-400:#E58F57;--ember-500:#E07B39;--ember-600:#C25F1E;--ember-700:#9F4E19;
+    --ember-800:#7B3C13;--ember-900:#582B0E;
+    --sun-50:#FEF9EC;--sun-100:#FCF1CF;--sun-200:#FAE39E;--sun-300:#F7D56E;
+    --sun-400:#F5C947;--sun-500:#F5C842;--sun-600:#D5A20B;--sun-700:#AE8509;
+    --sun-800:#886707;--sun-900:#614A05;
+    --ink-900:#111111;--ink-700:#333333;--ink-500:#515151;--ink-300:#8A8A8A;
+    --ink-100:#E3E1DD;--ink-50:#F4F3F0;
+    --brand-gradient:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);
+    --page:#F4F3F0;--surface:#FFFFFF;--rule:#E3E1DD;--border:rgba(17,17,17,.10);
+    --good:#0B7A0B;--bad:#C42B2B;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink-900);
+       font-family:'Poppins',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px 70px}
+
+  header.mast{background:var(--ink-900);color:#fff}
+  .mast-bar{height:8px;background:var(--brand-gradient)}
+  .mast-inner{max-width:900px;margin:0 auto;padding:52px 24px 44px}
+  .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+           color:var(--sun-400);font-weight:700;margin:0 0 14px}
+  h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:54px;line-height:1.02;
+     letter-spacing:-.028em;text-transform:uppercase;margin:0 0 14px}
+  .mast-inner .sub{font-size:16px;color:#C9C7C2;margin:0;max-width:580px}
+
+  section.card{background:var(--surface);border:1px solid var(--border);
+               border-radius:10px;padding:30px 32px;margin-bottom:20px}
+  h2{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-300);
+     font-weight:700;margin:0 0 20px;padding-bottom:11px;border-bottom:1px solid var(--rule)}
+  h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-300);
+     font-weight:700;margin:26px 0 12px}
+  p{margin:0 0 10px;color:var(--ink-700);font-size:15px}
+  p:last-child{margin-bottom:0}
+  strong{color:var(--ink-900);font-weight:600}
+  a{color:var(--ember-700);font-weight:600}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+
+  /* fact grid */
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);
+         border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+  .fact{background:var(--surface);padding:14px 16px}
+  .fact .fl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-300);
+            font-weight:700}
+  .fact .fv{font-size:15px;color:var(--ink-900);font-weight:600;margin-top:3px}
+  .fact .fv span{font-weight:400;color:var(--ink-700);font-size:14px}
+
+  /* stat row */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);
+         border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:20px}
+  .stat{background:var(--surface);padding:18px 16px}
+  .stat .sv{font-family:'Outfit',sans-serif;font-weight:900;font-size:28px;letter-spacing:-.03em;
+            line-height:1}
+  .stat .sl{font-size:11.5px;color:var(--ink-700);margin-top:6px;line-height:1.3}
+
+  /* service columns */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  ul.tight{list-style:none;margin:0;padding:0}
+  ul.tight li{position:relative;padding:6px 0 6px 20px;font-size:14.5px;color:var(--ink-700)}
+  ul.tight li::before{content:'';position:absolute;left:0;top:14px;width:7px;height:2px;
+                      background:var(--ember-500)}
+  ul.tight li b{color:var(--ink-900);font-weight:600}
+  ul.yes li::before{background:var(--good)}
+  ul.no li::before{background:var(--bad)}
+  .colhead{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+           margin-bottom:8px}
+  .colhead.y{color:var(--good)} .colhead.n{color:var(--bad)} .colhead.g{color:var(--ink-300)}
+
+  /* pill list */
+  .pills{display:flex;flex-wrap:wrap;gap:7px}
+  .pill{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;
+        background:var(--ink-50);color:var(--ink-700);border:1px solid var(--rule)}
+  .pill.hot{background:var(--sun-500);color:var(--ink-900);border-color:var(--sun-600)}
+
+  /* dark rule box */
+  .rulebox{background:var(--ink-900);color:#fff;border-radius:10px;padding:26px 30px}
+  .rulebox .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+              color:var(--sun-400);font-weight:700;margin-bottom:10px}
+  .rulebox .r{font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;
+              text-transform:uppercase;letter-spacing:-.022em;line-height:1.22;margin:0 0 10px}
+  .rulebox p{color:#C9C7C2;font-size:14.5px;margin:0}
+  .rulebox strong{color:#fff}
+
+  /* gradient */
+  .grad{background:var(--brand-gradient);border-radius:10px;padding:32px 30px;color:var(--ink-900)}
+  .grad .gn{font-family:'Outfit',sans-serif;font-weight:900;font-size:30px;
+            text-transform:uppercase;letter-spacing:-.024em;line-height:1}
+  .grad .gc{font-family:ui-monospace,monospace;font-size:12.5px;margin-top:9px;
+            color:rgba(17,17,17,.72)}
+
+  /* ramps */
+  .ramp{display:grid;grid-template-columns:repeat(10,1fr);border-radius:8px;
+        overflow:hidden;border:1px solid var(--rule)}
+  .step{padding:15px 5px 13px;text-align:center}
+  .step .n{font-size:10px;font-weight:700;letter-spacing:.04em}
+  .step .h{font-size:8px;font-family:ui-monospace,monospace;margin-top:3px;opacity:.78}
+  .rlabel{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 8px}
+  .rlabel .rn{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;
+              text-transform:uppercase;letter-spacing:-.01em}
+  .rlabel .rd{font-size:12px;color:var(--ink-300)}
+  .rwrap{margin-bottom:22px}
+  .rwrap:last-child{margin-bottom:0}
+  .neutrals{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+  .nsw{border-radius:7px;overflow:hidden;border:1px solid var(--rule)}
+  .nsw .chip{height:48px}
+  .nsw .meta{padding:7px 9px}
+  .nsw .meta b{display:block;font-size:11px}
+  .nsw .meta span{font-family:ui-monospace,monospace;font-size:9.5px;color:var(--ink-300)}
+
+  /* type */
+  .fonts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .fbox{border:1px solid var(--rule);border-radius:8px;padding:18px 20px}
+  .fbox .fn{font-size:34px;line-height:1;margin-bottom:8px}
+  .fbox .fr{font-size:13.5px;color:var(--ink-700)}
+  .fbox .fw{font-size:11.5px;color:var(--ink-300);margin-top:5px;font-family:ui-monospace,monospace}
+  .spec{border-top:1px solid var(--rule);padding:20px 0}
+  .spec:last-of-type{padding-bottom:0}
+  .spec .tag{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-300);
+             font-weight:700;margin-bottom:11px;display:flex;justify-content:space-between;
+             flex-wrap:wrap;gap:8px}
+  .spec .tag .rt{font-family:ui-monospace,monospace;letter-spacing:0;text-transform:none;
+                 color:var(--ink-500);font-weight:400}
+  .d1{font-family:'Outfit',sans-serif;font-weight:900;font-size:48px;line-height:1.05;
+      letter-spacing:-.02em;text-transform:uppercase;margin:0}
+  .h3s{font-family:'Outfit',sans-serif;font-weight:700;font-size:26px;line-height:1.2;
+       letter-spacing:-.02em;text-transform:uppercase;margin:0}
+  .lead-t{font-family:'Poppins',sans-serif;font-weight:600;font-size:20px;line-height:1.35;margin:0}
+  .body-t{font-family:'Poppins',sans-serif;font-weight:400;font-size:17px;line-height:1.39;margin:0}
+
+  /* buttons */
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;
+       padding:15px 32px;border-radius:28px;border:none}
+  .btn-primary{background:var(--brand-gradient);color:#111}
+  .btn-secondary{background:transparent;border:1.5px solid var(--ember-600);color:var(--ember-700)}
+  .btn-solid{background:var(--ember-700);color:#fff}
+  .on-dark{background:var(--ink-900);padding:20px 22px;border-radius:8px;margin-top:11px}
+  .btn-ghost{background:transparent;border:1.5px solid var(--sun-400);color:var(--sun-400)}
+
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--ink-300);font-weight:700;padding:0 12px 9px 0;border-bottom:1px solid var(--rule)}
+  td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule);color:var(--ink-700)}
+  td:first-child{color:var(--ink-900);font-weight:600;width:26%}
+  tr:last-child td{border-bottom:none}
+
+  /* links block */
+  .links{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  a.linkcard{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:8px;
+             padding:15px 17px;border-left:4px solid var(--ember-500)}
+  a.linkcard:hover{background:var(--ember-50)}
+  a.linkcard .lt{font-size:14.5px;font-weight:600;color:var(--ink-900)}
+  a.linkcard .ld{font-size:12.5px;color:var(--ink-300);margin-top:3px;font-weight:400}
+
+  footer{text-align:center;font-size:12.5px;color:var(--ink-300);padding-top:16px}
+  footer b{color:var(--ink-500)}
+
+  @media(max-width:800px){
+    .ramp{grid-template-columns:repeat(5,1fr)}
+    .neutrals{grid-template-columns:repeat(3,1fr)}
+    .cols,.cols3,.fonts,.facts,.links{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:34px}.d1{font-size:32px}
+    section.card{padding:22px 20px}
+  }
+  @media print{body{background:#fff}section.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-bar"></div>
+  <div class="mast-inner">
+    <p class="eyebrow">Kaizen Agency &nbsp;·&nbsp; Internal Team Reference</p>
+    <h1>Sunwest Painting</h1>
+    <p class="sub">Who the client is, what we're building, and how everything should look and sound. Read this before writing copy, designing a page, or producing any print piece.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ WHO ============ -->
+  <section class="card">
+    <h2>Who This Client Is</h2>
+
+    <div class="stats">
+      <div class="stat"><div class="sv">2001</div><div class="sl">In business since</div></div>
+      <div class="stat"><div class="sv">50/50</div><div class="sl">Residential / commercial split</div></div>
+      <div class="stat"><div class="sv">San Jose</div><div class="sl">Base — serves the South Bay &amp; Peninsula</div></div>
+      <div class="stat"><div class="sv">Family</div><div class="sl">Owned &amp; operated, multiple crews</div></div>
+    </div>
+
+    <p>Sunwest Painting is a <strong>family-owned commercial and residential painting contractor in San Jose</strong>. They've been operating since 2001 and run multiple crews out of one location. Denise's parents are still involved — dad runs project management, mom handles the books — and both are moving toward retirement in the next two to three years. A stated goal of this engagement is helping the business run without depending on family labor.</p>
+
+    <h4>Key facts</h4>
+    <div class="facts">
+      <div class="fact"><div class="fl">Primary contact</div><div class="fv">Denise Artache <span>— Sales Director</span></div></div>
+      <div class="fact"><div class="fl">Email / phone</div><div class="fv"><span>denise@sunwestpainting.net · 408-623-1603</span></div></div>
+      <div class="fact"><div class="fl">Address</div><div class="fv"><span>6288 San Ignacio Ave, Ste B, San Jose, CA 95119</span></div></div>
+      <div class="fact"><div class="fl">License</div><div class="fv">CSLB #807426 <span>— licensed, bonded, insured, EPA RRP certified</span></div></div>
+      <div class="fact"><div class="fl">Busy season</div><div class="fv"><span>Spring through December</span></div></div>
+      <div class="fact"><div class="fl">Slow season</div><div class="fv"><span>Q1 — January through March</span></div></div>
+    </div>
+
+    <h4>What they're actually good at</h4>
+    <ul class="tight">
+      <li><b>Custom, detail-oriented finish work.</b> They take their time. Trim, doors, custom homes, historic restorations. Work that holds up to close inspection.</li>
+      <li><b>Communication.</b> Prep checklists, updates during the job, a final walkthrough and sign-off. Most competitors are owner-operators who just show up and paint.</li>
+      <li><b>Both sides of the business.</b> High-end custom residential and large commercial or institutional projects, from one shop.</li>
+    </ul>
+
+    <h4>Why they lose bids — important for copy</h4>
+    <p>Almost always <strong>price</strong>. Competitors are currently undercutting by <strong>$3,000–$5,000</strong> on a typical home. Sunwest does not compete on price and our copy should never imply they do. The job is to make the difference feel like a reason to choose them — craft, communication, and credentials — not a hurdle.</p>
+  </section>
+
+  <!-- ============ WHAT WE'RE DOING ============ -->
+  <section class="card">
+    <h2>What We're Building For Them</h2>
+    <p>Engagement started April 2026. The new website went live in July on a rebuilt Elementor stack. We're now publishing out a <strong>~100-page site architecture</strong> — services, industries, city pages, and combined service-plus-city pages — built around keyword research rather than guesses.</p>
+    <p>Alongside the site: brand collateral (business cards, flyer, trifold, folder, door hangers), Google Business Profile optimization, a review program, and a growth roadmap covering direct mail, email, SMS, and CRM.</p>
+
+    <h4>Winnable keywords we're targeting</h4>
+    <div class="pills">
+      <span class="pill hot">Commercial Painting San Jose</span>
+      <span class="pill hot">House Painters Palo Alto</span>
+      <span class="pill hot">After-Hours Painting</span>
+      <span class="pill hot">Historic Home Restoration</span>
+      <span class="pill">HOA Painting San Jose</span>
+      <span class="pill">Commercial Drywall Repair</span>
+    </div>
+    <p style="margin-top:12px;font-size:13.5px;color:var(--ink-300)">The four highlighted are very low competition — no local competitor is meaningfully targeting them.</p>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="card">
+    <h2>Services — What to Promote, What Not To</h2>
+    <p>This matters more than it looks. Some services are offered but deliberately <strong>not promoted</strong> because they're low margin or high risk. Don't build pages or write campaigns around them.</p>
+
+    <div class="cols" style="margin-top:18px">
+      <div>
+        <div class="colhead y">✓ Promote heavily</div>
+        <ul class="tight yes">
+          <li>Residential interior &amp; exterior painting</li>
+          <li>Commercial painting — all verticals</li>
+          <li>After-hours / PM painting <b>(differential rate, low competition)</b></li>
+          <li>Historic home restoration <b>(Palo Alto, Los Gatos)</b></li>
+          <li>Epoxy floors — residential &amp; warehouse</li>
+          <li>Color consultation</li>
+        </ul>
+      </div>
+      <div>
+        <div class="colhead n">✕ Don't promote standalone</div>
+        <ul class="tight no">
+          <li>Cabinet painting — slow, low margin, error-prone</li>
+          <li>Popcorn ceiling removal</li>
+          <li>Wallpaper removal</li>
+          <li>Pressure washing</li>
+          <li>Minor drywall repair</li>
+          <li><b>Never:</b> full drywall installation or major texture work</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>Commercial verticals</h4>
+    <div class="pills">
+      <span class="pill">HOA &amp; multifamily</span><span class="pill">Property management</span>
+      <span class="pill">Apartments &amp; condos</span><span class="pill">Retail &amp; shopping centers</span>
+      <span class="pill">Hotels &amp; hospitality</span><span class="pill">Data centers &amp; tech offices</span>
+      <span class="pill">Healthcare &amp; medical</span><span class="pill">Industrial &amp; warehouse</span>
+      <span class="pill">Schools &amp; government</span><span class="pill">Senior living</span>
+    </div>
+
+    <h4>Service area</h4>
+    <p><strong>Core:</strong> San Jose, Santa Clara, Sunnyvale, Campbell, Los Gatos, Saratoga. <strong>Higher-value residential:</strong> Palo Alto, Los Altos, Mountain View, up the Peninsula. Santa Clara County is easiest operationally; the Peninsula carries the higher ticket. Deprioritize lower-income San Jose neighborhoods — smaller jobs.</p>
+  </section>
+
+  <!-- ============ AUDIENCE ============ -->
+  <section class="card">
+    <h2>Who We're Talking To</h2>
+    <div class="cols">
+      <div>
+        <div class="colhead g">Residential</div>
+        <ul class="tight">
+          <li>Custom home owners who value craftsmanship over lowest price</li>
+          <li>Vacant home interiors — efficient, high finish</li>
+          <li>Higher-end neighborhoods: Los Gatos, Palo Alto, Los Altos, Saratoga</li>
+          <li><b>People who got burned by a cheaper painter</b> and want it done right</li>
+        </ul>
+      </div>
+      <div>
+        <div class="colhead g">Commercial</div>
+        <ul class="tight">
+          <li>Property managers — multi-unit, repeat business</li>
+          <li>Facilities managers — institutional, scheduled maintenance</li>
+          <li>General contractors needing a reliable painting sub</li>
+          <li>HOA boards — exterior refresh cycles</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOICE ============ -->
+  <section class="card">
+    <h2>Voice</h2>
+
+    <div class="rulebox">
+      <div class="k">Positioning</div>
+      <p class="r">A professional painting company,<br>not a crew with a truck.</p>
+      <p>Family-owned in San Jose since 2001. Detail-obsessed finish work, real communication, a walkthrough at the end.</p>
+    </div>
+
+    <h4>Three proof points — use constantly</h4>
+    <ul class="tight">
+      <li><b>Craft.</b> Trim, doors, custom homes, historic restorations. Work that survives close inspection.</li>
+      <li><b>Communication.</b> Prep checklists, updates during the job, final walkthrough and sign-off.</li>
+      <li><b>Credentials.</b> CSLB #807426. Licensed, bonded, insured. EPA RRP certified. Since 2001.</li>
+    </ul>
+
+    <h4>Tone</h4>
+    <div class="cols">
+      <div>
+        <div class="colhead y">✓ Do</div>
+        <ul class="tight yes">
+          <li>Direct and specific — name the city, the building, the finish</li>
+          <li>Confident about price: "We're not the cheapest. Here's what that buys."</li>
+          <li>Lead with the customer's problem, not company history</li>
+          <li>Warm but professional — a family business that runs like a real company</li>
+        </ul>
+      </div>
+      <div>
+        <div class="colhead n">✕ Don't</div>
+        <ul class="tight no">
+          <li>"Quality workmanship, satisfaction guaranteed"</li>
+          <li>Discount language, urgency gimmicks, fake countdowns</li>
+          <li>Overpromise timelines to win a bid</li>
+          <li>Start every sentence with "we"</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:13.5px;color:var(--ink-300)">Written as <strong style="color:var(--ink-700)">Sunwest Painting</strong> — one word, capital S. Not "Sun West."</p>
+  </section>
+
+  <!-- ============ COLOR ============ -->
+  <section class="card">
+    <h2>Color</h2>
+
+    <div class="grad">
+      <div class="gn">Sunwest Gradient</div>
+      <div class="gc">linear-gradient(102.43deg, #F5C842 6.67%, #E07B39 107.96%)</div>
+    </div>
+    <p style="margin-top:13px">Primary buttons, accent bars, section dividers. Not full-page backgrounds. <strong>Text on the gradient is always near-black</strong> — white doesn't hold up on it.</p>
+
+    <h4>Core ramps</h4>
+    <div class="rwrap">
+      <div class="rlabel"><span class="rn">Ember</span><span class="rd">Brand orange · <span class="mono">#E07B39</span></span></div>
+      <div class="ramp">
+        <div class="step" style="background:#FCF3ED;color:#111"><div class="n">50</div><div class="h">FCF3ED</div></div>
+        <div class="step" style="background:#F8E2D3;color:#111"><div class="n">100</div><div class="h">F8E2D3</div></div>
+        <div class="step" style="background:#F1C4A7;color:#111"><div class="n">200</div><div class="h">F1C4A7</div></div>
+        <div class="step" style="background:#EAA77B;color:#111"><div class="n">300</div><div class="h">EAA77B</div></div>
+        <div class="step" style="background:#E58F57;color:#111"><div class="n">400</div><div class="h">E58F57</div></div>
+        <div class="step" style="background:#E07B39;color:#111"><div class="n">500</div><div class="h">E07B39</div></div>
+        <div class="step" style="background:#C25F1E;color:#fff"><div class="n">600</div><div class="h">C25F1E</div></div>
+        <div class="step" style="background:#9F4E19;color:#fff"><div class="n">700</div><div class="h">9F4E19</div></div>
+        <div class="step" style="background:#7B3C13;color:#fff"><div class="n">800</div><div class="h">7B3C13</div></div>
+        <div class="step" style="background:#582B0E;color:#fff"><div class="n">900</div><div class="h">582B0E</div></div>
+      </div>
+    </div>
+
+    <div class="rwrap">
+      <div class="rlabel"><span class="rn">Sun</span><span class="rd">Brand yellow · <span class="mono">#F5C842</span></span></div>
+      <div class="ramp">
+        <div class="step" style="background:#FEF9EC;color:#111"><div class="n">50</div><div class="h">FEF9EC</div></div>
+        <div class="step" style="background:#FCF1CF;color:#111"><div class="n">100</div><div class="h">FCF1CF</div></div>
+        <div class="step" style="background:#FAE39E;color:#111"><div class="n">200</div><div class="h">FAE39E</div></div>
+        <div class="step" style="background:#F7D56E;color:#111"><div class="n">300</div><div class="h">F7D56E</div></div>
+        <div class="step" style="background:#F5C947;color:#111"><div class="n">400</div><div class="h">F5C947</div></div>
+        <div class="step" style="background:#F5C842;color:#111"><div class="n">500</div><div class="h">F5C842</div></div>
+        <div class="step" style="background:#D5A20B;color:#111"><div class="n">600</div><div class="h">D5A20B</div></div>
+        <div class="step" style="background:#AE8509;color:#fff"><div class="n">700</div><div class="h">AE8509</div></div>
+        <div class="step" style="background:#886707;color:#fff"><div class="n">800</div><div class="h">886707</div></div>
+        <div class="step" style="background:#614A05;color:#fff"><div class="n">900</div><div class="h">614A05</div></div>
+      </div>
+    </div>
+
+    <h4>Neutrals</h4>
+    <div class="neutrals">
+      <div class="nsw"><div class="chip" style="background:#111111"></div><div class="meta"><b>Ink 900</b><span>#111111</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#333333"></div><div class="meta"><b>Ink 700</b><span>#333333</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#515151"></div><div class="meta"><b>Ink 500</b><span>#515151</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#8A8A8A"></div><div class="meta"><b>Ink 300</b><span>#8A8A8A</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#E3E1DD"></div><div class="meta"><b>Ink 100</b><span>#E3E1DD</span></div></div>
+      <div class="nsw"><div class="chip" style="background:#FFF;border-bottom:1px solid #E3E1DD"></div><div class="meta"><b>White</b><span>#FFFFFF</span></div></div>
+    </div>
+    <p style="margin-top:12px;font-size:13.5px;color:var(--ink-300)">Bright steps (400–500) are for fills. Use <span class="mono">#9F4E19</span> (Ember 700) for orange text and links on white.</p>
+  </section>
+
+  <!-- ============ TYPE ============ -->
+  <section class="card">
+    <h2>Typography</h2>
+    <div class="fonts">
+      <div class="fbox">
+        <div class="fn" style="font-family:'Outfit';font-weight:900">Outfit</div>
+        <div class="fr">Display — headlines, titles, buttons. Always uppercase, tight tracking.</div>
+        <div class="fw">900 Black · 700 Bold</div>
+      </div>
+      <div class="fbox">
+        <div class="fn" style="font-family:'Poppins';font-weight:600">Poppins</div>
+        <div class="fr">Body — paragraphs, navigation, labels. Sentence case.</div>
+        <div class="fw">700 · 600 · 400</div>
+      </div>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-300);margin:10px 0 0">Both free on Google Fonts — no license for vendors to buy.</p>
+
+    <h4>Scale</h4>
+    <div class="spec">
+      <div class="tag"><span>Hero</span><span class="rt">Outfit 900 · 74px · −0.02em</span></div>
+      <p class="d1">Painters in San Jose</p>
+    </div>
+    <div class="spec">
+      <div class="tag"><span>Card &amp; service title</span><span class="rt">Outfit 700 · 26px · −0.02em</span></div>
+      <p class="h3s">Commercial Painting</p>
+    </div>
+    <div class="spec">
+      <div class="tag"><span>Lead</span><span class="rt">Poppins 600 · 20px</span></div>
+      <p class="lead-t">Trusted by Property Managers &amp; Contractors</p>
+    </div>
+    <div class="spec">
+      <div class="tag"><span>Body</span><span class="rt">Poppins 400 · 17px · lh 1.39</span></div>
+      <p class="body-t">Detail-oriented painting for businesses and commercial properties. Family-owned in San Jose since 2001.</p>
+    </div>
+  </section>
+
+  <!-- ============ BUTTONS ============ -->
+  <section class="card">
+    <h2>Buttons</h2>
+    <div class="btn-row">
+      <span class="btn btn-primary">Request a Quote</span>
+      <span class="btn btn-solid">Get an Estimate</span>
+      <span class="btn btn-secondary">View Our Projects</span>
+    </div>
+    <div class="on-dark">
+      <div class="btn-row">
+        <span class="btn btn-primary">Request a Quote</span>
+        <span class="btn btn-ghost">View Our Projects</span>
+      </div>
+    </div>
+    <ul class="tight" style="margin-top:16px">
+      <li><b>Primary</b> — gradient fill, Ink 900 text, 28px radius. One per page.</li>
+      <li><b>Solid</b> — Ember 700 fill, white text. When white text is required.</li>
+      <li><b>Secondary</b> — outline only. Never two primaries side by side.</li>
+    </ul>
+  </section>
+
+  <!-- ============ PHOTOGRAPHY ============ -->
+  <section class="card">
+    <h2>Photography</h2>
+    <p>The brand's biggest gap. Stock photos undercut the premium positioning — case study pages are built and waiting on real Sunwest work.</p>
+
+    <a class="linkcard" href="https://drive.google.com/drive/folders/1ysFX0Z1ODDOvNw6u6JCFZCWgl3tFR5yc?usp=drive_link" style="margin:16px 0;display:block">
+      <div class="lt">📁 Sunwest Photo Library — Google Drive</div>
+      <div class="ld">Everything we currently have on file. Check here before sourcing anything else.</div>
+    </a>
+
+    <h4>What we need more of</h4>
+    <ul class="tight">
+      <li><b>Before / after pairs</b> — same angle, same light. Nothing converts like it.</li>
+      <li><b>Detail shots</b> — crisp cut lines, trim, clean edges. The craft argument, made visually.</li>
+      <li><b>Crew at work</b> — branded gear, clean organized site, drop cloths down.</li>
+      <li><b>Commercial scale</b> — lifts, large facades, after-hours interiors with lights on.</li>
+    </ul>
+    <p style="margin-top:12px;font-size:13.5px;color:var(--ink-300)">Natural color, no heavy filters, straight verticals. Darken the image behind text rather than outlining the type.</p>
+  </section>
+
+  <!-- ============ PRINT ============ -->
+  <section class="card">
+    <h2>Print Application</h2>
+    <table>
+      <thead><tr><th>Piece</th><th>Anchor</th></tr></thead>
+      <tbody>
+        <tr><td>Business card</td><td>Gradient edge bar. Logo, name, mobile, CSLB #807426 small.</td></tr>
+        <tr><td>Door hanger</td><td>One headline, one before/after, phone, QR. Read in three seconds.</td></tr>
+        <tr><td>Flyer / trifold</td><td>Gradient top bar, three proof points, one call to action.</td></tr>
+        <tr><td>Folder</td><td>Logo front, credentials on the back. Built to hold a proposal.</td></tr>
+        <tr><td>Postcard / EDDM</td><td>Before/after full bleed. Address side stays clean.</td></tr>
+        <tr><td>Yard sign</td><td>Logo + phone only. Ink 900 on Sun 500 is the most visible pair.</td></tr>
+        <tr><td>Vehicle</td><td>Logo, phone, one service line. Nobody reads a list at 40 mph.</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px;font-size:13.5px;color:var(--ink-300)">Print body copy minimum 9pt. One headline per piece.</p>
+  </section>
+
+  <!-- ============ WHERE THINGS LIVE ============ -->
+  <section class="card">
+    <h2>Where Everything Lives</h2>
+    <div class="links">
+      <a class="linkcard" href="https://drive.google.com/drive/folders/1C-wgpoiZN5uDQh67xiZ_Nbgevh3rU9Kz?usp=sharing">
+        <div class="lt">Master Drive Folder</div>
+        <div class="ld">Everything — photos, designs, brand, sitemap</div>
+      </a>
+      <a class="linkcard" href="https://drive.google.com/drive/folders/1ysFX0Z1ODDOvNw6u6JCFZCWgl3tFR5yc?usp=drive_link">
+        <div class="lt">Photo Library</div>
+        <div class="ld">Project photos and before/afters</div>
+      </a>
+      <a class="linkcard" href="https://sunwestpainting.net">
+        <div class="lt">Live Website</div>
+        <div class="ld">sunwestpainting.net</div>
+      </a>
+      <a class="linkcard" href="https://app.notion.com/p/b636e27951568240ba05819b94ad366b">
+        <div class="lt">Client Portal — Notion</div>
+        <div class="ld">Tasks, timeline, docs, copy</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ TOKENS ============ -->
+  <section class="card">
+    <h2>Developer Tokens</h2>
+    <pre style="background:#111;color:#E8E6E1;padding:22px;border-radius:8px;overflow-x:auto;font-family:ui-monospace,monospace;font-size:12px;line-height:1.65;margin:0"><code>:root {
+  --ember-500: #E07B39;   /* brand orange — fills only   */
+  --ember-700: #9F4E19;   /* text-safe on white          */
+  --sun-500:   #F5C842;   /* brand yellow — fills only   */
+  --sun-700:   #AE8509;
+
+  --brand-gradient: linear-gradient(102.43deg,
+                    #F5C842 6.67%, #E07B39 107.96%);
+
+  --ink-900: #111111;     /* headings, text on brand fills */
+  --ink-500: #515151;     /* body copy, card borders       */
+  --ink-100: #E3E1DD;
+
+  --font-display: 'Outfit', sans-serif;    /* 700 / 900   */
+  --font-body:    'Poppins', sans-serif;   /* 400/600/700 */
+
+  --radius-button: 28px;
+  --border-card:   0.58px solid var(--ink-500);
+}</code></pre>
+  </section>
+
+  <footer>
+    <p><b>Sunwest Painting — Client Overview &amp; Brand Guide v1.1</b> &nbsp;·&nbsp; Kaizen Agency</p>
+  </footer>
+
+</div>
+</body>
+</html>
