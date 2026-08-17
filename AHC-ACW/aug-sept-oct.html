@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Adapt — Aug–Oct Gameplan (Internal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#008067;--accent-d:#01584a;--accent-l:#E6F4F0;--mint:#7EC0B1;
+  --ink:#1B231B;--ink-2:#42504A;--ink-3:#6B7A73;
+  --surface:#fff;--page:#F5F7F6;--line:#E2E7E4;--line-2:#EFF2F0;
+  --warn:#C77F00;--warn-bg:#FDF4E6;--crit:#A81B10;--crit-bg:#FCEEEC;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:'Poppins',-apple-system,sans-serif;font-size:14.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;margin:0;line-height:1.2;font-weight:600}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px 70px}
+
+header{background:linear-gradient(140deg,#111A18,#0C2621 55%,#014034);color:#fff;padding:34px 0 30px}
+.eyebrow{font-family:'Outfit',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);font-weight:700}
+header h1{font-size:30px;color:#fff;margin-top:10px}
+header p{color:#B7CFC8;font-size:14px;margin-top:8px}
+
+section{margin-top:36px}
+section>h2{font-size:21px;margin-bottom:14px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 24px;margin-bottom:12px}
+.card h4{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;font-family:'Outfit',sans-serif;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:0 12px 8px 0;border-bottom:1.5px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td.k{color:var(--ink);font-weight:500}
+td.d{font-family:'Outfit',sans-serif;font-weight:700;color:var(--accent);white-space:nowrap}
+
+.month{background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:12px}
+.month-hd{background:var(--ink);color:#fff;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.month-hd h3{color:#fff;font-size:17px}
+.month-hd .th{font-size:12px;color:var(--mint);font-family:'Outfit',sans-serif}
+.month-body{padding:4px 22px 16px}
+.row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-2)}
+.row:last-child{border-bottom:none}
+.row .w{flex:0 0 110px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--accent);padding-top:1px}
+.row .c{flex:1}
+.row .c b{font-size:14px}
+.row .c p{margin:3px 0 0;color:var(--ink-3);font-size:13px}
+
+.flag{border-left:3px solid var(--crit);background:var(--crit-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.warn{border-left:3px solid var(--warn);background:var(--warn-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.good{border-left:3px solid var(--accent);background:var(--accent-l);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.flag b,.warn b,.good b{font-family:'Outfit',sans-serif}
+
+.ladder{counter-reset:st}
+.step{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line-2)}
+.step:last-child{border-bottom:none}
+.step .n{flex:0 0 26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:12px}
+.step .t b{display:block;font-family:'Outfit',sans-serif;font-size:14px;margin-bottom:2px}
+.step .t p{margin:0;color:var(--ink-3);font-size:13px}
+
+footer{margin-top:44px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:12px}
+@media(max-width:720px){header h1{font-size:24px}.row{flex-direction:column;gap:4px}.row .w{flex:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Internal · Kaizen Agency</div>
+  <h1>Adapt — August to October Gameplan</h1>
+  <p>Rebrand</p>
+</div></header>
+
+<div class="wrap">
+
+<section>
+  <h2>Monthly deliverables</h2>
+  <div class="card">
+    <table>
+      <tr><td class="d" style="width:50px">2</td><td class="k">New website pages</td><td>Service and condition pages on the format already ranking</td></tr>
+      <tr><td class="d">2</td><td class="k">Blog posts</td><td>Internal links to service pages, external to credible sources</td></tr>
+      <tr><td class="d">1</td><td class="k">Email + SMS campaign</td><td>One coordinated send</td></tr>
+      <tr><td class="d">2</td><td class="k">Social posts</td><td>Carousels and designed graphics, scheduled</td></tr>
+      <tr><td class="d">2</td><td class="k">Graphics if needed</td><td>Flyers, posters, event pieces</td></tr>
+      <tr><td class="d">1</td><td class="k">Client report</td><td>First business day of the month</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--ink-3);margin:12px 0 0"><b>Also ongoing:</b> Google Business Profile management, review monitoring, technical SEO, keyword tracking, CRM upkeep, domain/email/DNS admin.</p>
+    <p style="font-size:13px;color:var(--ink-3);margin:6px 0 0"><b>Outside scope:</b> photography, video, print production, ad spend, third-party software. August exception — Kaizen covering the photographer and the sticker reprint.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Status</h2>
+  <div class="card">
+    <h4>Done</h4>
+    <table>
+      <tr><td class="k" style="width:200px">New site live</td><td>adaptchiropracticwellness.com</td></tr>
+      <tr><td class="k">Change of Address</td><td>Filed and live in Search Console</td></tr>
+      <tr><td class="k">Google Business Profile</td><td>Renamed, new reviews landing under it</td></tr>
+      <tr><td class="k">Rebrand campaign</td><td>Sent to the full patient list</td></tr>
+      <tr><td class="k">Jane booking</td><td>Moved to the new subdomain</td></tr>
+      <tr><td class="k">Brand package</td><td>Logo, guide, business cards, gift card. Tri-fold finished.</td></tr>
+      <tr><td class="k">LED sign</td><td>Installed</td></tr>
+      <tr><td class="k">SMS reactivation</td><td>Running</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Open</h4>
+    <table>
+      <tr><td class="k" style="width:200px">SMS templates</td><td>Still say "Adapt Health Clinic", merge tag broken</td></tr>
+      <tr><td class="k">Booking links</td><td>Site-wide links point at the old Jane subdomain</td></tr>
+      <tr><td class="k">Footer + team pages</td><td>Old name still live</td></tr>
+      <tr><td class="k">Yelp</td><td>Listed as Grossman Chiropractic</td></tr>
+      <tr><td class="k">Duplicate pages</td><td>Two prenatal pages, plus /techniques/ which should be gone</td></tr>
+      <tr><td class="k">Indexing</td><td>64 indexed / 45 not. 3 are 404s, 13 discovered-not-crawled.</td></tr>
+      <tr><td class="k">Email domain</td><td>info@adaptcw.com warming — switch sending mid-September</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Calendar</h2>
+
+  <div class="month">
+    <div class="month-hd"><h3>Rest of August</h3><span class="th">Close the rebrand, capture assets</span></div>
+    <div class="month-body">
+      <div class="row"><div class="w">Wed–Thu</div><div class="c"><b>Event social posts live</b><p>Details are in hand. Multiple posts leading up to Aug 30, first ones out before the photoshoot. Needs to beat what's currently on their Instagram.</p></div></div>
+      <div class="row"><div class="w">Wed–Thu</div><div class="c"><b>Three team pages built</b><p>Dr. Paris, Eli Killen, Nathalia Ferreyra. Copy written and ready.</p></div></div>
+      <div class="row"><div class="w">This week</div><div class="c"><b>SEO + WordPress cleanup</b><p>Name change sweep, booking links, duplicate pages, 404s.</p></div></div>
+      <div class="row"><div class="w">Aug 25, 5pm</div><div class="c"><b>Team photoshoot + video</b><p>Full team at the LED sign, headshot for Dr. Paris, treatment shots, plus a short video with Dr. Mike on the rebrand.</p></div></div>
+      <div class="row"><div class="w">Aug 26–28</div><div class="c"><b>Photo edit, video cut, asset swap</b><p>New team photo onto the site and Google profile, Dr. Paris added to the team page.</p></div></div>
+      <div class="row"><div class="w">Aug 30</div><div class="c"><b>Client event</b><p>Daisy out of town. Everything delivered and scheduled by the 28th.</p></div></div>
+      <div class="row"><div class="w">Sep 1</div><div class="c"><b>August client report</b></div></div>
+    </div>
+  </div>
+
+  <div class="month">
+    <div class="month-hd"><h3>September</h3><span class="th">First full scope month</span></div>
+    <div class="month-body">
+      <div class="row"><div class="w">Pages ×2</div><div class="c"><b>Headaches &amp; Migraines · Sports Injuries</b><p>Condition pages on the Back Pain format. URL pattern is /conditions/[name]/ — matches what shipped, not the old migration sheet.</p></div></div>
+      <div class="row"><div class="w">Blogs ×2</div><div class="c"><b>Sciatica vs. piriformis · Desk posture and headaches</b><p>Both link into the new condition pages. Sciatica is already showing a +4,022% impressions jump, so the cluster is working.</p></div></div>
+      <div class="row"><div class="w">Campaign</div><div class="c"><b>Fall Reset</b><p>Email + SMS. First real offer campaign. Needs offer decisions from the client first.</p></div></div>
+      <div class="row"><div class="w">Social ×2</div><div class="c"><b>Team carousel · condition education carousel</b><p>Built from the new photography.</p></div></div>
+      <div class="row"><div class="w">Graphics ×2</div><div class="c"><b>In-office referral card + 1 TBD</b><p>Referrals are 57% of new patients with nothing physical supporting them.</p></div></div>
+      <div class="row"><div class="w">Mid-month</div><div class="c"><b>Email sender switches to info@adaptcw.com</b></div></div>
+      <div class="row"><div class="w">Oct 1</div><div class="c"><b>September client report</b></div></div>
+    </div>
+  </div>
+
+  <div class="month">
+    <div class="month-hd"><h3>October</h3><span class="th">Q4 — gift cards, referrals, reviews</span></div>
+    <div class="month-body">
+      <div class="row"><div class="w">Pages ×2</div><div class="c"><b>Gift Cards landing page · Hip Pain</b><p>Gift cards in time for holiday buying. Hip pain extends the existing sciatica/piriformis cluster.</p></div></div>
+      <div class="row"><div class="w">Blogs ×2</div><div class="c"><b>Holiday stress and posture · HBOT for recovery</b><p>HBOT is a differentiator nothing on the site explains. Claims need Dr. Mike's sign-off before publishing.</p></div></div>
+      <div class="row"><div class="w">Campaign</div><div class="c"><b>Gift card launch + refer-a-friend</b><p>Gift cards bring in people who'd never book for themselves.</p></div></div>
+      <div class="row"><div class="w">Social ×2</div><div class="c"><b>Gift card announcement · patient story</b><p>Using footage from the August shoot.</p></div></div>
+      <div class="row"><div class="w">Graphics ×2</div><div class="c"><b>Gift card print run · in-office holiday poster</b></div></div>
+      <div class="row"><div class="w">Nov 2</div><div class="c"><b>October report + Q4 planning</b><p>Three months of clean data on the new domain by then. Decide whether a paid budget makes sense for Q1.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Email strategy</h2>
+  <div class="card">
+    <p style="margin:0 0 14px">Current emails inform. They don't ask for anything, so they don't produce bookings. One send per month, rotating through four jobs:</p>
+    <div class="ladder">
+      <div class="step"><div class="n">1</div><div class="t"><b>Educate → book</b><p>Lead with a real problem, explain it, end with a booking link. Pulls from that month's blog content.</p></div></div>
+      <div class="step"><div class="n">2</div><div class="t"><b>Offer → act now</b><p>Dated, specific reason to book this month. The $225 first visit, a seasonal package, an intro session.</p></div></div>
+      <div class="step"><div class="n">3</div><div class="t"><b>Referral &amp; proof</b><p>Patient story, then an explicit ask. 57% of patients already come this way and the list has never been asked.</p></div></div>
+      <div class="step"><div class="n">4</div><div class="t"><b>Reactivate</b><p>90+ days out. Short, low pressure. The SMS version already produced a booking.</p></div></div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-3);margin:14px 0 0"><b>Offer ladder:</b> $225 first visit → referral incentive → Q4 gift card → HBOT or shockwave intro → partnership program.</p>
+    <p style="font-size:13px;color:var(--ink-3);margin:6px 0 0"><b>Blocked on three client decisions:</b> what he'll package or discount, gift card denominations and terms, referral incentive.</p>
+  </div>
+</section>
+
+<footer>Internal — Kaizen Agency. Client-facing version to be built separately.</footer>
+
+</div>
+</body>
+</html>
