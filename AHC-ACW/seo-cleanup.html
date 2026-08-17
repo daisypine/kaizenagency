@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Adapt — SEO + WordPress Cleanup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#008067;--accent-d:#01584a;--accent-l:#E6F4F0;--mint:#7EC0B1;
+  --ink:#1B231B;--ink-2:#42504A;--ink-3:#6B7A73;
+  --surface:#fff;--page:#F5F7F6;--line:#E2E7E4;--line-2:#EFF2F0;
+  --warn:#C77F00;--warn-bg:#FDF4E6;--crit:#A81B10;--crit-bg:#FCEEEC;--info:#0B5C9E;--info-bg:#EDF4FA;
+  --r1:#A8D8C8;--r3:#46A88E;--r4:#1E8A70;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:'Poppins',-apple-system,sans-serif;font-size:14.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;margin:0;line-height:1.2;font-weight:600}
+a{color:var(--accent)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px 70px}
+
+header{background:linear-gradient(140deg,#111A18,#0C2621 55%,#014034);color:#fff;padding:34px 0 30px}
+.eyebrow{font-family:'Outfit',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--mint);font-weight:700}
+header h1{font-size:30px;color:#fff;margin-top:10px}
+
+section{margin-top:36px}
+section>h2{font-size:21px;margin-bottom:14px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 24px;margin-bottom:12px}
+.card h4{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:16px 0 10px}
+.card h4:first-child{margin-top:0}
+
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px;margin-bottom:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+.tile .v{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--accent);line-height:1.05}
+.tile .l{font-size:12px;color:var(--ink-3);margin-top:4px;line-height:1.35}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;font-family:'Outfit',sans-serif;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:0 12px 8px 0;border-bottom:1.5px solid var(--line)}
+td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td.k{color:var(--ink);font-weight:500}
+code{background:var(--page);padding:1px 5px;border-radius:4px;font-size:12.5px;font-family:ui-monospace,Menlo,monospace;color:var(--accent-d);word-break:break-all}
+pre{background:#14191A;color:#D5E3DE;padding:14px 16px;border-radius:9px;overflow-x:auto;font-size:12px;line-height:1.6;font-family:ui-monospace,Menlo,monospace;margin:8px 0}
+.bar{height:10px;border-radius:6px;background:var(--r3);display:inline-block;vertical-align:middle;margin-right:8px}
+
+.flag{border-left:3px solid var(--crit);background:var(--crit-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.warn{border-left:3px solid var(--warn);background:var(--warn-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.good{border-left:3px solid var(--accent);background:var(--accent-l);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
+.flag b,.warn b,.good b{font-family:'Outfit',sans-serif}
+.flag ul,.warn ul{margin:7px 0 0;padding-left:18px}
+.flag li,.warn li{margin:4px 0}
+
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps>li{position:relative;padding:12px 0 12px 38px;border-bottom:1px solid var(--line-2)}
+ol.steps>li:last-child{border-bottom:none}
+ol.steps>li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:12px;width:25px;height:25px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:11.5px}
+ol.steps>li b{display:block;font-family:'Outfit',sans-serif;font-size:14px;margin-bottom:2px}
+ol.steps>li .m{color:var(--ink-3);font-size:12.5px}
+.tool{display:inline-block;font-family:'Outfit',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:2px 8px;border-radius:20px;background:var(--info-bg);color:var(--info);margin-left:6px}
+
+footer{margin-top:44px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:12px}
+@media(max-width:720px){header h1{font-size:24px}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Internal · Kaizen Agency</div>
+  <h1>SEO + WordPress Cleanup</h1>
+</div></header>
+
+<div class="wrap">
+
+<section>
+  <h2>What I need this week</h2>
+  <div class="card">
+    <ol class="steps">
+      <li><b>Name-change cleanup across the site</b><div class="m">Footer, both team page role lines, all booking links. Better Search Replace handles it — details below.</div></li>
+      <li><b>Three team pages built</b><div class="m">Dr. Paris, Eli Killen, Nathalia Ferreyra. Copy is written and ready in the separate team pages doc.</div></li>
+      <li><b>Duplicate and dead pages resolved</b><div class="m">Two prenatal pages, the techniques page, three 404s.</div></li>
+      <li><b>WordPress housekeeping</b><div class="m">Backup, staging, the two pending plugin updates.</div></li>
+    </ol>
+    <div class="good" style="margin-top:14px">
+      <b>Wednesday–Thursday ideally.</b> Event social posts go out the same window and the photoshoot is Aug 25.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Search Console data</h2>
+  <div class="kpi">
+    <div class="tile"><div class="v">64</div><div class="l">Pages indexed</div></div>
+    <div class="tile"><div class="v">45</div><div class="l">Not indexed, 5 reasons</div></div>
+    <div class="tile"><div class="v">94</div><div class="l">Clicks, last 28 days</div></div>
+    <div class="tile"><div class="v">59%</div><div class="l">Index coverage</div></div>
+  </div>
+
+  <div class="card">
+    <p style="margin:0 0 6px;font-size:13.5px">Domain property <code>sc-domain:adaptchiropracticwellness.com</code>, data from July 23. Change of Address is filed and live. Traffic is split across both properties during the transition — old domain did 173 clicks in July.</p>
+    <p style="margin:0;font-size:13.5px"><code>/conditions/sciatica/</code> is up <b>4,022% in impressions</b>. The condition-page cluster is working.</p>
+  </div>
+
+  <div class="card">
+    <h4>45 not indexed</h4>
+    <table>
+      <tr><th style="width:240px">Reason</th><th style="width:70px">Pages</th><th>Status</th><th style="width:110px">Action</th></tr>
+      <tr><td class="k">Page with redirect</td><td><span class="bar" style="width:46px"></span>23</td><td>Old URLs 301-ing correctly. Migration working as intended.</td><td>Spot-check 5</td></tr>
+      <tr><td class="k">Discovered — not indexed</td><td><span class="bar" style="width:26px;background:var(--r4)"></span>13</td><td>Google found them, chose not to crawl. Thin content or no internal links pointing at them.</td><td>Fix + request indexing</td></tr>
+      <tr><td class="k">Excluded by 'noindex'</td><td><span class="bar" style="width:8px;background:var(--r1)"></span>4</td><td>Fine if intentional. Confirm nothing commercial is in there.</td><td>Verify</td></tr>
+      <tr><td class="k">Not found (404)</td><td><span class="bar" style="width:6px;background:var(--crit)"></span>3</td><td>Real errors.</td><td>Fix this week</td></tr>
+      <tr><td class="k">Alternate page with canonical</td><td><span class="bar" style="width:4px;background:var(--r1)"></span>2</td><td>Working as intended.</td><td>None</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--ink-3);margin:12px 0 0">All five read "Validation: Not Started." After the fixes, hit <b>Validate Fix</b> on each so Google re-crawls instead of waiting.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Plugins right now</h2>
+  <div class="card">
+    <p style="margin:0 0 12px;font-size:13.5px">20 active. Nothing needs buying. Relevant ones:</p>
+    <table>
+      <tr><th style="width:220px">Plugin</th><th>Use for</th></tr>
+      <tr><td class="k">Better Search Replace</td><td>Database-wide find/replace, serialisation-safe. Does the name change.</td></tr>
+      <tr><td class="k">All in One SEO Pro</td><td>Redirection Manager, sitemaps, titles/meta, canonicals</td></tr>
+      <tr><td class="k">AIOSEO — Author SEO</td><td>Author schema for the team pages</td></tr>
+      <tr><td class="k">AIOSEO — Local Business</td><td>LocalBusiness schema — update the name here</td></tr>
+      <tr><td class="k">AIOSEO — IndexNow</td><td>Instant ping to Bing on publish</td></tr>
+      <tr><td class="k">AIOSEO — Link Assistant</td><td>Finds orphaned pages and internal link gaps</td></tr>
+      <tr><td class="k">Broken Link Checker</td><td>Remaining old-domain links and internal 404s</td></tr>
+      <tr><td class="k">Duplicator</td><td>Backup before anything</td></tr>
+      <tr><td class="k">SiteGround Speed Optimizer</td><td>Caching — purge after every change</td></tr>
+      <tr><td class="k">WPCode Lite</td><td>Header/footer snippet injection</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--ink-3);margin:12px 0 0"><b>No ACF.</b> Every page is hand-built in Elementor, so bulk page production isn't possible with the current setup. Fine for this week's three pages. Separate conversation once cleanup is done.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Better Search Replace — four passes</h2>
+  <div class="flag">
+    <b>Before running:</b>
+    <ul>
+      <li>Duplicator backup, fresh. Not the nightly one.</li>
+      <li>SiteGround staging first, then push.</li>
+      <li>Tick "Run as dry run" and check the match count before committing.</li>
+      <li>Never raw SQL. Elementor stores content serialised in <code>wp_postmeta</code> — a plain SQL replace breaks the length prefixes and blanks every page. BSR handles serialisation.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>Pass 1 — brand name</h4>
+<pre>Search:  Adapt Health Clinic
+Replace: Adapt Chiropractic &amp; Wellness</pre>
+    <p style="font-size:13px;color:var(--ink-3);margin:0">Footer, Dr. Grossman's "Founder of Adapt Health Clinic", Dr. Kyndra's "Chiropractor at Adapt Health Clinic", stray mentions in body copy and meta.</p>
+
+    <h4>Pass 2 — booking subdomain</h4>
+<pre>Search:  adapthealthclinic.janeapp.com
+Replace: adaptchiropracticwellness.janeapp.com</pre>
+    <p style="font-size:13px;color:var(--ink-3);margin:0">Every Book Online button site-wide.</p>
+
+    <h4>Pass 3 — typo</h4>
+<pre>Search:  Nathalia Ferreyr     ← trailing space
+Replace: Nathalia Ferreyra    ← trailing space</pre>
+    <div class="flag" style="margin:8px 0 0">
+      <b>Trailing spaces matter.</b> "Ferreyr" is a substring of "Ferreyra". Without the space this turns every correct "Ferreyra" into "Ferreyraa".
+    </div>
+
+    <h4>Pass 4 — old domain</h4>
+<pre>Search:  https://adapthealthclinic.com
+Replace: https://adaptchiropracticwellness.com</pre>
+    <div class="flag" style="margin:8px 0 0">
+      <b>Anchor on <code>https://</code>.</b> Searching the bare <code>adapthealthclinic.com</code> rewrites the live email addresses too — <code>info@</code>, <code>drmike@</code>, <code>michaeld@</code> are all still receiving mail.
+    </div>
+  </div>
+
+  <div class="good">
+    After all four: purge SiteGround cache, then Elementor → Tools → Regenerate CSS &amp; Data. Spot-check the footer, both team pages, and a booking button on mobile.
+  </div>
+</section>
+
+<section>
+  <h2>Pages and redirects</h2>
+  <div class="card">
+    <table>
+      <tr><td class="k" style="width:220px">Duplicate prenatal pages</td><td><code>/prenatal-chiropractor/</code> and <code>/prenatal-chiropractor-campbell/</code> both live, same target term. Pick one, 301 the other into it, remove the loser from nav.</td></tr>
+      <tr><td class="k">Techniques page</td><td><code>/techniques/</code> — Dr. Mike asked for it gone. 301 to <code>/services/</code>.</td></tr>
+      <tr><td class="k">3 × 404</td><td>GSC → Pages → Not found → export. Either 301 to the closest live page via AIOSEO Redirects, or remove whatever links to them. Broken Link Checker finds the source.</td></tr>
+      <tr><td class="k">13 × discovered–not-indexed</td><td>Run Link Assistant. Anything with no internal links pointing at it reads as unimportant — every page needs at least two. Then URL Inspection → Request Indexing.</td></tr>
+      <tr><td class="k">Trailing slashes</td><td><code>/chiropractic-services</code> has none, everything else does. Normalise in permalinks.</td></tr>
+      <tr><td class="k">23 × redirects</td><td>Spot-check five land on the intended page, not the homepage.</td></tr>
+    </table>
+    <div class="good" style="margin-top:12px">
+      <b>Duplicating pages and sections is fine</b> — that's the fastest way to build the team pages and keep the format consistent. Just make sure every link in the duplicate points where it should. A duplicated page that still links back to the source page is the most common thing to miss.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>WordPress</h2>
+  <div class="card">
+    <table>
+      <tr><td class="k" style="width:220px">Elementor Pro 3.33.2</td><td>Major version available. Staging first, verify every template renders, then push.</td></tr>
+      <tr><td class="k">Astra Pro 4.13.5 → 4.13.7</td><td>Minor. Low risk.</td></tr>
+      <tr><td class="k">Auto-updates</td><td>5 plugins have them disabled. Keep Elementor and Astra manual, AIOSEO add-ons can be automatic.</td></tr>
+      <tr><td class="k">Staging</td><td>SiteGround includes it. Create one before any of the above if it doesn't exist.</td></tr>
+      <tr><td class="k">Backups</td><td>Confirm the schedule and that a restore has actually been tested.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Order</h2>
+  <div class="card">
+    <ol class="steps">
+      <li><b>Duplicator backup + staging</b><span class="tool">Duplicator</span></li>
+      <li><b>Better Search Replace, four passes, dry run each</b><div class="m">On staging.</div><span class="tool">BSR</span></li>
+      <li><b>Purge caches, QA</b><div class="m">Footer, team pages, booking buttons, mobile.</div></li>
+      <li><b>Push to live, purge again</b></li>
+      <li><b>Redirects: prenatal duplicate, techniques, 3 × 404</b><span class="tool">AIOSEO Redirects</span></li>
+      <li><b>Update LocalBusiness schema name</b><div class="m">Validate in Rich Results Test.</div><span class="tool">AIOSEO Local</span></li>
+      <li><b>Build the three team pages</b><span class="tool">Author SEO</span></li>
+      <li><b>Internal links on the 13 orphans, request indexing</b><span class="tool">Link Assistant</span></li>
+      <li><b>Regenerate and resubmit sitemap</b><span class="tool">AIOSEO</span></li>
+      <li><b>Validate Fix on all five GSC issues</b></li>
+      <li><b>Elementor + Astra updates</b><div class="m">Staging first. Last, so a layout break can't be confused with a redirect problem.</div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>Need from you</h2>
+  <div class="card">
+    <table>
+      <tr><td class="k" style="width:230px">The URL lists</td><td>Export the URLs behind each of the five "not indexed" reasons. Counts tell us the shape, URLs tell us what to do.</td></tr>
+      <tr><td class="k">Old domain trend</td><td>Clicks on <code>adapthealthclinic.com</code> for the last 28 days — tells us how far through the transition we are.</td></tr>
+      <tr><td class="k">Access</td><td>Search Console, Analytics, WordPress, SiteGround. Nothing starts without it.</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>Internal — Kaizen Agency.</footer>
+
+</div>
+</body>
+</html>
