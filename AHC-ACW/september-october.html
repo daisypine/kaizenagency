@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Adapt October Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: single readable column, quick-links rail up top, sections as quiet bands; Adapt green is the only accent */
+:root{
+  --bg:#f6f8f7; --surface:#ffffff; --fg:#17231f; --muted:#5a6b65; --line:#dbe4e0;
+  --accent:#008067; --accent-soft:#e3f2ee; --accent-fg:#ffffff; --done:#0b7a4b;
+  --display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1715; --surface:#16211e; --fg:#e6efec; --muted:#9db0a9; --line:#26352f;
+  --accent:#3fbf9f; --accent-soft:#173a31; --accent-fg:#06231c; --done:#5fd49b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1715; --surface:#16211e; --fg:#e6efec; --muted:#9db0a9; --line:#26352f;
+  --accent:#3fbf9f; --accent-soft:#173a31; --accent-fg:#06231c; --done:#5fd49b; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:760px;margin:0 auto}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+header{padding-block:48px 28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--accent)}
+h1{font-size:clamp(34px,6vw,50px);font-weight:700;margin-top:8px}
+.lede{color:var(--muted);max-width:60ch;margin:12px 0 0}
+section{padding-block:36px;border-bottom:1px solid var(--line);display:grid;gap:14px}
+h2{font-size:26px;font-weight:600}
+h3{font-size:19px;font-weight:600}
+p{margin:0;max-width:65ch}
+ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.muted{color:var(--muted)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.link{display:grid;gap:2px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
+.link:hover{border-color:var(--accent)}
+.link strong{font-family:var(--display);font-weight:600;font-size:18px;color:var(--accent)}
+.link span{font-size:14px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.stat b{display:block;font-family:var(--display);font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--fg)}
+.stat span{font-size:14px;color:var(--muted)}
+.pkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 24px}
+.pkg div{display:flex;gap:10px;align-items:baseline}
+.pkg .n{font-family:var(--display);font-weight:700;font-size:22px;color:var(--accent);min-width:1.4em;font-variant-numeric:tabular-nums}
+.rows{display:grid;gap:12px}
+.row{display:grid;grid-template-columns:130px 1fr;gap:4px 16px}
+.row .k{font-family:var(--display);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:13px;padding-top:3px}
+.row > div{min-width:0}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+.posts{display:grid;gap:10px}
+.post{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start}
+.day{font-family:var(--display);font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:8px;text-align:center;padding:6px 0;font-size:15px}
+.post > div{min-width:0}
+.done{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--done);letter-spacing:.04em;text-transform:uppercase}
+.done::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--done)}
+.steps{counter-reset:s;list-style:none;padding:0;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:700;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-size:15px}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-family:var(--display);font-weight:600;padding:10px 16px;border-radius:8px;justify-self:start}
+.note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+footer{padding-block:32px 0;color:var(--muted);font-size:15px}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;background:var(--accent-soft);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Adapt Chiropractic &amp; Wellness · October 2026</div>
+  <h1>Your September report + the plan for October</h1>
+  <p class="lede">Everything in one place: your report, what we got done, what's happening this month, and the couple of things I need from you. Bookmark this one (:</p>
+</header>
+
+<section id="links">
+  <h2>Quick links</h2>
+  <div class="links">
+    <a class="link" href="https://lookerstudio.google.com/reporting/b65fe0bd-8dd9-4a8c-af7e-4241afee171e" target="_blank" rel="noopener"><strong>Your live report</strong><span>Updates on its own every month</span></a>
+    <a class="link" href="https://claude.ai/code/artifact/df4347dc-9319-48f9-936b-4a08bda8b421" target="_blank" rel="noopener"><strong>Content shoot plan</strong><span>The monthly shoot + 2 example scripts</span></a>
+    <a class="link" href="https://mail.google.com/mail/u/0/#settings/accounts" target="_blank" rel="noopener"><strong>Your Gmail send settings</strong><span>Opens the exact page for the steps below</span></a>
+    <a class="link" href="https://support.google.com/mail/answer/22370" target="_blank" rel="noopener"><strong>Google's send-as guide</strong><span>Google's own walkthrough, with pictures</span></a>
+    <a class="link" href="https://adaptchiropracticwellness.com" target="_blank" rel="noopener"><strong>Your website</strong><span>adaptchiropracticwellness.com</span></a>
+    <a class="link" href="https://adaptchiropracticwellness.janeapp.com" target="_blank" rel="noopener"><strong>Online booking</strong><span>Your Jane booking page</span></a>
+  </div>
+</section>
+
+<section id="report">
+  <h2>September at a glance</h2>
+  <div class="stats">
+    <div class="stat"><b>109</b><span>website visits</span></div>
+    <div class="stat"><b>63</b><span>people, 54 of them new</span></div>
+    <div class="stat"><b>~50%</b><span>came from Google search</span></div>
+    <div class="stat"><b>18 → 14.5</b><span>average Google ranking (lower is better)</span></div>
+  </div>
+  <p>Search clicks dipped a bit after the domain switch. That's normal and what we talked about before the move. The 1 Year page in your report shows the old and new domain together so you can see the full picture.</p>
+</section>
+
+<section id="september">
+  <h2>What we did in September</h2>
+  <ul>
+    <li>New Chiropractic Adjustments and Plantar Fasciitis pages</li>
+    <li>San Jose and Conditions pages rewritten to rank better</li>
+    <li>New team photos across the site, Dr. Paris added, and Nori's page is live (:</li>
+    <li>Condition + service pages refreshed and submitted to Google</li>
+    <li>Apple Maps updated to Adapt Chiropractic &amp; Wellness</li>
+    <li>Unwind thank-you newsletter</li>
+  </ul>
+</section>
+
+<section id="october">
+  <h2>October: Campbell + getting found</h2>
+  <div class="rows">
+    <div class="row"><div class="k">Website</div><div>A dedicated Campbell page so you show up better for "chiropractor Campbell", the new team photo on the homepage, and finishing the last old-name and booking link cleanup. Prenatal Chiropractic and Prenatal Massage are back in the menu too.</div></div>
+    <div class="row"><div class="k">Site health</div><div>I ran a full check of the site. Every page loads and nothing is broken or hidden from Google. This month we're cleaning up page titles that still show the old name, merging a couple of duplicate pages, and adding image descriptions so Google can read your photos.</div></div>
+    <div class="row"><div class="k">Blogs</div><div>Sciatica vs. piriformis · why desk work causes afternoon headaches · why plantar fasciitis heel pain is worst in the morning · runner's knee</div></div>
+    <div class="row"><div class="k">Email + text</div><div>Monday hours with Dr. Paris and Eli</div></div>
+    <div class="row"><div class="k">Social</div><div>An FAQ carousel (with the insurance answer you sent over), plus the sample posts below</div></div>
+    <div class="row"><div class="k">Design</div><div>An in-office referral card and a gift card teaser</div></div>
+  </div>
+</section>
+
+<section id="emails">
+  <h2>The repeat emails</h2>
+  <p>Still working with Trust Driven Care on why it re-sent. Part of it was duplicate contacts (like your old and new info@ emails both being on the list), so I'm cleaning those up so everyone only gets one going forward. Starting in October, emails go to a tagged list (the right group for each message) instead of everyone.</p>
+  <p>We're also setting up your adaptcw.com email as the sender in Trust Driven Care. We'll warm it up slowly first, with small sends that grow over a few weeks, so it lands in inboxes and not spam. Then all your campaigns will come from that address.</p>
+</section>
+
+<section id="social">
+  <h2>Social: 4 sample posts</h2>
+  <p class="muted">What 2 weeks of posting could look like. Posting 2 times a week on top of stories, each post tied back to a page or blog on the site.</p>
+  <div class="posts">
+    <div class="post"><div class="day">Mon</div><div><h3>Rock, paper, scissors</h3><p class="muted">A big trend right now. Two hands, "crack my own neck" vs "book the adjustment." We'd shoot the hands in 10 minutes.</p></div></div>
+    <div class="post"><div class="day">Thu</div><div><h3>Sciatica or piriformis?</h3><p class="muted">Links to the new blog.</p></div></div>
+    <div class="post"><div class="day">Mon</div><div><h3>3 signs your headache starts in your neck</h3><p class="muted">An easy desk stretch people save.</p></div></div>
+    <div class="post"><div class="day">Thu</div><div><h3>Where does it hurt? Follow the line</h3><p class="muted">Where it hurts, what you want to get back to, and what a first visit looks like.</p></div></div>
+  </div>
+  <p>Would love to loop in Dr. Kyndra to look over anything clinical before it goes up. Open to giving this a try?</p>
+</section>
+
+<section id="shoot">
+  <h2>Idea: a monthly content shoot</h2>
+  <p>One quick shoot a month at the clinic, about 2 hours, mostly with Dr. Kyndra. From that one session we'd get 1 reel + 1 carousel every week for the month. I bring the scripts and shot list, and we handle all the editing, captions and scheduling.</p>
+  <a class="cta" href="https://claude.ai/code/artifact/df4347dc-9319-48f9-936b-4a08bda8b421" target="_blank" rel="noopener">See the plan + example scripts</a>
+  <p class="muted">If you're in, I'd love to do the first one the first week of November.</p>
+</section>
+
+<section id="coming">
+  <h2>Coming up</h2>
+  <div class="rows">
+    <div class="row"><div class="k">November</div><div>Holiday gift cards + refer-a-friend</div></div>
+    <div class="row"><div class="k">December</div><div>Reminder to use HSA/FSA before the year resets, and booking January</div></div>
+  </div>
+</section>
+
+<section id="billing">
+  <span class="done">Done</span>
+  <h2>Your billing name</h2>
+  <p>I changed the business name on your Google Workspace billing to Adapt Chiropractic &amp; Wellness, so your next invoice should show the new name. Nothing changes with your emails.</p>
+</section>
+
+<section id="send-as">
+  <h2>Send + reply from your adaptcw.com email</h2>
+  <p>Please make sure your emails send and reply from your adaptcw.com address. It has to be done from inside your Gmail, and it takes about 2 minutes.</p>
+  <a class="cta" href="https://mail.google.com/mail/u/0/#settings/accounts" target="_blank" rel="noopener">Open my Gmail settings</a>
+  <ol class="steps">
+    <li><div>In Gmail, click the gear icon (top right) &gt; <b>See all settings</b>. The button above skips this step.</div></li>
+    <li><div>Go to the <b>Accounts</b> tab &gt; <b>Send mail as</b> &gt; <b>Add another email address</b>.</div></li>
+    <li><div>Enter <code>drmike@adaptcw.com</code>, leave <b>Treat as an alias</b> checked, and click <b>Next step</b>. If it asks for a code, it'll show up in your inbox.</div></li>
+    <li><div>Back on that page, click <b>make default</b> next to drmike@adaptcw.com.</div></li>
+    <li><div>Under <b>When replying to a message</b>, choose <b>Always reply from default address</b>.</div></li>
+  </ol>
+  <div class="note">Same steps on the info@ inbox with <code>info@adaptcw.com</code>. To check it worked, send yourself a test email and make sure it says it's from @adaptcw.com. Or we can hop on a quick call and I'll walk you through it. Google's own guide is <a href="https://support.google.com/mail/answer/22370" target="_blank" rel="noopener">here</a>.</div>
+</section>
+
+<section id="package">
+  <h2>What's in your monthly package</h2>
+  <div class="pkg">
+    <div><span class="n">3</span><span>SEO pages</span></div>
+    <div><span class="n">4</span><span>blogs, each linked to a page on your site</span></div>
+    <div><span class="n">1+1</span><span>email + text campaign</span></div>
+    <div><span class="n">2</span><span>social posts</span></div>
+    <div><span class="n">2</span><span>flyers, posters or graphics</span></div>
+    <div><span class="n">1</span><span>monthly report + a 20 minute call</span></div>
+  </div>
+  <p class="muted">Also included: Google Business Profile, review monitoring, technical SEO (site health, speed, fixes), keyword tracking, Trust Driven Care upkeep, and domain/email/DNS help.</p>
+</section>
+
+<section id="need">
+  <h2>What I need from you</h2>
+  <ul>
+    <li><b>Gift cards:</b> what amounts, and any terms (expiration, what they can be used for)?</li>
+    <li><b>Referral:</b> what do you want to give someone for referring a friend?</li>
+    <li><b>End of year event with Maria:</b> still interested? If so I'll start scoping it out.</li>
+  </ul>
+</section>
+
+<footer>
+  If there's something you want moved up the list, just say the word!<br>
+  Daisy · Kaizen Agency
+</footer>
+</div>
+</body>
+</html>
