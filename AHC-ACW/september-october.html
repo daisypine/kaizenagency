@@ -6,78 +6,86 @@
 <meta name="robots" content="noindex">
 <title>Adapt October Update</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
 <style>
-/* Layout: single readable column, quick-links rail up top, sections as quiet bands; Adapt green is the only accent */
+/* Layout: Adapt brand header band with logo, then a light single column of quiet sections; Adapt green is the one accent */
 :root{
-  --bg:#f6f8f7; --surface:#ffffff; --fg:#17231f; --muted:#5a6b65; --line:#dbe4e0;
-  --accent:#008067; --accent-soft:#e3f2ee; --accent-fg:#ffffff; --done:#0b7a4b;
-  --display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
-  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#F5F7F6; --surface:#FFFFFF; --fg:#1B231B; --muted:#5B6B62; --line:#E2E7E4;
+  --accent:#008067; --accent-soft:#E6F4F0; --accent-fg:#FFFFFF; --teal:#7EC0B1; --band:#008067;
+  --display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0f1715; --surface:#16211e; --fg:#e6efec; --muted:#9db0a9; --line:#26352f;
-  --accent:#3fbf9f; --accent-soft:#173a31; --accent-fg:#06231c; --done:#5fd49b; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f1715; --surface:#16211e; --fg:#e6efec; --muted:#9db0a9; --line:#26352f;
-  --accent:#3fbf9f; --accent-soft:#173a31; --accent-fg:#06231c; --done:#5fd49b; color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0}
-body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:16px;padding-block:0 64px}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65;font-weight:400}
+.band{background:linear-gradient(var(--band) 0 calc(100% - 90px),var(--bg) calc(100% - 90px));color:#FFFFFF;padding-inline:16px;padding-block:26px 0}
+.band-in{max-width:760px;margin:0 auto;display:grid;gap:22px}
+.logo{height:42px;width:auto;max-width:100%;display:block}
+.wordmark{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.01em}
+.hero{background:var(--surface);border-radius:14px 14px 0 0;padding:30px 28px 26px;color:var(--fg);box-shadow:0 -1px 0 rgba(0,0,0,.02)}
 .wrap{max-width:760px;margin:0 auto}
+.page{padding-inline:16px;padding-block:0 64px}
+.card{background:var(--surface);border-radius:0 0 14px 14px;padding:0 28px 8px;box-shadow:0 1px 2px rgba(27,35,27,.05)}
+@media (max-width:520px){.hero{padding:26px 18px 20px}.card{padding:0 18px 8px}}
 a{color:var(--accent);text-underline-offset:3px}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
-header{padding-block:48px 28px;border-bottom:1px solid var(--line)}
-.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--accent)}
-h1{font-size:clamp(34px,6vw,50px);font-weight:700;margin-top:8px}
-.lede{color:var(--muted);max-width:60ch;margin:12px 0 0}
-section{padding-block:36px;border-bottom:1px solid var(--line);display:grid;gap:14px}
-h2{font-size:26px;font-weight:600}
-h3{font-size:19px;font-weight:600}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0;color:var(--fg)}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
+h1{font-size:clamp(30px,5.5vw,44px);font-weight:600;margin-top:8px}
+.hi{font-family:var(--display);font-size:20px;font-weight:500;margin:16px 0 6px}
+.lede{color:var(--muted);max-width:60ch;margin:0}
+section{padding-block:30px;border-top:1px solid var(--line);display:grid;gap:14px}
+h2{font-size:24px;font-weight:600}
+h3{font-size:17px;font-weight:600}
 p{margin:0;max-width:65ch}
 ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
 .muted{color:var(--muted)}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-.link{display:grid;gap:2px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.link{display:grid;gap:2px;padding:14px 16px;background:var(--accent-soft);border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
 .link:hover{border-color:var(--accent)}
-.link strong{font-family:var(--display);font-weight:600;font-size:18px;color:var(--accent)}
-.link span{font-size:14px;color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.stat{padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
-.stat b{display:block;font-family:var(--display);font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--fg)}
-.stat span{font-size:14px;color:var(--muted)}
+.link strong{font-family:var(--display);font-weight:600;font-size:17px;color:var(--accent)}
+.link span{font-size:13.5px;color:var(--muted)}
+.stats{display:grid;align-items:start;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{padding:14px 16px;border:1px solid var(--line);border-radius:10px}
+.stat b{display:block;font-family:var(--display);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.stat span{font-size:13.5px;color:var(--muted)}
 .pkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 24px}
 .pkg div{display:flex;gap:10px;align-items:baseline}
-.pkg .n{font-family:var(--display);font-weight:700;font-size:22px;color:var(--accent);min-width:1.4em;font-variant-numeric:tabular-nums}
+.pkg .n{font-family:var(--display);font-weight:600;font-size:22px;color:var(--accent);min-width:1.6em;font-variant-numeric:tabular-nums}
 .rows{display:grid;gap:12px}
-.row{display:grid;grid-template-columns:130px 1fr;gap:4px 16px}
-.row .k{font-family:var(--display);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:13px;padding-top:3px}
+.row{display:grid;grid-template-columns:120px 1fr;gap:4px 16px}
+.row .k{font-family:var(--display);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:12.5px;padding-top:3px}
 .row > div{min-width:0}
 @media (max-width:520px){.row{grid-template-columns:1fr}}
-.posts{display:grid;gap:10px}
-.post{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start}
-.day{font-family:var(--display);font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:8px;text-align:center;padding:6px 0;font-size:15px}
+.posts{display:grid;gap:12px}
+.post{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start}
+.day{font-family:var(--display);font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:8px;text-align:center;padding:6px 0;font-size:14px}
 .post > div{min-width:0}
-.done{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--done);letter-spacing:.04em;text-transform:uppercase}
-.done::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--done)}
+.done{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;font-size:13px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.done::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent)}
 .steps{counter-reset:s;list-style:none;padding:0;gap:10px}
 .steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
-.steps li::before{content:counter(s);font-family:var(--display);font-weight:700;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-size:15px}
-.cta{display:inline-block;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-family:var(--display);font-weight:600;padding:10px 16px;border-radius:8px;justify-self:start}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-size:14px}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-family:var(--display);font-weight:600;padding:10px 18px;border-radius:999px;justify-self:start}
+.cta:hover{background:#006B56}
 .note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
-footer{padding-block:32px 0;color:var(--muted);font-size:15px}
-code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;background:var(--accent-soft);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--accent-soft);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
-
-<div class="wrap">
-<header>
-  <div class="eyebrow">Adapt Chiropractic &amp; Wellness · October 2026</div>
-  <h1>Your September report + the plan for October</h1>
-  <p class="lede">Everything in one place: your report, what we got done, what's happening this month, and the couple of things I need from you. Bookmark this one (:</p>
-</header>
+<div class="band"><div class="band-in">
+  <img class="logo" src="https://adaptchiropracticwellness.com/wp-content/uploads/2025/10/daisypineda55_FO8309B091F46_LOGO-WHITE-REV20-1-scaled-e1784096379236-768x137.png" alt="Adapt Chiropractic &amp; Wellness" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+  <div class="wordmark" hidden>Adapt Chiropractic &amp; Wellness</div>
+  <div class="hero">
+    <div class="eyebrow">October 2026 update</div>
+    <h1>Your September report + the plan for October</h1>
+    <p class="hi">Hi Dr. Mike!</p>
+    <p class="lede">Everything in one place: your report, what we got done, what's happening this month, and the couple of things I need from you. Bookmark this one (:</p>
+  </div>
+</div></div>
+<div class="page"><div class="wrap"><div class="card">
 
 <section id="links">
   <h2>Quick links</h2>
@@ -97,7 +105,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;background:var(--a
     <div class="stat"><b>109</b><span>website visits</span></div>
     <div class="stat"><b>63</b><span>people, 54 of them new</span></div>
     <div class="stat"><b>~50%</b><span>came from Google search</span></div>
-    <div class="stat"><b>18 → 14.5</b><span>average Google ranking (lower is better)</span></div>
+    <div class="stat"><b>14.5</b><span>avg. Google position, up from 18</span></div>
   </div>
   <p>Search clicks dipped a bit after the domain switch. That's normal and what we talked about before the move. The 1 Year page in your report shows the old and new domain together so you can see the full picture.</p>
 </section>
@@ -201,10 +209,11 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.92em;background:var(--a
   </ul>
 </section>
 
+</div>
 <footer>
   If there's something you want moved up the list, just say the word!<br>
   Daisy · Kaizen Agency
 </footer>
-</div>
+</div></div>
 </body>
 </html>
