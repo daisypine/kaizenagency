@@ -8,32 +8,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
 <style>
-/* Layout: Adapt brand header band with logo, then a light single column of quiet sections; Adapt green is the one accent */
+/* Layout: white logo bar, then one light column of quiet sections; Adapt green is the one accent */
 :root{
   --bg:#F5F7F6; --surface:#FFFFFF; --fg:#1B231B; --muted:#5B6B62; --line:#E2E7E4;
-  --accent:#008067; --accent-soft:#E6F4F0; --accent-fg:#FFFFFF; --teal:#7EC0B1; --band:#008067;
+  --accent:#008067; --accent-dark:#006B56; --accent-soft:#E6F4F0; --accent-fg:#FFFFFF;
   --display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
   --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65;font-weight:400}
-.band{background:linear-gradient(var(--band) 0 calc(100% - 90px),var(--bg) calc(100% - 90px));color:#FFFFFF;padding-inline:16px;padding-block:26px 0}
-.band-in{max-width:760px;margin:0 auto;display:grid;gap:22px}
-.logo{height:42px;width:auto;max-width:100%;display:block}
-.wordmark{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.01em}
-.hero{background:var(--surface);border-radius:14px 14px 0 0;padding:30px 28px 26px;color:var(--fg);box-shadow:0 -1px 0 rgba(0,0,0,.02)}
-.wrap{max-width:760px;margin:0 auto}
-.page{padding-inline:16px;padding-block:0 64px}
-.card{background:var(--surface);border-radius:0 0 14px 14px;padding:0 28px 8px;box-shadow:0 1px 2px rgba(27,35,27,.05)}
-@media (max-width:520px){.hero{padding:26px 18px 20px}.card{padding:0 18px 8px}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
+.wrap{max-width:780px;margin:0 auto}
+.top{background:var(--surface);border-bottom:1px solid var(--line);padding-inline:16px;padding-block:18px}
+.logo{width:230px;max-width:70vw;aspect-ratio:5.8/1;overflow:hidden;position:relative}
+.logo img{position:absolute;width:123.2%;max-width:none;left:-11.6%;top:-305%}
+.wordmark{font-family:var(--display);font-weight:600;font-size:20px;color:var(--fg)}
+.page{padding-inline:16px;padding-block:28px 64px}
+.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 1px 2px rgba(27,35,27,.05)}
+@media (max-width:520px){.card{padding:4px 18px 8px}}
 a{color:var(--accent);text-underline-offset:3px}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0;color:var(--fg)}
+.hero{padding-block:26px 26px;display:grid;gap:10px}
 .eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
-h1{font-size:clamp(30px,5.5vw,44px);font-weight:600;margin-top:8px}
-.hi{font-family:var(--display);font-size:20px;font-weight:500;margin:16px 0 6px}
+h1{font-size:clamp(30px,5.5vw,44px);font-weight:600}
 .lede{color:var(--muted);max-width:60ch;margin:0}
 section{padding-block:30px;border-top:1px solid var(--line);display:grid;gap:14px}
 h2{font-size:24px;font-weight:600}
@@ -41,25 +40,25 @@ h3{font-size:17px;font-weight:600}
 p{margin:0;max-width:65ch}
 ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
 .muted{color:var(--muted)}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
-.link{display:grid;gap:2px;padding:14px 16px;background:var(--accent-soft);border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.link{display:grid;gap:4px;padding:16px 18px;background:var(--accent-soft);border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
 .link:hover{border-color:var(--accent)}
 .link strong{font-family:var(--display);font-weight:600;font-size:17px;color:var(--accent)}
-.link span{font-size:13.5px;color:var(--muted)}
-.stats{display:grid;align-items:start;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.link span{font-size:14px;color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:start}
 .stat{padding:14px 16px;border:1px solid var(--line);border-radius:10px}
-.stat b{display:block;font-family:var(--display);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.stat b{display:block;font-family:var(--display);font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
 .stat span{font-size:13.5px;color:var(--muted)}
-.pkg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 24px}
-.pkg div{display:flex;gap:10px;align-items:baseline}
-.pkg .n{font-family:var(--display);font-weight:600;font-size:22px;color:var(--accent);min-width:1.6em;font-variant-numeric:tabular-nums}
-.rows{display:grid;gap:12px}
+.rows{display:grid;gap:16px}
 .row{display:grid;grid-template-columns:120px 1fr;gap:4px 16px}
 .row .k{font-family:var(--display);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:12.5px;padding-top:3px}
-.row > div{min-width:0}
+.row > div{min-width:0;display:grid;gap:6px}
 @media (max-width:520px){.row{grid-template-columns:1fr}}
+.tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 10px;margin-left:6px;vertical-align:middle}
 .posts{display:grid;gap:12px}
-.post{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:start}
+.post{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:start}
 .day{font-family:var(--display);font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:8px;text-align:center;padding:6px 0;font-size:14px}
 .post > div{min-width:0}
 .done{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;font-size:13px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
@@ -68,46 +67,57 @@ ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
 .steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
 .steps li::before{content:counter(s);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-size:14px}
 .cta{display:inline-block;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-family:var(--display);font-weight:600;padding:10px 18px;border-radius:999px;justify-self:start}
-.cta:hover{background:#006B56}
+.cta:hover{background:var(--accent-dark)}
 .note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.pkg{display:grid;gap:8px}
+.pkg div{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:baseline}
+.pkg .n{font-family:var(--display);font-weight:600;font-size:20px;color:var(--accent);font-variant-numeric:tabular-nums}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.contact div{border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.contact b{display:block;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contact span{font-family:var(--display);font-size:18px;font-weight:500;user-select:all}
+.need{counter-reset:n;list-style:none;padding:0;gap:14px}
+.need li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.need li::before{content:counter(n);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:14px}
 footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
 code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--accent-soft);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
-<div class="band"><div class="band-in">
-  <img class="logo" src="https://adaptchiropracticwellness.com/wp-content/uploads/2025/10/daisypineda55_FO8309B091F46_LOGO-WHITE-REV20-1-scaled-e1784096379236-768x137.png" alt="Adapt Chiropractic &amp; Wellness" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-  <div class="wordmark" hidden>Adapt Chiropractic &amp; Wellness</div>
-  <div class="hero">
-    <div class="eyebrow">October 2026 update</div>
-    <h1>Your September report + the plan for October</h1>
-    <p class="hi">Hi Dr. Mike!</p>
-    <p class="lede">Everything in one place: your report, what we got done, what's happening this month, and the couple of things I need from you. Bookmark this one (:</p>
-  </div>
+<div class="top"><div class="wrap">
+  <div class="logo"><img src="https://adaptchiropracticwellness.com/wp-content/uploads/2026/07/daisypineda55_FO8309B091F46_LOGO-REV10-1024x1024.png" alt="Adapt Chiropractic &amp; Wellness" onerror="this.parentNode.hidden=true;document.getElementById('wm').hidden=false"></div>
+  <div class="wordmark" id="wm" hidden>Adapt Chiropractic &amp; Wellness</div>
 </div></div>
+
 <div class="page"><div class="wrap"><div class="card">
+
+<div class="hero">
+  <div class="eyebrow">October 2026 update</div>
+  <h1>Your September report + the plan for October</h1>
+  <p class="lede">Everything in one place: your report, what we got done, what's coming up this month, and a few things I need from you. Bookmark this one (:</p>
+</div>
 
 <section id="links">
   <h2>Quick links</h2>
   <div class="links">
-    <a class="link" href="https://lookerstudio.google.com/reporting/b65fe0bd-8dd9-4a8c-af7e-4241afee171e" target="_blank" rel="noopener"><strong>Your live report</strong><span>Updates on its own every month</span></a>
-    <a class="link" href="https://claude.ai/code/artifact/df4347dc-9319-48f9-936b-4a08bda8b421" target="_blank" rel="noopener"><strong>Content shoot plan</strong><span>The monthly shoot + 2 example scripts</span></a>
-    <a class="link" href="https://mail.google.com/mail/u/0/#settings/accounts" target="_blank" rel="noopener"><strong>Your Gmail send settings</strong><span>Opens the exact page for the steps below</span></a>
-    <a class="link" href="https://support.google.com/mail/answer/22370" target="_blank" rel="noopener"><strong>Google's send-as guide</strong><span>Google's own walkthrough, with pictures</span></a>
-    <a class="link" href="https://adaptchiropracticwellness.com" target="_blank" rel="noopener"><strong>Your website</strong><span>adaptchiropracticwellness.com</span></a>
-    <a class="link" href="https://adaptchiropracticwellness.janeapp.com" target="_blank" rel="noopener"><strong>Online booking</strong><span>Your Jane booking page</span></a>
+    <a class="link" href="https://lookerstudio.google.com/reporting/b65fe0bd-8dd9-4a8c-af7e-4241afee171e" target="_blank" rel="noopener"><strong>Live reporting</strong><span>This is connected to your Google Analytics and Search Console, and gives you your numbers visually every month. It updates on its own, so you can check it anytime.</span></a>
+    <a class="link" href="https://docs.google.com/document/d/1wXEtsYGXZPUb4dxuTQ1K1vzBI5SWB8qwAvrsrKwscs8/edit" target="_blank" rel="noopener"><strong>Content shoot plan</strong><span>The monthly content shoot idea, who's on camera, 2 example scripts, carousel ideas, and the holiday email draft for your OK.</span></a>
+    <a class="link" href="https://mail.google.com/mail/u/0/#settings/accounts" target="_blank" rel="noopener"><strong>Your Gmail send settings</strong><span>Opens the exact page for the steps further down, so your emails send and reply from adaptcw.com.</span></a>
+    <a class="link" href="https://support.google.com/mail/answer/22370" target="_blank" rel="noopener"><strong>Google's send-as guide</strong><span>Google's own walkthrough with pictures, if you'd rather follow along there.</span></a>
   </div>
 </section>
 
 <section id="report">
-  <h2>September at a glance</h2>
+  <h2>September report</h2>
+  <div class="shot"><img src="sept-2026-report.png" alt="Looker Studio report showing monthly Google clicks and impressions from October 2025 to September 2026, old and new domain stacked"></div>
+  <p>We were going up and up all year, and July was our best month yet. August and September is where the domain change is fully kicking in. Google is still moving everything over from the old domain to the new one (you can see the green new domain bars taking over), so clicks and impressions dipped a bit. This is normal for a domain switch and what we talked about before the move.</p>
+  <p>The good news: your average position on Google actually got better, from about 18 to 14.4, and more people are clicking when they see you. I'm counting on our work now (new pages, blogs, and cleaning up the site) to lift it back up from here.</p>
   <div class="stats">
-    <div class="stat"><b>109</b><span>website visits</span></div>
-    <div class="stat"><b>63</b><span>people, 54 of them new</span></div>
-    <div class="stat"><b>~50%</b><span>came from Google search</span></div>
-    <div class="stat"><b>14.5</b><span>avg. Google position, up from 18</span></div>
+    <div class="stat"><b>109</b><span>website visits, 54 of them new people</span></div>
+    <div class="stat"><b>106</b><span>clicks from Google search</span></div>
+    <div class="stat"><b>14.4</b><span>avg. Google position, up from 18</span></div>
+    <div class="stat"><b>1.3%</b><span>click rate, up 7% from August</span></div>
   </div>
-  <p>Search clicks dipped a bit after the domain switch. That's normal and what we talked about before the move. The 1 Year page in your report shows the old and new domain together so you can see the full picture.</p>
 </section>
 
 <section id="september">
@@ -123,47 +133,65 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--ac
 </section>
 
 <section id="october">
-  <h2>October: Campbell + getting found</h2>
+  <h2>What we're working on in October</h2>
   <div class="rows">
-    <div class="row"><div class="k">Website</div><div>A dedicated Campbell page so you show up better for "chiropractor Campbell", the new team photo on the homepage, and finishing the last old-name and booking link cleanup. Prenatal Chiropractic and Prenatal Massage are back in the menu too.</div></div>
-    <div class="row"><div class="k">Site health</div><div>I ran a full check of the site. Every page loads and nothing is broken or hidden from Google. This month we're cleaning up page titles that still show the old name, merging a couple of duplicate pages, and adding image descriptions so Google can read your photos.</div></div>
-    <div class="row"><div class="k">Blogs</div><div>Sciatica vs. piriformis · why desk work causes afternoon headaches · why plantar fasciitis heel pain is worst in the morning · runner's knee</div></div>
-    <div class="row"><div class="k">Email + text</div><div>Monday hours with Dr. Paris and Eli</div></div>
-    <div class="row"><div class="k">Social</div><div>An FAQ carousel (with the insurance answer you sent over), plus the sample posts below</div></div>
-    <div class="row"><div class="k">Design</div><div>An in-office referral card and a gift card teaser</div></div>
+    <div class="row"><div class="k">New pages</div><div>
+      <p><b>Whiplash + car accident injuries</b>. People search for this a lot locally, and right now there's nowhere on the site for them to land.</p>
+      <p><b>Herniated + bulging discs</b>. Pairs with your sciatica and back pain pages, which already get seen on Google.</p>
+    </div></div>
+    <div class="row"><div class="k">Site cleanup</div><div>
+      <p>Reorganizing the site so everything fits together. You have 10 conditions pages now, so we're updating the Conditions menu and linking the pages to each other. Also merging a couple of duplicate pages and adding image descriptions so Google can read your photos. Prenatal Chiropractic and Prenatal Massage are back in the menu too.</p>
+    </div></div>
+    <div class="row"><div class="k">Blogs</div><div>
+      <p><b>Sciatica or piriformis? How to tell which one you have</b>. Links to the sciatica and piriformis pages.</p>
+      <p><b>Rear-ended? What to do in the first few days after a car accident</b>. Links to the new whiplash page.</p>
+      <p class="muted">Your pages are averaging position 14 on Google, which is page 2. Blogs that link back to a page are what push it onto page 1, so each one is picked for a page we want to move up.</p>
+    </div></div>
+    <div class="row"><div class="k">Reviews</div><div>
+      <p>Going into each of your Google reviews and writing a more personal response. Starting this month and finishing in November.</p>
+    </div></div>
+    <div class="row"><div class="k">Email + text</div><div>
+      <p>A holiday campaign about feeling good to see your family, with Monday hours with Dr. Paris and Eli. The draft is in the <a href="https://docs.google.com/document/d/1wXEtsYGXZPUb4dxuTQ1K1vzBI5SWB8qwAvrsrKwscs8/edit" target="_blank" rel="noopener">content plan doc</a> for your OK.</p>
+    </div></div>
+    <div class="row"><div class="k">Social</div><div>
+      <p>2-4 carousels a month, posting 1-2 times a week once you approve them. A mix of fun and trendy with educational, plus the FAQ carousel with the insurance answer you sent over.</p>
+    </div></div>
+    <div class="row"><div class="k">Design</div><div>
+      <p>An in-office referral card and a gift card teaser.</p>
+    </div></div>
   </div>
 </section>
 
 <section id="emails">
   <h2>The repeat emails</h2>
-  <p>Still working with Trust Driven Care on why it re-sent. Part of it was duplicate contacts (like your old and new info@ emails both being on the list), so I'm cleaning those up so everyone only gets one going forward. Starting in October, emails go to a tagged list (the right group for each message) instead of everyone.</p>
-  <p>We're also setting up your adaptcw.com email as the sender in Trust Driven Care. We'll warm it up slowly first, with small sends that grow over a few weeks, so it lands in inboxes and not spam. Then all your campaigns will come from that address.</p>
+  <p>Figured it out! You were on the list 3 times (your old and new emails), which is why it kept showing up. I'm going back into Trust Driven Care to clean up any other duplicates so everyone only gets one email going forward.</p>
+  <p>That leads into something I'd love help with: there are duplicate patients in Jane too. I'd like to sit down with Dr. Kyndra to go over what we can merge, and walk through how new patients get added, so we can see where it goes south and stop it from happening again.</p>
 </section>
 
 <section id="social">
   <h2>Social: 4 sample posts</h2>
-  <p class="muted">What 2 weeks of posting could look like. Posting 2 times a week on top of stories, each post tied back to a page or blog on the site.</p>
+  <p class="muted">What a month of posting could look like.</p>
   <div class="posts">
-    <div class="post"><div class="day">Mon</div><div><h3>Rock, paper, scissors</h3><p class="muted">A big trend right now. Two hands, "crack my own neck" vs "book the adjustment." We'd shoot the hands in 10 minutes.</p></div></div>
-    <div class="post"><div class="day">Thu</div><div><h3>Sciatica or piriformis?</h3><p class="muted">Links to the new blog.</p></div></div>
-    <div class="post"><div class="day">Mon</div><div><h3>3 signs your headache starts in your neck</h3><p class="muted">An easy desk stretch people save.</p></div></div>
-    <div class="post"><div class="day">Thu</div><div><h3>Where does it hurt? Follow the line</h3><p class="muted">Where it hurts, what you want to get back to, and what a first visit looks like.</p></div></div>
+    <div class="post"><div class="day">Week 1</div><div><h3>Rock, paper, scissors</h3><p class="muted">A big trend right now. Two hands, "crack my own neck" vs "book the adjustment."</p></div></div>
+    <div class="post"><div class="day">Week 2</div><div><h3>Sciatica or piriformis?</h3><p class="muted">Swipe to see which one sounds like you. Links to the new blog.</p></div></div>
+    <div class="post"><div class="day">Week 3</div><div><h3>3 signs your headache starts in your neck</h3><p class="muted">An easy desk stretch people save.</p></div></div>
+    <div class="post"><div class="day">Week 4</div><div><h3>Where does it hurt? Follow the line</h3><p class="muted">Where it hurts, what you want to get back to, and what a first visit looks like.</p></div></div>
   </div>
-  <p>Would love to loop in Dr. Kyndra to look over anything clinical before it goes up. Open to giving this a try?</p>
 </section>
 
 <section id="shoot">
   <h2>Idea: a monthly content shoot</h2>
-  <p>One quick shoot a month at the clinic, about 2 hours, mostly with Dr. Kyndra. From that one session we'd get 1 reel + 1 carousel every week for the month. I bring the scripts and shot list, and we handle all the editing, captions and scheduling.</p>
-  <a class="cta" href="https://claude.ai/code/artifact/df4347dc-9319-48f9-936b-4a08bda8b421" target="_blank" rel="noopener">See the plan + example scripts</a>
-  <p class="muted">If you're in, I'd love to do the first one the first week of November.</p>
+  <p>One hour a month, filmed handheld on a phone. I'd come in with the script and idea already done, so all we need is Dr. Kyndra, Eli, Dr. Paris or you on camera. I can recommend who fits each video, or we rotate so we build up a backstock of videos.</p>
+  <p>That one hour gives you <b>4 carousels or static graphics + 2 reels a month</b> to start.</p>
+  <p>It keeps people engaging with you on social, keeps the momentum going from the work you've already put in, and every post points back to the keywords we're going after on Google.</p>
+  <a class="cta" href="https://docs.google.com/document/d/1wXEtsYGXZPUb4dxuTQ1K1vzBI5SWB8qwAvrsrKwscs8/edit" target="_blank" rel="noopener">See the plan + example scripts</a>
 </section>
 
 <section id="coming">
   <h2>Coming up</h2>
   <div class="rows">
-    <div class="row"><div class="k">November</div><div>Holiday gift cards + refer-a-friend</div></div>
-    <div class="row"><div class="k">December</div><div>Reminder to use HSA/FSA before the year resets, and booking January</div></div>
+    <div class="row"><div class="k">November</div><div><p>Holiday gift cards + refer-a-friend, and finishing the personal responses to your Google reviews</p></div></div>
+    <div class="row"><div class="k">December</div><div><p>Reminder to use HSA/FSA before the year resets, and booking January</p></div></div>
   </div>
 </section>
 
@@ -184,29 +212,38 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--ac
     <li><div>Back on that page, click <b>make default</b> next to drmike@adaptcw.com.</div></li>
     <li><div>Under <b>When replying to a message</b>, choose <b>Always reply from default address</b>.</div></li>
   </ol>
-  <div class="note">Same steps on the info@ inbox with <code>info@adaptcw.com</code>. To check it worked, send yourself a test email and make sure it says it's from @adaptcw.com. Or we can hop on a quick call and I'll walk you through it. Google's own guide is <a href="https://support.google.com/mail/answer/22370" target="_blank" rel="noopener">here</a>.</div>
+  <div class="note">Same steps on the info@ inbox with <code>info@adaptcw.com</code>. To check it worked, send yourself a test email and make sure it shows your adaptcw.com address. Or we can hop on a quick call and I'll walk you through it.</div>
 </section>
 
 <section id="package">
   <h2>What's in your monthly package</h2>
   <div class="pkg">
-    <div><span class="n">3</span><span>SEO pages</span></div>
-    <div><span class="n">4</span><span>blogs, each linked to a page on your site</span></div>
-    <div><span class="n">1+1</span><span>email + text campaign</span></div>
+    <div><span class="n">2</span><span>new SEO pages (up to)</span></div>
+    <div><span class="n">2</span><span>refreshed pages, updating copy on pages that already rank</span></div>
+    <div><span class="n">2-4</span><span>blog posts, each linked to a page on your site</span></div>
+    <div><span class="n">1</span><span>email campaign and/or 1 text campaign</span></div>
     <div><span class="n">2</span><span>social posts</span></div>
-    <div><span class="n">2</span><span>flyers, posters or graphics</span></div>
-    <div><span class="n">1</span><span>monthly report + a 20 minute call</span></div>
+    <div><span class="n">2</span><span>graphics (if needed)</span></div>
+    <div><span class="n">1</span><span>monthly report</span></div>
   </div>
-  <p class="muted">Also included: Google Business Profile, review monitoring, technical SEO (site health, speed, fixes), keyword tracking, Trust Driven Care upkeep, and domain/email/DNS help.</p>
+  <p>I also manage your CRM, website hosting and management, indexing, and cleaning up the site every month as changes and updates are made. All of it goes toward improving your conversions and online visibility, so you can compete better in the market.</p>
+  <h3>Direct access to me</h3>
+  <div class="contact">
+    <div><b>Call or text</b><span>(408) 710-6718</span></div>
+    <div><b>Email</b><span>daisy@kaizenagency.org</span></div>
+  </div>
+  <p class="muted">And I'm always happy to come by the clinic in person.</p>
 </section>
 
 <section id="need">
   <h2>What I need from you</h2>
-  <ul>
-    <li><b>Gift cards:</b> what amounts, and any terms (expiration, what they can be used for)?</li>
-    <li><b>Referral:</b> what do you want to give someone for referring a friend?</li>
-    <li><b>End of year event with Maria:</b> still interested? If so I'll start scoping it out.</li>
-  </ul>
+  <ol class="need">
+    <li><div><b>Upcoming events:</b> does Adapt have any events coming up? Let me know so I can plan posts and emails around them.</div></li>
+    <li><div><b>Carousels + video idea:</b> do you approve? I can schedule out when to come in, get approval from Dr. Kyndra, and remind her when to post. Or you can give me access and I'll post directly.</div></li>
+    <li><div><b>Website content:</b> OK on the 2 new pages and 2 blogs above?</div></li>
+    <li><div><b>Holiday email:</b> the draft is in the <a href="https://docs.google.com/document/d/1wXEtsYGXZPUb4dxuTQ1K1vzBI5SWB8qwAvrsrKwscs8/edit" target="_blank" rel="noopener">content plan doc</a>. Any changes before it goes out?</div></li>
+    <li><div><b>Prenatal:</b> you offer prenatal chiropractic adjustments and pregnancy massage. Is that something you want us to advertise? If so, I can put together an email announcing it.</div></li>
+  </ol>
 </section>
 
 </div>
