@@ -69,8 +69,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media(max-width:600px){.stage{padding:8px;border-radius:14px}.phone{width:100%;border:0;border-radius:10px;box-shadow:none}.phone .notch{display:none}.phone iframe{height:78vh}.phone-wrap{padding-block:0}}
 .hint{margin-top:12px;text-align:center;font-size:.85rem;color:var(--muted)}
 
-.ask{padding-block:2.5rem 3.5rem;display:grid;grid-template-columns:1.35fr 1fr;gap:1.5rem;align-items:start}
-@media(max-width:900px){.ask{grid-template-columns:1fr}}
+.zz{padding-block:2.5rem 3.5rem;display:grid;grid-template-columns:1.35fr 1fr;gap:1.5rem;align-items:start}
+@media(max-width:900px){.zz{grid-template-columns:1fr}}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.5rem;min-width:0}
 .panel h2{font-size:1.2rem;font-weight:800}
 .panel>p{margin-top:.4rem;font-size:.92rem;color:var(--muted)}
@@ -105,10 +105,10 @@ footer{padding-block:0 2.5rem;text-align:center;font-size:.8rem;color:var(--mute
 <main class="wrap">
   <div class="intro">
     <h1>Your new homepage</h1>
-    <p>Scroll inside the preview to see the whole page. Switch between Desktop and Mobile at the top. Yellow <span class="tag">[CONFIRM]</span> notes mark details we need you to check.</p>
+    <p>Scroll inside the preview to see the whole page. Use the switch at the top to see it on a phone.</p>
   </div>
 
-  <section class="stage" aria-label="Homepage preview">
+  <section class="stage" style="margin-bottom:2rem" aria-label="Homepage preview">
     <div id="desk" class="desk">
       <div class="chrome"><i></i><i></i><i></i><span>lnacleaning.com</span></div>
       <div id="vp" class="viewport"><iframe id="fd" src="home.html" title="Homepage preview, desktop size" width="1440"></iframe></div>
@@ -119,45 +119,8 @@ footer{padding-block:0 2.5rem;text-align:center;font-size:.8rem;color:var(--mute
     <p class="hint" id="hint">Showing the desktop layout at 1440px wide, scaled to fit your screen.</p>
   </section>
 
-  <div class="ask">
-    <section class="panel" aria-labelledby="qh">
-      <h2 id="qh">A few things only you can answer</h2>
-      <p>These show up on the site as promises to customers, so we want them exactly right.</p>
-      <ol class="q">
-        <li><span><b>Licensing wording.</b> Your old site said "licensed and bonded," and your Yelp page says "licensed and insurance." Which is accurate? If you carry insurance, we'll add it.</span></li>
-        <li><b>Business hours.</b> Yelp lists Monday to Friday, 9 am to 5 pm, closed weekends. Is that right?</li>
-        <li><span><b>Address.</b> Is 127B Hazel Ave your home or a business office? If it's your home, we'll show only "Redwood City, CA." Also, is the ZIP code 94061 or 94062?</span></li>
-        <li><b>Quotes.</b> Do you give prices over the phone, or do you visit the home first?</li>
-        <li><b>Cities.</b> Redwood City, San Mateo, Menlo Park, Palo Alto, Mountain View, Atherton, Belmont and San Carlos. Anything to add or remove?</li>
-        <li><b>Reviews.</b> Are you okay with us showing the three Yelp reviews from Jessica D., Paul N. and Jay K.?</li>
-        <li><span><b>Top photo.</b> We used AI to extend the background of your truck photo so it fills a wide screen. Your faces and the truck lettering were not changed. Is that okay with you?</span></li>
-      </ol>
-      <div class="opt">
-        <h3>Optional, but they help</h3>
-        <ul>
-          <li>The year you started the business</li>
-          <li>How many people are on your team, and whether they're background-checked</li>
-          <li>Whether you offer a satisfaction guarantee (for example, coming back to fix anything missed)</li>
-        </ul>
-      </div>
-    </section>
-
-    <aside class="panel" aria-labelledby="ah">
-      <h2 id="ah">How to approve</h2>
-      <ul class="steps">
-        <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg><span>If it looks good, reply to Daisy's email with <b>"Approved"</b> and your answers above.</span></li>
-        <li><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg><span>Want changes? Tell us the section (for example "the reviews" or "the top photo") and what you'd like different.</span></li>
-        <li><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Once approved, we build it on your website and send you the live link to check before launch.</span></li>
-      </ul>
-      <div class="contact">
-        <b>Daisy Pineda, Kaizen Agency</b>
-        <span>daisy@kaizenagency.org</span>
-        <span>(408) 710-6718</span>
-      </div>
-    </aside>
-  </div>
 </main>
-<footer>Design preview only. Links, the call button and forms are not live yet.</footer>
+<footer>Design preview &middot; Kaizen Agency</footer>
 
 <script>
 (function(){
