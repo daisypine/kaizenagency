@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>L&amp;A Homepage Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: review chrome (bar + device switch) around a live preview stage, then a short list of questions for the client. */
+:root{
+  --ink:#141C2E; --body:#424C61; --muted:#6B7689; --line:#E3E9F2;
+  --bg:#EEF2F8; --card:#FFFFFF; --accent:#1D7FD1; --navy:#131B2E;
+  --flag-bg:#FFF4D6; --flag-ink:#7A5200;
+  --display:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  --text:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#F2F5FA; --body:#B9C2D2; --muted:#8793A7; --line:#243149;
+  --bg:#0B111D; --card:#141D30; --accent:#6FA8F5; --navy:#060A14;
+  --flag-bg:#3A2E10; --flag-ink:#F5D27A; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --ink:#F2F5FA; --body:#B9C2D2; --muted:#8793A7; --line:#243149;
+  --bg:#0B111D; --card:#141D30; --accent:#6FA8F5; --navy:#060A14;
+  --flag-bg:#3A2E10; --flag-ink:#F5D27A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--body);font-family:var(--text);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);color:var(--ink);margin:0;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--navy);color:#fff}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--navy)}
+.bar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 1.5rem;padding-block:.85rem}
+.bar .t{min-width:0}
+.bar b{display:block;font-family:var(--display);font-weight:800;font-size:1.02rem;letter-spacing:-.01em}
+.bar b span{color:#5DB0F5}
+.bar small{display:block;font-size:.8rem;color:rgba(255,255,255,.7)}
+.seg{display:inline-flex;background:rgba(255,255,255,.1);border-radius:999px;padding:4px;gap:4px}
+.seg button{appearance:none;border:0;background:transparent;color:#fff;font:600 .9rem var(--text);padding:.5rem 1.1rem;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--navy)}
+.seg button:focus-visible{outline:2px solid #5DB0F5;outline-offset:2px}
+.seg svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+
+.intro{padding-block:1.75rem 1.25rem;display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:baseline;justify-content:space-between}
+.intro h1{font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:900}
+.intro p{color:var(--muted);font-size:.95rem;max-width:62ch}
+
+.stage{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 1px 2px rgba(20,28,46,.05),0 12px 32px rgba(20,28,46,.08)}
+.desk{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.chrome{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#F3F5F9;border-bottom:1px solid #E3E9F2}
+.chrome i{width:10px;height:10px;border-radius:50%;background:#D5DBE5}
+.chrome span{margin-left:10px;flex:1;min-width:0;background:#fff;border:1px solid #E3E9F2;border-radius:6px;font-size:.75rem;color:#6B7689;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.viewport{position:relative;overflow:hidden;height:min(78vh,860px)}
+.viewport iframe{position:absolute;top:0;left:0;border:0;transform-origin:0 0;background:#fff}
+.phone-wrap{display:flex;justify-content:center;padding-block:8px}
+.phone{width:414px;max-width:100%;border:12px solid #10151F;border-radius:46px;overflow:hidden;background:#000;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.phone .notch{height:26px;background:#10151F;display:flex;justify-content:center}
+.phone .notch i{width:110px;height:18px;border-radius:0 0 14px 14px;background:#000}
+.phone iframe{display:block;width:100%;height:min(76vh,780px);border:0;background:#fff}
+@media(max-width:600px){.stage{padding:8px;border-radius:14px}.phone{width:100%;border:0;border-radius:10px;box-shadow:none}.phone .notch{display:none}.phone iframe{height:78vh}.phone-wrap{padding-block:0}}
+.hint{margin-top:12px;text-align:center;font-size:.85rem;color:var(--muted)}
+
+.ask{padding-block:2.5rem 3.5rem;display:grid;grid-template-columns:1.35fr 1fr;gap:1.5rem;align-items:start}
+@media(max-width:900px){.ask{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.5rem;min-width:0}
+.panel h2{font-size:1.2rem;font-weight:800}
+.panel>p{margin-top:.4rem;font-size:.92rem;color:var(--muted)}
+.tag{display:inline-block;background:var(--flag-bg);color:var(--flag-ink);border-radius:6px;padding:0 .4em;font-weight:600;font-size:.82em}
+ol.q{margin:1.1rem 0 0;padding:0;list-style:none;counter-reset:q;display:flex;flex-direction:column;gap:.9rem}
+ol.q li{counter-increment:q;display:grid;grid-template-columns:28px 1fr;gap:.75rem;font-size:.93rem}
+ol.q li::before{content:counter(q);width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font:800 .8rem var(--display)}
+ol.q b{color:var(--ink);font-weight:600}
+.opt{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.opt h3{font-size:.95rem;font-weight:800}
+.opt ul{margin:.6rem 0 0;padding-left:1.1rem;font-size:.9rem;display:flex;flex-direction:column;gap:.3rem}
+.steps{margin:1rem 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.85rem;font-size:.93rem}
+.steps li{display:flex;gap:.7rem}
+.steps svg{flex:none;width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
+.contact{margin-top:1.25rem;padding:1rem;border-radius:12px;background:var(--bg);font-size:.9rem}
+.contact b{display:block;font-family:var(--display);font-weight:800;color:var(--ink)}
+.contact span{display:block;user-select:all}
+footer{padding-block:0 2.5rem;text-align:center;font-size:.8rem;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="t"><b>L<span>&amp;</span>A House Cleaning</b><small>Homepage design for your review &middot; Kaizen Agency</small></div>
+    <div class="seg" role="group" aria-label="Preview size">
+      <button id="btn-desktop" type="button" aria-pressed="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>Desktop</button>
+      <button id="btn-mobile" type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Mobile</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="intro">
+    <h1>Your new homepage</h1>
+    <p>Scroll inside the preview to see the whole page. Switch between Desktop and Mobile at the top. Yellow <span class="tag">[CONFIRM]</span> notes mark details we need you to check.</p>
+  </div>
+
+  <section class="stage" aria-label="Homepage preview">
+    <div id="desk" class="desk">
+      <div class="chrome"><i></i><i></i><i></i><span>lnacleaning.com</span></div>
+      <div id="vp" class="viewport"><iframe id="fd" src="home.html" title="Homepage preview, desktop size" width="1440"></iframe></div>
+    </div>
+    <div id="mob" class="phone-wrap" hidden>
+      <div class="phone"><div class="notch"><i></i></div><iframe id="fm" src="home.html" title="Homepage preview, phone size"></iframe></div>
+    </div>
+    <p class="hint" id="hint">Showing the desktop layout at 1440px wide, scaled to fit your screen.</p>
+  </section>
+
+  <div class="ask">
+    <section class="panel" aria-labelledby="qh">
+      <h2 id="qh">A few things only you can answer</h2>
+      <p>These show up on the site as promises to customers, so we want them exactly right.</p>
+      <ol class="q">
+        <li><span><b>Licensing wording.</b> Your old site said "licensed and bonded," and your Yelp page says "licensed and insurance." Which is accurate? If you carry insurance, we'll add it.</span></li>
+        <li><b>Business hours.</b> Yelp lists Monday to Friday, 9 am to 5 pm, closed weekends. Is that right?</li>
+        <li><span><b>Address.</b> Is 127B Hazel Ave your home or a business office? If it's your home, we'll show only "Redwood City, CA." Also, is the ZIP code 94061 or 94062?</span></li>
+        <li><b>Quotes.</b> Do you give prices over the phone, or do you visit the home first?</li>
+        <li><b>Cities.</b> Redwood City, San Mateo, Menlo Park, Palo Alto, Mountain View, Atherton, Belmont and San Carlos. Anything to add or remove?</li>
+        <li><b>Reviews.</b> Are you okay with us showing the three Yelp reviews from Jessica D., Paul N. and Jay K.?</li>
+        <li><span><b>Top photo.</b> We used AI to extend the background of your truck photo so it fills a wide screen. Your faces and the truck lettering were not changed. Is that okay with you?</span></li>
+      </ol>
+      <div class="opt">
+        <h3>Optional, but they help</h3>
+        <ul>
+          <li>The year you started the business</li>
+          <li>How many people are on your team, and whether they're background-checked</li>
+          <li>Whether you offer a satisfaction guarantee (for example, coming back to fix anything missed)</li>
+        </ul>
+      </div>
+    </section>
+
+    <aside class="panel" aria-labelledby="ah">
+      <h2 id="ah">How to approve</h2>
+      <ul class="steps">
+        <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg><span>If it looks good, reply to Daisy's email with <b>"Approved"</b> and your answers above.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg><span>Want changes? Tell us the section (for example "the reviews" or "the top photo") and what you'd like different.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Once approved, we build it on your website and send you the live link to check before launch.</span></li>
+      </ul>
+      <div class="contact">
+        <b>Daisy Pineda, Kaizen Agency</b>
+        <span>daisy@kaizenagency.org</span>
+        <span>(408) 710-6718</span>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>Design preview only. Links, the call button and forms are not live yet.</footer>
+
+<script>
+(function(){
+  var desk=document.getElementById('desk'), mob=document.getElementById('mob'), vp=document.getElementById('vp'), fd=document.getElementById('fd');
+  var bD=document.getElementById('btn-desktop'), bM=document.getElementById('btn-mobile'), hint=document.getElementById('hint');
+  var W=1440;
+  function fit(){
+    var s=Math.min(1, vp.clientWidth/W);
+    fd.style.transform='scale('+s+')';
+    fd.style.width=W+'px';
+    fd.style.height=(vp.clientHeight/s)+'px';
+  }
+  function set(mode){
+    var m=mode==='mobile';
+    desk.hidden=m; mob.hidden=!m;
+    bD.setAttribute('aria-pressed',String(!m)); bM.setAttribute('aria-pressed',String(m));
+    hint.textContent=m?'Showing the phone layout at 390px wide.':'Showing the desktop layout at 1440px wide, scaled to fit your screen.';
+    if(!m) fit();
+  }
+  bD.addEventListener('click',function(){set('desktop')});
+  bM.addEventListener('click',function(){set('mobile')});
+  window.addEventListener('resize',function(){ if(!desk.hidden) fit(); });
+  set(window.innerWidth<700?'mobile':'desktop');
+  fit();
+})();
+</script>
+
+</body>
+</html>

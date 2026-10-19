@@ -1,0 +1,475 @@
+<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>L&amp;A House Cleaning</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single column of full-bleed bands; each band pads its own inner wrapper. */
+:root{
+  --ink:#141C2E; --body:#424C61; --muted:#6B7689;
+  --accent:#1668D6; --accent-ink:#0E4FA8; --accent-soft:#E9F1FD;
+  --bg:#FFFFFF; --surface:#F5F8FC; --line:#E3E9F2; --card:#FFFFFF;
+  --flag-bg:#FFF4D6; --flag-ink:#7A5200; --flag-line:#F1D488;
+  --on-accent:#FFFFFF; --cta-bg:#141C2E; --cta-ink:#FFFFFF; --cta-body:rgba(255,255,255,.76); --cta-line:rgba(255,255,255,.28);
+  --navy:#131B2E; --sky:#2E8FE0; --on-dark:#FFFFFF; --on-dark-body:rgba(255,255,255,.8); --on-dark-line:rgba(255,255,255,.45);
+  --blueband:linear-gradient(115deg,#8CCBF0 0%,#2E8FE0 45%,#0B66BF 100%);
+  --shadow:0 1px 2px rgba(20,28,46,.05), 0 8px 24px rgba(20,28,46,.06);
+  --display:'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --text:'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#F2F5FA; --body:#B9C2D2; --muted:#8793A7;
+  --accent:#6FA8F5; --accent-ink:#9CC4FA; --accent-soft:#17243C;
+  --bg:#0C1220; --surface:#121A2B; --line:#243149; --card:#141D30;
+  --flag-bg:#3A2E10; --flag-ink:#F5D27A; --flag-line:#6B5520;
+  --on-accent:#0C1220; --cta-bg:#060A14; --cta-ink:#F2F5FA; --cta-body:rgba(242,245,250,.72); --cta-line:rgba(242,245,250,.25);
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --ink:#F2F5FA; --body:#B9C2D2; --muted:#8793A7;
+  --accent:#6FA8F5; --accent-ink:#9CC4FA; --accent-soft:#17243C;
+  --bg:#0C1220; --surface:#121A2B; --line:#243149; --card:#141D30;
+  --flag-bg:#3A2E10; --flag-ink:#F5D27A; --flag-line:#6B5520;
+  --on-accent:#0C1220; --cta-bg:#060A14; --cta-ink:#F2F5FA; --cta-body:rgba(242,245,250,.72); --cta-line:rgba(242,245,250,.25);
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--body);font-family:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(48px,7vw,86px)}
+h1,h2,h3{font-family:var(--display);color:var(--ink);margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1{font-weight:900;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.08}
+h2{font-weight:800;font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.15}
+h3{font-weight:700;font-size:1.0625rem;line-height:1.3}
+p{margin:0}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.eyebrow{font-family:var(--text);font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.lede{font-size:clamp(1.0625rem,1.6vw,1.2rem);color:var(--body);max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--text);font-weight:600;font-size:.98rem;padding:.9rem 1.5rem;border-radius:999px;text-decoration:none;border:1.5px solid transparent;transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--card)}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+/* unconfirmed-claim flag: visible on purpose so nothing ships unanswered */
+.cf{display:inline-block;background:var(--flag-bg);color:var(--flag-ink);border:1px solid var(--flag-line);border-radius:6px;padding:0 .4em;font-family:var(--text);font-weight:600;font-size:.72rem;letter-spacing:0;text-transform:none;line-height:1.6;vertical-align:.1em}
+
+/* photos */
+.photo{margin:0;border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);max-width:100%}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--bg)}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+.brand{font-family:var(--display);font-weight:900;font-size:1.0625rem;color:var(--ink);letter-spacing:-.01em;white-space:nowrap;text-decoration:none}
+.brand span{color:var(--accent)}
+nav{display:flex;gap:1.5rem;font-size:.92rem;font-weight:500}
+nav a{text-decoration:none;color:var(--body)}
+nav a:hover{color:var(--accent)}
+.navphone{font-family:var(--display);font-weight:800;font-size:.95rem;color:var(--ink);white-space:nowrap;text-decoration:none;border:1.5px solid var(--line);padding:.55rem 1rem;border-radius:999px}
+@media(max-width:860px){nav{display:none}}
+@media(max-width:400px){.brand{font-size:.95rem}.navphone{font-size:.85rem;padding:.45rem .8rem}}
+
+/* hero: dark full-bleed band, owners photo bleeding off the right edge (matches Figma v2) */
+.hero-band{position:relative;background:var(--navy);overflow:hidden;padding-block:0}
+.hero-band .bg{position:absolute;inset:0;margin:0}
+.hero-band .bg img{width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block}
+.hero-band .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,color-mix(in srgb,var(--navy) 92%,transparent) 0%,color-mix(in srgb,var(--navy) 70%,transparent) 35%,transparent 70%)}
+.hero{position:relative;z-index:1;min-height:clamp(520px,44vw,680px);display:flex;align-items:center;padding-block:clamp(56px,7vw,96px)}
+.hero-copy{max-width:520px;min-width:0}
+.hero-band h1{color:var(--on-dark)}
+.hero-band h1 span{color:var(--sky)}
+.hero-band .lede{color:var(--on-dark-body)}
+.hero-band .eyebrow{color:var(--sky)}
+.hero-band .btn-ghost{background:transparent;border-color:var(--on-dark-line);color:var(--on-dark)}
+@media(max-width:860px){
+  .hero-band .bg{position:relative;width:100%;aspect-ratio:4/3;max-width:100%}
+  .hero-band .bg img{object-position:72% 40%}
+  .hero-band .bg::after{background:linear-gradient(0deg,var(--navy) 0%,transparent 35%)}
+  .hero{min-height:0;padding-block:8px 48px}
+}
+
+/* trust strip */
+.strip{background:var(--surface);border-block:1px solid var(--line)}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:.75rem 2.25rem;justify-content:center;padding-block:1.1rem}
+.strip b{font-family:var(--display);font-weight:700;font-size:.86rem;color:var(--ink);display:inline-flex;flex-wrap:wrap;align-items:center;gap:.5rem;letter-spacing:.01em}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+
+/* intro split */
+.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,56px);align-items:center}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.about-photo{aspect-ratio:4/5;max-height:620px}
+.about-photo img{object-position:50% 30%}
+@media(max-width:860px){.about-photo{aspect-ratio:4/3}}
+.stack{min-width:0}
+.stack>*+*{margin-top:1rem}
+
+/* cards */
+.grid{display:grid;gap:1.25rem;margin-top:2.5rem}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+@media(max-width:960px){.g3{grid-template-columns:repeat(2,1fr)}.g5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g3,.g5{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.card img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;max-width:100%}
+.card-body{padding:1.1rem 1.15rem 1.25rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.card-body p{font-size:.9rem;color:var(--body)}
+.card-body h3 a{text-decoration:none}
+.card-body h3 a:hover{color:var(--accent)}
+.more{margin-top:auto;padding-top:.4rem;font-size:.86rem;font-weight:600;color:var(--accent);text-decoration:none}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.25rem;box-shadow:var(--shadow);min-width:0}
+.mini h3{font-size:.98rem;margin-bottom:.4rem}
+.mini p{font-size:.875rem}
+.icon{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:.8rem}
+.icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:2.5rem}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{min-width:0;border-top:2px solid var(--accent);padding-top:1rem}
+.step .num{font-family:var(--display);font-weight:900;font-size:.8rem;color:var(--accent);letter-spacing:.1em}
+.step h3{margin:.5rem 0 .35rem}
+.step p{font-size:.9rem}
+
+/* trust strip on blue, steps on navy, commercial + cta on blue gradient (matches Figma v2) */
+.strip{background:var(--sky)!important;border:0!important}
+.strip b{color:var(--on-dark)!important;text-transform:uppercase;letter-spacing:.06em}
+.strip .dot{background:var(--on-dark)}
+.dark{background:var(--navy)}
+.dark h2{color:var(--on-dark)}
+.dark h2 span{color:var(--sky)}
+.dark .eyebrow{color:var(--sky)}
+.dark .step{border-top-color:var(--sky)}
+.dark .step .num{color:var(--on-dark);font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.02em;line-height:1}
+.dark .step h3{color:var(--on-dark)}
+.dark .step p{color:var(--on-dark-body)}
+.dark .cf{background:var(--flag-bg);color:var(--flag-ink)}
+/* commercial */
+.band{background:var(--blueband)}
+.band h2{color:var(--on-dark)}
+.band .lede{color:var(--on-dark-body)}
+.band .eyebrow{color:var(--on-dark)}
+.band .btn-ghost{background:var(--on-dark);border-color:transparent;color:var(--navy)}
+.biz{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,56px);align-items:center}
+@media(max-width:860px){.biz{grid-template-columns:1fr}}
+.biz-photo{aspect-ratio:3/2}
+/* service area */
+.area{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,4vw,56px);align-items:center}
+@media(max-width:860px){.area{grid-template-columns:1fr}}
+.map-photo{aspect-ratio:534/569;max-width:100%}
+
+/* areas */
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.5rem 1.05rem;font-size:.88rem;font-weight:500;color:var(--ink);text-decoration:none}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+
+/* reviews: blue gradient cards (Uptown-style) */
+.rev-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.25rem}
+.rev-score{display:flex;align-items:center;gap:.9rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.75rem 1.1rem;box-shadow:var(--shadow)}
+.rev-score .big{font-family:var(--display);font-weight:900;font-size:2rem;color:var(--ink);line-height:1}
+.rev-score small{display:block;font-size:.8rem;color:var(--muted)}
+.starbar{position:relative;display:inline-block;font-size:1rem;letter-spacing:.12em;color:var(--line);line-height:1}
+.starbar span{position:absolute;inset:0 auto 0 0;overflow:hidden;white-space:nowrap;color:#F5B301}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.25rem}
+@media(max-width:900px){.reviews{grid-template-columns:1fr}}
+.review{margin:0;border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:.85rem;min-width:0;color:var(--on-dark);background:linear-gradient(160deg,#2F6FCF 0%,#1D57B5 55%,#3A8FD9 100%);box-shadow:0 10px 30px rgba(20,60,140,.25)}
+.rv-top{display:flex;align-items:center;gap:.75rem}
+.avatar{width:44px;height:44px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.55);font-family:var(--display);font-weight:800;font-size:.95rem;color:#fff}
+.rv-who{min-width:0;flex:1}
+.rv-who b{display:block;font-family:var(--display);font-weight:700;font-size:.98rem;color:#fff}
+.rv-who span{font-size:.8rem;color:rgba(255,255,255,.78)}
+.src{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#fff;color:#C41200;border-radius:999px;padding:.2rem .55rem;flex:none}
+.rv-meta{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.8)}
+.rv-meta .stars{color:#FFC93C;letter-spacing:.1em;font-size:.95rem}
+.review blockquote{margin:0;font-size:.93rem;line-height:1.6;color:rgba(255,255,255,.95)}
+.revfoot{margin-top:2rem;display:flex;justify-content:center}
+
+/* faq */
+.faq{max-width:840px;margin-top:2.25rem}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:1.1rem 2.5rem 1.1rem 0;font-family:var(--display);font-weight:700;font-size:1rem;color:var(--ink);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:.25rem;top:50%;transform:translateY(-50%);color:var(--accent);font-size:1.3rem;font-weight:600;font-family:var(--text)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 0 1.2rem;font-size:.93rem;max-width:68ch}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* cta: full-bleed photo with navy wash (landscaping-style) */
+.cta{position:relative;overflow:hidden;text-align:center;background:var(--navy)}
+.cta .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,22,40,.55),rgba(13,22,40,.75));z-index:1}
+.cta .wrap{position:relative;z-index:2;padding-block:clamp(24px,4vw,40px)}
+.cta h2{color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(1.9rem,4.4vw,3.2rem);max-width:18ch;margin-inline:auto}
+.cta p{color:rgba(255,255,255,.85);margin-top:1rem;font-size:1.05rem}
+.cta .btns{justify-content:center;align-items:center;gap:1.25rem}
+.cta .btn-primary{background:#fff;color:var(--navy);box-shadow:0 4px 0 rgba(255,255,255,.25)}
+.cta .phone{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:800;font-size:1.25rem;color:#fff;text-decoration:none}
+.cta .phone svg{width:22px;height:22px;fill:var(--sky)}
+
+/* footer: black, five columns, legal bar with agency credit */
+footer{background:#05070C;color:#C9D1DE}
+.fgrid{display:grid;grid-template-columns:1.25fr .9fr 1.3fr .9fr 1.35fr;gap:2rem;padding-block:3.5rem 2.25rem}
+@media(max-width:1060px){.fgrid{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:640px){.fgrid{grid-template-columns:1fr}}
+.fgrid>div{min-width:0}
+.fgrid>div+div{border-left:1px solid #1C2433;padding-left:1.5rem}
+@media(max-width:1060px){.fgrid>div+div{border-left:0;padding-left:0}}
+.fgrid h4{font-family:var(--display);font-size:.9rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin:0 0 1rem}
+.fgrid p,.fgrid a{font-size:.9rem;color:#C9D1DE;text-decoration:none;display:block;line-height:1.5}
+.fgrid li{list-style:none}
+.fgrid ul{margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.fgrid a:hover{color:#fff}
+.fgrid .fbrand{font-family:var(--display);font-weight:900;font-size:1.35rem;color:#fff!important;letter-spacing:-.01em;margin-bottom:.6rem}
+.fbrand span{color:var(--sky)}
+.fcontact{display:flex;flex-direction:column;gap:.35rem;margin-top:.9rem}
+.fcontact a{color:#fff!important;font-weight:600}
+.social{display:flex;gap:.5rem;margin-top:1.1rem}
+.social a{display:inline-flex!important;align-items:center;justify-content:center;height:34px;padding:0 .9rem;border-radius:999px;background:var(--sky);color:#fff!important;font-size:.8rem!important;font-weight:700;letter-spacing:.04em}
+.fmap{margin:0;border-radius:12px;overflow:hidden;border:1px solid #1C2433;aspect-ratio:4/3;max-width:100%}
+.fmap img{display:block;width:100%;height:100%;object-fit:cover}
+.fmap-cap{font-size:.8rem!important;color:#8E99AD!important;margin-top:.6rem}
+.legal{border-top:1px solid #1C2433;padding-block:1.25rem;display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;align-items:center;font-size:.8rem;color:#8E99AD}
+.legal nav{display:flex;flex-wrap:wrap;gap:.4rem 1.25rem;font-size:.8rem;font-weight:400}
+.legal a{color:#C9D1DE;text-decoration:none}
+.legal a:hover{color:#fff}
+.legal .built a{color:#fff;font-weight:600}
+footer .cf{background:#3A2E10;color:#F5D27A;border-color:#6B5520}
+
+/* mobile call bar */
+.callbar{display:none}
+@media(max-width:860px){
+  .callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--accent);
+    padding:.85rem max(16px,env(safe-area-inset-right,0px)) calc(.85rem + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+    text-align:center;font-family:var(--display);font-weight:800;color:var(--on-accent);font-size:1rem;text-decoration:none}
+  footer{padding-bottom:70px}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="site">
+  <div class="wrap navrow">
+    <a class="brand" href="#top">L<span>&amp;</span>A House Cleaning</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#areas">Areas We Serve</a>
+    </nav>
+    <a class="navphone" href="tel:+16509954236">(650) 995-4236</a>
+  </div>
+</header>
+
+<section id="top" class="hero-band">
+  <figure class="bg">
+    <img src="img/house-cleaning-redwood-city-owners-wide.webp" width="1920" height="845" alt="Lidia and Aurelio, owners of L&amp;A House Cleaning, with the company truck in Redwood City">
+  </figure>
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <h1>House Cleaning in <span>Redwood City</span>, Done Like It's Our Own Home</h1>
+      <p class="lede" style="margin-top:1.25rem">For over ten years, L&amp;A has cleaned homes across Redwood City, San Mateo, Menlo Park, Palo Alto and Mountain View - a professional team and the same standard on every visit.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="tel:+16509954236">Call (650) 995-4236</a>
+        <a class="btn btn-ghost" href="#contact">Request a free quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <b><span class="dot"></span>10+ Years on the Peninsula</b>
+    <b><span class="dot"></span>Licensed &amp; Bonded</b>
+    <b><span class="dot"></span>4.4 Stars &middot; 30 Reviews on Yelp</b>
+    <b><span class="dot"></span>Natural Products On Request</b>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <figure class="photo about-photo">
+      <img src="img/la-house-cleaning-owners-redwood-city.webp" width="1000" height="1333" alt="Lidia and Aurelio, owners of L&amp;A House Cleaning" loading="lazy">
+    </figure>
+    <div class="stack">
+      <h2>The Same Team, Every Single Visit</h2>
+      <p>Most cleaning companies send whoever is available. You get a different person each visit, and you explain your home all over again every time.</p>
+      <p>We don't work that way. L&amp;A is owned by Lidia and Aurelio, who have built and trained a team that's been cleaning homes on the Peninsula for more than ten years. We assign the same cleaners to your home, so by the third visit nobody needs to be told which floors need the gentle products or where the vacuum lives.</p>
+      <p>We're licensed and bonded, and we bring our own supplies. If anyone in your home is sensitive to fragrance or you'd rather we skip the harsh chemicals, just ask - we keep all-natural products on hand at no extra charge.</p>
+      <div class="btns"><a class="btn btn-primary" href="tel:+16509954236">Call (650) 995-4236</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <h2>What We Clean</h2>
+    <p class="lede" style="margin-top:1rem">Regular upkeep, a one-time deep clean, or fast turnovers between guests - here's what we handle across the Peninsula.</p>
+    <div class="grid g3">
+      <article class="card"><img src="img/regular-house-cleaning-redwood-city.webp" width="1000" height="667" alt="Cleaned living room in a Redwood City home" loading="lazy"><div class="card-body"><h3><a href="#services">Regular Cleaning</a></h3><p>Weekly, every other week or monthly. Kitchens, bathrooms, bedrooms, living spaces, floors and dusting throughout - including blinds, which most companies charge extra for.</p><a class="more" href="#services">Learn more</a></div></article>
+      <article class="card"><img src="img/deep-cleaning-redwood-city.webp" width="1000" height="667" alt="Deep cleaning supplies ready for a kitchen and bathroom reset" loading="lazy"><div class="card-body"><h3><a href="#services">Deep Cleaning</a></h3><p>The first-visit reset, or a once-a-season catch-up. Baseboards, inside appliances, grout, vents and the corners a regular clean doesn't reach.</p><a class="more" href="#services">Learn more</a></div></article>
+      <article class="card"><img src="img/move-out-cleaning-redwood-city.webp" width="1000" height="667" alt="Empty room cleaned for a move-out" loading="lazy"><div class="card-body"><h3><a href="#services">Move-In / Move-Out Cleaning</a></h3><p>Empty-house cleaning for renters chasing a deposit, sellers prepping for photos and buyers who want a clean start before the boxes arrive.</p><a class="more" href="#services">Learn more</a></div></article>
+      <article class="card"><img src="img/post-construction-cleanup-redwood-city.webp" width="1000" height="667" alt="Freshly remodeled kitchen after post-construction cleanup" loading="lazy"><div class="card-body"><h3><a href="#services">Post-Construction Cleanup</a></h3><p>Fine drywall dust gets everywhere and ordinary vacuums spread it. We do the multi-pass cleanup that makes a finished remodel actually livable.</p><a class="more" href="#services">Learn more</a></div></article>
+      <article class="card"><img src="img/window-cleaning-redwood-city.webp" width="1000" height="667" alt="Interior window cleaned to the frame" loading="lazy"><div class="card-body"><h3><a href="#services">Window Cleaning</a></h3><p>Interior windows on any floor, exterior on the first floor. Frames and sills included.</p><a class="more" href="#services">Learn more</a></div></article>
+      <article class="card"><img src="img/airbnb-turnover-cleaning-redwood-city.webp" width="1000" height="667" alt="Short-term rental bedroom reset between guests" loading="lazy"><div class="card-body"><h3><a href="#services">Airbnb &amp; Rental Turnovers</a></h3><p>Fast, reliable turnovers between guests, on whatever rhythm your bookings run. Linens, bathrooms, kitchen reset - the same checklist every time. Deeper periodic cleans keep the property review-ready.</p><a class="more" href="#services">Learn more</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2 style="text-align:center">Getting Started Takes <span>One Phone Call</span></h2>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Call or send us a note</h3><p>Tell us the size of your home, how often you'd like us and anything specific you want handled.</p></div>
+      <div class="step"><div class="num">02</div><h3>We give you a straight price</h3><p>No subscriptions, no upsells, no surprise line items. You'll know what it costs before we start. <span class="cf">[CONFIRM: phone quote or walkthrough]</span></p></div>
+      <div class="step"><div class="num">03</div><h3>We show up, and we keep showing up</h3><p>The same team, same standard - weekly, every other week or monthly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Why Peninsula Homeowners Stay With L&amp;A</h2>
+    <div class="grid g5">
+      <div class="mini"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3.2 3.2 0 0 1 0 6.2M21 20c0-2.8-1.7-5-4-5.8"/></svg></div><h3>The same team every time</h3><p>We assign consistent cleaners to your home, so nobody re-explains how you like things done.</p></div>
+      <div class="mini"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><h3>Ten-plus years, one neighborhood</h3><p>We've cleaned homes from Redwood City to Mountain View. Most of our work comes from neighbors referring neighbors.</p></div>
+      <div class="mini"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div><h3>Licensed and bonded</h3><p>You're covered, and you can ask us for proof of it any time. <span class="cf">[CONFIRM: exact licensing wording]</span></p></div>
+      <div class="mini"><div class="icon"><svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-5 14-14-9 0-14 6-14 14z"/><path d="M5 19c3-4 6-6.5 9-8"/></svg></div><h3>Natural products at no extra cost</h3><p>Just tell us when you book.</p></div>
+      <div class="mini"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 9h16M4 13h16M4 17h16"/></svg></div><h3>Blinds included</h3><p>A detail most companies quietly leave off the list.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap biz">
+    <div class="stack">
+      <h2>We Clean Offices and Commercial Spaces, Too</h2>
+      <p class="lede">Small offices, medical and dental suites, retail floors and building common areas across the Peninsula. Same team, same standard, scheduled around your hours instead of ours - nights and weekends included. We handle regular janitorial upkeep as well as one-time post-construction and post-event cleanups.</p>
+      <div class="btns"><a class="btn btn-ghost" href="#services">See commercial cleaning</a></div>
+    </div>
+    <figure class="photo biz-photo">
+      <img src="img/commercial-office-cleaning-redwood-city.webp" width="1000" height="667" alt="Clean open-plan office on the Peninsula" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="wrap area">
+    <figure class="photo map-photo">
+      <img src="img/service-area-map-san-mateo-county.webp" width="534" height="569" alt="Map of the Peninsula cities L&amp;A House Cleaning serves" loading="lazy">
+    </figure>
+    <div class="stack">
+      <h2>Serving Redwood City and the Peninsula</h2>
+      <p class="lede">Based in Redwood City and working throughout San Mateo County and the northern Santa Clara Valley. If you don't see your city listed, call us anyway - we're often nearby.</p>
+      <div class="chips">
+        <a class="chip" href="#areas">Redwood City</a><a class="chip" href="#areas">San Mateo</a><a class="chip" href="#areas">Menlo Park</a><a class="chip" href="#areas">Palo Alto</a><a class="chip" href="#areas">Mountain View</a><a class="chip" href="#areas">Atherton</a><a class="chip" href="#areas">Belmont</a><a class="chip" href="#areas">San Carlos</a>
+      </div>
+      <div class="btns"><a class="btn btn-primary" href="tel:+16509954236">Call (650) 995-4236</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <div>
+        <p class="eyebrow">Testimonials</p>
+        <h2 style="margin-top:.5rem">What Our Clients Say</h2>
+      </div>
+      <div class="rev-score" aria-label="4.4 out of 5 stars from 30 reviews on Yelp">
+        <span class="big">4.4</span>
+        <div><span class="starbar" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;<span style="width:88%">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span><small>30 reviews on Yelp</small></div>
+      </div>
+    </div>
+    <div class="reviews">
+      <figure class="review">
+        <div class="rv-top"><div class="avatar" aria-hidden="true">JD</div><div class="rv-who"><b>Jessica D.</b><span>Redwood City, CA</span></div><span class="src">Yelp</span></div>
+        <div class="rv-meta"><span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Dec 2025</span></div>
+        <blockquote>"We have been using L&amp;A House Cleaning for years now and are very happy with them. They're very kind, helpful, and understanding. They come every other week, and they always let us know in advance if there's going to be a schedule change. Similarly they are always willing to work with us when we are dealing with sickness or need to switch day. I also appreciate that they're willing to adapt their routine through our house depending on what our needs are on a given day (and which kids are home at the time). We find their pricing to be very reasonable, and we look forward to continuing to work with them!"</blockquote>
+      </figure>
+      <figure class="review">
+        <div class="rv-top"><div class="avatar" aria-hidden="true">PN</div><div class="rv-who"><b>Paul N.</b><span>Redwood City, CA</span></div><span class="src">Yelp</span></div>
+        <div class="rv-meta"><span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Sep 2022</span></div>
+        <blockquote>"Lidia and her team do an outstanding job! They arrive on time, work efficiently, and are very thoughtful about how they approach the task. I had to be in a Zoom call while they were here, so they asked what room I'd be using and cleaned that first. Brought them in initially for a cleaning before we had a house guest, and we're now using them for regular cleanings. Highly recommended!"</blockquote>
+      </figure>
+      <figure class="review">
+        <div class="rv-top"><div class="avatar" aria-hidden="true">JK</div><div class="rv-who"><b>Jay K.</b><span>Mountain View, CA</span></div><span class="src">Yelp</span></div>
+        <div class="rv-meta"><span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Mar 2022</span></div>
+        <blockquote>"We've worked with Lidia and Aurelio for almost 9 years now. They do a great job while being quick and efficient. On top of regular biweekly cleaning, I've also hired them for multiple move out/move in cleanings. Highly recommend!"</blockquote>
+      </figure>
+    </div>
+    <div class="revfoot"><a class="btn btn-primary" href="https://www.yelp.com/biz/l-and-a-house-cleaning-redwood-city" target="_blank" rel="noopener">Read all reviews</a></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Common Questions</h2>
+    <div class="faq">
+      <details open><summary>Do I need to be home during the cleaning?</summary><p>No. Most of our regular clients give us a key or a door code and come home to a clean house. Whatever you're comfortable with works for us.</p></details>
+      <details><summary>Will I get the same cleaners each time?</summary><p>Yes, that's how we schedule it. We assign a consistent team to your home so you're not re-explaining your preferences every visit.</p></details>
+      <details><summary>Do you bring your own supplies and equipment?</summary><p>Yes, everything. If you'd prefer we use a specific product on a particular surface, leave it out and let us know.</p></details>
+      <details><summary>Do you clean Airbnbs and short-term rentals?</summary><p>Yes. We handle regular turnovers between guests on whatever schedule your bookings run, plus deeper periodic cleans to keep the property in shape.</p></details>
+      <details><summary>Are you licensed and bonded?</summary><p>We're licensed and bonded. We're happy to send proof before your first visit. <span class="cf">[CONFIRM: exact licensing wording]</span></p></details>
+      <details><summary>What does a cleaning cost?</summary><p>It depends on the size of your home and how often you'd like us. Call (650) 995-4236 and we'll give you a straight price. <span class="cf">[CONFIRM: phone quote or walkthrough]</span></p></details>
+      <details><summary>How often can you come?</summary><p>Weekly, every other week or monthly for regular cleaning, and as often as you need for rental turnovers. One-time deep cleans and move-out cleans are available too.</p></details>
+      <details><summary>Do you use eco-friendly or natural products?</summary><p>Yes, on request and at no extra charge. Just mention it when you book.</p></details>
+      <details><summary>What areas do you serve?</summary><p>Redwood City, San Mateo, Menlo Park, Palo Alto, Mountain View and the surrounding Peninsula.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <img class="bgimg" src="img/clean-living-room-redwood-city.webp" width="1920" height="1377" alt="">
+  <div class="wrap">
+    <h2>Ready for a Cleaner Home?</h2>
+    <p>Call us and we'll give you a price today. No contracts, no subscriptions.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="mailto:lnahousecleaning@gmail.com">Request a free quote</a>
+      <a class="phone" href="tel:+16509954236"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>(650) 995-4236</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="fbrand" href="#top">L<span>&amp;</span>A House Cleaning</a>
+        <p>House cleaning in Redwood City and across the Peninsula.</p>
+        <div class="fcontact">
+          <p>Redwood City, CA <span class="cf">[CONFIRM: is 127B Hazel Ave a home address?]</span></p>
+          <a href="tel:+16509954236">(650) 995-4236</a>
+          <a href="mailto:lnahousecleaning@gmail.com">lnahousecleaning@gmail.com</a>
+        </div>
+        <div class="social"><a href="https://www.yelp.com/biz/l-and-a-house-cleaning-redwood-city" target="_blank" rel="noopener" aria-label="L&amp;A House Cleaning on Yelp">Yelp</a></div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul><li><a href="#top">Home</a></li><li><a href="#services">Services</a></li><li><a href="#areas">Areas We Serve</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#services">Regular Cleaning</a></li><li><a href="#services">Deep Cleaning</a></li><li><a href="#services">Airbnb &amp; Rental Turnovers</a></li><li><a href="#services">Move-In / Move-Out Cleaning</a></li><li><a href="#services">Post-Construction Cleanup</a></li><li><a href="#services">Window Cleaning</a></li><li><a href="#services">Commercial &amp; Office Cleaning</a></li></ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p><span class="cf">[CONFIRM: hours]</span></p>
+      </div>
+      <div>
+        <h4>Service Area</h4>
+        <figure class="fmap"><img src="img/service-area-map-san-mateo-county.webp" width="534" height="569" alt="Map of the Peninsula cities L&amp;A House Cleaning serves"></figure>
+        <p class="fmap-cap">Redwood City, San Mateo, Menlo Park, Palo Alto, Mountain View, Atherton, Belmont, San Carlos</p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>&copy; 2026 L&amp;A House Cleaning LLC. All rights reserved.</span>
+      <nav aria-label="Legal"><a href="#top">Privacy Policy</a><a href="#top">Terms of Service</a><a href="#top">Accessibility Statement</a></nav>
+      <span class="built">Website by <a href="https://kaizenagency.org" target="_blank" rel="noopener">Kaizen Agency</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+16509954236">Call (650) 995-4236</a>
+
+</body></html>
