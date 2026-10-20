@@ -35,8 +35,9 @@ img{display:block}
 .top .brand img{height:40px}
 .top .brand b{font-weight:800;font-size:22px;letter-spacing:1px}
 .top .brand b span{color:var(--red)}
-.deck.on-dark .top{color:rgba(255,255,255,.6)}
+.deck.on-dark .top{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .deck.on-dark .top .brand{color:#fff}
+.deck.on-dark .top .brand b span{color:#fff}
 .bar{position:absolute;left:0;right:0;bottom:0;height:64px;display:flex;align-items:center;gap:8px;padding:0 100px;z-index:5;background:var(--off);border-top:1px solid var(--line)}
 .deck.on-dark .bar{background:var(--ink);border-top-color:rgba(255,255,255,.1)}
 .bar .sec{flex:1;height:6px;border-radius:3px;background:var(--line);position:relative}
@@ -57,7 +58,7 @@ h2{font-size:84px;letter-spacing:-.5px}
 h3{font-size:34px;letter-spacing:.5px;line-height:1.05}
 h1 em,h2 em{font-style:normal;color:var(--red)}
 .lead{font-size:30px;line-height:1.4;color:var(--text);margin-top:22px;max-width:900px}
-.dark .lead,.s-qa .lead,.s-div .lead,.s-title .lead{color:rgba(255,255,255,.82)}
+.dark .lead,.s-div .lead{color:rgba(255,255,255,.85)}
 .grow{flex:1}
 
 /* ===== photo helpers ===== */
@@ -72,21 +73,22 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .arrow svg{width:56px;height:56px}
 
 /* ===== 1 · title ===== */
-.s-title{padding:0;background:var(--ink);color:#fff}
-.s-title .bg{position:absolute;inset:0}
-.s-title .bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
-.s-title .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,18,28,.96) 0%,rgba(13,18,28,.86) 38%,rgba(13,18,28,.25) 75%,rgba(13,18,28,.1) 100%)}
-.s-title .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 110px;max-width:1050px}
-.s-title .mark{height:200px;width:auto;align-self:flex-start;margin-bottom:22px}
-.s-title .kicker{color:#fff}
-.s-title .kicker:before{background:var(--red)}
-.s-title h1{font-size:160px;line-height:.86}
+.s-title{padding:0;background:var(--off)}
+.s-title .wrap{display:grid;grid-template-columns:900px 1fr;height:100%}
+.s-title .in{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 60px 40px 110px}
+.s-title .ph-r{position:relative;overflow:hidden}
+.s-title .ph-r img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.s-title .mark{height:220px;width:auto;align-self:flex-start;margin-bottom:18px}
+.s-title h1{font-size:150px;line-height:.86}
 .s-title h1 span{color:var(--red)}
-.s-title .tagline{font:700 46px/1.1 var(--head);text-transform:uppercase;letter-spacing:1px;margin-top:26px}
-.s-title .who{display:flex;gap:16px;align-items:center;margin-top:34px;font-size:26px;color:rgba(255,255,255,.8)}
-.s-title .who b{color:#fff;font-weight:600}
+.s-title .tagline{font:700 44px/1.1 var(--head);text-transform:uppercase;letter-spacing:1px;margin-top:22px}
+.s-title .who{display:flex;gap:14px;align-items:center;margin-top:30px;font-size:23px;color:var(--text);white-space:nowrap}
+.s-title .who b{color:var(--ink);font-weight:600}
 .s-title .who i{width:8px;height:8px;border-radius:50%;background:var(--red)}
 .s-title .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--red);z-index:3}
+.slide{isolation:isolate}
+.bg-bolt{position:absolute;z-index:-1;pointer-events:none;opacity:.16}
+.s-div .bg-bolt{z-index:1;opacity:.35}
 
 /* ===== 2 · meet losi ===== */
 .meet{display:grid;grid-template-columns:560px 1fr;gap:80px;align-items:center;height:100%}
@@ -119,15 +121,17 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .s-div{padding:0;color:#fff;background:var(--ink)}
 .s-div .bg{position:absolute;inset:0}
 .s-div .bg img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
-.s-div .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,18,28,.95) 0%,rgba(13,18,28,.55) 45%,rgba(13,18,28,.15) 100%)}
-.s-div .in{position:relative;z-index:2;margin-top:auto;padding:0 110px 140px}
-.s-div h1{font-size:160px;line-height:.88;max-width:1300px}
+.s-div .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,18,28,.82) 0%,rgba(13,18,28,.35) 40%,rgba(13,18,28,0) 70%)}
+.s-div .in{position:relative;z-index:2;margin-top:auto;padding:0 110px 120px}
+.s-div h1{font-size:150px;line-height:.88;max-width:1300px;text-shadow:0 4px 30px rgba(0,0,0,.35)}
 .s-div .kicker{color:#fff}
-.s-div .lead{color:rgba(255,255,255,.85);max-width:1000px}
+.s-div .lead{color:#fff;max-width:1000px}
+.s-div h1.q{font-size:76px;line-height:1.02;max-width:1050px;text-transform:none;font-weight:700;letter-spacing:0}
 
 /* ===== photo slides ===== */
 .head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
-.head-row .lead{margin-top:0;font-size:26px;max-width:520px;text-align:right}
+.head-row .lead{margin-top:0;font-size:26px;max-width:440px;text-align:right}
+.head-row h2{white-space:nowrap}
 .trio{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:18px;flex:1;margin-top:30px}
 .trio.even{grid-template-columns:1fr 1fr 1fr}
 .ba{display:flex;align-items:stretch;gap:0;flex:1;margin-top:30px}
@@ -135,11 +139,14 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .ba .side{display:grid;grid-template-rows:1fr 1fr;gap:18px;width:330px;margin-left:18px}
 .collage{display:grid;grid-template-columns:1.1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:18px;flex:1;margin-top:30px}
 .collage .big{grid-row:span 2}
+.hero-mascot{height:230px;width:auto;margin:0 0 -26px 0;flex-shrink:0}
 
 /* ===== 11 · referrals ===== */
 .refs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
 .ref{background:#fff;border-radius:18px;padding:28px 30px;display:flex;gap:20px;align-items:flex-start}
-.ref i{flex-shrink:0;width:16px;height:16px;border-radius:50%;background:var(--red);margin-top:12px}
+.ref .ico{flex-shrink:0;width:64px;height:64px;border-radius:14px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center}
+.ref .ico svg{width:34px;height:34px}
+.ref{align-items:center}
 .ref b{display:block;font:800 38px/1 var(--head);text-transform:uppercase}
 .ref span{display:block;font-size:22px;line-height:1.35;color:var(--text);margin-top:8px}
 .ask{margin-top:auto;display:flex;align-items:center;gap:26px;background:var(--ink);color:#fff;border-radius:18px;padding:26px 34px}
@@ -147,19 +154,18 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .ask span{font-size:26px;line-height:1.35}
 
 /* ===== 12 · Q&A ===== */
-.s-qa{padding:0;background:var(--ink);color:#fff}
-.s-qa .in{display:grid;grid-template-columns:1fr 520px;height:100%}
+.s-qa{padding:0;background:var(--off)}
+.s-qa .in{display:grid;grid-template-columns:1fr 560px;height:100%}
 .s-qa .l{padding:110px 0 110px 110px;display:flex;flex-direction:column}
 .s-qa h1{font-size:230px;line-height:.82}
 .s-qa h1 span{color:var(--red)}
-.s-qa .lead{font-size:32px}
-.contact{margin-top:auto;display:grid;grid-template-columns:auto auto;gap:18px 60px;justify-content:start}
-.contact div span{display:block;font:700 18px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.contact div b{display:block;font:700 40px/1.1 var(--head);letter-spacing:.5px;margin-top:8px}
-.s-qa .r{position:relative}
-.s-qa .r img{width:100%;height:100%;object-fit:cover}
-.s-qa .r:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink),transparent 40%);z-index:1}
-.s-qa .r .mk{position:absolute;right:30px;bottom:30px;width:380px;height:auto;z-index:2}
+.s-qa .lead{font-size:32px;color:var(--text)}
+.s-qa .r{position:relative;overflow:hidden}
+.s-qa .r>img:first-child{width:100%;height:100%;object-fit:cover}
+.s-qa .r .mk{position:absolute;right:24px;bottom:24px;width:360px;height:auto;z-index:2;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
+.contact{margin-top:auto;display:grid;grid-template-columns:auto auto;gap:22px 60px;justify-content:start}
+.contact div span{display:block;font:700 18px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:var(--red)}
+.contact div b{display:block;font:700 40px/1.1 var(--head);letter-spacing:.5px;margin-top:8px;color:var(--ink)}
 
 /* ===== on-screen controls ===== */
 .nav-btn{position:fixed;bottom:78px;z-index:10;border:1px solid rgba(255,255,255,.25);background:rgba(13,18,28,.7);color:#fff;font:600 15px var(--body);padding:10px 16px;border-radius:999px;cursor:pointer;opacity:0;transition:opacity .2s}
@@ -178,12 +184,13 @@ html.m h1{font-size:54px}html.m h2{font-size:40px}html.m h3{font-size:22px}
 html.m .kicker{font-size:13px;letter-spacing:2px;margin-bottom:12px;gap:10px}html.m .kicker:before{width:20px;height:3px}
 html.m .lead{font-size:17px;margin-top:12px}
 html.m .s-title,html.m .s-div,html.m .s-qa{padding:0;overflow:hidden}
-html.m .s-title .in{padding:46px 22px;min-height:520px}
-html.m .s-title .mark{height:120px;margin-bottom:20px}
+html.m .s-title .wrap{grid-template-columns:1fr}
+html.m .s-title .in{padding:34px 22px}
+html.m .s-title .mark{height:130px;margin-bottom:16px}
 html.m .s-title h1{font-size:72px}html.m .s-title .tagline{font-size:24px;margin-top:14px}
-html.m .s-title .who{font-size:15px;margin-top:22px;flex-wrap:wrap;gap:8px}
+html.m .s-title .who{font-size:15px;margin-top:18px;flex-wrap:wrap;gap:8px}
 html.m .s-title .stripe{width:6px}
-html.m .s-title .bg:after{background:linear-gradient(90deg,rgba(13,18,28,.94),rgba(13,18,28,.6))}
+html.m .s-title .ph-r{height:300px}html.m .bg-bolt{display:none}
 html.m .meet,html.m .split{grid-template-columns:1fr;gap:20px;height:auto}
 html.m .portrait{height:360px}
 html.m .portrait .nm b{font-size:34px}html.m .portrait .nm span{font-size:14px}
@@ -194,22 +201,22 @@ html.m .split .ph{height:300px;order:-1}
 html.m .quote{font-size:16px}
 html.m .svc{grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px;margin-top:18px}
 html.m .svc .ph{height:180px}html.m .svc .cap{font-size:18px;padding:40px 12px 12px}html.m .svc .cap small{display:none}
-html.m .s-div .in{padding:180px 22px 34px}html.m .s-div h1{font-size:56px}
-html.m .head-row{flex-direction:column;align-items:flex-start;gap:8px}html.m .head-row .lead{text-align:left;font-size:16px}
+html.m .s-div .in{padding:180px 22px 34px}html.m .s-div h1{font-size:56px}html.m .s-div h1.q{font-size:38px}
+html.m .head-row{flex-direction:column;align-items:flex-start;gap:8px}html.m .head-row .lead{text-align:left;font-size:16px}html.m .head-row h2{white-space:normal}
 html.m .trio,html.m .trio.even,html.m .collage{grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px;margin-top:16px}
 html.m .trio .ph,html.m .collage .ph{height:200px}
 html.m .ph{min-height:150px}
 html.m .svc .ph{min-height:0}
 html.m .trio .ph:first-child,html.m .collage .big{grid-column:span 2;grid-row:auto;height:260px}
-html.m .ba{flex-direction:column;gap:10px;margin-top:16px}html.m .ba .ph{height:240px;flex:none}
+html.m .hero-mascot{height:120px;margin:0}html.m .ba{flex-direction:column;gap:10px;margin-top:16px}html.m .ba .ph{height:240px;flex:none}
 html.m .ba .arrow{width:auto;height:30px;transform:rotate(90deg)}html.m .ba .arrow svg{width:30px;height:30px}
 html.m .ba .side{width:auto;margin-left:0;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px}html.m .ba .side .ph{height:150px}
 html.m .tag{font-size:12px;padding:6px 10px;left:10px;top:10px}html.m .cap{font-size:16px;padding:36px 12px 12px}
-html.m .refs{grid-template-columns:1fr;gap:10px;margin-top:20px}html.m .ref{padding:16px}html.m .ref b{font-size:22px}html.m .ref span{font-size:15px}html.m .ref i{margin-top:6px;width:12px;height:12px}
+html.m .refs{grid-template-columns:1fr;gap:10px;margin-top:20px}html.m .ref{padding:16px}html.m .ref b{font-size:22px}html.m .ref span{font-size:15px}html.m .ref .ico{width:44px;height:44px;border-radius:10px}html.m .ref .ico svg{width:24px;height:24px}
 html.m .ask{flex-direction:column;align-items:flex-start;gap:8px;padding:18px;margin-top:14px}html.m .ask b{font-size:24px}html.m .ask span{font-size:16px}
 html.m .s-qa .in{grid-template-columns:1fr}html.m .s-qa .l{padding:34px 22px}html.m .s-qa h1{font-size:90px}
 html.m .contact{grid-template-columns:1fr;gap:14px;margin-top:28px}html.m .contact div b{font-size:24px}html.m .contact div span{font-size:12px}
-html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(180deg,var(--ink),transparent 40%)}html.m .s-qa .r .mk{width:170px;right:20px;bottom:20px}
+html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:16px}
 
 /* ===== print / PDF: one slide per page ===== */
 @page{size:1600px 900px;margin:0}
@@ -222,7 +229,7 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
  .slide .pg{display:flex!important}
 }
 .pg{display:none;position:absolute;left:100px;right:100px;bottom:38px;justify-content:space-between;font:600 16px/1 var(--head);letter-spacing:2px;text-transform:uppercase;color:var(--muted);z-index:4}
-.dark .pg,.s-title .pg,.s-div .pg,.s-qa .pg{color:rgba(255,255,255,.55)}
+.dark .pg,.s-div .pg{color:rgba(255,255,255,.6)}
 </style>
 </head>
 <body>
@@ -231,15 +238,18 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 <div class="top"><div class="brand"><img src="img/mascot-sm.png" alt="" id="topmark"><b>MMT <span>Electric</span></b></div><span>BNI Premiere &middot; Feature presentation</span></div>
 
 <!-- 1 · TITLE -->
-<section class="slide s-title" data-sec="0" data-dark>
-  <div class="bg"><img src="img/onyx-wall.jpg" alt="Backlit onyx stone walls wired by MMT Electric"></div>
+<section class="slide s-title" data-sec="0">
   <div class="stripe"></div>
-  <div class="in">
-    <img class="mark" src="img/mascot.png" alt="MMT Electric mascot">
-    <div class="kicker">BNI Premiere &middot; Feature presentation</div>
-    <h1>MMT <span>Electric</span></h1>
-    <div class="tagline">When the lights go out, we show up.</div>
-    <div class="who"><b>Losi Taunaholo</b><i></i>Owner &amp; licensed electrical contractor<i></i>Union City</div>
+  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="left:560px;top:330px;height:640px;transform:rotate(16deg)">
+  <div class="wrap">
+    <div class="in">
+      <img class="mark" src="img/mascot.png" alt="MMT Electric mascot">
+      <div class="kicker">BNI Premiere &middot; Feature presentation</div>
+      <h1>MMT <span>Electric</span></h1>
+      <div class="tagline">When the lights go out, we show up.</div>
+      <div class="who"><b>Losi Taunaholo, Owner</b><i></i>Licensed electrical contractor<i></i>Union City</div>
+    </div>
+    <div class="ph-r"><img src="img/onyx-wall.jpg" alt="Backlit onyx stone walls wired by MMT Electric"></div>
   </div>
 </section>
 
@@ -250,13 +260,13 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
     <div class="portrait"><img src="img/losi.jpg" alt="Losi Taunaholo"><div class="nm"><span>Owner</span><b>Losi Taunaholo</b></div></div>
     <div>
       <div class="kicker">Meet Losi</div>
-      <h2>If you call,<br>you get <em>Losi.</em></h2>
-      <p class="lead">Not a call center. Not a dispatcher reading a script.</p>
+      <h2>Hi, I&rsquo;m <em>Losi.</em></h2>
+      <p class="lead">No call center. No dispatcher. Just me.</p>
       <div class="facts">
-        <div class="fact"><b>20+ yrs</b><span>in the electrical trade</span></div>
-        <div class="fact"><b>Since 2015</b><span>licensed &middot; CSLB #1002637</span></div>
-        <div class="fact"><b>4 &rarr; 20</b><span>core crew that scales up for big jobs</span></div>
-        <div class="fact"><b>Union City</b><span>serving the whole Bay Area</span></div>
+        <div class="fact"><b>20+ yrs</b><span>in the trade</span></div>
+        <div class="fact"><b>Since 2015</b><span>running my own shop &middot; CSLB #1002637</span></div>
+        <div class="fact"><b>4 guys</b><span>plus a crew I trained myself for the big ones</span></div>
+        <div class="fact"><b>Union City</b><span>out to San Mateo and San Jose. I don&rsquo;t limit myself.</span></div>
       </div>
     </div>
   </div>
@@ -266,14 +276,14 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 <section class="slide" data-sec="0">
   <div class="split">
     <div>
-      <div class="kicker">How he works</div>
-      <h2>Most of the work comes by <em>referral.</em></h2>
+      <div class="kicker">How I work</div>
+      <h2>Most of my work is <em>word of mouth.</em></h2>
       <div class="pillars">
-        <div class="pillar"><i>1</i><b>Shows up when he says he will</b></div>
-        <div class="pillar"><i>2</i><b>Tells you the truth, up front</b></div>
-        <div class="pillar"><i>3</i><b>Pulls the permit. Every time.</b></div>
+        <div class="pillar"><i>1</i><b>I show up when I say I will</b></div>
+        <div class="pillar"><i>2</i><b>I&rsquo;ll give it to you straight</b></div>
+        <div class="pillar"><i>3</i><b>Permits pulled. Every job.</b></div>
       </div>
-      <p class="quote">&ldquo;Tell me what you&rsquo;re trying to do. I&rsquo;ll tell you straight whether it can be done, and then I&rsquo;ll figure out how.&rdquo;</p>
+      <p class="quote">&ldquo;Fixing something that hasn&rsquo;t worked in years and having the client cheer you on. That just makes your day.&rdquo;</p>
     </div>
     <div class="ph"><img src="img/meter-bank-crew.jpg" alt="MMT crew working on a commercial meter bank"></div>
   </div>
@@ -281,33 +291,34 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 
 <!-- 4 · SERVICES -->
 <section class="slide" data-sec="1">
-  <div class="kicker">What we do</div>
-  <h2>Homes, businesses, <em>and the hard stuff.</em></h2>
+  <div class="kicker">What I do</div>
+  <h2>If it runs on power, <em>I got you.</em></h2>
   <div class="svc">
-    <div class="ph"><img src="img/panel-after.jpg" alt=""><div class="cap">Panel upgrades<small>Fuse boxes, EV-ready, more capacity</small></div></div>
-    <div class="ph"><img src="img/lit-steps-exterior.jpg" alt=""><div class="cap">Residential<small>Rewires, lighting, outlets, troubleshooting</small></div></div>
-    <div class="ph"><img src="img/restaurant-after.jpg" alt=""><div class="cap">Commercial<small>Restaurants, retail, offices, gyms</small></div></div>
-    <div class="ph"><img src="img/remodel-rough-in.jpg" alt=""><div class="cap">New construction &amp; remodels<small>Rough-in to final inspection</small></div></div>
-    <div class="ph"><img src="img/night-call.jpg" alt=""><div class="cap">Emergency<small>Power out, sparking, breakers tripping</small></div></div>
-    <div class="ph"><img src="img/onyx-island.jpg" alt=""><div class="cap">Custom work<small>The jobs other guys say no to</small></div></div>
+    <div class="ph"><img src="img/panel-after.jpg" alt=""><div class="cap">Panel upgrades<small>Old fuse box? Adding an EV charger?</small></div></div>
+    <div class="ph"><img src="img/lit-steps-exterior.jpg" alt=""><div class="cap">Residential<small>Lighting, outlets, rewires, the weird stuff</small></div></div>
+    <div class="ph"><img src="img/restaurant-after.jpg" alt=""><div class="cap">Commercial<small>Restaurants, shops, gyms, offices</small></div></div>
+    <div class="ph"><img src="img/remodel-rough-in.jpg" alt=""><div class="cap">New construction &amp; remodels<small>From bare studs to final inspection</small></div></div>
+    <div class="ph"><img src="img/night-call.jpg" alt=""><div class="cap">Emergency<small>Lights out? Call me.</small></div></div>
+    <div class="ph"><img src="img/onyx-island.jpg" alt=""><div class="cap">Custom work<small>My favorite part of the job</small></div></div>
   </div>
 </section>
 
 <!-- 5 · DIVIDER -->
 <section class="slide s-div" data-sec="2" data-dark>
   <div class="bg"><img src="img/onyx-tv-wall.jpg" alt=""></div>
+  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="right:40px;top:-40px;height:620px;transform:rotate(14deg)">
   <div class="in">
     <div class="kicker">Custom work</div>
-    <h1>The jobs other guys <span style="color:var(--red)">say no to.</span></h1>
-    <p class="lead">&ldquo;On this kind of job, electrical becomes an art.&rdquo;<br><span style="font:700 22px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:#fff;border-top:4px solid var(--red);padding-top:12px;display:inline-block;margin-top:16px">Losi</span></p>
+    <h1 class="q">&ldquo;When you get into custom work, the whole electrical is an art.&rdquo;</h1>
+    <p class="lead"><span style="font:700 22px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:#fff;border-top:4px solid var(--red);padding-top:12px;display:inline-block;margin-top:16px">Losi</span></p>
   </div>
 </section>
 
 <!-- 6 · BACKLIT STONE -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Custom residential</div><h2>Stone that <em>glows.</em></h2></div>
-    <p class="lead">Backlit onyx walls and a waterfall island. Every wire hidden.</p>
+    <div><div class="kicker">Custom residential</div><h2>Making things <em>glow.</em></h2></div>
+    <p class="lead">Backlit onyx walls and a lit-up island. You won&rsquo;t find a single wire.</p>
   </div>
   <div class="trio">
     <div class="ph"><img src="img/onyx-wall.jpg" alt="Backlit onyx feature walls"></div>
@@ -319,8 +330,8 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 <!-- 7 · PLANNED LIGHTING -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Lighting design</div><h2>Lighting that was <em>planned.</em></h2></div>
-    <p class="lead">Where the light lands, what it&rsquo;s for, and wiring you never see.</p>
+    <div><div class="kicker">Designing lighting</div><h2>Light it up <em>right.</em></h2></div>
+    <p class="lead">I love designing lighting. Where it lands, what it&rsquo;s for, no wires tangled everywhere.</p>
   </div>
   <div class="trio even">
     <div class="ph"><img src="img/lit-stairs.jpg" alt="LED-lit interior staircase"></div>
@@ -332,8 +343,8 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 <!-- 8 · COMMERCIAL BUILD-OUT -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Commercial build-outs</div><h2>Empty shell <em>&rarr; open.</em></h2></div>
-    <p class="lead">Restaurants, retail and gyms, wired to open on time.</p>
+    <div><div class="kicker">Commercial build-outs</div><h2>Bare walls <em>&rarr; open doors.</em></h2></div>
+    <p class="lead">Restaurants, gyms and showrooms. Wired up and ready for opening day.</p>
   </div>
   <div class="ba">
     <div class="ph"><img src="img/buildout-before.jpg" alt="Empty commercial space before"><span class="tag">Before</span></div>
@@ -349,8 +360,8 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 <!-- 9 · PANELS & POWER -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Panels &amp; power</div><h2>From scary <em>to safe.</em></h2></div>
-    <p class="lead">Panel swaps, meter banks, generators and battery backup.</p>
+    <div><div class="kicker">Panels &amp; power</div><h2>Out with <em>the old.</em></h2></div>
+    <p class="lead">New panels, meter banks, generators and battery backup.</p>
   </div>
   <div class="ba">
     <div class="ph"><img src="img/panel-before.jpg" alt="Old panel before upgrade"><span class="tag">Before</span></div>
@@ -367,8 +378,10 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 <!-- 10 · ON THE JOB -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">On the job</div><h2>When the lights go out, <em>we show up.</em></h2></div>
+    <div><div class="kicker">On the job</div><h2 style="white-space:normal">When the lights go out,<br><em>we come to the rescue.</em></h2></div>
+    <img class="hero-mascot" src="img/mascot.png" alt="MMT Electric mascot">
   </div>
+  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="left:640px;top:-80px;height:600px;transform:rotate(-14deg)">
   <div class="collage">
     <div class="ph big"><img src="img/night-call.jpg" alt="Night service call on a ladder"></div>
     <div class="ph"><img src="img/crew-install.jpg" alt="Crew installing a large panel"></div>
@@ -380,32 +393,34 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 
 <!-- 11 · REFERRALS -->
 <section class="slide" data-sec="3">
-  <div class="kicker">How you can help</div>
-  <h2>A good referral <em>for Losi.</em></h2>
+  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="right:40px;top:-30px;height:560px;transform:rotate(18deg)">
+  <div class="kicker">How you can help me</div>
+  <h2>Who I&rsquo;d love to <em>meet.</em></h2>
   <div class="refs">
-    <div class="ref"><i></i><div><b>Homeowners</b><span>Remodeling, adding an EV charger, or living with an old panel</span></div></div>
-    <div class="ref"><i></i><div><b>Builders &amp; designers</b><span>Custom homes and remodels with a vision that needs wiring</span></div></div>
-    <div class="ref"><i></i><div><b>Business owners</b><span>Opening or moving a restaurant, shop, gym or office</span></div></div>
-    <div class="ref"><i></i><div><b>Realtors &amp; property managers</b><span>Inspection flags, panel issues, tenant improvements</span></div></div>
+    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span><div><b>Homeowners</b><span>Remodeling, adding an EV charger, or stuck with an old panel</span></div></div>
+    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-4h6v4"/><path d="M9 11h6"/></svg></span><div><b>Builders &amp; designers</b><span>Got a client with a big vision? I&rsquo;ll wire it.</span></div></div>
+    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-1.5-5h-15z"/><path d="M4 9v12h16V9"/><path d="M9 21v-6h6v6"/></svg></span><div><b>Business owners</b><span>Opening or moving a restaurant, shop or gym</span></div></div>
+    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9"/><path d="m17 6 3 3"/><path d="m15 8 2 2"/></svg></span><div><b>Realtors &amp; property managers</b><span>Panel got flagged on inspection? Send them my way.</span></div></div>
   </div>
-  <div class="ask"><b>Listen for</b><span>&ldquo;Nobody wants to take this job&rdquo; or &ldquo;The breaker keeps tripping.&rdquo;</span></div>
+  <div class="ask"><b>Listen for</b><span>&ldquo;Nobody wants to touch this job&rdquo; or &ldquo;My breaker keeps tripping.&rdquo;</span></div>
 </section>
 
 <!-- 12 · Q&A -->
-<section class="slide s-qa" data-sec="4" data-dark>
+<section class="slide s-qa" data-sec="4">
+  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="left:700px;top:300px;height:620px;transform:rotate(-12deg)">
   <div class="in">
     <div class="l">
-      <div class="kicker">Thank you, BNI Premiere</div>
+      <div class="kicker">Thanks, BNI Premiere</div>
       <h1>Q<span>&amp;</span>A</h1>
-      <p class="lead">Ask Losi anything. Panels, permits, that weird outlet at home.</p>
+      <p class="lead">Ask me anything. Panels, permits, that weird outlet at home.</p>
       <div class="contact">
-        <div><span>Call or text Losi</span><b>510-825-2513</b></div>
+        <div><span>Call or text me</span><b>510-825-2513</b></div>
         <div><span>Email</span><b>losi@mmt-electric.com</b></div>
         <div><span>Web</span><b>mmt-electric.com</b></div>
         <div><span>License</span><b>CSLB #1002637</b></div>
       </div>
     </div>
-    <div class="r"><img src="img/lit-stairs.jpg" alt=""><img class="mk" src="img/mascot.png" alt="MMT Electric mascot"></div>
+    <div class="r"><img src="img/lit-stairs.jpg" alt=""></div>
   </div>
 </section>
 
