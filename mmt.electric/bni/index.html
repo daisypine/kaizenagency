@@ -24,7 +24,7 @@ img{display:block}
 /* ===== stage: 16:9 deck that scales to the screen ===== */
 .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0d121c}
 .deck{position:relative;width:1600px;height:900px;background:var(--off);transform-origin:center center;overflow:hidden;flex-shrink:0}
-.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:96px 100px 120px;background:var(--off)}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:70px 100px 110px;background:var(--off)}
 .slide.on{display:flex;animation:in .4s ease}
 @keyframes in{from{opacity:0}to{opacity:1}}
 .slide.dark{background:var(--ink);color:#fff}
@@ -51,8 +51,9 @@ img{display:block}
 
 /* ===== type ===== */
 .kicker{display:flex;align-items:center;gap:14px;font:700 22px/1 var(--head);letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:20px}
-.kicker:before,.attrib:before{content:"";flex-shrink:0;width:38px;height:23px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 254 150'%3E%3Cpath fill='%23CA1A0B' d='M0 33 97 4 82 49 253 1 38 149 48 97 22 101Z'/%3E%3C/svg%3E") no-repeat center/contain}
-.attrib{display:inline-flex;align-items:center;gap:12px;margin-top:16px;font:700 22px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:#fff}
+.kicker .ki{width:46px;height:46px;flex-shrink:0}
+.s-div .kicker .ki{background:#fff;border-radius:12px;padding:5px}
+.attrib{display:inline-flex;align-items:center;gap:12px;margin-top:18px;border-top:0;font:700 22px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:#fff}
 h1,h2,h3{font-family:var(--head);text-transform:uppercase;font-weight:800;line-height:.95}
 h1{font-size:150px;letter-spacing:-1px}
 h2{font-size:84px;letter-spacing:-.5px}
@@ -144,8 +145,8 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 /* ===== 11 · referrals ===== */
 .refs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
 .ref{background:#fff;border-radius:18px;padding:28px 30px;display:flex;gap:20px;align-items:flex-start}
-.ref .ico{flex-shrink:0;width:64px;height:64px;border-radius:14px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center}
-.ref .ico svg{width:34px;height:34px}
+.ref .ico{flex-shrink:0;width:76px;height:76px;border-radius:16px;background:var(--off);display:flex;align-items:center;justify-content:center}
+.ref .ico img{width:56px;height:56px}
 .ref{align-items:center}
 .ref b{display:block;font:800 38px/1 var(--head);text-transform:uppercase}
 .ref span{display:block;font-size:22px;line-height:1.35;color:var(--text);margin-top:8px}
@@ -156,7 +157,7 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 /* ===== 12 · Q&A ===== */
 .s-qa{padding:0;background:var(--off)}
 .s-qa .in{display:grid;grid-template-columns:1fr 560px;height:100%}
-.s-qa .l{padding:110px 0 110px 110px;display:flex;flex-direction:column}
+.s-qa .l{padding:150px 0 110px 110px;display:flex;flex-direction:column}
 .s-qa h1{font-size:230px;line-height:.82}
 .s-qa h1 span{color:var(--red)}
 .s-qa .lead{font-size:32px;color:var(--text)}
@@ -176,12 +177,12 @@ body:hover .nav-btn{opacity:.9}
 html.m,html.m body{height:auto;overflow:auto}
 html.m .stage{position:static;display:block;background:var(--ink)}
 html.m .deck{width:auto;height:auto;transform:none!important;background:transparent;overflow:visible;padding:0 12px 24px}
-html.m .top{position:sticky;top:0;left:0;right:0;margin:0 -12px 12px;padding:12px 16px;background:rgba(21,28,42,.96);color:rgba(255,255,255,.6);font-size:12px;gap:10px}
+html.m .top{display:none!important;position:sticky;top:0;left:0;right:0;margin:0 -12px 12px;padding:12px 16px;background:rgba(21,28,42,.96);color:rgba(255,255,255,.6);font-size:12px;gap:10px}
 html.m .top .brand{color:#fff}html.m .top .brand img{height:30px}html.m .top .brand b{font-size:17px}
 html.m .bar,html.m .nav-btn{display:none!important}
 html.m .slide{position:relative;inset:auto;display:flex!important;padding:26px 20px 26px;margin-bottom:12px;border-radius:18px;animation:none;min-height:0}
 html.m h1{font-size:54px}html.m h2{font-size:40px}html.m h3{font-size:22px}
-html.m .kicker{font-size:13px;letter-spacing:2px;margin-bottom:12px;gap:10px}html.m .kicker:before{width:24px;height:15px}
+html.m .kicker{font-size:13px;letter-spacing:2px;margin-bottom:12px;gap:10px}html.m .kicker .ki{width:30px;height:30px}
 html.m .lead{font-size:17px;margin-top:12px}
 html.m .s-title,html.m .s-div,html.m .s-qa{padding:0;overflow:hidden}
 html.m .s-title .wrap{grid-template-columns:1fr}
@@ -212,7 +213,7 @@ html.m .hero-mascot{height:120px;margin:0}html.m .ba{flex-direction:column;gap:1
 html.m .ba .arrow{width:auto;height:30px;transform:rotate(90deg)}html.m .ba .arrow svg{width:30px;height:30px}
 html.m .ba .side{width:auto;margin-left:0;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px}html.m .ba .side .ph{height:150px}
 html.m .tag{font-size:12px;padding:6px 10px;left:10px;top:10px}html.m .cap{font-size:16px;padding:36px 12px 12px}
-html.m .refs{grid-template-columns:1fr;gap:10px;margin-top:20px}html.m .ref{padding:16px}html.m .ref b{font-size:22px}html.m .ref span{font-size:15px}html.m .ref .ico{width:44px;height:44px;border-radius:10px}html.m .ref .ico svg{width:24px;height:24px}
+html.m .refs{grid-template-columns:1fr;gap:10px;margin-top:20px}html.m .ref{padding:16px}html.m .ref b{font-size:22px}html.m .ref span{font-size:15px}html.m .ref .ico{width:44px;height:44px;border-radius:10px}html.m .ref .ico img{width:34px;height:34px}
 html.m .ask{flex-direction:column;align-items:flex-start;gap:8px;padding:18px;margin-top:14px}html.m .ask b{font-size:24px}html.m .ask span{font-size:16px}
 html.m .s-qa .in{grid-template-columns:1fr}html.m .s-qa .l{padding:34px 22px}html.m .s-qa h1{font-size:90px}
 html.m .contact{grid-template-columns:1fr;gap:14px;margin-top:28px}html.m .contact div b{font-size:24px}html.m .contact div span{font-size:12px}
@@ -257,7 +258,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
     <!-- Swap img/losi.jpg for a better photo anytime. Same filename, nothing else changes. -->
     <div class="portrait"><img src="img/losi.jpg" alt="Losi Taunaholo"><div class="nm"><span>Owner</span><b>Losi Taunaholo</b></div></div>
     <div>
-      <div class="kicker">Meet Losi</div>
+      <div class="kicker"><img class="ki" src="img/icons/bay-area-local.png" alt="">Meet Losi</div>
       <h2>Hi, I&rsquo;m <em>Losi.</em></h2>
       <p class="lead">No call center. No dispatcher. Just me.</p>
       <div class="facts">
@@ -274,7 +275,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <section class="slide" data-sec="0">
   <div class="split">
     <div>
-      <div class="kicker">How I work</div>
+      <div class="kicker"><img class="ki" src="img/icons/code-compliance.png" alt="">How I work</div>
       <h2>Most of my work is <em>word of mouth.</em></h2>
       <div class="pillars">
         <div class="pillar"><i>1</i><b>I show up when I say I will</b></div>
@@ -289,7 +290,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 
 <!-- 4 · SERVICES -->
 <section class="slide" data-sec="1">
-  <div class="kicker">What I do</div>
+  <div class="kicker"><img class="ki" src="img/icons/panel-upgrades.png" alt="">What I do</div>
   <h2>If it runs on power, <em>I got you.</em></h2>
   <div class="svc">
     <div class="ph"><img src="img/panel-after.jpg" alt=""><div class="cap">Panel upgrades<small>Old fuse box? Adding an EV charger?</small></div></div>
@@ -305,7 +306,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <section class="slide s-div" data-sec="2" data-dark>
   <div class="bg"><img src="img/onyx-tv-wall.jpg" alt=""></div>
   <div class="in">
-    <div class="kicker">Custom work</div>
+    <div class="kicker"><img class="ki" src="img/icons/custom-work.png" alt="">Custom work</div>
     <h1 class="q">&ldquo;When you get into custom work, the whole electrical is an art.&rdquo;</h1>
     <p class="lead"><span class="attrib">Losi</span></p>
   </div>
@@ -314,7 +315,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <!-- 6 · BACKLIT STONE -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Custom residential</div><h2>Making things <em>glow.</em></h2></div>
+    <div><div class="kicker"><img class="ki" src="img/icons/residential.png" alt="">Custom residential</div><h2>Making things <em>glow.</em></h2></div>
     <p class="lead">Backlit onyx walls and a lit-up island. You won&rsquo;t find a single wire.</p>
   </div>
   <div class="trio">
@@ -327,7 +328,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <!-- 7 · PLANNED LIGHTING -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Designing lighting</div><h2>Light it up <em>right.</em></h2></div>
+    <div><div class="kicker"><img class="ki" src="img/icons/lighting.png" alt="">Designing lighting</div><h2>Light it up <em>right.</em></h2></div>
     <p class="lead">I love designing lighting. Where it lands, what it&rsquo;s for, no wires tangled everywhere.</p>
   </div>
   <div class="trio even">
@@ -340,7 +341,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <!-- 8 · COMMERCIAL BUILD-OUT -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Commercial build-outs</div><h2>Bare walls <em>&rarr; open doors.</em></h2></div>
+    <div><div class="kicker"><img class="ki" src="img/icons/commercial.png" alt="">Commercial build-outs</div><h2>Bare walls <em>&rarr; open doors.</em></h2></div>
     <p class="lead">Restaurants, gyms and showrooms. Wired up and ready for opening day.</p>
   </div>
   <div class="ba">
@@ -357,7 +358,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <!-- 9 · PANELS & POWER -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">Panels &amp; power</div><h2>Out with <em>the old.</em></h2></div>
+    <div><div class="kicker"><img class="ki" src="img/icons/service-upgrades.png" alt="">Panels &amp; power</div><h2>Out with <em>the old.</em></h2></div>
     <p class="lead">New panels, meter banks, generators and battery backup.</p>
   </div>
   <div class="ba">
@@ -375,7 +376,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <!-- 10 · ON THE JOB -->
 <section class="slide" data-sec="2">
   <div class="head-row">
-    <div><div class="kicker">On the job</div><h2 style="white-space:normal">When the lights go out,<br><em>we come to the rescue.</em></h2></div>
+    <div><div class="kicker"><img class="ki" src="img/icons/emergency.png" alt="">On the job</div><h2 style="white-space:normal">When the lights go out,<br><em>we come to the rescue.</em></h2></div>
     <img class="hero-mascot" src="img/mascot.png" alt="MMT Electric mascot">
   </div>
   <div class="collage">
@@ -389,13 +390,13 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 
 <!-- 11 · REFERRALS -->
 <section class="slide" data-sec="3">
-  <div class="kicker">How you can help me</div>
+  <div class="kicker"><img class="ki" src="img/icons/safety-inspections.png" alt="">How you can help me</div>
   <h2>Who I&rsquo;d love to <em>meet.</em></h2>
   <div class="refs">
-    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span><div><b>Homeowners</b><span>Remodeling, adding an EV charger, or stuck with an old panel</span></div></div>
-    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-4h6v4"/><path d="M9 11h6"/></svg></span><div><b>Builders &amp; designers</b><span>Got a client with a big vision? I&rsquo;ll wire it.</span></div></div>
-    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-1.5-5h-15z"/><path d="M4 9v12h16V9"/><path d="M9 21v-6h6v6"/></svg></span><div><b>Business owners</b><span>Opening or moving a restaurant, shop or gym</span></div></div>
-    <div class="ref"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9"/><path d="m17 6 3 3"/><path d="m15 8 2 2"/></svg></span><div><b>Realtors &amp; property managers</b><span>Panel got flagged on inspection? Send them my way.</span></div></div>
+    <div class="ref"><span class="ico"><img src="img/icons/residential.png" alt=""></span><div><b>Homeowners</b><span>Remodeling, adding an EV charger, or stuck with an old panel</span></div></div>
+    <div class="ref"><span class="ico"><img src="img/icons/new-construction.png" alt=""></span><div><b>Builders &amp; designers</b><span>Got a client with a big vision? I&rsquo;ll wire it.</span></div></div>
+    <div class="ref"><span class="ico"><img src="img/icons/commercial.png" alt=""></span><div><b>Business owners</b><span>Opening or moving a restaurant, shop or gym</span></div></div>
+    <div class="ref"><span class="ico"><img src="img/icons/code-compliance.png" alt=""></span><div><b>Realtors &amp; property managers</b><span>Panel got flagged on inspection? Send them my way.</span></div></div>
   </div>
   <div class="ask"><b>Listen for</b><span>&ldquo;Nobody wants to touch this job&rdquo; or &ldquo;My breaker keeps tripping.&rdquo;</span></div>
 </section>
@@ -404,7 +405,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <section class="slide s-qa" data-sec="4">
   <div class="in">
     <div class="l">
-      <div class="kicker">Thanks, BNI Premiere</div>
+      <div class="kicker"><img class="ki" src="img/icons/straight-answers.png" alt="">Thanks, BNI Premiere</div>
       <h1>Q<span>&amp;</span>A</h1>
       <p class="lead">Ask me anything. Panels, permits, that weird outlet at home.</p>
       <div class="contact">
@@ -449,8 +450,7 @@ function show(i){
   [].forEach.call(bar.querySelectorAll('.sec'),function(b,j){b.className='sec'+(j<sec?' done':j===sec?' cur':'');if(j===sec)b.style.setProperty('--p',p+'%')});
   var dark=cur.hasAttribute('data-dark');
   deck.classList.toggle('on-dark',dark);
-  var hideChrome=cur.classList.contains('s-title')||cur.classList.contains('s-qa');
-  deck.querySelector('.top').style.visibility=hideChrome?'hidden':'visible';
+  deck.querySelector('.top').style.visibility=cur.classList.contains('s-qa')?'visible':'hidden';
   document.getElementById('count').textContent=(idx+1)+' / '+slides.length;
   try{history.replaceState(null,'','#'+(idx+1))}catch(e){}
 }
