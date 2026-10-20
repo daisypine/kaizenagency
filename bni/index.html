@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Kaizen BNI Feature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+[hidden]{display:none!important}
+/* Layout: a 1600×900 stage scaled to the screen; Kaizen's bright neo-brutalist system — hard ink outlines, lime offset shadows, blue for emphasis. Single light look by choice. */
+:root{
+  --paper:#FAFAF7; --white:#FFFFFF; --ink:#111111; --ink-2:#4A4C45; --line:#D9DBD0;
+  --lime:#BFDF31; --lime-soft:#EEF6C8; --blue:#004BFF; --blue-soft:#E3EBFF; --aqua:#B8ECEA;
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --head:"Bricolage Grotesque", "Arial", system-ui, sans-serif;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+html,body{height:100%}
+body{background:var(--ink);color:var(--ink);font-family:var(--body);overflow:hidden;
+  padding-left:max(0px, env(safe-area-inset-left,0px));padding-right:max(0px, env(safe-area-inset-right,0px))}
+.viewport{position:fixed;inset:0;display:grid;place-items:center;background:#0d0d0c}
+.stage{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--paper);overflow:hidden;display:none;
+  padding:72px 96px 88px;flex-direction:column}
+.slide.active{display:flex}
+.dots::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--line) 2px,transparent 2.4px);background-size:28px 28px;opacity:.7;
+  -webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%);mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%)}
+.glow::after{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-380px;pointer-events:none;
+  background:radial-gradient(circle,var(--aqua) 0%,transparent 62%);opacity:.65}
+.slide > *{position:relative;z-index:1}
+
+/* type */
+.eyebrow{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:14px}
+.eyebrow .pill{background:var(--ink);color:var(--lime);border-radius:999px;padding:8px 16px;font-size:15px;letter-spacing:.1em}
+h1,h2{font-family:var(--display);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:104px}
+h2{font-size:68px;margin-top:22px}
+h3{font-family:var(--head);font-weight:800;font-size:30px;margin:0;line-height:1.1}
+p{margin:0}
+.lead{font-family:var(--head);font-size:30px;line-height:1.35;color:var(--ink-2);max-width:62ch;margin-top:22px}
+.blue{color:var(--blue)}
+.hl{background:linear-gradient(transparent 58%,var(--lime) 58%,var(--lime) 92%,transparent 92%);padding:0 6px}
+.small{font-size:20px;color:var(--ink-2);line-height:1.4}
+
+/* components */
+.card{background:var(--white);border:3px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink)}
+.card.lime{box-shadow:8px 8px 0 var(--lime);}
+.tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+  border:2px solid var(--ink);border-radius:999px;padding:6px 14px;background:var(--lime)}
+.tag.blue-t{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tag.ghost{background:var(--white)}
+
+/* logo recreated */
+.logo{display:inline-flex;position:relative;align-items:center;align-self:flex-start}
+.logo .pillbtn{font-family:var(--display);font-weight:700;letter-spacing:.01em;background:var(--white);border:4px solid var(--ink);
+  border-radius:999px;padding:.18em .7em .2em;box-shadow:0 .16em 0 var(--lime), 0 calc(.16em + 4px) 0 var(--ink);line-height:1}
+.logo svg{position:absolute;right:-.42em;bottom:-.5em;width:.95em;height:.95em}
+
+/* slide footer */
+.foot{position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--display);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);z-index:2}
+.foot .logo{font-size:16px}
+.foot .logo .pillbtn{border-width:2px;box-shadow:0 .16em 0 var(--lime),0 calc(.16em + 2px) 0 var(--ink)}
+
+/* entrance */
+.slide.active .rise{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+.slide.active .rise.d1{animation-delay:.08s}.slide.active .rise.d2{animation-delay:.16s}.slide.active .rise.d3{animation-delay:.24s}
+.slide.active .rise.d4{animation-delay:.32s}.slide.active .rise.d5{animation-delay:.4s}.slide.active .rise.d6{animation-delay:.48s}
+@keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
+
+/* ---------- S1 title ---------- */
+.s1{justify-content:center}
+.s1 .logo{font-size:44px;margin-bottom:56px}
+.s1 h1{font-size:116px;max-width:13ch}
+.s1 .tagline{margin-top:40px;display:flex;gap:18px;align-items:center;font-family:var(--head);font-size:30px;font-weight:600}
+.s1 .who{position:absolute;right:96px;bottom:96px;text-align:right;font-family:var(--head);font-size:24px;line-height:1.4}
+.s1 .who b{font-family:var(--display);font-size:30px;display:block}
+
+/* ---------- S2 hook ---------- */
+.s2 .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;flex:1}
+.phone{width:400px;height:640px;border:4px solid var(--ink);border-radius:52px;background:var(--white);box-shadow:14px 14px 0 var(--lime);
+  padding:26px 22px;display:flex;flex-direction:column;gap:16px;margin:auto}
+.search{border:2.5px solid var(--ink);border-radius:999px;padding:14px 20px;font-size:20px;font-weight:500;display:flex;gap:10px;align-items:center}
+.search .caret{width:2px;height:22px;background:var(--blue);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.result{border:2px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:6px}
+.result .bar{height:12px;border-radius:6px;background:var(--line)}
+.result .t{font-family:var(--head);font-weight:700;font-size:20px}
+.result .stars{color:#E2A400;font-size:16px;letter-spacing:2px}
+.result.win{border:3px solid var(--blue);background:var(--blue-soft)}
+.timer{display:flex;align-items:baseline;gap:14px;margin-top:40px}
+.timer b{font-family:var(--display);font-size:120px;line-height:1;color:var(--blue)}
+.timer span{font-family:var(--head);font-size:28px;font-weight:600;max-width:16ch;line-height:1.2}
+
+/* ---------- S3 staircase ---------- */
+.stairs{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:end;margin-top:30px}
+.step{border:3px solid var(--ink);border-radius:20px 20px 0 0;border-bottom:none;background:var(--white);padding:22px 20px;display:flex;flex-direction:column;gap:10px;position:relative}
+.step:nth-child(1){height:230px}.step:nth-child(2){height:300px}.step:nth-child(3){height:370px}.step:nth-child(4){height:440px}.step:nth-child(5){height:510px;background:var(--lime)}
+.step .n{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.1em;color:var(--blue)}
+.step h3{font-size:30px}
+.step p{font-size:19px;line-height:1.35;color:var(--ink-2)}
+.step .when{margin-top:auto;font-family:var(--head);font-weight:700;font-size:17px;border-top:2px dashed var(--ink);padding-top:10px}
+.ground{height:6px;background:var(--ink);border-radius:3px}
+.arrowup{position:absolute;right:96px;top:68px;font-family:var(--head);font-weight:700;font-size:22px;display:flex;align-items:center;gap:10px}
+
+/* ---------- S4 landing vs funnel ---------- */
+.versus{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:34px;align-items:stretch}
+.vs-col{display:grid;grid-template-columns:300px 1fr;gap:30px;padding:30px}
+.mock{border:3px solid var(--ink);border-radius:16px;background:var(--paper);padding:14px;display:flex;flex-direction:column;gap:9px}
+.mock .b{border-radius:6px;background:var(--line)}
+.mock .hero{height:84px;background:var(--blue-soft);border:2px solid var(--blue);border-radius:10px;display:grid;place-items:center;font-family:var(--display);font-size:13px;color:var(--blue)}
+.mock .btn{align-self:flex-start;background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-family:var(--display);font-size:12px;font-weight:700}
+.funnel{display:flex;flex-direction:column;gap:10px}
+.fstep{border:3px solid var(--ink);border-radius:14px;padding:12px 14px;font-family:var(--head);font-weight:700;font-size:19px;background:var(--white);display:flex;justify-content:space-between;align-items:center}
+.fstep:nth-child(1){margin:0 0}.fstep:nth-child(2){margin:0 16px}.fstep:nth-child(3){margin:0 32px}.fstep:nth-child(4){margin:0 48px;background:var(--lime)}
+.fstep small{font-family:var(--body);font-weight:500;font-size:14px;color:var(--ink-2)}
+.vs-text{display:flex;flex-direction:column;gap:14px}
+.vs-text ul{margin:4px 0 0;padding-left:22px;font-size:21px;line-height:1.5;color:var(--ink-2)}
+.vs-text .best{margin-top:auto;font-family:var(--head);font-size:20px;font-weight:600;background:var(--lime-soft);border-radius:12px;padding:12px 16px}
+
+/* ---------- S5 hub & spoke ---------- */
+.s5 .wrap{flex:1;display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.tree svg{width:100%;height:auto;overflow:visible}
+.tree .node rect{fill:var(--white);stroke:var(--ink);stroke-width:3}
+.tree .node.hub rect{fill:var(--ink)}
+.tree .node.hub text{fill:var(--lime)}
+.tree .node.money rect{fill:var(--lime)}
+.tree .node.city rect{fill:var(--blue-soft);stroke:var(--blue)}
+.tree text{font-family:var(--head);font-weight:700;font-size:20px;fill:var(--ink)}
+.tree .url{font-family:var(--body);font-weight:500;font-size:15px;fill:var(--ink-2)}
+.tree path{fill:none;stroke:var(--ink);stroke-width:3}
+.tree path.dash{stroke-dasharray:7 7}
+.checks{display:grid;gap:16px;margin-top:30px}
+.check{display:flex;gap:14px;align-items:flex-start;font-size:23px;line-height:1.35}
+.check i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--lime);border:2.5px solid var(--ink);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:16px;margin-top:2px}
+
+/* ---------- S6 authority ---------- */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:48px;align-items:stretch}
+.trust .card{padding:30px;display:flex;flex-direction:column;gap:16px}
+.trust .big{font-family:var(--display);font-weight:700;font-size:58px;line-height:1}
+.trust .card:nth-child(2){background:var(--blue);color:#fff;border-color:var(--ink)}
+.trust .card:nth-child(2) p{color:#E3EBFF}
+.trust .card:nth-child(3){background:var(--lime)}
+.trust p{font-size:21px;line-height:1.45;color:var(--ink-2)}
+.trust ul{margin:0;padding-left:22px;font-size:20px;line-height:1.55}
+.quote{margin-top:44px;font-family:var(--head);font-size:30px;font-weight:600;display:flex;gap:16px;align-items:center}
+
+/* ---------- S7 automation ---------- */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;align-items:stretch}
+.fnode{position:relative;padding:0 14px}
+.fnode .card{padding:24px 20px;height:100%;display:flex;flex-direction:column;gap:12px}
+.fnode .ic{width:58px;height:58px;border-radius:16px;border:3px solid var(--ink);background:var(--lime);display:grid;place-items:center}
+.fnode .ic svg{width:30px;height:30px}
+.fnode .time{font-family:var(--display);font-size:14px;letter-spacing:.08em;color:var(--blue);font-weight:700;text-transform:uppercase}
+.fnode p{font-size:19px;line-height:1.4;color:var(--ink-2)}
+.fnode:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;width:24px;height:24px;transform:translateY(-50%) rotate(45deg);
+  border-top:4px solid var(--ink);border-right:4px solid var(--ink);z-index:3}
+.crmband{margin-top:46px;border:3px dashed var(--ink);border-radius:18px;padding:20px 28px;display:flex;gap:24px;align-items:center;font-size:22px}
+.crmband b{font-family:var(--display);font-size:18px;letter-spacing:.06em}
+
+/* ---------- S8 brand guide ---------- */
+.s8 .wrap{flex:1;display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
+.guide{padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
+.guide .label{font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+.swatches{display:flex;gap:10px}
+.sw{flex:1;height:96px;border:3px solid var(--ink);border-radius:14px;display:flex;align-items:flex-end;padding:8px;font-size:12px;font-weight:700;font-family:var(--body)}
+.typeA{font-family:var(--display);font-weight:700;font-size:46px;line-height:1}
+.typeB{font-family:var(--head);font-weight:600;font-size:22px;margin-top:8px}
+.tone{display:flex;flex-wrap:wrap;gap:8px}
+.tone span{border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:700;font-size:17px;background:var(--white)}
+.feel{grid-column:1/-1;background:var(--ink);color:var(--white);border-radius:16px;padding:20px 24px;font-family:var(--head);font-size:24px;line-height:1.35}
+.feel b{color:var(--lime)}
+.logos{grid-column:1/-1;display:flex;gap:16px;align-items:center}
+.logos .chip{border:2.5px solid var(--ink);border-radius:12px;padding:10px 14px;font-family:var(--head);font-weight:700;font-size:16px;background:var(--paper)}
+.pieces{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;max-width:640px}
+.pieces span{border:2.5px solid var(--ink);border-radius:999px;padding:9px 18px;font-family:var(--head);font-weight:700;font-size:20px;background:var(--white)}
+.pieces span:nth-child(3n){background:var(--lime)}
+
+/* ---------- S9 interview ---------- */
+.s9 .wrap{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:34px}
+.clock{display:flex;align-items:center;gap:22px;margin-top:6px}
+.clock .face{width:120px;height:120px;border:4px solid var(--ink);border-radius:50%;background:var(--lime);position:relative;flex:none}
+.clock .face::before,.clock .face::after{content:"";position:absolute;left:50%;top:50%;background:var(--ink);border-radius:3px;transform-origin:bottom center}
+.clock .face::before{width:6px;height:40px;margin:-40px 0 0 -3px}
+.clock .face::after{width:4px;height:34px;margin:-34px 0 0 -2px;transform:rotate(90deg)}
+.clock b{font-family:var(--display);font-size:44px;line-height:1.05}
+.qs{display:grid;gap:14px}
+.q{padding:18px 22px;font-family:var(--head);font-weight:600;font-size:23px;line-height:1.3;border-radius:18px;border:3px solid var(--ink);background:var(--white);position:relative}
+.q:nth-child(even){margin-left:56px;background:var(--blue-soft)}
+.q small{display:block;font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--blue);margin-bottom:6px;text-transform:uppercase}
+.marquee{position:absolute;left:0;right:0;bottom:84px;overflow:hidden;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);background:var(--ink);padding:18px 0;z-index:1}
+.marquee .track{display:flex;gap:56px;white-space:nowrap;width:max-content;animation:scroll 32s linear infinite}
+.marquee span{font-family:var(--display);font-weight:600;font-size:30px;color:var(--white);display:flex;align-items:center;gap:56px}
+.marquee span::after{content:"";width:16px;height:16px;border-radius:50%;background:var(--lime)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- S10 Adapt ---------- */
+.s10 .wrap{flex:1;display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.piece{border:3px solid var(--ink);border-radius:16px;padding:18px 16px;background:var(--white);font-family:var(--head);font-weight:700;font-size:21px;display:flex;flex-direction:column;gap:8px;min-height:104px}
+.piece em{font-style:normal;font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+.piece.on{background:var(--lime)}
+.piece.ink{background:var(--ink);color:var(--white)}
+.piece.ink em{color:var(--lime)}
+.stamp{display:inline-flex;align-items:center;gap:12px;margin-top:30px;font-family:var(--display);font-size:22px;font-weight:700;border:3px solid var(--ink);border-radius:999px;padding:12px 22px;background:var(--white);box-shadow:6px 6px 0 var(--lime)}
+
+/* ---------- S11 ask ---------- */
+.s11 .wrap{flex:1;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;margin-top:20px}
+.refs{display:grid;gap:14px}
+.ref{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;border:3px solid var(--ink);border-radius:18px;padding:16px 22px;background:var(--white)}
+.ref .st{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:7px 10px;text-align:center}
+.ref p{font-family:var(--head);font-size:23px;font-weight:600;line-height:1.3}
+.contact{padding:40px;display:flex;flex-direction:column;gap:20px;background:var(--ink);color:var(--white);border-color:var(--ink);box-shadow:12px 12px 0 var(--lime)}
+.contact .logo .pillbtn{color:var(--ink)}
+.contact .logo{font-size:30px;align-self:flex-start;margin-bottom:10px}
+.contact b{font-family:var(--display);font-size:34px}
+.contact .line{font-size:24px;color:#E7E8E0;user-select:all}
+.contact .tagl{font-family:var(--head);font-size:24px;font-weight:600;color:var(--lime);border-top:2px solid #333;padding-top:18px}
+
+/* ---------- chrome ---------- */
+.hud{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:10px;justify-content:space-between;
+  padding:10px max(14px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px, env(safe-area-inset-left,0px));
+  font-family:var(--body);font-size:13px;color:#cfd1c8;opacity:0;transition:opacity .2s}
+.hud:hover,.hud:focus-within,body.showhud .hud{opacity:1}
+.hud button{font:600 13px var(--body);color:var(--ink);background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.hud button.alt{background:#2a2b27;color:#fff;border-color:#444}
+.hud button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.hud .grp{display:flex;gap:8px;align-items:center}
+.progress{position:fixed;left:0;top:0;height:5px;background:var(--lime);z-index:21;transition:width .3s;margin-top:env(safe-area-inset-top,0px)}
+.notes{position:fixed;right:max(14px, env(safe-area-inset-right,0px));bottom:calc(64px + env(safe-area-inset-bottom,0px));width:min(460px, calc(100vw - 28px));max-height:52vh;overflow:auto;z-index:22;
+  background:#1b1c19;color:#f2f3ec;border:2px solid var(--lime);border-radius:16px;padding:18px 20px;font-size:16px;line-height:1.55;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.notes h4{margin:0 0 8px;font:700 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--lime);display:flex;justify-content:space-between}
+.notes p+p{margin-top:10px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="progress" id="progress"></div>
+<div class="viewport" id="viewport">
+<div class="stage" id="stage">
+
+<!-- 1 TITLE -->
+<section class="slide s1 dots glow" data-time="0:15" data-notes="Hi everyone, I'm Daisy with Kaizen Agency. Today I'm only talking about one thing: websites. Not as a one-time project, but as something that should grow with your business, from the day you start to the day you're hiring your fifth truck.">
+  <div class="logo rise"><span class="pillbtn">KAIZEN AGENCY</span>
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#111" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="#111" stroke-width="2"/><path d="M12 12 L36 22 L25 25 L30 36 L26 38 L21 27 L14 34 Z" fill="#111"/></svg></div>
+  <h1 class="rise d1">Your website should <span class="blue">grow up</span> with your business.</h1>
+  <div class="tagline rise d2"><span class="tag">Website development</span><span>Your marketing pieces, clicked into place.</span></div>
+  <div class="who rise d3"><b>Daisy</b>Founder, Kaizen Agency<br>BNI Premier SJ</div>
+</section>
+
+<!-- 2 HOOK -->
+<section class="slide s2" data-time="0:30" data-notes="Picture this. Someone in this room just got referred to you. What's the first thing they do? They Google you. Before they ever call, your website has already introduced you. The question is whether it says 'this person is legit' or makes them hit the back button and call the next guy.">
+  <div class="eyebrow rise"><span class="pill">Start here</span>What happens after a referral</div>
+  <div class="wrap">
+    <div>
+      <h2 class="rise d1">Someone just got referred to you. <span class="hl">Then they Google you.</span></h2>
+      <div class="timer rise d2"><b>~5s</b><span>to decide if you look like the real deal</span></div>
+      <p class="lead rise d3">Your website is the first meeting you don't get to show up for. It should do the talking for you.</p>
+    </div>
+    <div class="phone rise d2" aria-hidden="true">
+      <div class="search">🔍 plumber near me<span class="caret"></span></div>
+      <div class="result"><div class="t">Outdated Plumbing Co.</div><div class="stars">★★★☆☆</div><div class="bar" style="width:80%"></div></div>
+      <div class="result win"><div class="t">Your Business</div><div class="stars">★★★★★</div><div class="bar" style="width:90%;background:#b9c9ff"></div><div class="bar" style="width:60%;background:#b9c9ff"></div></div>
+      <div class="result"><div class="t">Some Directory Listing</div><div class="stars">★★★★☆</div><div class="bar" style="width:70%"></div></div>
+      <div class="result"><div class="t">No-website Guy</div><div class="bar" style="width:50%"></div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>02</span></div>
+</section>
+
+<!-- 3 STAGES -->
+<section class="slide s3 dots" data-time="0:40" data-notes="Here's the big idea. A website isn't one thing. It has stages, just like your business. When you're brand new, a landing page is plenty. When you want leads, it becomes a funnel. When you want to show up in every city you serve, it becomes an SEO site. Then it becomes your authority. And the end goal is a site that's connected to your CRM, so no lead ever falls through the cracks. I build for whatever stage you're at, and I build it so it can grow into the next one.">
+  <div class="eyebrow rise"><span class="pill">The big idea</span>Five stages of a website</div>
+  <h2 class="rise d1">A website isn't one thing. It grows with you.</h2>
+  <div class="arrowup rise d2">Business grows <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5M9 5h10v10"/></svg></div>
+  <div class="stairs">
+    <div class="step rise d1"><span class="n">Stage 1</span><h3>Landing page</h3><p>One page. Who you are, what you do, call now.</p><span class="when">"I just started"</span></div>
+    <div class="step rise d2"><span class="n">Stage 2</span><h3>Funnel</h3><p>One offer, one path, built to turn clicks into calls.</p><span class="when">"I need leads"</span></div>
+    <div class="step rise d3"><span class="n">Stage 3</span><h3>Local SEO site</h3><p>A page for every service and every city you serve.</p><span class="when">"I want to be found"</span></div>
+    <div class="step rise d4"><span class="n">Stage 4</span><h3>Authority site</h3><p>Your story, team, reviews and proof. People know, like and trust you.</p><span class="when">"I'm the go-to"</span></div>
+    <div class="step rise d5"><span class="n">Stage 5</span><h3>Connected</h3><p>Site + CRM + automations. Every lead gets followed up.</p><span class="when">"I'm scaling"</span></div>
+  </div>
+  <div class="ground"></div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>03</span></div>
+</section>
+
+<!-- 4 LANDING vs FUNNEL -->
+<section class="slide s4" data-time="0:40" data-notes="Stage one and two. A landing page is your digital business card. One page, fast to launch, perfect when you're starting out or launching something new. I just built one-pagers for Motor Body and Alongi. A funnel is different. It's built around one offer, like a free estimate or a seasonal special, and every section walks the visitor one step closer to calling you. Same budget mindset, different job.">
+  <div class="eyebrow rise"><span class="pill">Stages 1 + 2</span>Starting out vs. getting leads</div>
+  <h2 class="rise d1">Landing page or funnel? Depends on the job.</h2>
+  <div class="versus">
+    <div class="card vs-col rise d2">
+      <div class="mock" aria-hidden="true"><div class="hero">YOUR LOGO</div><div class="b" style="height:12px;width:85%"></div><div class="b" style="height:12px;width:60%"></div><span class="btn">CALL NOW</span><div class="b" style="height:48px"></div><div class="b" style="height:12px;width:70%"></div></div>
+      <div class="vs-text"><span class="tag ghost">Landing page</span><h3>Your digital business card</h3>
+        <ul><li>One page, live fast</li><li>Who you are + how to reach you</li><li>Looks legit when people check you out</li></ul>
+        <p class="best">Best for: new businesses, a new service, a quick start.</p></div>
+    </div>
+    <div class="card lime vs-col rise d3">
+      <div class="funnel" aria-hidden="true"><div class="fstep">The problem <small>hook</small></div><div class="fstep">The fix <small>offer</small></div><div class="fstep">The proof <small>reviews</small></div><div class="fstep">Book it <small>action</small></div></div>
+      <div class="vs-text"><span class="tag">Funnel</span><h3>Built for one result</h3>
+        <ul><li>One offer, one path</li><li>Every section moves them closer</li><li>Pairs with ads, flyers, QR codes</li></ul>
+        <p class="best">Best for: promos, estimates, seasonal pushes.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>04</span></div>
+</section>
+
+<!-- 5 SEO -->
+<section class="slide s5 dots" data-time="0:40" data-notes="Stage three is where it gets fun. Google ranks pages, not businesses. So if your site has one services page, you're invisible for most searches. For Johnny Windows I built a hub-and-spoke structure: a page for each service, a hub for each city, and pages like San Jose window cleaning that match exactly what people type. For Silicon Pro Plumbing we mapped out a 50-plus page sitemap so they can grow into it. This is how you show up when someone searches with their thumb at 9pm with a leak.">
+  <div class="eyebrow rise"><span class="pill">Stage 3</span>Built to be found</div>
+  <div class="wrap">
+    <div>
+      <h2 class="rise d1">Google ranks <span class="hl">pages</span>, not businesses.</h2>
+      <div class="checks">
+        <div class="check rise d2"><i>✓</i><span>A page for every service you actually sell</span></div>
+        <div class="check rise d3"><i>✓</i><span>A page for every city you actually serve</span></div>
+        <div class="check rise d4"><i>✓</i><span>Built for Google, Maps and AI search</span></div>
+        <div class="check rise d5"><i>✓</i><span>Room to grow: Silicon Pro Plumbing's map has 50+ pages planned</span></div>
+      </div>
+    </div>
+    <div class="tree card rise d2" style="padding:26px 22px">
+      <svg viewBox="0 0 760 470" role="img" aria-label="Hub and spoke site map for Johnny Windows">
+        <path d="M380 70 V120 M380 120 H130 V160 M380 120 H380 V160 M380 120 H630 V160"/>
+        <path d="M380 220 V260 M380 260 H200 V300 M380 260 H560 V300"/>
+        <path class="dash" d="M200 360 V400"/>
+        <g class="node hub"><rect x="270" y="14" width="220" height="56" rx="28"/><text x="380" y="49" text-anchor="middle">Home</text></g>
+        <g class="node"><rect x="40" y="160" width="180" height="60" rx="14"/><text x="130" y="197" text-anchor="middle">Services</text></g>
+        <g class="node city"><rect x="290" y="160" width="180" height="60" rx="14"/><text x="380" y="197" text-anchor="middle">City hubs</text></g>
+        <g class="node"><rect x="540" y="160" width="180" height="60" rx="14"/><text x="630" y="197" text-anchor="middle">Blog</text></g>
+        <g class="node city"><rect x="100" y="300" width="200" height="60" rx="14"/><text x="200" y="330" text-anchor="middle">San Jose</text><text class="url" x="200" y="350" text-anchor="middle">/san-jose/</text></g>
+        <g class="node city"><rect x="460" y="300" width="200" height="60" rx="14"/><text x="560" y="330" text-anchor="middle">Campbell</text><text class="url" x="560" y="350" text-anchor="middle">/campbell/</text></g>
+        <g class="node money"><rect x="40" y="400" width="320" height="62" rx="14"/><text x="200" y="429" text-anchor="middle">San Jose Window Cleaning</text><text class="url" x="200" y="450" text-anchor="middle">/san-jose/window-cleaning/</text></g>
+        <text x="560" y="436" text-anchor="middle" class="url" style="font-size:17px;font-weight:700;fill:#004BFF">← the page that brings the calls</text>
+      </svg>
+    </div>
+  </div>
+  <div class="foot"><span>Example: Johnny Windows site map</span><span>05</span></div>
+</section>
+
+<!-- 6 AUTHORITY -->
+<section class="slide s6 glow" data-time="0:30" data-notes="Stage four. Sometimes a website's main job is just to be your authority. Falcon Roofing has been around 35 years with a great reputation, but online they looked brand new. A good site puts your story, your real team, your license number and your reviews front and center so people already trust you before they call. Referrals in this room work the same way: you hand someone a name, the site backs it up.">
+  <div class="eyebrow rise"><span class="pill">Stage 4</span>Know · Like · Trust</div>
+  <h2 class="rise d1">Sometimes a site's job is just to prove you're the real deal.</h2>
+  <div class="trust">
+    <div class="card rise d2"><span class="big">35</span><h3>years in business</h3><p>Falcon Roofing had the reputation, not the brand. The new site finally looks as established as they are.</p></div>
+    <div class="card rise d3"><span class="big">Real</span><h3>faces, not stock photos</h3><p>Your team, your trucks, your job sites. People hire people.</p></div>
+    <div class="card rise d4"><h3>Trust signals I build in</h3><ul><li>Reviews pulled from Google</li><li>License number + years</li><li>Your story, in your words</li><li>Before &amp; after work</li></ul></div>
+  </div>
+  <p class="quote rise d5"><span class="tag blue-t">The point</span>When someone refers you, your site should back them up.</p>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>06</span></div>
+</section>
+
+<!-- 7 AUTOMATION -->
+<section class="slide s7 dots" data-time="0:40" data-notes="Stage five is the end goal. Your website shouldn't just collect leads, it should hand them off. When someone fills out a form, it drops into your CRM, whether that's Housecall Pro, Jobber, or whatever you use. They get a text back right away, you get notified, and if they don't book, the follow-up goes out on its own. After the job, it asks for the review. Most businesses don't lose leads because they're bad at the work. They lose them because nobody followed up.">
+  <div class="eyebrow rise"><span class="pill">Stage 5</span>Connected to your CRM</div>
+  <h2 class="rise d1">No lead left on read.</h2>
+  <div class="flow">
+    <div class="fnode rise d1"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><span class="time">0 min</span><h3>Form filled</h3><p>Quote request comes in from the site.</p></div></div>
+    <div class="fnode rise d2"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><span class="time">Instantly</span><h3>Lands in your CRM</h3><p>No copy-paste. No lost sticky notes.</p></div></div>
+    <div class="fnode rise d3"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div><span class="time">1 min</span><h3>Text back</h3><p>"Thanks! We'll call you shortly."</p></div></div>
+    <div class="fnode rise d4"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="time">Day 2 · Day 5</span><h3>Follow-up</h3><p>Goes out on its own if they haven't booked.</p></div></div>
+    <div class="fnode rise d5"><div class="card" style="background:var(--lime)"><div class="ic" style="background:#fff"><svg viewBox="0 0 24 24" fill="#111"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div><span class="time">After the job</span><h3>Review ask</h3><p>Happy customers become 5 stars.</p></div></div>
+  </div>
+  <div class="crmband rise d6"><b>WORKS WITH</b><span>Housecall Pro · Jobber · your email list · whatever you already use</span></div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>07</span></div>
+</section>
+
+<!-- 8 BRAND -->
+<section class="slide s8 glow" data-time="0:40" data-notes="Now the part I love. A website only works if the brand behind it is clear. So I do rebrands too: logo, logo variations, and a brand guide that locks in your fonts, colors, tone and the feeling you want people to have. Then everything matches: website, business cards, trucks, flyers, door hangers, shirts. I did a full rebrand for Adapt Chiropractic, logos for MMT Electric and Johnny Windows, and print pieces for Sunwest Painting. Owners should be proud to hand out their card.">
+  <div class="eyebrow rise"><span class="pill">Branding</span>Before the website, the brand</div>
+  <div class="wrap">
+    <div>
+      <h2 class="rise d1">Look like the reputable business <span class="blue">you already are.</span></h2>
+      <p class="lead rise d2">A brand guide makes every piece match, so your website, truck and business card all feel like the same company.</p>
+      <div class="pieces rise d3"><span>Logo + variations</span><span>Website</span><span>Business cards</span><span>Door hangers</span><span>Flyers</span><span>Truck decals</span><span>Folders</span><span>Shirts</span></div>
+    </div>
+    <div class="card guide rise d2" aria-label="Sample brand guide">
+      <div><div class="label">Colors</div><div class="swatches"><div class="sw" style="background:#111;color:#fff">Ink</div><div class="sw" style="background:#BFDF31">Lime</div><div class="sw" style="background:#004BFF;color:#fff">Blue</div></div></div>
+      <div><div class="label">Fonts</div><div class="typeA">Aa</div><div class="typeB">Bold heading + friendly body</div></div>
+      <div><div class="label">Tone</div><div class="tone"><span>Warm</span><span>Straight-talking</span><span>Local</span><span>Proud</span></div></div>
+      <div><div class="label">Logo files</div><div class="tone"><span>Full</span><span>Icon</span><span>Black</span><span>White</span></div></div>
+      <div class="feel">The feeling: <b>"These people show up, do it right, and treat my house like theirs."</b></div>
+      <div class="logos"><span class="label" style="margin:0">Recent brand work</span><span class="chip">Adapt Chiropractic</span><span class="chip">MMT Electric</span><span class="chip">Johnny Windows</span><span class="chip">Sunwest Painting</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>08</span></div>
+</section>
+
+<!-- 9 INTERVIEW -->
+<section class="slide s9 dots" data-time="0:40" data-notes="How do I get it to feel like you? I sit down with the owner for about an hour. I ask about how you started, who your favorite customer is, what you never want to be mistaken for, what your team says when they answer the phone. The way it feels talking to you should be the way the website feels. Same with your team: their words, their personality, right on the screen. That's why my sites don't look like templates.">
+  <div class="eyebrow rise"><span class="pill">How I work</span>Onboarding interview</div>
+  <div class="wrap">
+    <div>
+      <h2 class="rise d1">The way it feels talking to you is how your site should feel.</h2>
+      <div class="clock rise d2"><div class="face" aria-hidden="true"></div><div><b>1 hour</b><p class="small">with the owner, before I design a single page</p></div></div>
+    </div>
+    <div class="qs">
+      <div class="q rise d2"><small>Your story</small>How did you get started, and why do you still do this?</div>
+      <div class="q rise d3"><small>Your people</small>Who's your favorite customer, and why?</div>
+      <div class="q rise d4"><small>Your edge</small>What do customers say about you that competitors can't claim?</div>
+      <div class="q rise d5"><small>Your team</small>How does your crew talk to customers on the job?</div>
+    </div>
+  </div>
+  <div class="marquee" aria-label="Example team messages">
+    <div class="track">
+      <span>"We show up when we say we will."</span><span>"Treat every house like it's your mom's."</span><span>"Family owned since day one."</span><span>"Ask for Miguel, he'll walk you through it."</span><span>"Clean job site, every time."</span>
+      <span>"We show up when we say we will."</span><span>"Treat every house like it's your mom's."</span><span>"Family owned since day one."</span><span>"Ask for Miguel, he'll walk you through it."</span><span>"Clean job site, every time."</span>
+    </div>
+  </div>
+  <div class="foot"><span>Your team's words, across the screen</span><span>09</span></div>
+</section>
+
+<!-- 10 ADAPT -->
+<section class="slide s10" data-time="0:30" data-notes="Here's what it looks like when it all comes together. Adapt Chiropractic and Wellness in Campbell has been with me four years. We rebranded them, built the website, and handle the email and text marketing, automations, business cards, social graphics and their Google profile. One person, one brand, every piece clicked into place.">
+  <div class="eyebrow rise"><span class="pill">All together</span>Case study</div>
+  <div class="wrap">
+    <div>
+      <h2 class="rise d1">Adapt Chiropractic &amp; Wellness</h2>
+      <p class="lead rise d2">Campbell, CA. A full rebrand, a new website, and the systems behind it. One brand, every piece matching.</p>
+      <div class="stamp rise d3"><span class="tag">4 years</span>and still growing together</div>
+    </div>
+    <div class="board">
+      <div class="piece ink rise d1"><em>Brand</em>New name + logo</div>
+      <div class="piece on rise d2"><em>Website</em>Rebuilt for local search</div>
+      <div class="piece rise d2"><em>Print</em>Team business cards</div>
+      <div class="piece rise d3"><em>CRM</em>Automations + cleanup</div>
+      <div class="piece ink rise d3"><em>Email</em>Rebrand announcement</div>
+      <div class="piece rise d4"><em>Text</em>SMS campaigns</div>
+      <div class="piece on rise d4"><em>Google</em>Business Profile</div>
+      <div class="piece rise d5"><em>Social</em>Carousels + graphics</div>
+      <div class="piece on rise d5"><em>Content</em>Photo + video shoots</div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>10</span></div>
+</section>
+
+<!-- 11 ASK -->
+<section class="slide s11 dots glow" data-time="0:40" data-notes="So, who's a good referral for me? Anyone at any of these stages. Someone just starting out with no site. Someone with a site that isn't bringing in calls. Someone who just rebranded or is adding a new service or city. Or someone drowning in leads they can't keep up with. If you hear any of these this week, send them my way. I'm Daisy with Kaizen Agency. Your marketing pieces, clicked into place. Thank you!">
+  <div class="eyebrow rise"><span class="pill">My ask</span>A great referral for me sounds like</div>
+  <div class="wrap">
+    <div class="refs">
+      <div class="ref rise d1"><span class="st">Starting</span><p>"I just started and don't have a website yet."</p></div>
+      <div class="ref rise d2"><span class="st">Stuck</span><p>"I have a site, but it never brings me calls."</p></div>
+      <div class="ref rise d3"><span class="st">Growing</span><p>"We're adding a service, a city, or a new name."</p></div>
+      <div class="ref rise d4"><span class="st">Scaling</span><p>"Leads come in and we can't keep up with follow-up."</p></div>
+    </div>
+    <div class="card contact rise d3">
+      <div class="logo"><span class="pillbtn">KAIZEN AGENCY</span></div>
+      <b>Daisy</b>
+      <span class="line">daisy@kaizenagency.org</span>
+      <span class="line">kaizenagency.org</span>
+      <span class="tagl">Your marketing pieces, clicked into place.</span>
+    </div>
+  </div>
+  <div class="foot"><span>Thank you, Premier SJ</span><span>11</span></div>
+</section>
+
+</div>
+</div>
+
+<aside class="notes" id="notes" hidden>
+  <h4><span id="notesLabel">Speaker notes</span><span id="notesTime"></span></h4>
+  <div id="notesBody"></div>
+</aside>
+
+<nav class="hud" aria-label="Slide controls">
+  <div class="grp"><button id="prev" aria-label="Previous slide">← Prev</button><button id="next" aria-label="Next slide">Next →</button><span id="count">1 / 11</span></div>
+  <div class="grp"><span id="clock">0:00</span><button class="alt" id="timerBtn">Start timer</button><button class="alt" id="notesBtn">Notes (N)</button><button class="alt" id="fsBtn">Fullscreen (F)</button></div>
+</nav>
+
+<script>
+(function(){
+  const stage=document.getElementById('stage'), slides=[...stage.querySelectorAll('.slide')];
+  const notes=document.getElementById('notes'), nBody=document.getElementById('notesBody'), nTime=document.getElementById('notesTime');
+  const count=document.getElementById('count'), progress=document.getElementById('progress');
+  let i=0;
+  const fromHash=parseInt((location.hash||'').replace(/\D/g,''),10);
+  if(fromHash>=1&&fromHash<=slides.length) i=fromHash-1;
+  function fit(){
+    const vw=window.innerWidth, vh=window.innerHeight-(window.innerWidth<700?56:0);
+    const s=Math.min(vw/1600, vh/900);
+    stage.style.transform='scale('+s+')';
+  }
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    count.textContent=(i+1)+' / '+slides.length;
+    progress.style.width=((i+1)/slides.length*100)+'%';
+    const s=slides[i];
+    nBody.innerHTML='';
+    const p=document.createElement('p'); p.textContent=s.dataset.notes||''; nBody.appendChild(p);
+    nTime.textContent='~'+(s.dataset.time||'');
+  }
+  function toggleNotes(){notes.hidden=!notes.hidden}
+  function fs(){
+    try{ if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{})} else {document.exitFullscreen().catch(()=>{})} }catch(e){}
+  }
+  // timer
+  let start=null, tick=null; const clock=document.getElementById('clock'), tb=document.getElementById('timerBtn');
+  tb.addEventListener('click',()=>{
+    if(tick){clearInterval(tick);tick=null;tb.textContent='Start timer';return}
+    start=Date.now(); tb.textContent='Stop timer';
+    tick=setInterval(()=>{const t=Math.floor((Date.now()-start)/1000);clock.textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');clock.style.color=t>420?'#ff8a7a':''},500);
+  });
+  document.getElementById('prev').addEventListener('click',()=>show(i-1));
+  document.getElementById('next').addEventListener('click',()=>show(i+1));
+  document.getElementById('notesBtn').addEventListener('click',toggleNotes);
+  document.getElementById('fsBtn').addEventListener('click',fs);
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='n'||e.key==='N')toggleNotes(); else if(e.key==='f'||e.key==='F')fs();
+  });
+  document.getElementById('viewport').addEventListener('click',e=>{
+    if(e.target.closest('a,button'))return;
+    (e.clientX>window.innerWidth/2)?show(i+1):show(i-1);
+  });
+  let sx=null;
+  document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(i+(dx<0?1:-1));sx=null});
+  window.addEventListener('resize',fit);
+  fit(); show(i);
+})();
+</script>
+
+</body>
+</html>
