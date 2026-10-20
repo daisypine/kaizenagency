@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>MMT Electric | BNI Feature Presentation</title>
 <meta name="description" content="Losi Taunaholo of MMT Electric. BNI Premiere feature presentation, October 21, 2026.">
-<link rel="icon" type="image/png" href="img/mark-dark.png">
+<link rel="icon" type="image/png" href="img/mascot-sm.png">
 <style>
 @font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2")}
 @font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
@@ -32,7 +32,7 @@ img{display:block}
 /* ===== chrome: brand line + progress bar ===== */
 .top{position:absolute;left:100px;right:100px;top:34px;display:flex;align-items:center;justify-content:space-between;z-index:5;font:600 18px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
 .top .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
-.top .brand img{height:30px}
+.top .brand img{height:40px}
 .top .brand b{font-weight:800;font-size:22px;letter-spacing:1px}
 .top .brand b span{color:var(--red)}
 .deck.on-dark .top{color:rgba(255,255,255,.6)}
@@ -46,12 +46,7 @@ img{display:block}
 .deck.on-dark .bar .sec.cur{background:linear-gradient(90deg,var(--red) var(--p,50%),rgba(255,255,255,.14) var(--p,50%))!important}
 .bar .lbl{position:absolute;top:-25px;left:0;font:700 15px/1 var(--head);letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .bar .sec.cur .lbl,.bar .sec.done .lbl{color:var(--red)}
-.count,.clock{font:600 16px/1 var(--head);letter-spacing:1px;color:var(--muted);margin-left:18px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.clock{cursor:pointer;padding:7px 12px;border-radius:999px;border:1px solid var(--line)}
-.deck.on-dark .clock{border-color:rgba(255,255,255,.18)}
-.clock.run{color:var(--ink);border-color:var(--ink)}
-.deck.on-dark .clock.run{color:#fff;border-color:#fff}
-.clock.low{color:#fff!important;background:var(--red);border-color:var(--red)!important}
+.count{font:600 16px/1 var(--head);letter-spacing:1px;color:var(--muted);margin-left:18px;font-variant-numeric:tabular-nums;white-space:nowrap}
 
 /* ===== type ===== */
 .kicker{display:flex;align-items:center;gap:14px;font:700 22px/1 var(--head);letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:20px}
@@ -82,13 +77,13 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .s-title .bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
 .s-title .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,18,28,.96) 0%,rgba(13,18,28,.86) 38%,rgba(13,18,28,.25) 75%,rgba(13,18,28,.1) 100%)}
 .s-title .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 110px;max-width:1050px}
-.s-title .mark{height:120px;width:auto;align-self:flex-start;margin-bottom:34px}
+.s-title .mark{height:200px;width:auto;align-self:flex-start;margin-bottom:22px}
 .s-title .kicker{color:#fff}
 .s-title .kicker:before{background:var(--red)}
-.s-title h1{font-size:176px;line-height:.86}
+.s-title h1{font-size:160px;line-height:.86}
 .s-title h1 span{color:var(--red)}
 .s-title .tagline{font:700 46px/1.1 var(--head);text-transform:uppercase;letter-spacing:1px;margin-top:26px}
-.s-title .who{display:flex;gap:16px;align-items:center;margin-top:46px;font-size:26px;color:rgba(255,255,255,.8)}
+.s-title .who{display:flex;gap:16px;align-items:center;margin-top:34px;font-size:26px;color:rgba(255,255,255,.8)}
 .s-title .who b{color:#fff;font-weight:600}
 .s-title .who i{width:8px;height:8px;border-radius:50%;background:var(--red)}
 .s-title .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--red);z-index:3}
@@ -164,7 +159,7 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .s-qa .r{position:relative}
 .s-qa .r img{width:100%;height:100%;object-fit:cover}
 .s-qa .r:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink),transparent 40%);z-index:1}
-.s-qa .r .mk{position:absolute;right:46px;bottom:46px;width:230px;height:auto;z-index:2}
+.s-qa .r .mk{position:absolute;right:30px;bottom:30px;width:380px;height:auto;z-index:2}
 
 /* ===== on-screen controls ===== */
 .nav-btn{position:fixed;bottom:78px;z-index:10;border:1px solid rgba(255,255,255,.25);background:rgba(13,18,28,.7);color:#fff;font:600 15px var(--body);padding:10px 16px;border-radius:999px;cursor:pointer;opacity:0;transition:opacity .2s}
@@ -176,7 +171,7 @@ html.m,html.m body{height:auto;overflow:auto}
 html.m .stage{position:static;display:block;background:var(--ink)}
 html.m .deck{width:auto;height:auto;transform:none!important;background:transparent;overflow:visible;padding:0 12px 24px}
 html.m .top{position:sticky;top:0;left:0;right:0;margin:0 -12px 12px;padding:12px 16px;background:rgba(21,28,42,.96);color:rgba(255,255,255,.6);font-size:12px;gap:10px}
-html.m .top .brand{color:#fff}html.m .top .brand img{height:22px}html.m .top .brand b{font-size:17px}
+html.m .top .brand{color:#fff}html.m .top .brand img{height:30px}html.m .top .brand b{font-size:17px}
 html.m .bar,html.m .nav-btn{display:none!important}
 html.m .slide{position:relative;inset:auto;display:flex!important;padding:26px 20px 26px;margin-bottom:12px;border-radius:18px;animation:none;min-height:0}
 html.m h1{font-size:54px}html.m h2{font-size:40px}html.m h3{font-size:22px}
@@ -184,7 +179,7 @@ html.m .kicker{font-size:13px;letter-spacing:2px;margin-bottom:12px;gap:10px}htm
 html.m .lead{font-size:17px;margin-top:12px}
 html.m .s-title,html.m .s-div,html.m .s-qa{padding:0;overflow:hidden}
 html.m .s-title .in{padding:46px 22px;min-height:520px}
-html.m .s-title .mark{height:60px;margin-bottom:20px}
+html.m .s-title .mark{height:120px;margin-bottom:20px}
 html.m .s-title h1{font-size:72px}html.m .s-title .tagline{font-size:24px;margin-top:14px}
 html.m .s-title .who{font-size:15px;margin-top:22px;flex-wrap:wrap;gap:8px}
 html.m .s-title .stripe{width:6px}
@@ -214,7 +209,7 @@ html.m .refs{grid-template-columns:1fr;gap:10px;margin-top:20px}html.m .ref{padd
 html.m .ask{flex-direction:column;align-items:flex-start;gap:8px;padding:18px;margin-top:14px}html.m .ask b{font-size:24px}html.m .ask span{font-size:16px}
 html.m .s-qa .in{grid-template-columns:1fr}html.m .s-qa .l{padding:34px 22px}html.m .s-qa h1{font-size:90px}
 html.m .contact{grid-template-columns:1fr;gap:14px;margin-top:28px}html.m .contact div b{font-size:24px}html.m .contact div span{font-size:12px}
-html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(180deg,var(--ink),transparent 40%)}html.m .s-qa .r .mk{width:120px;right:20px;bottom:20px}
+html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(180deg,var(--ink),transparent 40%)}html.m .s-qa .r .mk{width:170px;right:20px;bottom:20px}
 
 /* ===== print / PDF: one slide per page ===== */
 @page{size:1600px 900px;margin:0}
@@ -233,14 +228,14 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 <body>
 <div class="stage"><div class="deck" id="deck">
 
-<div class="top"><div class="brand"><img src="img/mark-dark.png" alt="" id="topmark"><b>MMT <span>Electric</span></b></div><span>BNI Premiere &middot; Feature presentation</span></div>
+<div class="top"><div class="brand"><img src="img/mascot-sm.png" alt="" id="topmark"><b>MMT <span>Electric</span></b></div><span>BNI Premiere &middot; Feature presentation</span></div>
 
 <!-- 1 · TITLE -->
 <section class="slide s-title" data-sec="0" data-dark>
   <div class="bg"><img src="img/onyx-wall.jpg" alt="Backlit onyx stone walls wired by MMT Electric"></div>
   <div class="stripe"></div>
   <div class="in">
-    <img class="mark" src="img/mark-light.png" alt="MMT Electric">
+    <img class="mark" src="img/mascot.png" alt="MMT Electric mascot">
     <div class="kicker">BNI Premiere &middot; Feature presentation</div>
     <h1>MMT <span>Electric</span></h1>
     <div class="tagline">When the lights go out, we show up.</div>
@@ -410,7 +405,7 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
         <div><span>License</span><b>CSLB #1002637</b></div>
       </div>
     </div>
-    <div class="r"><img src="img/lit-stairs.jpg" alt=""><img class="mk" src="img/mark-light.png" alt="MMT Electric"></div>
+    <div class="r"><img src="img/lit-stairs.jpg" alt=""><img class="mk" src="img/mascot.png" alt="MMT Electric mascot"></div>
   </div>
 </section>
 
@@ -423,14 +418,13 @@ html.m .s-qa .r{height:260px}html.m .s-qa .r:before{background:linear-gradient(1
 
 <script>
 var SECTIONS=['Meet Losi','Services','The work','Referrals','Q&A'];
-var TALK=7*60; // presentation length in seconds
 var deck=document.getElementById('deck');
 var slides=[].slice.call(deck.querySelectorAll('.slide'));
 var idx=0;
 
-// progress bar, slide count, talk clock
+// progress bar and slide count
 var bar=document.getElementById('bar');
-bar.innerHTML=SECTIONS.map(function(s){return '<div class="sec"><span class="lbl">'+s+'</span></div>'}).join('')+'<span class="count" id="count"></span><span class="clock" id="clock" title="Click or press T to start / pause the 7 minute clock">7:00</span>';
+bar.innerHTML=SECTIONS.map(function(s){return '<div class="sec"><span class="lbl">'+s+'</span></div>'}).join('')+'<span class="count" id="count"></span>';
 
 // print page footers
 slides.forEach(function(s,i){var d=document.createElement('div');d.className='pg';d.innerHTML='<span>MMT Electric &middot; BNI Premiere</span><span>'+(i+1)+' / '+slides.length+'</span>';s.appendChild(d)});
@@ -446,21 +440,12 @@ function show(i){
   [].forEach.call(bar.querySelectorAll('.sec'),function(b,j){b.className='sec'+(j<sec?' done':j===sec?' cur':'');if(j===sec)b.style.setProperty('--p',p+'%')});
   var dark=cur.hasAttribute('data-dark');
   deck.classList.toggle('on-dark',dark);
-  document.getElementById('topmark').src=dark?'img/mark-light.png':'img/mark-dark.png';
   var hideChrome=cur.classList.contains('s-title')||cur.classList.contains('s-qa');
   deck.querySelector('.top').style.visibility=hideChrome?'hidden':'visible';
   document.getElementById('count').textContent=(idx+1)+' / '+slides.length;
   try{history.replaceState(null,'','#'+(idx+1))}catch(e){}
-  if(idx>0&&!started)startClock();
 }
 
-// 7 minute clock: starts when you leave the title slide, click it or press T to pause
-var started=false,running=false,left=TALK,last=0,tick=null;
-function fmt(s){s=Math.max(0,Math.ceil(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
-function draw(){var c=document.getElementById('clock');c.textContent=left<=0?'Time':fmt(left);c.classList.toggle('run',running);c.classList.toggle('low',left<=60)}
-function startClock(){started=true;running=true;last=Date.now();clearInterval(tick);tick=setInterval(function(){if(!running)return;var n=Date.now();left-=(n-last)/1000;last=n;draw()},250);draw()}
-function toggleClock(){if(!started){startClock();return}running=!running;last=Date.now();draw()}
-document.getElementById('clock').onclick=toggleClock;
 
 function fit(){
   var mob=window.innerWidth<820;
@@ -476,14 +461,13 @@ document.addEventListener('keydown',function(e){
   else if(['ArrowLeft','PageUp','Backspace'].indexOf(e.key)>-1){e.preventDefault();show(idx-1)}
   else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1);
   else if(e.key==='f'||e.key==='F')toggleFs();
-  else if(e.key==='t'||e.key==='T')toggleClock();
 });
-deck.addEventListener('click',function(e){if(document.documentElement.classList.contains('m'))return;if(e.target.closest('#clock'))return;show(e.clientX>window.innerWidth/3?idx+1:idx-1)});
+deck.addEventListener('click',function(e){if(document.documentElement.classList.contains('m'))return;show(e.clientX>window.innerWidth/3?idx+1:idx-1)});
 document.getElementById('prev').onclick=function(){show(idx-1)};
 document.getElementById('next').onclick=function(){show(idx+1)};
 function toggleFs(){if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}
 document.getElementById('fs').onclick=toggleFs;
-show(idx);draw();
+show(idx);
 </script>
 </body>
 </html>
