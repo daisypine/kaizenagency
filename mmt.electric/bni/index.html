@@ -6,6 +6,14 @@
 <title>MMT Electric | BNI Feature Presentation</title>
 <meta name="description" content="Losi Taunaholo of MMT Electric. BNI Premiere feature presentation, October 21, 2026.">
 <link rel="icon" type="image/png" href="img/mascot-sm.png">
+<meta property="og:title" content="MMT Electric | Meet Losi">
+<meta property="og:description" content="Losi Taunaholo, licensed electrical contractor in Union City. BNI Premiere feature presentation.">
+<meta property="og:image" content="https://daisypine.github.io/kaizenagency/mmt.electric/bni/img/og.jpg">
+<meta property="og:url" content="https://daisypine.github.io/kaizenagency/mmt.electric/bni/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#151C2A">
+<link rel="apple-touch-icon" href="img/mascot-sm.png">
 <style>
 @font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2")}
 @font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
@@ -166,6 +174,7 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .s-qa .r .mk{position:absolute;right:24px;bottom:24px;width:360px;height:auto;z-index:2;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
 .contact{margin-top:auto;display:grid;grid-template-columns:auto auto;gap:22px 60px;justify-content:start}
 .contact div span{display:block;font:700 18px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:var(--red)}
+.contact a{color:inherit;text-decoration:none}
 .contact div b{display:block;font:700 40px/1.1 var(--head);letter-spacing:.5px;margin-top:8px;color:var(--ink)}
 
 /* ===== on-screen controls ===== */
@@ -189,7 +198,7 @@ html.m .s-title .wrap{grid-template-columns:1fr}
 html.m .s-title .in{padding:34px 22px}
 html.m .s-title .mark{height:130px;margin-bottom:16px}
 html.m .s-title h1{font-size:72px}html.m .s-title .tagline{font-size:24px;margin-top:14px}
-html.m .s-title .who{font-size:15px;margin-top:18px;flex-wrap:wrap;gap:8px}
+html.m .s-title .who{font-size:15px;margin-top:18px;flex-direction:column;align-items:flex-start;gap:4px;white-space:normal}html.m .s-title .who i{display:none}
 html.m .s-title .stripe{width:6px}
 html.m .s-title .ph-r{height:300px}html.m .bg-bolt{display:none}
 html.m .meet,html.m .split{grid-template-columns:1fr;gap:20px;height:auto}
@@ -209,14 +218,15 @@ html.m .trio .ph,html.m .collage .ph{height:200px}
 html.m .ph{min-height:150px}
 html.m .svc .ph{min-height:0}
 html.m .trio .ph:first-child,html.m .collage .big{grid-column:span 2;grid-row:auto;height:260px}
-html.m .hero-mascot{height:120px;margin:0}html.m .ba{flex-direction:column;gap:10px;margin-top:16px}html.m .ba .ph{height:240px;flex:none}
+html.m .hero-mascot{display:none}html.m .ba{flex-direction:column;gap:10px;margin-top:16px}html.m .ba .ph{height:240px;flex:none}
 html.m .ba .arrow{width:auto;height:30px;transform:rotate(90deg)}html.m .ba .arrow svg{width:30px;height:30px}
 html.m .ba .side{width:auto;margin-left:0;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px}html.m .ba .side .ph{height:150px}
 html.m .tag{font-size:12px;padding:6px 10px;left:10px;top:10px}html.m .cap{font-size:16px;padding:36px 12px 12px}
 html.m .refs{grid-template-columns:1fr;gap:10px;margin-top:20px}html.m .ref{padding:16px}html.m .ref b{font-size:22px}html.m .ref span{font-size:15px}html.m .ref .ico{width:44px;height:44px;border-radius:10px}html.m .ref .ico img{width:34px;height:34px}
 html.m .ask{flex-direction:column;align-items:flex-start;gap:8px;padding:18px;margin-top:14px}html.m .ask b{font-size:24px}html.m .ask span{font-size:16px}
 html.m .s-qa .in{grid-template-columns:1fr}html.m .s-qa .l{padding:34px 22px}html.m .s-qa h1{font-size:90px}
-html.m .contact{grid-template-columns:1fr;gap:14px;margin-top:28px}html.m .contact div b{font-size:24px}html.m .contact div span{font-size:12px}
+html.m .contact{grid-template-columns:1fr;gap:14px;margin-top:28px}html.m .contact a{color:inherit;text-decoration:none}
+.contact div b{font-size:24px}html.m .contact div span{font-size:12px}
 html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:16px}
 
 /* ===== print / PDF: one slide per page ===== */
@@ -246,7 +256,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
       <img class="mark" src="img/mascot.png" alt="MMT Electric mascot">
       <h1>MMT <span>Electric</span></h1>
       <div class="tagline">When the lights go out, we show up.</div>
-      <div class="who"><b>Losi Taunaholo, Owner</b><i></i>Licensed electrical contractor<i></i>Union City</div>
+      <div class="who"><b>Losi Taunaholo, Owner</b><i></i><span>Licensed electrical contractor</span><i></i><span>Union City</span></div>
     </div>
     <div class="ph-r"><img src="img/onyx-wall.jpg" alt="Backlit onyx stone walls wired by MMT Electric"></div>
   </div>
@@ -409,8 +419,8 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
       <h1>Q<span>&amp;</span>A</h1>
       <p class="lead">Ask me anything. Panels, permits, that weird outlet at home.</p>
       <div class="contact">
-        <div><span>Call or text me</span><b>510-825-2513</b></div>
-        <div><span>Email</span><b>losi@mmt-electric.com</b></div>
+        <div><span>Call or text me</span><b><a href="tel:+15108252513">510-825-2513</a></b></div>
+        <div><span>Email</span><b><a href="mailto:losi@mmt-electric.com">losi@mmt-electric.com</a></b></div>
         <div><span>Web</span><b>mmt-electric.com</b></div>
         <div><span>License</span><b>CSLB #1002637</b></div>
       </div>
