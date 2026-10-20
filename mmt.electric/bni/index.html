@@ -51,7 +51,8 @@ img{display:block}
 
 /* ===== type ===== */
 .kicker{display:flex;align-items:center;gap:14px;font:700 22px/1 var(--head);letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:20px}
-.kicker:before{content:"";width:34px;height:4px;background:var(--red);border-radius:2px}
+.kicker:before,.attrib:before{content:"";flex-shrink:0;width:38px;height:23px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 254 150'%3E%3Cpath fill='%23CA1A0B' d='M0 33 97 4 82 49 253 1 38 149 48 97 22 101Z'/%3E%3C/svg%3E") no-repeat center/contain}
+.attrib{display:inline-flex;align-items:center;gap:12px;margin-top:16px;font:700 22px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:#fff}
 h1,h2,h3{font-family:var(--head);text-transform:uppercase;font-weight:800;line-height:.95}
 h1{font-size:150px;letter-spacing:-1px}
 h2{font-size:84px;letter-spacing:-.5px}
@@ -87,8 +88,7 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .s-title .who i{width:8px;height:8px;border-radius:50%;background:var(--red)}
 .s-title .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--red);z-index:3}
 .slide{isolation:isolate}
-.bg-bolt{position:absolute;z-index:-1;pointer-events:none;opacity:.16}
-.s-div .bg-bolt{z-index:1;opacity:.35}
+.bg-bolt{position:absolute;z-index:-1;pointer-events:none;opacity:.5}
 
 /* ===== 2 · meet losi ===== */
 .meet{display:grid;grid-template-columns:560px 1fr;gap:80px;align-items:center;height:100%}
@@ -181,7 +181,7 @@ html.m .top .brand{color:#fff}html.m .top .brand img{height:30px}html.m .top .br
 html.m .bar,html.m .nav-btn{display:none!important}
 html.m .slide{position:relative;inset:auto;display:flex!important;padding:26px 20px 26px;margin-bottom:12px;border-radius:18px;animation:none;min-height:0}
 html.m h1{font-size:54px}html.m h2{font-size:40px}html.m h3{font-size:22px}
-html.m .kicker{font-size:13px;letter-spacing:2px;margin-bottom:12px;gap:10px}html.m .kicker:before{width:20px;height:3px}
+html.m .kicker{font-size:13px;letter-spacing:2px;margin-bottom:12px;gap:10px}html.m .kicker:before{width:24px;height:15px}
 html.m .lead{font-size:17px;margin-top:12px}
 html.m .s-title,html.m .s-div,html.m .s-qa{padding:0;overflow:hidden}
 html.m .s-title .wrap{grid-template-columns:1fr}
@@ -235,16 +235,14 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <body>
 <div class="stage"><div class="deck" id="deck">
 
-<div class="top"><div class="brand"><img src="img/mascot-sm.png" alt="" id="topmark"><b>MMT <span>Electric</span></b></div><span>BNI Premiere &middot; Feature presentation</span></div>
+<div class="top"><div class="brand"><img src="img/mascot-sm.png" alt="" id="topmark"><b>MMT <span>Electric</span></b></div></div>
 
 <!-- 1 · TITLE -->
 <section class="slide s-title" data-sec="0">
   <div class="stripe"></div>
-  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="left:560px;top:330px;height:640px;transform:rotate(16deg)">
   <div class="wrap">
     <div class="in">
       <img class="mark" src="img/mascot.png" alt="MMT Electric mascot">
-      <div class="kicker">BNI Premiere &middot; Feature presentation</div>
       <h1>MMT <span>Electric</span></h1>
       <div class="tagline">When the lights go out, we show up.</div>
       <div class="who"><b>Losi Taunaholo, Owner</b><i></i>Licensed electrical contractor<i></i>Union City</div>
@@ -306,11 +304,10 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <!-- 5 · DIVIDER -->
 <section class="slide s-div" data-sec="2" data-dark>
   <div class="bg"><img src="img/onyx-tv-wall.jpg" alt=""></div>
-  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="right:40px;top:-40px;height:620px;transform:rotate(14deg)">
   <div class="in">
     <div class="kicker">Custom work</div>
     <h1 class="q">&ldquo;When you get into custom work, the whole electrical is an art.&rdquo;</h1>
-    <p class="lead"><span style="font:700 22px/1 var(--head);letter-spacing:2.5px;text-transform:uppercase;color:#fff;border-top:4px solid var(--red);padding-top:12px;display:inline-block;margin-top:16px">Losi</span></p>
+    <p class="lead"><span class="attrib">Losi</span></p>
   </div>
 </section>
 
@@ -381,7 +378,6 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
     <div><div class="kicker">On the job</div><h2 style="white-space:normal">When the lights go out,<br><em>we come to the rescue.</em></h2></div>
     <img class="hero-mascot" src="img/mascot.png" alt="MMT Electric mascot">
   </div>
-  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="left:640px;top:-80px;height:600px;transform:rotate(-14deg)">
   <div class="collage">
     <div class="ph big"><img src="img/night-call.jpg" alt="Night service call on a ladder"></div>
     <div class="ph"><img src="img/crew-install.jpg" alt="Crew installing a large panel"></div>
@@ -393,7 +389,6 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 
 <!-- 11 · REFERRALS -->
 <section class="slide" data-sec="3">
-  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="right:40px;top:-30px;height:560px;transform:rotate(18deg)">
   <div class="kicker">How you can help me</div>
   <h2>Who I&rsquo;d love to <em>meet.</em></h2>
   <div class="refs">
@@ -407,7 +402,6 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 
 <!-- 12 · Q&A -->
 <section class="slide s-qa" data-sec="4">
-  <img class="bg-bolt" src="img/bolt-chrome-blur.png" alt="" aria-hidden="true" style="left:700px;top:300px;height:620px;transform:rotate(-12deg)">
   <div class="in">
     <div class="l">
       <div class="kicker">Thanks, BNI Premiere</div>
@@ -442,7 +436,7 @@ var bar=document.getElementById('bar');
 bar.innerHTML=SECTIONS.map(function(s){return '<div class="sec"><span class="lbl">'+s+'</span></div>'}).join('')+'<span class="count" id="count"></span>';
 
 // print page footers
-slides.forEach(function(s,i){var d=document.createElement('div');d.className='pg';d.innerHTML='<span>MMT Electric &middot; BNI Premiere</span><span>'+(i+1)+' / '+slides.length+'</span>';s.appendChild(d)});
+slides.forEach(function(s,i){var d=document.createElement('div');d.className='pg';d.innerHTML='<span>MMT Electric</span><span>'+(i+1)+' / '+slides.length+'</span>';s.appendChild(d)});
 
 try{var h=parseInt(location.hash.slice(1));if(h>0&&h<=slides.length)idx=h-1}catch(e){}
 
