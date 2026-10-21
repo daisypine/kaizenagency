@@ -9,25 +9,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0}
-[hidden]{display:none!important}
 /* Layout: a 1600×900 stage scaled to the screen; Kaizen's bright neo-brutalist system — hard ink outlines, lime offset shadows, blue for emphasis. Single light look by choice. */
 :root{
   --paper:#FAFAF7; --white:#FFFFFF; --ink:#111111; --ink-2:#4A4C45; --line:#D9DBD0;
-  --lime:#BFDF31; --lime-soft:#EEF6C8; --blue:#004BFF; --blue-soft:#E3EBFF; --aqua:#B8ECEA;
+  --lime:#BFDF31; --lime-soft:#EEF6C8; --blue:#004BFF; --blue-soft:#E3EBFF; --aqua:#B8ECEA; --red:#E5484D;
   --display:"Unbounded", "Arial Black", system-ui, sans-serif;
   --head:"Bricolage Grotesque", "Arial", system-ui, sans-serif;
   --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme:light;
 }
+*,*::before,*::after{box-sizing:border-box}
 html,body{height:100%}
-body{background:var(--ink);color:var(--ink);font-family:var(--body);overflow:hidden;
+body{margin:0;background:#0d0d0c;color:var(--ink);font-family:var(--body);overflow:hidden;
   padding-left:max(0px, env(safe-area-inset-left,0px));padding-right:max(0px, env(safe-area-inset-right,0px))}
 .viewport{position:fixed;inset:0;display:grid;place-items:center;background:#0d0d0c}
 .stage{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none}
-.slide{position:absolute;inset:0;background:var(--paper);overflow:hidden;display:none;
-  padding:72px 96px 88px;flex-direction:column}
+.slide{position:absolute;inset:0;background:var(--paper);overflow:hidden;display:none;padding:64px 96px 88px;flex-direction:column}
 .slide.active{display:flex}
 .dots::before{content:"";position:absolute;inset:0;pointer-events:none;
   background-image:radial-gradient(var(--line) 2px,transparent 2.4px);background-size:28px 28px;opacity:.7;
@@ -35,98 +32,130 @@ body{background:var(--ink);color:var(--ink);font-family:var(--body);overflow:hid
 .glow::after{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-380px;pointer-events:none;
   background:radial-gradient(circle,var(--aqua) 0%,transparent 62%);opacity:.65}
 .slide > *{position:relative;z-index:1}
+.slide.ink-bg{background:var(--ink);color:var(--white)}
+.ink-bg .card{color:var(--ink)}
 
 /* type */
-.eyebrow{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:14px}
-.eyebrow .pill{background:var(--ink);color:var(--lime);border-radius:999px;padding:8px 16px;font-size:15px;letter-spacing:.1em}
-h1,h2{font-family:var(--display);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
-h1{font-size:104px}
-h2{font-size:68px;margin-top:22px}
-h3{font-family:var(--head);font-weight:800;font-size:30px;margin:0;line-height:1.1}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:14px}
+.eyebrow .pill{background:var(--ink);color:var(--lime);border-radius:999px;padding:8px 16px;font-size:14px;letter-spacing:.1em}
+.ink-bg .eyebrow .pill{background:var(--lime);color:var(--ink)}
+h1,h2{font-family:var(--display);font-weight:700;line-height:1.03;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:96px}
+h2{font-size:60px;margin-top:20px}
+h3{font-family:var(--head);font-weight:800;font-size:28px;margin:0;line-height:1.12}
 p{margin:0}
-.lead{font-family:var(--head);font-size:30px;line-height:1.35;color:var(--ink-2);max-width:62ch;margin-top:22px}
+.lead{font-family:var(--head);font-size:28px;line-height:1.38;color:var(--ink-2);max-width:60ch;margin-top:20px}
+.ink-bg .lead{color:#cfd1c8}
 .blue{color:var(--blue)}
+.lime-t{color:var(--lime)}
 .hl{background:linear-gradient(transparent 58%,var(--lime) 58%,var(--lime) 92%,transparent 92%);padding:0 6px}
-.small{font-size:20px;color:var(--ink-2);line-height:1.4}
+.small{font-size:19px;color:var(--ink-2);line-height:1.4}
 
 /* components */
 .card{background:var(--white);border:3px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink)}
-.card.lime{box-shadow:8px 8px 0 var(--lime);}
-.tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;
-  border:2px solid var(--ink);border-radius:999px;padding:6px 14px;background:var(--lime)}
+.card.lime{box-shadow:8px 8px 0 var(--lime)}
+.tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  border:2px solid var(--ink);border-radius:999px;padding:6px 14px;background:var(--lime);color:var(--ink);white-space:nowrap}
 .tag.blue-t{background:var(--blue);color:#fff;border-color:var(--blue)}
 .tag.ghost{background:var(--white)}
 
+/* browser frame for real screenshots */
+.browser{border:3px solid var(--ink);border-radius:16px;background:var(--white);overflow:hidden;box-shadow:7px 7px 0 var(--ink);display:flex;flex-direction:column}
+.browser .bar{display:flex;align-items:center;gap:7px;padding:8px 12px;border-bottom:3px solid var(--ink);background:var(--paper)}
+.browser .bar i{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:var(--white)}
+.browser .bar i:first-child{background:var(--lime)}
+.browser .bar span{margin-left:8px;font:600 14px var(--body);color:var(--ink-2);background:var(--white);border:2px solid var(--line);border-radius:999px;padding:2px 12px}
+.browser img{display:block;width:100%;height:auto;aspect-ratio:1040/650;object-fit:cover;object-position:top}
+.shot{border:3px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:7px 7px 0 var(--ink)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover}
+.cap{font-family:var(--head);font-weight:700;font-size:18px;margin-top:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.cap small{font-family:var(--body);font-weight:500;color:var(--ink-2);font-size:15px}
+
 /* logo recreated */
 .logo{display:inline-flex;position:relative;align-items:center;align-self:flex-start}
-.logo .pillbtn{font-family:var(--display);font-weight:700;letter-spacing:.01em;background:var(--white);border:4px solid var(--ink);
+.logo .pillbtn{font-family:var(--display);font-weight:700;letter-spacing:.01em;background:var(--white);color:var(--ink);border:4px solid var(--ink);
   border-radius:999px;padding:.18em .7em .2em;box-shadow:0 .16em 0 var(--lime), 0 calc(.16em + 4px) 0 var(--ink);line-height:1}
 .logo svg{position:absolute;right:-.42em;bottom:-.5em;width:.95em;height:.95em}
 
 /* slide footer */
 .foot{position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center;
-  font-family:var(--display);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);z-index:2}
-.foot .logo{font-size:16px}
-.foot .logo .pillbtn{border-width:2px;box-shadow:0 .16em 0 var(--lime),0 calc(.16em + 2px) 0 var(--ink)}
+  font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);z-index:2}
+.ink-bg .foot{color:#9a9c93}
 
 /* entrance */
 .slide.active .rise{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
-.slide.active .rise.d1{animation-delay:.08s}.slide.active .rise.d2{animation-delay:.16s}.slide.active .rise.d3{animation-delay:.24s}
-.slide.active .rise.d4{animation-delay:.32s}.slide.active .rise.d5{animation-delay:.4s}.slide.active .rise.d6{animation-delay:.48s}
+.slide.active .d1{animation-delay:.08s}.slide.active .d2{animation-delay:.16s}.slide.active .d3{animation-delay:.24s}
+.slide.active .d4{animation-delay:.32s}.slide.active .d5{animation-delay:.4s}.slide.active .d6{animation-delay:.48s}
 @keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
 
 /* ---------- S1 title ---------- */
 .s1{justify-content:center}
-.s1 .logo{font-size:44px;margin-bottom:56px}
-.s1 h1{font-size:116px;max-width:13ch}
-.s1 .tagline{margin-top:40px;display:flex;gap:18px;align-items:center;font-family:var(--head);font-size:30px;font-weight:600}
-.s1 .who{position:absolute;right:96px;bottom:96px;text-align:right;font-family:var(--head);font-size:24px;line-height:1.4}
+.s1 .logo{font-size:42px;margin-bottom:52px}
+.s1 h1{max-width:14ch}
+.s1 .sub{font-family:var(--head);font-size:30px;line-height:1.35;color:var(--ink-2);max-width:42ch;margin-top:30px}
+.s1 .tagrow{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.s1 .who{position:absolute;right:96px;bottom:96px;text-align:right;font-family:var(--head);font-size:23px;line-height:1.4}
 .s1 .who b{font-family:var(--display);font-size:30px;display:block}
 
-/* ---------- S2 hook ---------- */
-.s2 .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;flex:1}
-.phone{width:400px;height:640px;border:4px solid var(--ink);border-radius:52px;background:var(--white);box-shadow:14px 14px 0 var(--lime);
-  padding:26px 22px;display:flex;flex-direction:column;gap:16px;margin:auto}
-.search{border:2.5px solid var(--ink);border-radius:999px;padding:14px 20px;font-size:20px;font-weight:500;display:flex;gap:10px;align-items:center}
+/* ---------- S2 about ---------- */
+.about{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;align-items:stretch}
+.about .card{padding:28px 24px;display:flex;flex-direction:column;gap:12px}
+.about .big{font-family:var(--display);font-weight:700;font-size:62px;line-height:1;letter-spacing:-.02em}
+.about .card:nth-child(2){background:var(--lime)}
+.about .card:nth-child(4){background:var(--blue);color:#fff}
+.about .card:nth-child(4) p{color:#dfe7ff}
+.about p{font-size:22px;line-height:1.42;color:var(--ink-2)}
+.about h3{font-size:30px}
+.about .card{padding:32px 26px 36px}
+.clients{margin-top:48px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.clients b{font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-right:8px}
+.clients span{border:2.5px solid var(--ink);border-radius:999px;padding:8px 16px;font-family:var(--head);font-weight:700;font-size:20px;background:var(--white)}
+
+/* ---------- S3 hook ---------- */
+.s3 .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;flex:1}
+.phone{width:380px;height:600px;border:4px solid var(--ink);border-radius:52px;background:var(--white);box-shadow:14px 14px 0 var(--lime);
+  padding:26px 22px;display:flex;flex-direction:column;gap:14px;margin:auto}
+.search{border:2.5px solid var(--ink);border-radius:999px;padding:13px 20px;font-size:20px;font-weight:500;display:flex;gap:10px;align-items:center}
 .search .caret{width:2px;height:22px;background:var(--blue);animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
-.result{border:2px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:6px}
-.result .bar{height:12px;border-radius:6px;background:var(--line)}
-.result .t{font-family:var(--head);font-weight:700;font-size:20px}
-.result .stars{color:#E2A400;font-size:16px;letter-spacing:2px}
+.result{border:2px solid var(--line);border-radius:16px;padding:13px 16px;display:grid;gap:6px}
+.result .bar{height:11px;border-radius:6px;background:var(--line)}
+.result .t{font-family:var(--head);font-weight:700;font-size:19px}
+.result .stars{color:#E2A400;font-size:15px;letter-spacing:2px}
 .result.win{border:3px solid var(--blue);background:var(--blue-soft)}
-.timer{display:flex;align-items:baseline;gap:14px;margin-top:40px}
-.timer b{font-family:var(--display);font-size:120px;line-height:1;color:var(--blue)}
-.timer span{font-family:var(--head);font-size:28px;font-weight:600;max-width:16ch;line-height:1.2}
+.timer{display:flex;align-items:baseline;gap:14px;margin-top:36px}
+.timer b{font-family:var(--display);font-size:112px;line-height:1;color:var(--blue)}
+.timer span{font-family:var(--head);font-size:27px;font-weight:600;max-width:16ch;line-height:1.2}
 
-/* ---------- S3 staircase ---------- */
-.stairs{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:end;margin-top:30px}
-.step{border:3px solid var(--ink);border-radius:20px 20px 0 0;border-bottom:none;background:var(--white);padding:22px 20px;display:flex;flex-direction:column;gap:10px;position:relative}
-.step:nth-child(1){height:230px}.step:nth-child(2){height:300px}.step:nth-child(3){height:370px}.step:nth-child(4){height:440px}.step:nth-child(5){height:510px;background:var(--lime)}
-.step .n{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.1em;color:var(--blue)}
-.step h3{font-size:30px}
-.step p{font-size:19px;line-height:1.35;color:var(--ink-2)}
-.step .when{margin-top:auto;font-family:var(--head);font-weight:700;font-size:17px;border-top:2px dashed var(--ink);padding-top:10px}
+/* ---------- S4 difference ---------- */
+.compare{margin-top:34px;display:grid;grid-template-columns:1fr 210px 210px;border:3px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--white);box-shadow:8px 8px 0 var(--ink)}
+.compare > div{padding:15px 26px;border-bottom:2px solid var(--line);font-size:23px;display:flex;align-items:center}
+.compare > div:nth-last-child(-n+3){border-bottom:none}
+.compare .h{background:var(--ink);color:var(--white);font-family:var(--display);font-size:15px;letter-spacing:.1em;text-transform:uppercase;border-bottom:none}
+.compare .h.k{background:var(--lime);color:var(--ink)}
+.compare .c{justify-content:center;font-family:var(--display);font-size:26px;font-weight:700}
+.compare .c.k{background:var(--lime-soft)}
+.compare .no{color:#b9bbb2}
+.clickline{margin-top:30px;display:flex;align-items:center;gap:16px;font-family:var(--head);font-weight:700;font-size:28px}
+
+/* ---------- S5 staircase ---------- */
+.stairs{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:end;margin-top:24px}
+.step{border:3px solid var(--ink);border-radius:20px 20px 0 0;border-bottom:none;background:var(--white);padding:20px 18px;display:flex;flex-direction:column;gap:9px}
+.step:nth-child(1){height:250px}.step:nth-child(2){height:315px}.step:nth-child(3){height:380px}.step:nth-child(4){height:445px}.step:nth-child(5){height:510px;background:var(--lime)}
+.step .n{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--blue)}
+.step p{font-size:18px;line-height:1.35;color:var(--ink-2)}
+.step .ex{margin-top:auto;font-family:var(--head);font-weight:700;font-size:16px;border-top:2px dashed var(--ink);padding-top:10px;line-height:1.3}
+.step .ex em{display:block;font-style:normal;font-family:var(--display);font-size:11px;letter-spacing:.12em;color:var(--ink-2);margin-bottom:3px}
 .ground{height:6px;background:var(--ink);border-radius:3px}
-.arrowup{position:absolute;right:96px;top:68px;font-family:var(--head);font-weight:700;font-size:22px;display:flex;align-items:center;gap:10px}
+.arrowup{position:absolute;right:96px;top:64px;font-family:var(--head);font-weight:700;font-size:21px;display:flex;align-items:center;gap:10px}
 
-/* ---------- S4 landing vs funnel ---------- */
-.versus{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:34px;align-items:stretch}
-.vs-col{display:grid;grid-template-columns:300px 1fr;gap:30px;padding:30px}
-.mock{border:3px solid var(--ink);border-radius:16px;background:var(--paper);padding:14px;display:flex;flex-direction:column;gap:9px}
-.mock .b{border-radius:6px;background:var(--line)}
-.mock .hero{height:84px;background:var(--blue-soft);border:2px solid var(--blue);border-radius:10px;display:grid;place-items:center;font-family:var(--display);font-size:13px;color:var(--blue)}
-.mock .btn{align-self:flex-start;background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-family:var(--display);font-size:12px;font-weight:700}
-.funnel{display:flex;flex-direction:column;gap:10px}
-.fstep{border:3px solid var(--ink);border-radius:14px;padding:12px 14px;font-family:var(--head);font-weight:700;font-size:19px;background:var(--white);display:flex;justify-content:space-between;align-items:center}
-.fstep:nth-child(1){margin:0 0}.fstep:nth-child(2){margin:0 16px}.fstep:nth-child(3){margin:0 32px}.fstep:nth-child(4){margin:0 48px;background:var(--lime)}
-.fstep small{font-family:var(--body);font-weight:500;font-size:14px;color:var(--ink-2)}
-.vs-text{display:flex;flex-direction:column;gap:14px}
-.vs-text ul{margin:4px 0 0;padding-left:22px;font-size:21px;line-height:1.5;color:var(--ink-2)}
-.vs-text .best{margin-top:auto;font-family:var(--head);font-size:20px;font-weight:600;background:var(--lime-soft);border-radius:12px;padding:12px 16px}
+/* ---------- S6 work wall ---------- */
+.wall{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:22px 32px;margin-top:26px;align-content:start}
+.wall .browser img{aspect-ratio:16/7.4}
+.wall .cap{margin-top:9px}
 
-/* ---------- S5 hub & spoke ---------- */
-.s5 .wrap{flex:1;display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+/* ---------- S7 seo ---------- */
+.s7 .wrap{flex:1;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
 .tree svg{width:100%;height:auto;overflow:visible}
 .tree .node rect{fill:var(--white);stroke:var(--ink);stroke-width:3}
 .tree .node.hub rect{fill:var(--ink)}
@@ -137,98 +166,119 @@ p{margin:0}
 .tree .url{font-family:var(--body);font-weight:500;font-size:15px;fill:var(--ink-2)}
 .tree path{fill:none;stroke:var(--ink);stroke-width:3}
 .tree path.dash{stroke-dasharray:7 7}
-.checks{display:grid;gap:16px;margin-top:30px}
-.check{display:flex;gap:14px;align-items:flex-start;font-size:23px;line-height:1.35}
-.check i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--lime);border:2.5px solid var(--ink);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:16px;margin-top:2px}
+.stat-row{display:flex;gap:16px;margin-top:30px}
+.stat{border:3px solid var(--ink);border-radius:18px;padding:16px 20px;background:var(--white);flex:1}
+.stat b{font-family:var(--display);font-size:42px;display:block;line-height:1.05}
+.stat span{font-size:17px;color:var(--ink-2);line-height:1.35;display:block;margin-top:6px}
+.stat.on{background:var(--lime)}
 
-/* ---------- S6 authority ---------- */
-.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:48px;align-items:stretch}
-.trust .card{padding:30px;display:flex;flex-direction:column;gap:16px}
-.trust .big{font-family:var(--display);font-weight:700;font-size:58px;line-height:1}
-.trust .card:nth-child(2){background:var(--blue);color:#fff;border-color:var(--ink)}
-.trust .card:nth-child(2) p{color:#E3EBFF}
-.trust .card:nth-child(3){background:var(--lime)}
-.trust p{font-size:21px;line-height:1.45;color:var(--ink-2)}
-.trust ul{margin:0;padding-left:22px;font-size:20px;line-height:1.55}
-.quote{margin-top:44px;font-family:var(--head);font-size:30px;font-weight:600;display:flex;gap:16px;align-items:center}
+/* ---------- S8 results ---------- */
+.s8 .wrap{flex:1;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center;margin-top:16px}
+.report{border:3px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:10px 10px 0 var(--lime);background:#fff}
+.report img{display:block;width:100%;height:auto}
+.kpis{display:grid;gap:16px}
+.kpi{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:center;border-bottom:2px dashed var(--line);padding-bottom:16px}
+.kpi:last-child{border-bottom:none}
+.kpi b{font-family:var(--display);font-size:42px;line-height:1;letter-spacing:-.02em}
+.kpi p{font-size:20px;line-height:1.38;color:var(--ink-2)}
+.kpi p strong{color:var(--ink);font-family:var(--head);font-size:21px}
 
-/* ---------- S7 automation ---------- */
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;align-items:stretch}
-.fnode{position:relative;padding:0 14px}
-.fnode .card{padding:24px 20px;height:100%;display:flex;flex-direction:column;gap:12px}
-.fnode .ic{width:58px;height:58px;border-radius:16px;border:3px solid var(--ink);background:var(--lime);display:grid;place-items:center}
-.fnode .ic svg{width:30px;height:30px}
-.fnode .time{font-family:var(--display);font-size:14px;letter-spacing:.08em;color:var(--blue);font-weight:700;text-transform:uppercase}
-.fnode p{font-size:19px;line-height:1.4;color:var(--ink-2)}
-.fnode:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;width:24px;height:24px;transform:translateY(-50%) rotate(45deg);
+/* ---------- S9 follow-up ---------- */
+.leak{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.leak .card{padding:22px 24px;display:flex;flex-direction:column;gap:8px;box-shadow:8px 8px 0 var(--red)}
+.leak b{font-family:var(--display);font-size:64px;line-height:1;color:var(--ink)}
+.leak p{font-size:20px;line-height:1.38;color:var(--ink-2)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:34px;align-items:stretch}
+.fnode{position:relative;padding:0 12px}
+.fnode .card{padding:22px 20px;height:100%;display:flex;flex-direction:column;gap:6px;box-shadow:6px 6px 0 var(--ink)}
+.fnode .time{font-family:var(--display);font-size:12px;letter-spacing:.08em;color:var(--blue);font-weight:700;text-transform:uppercase}
+.fnode h3{font-size:26px}
+.fnode p{font-size:18px;line-height:1.35;color:var(--ink-2)}
+.fnode:not(:last-child)::after{content:"";position:absolute;right:-10px;top:50%;width:20px;height:20px;transform:translateY(-50%) rotate(45deg);
   border-top:4px solid var(--ink);border-right:4px solid var(--ink);z-index:3}
-.crmband{margin-top:46px;border:3px dashed var(--ink);border-radius:18px;padding:20px 28px;display:flex;gap:24px;align-items:center;font-size:22px}
-.crmband b{font-family:var(--display);font-size:18px;letter-spacing:.06em}
+.flowlabel{margin-top:30px;font-family:var(--display);font-size:14px;letter-spacing:.12em;text-transform:uppercase;display:flex;gap:12px;align-items:center}
 
-/* ---------- S8 brand guide ---------- */
-.s8 .wrap{flex:1;display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
-.guide{padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
-.guide .label{font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
-.swatches{display:flex;gap:10px}
-.sw{flex:1;height:96px;border:3px solid var(--ink);border-radius:14px;display:flex;align-items:flex-end;padding:8px;font-size:12px;font-weight:700;font-family:var(--body)}
-.typeA{font-family:var(--display);font-weight:700;font-size:46px;line-height:1}
-.typeB{font-family:var(--head);font-weight:600;font-size:22px;margin-top:8px}
-.tone{display:flex;flex-wrap:wrap;gap:8px}
-.tone span{border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:700;font-size:17px;background:var(--white)}
-.feel{grid-column:1/-1;background:var(--ink);color:var(--white);border-radius:16px;padding:20px 24px;font-family:var(--head);font-size:24px;line-height:1.35}
-.feel b{color:var(--lime)}
-.logos{grid-column:1/-1;display:flex;gap:16px;align-items:center}
-.logos .chip{border:2.5px solid var(--ink);border-radius:12px;padding:10px 14px;font-family:var(--head);font-weight:700;font-size:16px;background:var(--paper)}
-.pieces{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;max-width:640px}
-.pieces span{border:2.5px solid var(--ink);border-radius:999px;padding:9px 18px;font-family:var(--head);font-weight:700;font-size:20px;background:var(--white)}
+/* ---------- S10 brand ---------- */
+.s10 .wrap{flex:1;display:grid;grid-template-columns:.78fr 1.22fr;gap:52px;align-items:center}
+.collage{display:grid;grid-template-columns:1.05fr .95fr .9fr;grid-template-rows:240px 300px;gap:18px}
+.collage .shot{position:relative}
+.collage .lbl{position:absolute;left:10px;bottom:10px;background:var(--ink);color:var(--white);font:700 14px var(--head);border-radius:999px;padding:5px 12px}
+.collage .a{grid-row:1/3}
+.collage .a img{object-position:left top}
+.collage .m{background:#111}
+.collage .m img{object-fit:contain}
+.collage .l{background:#e6e6e6}
+.collage .l img{object-fit:contain;padding:14px 14px 34px}
+.pieces{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.pieces span{border:2.5px solid var(--ink);border-radius:999px;padding:8px 16px;font-family:var(--head);font-weight:700;font-size:19px;background:var(--white)}
 .pieces span:nth-child(3n){background:var(--lime)}
+.guide-line{margin-top:26px;background:var(--ink);color:var(--white);border-radius:16px;padding:16px 20px;font-family:var(--head);font-size:21px;line-height:1.38}
+.guide-line b{color:var(--lime)}
 
-/* ---------- S9 interview ---------- */
-.s9 .wrap{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:34px}
-.clock{display:flex;align-items:center;gap:22px;margin-top:6px}
-.clock .face{width:120px;height:120px;border:4px solid var(--ink);border-radius:50%;background:var(--lime);position:relative;flex:none}
-.clock .face::before,.clock .face::after{content:"";position:absolute;left:50%;top:50%;background:var(--ink);border-radius:3px;transform-origin:bottom center}
-.clock .face::before{width:6px;height:40px;margin:-40px 0 0 -3px}
-.clock .face::after{width:4px;height:34px;margin:-34px 0 0 -2px;transform:rotate(90deg)}
-.clock b{font-family:var(--display);font-size:44px;line-height:1.05}
+/* ---------- S11 interview ---------- */
+.s11 .wrap{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:30px}
+.clock{display:flex;align-items:center;gap:22px;margin-top:30px}
+.clock .face{width:110px;height:110px;border:4px solid var(--ink);border-radius:50%;background:var(--lime);position:relative;flex:none}
+.clock .face::before,.clock .face::after{content:"";position:absolute;left:50%;top:50%;background:var(--ink);border-radius:3px}
+.clock .face::before{width:6px;height:36px;margin:-36px 0 0 -3px}
+.clock .face::after{width:30px;height:5px;margin:-2.5px 0 0 0}
+.clock b{font-family:var(--display);font-size:42px;line-height:1.05}
 .qs{display:grid;gap:14px}
-.q{padding:18px 22px;font-family:var(--head);font-weight:600;font-size:23px;line-height:1.3;border-radius:18px;border:3px solid var(--ink);background:var(--white);position:relative}
+.q{padding:16px 22px;font-family:var(--head);font-weight:600;font-size:23px;line-height:1.3;border-radius:18px;border:3px solid var(--ink);background:var(--white)}
 .q:nth-child(even){margin-left:56px;background:var(--blue-soft)}
 .q small{display:block;font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--blue);margin-bottom:6px;text-transform:uppercase}
 .marquee{position:absolute;left:0;right:0;bottom:84px;overflow:hidden;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);background:var(--ink);padding:18px 0;z-index:1}
 .marquee .track{display:flex;gap:56px;white-space:nowrap;width:max-content;animation:scroll 32s linear infinite}
-.marquee span{font-family:var(--display);font-weight:600;font-size:30px;color:var(--white);display:flex;align-items:center;gap:56px}
+.marquee span{font-family:var(--display);font-weight:600;font-size:29px;color:var(--white);display:flex;align-items:center;gap:56px}
 .marquee span::after{content:"";width:16px;height:16px;border-radius:50%;background:var(--lime)}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
-/* ---------- S10 Adapt ---------- */
-.s10 .wrap{flex:1;display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
-.board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.piece{border:3px solid var(--ink);border-radius:16px;padding:18px 16px;background:var(--white);font-family:var(--head);font-weight:700;font-size:21px;display:flex;flex-direction:column;gap:8px;min-height:104px}
-.piece em{font-style:normal;font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+/* ---------- S12 AI ---------- */
+.s12 h2{font-size:64px}
+.ai{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:start}
+.ai .col{border-radius:22px;padding:32px 32px;display:flex;flex-direction:column;gap:18px}
+.ai .judg{background:var(--lime);color:var(--ink)}
+.ai .checks{background:#1c1d1a;border:2px solid #34362f}
+.ai h3{font-size:26px}
+.ai ol,.ai ul{margin:0;padding-left:0;list-style:none;display:grid;gap:11px}
+.ai li{font-size:23px;line-height:1.35;display:flex;gap:12px}
+.ai .judg li::before{content:counter(li);counter-increment:li;flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--lime);font:700 15px var(--display);display:grid;place-items:center;margin-top:1px}
+.ai .judg ol{counter-reset:li}
+.ai .checks li{color:#e7e8e0}
+.ai .checks li::before{content:"✓";flex:none;width:28px;height:28px;border-radius:8px;background:var(--lime);color:var(--ink);font:800 16px var(--body);display:grid;place-items:center;margin-top:1px}
+.ai .checks .num{display:flex;align-items:baseline;gap:14px}
+.ai .checks .num b{font-family:var(--display);font-size:60px;color:var(--lime);line-height:1}
+.ai .checks .num span{font-family:var(--head);font-size:23px;font-weight:700;color:var(--white)}
+
+/* ---------- S13 Adapt ---------- */
+.s13 .wrap{flex:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.piece{border:3px solid var(--ink);border-radius:14px;padding:12px 14px;background:var(--white);font-family:var(--head);font-weight:700;font-size:18px;display:flex;flex-direction:column;gap:4px}
+.piece em{font-style:normal;font-family:var(--display);font-size:11px;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
 .piece.on{background:var(--lime)}
 .piece.ink{background:var(--ink);color:var(--white)}
 .piece.ink em{color:var(--lime)}
-.stamp{display:inline-flex;align-items:center;gap:12px;margin-top:30px;font-family:var(--display);font-size:22px;font-weight:700;border:3px solid var(--ink);border-radius:999px;padding:12px 22px;background:var(--white);box-shadow:6px 6px 0 var(--lime)}
+.stamp{display:inline-flex;align-items:center;gap:12px;margin-top:26px;font-family:var(--display);font-size:20px;font-weight:700;border:3px solid var(--ink);border-radius:999px;padding:11px 20px;background:var(--white);box-shadow:6px 6px 0 var(--lime);align-self:flex-start}
 
-/* ---------- S11 ask ---------- */
-.s11 .wrap{flex:1;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;margin-top:20px}
-.refs{display:grid;gap:14px}
-.ref{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;border:3px solid var(--ink);border-radius:18px;padding:16px 22px;background:var(--white)}
-.ref .st{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:7px 10px;text-align:center}
-.ref p{font-family:var(--head);font-size:23px;font-weight:600;line-height:1.3}
-.contact{padding:40px;display:flex;flex-direction:column;gap:20px;background:var(--ink);color:var(--white);border-color:var(--ink);box-shadow:12px 12px 0 var(--lime)}
-.contact .logo .pillbtn{color:var(--ink)}
-.contact .logo{font-size:30px;align-self:flex-start;margin-bottom:10px}
+/* ---------- S14 ask ---------- */
+.s14 .wrap{flex:1;display:grid;grid-template-columns:1.18fr .82fr;gap:56px;align-items:center;margin-top:10px}
+.who-for{font-family:var(--head);font-size:24px;line-height:1.4;margin-bottom:18px}
+.who-for b{background:var(--lime);padding:2px 8px;border-radius:6px}
+.refs{display:grid;gap:12px}
+.ref{display:grid;grid-template-columns:140px 1fr;gap:18px;align-items:center;border:3px solid var(--ink);border-radius:18px;padding:13px 20px;background:var(--white)}
+.ref .st{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:7px 10px;text-align:center}
+.ref p{font-family:var(--head);font-size:22px;font-weight:600;line-height:1.3}
+.contact{padding:38px;display:flex;flex-direction:column;gap:16px;background:var(--ink);color:var(--white);border-color:var(--ink);box-shadow:12px 12px 0 var(--lime)}
+.contact .logo{font-size:28px;margin-bottom:10px}
 .contact b{font-family:var(--display);font-size:34px}
-.contact .line{font-size:24px;color:#E7E8E0;user-select:all}
-.contact .tagl{font-family:var(--head);font-size:24px;font-weight:600;color:var(--lime);border-top:2px solid #333;padding-top:18px}
+.contact .line{font-size:23px;color:#E7E8E0;user-select:all}
+.contact .tagl{font-family:var(--head);font-size:23px;font-weight:600;color:var(--lime);border-top:2px solid #333;padding-top:16px}
 
 /* ---------- chrome ---------- */
 .hud{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;gap:10px;justify-content:space-between;
   padding:10px max(14px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px, env(safe-area-inset-left,0px));
   font-family:var(--body);font-size:13px;color:#cfd1c8;opacity:0;transition:opacity .2s}
-.hud:hover,.hud:focus-within,body.showhud .hud{opacity:1}
+.hud:hover,.hud:focus-within{opacity:1}
 .hud button{font:600 13px var(--body);color:var(--ink);background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
 .hud button.alt{background:#2a2b27;color:#fff;border-color:#444}
 .hud button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
@@ -237,7 +287,7 @@ p{margin:0}
 .notes{position:fixed;right:max(14px, env(safe-area-inset-right,0px));bottom:calc(64px + env(safe-area-inset-bottom,0px));width:min(460px, calc(100vw - 28px));max-height:52vh;overflow:auto;z-index:22;
   background:#1b1c19;color:#f2f3ec;border:2px solid var(--lime);border-radius:16px;padding:18px 20px;font-size:16px;line-height:1.55;box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .notes h4{margin:0 0 8px;font:700 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--lime);display:flex;justify-content:space-between}
-.notes p+p{margin-top:10px}
+[hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -249,82 +299,107 @@ p{margin:0}
 <div class="stage" id="stage">
 
 <!-- 1 TITLE -->
-<section class="slide s1 dots glow" data-time="0:15" data-notes="Hi everyone, I'm Daisy with Kaizen Agency. Today I'm only talking about one thing: websites. Not as a one-time project, but as something that should grow with your business, from the day you start to the day you're hiring your fifth truck.">
+<section class="slide s1 dots glow" data-time="0:15" data-notes="Hi everyone, I'm Daisy with Kaizen Agency. My category here is website development, and today I want to show you what that actually means at Kaizen. I build websites for established trades, but the website is just where it starts. It's how you look credible, how you get found locally, and how attention turns into booked jobs.">
   <div class="logo rise"><span class="pillbtn">KAIZEN AGENCY</span>
     <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#111" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="#111" stroke-width="2"/><path d="M12 12 L36 22 L25 25 L30 36 L26 38 L21 27 L14 34 Z" fill="#111"/></svg></div>
-  <h1 class="rise d1">Your website should <span class="blue">grow up</span> with your business.</h1>
-  <div class="tagline rise d2"><span class="tag">Website development</span><span>Your marketing pieces, clicked into place.</span></div>
+  <h1 class="rise d1">Websites that work like a <span class="blue">marketing department.</span></h1>
+  <p class="sub rise d2">For established trades that need to look credible, get found locally, and turn attention into booked jobs.</p>
+  <div class="tagrow rise d3"><span class="tag">Websites</span><span class="tag ghost">Local SEO</span><span class="tag ghost">Branding</span><span class="tag ghost">Lead follow-up</span></div>
   <div class="who rise d3"><b>Daisy</b>Founder, Kaizen Agency<br>BNI Premier SJ</div>
 </section>
 
-<!-- 2 HOOK -->
-<section class="slide s2" data-time="0:30" data-notes="Picture this. Someone in this room just got referred to you. What's the first thing they do? They Google you. Before they ever call, your website has already introduced you. The question is whether it says 'this person is legit' or makes them hit the back button and call the next guy.">
+<!-- 2 ABOUT -->
+<section class="slide s2 dots" data-time="0:30" data-notes="Quick background. Before websites, I coordinated over 200 weddings. That's where I learned that nothing goes right without a plan, a checklist and someone who owns every detail. Then I spent years inside marketing agencies before starting Kaizen. Today I work with local businesses across the South Bay, mostly trades, and some of my clients have been with me four years. Here are some of the names.">
+  <div class="eyebrow rise"><span class="pill">Who I am</span>Why owners hand me the keys</div>
+  <h2 class="rise d1">I run the details so owners can run the business.</h2>
+  <div class="about">
+    <div class="card rise d1"><span class="big">200+</span><h3>weddings coordinated</h3><p>Where I learned nothing goes right without a plan, a checklist and one person owning every detail.</p></div>
+    <div class="card rise d2"><span class="big">Years</span><h3>inside marketing agencies</h3><p>Before Kaizen, I saw what agencies get right, and what slips through the cracks.</p></div>
+    <div class="card rise d3"><span class="big">15+</span><h3>local businesses</h3><p>Roofing, painting, plumbing, electrical, cleaning, landscaping, healthcare.</p></div>
+    <div class="card rise d4"><span class="big">4 yrs</span><h3>with my longest clients</h3><p>They stay because the work keeps improving every month.</p></div>
+  </div>
+  <div class="clients rise d5"><b>Recent work</b><span>Adapt Chiropractic</span><span>Sunwest Painting</span><span>Falcon Roofing</span><span>Silicon Pro Plumbing</span><span>MMT Electric</span><span>Johnny Windows</span><span>Mrs. Cleaning</span><span>JDH Landscaping</span></div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>02</span></div>
+</section>
+
+<!-- 3 HOOK -->
+<section class="slide s3" data-time="0:20" data-notes="Here's why this matters to everyone in this room. When you refer someone, the first thing they do is Google them. Before they ever call, the website has already introduced them. It either says 'this is legit' or sends them back to the search results.">
   <div class="eyebrow rise"><span class="pill">Start here</span>What happens after a referral</div>
   <div class="wrap">
     <div>
-      <h2 class="rise d1">Someone just got referred to you. <span class="hl">Then they Google you.</span></h2>
-      <div class="timer rise d2"><b>~5s</b><span>to decide if you look like the real deal</span></div>
-      <p class="lead rise d3">Your website is the first meeting you don't get to show up for. It should do the talking for you.</p>
+      <h2 class="rise d1">You refer someone. <span class="hl">Then they Google them.</span></h2>
+      <div class="timer rise d2"><b>~5s</b><span>to decide if they look like the real deal</span></div>
+      <p class="lead rise d3">The website is the first meeting nobody gets to show up for. It has to back up your referral.</p>
     </div>
     <div class="phone rise d2" aria-hidden="true">
-      <div class="search">🔍 plumber near me<span class="caret"></span></div>
-      <div class="result"><div class="t">Outdated Plumbing Co.</div><div class="stars">★★★☆☆</div><div class="bar" style="width:80%"></div></div>
-      <div class="result win"><div class="t">Your Business</div><div class="stars">★★★★★</div><div class="bar" style="width:90%;background:#b9c9ff"></div><div class="bar" style="width:60%;background:#b9c9ff"></div></div>
+      <div class="search">🔍 roofer near me<span class="caret"></span></div>
+      <div class="result"><div class="t">Outdated Roofing Co.</div><div class="stars">★★★☆☆</div><div class="bar" style="width:80%"></div></div>
+      <div class="result win"><div class="t">Your Referral</div><div class="stars">★★★★★</div><div class="bar" style="width:90%;background:#b9c9ff"></div><div class="bar" style="width:60%;background:#b9c9ff"></div></div>
       <div class="result"><div class="t">Some Directory Listing</div><div class="stars">★★★★☆</div><div class="bar" style="width:70%"></div></div>
       <div class="result"><div class="t">No-website Guy</div><div class="bar" style="width:50%"></div></div>
     </div>
   </div>
-  <div class="foot"><span>Kaizen · BNI Feature</span><span>02</span></div>
-</section>
-
-<!-- 3 STAGES -->
-<section class="slide s3 dots" data-time="0:40" data-notes="Here's the big idea. A website isn't one thing. It has stages, just like your business. When you're brand new, a landing page is plenty. When you want leads, it becomes a funnel. When you want to show up in every city you serve, it becomes an SEO site. Then it becomes your authority. And the end goal is a site that's connected to your CRM, so no lead ever falls through the cracks. I build for whatever stage you're at, and I build it so it can grow into the next one.">
-  <div class="eyebrow rise"><span class="pill">The big idea</span>Five stages of a website</div>
-  <h2 class="rise d1">A website isn't one thing. It grows with you.</h2>
-  <div class="arrowup rise d2">Business grows <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5M9 5h10v10"/></svg></div>
-  <div class="stairs">
-    <div class="step rise d1"><span class="n">Stage 1</span><h3>Landing page</h3><p>One page. Who you are, what you do, call now.</p><span class="when">"I just started"</span></div>
-    <div class="step rise d2"><span class="n">Stage 2</span><h3>Funnel</h3><p>One offer, one path, built to turn clicks into calls.</p><span class="when">"I need leads"</span></div>
-    <div class="step rise d3"><span class="n">Stage 3</span><h3>Local SEO site</h3><p>A page for every service and every city you serve.</p><span class="when">"I want to be found"</span></div>
-    <div class="step rise d4"><span class="n">Stage 4</span><h3>Authority site</h3><p>Your story, team, reviews and proof. People know, like and trust you.</p><span class="when">"I'm the go-to"</span></div>
-    <div class="step rise d5"><span class="n">Stage 5</span><h3>Connected</h3><p>Site + CRM + automations. Every lead gets followed up.</p><span class="when">"I'm scaling"</span></div>
-  </div>
-  <div class="ground"></div>
   <div class="foot"><span>Kaizen · BNI Feature</span><span>03</span></div>
 </section>
 
-<!-- 4 LANDING vs FUNNEL -->
-<section class="slide s4" data-time="0:40" data-notes="Stage one and two. A landing page is your digital business card. One page, fast to launch, perfect when you're starting out or launching something new. I just built one-pagers for Motor Body and Alongi. A funnel is different. It's built around one offer, like a free estimate or a seasonal special, and every section walks the visitor one step closer to calling you. Same budget mindset, different job.">
-  <div class="eyebrow rise"><span class="pill">Stages 1 + 2</span>Starting out vs. getting leads</div>
-  <h2 class="rise d1">Landing page or funnel? Depends on the job.</h2>
-  <div class="versus">
-    <div class="card vs-col rise d2">
-      <div class="mock" aria-hidden="true"><div class="hero">YOUR LOGO</div><div class="b" style="height:12px;width:85%"></div><div class="b" style="height:12px;width:60%"></div><span class="btn">CALL NOW</span><div class="b" style="height:48px"></div><div class="b" style="height:12px;width:70%"></div></div>
-      <div class="vs-text"><span class="tag ghost">Landing page</span><h3>Your digital business card</h3>
-        <ul><li>One page, live fast</li><li>Who you are + how to reach you</li><li>Looks legit when people check you out</li></ul>
-        <p class="best">Best for: new businesses, a new service, a quick start.</p></div>
-    </div>
-    <div class="card lime vs-col rise d3">
-      <div class="funnel" aria-hidden="true"><div class="fstep">The problem <small>hook</small></div><div class="fstep">The fix <small>offer</small></div><div class="fstep">The proof <small>reviews</small></div><div class="fstep">Book it <small>action</small></div></div>
-      <div class="vs-text"><span class="tag">Funnel</span><h3>Built for one result</h3>
-        <ul><li>One offer, one path</li><li>Every section moves them closer</li><li>Pairs with ads, flyers, QR codes</li></ul>
-        <p class="best">Best for: promos, estimates, seasonal pushes.</p></div>
-    </div>
+<!-- 4 DIFFERENCE -->
+<section class="slide s4 glow" data-time="0:40" data-notes="So what makes me different from every other website designer? Most designers build the pages and hand you the keys. I make sure every piece works together: the copy sounds like you, your Google profile and reviews are connected, your business cards and trucks match the site, every lead gets followed up, and I report on it every month and keep improving it. Your marketing pieces, clicked into place.">
+  <div class="eyebrow rise"><span class="pill">The difference</span>Website designer vs. Kaizen</div>
+  <h2 class="rise d1">Most designers hand you a website. I make every piece work together.</h2>
+  <div class="compare rise d2">
+    <div class="h">What you get</div><div class="h" style="justify-content:center">Typical designer</div><div class="h k" style="justify-content:center">Kaizen</div>
+    <div>A good-looking website</div><div class="c">✓</div><div class="c k">✓</div>
+    <div>Copy written in your voice after a 1-hour interview</div><div class="c no">—</div><div class="c k">✓</div>
+    <div>Google profile, reviews and local SEO connected</div><div class="c no">—</div><div class="c k">✓</div>
+    <div>Cards, flyers and trucks that match the site</div><div class="c no">—</div><div class="c k">✓</div>
+    <div>Every lead lands in your CRM and gets followed up</div><div class="c no">—</div><div class="c k">✓</div>
+    <div>A monthly report and a plan for what's next</div><div class="c no">—</div><div class="c k">✓</div>
   </div>
+  <p class="clickline rise d3"><span class="tag blue-t">Kaizen</span>Your marketing pieces, clicked into place.</p>
   <div class="foot"><span>Kaizen · BNI Feature</span><span>04</span></div>
 </section>
 
-<!-- 5 SEO -->
-<section class="slide s5 dots" data-time="0:40" data-notes="Stage three is where it gets fun. Google ranks pages, not businesses. So if your site has one services page, you're invisible for most searches. For Johnny Windows I built a hub-and-spoke structure: a page for each service, a hub for each city, and pages like San Jose window cleaning that match exactly what people type. For Silicon Pro Plumbing we mapped out a 50-plus page sitemap so they can grow into it. This is how you show up when someone searches with their thumb at 9pm with a leak.">
-  <div class="eyebrow rise"><span class="pill">Stage 3</span>Built to be found</div>
+<!-- 5 STAGES -->
+<section class="slide s5 dots" data-time="0:40" data-notes="A website also isn't one thing. It has stages, just like your business. When you're new, a one-page site is plenty. When you want leads, it becomes a funnel. When you want to show up in every city you serve, it becomes an SEO site. Then it becomes your authority. And the end goal is a site connected to your CRM so no lead falls through. I build for the stage you're in, and build it so it can grow into the next one.">
+  <div class="eyebrow rise"><span class="pill">The big idea</span>Five stages of a website</div>
+  <h2 class="rise d1">Your website should grow up with your business.</h2>
+  <div class="arrowup rise d2">Business grows <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19 19 5M9 5h10v10"/></svg></div>
+  <div class="stairs">
+    <div class="step rise d1"><span class="n">Stage 1</span><h3>Landing page</h3><p>Who you are, what you do, call now.</p><span class="ex"><em>"I just started"</em>Motor Body · Alongi</span></div>
+    <div class="step rise d2"><span class="n">Stage 2</span><h3>Funnel</h3><p>One offer, one path from click to call.</p><span class="ex"><em>"I need leads"</em>Promos, estimates, QR flyers</span></div>
+    <div class="step rise d3"><span class="n">Stage 3</span><h3>Local SEO site</h3><p>A page for every service and every city.</p><span class="ex"><em>"I want to be found"</em>Johnny Windows · Silicon Pro</span></div>
+    <div class="step rise d4"><span class="n">Stage 4</span><h3>Authority site</h3><p>Your story, team, reviews and proof.</p><span class="ex"><em>"I'm the go-to"</em>Falcon Roofing · Sunwest</span></div>
+    <div class="step rise d5"><span class="n">Stage 5</span><h3>Connected</h3><p>Site + CRM + follow-up + monthly reporting.</p><span class="ex"><em>"I'm scaling"</em>Adapt Chiropractic</span></div>
+  </div>
+  <div class="ground"></div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>05</span></div>
+</section>
+
+<!-- 6 WORK WALL -->
+<section class="slide s6" data-time="0:30" data-notes="Here's some of the work. Adapt Chiropractic in Campbell. Sunwest Painting in San Jose. Silicon Pro Plumbing in Sunnyvale. MMT Electric, Losi's company, right here in our chapter. Johnny Windows. Mrs. Cleaning in Redwood City. Every one of these was designed from scratch around the owner, not a template.">
+  <div class="eyebrow rise"><span class="pill">The work</span>Live sites, South Bay businesses</div>
+  <h2 class="rise d1">Real sites for real local businesses.</h2>
+  <div class="wall">
+    <div class="rise d1"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>adaptchiropracticwellness.com</span></div><img src="img/site-adapt.jpg" alt="Adapt Chiropractic and Wellness homepage" loading="eager"></div><div class="cap">Adapt Chiropractic &amp; Wellness <small>Campbell</small></div></div>
+    <div class="rise d2"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>sunwestpainting.net</span></div><img src="img/site-sunwest.jpg" alt="Sunwest Painting homepage"></div><div class="cap">Sunwest Painting <small>San Jose</small></div></div>
+    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siliconproplumbing.com</span></div><img src="img/site-siliconpro.jpg" alt="Silicon Pro Plumbing homepage"></div><div class="cap">Silicon Pro Plumbing <small>Sunnyvale</small></div></div>
+    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>mmt-electric.com</span></div><img src="img/site-mmt.jpg" alt="MMT Electric homepage"></div><div class="cap">MMT Electric <small>Union City</small></div></div>
+    <div class="rise d4"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>johnnywindows.com</span></div><img src="img/site-johnny.jpg" alt="Johnny Windows homepage"></div><div class="cap">Johnny Windows <small>San Jose</small></div></div>
+    <div class="rise d5"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>mrs-cleaning.com</span></div><img src="img/site-mrscleaning.jpg" alt="Mrs. Cleaning homepage"></div><div class="cap">Mrs. Cleaning <small>Redwood City</small></div></div>
+  </div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>06</span></div>
+</section>
+
+<!-- 7 SEO -->
+<section class="slide s7 dots" data-time="0:35" data-notes="Here's the part most people never see. Google ranks pages, not businesses. If your site has one services page, you're invisible for most searches. For Johnny Windows, I built a page for each service, a hub for each city, and pages like San Jose window cleaning that match exactly what people type. For Silicon Pro Plumbing, we mapped out a 109-page plan so the site can grow into it. Every site gets this structure.">
+  <div class="eyebrow rise"><span class="pill">Get found</span>Built for local search</div>
   <div class="wrap">
     <div>
       <h2 class="rise d1">Google ranks <span class="hl">pages</span>, not businesses.</h2>
-      <div class="checks">
-        <div class="check rise d2"><i>✓</i><span>A page for every service you actually sell</span></div>
-        <div class="check rise d3"><i>✓</i><span>A page for every city you actually serve</span></div>
-        <div class="check rise d4"><i>✓</i><span>Built for Google, Maps and AI search</span></div>
-        <div class="check rise d5"><i>✓</i><span>Room to grow: Silicon Pro Plumbing's map has 50+ pages planned</span></div>
+      <p class="lead rise d2">A page for every service you sell and every city you serve, so you show up for what people actually type.</p>
+      <div class="stat-row rise d3">
+        <div class="stat on"><b>109</b><span>pages mapped for Silicon Pro Plumbing's site plan</span></div>
+        <div class="stat"><b>Google + AI</b><span>built for Search, Maps and AI answers</span></div>
       </div>
     </div>
     <div class="tree card rise d2" style="padding:26px 22px">
@@ -343,137 +418,177 @@ p{margin:0}
       </svg>
     </div>
   </div>
-  <div class="foot"><span>Example: Johnny Windows site map</span><span>05</span></div>
+  <div class="foot"><span>Example: Johnny Windows site map</span><span>07</span></div>
 </section>
 
-<!-- 6 AUTHORITY -->
-<section class="slide s6 glow" data-time="0:30" data-notes="Stage four. Sometimes a website's main job is just to be your authority. Falcon Roofing has been around 35 years with a great reputation, but online they looked brand new. A good site puts your story, your real team, your license number and your reviews front and center so people already trust you before they call. Referrals in this room work the same way: you hand someone a name, the site backs it up.">
-  <div class="eyebrow rise"><span class="pill">Stage 4</span>Know · Like · Trust</div>
-  <h2 class="rise d1">Sometimes a site's job is just to prove you're the real deal.</h2>
-  <div class="trust">
-    <div class="card rise d2"><span class="big">35</span><h3>years in business</h3><p>Falcon Roofing had the reputation, not the brand. The new site finally looks as established as they are.</p></div>
-    <div class="card rise d3"><span class="big">Real</span><h3>faces, not stock photos</h3><p>Your team, your trucks, your job sites. People hire people.</p></div>
-    <div class="card rise d4"><h3>Trust signals I build in</h3><ul><li>Reviews pulled from Google</li><li>License number + years</li><li>Your story, in your words</li><li>Before &amp; after work</li></ul></div>
+<!-- 8 RESULTS -->
+<section class="slide s8" data-time="0:40" data-notes="I don't launch a site and disappear. This is Adapt's live report. It's connected to Google and the owner can check it anytime. Over nine months, their impressions on Google went from about 5,000 a month to over 30,000, and clicks nearly doubled. When we moved them to their new domain after the rebrand, their average Google position still improved from 18 to 14. And one condition page we built, sciatica, went up over 4,000 percent in impressions. Every month they get a report and a plan for what's next.">
+  <div class="eyebrow rise"><span class="pill">Proof</span>Reporting every month</div>
+  <h2 class="rise d1">I don't just launch it. I measure it and improve it.</h2>
+  <div class="wrap">
+    <div class="report rise d2"><img src="img/report-adapt.jpg" alt="Kaizen live report for Adapt Chiropractic showing monthly Google clicks and impressions, October 2025 to September 2026"></div>
+    <div class="kpis">
+      <div class="kpi rise d2"><b>~6×</b><p><strong>Google impressions in 9 months</strong><br>About 5K a month to over 30K (Oct '25 to Jul '26)</p></div>
+      <div class="kpi rise d3"><b>18→14</b><p><strong>Average Google position</strong><br>Improved even while moving to a new domain</p></div>
+      <div class="kpi rise d4"><b>+4,022%</b><p><strong>Impressions on one new page</strong><br>The sciatica page, part of a condition-page cluster</p></div>
+    </div>
   </div>
-  <p class="quote rise d5"><span class="tag blue-t">The point</span>When someone refers you, your site should back them up.</p>
-  <div class="foot"><span>Kaizen · BNI Feature</span><span>06</span></div>
+  <div class="foot"><span>Adapt Chiropractic &amp; Wellness · live Kaizen report</span><span>08</span></div>
 </section>
 
-<!-- 7 AUTOMATION -->
-<section class="slide s7 dots" data-time="0:40" data-notes="Stage five is the end goal. Your website shouldn't just collect leads, it should hand them off. When someone fills out a form, it drops into your CRM, whether that's Housecall Pro, Jobber, or whatever you use. They get a text back right away, you get notified, and if they don't book, the follow-up goes out on its own. After the job, it asks for the review. Most businesses don't lose leads because they're bad at the work. They lose them because nobody followed up.">
-  <div class="eyebrow rise"><span class="pill">Stage 5</span>Connected to your CRM</div>
-  <h2 class="rise d1">No lead left on read.</h2>
-  <div class="flow">
-    <div class="fnode rise d1"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><span class="time">0 min</span><h3>Form filled</h3><p>Quote request comes in from the site.</p></div></div>
-    <div class="fnode rise d2"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><span class="time">Instantly</span><h3>Lands in your CRM</h3><p>No copy-paste. No lost sticky notes.</p></div></div>
-    <div class="fnode rise d3"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div><span class="time">1 min</span><h3>Text back</h3><p>"Thanks! We'll call you shortly."</p></div></div>
-    <div class="fnode rise d4"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="time">Day 2 · Day 5</span><h3>Follow-up</h3><p>Goes out on its own if they haven't booked.</p></div></div>
-    <div class="fnode rise d5"><div class="card" style="background:var(--lime)"><div class="ic" style="background:#fff"><svg viewBox="0 0 24 24" fill="#111"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div><span class="time">After the job</span><h3>Review ask</h3><p>Happy customers become 5 stars.</p></div></div>
+<!-- 9 FOLLOW-UP -->
+<section class="slide s9 ink-bg" data-time="0:40" data-notes="This one surprises people. Most businesses don't need more leads, they need to stop losing the ones they have. A roofing client of mine has been in business 35 years. When I audited their leads, 12 homeowners had asked for a quote on the website and never made it into their CRM. Over a hundred form entries were sitting unread. One recovered re-roof pays for months of marketing. So the end goal of every site I build is this: the form drops into your CRM, they get a text back, the follow-up goes out on its own, and after the job it asks for the review.">
+  <div class="eyebrow rise"><span class="pill">Follow-up</span>Where money leaks</div>
+  <h2 class="rise d1">Most businesses don't need more leads. <span class="lime-t">They need to stop losing them.</span></h2>
+  <div class="leak">
+    <div class="card rise d2" style="background:#fff"><b>12</b><p>homeowners asked a 35-year roofing client for a quote online and never reached the CRM</p></div>
+    <div class="card rise d3" style="background:#fff"><b>117</b><p>website form entries sitting unread in the inbox</p></div>
+    <div class="card rise d4" style="background:var(--lime)"><b>1</b><p>recovered re-roof pays for months of marketing</p></div>
   </div>
-  <div class="crmband rise d6"><b>WORKS WITH</b><span>Housecall Pro · Jobber · your email list · whatever you already use</span></div>
-  <div class="foot"><span>Kaizen · BNI Feature</span><span>07</span></div>
+  <p class="flowlabel rise d4"><span class="tag">The fix</span>Every Kaizen site is built to end here</p>
+  <div class="flow" style="margin-top:16px">
+    <div class="fnode rise d4"><div class="card"><span class="time">0 min</span><h3>Form filled</h3><p>Quote request from the site</p></div></div>
+    <div class="fnode rise d4"><div class="card"><span class="time">Instantly</span><h3>Into your CRM</h3><p>Housecall Pro, Jobber, yours</p></div></div>
+    <div class="fnode rise d5"><div class="card"><span class="time">1 min</span><h3>Text back</h3><p>"We'll call you shortly"</p></div></div>
+    <div class="fnode rise d5"><div class="card"><span class="time">Day 2 · Day 5</span><h3>Follow-up</h3><p>Goes out on its own</p></div></div>
+    <div class="fnode rise d6"><div class="card" style="background:var(--lime)"><span class="time">After the job</span><h3>Review ask</h3><p>Happy customer, 5 stars</p></div></div>
+  </div>
+  <div class="foot"><span>Client details kept private</span><span>09</span></div>
 </section>
 
-<!-- 8 BRAND -->
-<section class="slide s8 glow" data-time="0:40" data-notes="Now the part I love. A website only works if the brand behind it is clear. So I do rebrands too: logo, logo variations, and a brand guide that locks in your fonts, colors, tone and the feeling you want people to have. Then everything matches: website, business cards, trucks, flyers, door hangers, shirts. I did a full rebrand for Adapt Chiropractic, logos for MMT Electric and Johnny Windows, and print pieces for Sunwest Painting. Owners should be proud to hand out their card.">
+<!-- 10 BRAND -->
+<section class="slide s10 glow" data-time="0:35" data-notes="A website only works if the brand behind it is clear. So I do rebrands too: logo, logo files, and a brand guide that locks in your fonts, colors, tone and the feeling you want people to have. Then everything matches. Adapt's new logo and event flyer. Sunwest's business cards and trifold. MMT's mascot logo, and I even built Losi's BNI feature deck. Owners should be proud to hand out their card.">
   <div class="eyebrow rise"><span class="pill">Branding</span>Before the website, the brand</div>
   <div class="wrap">
     <div>
       <h2 class="rise d1">Look like the reputable business <span class="blue">you already are.</span></h2>
-      <p class="lead rise d2">A brand guide makes every piece match, so your website, truck and business card all feel like the same company.</p>
-      <div class="pieces rise d3"><span>Logo + variations</span><span>Website</span><span>Business cards</span><span>Door hangers</span><span>Flyers</span><span>Truck decals</span><span>Folders</span><span>Shirts</span></div>
+      <div class="pieces rise d2"><span>Logo + all files</span><span>Brand guide</span><span>Business cards</span><span>Trifolds</span><span>Event flyers</span><span>Door hangers</span><span>Truck decals</span><span>Shirts</span><span>BNI decks</span></div>
+      <p class="guide-line rise d3">Every brand guide sets <b>fonts, colors, tone and feeling</b>, so the website, the truck and the business card all feel like one company.</p>
     </div>
-    <div class="card guide rise d2" aria-label="Sample brand guide">
-      <div><div class="label">Colors</div><div class="swatches"><div class="sw" style="background:#111;color:#fff">Ink</div><div class="sw" style="background:#BFDF31">Lime</div><div class="sw" style="background:#004BFF;color:#fff">Blue</div></div></div>
-      <div><div class="label">Fonts</div><div class="typeA">Aa</div><div class="typeB">Bold heading + friendly body</div></div>
-      <div><div class="label">Tone</div><div class="tone"><span>Warm</span><span>Straight-talking</span><span>Local</span><span>Proud</span></div></div>
-      <div><div class="label">Logo files</div><div class="tone"><span>Full</span><span>Icon</span><span>Black</span><span>White</span></div></div>
-      <div class="feel">The feeling: <b>"These people show up, do it right, and treat my house like theirs."</b></div>
-      <div class="logos"><span class="label" style="margin:0">Recent brand work</span><span class="chip">Adapt Chiropractic</span><span class="chip">MMT Electric</span><span class="chip">Johnny Windows</span><span class="chip">Sunwest Painting</span></div>
-    </div>
-  </div>
-  <div class="foot"><span>Kaizen · BNI Feature</span><span>08</span></div>
-</section>
-
-<!-- 9 INTERVIEW -->
-<section class="slide s9 dots" data-time="0:40" data-notes="How do I get it to feel like you? I sit down with the owner for about an hour. I ask about how you started, who your favorite customer is, what you never want to be mistaken for, what your team says when they answer the phone. The way it feels talking to you should be the way the website feels. Same with your team: their words, their personality, right on the screen. That's why my sites don't look like templates.">
-  <div class="eyebrow rise"><span class="pill">How I work</span>Onboarding interview</div>
-  <div class="wrap">
-    <div>
-      <h2 class="rise d1">The way it feels talking to you is how your site should feel.</h2>
-      <div class="clock rise d2"><div class="face" aria-hidden="true"></div><div><b>1 hour</b><p class="small">with the owner, before I design a single page</p></div></div>
-    </div>
-    <div class="qs">
-      <div class="q rise d2"><small>Your story</small>How did you get started, and why do you still do this?</div>
-      <div class="q rise d3"><small>Your people</small>Who's your favorite customer, and why?</div>
-      <div class="q rise d4"><small>Your edge</small>What do customers say about you that competitors can't claim?</div>
-      <div class="q rise d5"><small>Your team</small>How does your crew talk to customers on the job?</div>
-    </div>
-  </div>
-  <div class="marquee" aria-label="Example team messages">
-    <div class="track">
-      <span>"We show up when we say we will."</span><span>"Treat every house like it's your mom's."</span><span>"Family owned since day one."</span><span>"Ask for Miguel, he'll walk you through it."</span><span>"Clean job site, every time."</span>
-      <span>"We show up when we say we will."</span><span>"Treat every house like it's your mom's."</span><span>"Family owned since day one."</span><span>"Ask for Miguel, he'll walk you through it."</span><span>"Clean job site, every time."</span>
-    </div>
-  </div>
-  <div class="foot"><span>Your team's words, across the screen</span><span>09</span></div>
-</section>
-
-<!-- 10 ADAPT -->
-<section class="slide s10" data-time="0:30" data-notes="Here's what it looks like when it all comes together. Adapt Chiropractic and Wellness in Campbell has been with me four years. We rebranded them, built the website, and handle the email and text marketing, automations, business cards, social graphics and their Google profile. One person, one brand, every piece clicked into place.">
-  <div class="eyebrow rise"><span class="pill">All together</span>Case study</div>
-  <div class="wrap">
-    <div>
-      <h2 class="rise d1">Adapt Chiropractic &amp; Wellness</h2>
-      <p class="lead rise d2">Campbell, CA. A full rebrand, a new website, and the systems behind it. One brand, every piece matching.</p>
-      <div class="stamp rise d3"><span class="tag">4 years</span>and still growing together</div>
-    </div>
-    <div class="board">
-      <div class="piece ink rise d1"><em>Brand</em>New name + logo</div>
-      <div class="piece on rise d2"><em>Website</em>Rebuilt for local search</div>
-      <div class="piece rise d2"><em>Print</em>Team business cards</div>
-      <div class="piece rise d3"><em>CRM</em>Automations + cleanup</div>
-      <div class="piece ink rise d3"><em>Email</em>Rebrand announcement</div>
-      <div class="piece rise d4"><em>Text</em>SMS campaigns</div>
-      <div class="piece on rise d4"><em>Google</em>Business Profile</div>
-      <div class="piece rise d5"><em>Social</em>Carousels + graphics</div>
-      <div class="piece on rise d5"><em>Content</em>Photo + video shoots</div>
+    <div class="collage rise d2">
+      <div class="shot a"><img src="img/print-adapt-flyer.jpg" alt="Adapt Chiropractic event flyer"><span class="lbl">Adapt · event flyer</span></div>
+      <div class="shot l"><img src="img/brand-adapt-logo.jpg" alt="Adapt Chiropractic and Wellness logo"><span class="lbl">Adapt · new logo</span></div>
+      <div class="shot m"><img src="img/brand-mmt-mascot.jpg" alt="MMT Electric mascot logo"><span class="lbl">MMT · mascot</span></div>
+      <div class="shot"><img src="img/print-sunwest-cards.jpg" alt="Sunwest Painting business cards"><span class="lbl">Sunwest · cards</span></div>
+      <div class="shot"><img src="img/deck-mmt-bni.jpg" alt="MMT Electric BNI feature presentation" style="object-position:left"><span class="lbl">MMT · BNI deck</span></div>
     </div>
   </div>
   <div class="foot"><span>Kaizen · BNI Feature</span><span>10</span></div>
 </section>
 
-<!-- 11 ASK -->
-<section class="slide s11 dots glow" data-time="0:40" data-notes="So, who's a good referral for me? Anyone at any of these stages. Someone just starting out with no site. Someone with a site that isn't bringing in calls. Someone who just rebranded or is adding a new service or city. Or someone drowning in leads they can't keep up with. If you hear any of these this week, send them my way. I'm Daisy with Kaizen Agency. Your marketing pieces, clicked into place. Thank you!">
-  <div class="eyebrow rise"><span class="pill">My ask</span>A great referral for me sounds like</div>
+<!-- 11 INTERVIEW -->
+<section class="slide s11 dots" data-time="0:30" data-notes="How do I make it feel like you? I sit down with the owner for about an hour before I design anything. How you started, who your favorite customer is, what you never want to be mistaken for. The way it feels talking to you should be the way the website feels. Same with your team: their words go right on the screen.">
+  <div class="eyebrow rise"><span class="pill">How I work</span>Onboarding interview</div>
   <div class="wrap">
-    <div class="refs">
-      <div class="ref rise d1"><span class="st">Starting</span><p>"I just started and don't have a website yet."</p></div>
-      <div class="ref rise d2"><span class="st">Stuck</span><p>"I have a site, but it never brings me calls."</p></div>
-      <div class="ref rise d3"><span class="st">Growing</span><p>"We're adding a service, a city, or a new name."</p></div>
-      <div class="ref rise d4"><span class="st">Scaling</span><p>"Leads come in and we can't keep up with follow-up."</p></div>
+    <div>
+      <h2 class="rise d1">The way it feels talking to you is how your site should feel.</h2>
+      <div class="clock rise d2"><div class="face" aria-hidden="true"></div><div><b>1 hour</b><p class="small">with the owner, before a single page is designed</p></div></div>
+    </div>
+    <div class="qs">
+      <div class="q rise d2"><small>Your story</small>How did you get started, and why do you still do this?</div>
+      <div class="q rise d3"><small>Your people</small>Who's your favorite customer, and why?</div>
+      <div class="q rise d4"><small>Your edge</small>What do customers say about you that competitors can't claim?</div>
+    </div>
+  </div>
+  <div class="marquee" aria-label="Example team messages">
+    <div class="track">
+      <span>"We show up when we say we will."</span><span>"Treat every house like it's your mom's."</span><span>"Family owned since day one."</span><span>"Straight answers, clean work."</span><span>"Clean job site, every time."</span>
+      <span>"We show up when we say we will."</span><span>"Treat every house like it's your mom's."</span><span>"Family owned since day one."</span><span>"Straight answers, clean work."</span><span>"Clean job site, every time."</span>
+    </div>
+  </div>
+  <div class="foot"><span>Your team's words, across the screen</span><span>11</span></div>
+</section>
+
+<!-- 12 AI -->
+<section class="slide s12 ink-bg" data-time="0:45" data-notes="I get asked this all the time: can't I just make my website with AI? Honestly, yes. AI can make a page in five minutes, and I use it every day. But AI creates the raw material. My value is the judgment: what your business needs next, what message makes your market trust you, which pages, offers and proof should exist, and whether it all works across your site, Google, email, print and sales. And then holding it accountable every month. Plus, every Kaizen site goes through over a hundred checks before launch. These are the ones that cost owners real money when they get missed.">
+  <div class="eyebrow rise"><span class="pill">The question I get</span>About AI</div>
+  <h2 class="rise d1">"Can't I just make my website with AI?" <span class="lime-t">Yes. Then what?</span></h2>
+  <div class="ai">
+    <div class="col judg rise d2">
+      <h3>AI makes the raw material. I make the decisions.</h3>
+      <ol>
+        <li>What your business needs next</li>
+        <li>What message makes your market trust you</li>
+        <li>Which pages, offers, proof and follow-up should exist</li>
+        <li>Whether it all works across your site, Google, email, print and sales</li>
+        <li>Holding it accountable and improving it every month</li>
+      </ol>
+    </div>
+    <div class="col checks rise d3">
+      <div class="num"><b>100+</b><span>checks before a Kaizen site goes live</span></div>
+      <ul>
+        <li>Phone number matches on every page, button and Google listing</li>
+        <li>Every form tested end to end, junk folder included</li>
+        <li>Old pages redirected so you keep your Google rankings</li>
+        <li>"Hide from Google" switched off on launch day</li>
+        <li>California privacy and cookie compliance set up</li>
+        <li>Tap-to-call tested on a real phone</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>From the Kaizen launch checklist</span><span>12</span></div>
+</section>
+
+<!-- 13 ADAPT -->
+<section class="slide s13" data-time="0:25" data-notes="Here's what it looks like when it all comes together. Adapt Chiropractic and Wellness in Campbell, four years with me. A new name and logo, a new website, the domain move, email and text campaigns, automations, business cards, social graphics, their Google profile, and a monthly report. One brand, every piece clicked into place.">
+  <div class="eyebrow rise"><span class="pill">All together</span>Case study</div>
+  <div class="wrap">
+    <div class="browser rise d1"><div class="bar"><i></i><i></i><i></i><span>adaptchiropracticwellness.com</span></div><img src="img/site-adapt.jpg" alt="Adapt Chiropractic and Wellness homepage"></div>
+    <div style="display:flex;flex-direction:column">
+      <h2 class="rise d1" style="margin-top:0">Adapt Chiropractic &amp; Wellness</h2>
+      <p class="lead rise d2" style="font-size:24px">Campbell, CA. From one chiropractor to five practitioners, with a rebrand, a new site and the systems behind it.</p>
+      <div class="board">
+        <div class="piece ink rise d2"><em>Brand</em>New name + logo</div>
+        <div class="piece on rise d2"><em>Website</em>Rebuilt for local search</div>
+        <div class="piece rise d3"><em>Domain</em>Moved, rankings kept</div>
+        <div class="piece rise d3"><em>CRM</em>Automations + cleanup</div>
+        <div class="piece ink rise d4"><em>Email + text</em>Campaigns monthly</div>
+        <div class="piece on rise d4"><em>Google</em>Business Profile</div>
+        <div class="piece rise d5"><em>Print</em>Cards + flyers</div>
+        <div class="piece rise d5"><em>Social</em>Carousels + graphics</div>
+        <div class="piece on rise d6"><em>Reporting</em>Live + monthly</div>
+      </div>
+      <div class="stamp rise d6"><span class="tag">4 years</span>and still growing together</div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen · BNI Feature</span><span>13</span></div>
+</section>
+
+<!-- 14 ASK -->
+<section class="slide s14 dots glow" data-time="0:35" data-notes="So who's a great referral for me? Established trades: roofing, painting, plumbing, electrical, landscaping, cleaning. Businesses that have been around a while and have a great reputation, but their website doesn't show it. Listen for these four things this week: 'my website is outdated,' 'my site never brings me calls,' 'we're rebranding or adding a service,' or 'leads come in and we can't keep up.' Send them my way. I'm Daisy with Kaizen Agency. Your marketing pieces, clicked into place. Thank you!">
+  <div class="eyebrow rise"><span class="pill">My ask</span>Who to send my way</div>
+  <div class="wrap">
+    <div>
+      <p class="who-for rise d1"><b>Established trades</b> with a great reputation and a website that doesn't show it: roofing, painting, plumbing, electrical, landscaping, cleaning.</p>
+      <div class="refs">
+        <div class="ref rise d2"><span class="st">Outdated</span><p>"Our website is old. We've just never fixed it."</p></div>
+        <div class="ref rise d3"><span class="st">No calls</span><p>"I have a site, but it never brings me calls."</p></div>
+        <div class="ref rise d4"><span class="st">Growing</span><p>"We're rebranding, or adding a service or a city."</p></div>
+        <div class="ref rise d5"><span class="st">Leaking</span><p>"Leads come in and we can't keep up with follow-up."</p></div>
+      </div>
     </div>
     <div class="card contact rise d3">
       <div class="logo"><span class="pillbtn">KAIZEN AGENCY</span></div>
       <b>Daisy</b>
       <span class="line">daisy@kaizenagency.org</span>
+      <span class="line">(408) 710-6718</span>
       <span class="line">kaizenagency.org</span>
       <span class="tagl">Your marketing pieces, clicked into place.</span>
     </div>
   </div>
-  <div class="foot"><span>Thank you, Premier SJ</span><span>11</span></div>
+  <div class="foot"><span>Thank you, Premier SJ</span><span>14</span></div>
 </section>
 
 </div>
 </div>
 
 <aside class="notes" id="notes" hidden>
-  <h4><span id="notesLabel">Speaker notes</span><span id="notesTime"></span></h4>
+  <h4><span>Speaker notes</span><span id="notesTime"></span></h4>
   <div id="notesBody"></div>
 </aside>
 
 <nav class="hud" aria-label="Slide controls">
-  <div class="grp"><button id="prev" aria-label="Previous slide">← Prev</button><button id="next" aria-label="Next slide">Next →</button><span id="count">1 / 11</span></div>
+  <div class="grp"><button id="prev" aria-label="Previous slide">← Prev</button><button id="next" aria-label="Next slide">Next →</button><span id="count">1 / 14</span></div>
   <div class="grp"><span id="clock">0:00</span><button class="alt" id="timerBtn">Start timer</button><button class="alt" id="notesBtn">Notes (N)</button><button class="alt" id="fsBtn">Fullscreen (F)</button></div>
 </nav>
 
@@ -486,8 +601,7 @@ p{margin:0}
   const fromHash=parseInt((location.hash||'').replace(/\D/g,''),10);
   if(fromHash>=1&&fromHash<=slides.length) i=fromHash-1;
   function fit(){
-    const vw=window.innerWidth, vh=window.innerHeight-(window.innerWidth<700?56:0);
-    const s=Math.min(vw/1600, vh/900);
+    const s=Math.min(window.innerWidth/1600, window.innerHeight/900);
     stage.style.transform='scale('+s+')';
   }
   function show(n){
@@ -496,15 +610,13 @@ p{margin:0}
     count.textContent=(i+1)+' / '+slides.length;
     progress.style.width=((i+1)/slides.length*100)+'%';
     const s=slides[i];
-    nBody.innerHTML='';
-    const p=document.createElement('p'); p.textContent=s.dataset.notes||''; nBody.appendChild(p);
+    nBody.textContent=s.dataset.notes||'';
     nTime.textContent='~'+(s.dataset.time||'');
   }
   function toggleNotes(){notes.hidden=!notes.hidden}
   function fs(){
     try{ if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{})} else {document.exitFullscreen().catch(()=>{})} }catch(e){}
   }
-  // timer
   let start=null, tick=null; const clock=document.getElementById('clock'), tb=document.getElementById('timerBtn');
   tb.addEventListener('click',()=>{
     if(tick){clearInterval(tick);tick=null;tb.textContent='Start timer';return}
