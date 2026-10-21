@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Kaizen BNI Feature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: a 1600×900 stage scaled to the screen. Kaizen's bright system: paper ground, ink outlines, lime offset shadows, blue for emphasis. Always light. */
+:root{
+  --paper:#FAFAF7; --white:#FFFFFF; --ink:#111111; --ink-2:#4A4C45; --line:#DCDED3;
+  --lime:#BFDF31; --lime-soft:#EEF6C8; --blue:#004BFF; --blue-soft:#E6EDFF; --aqua:#C4F0EE;
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --head:"Bricolage Grotesque", Arial, system-ui, sans-serif;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:#E9EAE3;color:var(--ink);font-family:var(--body);overflow:hidden;
+  padding-left:max(0px, env(safe-area-inset-left,0px));padding-right:max(0px, env(safe-area-inset-right,0px))}
+.viewport{position:fixed;inset:0;display:grid;place-items:center;background:#E9EAE3;cursor:pointer}
+.stage{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none;box-shadow:0 20px 60px rgba(17,17,17,.12)}
+.slide{position:absolute;inset:0;background:var(--paper);overflow:hidden;display:none;padding:60px 96px 92px;flex-direction:column}
+.slide.active{display:flex}
+.slide.center.active{justify-content:center;padding-bottom:110px}
+.dots::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--line) 2px,transparent 2.4px);background-size:28px 28px;opacity:.75;
+  -webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%);mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%)}
+.glow::after{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-380px;pointer-events:none;
+  background:radial-gradient(circle,var(--aqua) 0%,transparent 62%);opacity:.75}
+.slide > *{position:relative;z-index:1}
+
+/* type */
+.eyebrow{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:14px;color:var(--ink-2)}
+.eyebrow .pill{background:var(--lime);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:7px 15px;font-size:13px;letter-spacing:.1em}
+h1,h2{font-family:var(--display);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:88px}
+h2{font-size:54px;margin-top:20px}
+h3{font-family:var(--head);font-weight:800;font-size:26px;margin:0;line-height:1.12}
+p{margin:0}
+.lead{font-family:var(--head);font-size:26px;line-height:1.45;color:var(--ink-2);max-width:56ch;margin-top:28px}
+.blue{color:var(--blue)}
+.hl{background:linear-gradient(transparent 60%,var(--lime) 60%,var(--lime) 92%,transparent 92%);padding:0 6px}
+
+/* components */
+.card{background:var(--white);border:3px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink)}
+.tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  border:2px solid var(--ink);border-radius:999px;padding:6px 14px;background:var(--lime);color:var(--ink);white-space:nowrap}
+.browser{border:3px solid var(--ink);border-radius:16px;background:var(--white);overflow:hidden;box-shadow:7px 7px 0 var(--ink);display:flex;flex-direction:column}
+.browser .bar{display:flex;align-items:center;gap:7px;padding:8px 12px;border-bottom:3px solid var(--ink);background:var(--paper)}
+.browser .bar i{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:var(--white);flex:none}
+.browser .bar i:first-child{background:var(--lime)}
+.browser .bar span{margin-left:8px;font:600 14px var(--body);color:var(--ink-2);background:var(--white);border:2px solid var(--line);border-radius:999px;padding:2px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.browser img{display:block;width:100%;height:auto;aspect-ratio:1040/650;object-fit:cover;object-position:top}
+.ph{position:relative;border:3px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--white);box-shadow:7px 7px 0 var(--ink)}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.lbl{position:absolute;left:12px;bottom:12px;background:var(--white);color:var(--ink);border:2px solid var(--ink);font:700 15px var(--head);border-radius:999px;padding:5px 13px;z-index:2}
+.cap{font-family:var(--head);font-weight:700;font-size:18px;margin-top:10px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.cap small{font-family:var(--body);font-weight:500;color:var(--ink-2);font-size:15px}
+
+/* logo recreated */
+.logo{display:inline-flex;position:relative;align-items:center;align-self:flex-start}
+.logo .pillbtn{font-family:var(--display);font-weight:700;letter-spacing:.01em;background:var(--white);color:var(--ink);border:4px solid var(--ink);
+  border-radius:999px;padding:.18em .7em .2em;box-shadow:0 .16em 0 var(--lime), 0 calc(.16em + 4px) 0 var(--ink);line-height:1}
+.logo svg{position:absolute;right:-.42em;bottom:-.5em;width:.95em;height:.95em}
+
+.foot{position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);z-index:2}
+
+/* entrance */
+.slide.active .rise{animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+.slide.active .d1{animation-delay:.08s}.slide.active .d2{animation-delay:.16s}.slide.active .d3{animation-delay:.24s}
+.slide.active .d4{animation-delay:.32s}.slide.active .d5{animation-delay:.4s}.slide.active .d6{animation-delay:.48s}.slide.active .d7{animation-delay:.56s}
+@keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
+.tilt{--r:0deg;transform:rotate(var(--r))}
+.slide.active .rise.tilt{animation-name:riseT}
+@keyframes riseT{from{transform:translateY(24px) rotate(var(--r));opacity:.001}to{transform:rotate(var(--r));opacity:1}}
+
+/* 1 title */
+.slide.s1{padding:0}
+.slide.s1.active{display:grid;grid-template-columns:860px 1fr}
+.s1 .l{padding:0 40px 40px 96px;display:flex;flex-direction:column;justify-content:center}
+.s1 .logo{font-size:38px;margin-bottom:50px}
+.s1 h1{max-width:12ch}
+.s1 .meta{display:flex;gap:14px;align-items:center;margin-top:38px;font-family:var(--head);font-size:24px;color:var(--ink-2);flex-wrap:wrap}
+.s1 .meta b{color:var(--ink);font-weight:700}
+.s1 .meta i{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.s1 .r{position:relative;background:var(--lime-soft);border-left:3px solid var(--ink);overflow:hidden}
+.s1 .r .browser{position:absolute;width:560px}
+.s1 .r .b1{left:60px;top:70px;--r:-4deg}
+.s1 .r .b2{left:150px;top:320px;--r:3deg}
+.s1 .r .b3{left:40px;top:570px;--r:-2deg}
+
+/* 2 about */
+.s2 .wrap{flex:1;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.s2 h2{font-size:52px}
+.kanji{display:inline-flex;align-items:center;gap:12px;margin-top:6px;font-family:var(--head);font-size:22px;color:var(--ink-2)}
+.kanji b{font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--lime);border-radius:999px;padding:6px 12px}
+.bits{display:grid;gap:12px;margin-top:26px}
+.bit{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:3px solid var(--ink);border-radius:16px;padding:14px 18px;font-size:20px;line-height:1.38}
+.bit i{flex:none;width:36px;height:36px;border-radius:10px;background:var(--lime);border:2.5px solid var(--ink);display:grid;place-items:center;font-style:normal;font-size:18px}
+.bit b{font-family:var(--head);font-weight:800}
+.photos{position:relative;height:660px}
+.polaroid{position:absolute;background:var(--white);border:3px solid var(--ink);border-radius:10px;padding:12px 12px 44px;box-shadow:7px 7px 0 var(--ink)}
+.polaroid img{display:block;width:100%;height:100%;object-fit:cover;border-radius:4px}
+.polaroid span{position:absolute;left:14px;right:14px;bottom:10px;font-family:var(--head);font-weight:700;font-size:17px;text-align:center}
+.p1{left:0;top:40px;width:250px;height:320px;--r:-5deg}
+.p2{left:280px;top:0;width:240px;height:370px;--r:4deg}
+.p3{left:120px;top:390px;width:300px;height:270px;--r:2deg}
+.p3 img{object-position:center 35%}
+.p2 img{object-position:center 25%}
+
+/* 3 logos */
+.spec{margin-top:16px;font-family:var(--head);font-size:24px;color:var(--ink-2)}
+.spec b{color:var(--ink)}
+.spec em{font-style:normal;color:var(--blue);font-weight:700}
+.logos{flex:1;display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:1fr;gap:14px;margin-top:24px;min-height:0}
+.lg{background:var(--white);border:2.5px solid var(--ink);border-radius:16px;display:grid;place-items:center;padding:12px 16px;box-shadow:5px 5px 0 var(--line);min-height:0;overflow:hidden}
+.lg img{max-width:100%;max-height:86px;object-fit:contain;display:block}
+.lg.dk{background:#151515}
+.lg.gg{background:#2A1F6B}
+.lg.sky{background:#7ADFFA}
+.lg.bl{background:#3576F0}
+.lg.more{background:var(--lime);box-shadow:5px 5px 0 var(--ink);font-family:var(--display);font-weight:700;font-size:20px;text-align:center}
+
+/* 4 why */
+.s4 .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;flex:1}
+.s4 .lead{margin-top:40px}
+.phone{width:380px;height:600px;border:4px solid var(--ink);border-radius:52px;background:var(--white);box-shadow:14px 14px 0 var(--lime);
+  padding:26px 22px;display:flex;flex-direction:column;gap:14px;margin:auto}
+.search{border:2.5px solid var(--ink);border-radius:999px;padding:13px 20px;font-size:20px;font-weight:500;display:flex;gap:10px;align-items:center}
+.search .caret{width:2px;height:22px;background:var(--blue);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.result{border:2px solid var(--line);border-radius:16px;padding:13px 16px;display:grid;gap:6px}
+.result .bar{height:11px;border-radius:6px;background:var(--line)}
+.result .t{font-family:var(--head);font-weight:700;font-size:19px}
+.result .stars{color:#E2A400;font-size:15px;letter-spacing:2px}
+.result.win{border:3px solid var(--blue);background:var(--blue-soft)}
+
+/* 5 stages */
+.stairs{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:end;margin-top:18px}
+.step{border:3px solid var(--ink);border-radius:20px 20px 0 0;border-bottom:none;background:var(--white);padding:18px 16px;display:flex;flex-direction:column;gap:8px}
+.step:nth-child(1){height:300px}.step:nth-child(2){height:355px}.step:nth-child(3){height:420px}.step:nth-child(4){height:475px}.step:nth-child(5){height:535px;background:var(--lime)}
+.step .n{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--blue)}
+.step h3{font-size:24px}
+.step p{font-size:17px;line-height:1.35;color:var(--ink-2)}
+.step ul{margin:auto 0 0;padding:12px 0 0;list-style:none;border-top:2px dashed var(--ink);display:grid;gap:7px}
+.step li{font-size:16px;line-height:1.3;display:flex;gap:8px;font-weight:500}
+.step li::before{content:"+";flex:none;width:20px;height:20px;border-radius:6px;background:var(--lime);border:2px solid var(--ink);display:grid;place-items:center;font:800 13px var(--body);line-height:1}
+.step:nth-child(5) li::before{background:var(--white)}
+.step .rec{font-family:var(--display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:auto;padding-top:6px}
+.step .rec + ul{margin-top:0}
+.ground{height:6px;background:var(--ink);border-radius:3px}
+
+/* stories */
+.journey{flex:1;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;margin-top:4px}
+.pts{display:grid;gap:12px;margin-top:22px}
+.pt{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;font-family:var(--head);font-size:21px;line-height:1.38}
+.pt i{width:36px;height:36px;border-radius:50%;border:3px solid var(--ink);background:var(--white);display:grid;place-items:center;font:700 14px var(--display);font-style:normal}
+.pt.on i{background:var(--lime)}
+.jstats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.js{background:var(--white);border:3px solid var(--ink);border-radius:16px;padding:14px 16px}
+.js.on{background:var(--lime)}
+.js b{display:block;font-family:var(--display);font-size:32px;line-height:1;letter-spacing:-.02em}
+.js span{display:block;font-size:16px;line-height:1.3;color:var(--ink-2);margin-top:6px}
+.js.on span{color:var(--ink)}
+.take{margin-top:20px;display:flex;gap:14px;align-items:center;font-family:var(--head);font-size:20px;font-weight:600;line-height:1.35}
+.jvis{position:relative;height:660px}
+.jvis .browser{position:absolute;left:0;top:20px;width:580px}
+.jvis .phn{position:absolute;right:0;bottom:10px;width:250px;height:340px;border:4px solid var(--ink);border-radius:30px;overflow:hidden;background:#000;box-shadow:8px 8px 0 var(--lime)}
+.jvis .phn img{width:100%;height:100%;object-fit:cover;object-position:top}
+/* adapt visuals */
+.rebrand{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px}
+.rebrand .lgx{flex:1;height:110px;background:var(--white);border:3px solid var(--ink);border-radius:16px;display:grid;place-items:center;padding:14px;box-shadow:6px 6px 0 var(--ink)}
+.rebrand .lgx img{height:80px;max-width:100%;object-fit:contain}
+.rebrand .lgx.old{opacity:.75;box-shadow:6px 6px 0 var(--line)}
+.rebrand .arr{font:700 30px var(--display)}
+.posts{position:absolute;left:0;right:0;top:170px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.posts .ph{aspect-ratio:4/5}
+.posts{gap:16px}
+.posts .ph img{object-position:top}
+.ad-site{position:absolute;left:30px;right:30px;bottom:0}
+.ad-site .browser img{aspect-ratio:16/5.6}
+
+/* wall */
+.wall{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:22px 32px;margin-top:26px;align-content:start}
+.wall .browser img{aspect-ratio:16/7.4}
+.soon{display:inline-block;margin-left:8px;font:700 11px var(--display);letter-spacing:.1em;text-transform:uppercase;background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:2px 8px;vertical-align:middle}
+
+/* seo */
+.s9 .wrap{flex:1;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.s9 .lead{margin-top:32px}
+.tree svg{width:100%;height:auto;overflow:visible}
+.tree .node rect{fill:var(--white);stroke:var(--ink);stroke-width:3}
+.tree .node.hub rect,.tree .node.money rect{fill:var(--lime)}
+.tree .node.city rect{fill:var(--blue-soft);stroke:var(--blue)}
+.tree text{font-family:var(--head);font-weight:700;font-size:20px;fill:var(--ink)}
+.tree .url{font-family:var(--body);font-weight:500;font-size:15px;fill:var(--ink-2)}
+.tree path{fill:none;stroke:var(--ink);stroke-width:3}
+.tree path.dash{stroke-dasharray:7 7}
+.note{margin-top:28px;display:flex;gap:14px;align-items:flex-start;background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:16px 20px;font-size:20px;line-height:1.4}
+
+/* Q&A */
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.qa .card{padding:20px 22px;display:flex;flex-direction:column;gap:10px;box-shadow:6px 6px 0 var(--ink)}
+.qa .card:nth-child(3n+2){box-shadow:6px 6px 0 var(--lime)}
+.qa .q{font-family:var(--head);font-weight:800;font-size:22px;line-height:1.25;display:flex;gap:10px}
+.qa .q::before{content:"Q";flex:none;width:30px;height:30px;border-radius:8px;background:var(--ink);color:var(--lime);font:700 14px var(--display);display:grid;place-items:center}
+.qa .a{font-size:18px;line-height:1.42;color:var(--ink-2);padding-left:40px}
+
+/* coming soon */
+.soonwall{flex:1;display:grid;grid-template-columns:1.25fr 1.25fr .55fr .55fr;gap:22px;margin-top:26px;align-items:start}
+.soonwall .browser img{aspect-ratio:1040/582}
+.soonwall .tall{aspect-ratio:250/646}
+.soonwall .tall img{object-fit:cover}
+.soonwall .card-img{aspect-ratio:730/447}
+
+/* brand */
+.s13 .wrap{flex:1;display:grid;grid-template-columns:.78fr 1.22fr;gap:46px;align-items:center}
+.gstack{position:relative;height:640px}
+.gstack .ph{position:absolute;width:640px;aspect-ratio:1240/698}
+.gstack .g1{left:0;top:0;--r:-2deg}
+.gstack .g2{left:150px;top:170px;--r:2deg}
+.gstack .g3{left:40px;top:340px;--r:-1deg}
+.decide{display:grid;gap:10px;margin-top:26px}
+.decide div{display:flex;gap:14px;align-items:baseline;font-size:21px;line-height:1.35}
+.decide b{font-family:var(--display);font-size:13px;letter-spacing:.1em;text-transform:uppercase;min-width:90px;color:var(--blue)}
+.feel{margin-top:24px;background:var(--lime-soft);border:3px solid var(--ink);border-radius:16px;padding:14px 18px;font-family:var(--head);font-size:21px;font-weight:600;line-height:1.4}
+
+/* matches */
+.match{flex:1;display:grid;grid-template-columns:1.3fr .7fr .7fr .7fr;grid-template-rows:1fr 1fr;gap:18px;margin-top:26px;min-height:0}
+.match .ph{min-height:0}
+.match .tall{grid-row:1/3}
+.match .tall img{object-position:top}
+.match .c img{object-fit:contain;background:#eef4ff;padding:10px}
+.match .w img{object-fit:contain;background:#f1ece2}
+
+/* how I work */
+.s15 .wrap{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:6px}
+.chk{display:grid;gap:12px;margin-top:26px}
+.chk div{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:3px solid var(--ink);border-radius:16px;padding:14px 18px;font-size:20px;line-height:1.38}
+.chk i{flex:none;width:32px;height:32px;border-radius:9px;background:var(--lime);border:2.5px solid var(--ink);display:grid;place-items:center;font:700 14px var(--display);font-style:normal}
+.chk b{font-family:var(--head);font-weight:800}
+.paths{display:grid;gap:14px}
+.path{border:3px solid var(--ink);border-radius:18px;padding:18px 22px;background:var(--white)}
+.path small{display:block;font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--blue);text-transform:uppercase;margin-bottom:6px}
+.path b{display:block;font-family:var(--head);font-size:24px;font-weight:800}
+.path span{display:block;font-size:18px;color:var(--ink-2);margin-top:4px;line-height:1.38}
+.path.on{background:var(--lime)}
+.path.on span{color:var(--ink)}
+.team{margin-top:4px;display:flex;gap:16px;align-items:center;background:var(--ink);color:var(--white);border-radius:18px;padding:16px 20px}
+.team .who{display:flex;gap:8px;flex-wrap:wrap}
+.team .who span{background:var(--lime);color:var(--ink);border-radius:999px;padding:6px 12px;font:700 15px var(--head)}
+.team p{font-size:18px;line-height:1.4;color:#E7E8E0}
+
+/* AI */
+.ai{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;margin-top:34px;align-items:start}
+.ai .col{border-radius:22px;padding:28px 30px;display:flex;flex-direction:column;gap:14px;border:3px solid var(--ink)}
+.ai .judg{background:var(--lime);box-shadow:8px 8px 0 var(--ink)}
+.ai .checks{background:var(--white);box-shadow:8px 8px 0 var(--lime)}
+.ai h3{font-size:25px}
+.ai ol,.ai ul{margin:0;padding:0;list-style:none;display:grid;gap:11px}
+.ai li{font-size:21px;line-height:1.35;display:flex;gap:12px}
+.ai .judg ol{counter-reset:li}
+.ai .judg li::before{content:counter(li);counter-increment:li;flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--lime);font:700 15px var(--display);display:grid;place-items:center;margin-top:1px}
+.ai .checks li::before{content:"✓";flex:none;width:28px;height:28px;border-radius:8px;background:var(--lime);border:2px solid var(--ink);color:var(--ink);font:800 15px var(--body);display:grid;place-items:center;margin-top:1px}
+.ai .checks li b{font-family:var(--head);font-weight:800}
+.ai .num{display:flex;align-items:baseline;gap:14px}
+.ai .num b{font-family:var(--display);font-size:52px;color:var(--blue);line-height:1}
+.ai .num span{font-family:var(--head);font-size:22px;font-weight:700}
+
+/* referrals */
+.s17 .lead{margin-top:20px;max-width:62ch}
+.best{margin-top:26px;display:flex;gap:20px;align-items:center;background:var(--lime);border:3px solid var(--ink);border-radius:20px;padding:22px 26px;box-shadow:8px 8px 0 var(--ink)}
+.best b{display:block;font-family:var(--head);font-weight:800;font-size:28px}
+.best span{display:block;font-size:20px;margin-top:4px;line-height:1.35}
+.best .tag{background:var(--white)}
+.refs3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.ref{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:18px 20px}
+.ref b{display:block;font-family:var(--head);font-weight:800;font-size:22px}
+.ref span{display:block;font-size:18px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+
+/* thanks */
+.s18 .wrap{flex:1;display:grid;grid-template-columns:1fr 620px;gap:60px;align-items:center}
+.s18 h1{font-size:96px}
+.contact{padding:36px 40px;display:grid;gap:18px;background:var(--white);box-shadow:12px 12px 0 var(--lime)}
+.contact .logo{font-size:26px;margin-bottom:8px}
+.contact .row span{display:block;font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.contact .row b{display:block;font-family:var(--head);font-size:30px;font-weight:700;margin-top:4px;user-select:all}
+.contact .tagl{font-family:var(--head);font-size:22px;font-weight:700;border-top:2px dashed var(--line);padding-top:16px}
+
+/* controls: click anywhere to advance, plus visible buttons */
+.navbtns{position:fixed;right:max(16px, env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;gap:8px;align-items:center}
+.navbtns button{font:700 14px var(--body);color:var(--ink);background:var(--white);border:2px solid var(--ink);border-radius:999px;height:40px;min-width:40px;padding:0 14px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);opacity:.85}
+.navbtns button:hover{opacity:1;background:var(--lime)}
+.navbtns button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.navbtns .count{font:600 13px var(--display);letter-spacing:.06em;color:var(--ink-2);padding:0 6px;font-variant-numeric:tabular-nums}
+.progress{position:fixed;left:0;top:0;height:5px;background:var(--lime);z-index:21;transition:width .3s;margin-top:env(safe-area-inset-top,0px)}
+@media (max-width:640px){.navbtns #fsBtn{display:none}}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.qt{background:var(--white);border:3px solid var(--ink);border-radius:20px;padding:24px 26px 22px;box-shadow:6px 6px 0 var(--ink);position:relative}
+.qt:nth-child(3n+2){box-shadow:6px 6px 0 var(--lime)}
+.qt b{display:block;font-family:var(--head);font-weight:700;font-size:25px;line-height:1.3}
+.qt b:before{content:"\201C";display:block;font-family:var(--display);font-size:56px;line-height:.6;color:var(--blue);margin-bottom:8px}
+.qt span{display:block;font-size:17px;color:var(--ink-2);margin-top:12px}
+.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.pp{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:20px 22px}
+.pp b{display:block;font-family:var(--head);font-weight:800;font-size:23px}
+.pp span{display:block;font-size:18px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+.ask .best{margin-top:30px}
+.who .refs3 .ref b{font-size:24px}
+.close-ask{margin-top:26px;background:var(--lime);border:3px solid var(--ink);border-radius:18px;padding:18px 22px;font-family:var(--head);font-size:22px;line-height:1.4;max-width:40ch;box-shadow:6px 6px 0 var(--ink)}
+.close-ask b{font-weight:800}
+/* ---------- phone / portrait: reflow each slide into one readable column ---------- */
+@media (max-width:700px), (orientation:portrait) and (max-width:1000px){
+  body{overflow:hidden}
+  .viewport{display:block;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--paper)}
+  .stage{width:100%;height:auto;min-height:100%;transform:none!important;box-shadow:none}
+  .slide{position:relative;inset:auto;min-height:100dvh;padding:30px 20px 110px;overflow:visible}
+  .slide.center.active{justify-content:flex-start;padding-bottom:110px}
+  .foot{display:none}
+  .dots::before{background-size:22px 22px}
+  .glow::after{width:500px;height:500px;right:-200px;top:-220px}
+  .eyebrow{font-size:11px;gap:10px;flex-wrap:wrap}
+  .eyebrow .pill{font-size:10px;padding:5px 11px}
+  h1,.s18 h1{font-size:40px}
+  h2,.s2 h2{font-size:29px;margin-top:14px}
+  h3{font-size:19px}
+  .lead,.s4 .lead,.s9 .lead,.s17 .lead{font-size:17px;margin-top:14px}
+  .wrap,.s2 .wrap,.s4 .wrap,.s9 .wrap,.s13 .wrap,.s15 .wrap,.s18 .wrap,.journey,.ai{display:flex!important;flex-direction:column;align-items:stretch;gap:24px;flex:none}
+  .browser{box-shadow:5px 5px 0 var(--ink);border-radius:12px}
+  .browser .bar{padding:6px 10px}.browser .bar span{font-size:11px}
+  .ph{box-shadow:5px 5px 0 var(--ink);border-radius:14px}
+  .lbl{font-size:12px;left:8px;bottom:8px;padding:3px 9px}
+  .cap{font-size:15px}.cap small{font-size:12px}
+  .navbtns button{height:44px;min-width:44px}
+
+  /* 1 title */
+  .slide.s1{padding:0 0 110px}
+  .slide.s1.active{display:flex}
+  .s1 .l{padding:44px 20px 28px}
+  .s1 .logo{font-size:22px;margin-bottom:28px}
+  .s1 .meta{font-size:15px;margin-top:22px;gap:10px}
+  .s1 .r{height:360px;border-left:none;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+  .s1 .r .browser{width:72%}
+  .s1 .r .b1{left:4%;top:20px}.s1 .r .b2{left:24%;top:120px}.s1 .r .b3{left:8%;top:220px}
+
+  /* 2 about */
+  .bits{margin-top:18px;gap:10px}
+  .bit{font-size:15px;padding:12px 14px;gap:12px;border-radius:14px}
+  .bit i{width:30px;height:30px}
+  .photos{height:340px;width:330px;max-width:100%;margin:0 auto}
+  .p1{left:0;top:16px;width:150px;height:190px}
+  .p2{left:170px;top:0;width:150px;height:210px}
+  .p3{left:70px;top:200px;width:190px;height:150px}
+  .polaroid{padding:8px 8px 30px;box-shadow:5px 5px 0 var(--ink)}
+  .polaroid span{font-size:13px;bottom:7px}
+
+  /* 3 logos */
+  .spec{font-size:16px}
+  .logos{grid-template-columns:repeat(3,1fr);grid-auto-rows:66px;gap:10px;flex:none;margin-top:18px}
+  .lg{padding:8px;border-radius:12px;box-shadow:3px 3px 0 var(--line)}
+  .lg img{max-height:42px}
+  .lg.more{font-size:14px;box-shadow:3px 3px 0 var(--ink)}
+
+  /* 4 why */
+  .phone{width:260px;height:auto;border-radius:36px;padding:20px 16px;gap:10px;box-shadow:9px 9px 0 var(--lime)}
+  .search{font-size:15px;padding:9px 14px}
+  .result{padding:9px 12px}.result .t{font-size:15px}
+
+  /* 5 stages */
+  .stairs{grid-template-columns:1fr;gap:12px;flex:none}
+  .step,.step:nth-child(n){height:auto!important;border-bottom:3px solid var(--ink);border-radius:16px;padding:14px 16px}
+  .step h3{font-size:19px}.step p{font-size:15px}.step li{font-size:14px}
+  .step .rec{margin-top:6px}
+  .ground{display:none}
+
+  /* stories */
+  .pt{font-size:16px;grid-template-columns:30px 1fr;gap:10px}
+  .pt i{width:30px;height:30px;font-size:12px}
+  .jstats{gap:8px}
+  .js{padding:10px;border-radius:12px}.js b{font-size:20px}.js span{font-size:12px}
+  .jvis{height:auto;display:grid;gap:16px}
+  .jvis .browser,.jvis .phn,.rebrand,.posts,.ad-site{position:relative;left:auto;right:auto;top:auto;bottom:auto}
+  .jvis .browser{width:100%}
+  .jvis .phn{width:180px;height:240px;margin-left:auto;margin-top:-80px;border-radius:24px;box-shadow:6px 6px 0 var(--lime)}
+  .rebrand .lgx{height:80px;padding:10px}.rebrand .lgx img{height:56px}
+  .posts{gap:10px}
+
+  /* sites wall */
+  .wall{grid-template-columns:1fr;gap:18px;flex:none}
+
+  /* seo */
+  .tree text{font-size:22px}
+  .note{font-size:15px;padding:12px 14px;margin-top:18px}
+
+  /* q&a */
+  .qa{grid-template-columns:1fr;gap:14px;margin-top:20px}
+  .qa .q{font-size:17px}.qa .a{font-size:15px;padding-left:0}
+
+  /* coming soon */
+  .soonwall{grid-template-columns:1fr 1fr;gap:14px;flex:none}
+  .soonwall > :nth-child(1),.soonwall > :nth-child(2){grid-column:1/-1}
+
+  /* brand */
+  .decide div{font-size:15px;gap:10px}.decide b{font-size:11px;min-width:64px}
+  .feel{font-size:15px;padding:12px 14px}
+  .gstack{height:270px}
+  .gstack .ph{width:82%}
+  .gstack .g1{left:0;top:0}.gstack .g2{left:16%;top:80px}.gstack .g3{left:4%;top:160px}
+
+  /* matches */
+  .match{grid-template-columns:1fr 1fr;grid-template-rows:none;gap:12px;flex:none}
+  .match .tall{grid-row:auto;aspect-ratio:4/5}
+  .match .w{grid-column:1/-1;aspect-ratio:16/10}
+  .match .c{aspect-ratio:4/5}
+
+  /* how I work */
+  .chk div{font-size:15px;padding:12px 14px}
+  .chk i{width:28px;height:28px}
+  .path{padding:14px 16px}.path b{font-size:18px}.path span{font-size:15px}
+  .team{flex-direction:column;align-items:flex-start;gap:10px}
+  .team p{font-size:15px}.team .who span{font-size:13px}
+
+  /* AI */
+  .ai .col{padding:20px}
+  .ai h3{font-size:19px}.ai li{font-size:15px}
+  .ai .num b{font-size:36px}.ai .num span{font-size:16px}
+
+  /* referrals + 7-min slides */
+  .best{flex-direction:column;align-items:flex-start;gap:12px;padding:16px 18px;box-shadow:6px 6px 0 var(--ink)}
+  .best b{font-size:19px}.best span{font-size:15px}
+  .refs3,.quotes,.partners{grid-template-columns:1fr!important;gap:12px;margin-top:18px}
+  .ref,.pp{padding:14px 16px}
+  .ref b,.who .refs3 .ref b,.pp b{font-size:18px}.ref span,.pp span{font-size:15px}
+  .qt{padding:16px 18px}.qt b{font-size:18px}.qt b:before{font-size:40px}.qt span{font-size:13px}
+  .close-ask{font-size:16px;padding:14px 16px}
+
+  /* thanks */
+  .contact{padding:22px;gap:12px;box-shadow:8px 8px 0 var(--lime)}
+  .contact .logo{font-size:18px}
+  .contact .row b{font-size:20px}
+  .contact .tagl{font-size:16px}
+}
+
+/* animated phone search */
+.phone2{position:relative;width:390px;height:660px;margin:auto;border:4px solid var(--ink);border-radius:54px;background:var(--white);box-shadow:14px 14px 0 var(--lime);padding:18px 20px 24px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.phone2 .notch{position:absolute;left:50%;top:12px;width:110px;height:26px;margin-left:-55px;background:var(--ink);border-radius:999px}
+.phone2 .sb{display:flex;justify-content:space-between;font:700 15px var(--body);padding:4px 14px 10px}
+.phone2 .sb i{display:inline-block;width:22px;height:11px;border:2px solid var(--ink);border-radius:3px;vertical-align:middle;position:relative}
+.phone2 .sb i:after{content:"";position:absolute;inset:1px 5px 1px 1px;background:var(--ink);border-radius:1px}
+.phone2 .search{border:2.5px solid var(--ink);border-radius:999px;padding:13px 18px;font-size:19px;font-weight:500;display:flex;gap:8px;align-items:center;position:relative;background:var(--white)}
+.phone2 .search svg{flex:none}
+.phone2 .typed{white-space:nowrap;clip-path:inset(0 100% 0 0)}
+.phone2 .ph-hint{color:#9a9c94;position:absolute;left:52px}
+.phone2 .caret{width:2px;height:22px;background:var(--blue);animation:blink 1s steps(2) infinite}
+.phone2 .result{border:2px solid var(--line);border-radius:16px;padding:12px 15px;display:grid;gap:6px;opacity:0;position:relative}
+.phone2 .result .t{font-family:var(--head);font-weight:700;font-size:18px}
+.phone2 .result .stars{color:#E2A400;font-size:14px;letter-spacing:2px}
+.phone2 .result .bar{height:10px;border-radius:6px;background:var(--line)}
+.phone2 .result.win{border:3px solid var(--blue);background:var(--blue-soft)}
+.phone2 .acts{display:flex;gap:8px;margin-top:4px}
+.phone2 .acts span{font:700 14px var(--head);border:2px solid var(--ink);border-radius:999px;padding:4px 12px;background:var(--white)}
+.phone2 .acts span.call{background:var(--lime)}
+.phone2 .tap{position:absolute;width:46px;height:46px;border-radius:50%;background:rgba(17,17,17,.18);border:3px solid rgba(17,17,17,.55);opacity:0;pointer-events:none;z-index:3}
+.phone2 .search .tap{right:40px;top:2px}
+.phone2 .win .tap{left:16px;bottom:-2px}
+.slide.active .phone2 .search .tap{animation:tapA 1.1s ease .5s both}
+.slide.active .phone2 .ph-hint{animation:hide .1s linear 1.2s both}
+.slide.active .phone2 .typed{animation:type 1.5s steps(19) 1.25s both}
+.slide.active .phone2 .result{animation:pop .45s cubic-bezier(.2,.8,.2,1) both}
+.slide.active .phone2 .result.r1{animation-delay:3s}
+.slide.active .phone2 .result.r2{animation:pop .45s cubic-bezier(.2,.8,.2,1) 3.2s both,glowW 1.6s ease 4.6s 2}
+.slide.active .phone2 .result.r3{animation-delay:3.4s}
+.slide.active .phone2 .result.r4{animation-delay:3.6s}
+.slide.active .phone2 .win .tap{animation:tapA 1.1s ease 4.4s both}
+.slide.active .phone2 .acts .call{animation:callp .5s ease 4.9s both}
+@keyframes tapA{0%{opacity:0;transform:translate(70px,180px) scale(1.4)}45%{opacity:1;transform:none}60%{transform:scale(.75)}75%{transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+@keyframes type{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes hide{to{opacity:0}}
+@keyframes pop{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes glowW{50%{box-shadow:0 0 0 7px rgba(0,75,255,.18)}}
+@keyframes callp{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}
+/* brand board */
+.board{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.board .bl{grid-column:1/-1;display:flex;align-items:center;gap:22px;background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:16px 22px;box-shadow:7px 7px 0 var(--ink)}
+.board .bl img{height:84px;width:auto}
+.board .sw{display:flex;gap:10px;margin-left:auto}
+.board .sw div{width:74px;text-align:center;font:600 12px var(--body);color:var(--ink-2)}
+.board .sw div i{display:block;height:58px;border:2.5px solid var(--ink);border-radius:12px;margin-bottom:5px}
+.board .browser img{aspect-ratio:1040/600}
+.board .cp{display:grid;place-items:center;background:#eef4ff}
+.board .cp img{object-fit:contain;padding:12px}
+@media (max-width:700px), (orientation:portrait) and (max-width:1000px){
+  .phone2{width:280px;height:500px;border-radius:40px;padding:14px 14px 18px;gap:9px;box-shadow:9px 9px 0 var(--lime)}
+  .phone2 .notch{width:84px;height:20px;margin-left:-42px;top:10px}
+  .phone2 .sb{font-size:12px;padding:2px 10px 8px}
+  .phone2 .search{font-size:14px;padding:9px 12px}.phone2 .ph-hint{left:40px}
+  .phone2 .result{padding:8px 11px;gap:4px}.phone2 .result .t{font-size:14px}.phone2 .acts span{font-size:11px;padding:3px 9px}
+  .phone2 .tap{width:36px;height:36px}
+  .board{gap:12px;grid-template-columns:1fr}.board .cp{aspect-ratio:16/10}.board .bl{flex-wrap:wrap;padding:12px 14px;gap:12px}.board .bl img{height:56px}
+  .board .sw{margin-left:0}.board .sw div{width:56px}.board .sw div i{height:40px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="progress" id="progress"></div>
+<div class="viewport" id="viewport">
+<div class="stage" id="stage">
+
+<!-- 1 TITLE -->
+<section class="slide s1">
+  <div class="l">
+    <div class="logo rise"><span class="pillbtn">KAIZEN AGENCY</span>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#111" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="#111" stroke-width="2"/><path d="M12 12 L36 22 L25 25 L30 36 L26 38 L21 27 L14 34 Z" fill="#111"/></svg></div>
+    <h1 class="rise d1">Your website should <span class="blue">grow up</span> with your business.</h1>
+    <div class="meta rise d2"><b>Daisy</b><i></i><span>Kaizen Agency</span><i></i><span>Website development</span></div>
+  </div>
+  <div class="r" aria-hidden="true">
+    <div class="browser tilt b1 rise d2"><div class="bar"><i></i><i></i><i></i><span>adaptchiropracticwellness.com</span></div><img src="../img/site-adapt.jpg" alt=""></div>
+    <div class="browser tilt b2 rise d3"><div class="bar"><i></i><i></i><i></i><span>sammyobeid.com</span></div><img src="../img/site-sammy.jpg" alt=""></div>
+    <div class="browser tilt b3 rise d4"><div class="bar"><i></i><i></i><i></i><span>falcon-roofing.com</span></div><img src="../img/site-falcon.jpg" alt=""></div>
+  </div>
+</section>
+
+<section class="slide s2 dots">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rise"><span class="pill">About me</span>Hi, I'm Daisy</div>
+      <h2 class="rise d1">Kaizen means <span class="blue">continuous improvement.</span></h2>
+      <p class="lead rise d2" style="margin-top:20px">That's what I want for my life, my business, and the businesses I work with. We grow together. We rise together.</p>
+      <div class="bits">
+        <div class="bit rise d3"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4h6l-3 4z"/></svg></i><span>Started working weddings at 17. They trusted me enough to run them the day of. <b>200+ weddings</b> over 4 years of weekends.</span></div>
+        <div class="bit rise d4"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14l-7 8z"/><path d="M12 12v8M8 20h8"/></svg></i><span>Also worked as a cart girl, so yes, <b>I can make a fine drink.</b></span></div>
+        <div class="bit rise d5"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14l20-8-6 14-3-6z"/><path d="M13 14l9-8"/></svg></i><span>Family in Mexico and Phoenix, so I'm always on the road. <b>I love solo trips.</b></span></div>
+      </div>
+    </div>
+    <div class="photos" aria-label="Personal photos">
+      <div class="polaroid tilt p1 rise d2"><img src="../img/me-cat.jpg" alt="Daisy's cat sleeping"><span>The new cat</span></div>
+      <div class="polaroid tilt p2 rise d3"><img src="../img/me-selfie.jpg" alt="Daisy in the car"><span>Arizona trip</span></div>
+      <div class="polaroid tilt p3 rise d4"><img src="../img/me-family.jpg" alt="Daisy with her family" style="object-position:center 20%"><span>Family time</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>The only photos I came back with</span><span>02</span></div>
+</section>
+
+<section class="slide s4">
+  <div class="eyebrow rise"><span class="pill">Why it matters</span>Your online visibility</div>
+  <div class="wrap">
+    <div>
+      <h2 class="rise d1">What you look like online <span class="hl">matters.</span></h2>
+      <p class="lead rise d2">A lot of the time, we just need to clean up your online visibility. And most of that starts with your website.</p>
+    </div>
+    <div class="phone2 rise d2" aria-hidden="true">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><i></i></div>
+      <div class="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><span class="ph-hint">Search</span><span class="typed">contractor near me</span><span class="caret"></span><span class="tap"></span></div>
+      <div class="result r1"><div class="t">Outdated Site Co.</div><div class="stars">★★★☆☆</div><div class="bar" style="width:80%"></div></div>
+      <div class="result win r2"><div class="t">Your Business</div><div class="stars">★★★★★</div><div class="bar" style="width:88%;background:#bccbff"></div><div class="acts"><span class="call">Call</span><span>Website</span><span>Directions</span></div><span class="tap"></span></div>
+      <div class="result r3"><div class="t">Directory Listing</div><div class="stars">★★★★☆</div><div class="bar" style="width:70%"></div></div>
+      <div class="result r4"><div class="t">No Website</div><div class="bar" style="width:50%"></div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>03</span></div>
+</section>
+
+<section class="slide s5 dots">
+  <div class="eyebrow rise"><span class="pill">What I do</span>I meet you where you're at</div>
+  <h2 class="rise d1">A website changes as your business does.</h2>
+  <div class="stairs">
+    <div class="step rise d1"><span class="n">Stage 1</span><h3>Landing page</h3><p>Who you are and how to reach you.</p><span class="rec">What I'd start with</span><ul><li>Own your domain</li><li>A clear call button</li></ul></div>
+    <div class="step rise d2"><span class="n">Stage 2</span><h3>Funnel</h3><p>One offer, one clear path.</p><span class="rec">Add</span><ul><li>One offer, one form</li><li>Track every lead</li></ul></div>
+    <div class="step rise d3"><span class="n">Stage 3</span><h3>Local SEO site</h3><p>A page for each service and city.</p><span class="rec">Add</span><ul><li>Google Business Profile</li><li>A review campaign</li><li>New photos</li></ul></div>
+    <div class="step rise d4"><span class="n">Stage 4</span><h3>Authority site</h3><p>Your story, team, reviews and work.</p><span class="rec">Add</span><ul><li>A CRM or sales process for leads</li><li>Real reviews and work on the site</li></ul></div>
+    <div class="step rise d5"><span class="n">Stage 5</span><h3>Connected</h3><p>Your site, list and CRM working together.</p><span class="rec">Add</span><ul><li>Segment your list</li><li>Email and text campaigns</li><li>Automated follow-up</li></ul></div>
+  </div>
+  <div class="ground"></div>
+  <div class="foot"><span>Kaizen Agency</span><span>04</span></div>
+</section>
+
+<section class="slide s7 dots">
+  <div class="eyebrow rise"><span class="pill">Story time</span>Adapt · Health &amp; wellness</div>
+  <div class="journey">
+    <div>
+      <h2 class="rise d1" style="margin-top:14px">Two rebrands. A few moves. Still growing.</h2>
+      <div class="pts">
+        <div class="pt rise d2"><i>1</i><span>Two rebrands and multiple location changes. Usually that tanks your SEO.</span></div>
+        <div class="pt rise d3"><i>2</i><span>We kept improving: old pages redirected, the site cleaned up, new pages built.</span></div>
+        <div class="pt on rise d4"><i>3</i><span>Not just getting attention, but keeping patients coming back, with every piece looking like one brand.</span></div>
+      </div>
+      <div class="jstats">
+        <div class="js on rise d4"><b>70 → 240</b><span>five-star Google reviews</span></div>
+        <div class="js rise d5"><b>~6×</b><span>Google impressions in 9 months</span></div>
+        <div class="js rise d6"><b>4 years</b><span>and still growing together</span></div>
+      </div>
+    </div>
+    <div class="jvis">
+      <div class="rebrand rise d2"><div class="lgx old"><img src="../img/logo-adapt-old.jpg" alt="Previous Adapt logo"></div><span class="arr">→</span><div class="lgx"><img src="../img/logo-adapt.jpg" alt="Current Adapt logo"></div></div>
+      <div class="posts">
+        <div class="ph rise d3"><img src="../img/social-adapt-1.jpg" alt="Adapt event thank-you post"></div>
+        <div class="ph rise d4"><img src="../img/social-adapt-2.jpg" alt="Adapt event recap post"></div>
+        <div class="ph rise d5"><img src="../img/social-adapt-3.jpg" alt="Adapt patient question post"></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Website · Google · email &amp; text · print · social</span><span>05</span></div>
+</section>
+
+<section class="slide s8">
+  <div class="eyebrow rise"><span class="pill">The work</span>Recent websites</div>
+  <h2 class="rise d1">A few recent sites. <span class="blue">Any look familiar?</span></h2>
+  <div class="wall">
+    <div class="rise d1"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>falcon-roofing.com</span></div><img src="../img/site-falcon.jpg" alt="Falcon Roofing homepage"></div><div class="cap">Falcon Roofing <small>Mountain View</small></div></div>
+    <div class="rise d2"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>sunwestpainting.net</span></div><img src="../img/site-sunwest.jpg" alt="Sunwest Painting homepage"></div><div class="cap">Sunwest Painting <small>San Jose</small></div></div>
+    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siliconproplumbing.com</span></div><img src="../img/site-siliconpro.jpg" alt="Silicon Pro Plumbing homepage"></div><div class="cap">Silicon Pro Plumbing <small>Sunnyvale</small></div></div>
+    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>motorbody.com</span></div><img src="../img/site-motorbody.jpg" alt="Motor Body Company homepage"></div><div class="cap"><span>Motor Body <span class="soon">Launching</span></span><small>San Jose</small></div></div>
+    <div class="rise d4"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>bryanknowslending.com</span></div><img src="../img/site-bryan.jpg" alt="Bryan Knows Lending homepage"></div><div class="cap">Bryan Knows Lending <small>Nationwide</small></div></div>
+    <div class="rise d5"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>johnnywindows.com</span></div><img src="../img/site-johnny.jpg" alt="Johnny Windows homepage"></div><div class="cap">Johnny Windows <small>San Jose</small></div></div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>06</span></div>
+</section>
+
+<section class="slide s9 dots">
+  <div class="eyebrow rise"><span class="pill">Getting found</span>Local search</div>
+  <div class="wrap">
+    <div>
+      <h2 class="rise d1">Google shows <span class="hl">pages</span>, not businesses.</h2>
+      <p class="lead rise d2">So each service and each area you serve gets its own page. That way you show up for what people actually search.</p>
+      <p class="note rise d3"><span class="tag">Tip</span><span>Even a simple site gets this structure, so it's ready to grow when you are.</span></p>
+    </div>
+    <div class="tree card rise d2" style="padding:26px 22px">
+      <svg viewBox="0 0 760 470" role="img" aria-label="Example site map for a local plumber">
+        <path d="M380 70 V120 M380 120 H130 V160 M380 120 H380 V160 M380 120 H630 V160"/>
+        <path d="M380 220 V260 M380 260 H200 V300 M380 260 H560 V300"/>
+        <path class="dash" d="M200 360 V400"/>
+        <g class="node hub"><rect x="270" y="14" width="220" height="56" rx="28"/><text x="380" y="49" text-anchor="middle">Home</text></g>
+        <g class="node"><rect x="40" y="160" width="180" height="60" rx="14"/><text x="130" y="197" text-anchor="middle">Services</text></g>
+        <g class="node city"><rect x="290" y="160" width="180" height="60" rx="14"/><text x="380" y="197" text-anchor="middle">Areas</text></g>
+        <g class="node"><rect x="540" y="160" width="180" height="60" rx="14"/><text x="630" y="197" text-anchor="middle">Blog</text></g>
+        <g class="node city"><rect x="100" y="300" width="200" height="60" rx="14"/><text x="200" y="330" text-anchor="middle">San Jose</text><text class="url" x="200" y="350" text-anchor="middle">/san-jose/</text></g>
+        <g class="node city"><rect x="460" y="300" width="200" height="60" rx="14"/><text x="560" y="330" text-anchor="middle">Campbell</text><text class="url" x="560" y="350" text-anchor="middle">/campbell/</text></g>
+        <g class="node money"><rect x="40" y="400" width="320" height="62" rx="14"/><text x="200" y="429" text-anchor="middle">San Jose Water Heaters</text><text class="url" x="200" y="450" text-anchor="middle">/san-jose/water-heaters/</text></g>
+        <text x="560" y="436" text-anchor="middle" class="url" style="font-size:17px;font-weight:700;fill:#004BFF">← what people type into Google</text>
+      </svg>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>07</span></div>
+</section>
+
+<section class="slide s10 glow center">
+  <div class="eyebrow rise"><span class="pill">Q&amp;A</span>Questions I get a lot</div>
+  <h2 class="rise d1">What I'd recommend depends on where you're at.</h2>
+  <div class="qa">
+    <div class="card rise d2"><p class="q">Do I need a whole new website?</p><p class="a">Not always. Sometimes it just needs a cleanup. Sometimes it makes more sense to start fresh. I'll tell you which.</p></div>
+    <div class="card rise d3"><p class="q">I don't have the login to my site or domain.</p><p class="a">Super common. Step one is getting you ownership back, so you can actually make changes.</p></div>
+    <div class="card rise d4"><p class="q">Should I add a chat widget?</p><p class="a">Sometimes yes, sometimes no. It depends on your industry and what your data says.</p></div>
+    <div class="card rise d4"><p class="q">What should my website actually do?</p><p class="a">Whatever the main thing in your business is: calls, bookings, quotes or tickets. We build around that.</p></div>
+    <div class="card rise d5"><p class="q">I already see numbers in other tools.</p><p class="a">Those estimate. Google Analytics and Search Console on your own site are your true data.</p></div>
+    <div class="card rise d6"><p class="q">I'm just getting started.</p><p class="a">Start simple and clean, and set it up so it can grow with you.</p></div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>08</span></div>
+</section>
+
+<section class="slide s13 dots">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rise"><span class="pill">Branding</span>Part of every website</div>
+      <h2 class="rise d1">When I build your site, I'm building your brand too.</h2>
+      <div class="decide">
+        <div class="rise d2"><b>Logo</b><span>Every version you'll need</span></div>
+        <div class="rise d3"><b>Colors</b><span>Exact codes for web and print</span></div>
+        <div class="rise d4"><b>Fonts</b><span>What headlines and text look like</span></div>
+        <div class="rise d5"><b>Tone</b><span>How you sound with customers</span></div>
+        <div class="rise d6"><b>Feeling</b><span>What people feel when they see you</span></div>
+      </div>
+      <p class="feel rise d6">The way your business feels when I talk to you should be how it shows up online.</p>
+    </div>
+    <div class="board">
+      <div class="bl rise d2"><img src="../img/logo-siliconpro.jpg" alt="Silicon Pro Plumbing logo"><div class="sw"><div><i style="background:#114371"></i>#114371</div><div><i style="background:#2F7FC1"></i>#2F7FC1</div><div><i style="background:#D2E6FF"></i>#D2E6FF</div></div></div>
+      <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siliconproplumbing.com</span></div><img src="../img/site-siliconpro.jpg" alt="Silicon Pro Plumbing website"></div></div>
+      <div class="ph cp rise d4"><img src="../img/print-siliconpro-coupon.jpg" alt="Silicon Pro Plumbing coupon"><span class="lbl">Silicon Pro</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>09</span></div>
+</section>
+
+<section class="slide s16 glow center">
+  <div class="eyebrow rise"><span class="pill">A question I get</span>About AI</div>
+  <h2 class="rise d1">"Can't I just build my website with AI?" <span class="blue">You can.</span></h2>
+  <div class="ai">
+    <div class="col judg rise d2">
+      <h3>AI is great at a first draft. It doesn't know:</h3>
+      <ol>
+        <li>What your business needs next</li>
+        <li>What makes your customers trust you</li>
+        <li>What your data is telling you</li>
+        <li>If it all works across your site, Google, email and print</li>
+      </ol>
+    </div>
+    <div class="col checks rise d3">
+      <div class="num"><b>100+</b><span>checks behind every site I launch</span></div>
+      <ul>
+        <li><span><b>Google Analytics + Search Console,</b> so you see which pages actually get traffic</span></li>
+        <li><span><b>Compliance for your industry,</b> so you don't get sued</span></li>
+        <li><span><b>Security,</b> so you're not constantly getting hacked</span></li>
+        <li><span><b>Every form tested</b> and landing where it should</span></li>
+        <li><span><b>Old pages redirected</b> so you keep your rankings</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>From my launch checklist</span><span>10</span></div>
+</section>
+
+<section class="slide s17 who dots center">
+  <div class="eyebrow rise"><span class="pill">Who to send me</span>My ideal client</div>
+  <h2 class="rise d1">A local business that's been around a while, and <span class="hl">the website shows it.</span></h2>
+  <div class="refs3">
+    <div class="ref rise d2"><b>Established</b><span>In business 5+ years. The work is steady, the website isn't keeping up.</span></div>
+    <div class="ref rise d3"><b>Local</b><span>South Bay and the Bay Area. Mostly trades, healthcare and wellness, but I'm open.</span></div>
+    <div class="ref rise d4"><b>Ready for what's next</b><span>Rebranding, moving, adding a service or a new location.</span></div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>11</span></div>
+</section>
+
+<section class="slide s17 dots">
+  <div class="eyebrow rise"><span class="pill">How to spot it</span>What you'll hear</div>
+  <h2 class="rise d1">If you hear one of these, <span class="hl">send them my way.</span></h2>
+  <div class="quotes">
+    <div class="qt rise d1"><b>I don't even know who has the login to my website.</b><span>Ownership and access</span></div>
+    <div class="qt rise d2"><b>My site is so old, I don't like sending people to it.</b><span>Needs a cleanup or refresh</span></div>
+    <div class="qt rise d3"><b>We're changing our name / moving / adding a location.</b><span>Rebrand or expansion</span></div>
+    <div class="qt rise d4"><b>Nobody finds us on Google unless they already know us.</b><span>Local visibility</span></div>
+    <div class="qt rise d5"><b>I pay someone every month and I'm not sure what they do.</b><span>Wants a second set of eyes</span></div>
+    <div class="qt rise d6"><b>We get calls, but the website never brings in leads.</b><span>Site isn't working for them</span></div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>12</span></div>
+</section>
+
+<section class="slide s17 ask dots center">
+  <div class="eyebrow rise"><span class="pill">My ask</span>Who I'd love to meet</div>
+  <h2 class="rise d1">People who already talk to business owners about growing.</h2>
+  <div class="partners">
+    <div class="pp rise d2"><b>Accountants &amp; bookkeepers</b><span>They see who's growing and who's stuck.</span></div>
+    <div class="pp rise d3"><b>Insurance agents</b><span>They hear about new locations and new services first.</span></div>
+    <div class="pp rise d4"><b>Business coaches &amp; consultants</b><span>Their clients are already working on what's next.</span></div>
+    <div class="pp rise d5"><b>Printers &amp; sign shops</b><span>New signs and cards usually mean a new look.</span></div>
+    <div class="pp rise d6"><b>Commercial real estate</b><span>A new space means updating everything online.</span></div>
+    <div class="pp rise d7"><b>Photographers &amp; videographers</b><span>Great photos deserve a site that shows them off.</span></div>
+  </div>
+  <div class="best rise d7"><span class="tag">Easy ask</span><div><b>Know someone whose website shows its age? Introduce us.</b><span>No pressure. I'll take a look and tell them where they're at.</span></div></div>
+  <div class="foot"><span>Kaizen Agency</span><span>13</span></div>
+</section>
+
+<section class="slide s18 glow">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rise"><span class="pill">Thank you</span>BNI Premier SJ</div>
+      <h1 class="rise d1" style="margin-top:22px">Your website should grow up with your business.</h1>
+      <div class="close-ask rise d2"><b>Know a business that's been around a while and the website shows it?</b> Introduce us.</div>
+    </div>
+    <div class="card contact rise d2">
+      <div class="logo"><span class="pillbtn">KAIZEN AGENCY</span></div>
+      <div class="row"><span>Name</span><b>Daisy</b></div>
+      <div class="row"><span>Email</span><b>daisy@kaizenagency.org</b></div>
+      <div class="row"><span>Phone</span><b>(408) 710-6718</b></div>
+      <div class="row"><span>Web</span><b>kaizenagency.org</b></div>
+      <p class="tagl">Your marketing pieces, clicked into place.</p>
+    </div>
+  </div>
+</section>
+
+
+
+</div>
+</div>
+
+<nav class="navbtns" aria-label="Slide controls">
+  <span class="count" id="count">1 / 14</span>
+  <button id="prev" aria-label="Previous slide">←</button>
+  <button id="next" aria-label="Next slide">→</button>
+  <button id="fsBtn">Full screen (F)</button>
+</nav>
+
+<script>
+(function(){
+  const stage=document.getElementById('stage'), slides=[...stage.querySelectorAll('.slide')];
+  const count=document.getElementById('count'), progress=document.getElementById('progress');
+  let i=0;
+  const h=parseInt((location.hash||'').replace(/\D/g,''),10);
+  if(h>=1&&h<=slides.length) i=h-1;
+  const mq=window.matchMedia('(max-width:700px), (orientation:portrait) and (max-width:1000px)');
+  function fit(){ stage.style.transform=mq.matches?'none':'scale('+Math.min(window.innerWidth/1600, window.innerHeight/900)+')'; }
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    try{document.getElementById('viewport').scrollTop=0}catch(e){}
+    count.textContent=(i+1)+' / '+slides.length;
+    progress.style.width=((i+1)/slides.length*100)+'%';
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+  }
+  function fs(){ try{ if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{})} else {document.exitFullscreen().catch(()=>{})} }catch(e){} }
+  document.getElementById('prev').addEventListener('click',e=>{e.stopPropagation();show(i-1)});
+  document.getElementById('next').addEventListener('click',e=>{e.stopPropagation();show(i+1)});
+  document.getElementById('fsBtn').addEventListener('click',e=>{e.stopPropagation();fs()});
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1)}
+    else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F')fs();
+  });
+  // click anywhere: right two-thirds = next, left third = back
+  document.getElementById('viewport').addEventListener('click',e=>{ show(e.clientX>window.innerWidth/3?i+1:i-1); });
+  let sx=null;
+  document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(i+(dx<0?1:-1));sx=null});
+  window.addEventListener('hashchange',()=>{const n=parseInt(location.hash.replace(/\D/g,''),10);if(n&&n-1!==i)show(n-1)});
+  window.addEventListener('resize',fit);
+  fit(); show(i);
+})();
+</script>
+
+</body>
+</html>
