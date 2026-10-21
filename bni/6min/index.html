@@ -794,6 +794,25 @@ body.showui .navbtns{opacity:1}
   .sites6{grid-template-columns:1fr}
   .common{flex-direction:column;align-items:flex-start;font-size:16px}
 }
+
+/* v5 */
+.lg img{mix-blend-mode:multiply}
+.lg.dk img,.lg.gg img,.lg.jd img,.lg.op img{mix-blend-mode:normal}
+.lg.dk,.lg.jd{background:#151515}.lg.gg{background:#26195D}.lg.op{background:#0d0d0d}
+.src .ai .dots3{position:absolute;left:14px;bottom:12px}
+.src .ai .bub.a{margin-top:auto}
+.lg.sam{background:#7ADFFA}
+.lg.sam span{font:800 25px var(--display);letter-spacing:.04em;color:#111}
+.lg.more{grid-column:span 2}
+.src .row .nm{display:flex;flex-direction:column;line-height:1.15}
+.src .row .nm small{font:500 11px var(--body);color:var(--ink-2)}
+.rolesS .roles{flex:1;grid-template-rows:1fr 1fr;margin-top:30px;gap:22px}
+.rolesS .role{display:flex;flex-direction:column;justify-content:center;padding:24px 26px}
+.rolesS .role b{font-size:28px}.rolesS .role span{font-size:19px}.rolesS .role i{font-size:13px}
+@media (max-width:700px), (orientation:portrait) and (max-width:1000px){
+  .lg.sam span{font-size:15px}.lg.more{grid-column:auto}
+  .rolesS .role b{font-size:19px}.rolesS .role span{font-size:15px}
+}
 </style>
 </head>
 <body>
@@ -826,12 +845,26 @@ body.showui .navbtns{opacity:1}
   <div class="foot"><span>Kaizen Agency</span><span>03</span></div>
 </section>
 
+<section class="slide whyw2 dots">
+  <div class="eyebrow rise"><span class="pill">Why websites?</span>Recent work</div>
+  <h2 class="rise d1">Every website has a different job. <span class="blue">Any look familiar?</span></h2>
+  <div class="sites6">
+    <div class="rise d1"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>falcon-roofing.com</span></div><img src="../img/site-falcon.jpg" alt="Falcon Roofing homepage"></div><div class="cap">Falcon Roofing <small>Gets estimate requests</small></div></div>
+    <div class="rise d2"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>sunwestpainting.net</span></div><img src="../img/site-sunwest.jpg" alt="Sunwest Painting homepage"></div><div class="cap">Sunwest Painting <small>Gets painting quotes</small></div></div>
+    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siliconproplumbing.com</span></div><img src="../img/site-siliconpro.jpg" alt="Silicon Pro Plumbing homepage"></div><div class="cap">Silicon Pro Plumbing <small>Gets the emergency call</small></div></div>
+    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>motorbody.com</span></div><img src="../img/site-motorbody.jpg" alt="Motor Body Company homepage"></div><div class="cap"><span>Motor Body <span class="soon">Launching</span></span><small>Gets roadside calls</small></div></div>
+    <div class="rise d4"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>bryanknowslending.com</span></div><img src="../img/site-bryan.jpg" alt="Bryan Knows Lending homepage"></div><div class="cap">Bryan Knows Lending <small>Gets loan inquiries</small></div></div>
+    <div class="rise d5"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>johnnywindows.com</span></div><img src="../img/site-johnny.jpg" alt="Johnny Windows homepage"></div><div class="cap">Johnny Windows <small>Gets quote requests</small></div></div>
+  </div>
+  <div class="common rise d6"><div><b>What they all have in common:</b> it's the one thing the business owns, and it's how they show up. I love showcasing people's brands this way, and the technical side is fun for me too.</div></div>
+</section>
+
 <section class="slide s3">
   <div class="eyebrow rise"><span class="pill">Clients</span>Businesses I've worked with</div>
   <h2 class="rise d1">Every business comes in at a different stage.</h2>
-  <p class="spec rise d2"><b>Mostly trades.</b> Also healthcare, med spas and <em>apparently, comedians.</em></p>
+  <p class="spec rise d2"><b>Mostly trades.</b> Also healthcare and med spas.</p>
   <div class="logos">
-    <div class="lg rise d1"><img src="../img/logo-adapt.jpg" alt="Adapt"></div>
+    <div class="lg rise d1"><img src="../img/logo-adapt-h.jpg" alt="Adapt"></div>
     <div class="lg dk rise d1"><img src="../img/logo-falcon.jpg" alt="Falcon Roofing"></div>
     <div class="lg rise d1"><img src="../img/logo-sunwest.jpg" alt="Sunwest Painting"></div>
     <div class="lg rise d2"><img src="../img/logo-siliconpro.jpg" alt="Silicon Pro Plumbing"></div>
@@ -841,15 +874,14 @@ body.showui .navbtns{opacity:1}
     <div class="lg dk rise d3"><img src="../img/logo-bryan.jpg" alt="Bryan Knows Lending"></div>
     <div class="lg rise d3"><img src="../img/logo-comforcare.jpg" alt="ComForCare Home Care"></div>
     <div class="lg dk rise d3"><img src="../img/logo-lova.jpg" alt="LOVA"></div>
-    <div class="lg rise d4"><img src="../img/logo-homepros.jpg" alt="Home Pros"></div>
-    <div class="lg dk rise d4"><img src="../img/logo-organizingpros.jpg" alt="Organizing Pros"></div>
+    <div class="lg rise d4"><img src="../img/logo-homepros2.jpg" alt="Home Pros"></div>
+    <div class="lg op rise d4"><img src="../img/logo-organizingpros2.jpg" alt="Organizing Pros"></div>
     <div class="lg rise d4"><img src="../img/logo-nexus.jpg" alt="Nexus Networking"></div>
     <div class="lg rise d4"><img src="../img/logo-americasgarage.jpg" alt="America's Garage Doors"></div>
     <div class="lg gg rise d5"><img src="../img/logo-growthgrabber.jpg" alt="Growth Grabber"></div>
-    <div class="lg bl rise d5"><img src="../img/logo-trustedtrades.jpg" alt="Trusted Trades"></div>
-    <div class="lg rise d5"><img src="../img/logo-alongi.jpg" alt="Alongi Brothers"></div>
-    <div class="lg dk rise d6"><img src="../img/logo-jdh.jpg" alt="JDH Garden Services"></div>
-    <div class="lg sky rise d6"><img src="../img/logo-sammy.jpg" alt="Sammy Obeid"></div>
+    <div class="lg rise d5"><img src="../img/logo-alongi2.jpg" alt="Alongi Brothers"></div>
+    <div class="lg jd rise d6"><img src="../img/logo-jdh2.jpg" alt="JDH Garden Services"></div>
+    <div class="lg sam rise d6"><span>Sammy Obeid</span></div>
     <div class="lg more rise d7">+ more</div>
   </div>
   <div class="foot"><span>Kaizen Agency</span><span>04</span></div>
@@ -861,26 +893,26 @@ body.showui .navbtns{opacity:1}
   <p class="lead rise d2">However people find a business, it all lands on the website. A lot of the time, it just needs a cleanup.</p>
   <div class="srcs">
     <div class="src build"><h3><i>01</i>Ads</h3><div class="mini">
-      <div class="row me"><span>Your Business Name</span><span class="spons">Sponsored</span></div>
+      <div class="row me"><span class="nm">Your Business Name<small>What you do</small></span><span class="spons">Sponsored</span></div>
       <div class="row"><span>Another Spot</span><small>2.1 mi</small></div>
       <div class="row"><span>Directory Listing</span><small>Top 10</small></div>
       <span class="cur" style="left:40%;top:14px"></span></div></div>
     <div class="src build"><h3><i>02</i>Google search</h3><div class="mini org">
-      <div class="row me" style="position:relative;z-index:2"><span>Your Business Name</span><span class="stars">★★★★★</span></div>
+      <div class="row me" style="position:relative;z-index:2"><span class="nm">Your Business Name<small>What you do</small></span><span class="stars">★★★★★</span></div>
       <div class="row"><span>Another Spot</span><span class="stars">★★★★☆</span></div>
       <div class="row"><span>Directory Listing</span><span class="stars">★★★☆☆</span></div></div></div>
     <div class="src build"><h3><i>03</i>Social</h3><div class="mini">
       <div class="post"><div class="img"></div><div class="pb"><span>@yourbusiness</span><span class="heart">♥</span></div></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;font:600 12px var(--body);color:var(--ink-2)"><span>Tonight's special ✨</span><span class="btnv">Visit website</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;font:600 12px var(--body);color:var(--ink-2)"><span>Before &amp; after ✨</span><span class="btnv">Visit website</span></div>
       <span class="cur" style="right:18px;bottom:8px"></span></div></div>
     <div class="src build"><h3><i>04</i>AI answers</h3><div class="mini ai">
-      <div class="bub q">Good restaurant near me?</div>
+      <div class="bub q">Problem with X. Know someone who can help?</div>
       <div class="dots3"><i></i><i></i><i></i></div>
-      <div class="bub a" style="opacity:0">Try <b>Your Business Name</b>. Great reviews, open late. yourbusiness.com</div></div></div>
+      <div class="bub a" style="opacity:0">Try <b>Your Business Name</b>. They do exactly that.</div></div></div>
   </div>
   <div class="flow build"><svg viewBox="0 0 1408 90" preserveAspectRatio="none"><path d="M170 0 C170 60 704 40 704 90"/><path d="M528 0 C528 50 704 50 704 90"/><path d="M880 0 C880 50 704 50 704 90"/><path d="M1238 0 C1238 60 704 40 704 90"/></svg></div>
   <div class="own build">
-    <div class="browser"><div class="bar"><i></i><i></i><i></i><span>yourbusiness.com</span></div><div class="site"><div><b>Your Business Name</b><span style="font-size:14px;color:var(--ink-2)">Your story, your menu, your reviews.</span><div class="bt"><span>Book a table</span><span>Call</span></div></div><div class="ph2"></div></div></div>
+    <div class="browser"><div class="bar"><i></i><i></i><i></i><span>yourbusiness.com</span></div><div class="site"><div><b>Your Business Name</b><span style="font-size:14px;color:var(--ink-2)">What you do, your story, your reviews.</span><div class="bt"><span>Get a quote</span><span>Call</span></div></div><div class="ph2"></div></div></div>
     <div><span class="tagbig">The one they own.</span><p>Ads, social apps and AI can change the rules anytime. The website is the one place a business owns.</p></div>
   </div>
   <div class="foot"><span>Kaizen Agency</span><span>06</span></div>
@@ -900,18 +932,12 @@ body.showui .navbtns{opacity:1}
   <div class="foot"><span>Kaizen Agency</span><span>07</span></div>
 </section>
 
-<section class="slide whyw2 dots">
-  <div class="eyebrow rise"><span class="pill">Why websites?</span>Recent work</div>
-  <h2 class="rise d1">Every website has a different job. <span class="blue">Any look familiar?</span></h2>
-  <div class="sites6">
-    <div class="rise d1"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>falcon-roofing.com</span></div><img src="../img/site-falcon.jpg" alt="Falcon Roofing homepage"></div><div class="cap">Falcon Roofing <small>Gets estimate requests</small></div></div>
-    <div class="rise d2"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>sunwestpainting.net</span></div><img src="../img/site-sunwest.jpg" alt="Sunwest Painting homepage"></div><div class="cap">Sunwest Painting <small>Gets painting quotes</small></div></div>
-    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siliconproplumbing.com</span></div><img src="../img/site-siliconpro.jpg" alt="Silicon Pro Plumbing homepage"></div><div class="cap">Silicon Pro Plumbing <small>Gets the emergency call</small></div></div>
-    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>motorbody.com</span></div><img src="../img/site-motorbody.jpg" alt="Motor Body Company homepage"></div><div class="cap"><span>Motor Body <span class="soon">Launching</span></span><small>Gets roadside calls</small></div></div>
-    <div class="rise d4"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>bryanknowslending.com</span></div><img src="../img/site-bryan.jpg" alt="Bryan Knows Lending homepage"></div><div class="cap">Bryan Knows Lending <small>Gets loan inquiries</small></div></div>
-    <div class="rise d5"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>johnnywindows.com</span></div><img src="../img/site-johnny.jpg" alt="Johnny Windows homepage"></div><div class="cap">Johnny Windows <small>Gets quote requests</small></div></div>
-  </div>
-  <div class="common rise d6"><div><b>What they all have in common:</b> it's the one thing the business owns, and it's how they show up. I love showcasing people's brands this way, and the technical side is fun for me too.</div></div>
+<section class="slide s9 dots">
+  <div class="eyebrow rise"><span class="pill">The art of a website</span>Sitemap</div>
+  <h2 class="rise d1">A real website is a whole map, <span class="hl">not one page.</span></h2>
+  <p class="lead rise d2" style="margin-top:12px">Every page has a job, and people land on different ones depending on where they come from.</p>
+  <div class="smap" style="margin-top:20px"><svg viewBox="0 0 1408 480"><path class="in lvl l0" d="M1230 38 C1230 60 704.0 50 704.0 80"/><path class="in lvl l0" d="M950 38 C950 160 985.6000000000001 150 985.6000000000001 180"/><path class="in lvl l0" d="M600 38 C600 60 704.0 50 704.0 80"/><path class="in lvl l0" d="M330 38 C330 160 422.40000000000003 150 422.40000000000003 180"/><path class="in lvl l0" d="M90 38 C90 160 140.8 150 140.8 180"/><path class="lvl l1" d="M704.0 124 C704.0 156 140.8 150 140.8 180"/><path class="lvl l2" d="M140.8 224 L140.8 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 422.40000000000003 150 422.40000000000003 180"/><path class="lvl l2" d="M422.40000000000003 224 L422.40000000000003 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 704.0 150 704.0 180"/><path class="lvl l2" d="M704.0 224 L704.0 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 985.6000000000001 150 985.6000000000001 180"/><path class="lvl l2" d="M985.6000000000001 224 L985.6000000000001 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 1267.2 150 1267.2 180"/><path class="lvl l2" d="M1267.2 224 L1267.2 390"/><g class="src lvl l0"><rect x="1125.0" y="0" width="210" height="38" rx="19"/><text x="1230" y="25" text-anchor="middle">Yelp · directories</text></g><g class="src lvl l0"><rect x="875.0" y="0" width="150" height="38" rx="19"/><text x="950" y="25" text-anchor="middle">AI answers</text></g><g class="src lvl l0"><rect x="485.0" y="0" width="230" height="38" rx="19"/><text x="600" y="25" text-anchor="middle">Instagram · Facebook</text></g><g class="src lvl l0"><rect x="255.0" y="0" width="150" height="38" rx="19"/><text x="330" y="25" text-anchor="middle">Google Maps</text></g><g class="src lvl l0"><rect x="10.0" y="0" width="160" height="38" rx="19"/><text x="90" y="25" text-anchor="middle">Google search</text></g><g class="nd h lvl l0"><rect x="614.0" y="80" width="180" height="44" rx="12"/><text x="704.0" y="108" text-anchor="middle">Home</text></g><g class="nd f lvl l1"><rect x="45.80000000000001" y="180" width="190" height="44" rx="12"/><text x="140.8" y="208" text-anchor="middle">Services</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="260" width="160" height="44" rx="12"/><text x="140.8" y="288" text-anchor="middle">Service A</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="314" width="160" height="44" rx="12"/><text x="140.8" y="342" text-anchor="middle">Service B</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="368" width="160" height="44" rx="12"/><text x="140.8" y="396" text-anchor="middle">Service C</text></g><g class="nd f lvl l1"><rect x="327.40000000000003" y="180" width="190" height="44" rx="12"/><text x="422.40000000000003" y="208" text-anchor="middle">Areas</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="260" width="160" height="44" rx="12"/><text x="422.40000000000003" y="288" text-anchor="middle">San Jose</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="314" width="160" height="44" rx="12"/><text x="422.40000000000003" y="342" text-anchor="middle">Campbell</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="368" width="160" height="44" rx="12"/><text x="422.40000000000003" y="396" text-anchor="middle">Los Gatos</text></g><g class="nd t lvl l1"><rect x="609.0" y="180" width="190" height="44" rx="12"/><text x="704.0" y="208" text-anchor="middle">About</text></g><g class="nd t lvl l2"><rect x="624.0" y="260" width="160" height="44" rx="12"/><text x="704.0" y="288" text-anchor="middle">Our team</text></g><g class="nd t lvl l2"><rect x="624.0" y="314" width="160" height="44" rx="12"/><text x="704.0" y="342" text-anchor="middle">Reviews</text></g><g class="nd t lvl l2"><rect x="624.0" y="368" width="160" height="44" rx="12"/><text x="704.0" y="396" text-anchor="middle">Gallery</text></g><g class="nd t lvl l1"><rect x="890.6000000000001" y="180" width="190" height="44" rx="12"/><text x="985.6000000000001" y="208" text-anchor="middle">Resources</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="260" width="160" height="44" rx="12"/><text x="985.6000000000001" y="288" text-anchor="middle">Blog</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="314" width="160" height="44" rx="12"/><text x="985.6000000000001" y="342" text-anchor="middle">FAQ</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="368" width="160" height="44" rx="12"/><text x="985.6000000000001" y="396" text-anchor="middle">Guides</text></g><g class="nd c lvl l1"><rect x="1172.2" y="180" width="190" height="44" rx="12"/><text x="1267.2" y="208" text-anchor="middle">Contact</text></g><g class="nd c lvl l2"><rect x="1187.2" y="260" width="160" height="44" rx="12"/><text x="1267.2" y="288" text-anchor="middle">Get a quote</text></g><g class="nd c lvl l2"><rect x="1187.2" y="314" width="160" height="44" rx="12"/><text x="1267.2" y="342" text-anchor="middle">Book online</text></g><g class="nd c lvl l2"><rect x="1187.2" y="368" width="160" height="44" rx="12"/><text x="1267.2" y="396" text-anchor="middle">Thank you</text></g><g class="nd u lvl l3"><rect x="16.0" y="432" width="161.5" height="44" rx="12"/><text x="96.75" y="460" text-anchor="middle">Privacy policy</text></g><g class="nd u lvl l3"><rect x="189.5" y="432" width="161.5" height="44" rx="12"/><text x="270.25" y="460" text-anchor="middle">Terms</text></g><g class="nd u lvl l3"><rect x="363.0" y="432" width="161.5" height="44" rx="12"/><text x="443.75" y="460" text-anchor="middle">Cookie consent</text></g><g class="nd u lvl l3"><rect x="536.5" y="432" width="161.5" height="44" rx="12"/><text x="617.25" y="460" text-anchor="middle">CA privacy (CCPA)</text></g><g class="nd u lvl l3"><rect x="710.0" y="432" width="161.5" height="44" rx="12"/><text x="790.75" y="460" text-anchor="middle">Accessibility</text></g><g class="nd u lvl l3"><rect x="883.5" y="432" width="161.5" height="44" rx="12"/><text x="964.25" y="460" text-anchor="middle">Redirects</text></g><g class="nd u lvl l3"><rect x="1057.0" y="432" width="161.5" height="44" rx="12"/><text x="1137.75" y="460" text-anchor="middle">404 page</text></g><g class="nd u lvl l3"><rect x="1230.5" y="432" width="161.5" height="44" rx="12"/><text x="1311.25" y="460" text-anchor="middle">sitemap.xml</text></g></svg></div>
+  <div class="legend rise d3"><span><i style="background:#fff;border:2.5px dashed var(--blue)"></i>Where people come in</span><span><i style="background:var(--lime)"></i>Gets found</span><span><i style="background:var(--blue-soft);border-color:var(--blue)"></i>Builds trust</span><span><i style="background:var(--ink)"></i>Gets the call</span><span><i style="background:#fff;border-color:var(--line)"></i>Compliance + behind the scenes</span></div>
 </section>
 
 <section class="slide s7 s7b dots">
@@ -949,14 +975,6 @@ body.showui .navbtns{opacity:1}
   <div class="foot"><span>Website · Google · CRM · email &amp; text · print · social</span><span>08</span></div>
 </section>
 
-<section class="slide s9 dots">
-  <div class="eyebrow rise"><span class="pill">The art of a website</span>Sitemap</div>
-  <h2 class="rise d1">A real website is a whole map, <span class="hl">not one page.</span></h2>
-  <p class="lead rise d2" style="margin-top:12px">Every page has a job, and people land on different ones depending on where they come from.</p>
-  <div class="smap" style="margin-top:20px"><svg viewBox="0 0 1408 480"><path class="in lvl l0" d="M1230 38 C1230 60 704.0 50 704.0 80"/><path class="in lvl l0" d="M950 38 C950 160 985.6000000000001 150 985.6000000000001 180"/><path class="in lvl l0" d="M600 38 C600 60 704.0 50 704.0 80"/><path class="in lvl l0" d="M330 38 C330 160 422.40000000000003 150 422.40000000000003 180"/><path class="in lvl l0" d="M90 38 C90 160 140.8 150 140.8 180"/><path class="lvl l1" d="M704.0 124 C704.0 156 140.8 150 140.8 180"/><path class="lvl l2" d="M140.8 224 L140.8 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 422.40000000000003 150 422.40000000000003 180"/><path class="lvl l2" d="M422.40000000000003 224 L422.40000000000003 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 704.0 150 704.0 180"/><path class="lvl l2" d="M704.0 224 L704.0 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 985.6000000000001 150 985.6000000000001 180"/><path class="lvl l2" d="M985.6000000000001 224 L985.6000000000001 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 1267.2 150 1267.2 180"/><path class="lvl l2" d="M1267.2 224 L1267.2 390"/><g class="src lvl l0"><rect x="1125.0" y="0" width="210" height="38" rx="19"/><text x="1230" y="25" text-anchor="middle">Yelp · directories</text></g><g class="src lvl l0"><rect x="875.0" y="0" width="150" height="38" rx="19"/><text x="950" y="25" text-anchor="middle">AI answers</text></g><g class="src lvl l0"><rect x="485.0" y="0" width="230" height="38" rx="19"/><text x="600" y="25" text-anchor="middle">Instagram · Facebook</text></g><g class="src lvl l0"><rect x="255.0" y="0" width="150" height="38" rx="19"/><text x="330" y="25" text-anchor="middle">Google Maps</text></g><g class="src lvl l0"><rect x="10.0" y="0" width="160" height="38" rx="19"/><text x="90" y="25" text-anchor="middle">Google search</text></g><g class="nd h lvl l0"><rect x="614.0" y="80" width="180" height="44" rx="12"/><text x="704.0" y="108" text-anchor="middle">Home</text></g><g class="nd f lvl l1"><rect x="45.80000000000001" y="180" width="190" height="44" rx="12"/><text x="140.8" y="208" text-anchor="middle">Services</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="260" width="160" height="44" rx="12"/><text x="140.8" y="288" text-anchor="middle">Service A</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="314" width="160" height="44" rx="12"/><text x="140.8" y="342" text-anchor="middle">Service B</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="368" width="160" height="44" rx="12"/><text x="140.8" y="396" text-anchor="middle">Service C</text></g><g class="nd f lvl l1"><rect x="327.40000000000003" y="180" width="190" height="44" rx="12"/><text x="422.40000000000003" y="208" text-anchor="middle">Areas</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="260" width="160" height="44" rx="12"/><text x="422.40000000000003" y="288" text-anchor="middle">San Jose</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="314" width="160" height="44" rx="12"/><text x="422.40000000000003" y="342" text-anchor="middle">Campbell</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="368" width="160" height="44" rx="12"/><text x="422.40000000000003" y="396" text-anchor="middle">Los Gatos</text></g><g class="nd t lvl l1"><rect x="609.0" y="180" width="190" height="44" rx="12"/><text x="704.0" y="208" text-anchor="middle">About</text></g><g class="nd t lvl l2"><rect x="624.0" y="260" width="160" height="44" rx="12"/><text x="704.0" y="288" text-anchor="middle">Our team</text></g><g class="nd t lvl l2"><rect x="624.0" y="314" width="160" height="44" rx="12"/><text x="704.0" y="342" text-anchor="middle">Reviews</text></g><g class="nd t lvl l2"><rect x="624.0" y="368" width="160" height="44" rx="12"/><text x="704.0" y="396" text-anchor="middle">Gallery</text></g><g class="nd t lvl l1"><rect x="890.6000000000001" y="180" width="190" height="44" rx="12"/><text x="985.6000000000001" y="208" text-anchor="middle">Resources</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="260" width="160" height="44" rx="12"/><text x="985.6000000000001" y="288" text-anchor="middle">Blog</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="314" width="160" height="44" rx="12"/><text x="985.6000000000001" y="342" text-anchor="middle">FAQ</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="368" width="160" height="44" rx="12"/><text x="985.6000000000001" y="396" text-anchor="middle">Guides</text></g><g class="nd c lvl l1"><rect x="1172.2" y="180" width="190" height="44" rx="12"/><text x="1267.2" y="208" text-anchor="middle">Contact</text></g><g class="nd c lvl l2"><rect x="1187.2" y="260" width="160" height="44" rx="12"/><text x="1267.2" y="288" text-anchor="middle">Get a quote</text></g><g class="nd c lvl l2"><rect x="1187.2" y="314" width="160" height="44" rx="12"/><text x="1267.2" y="342" text-anchor="middle">Book online</text></g><g class="nd c lvl l2"><rect x="1187.2" y="368" width="160" height="44" rx="12"/><text x="1267.2" y="396" text-anchor="middle">Thank you</text></g><g class="nd u lvl l3"><rect x="16.0" y="432" width="161.5" height="44" rx="12"/><text x="96.75" y="460" text-anchor="middle">Privacy policy</text></g><g class="nd u lvl l3"><rect x="189.5" y="432" width="161.5" height="44" rx="12"/><text x="270.25" y="460" text-anchor="middle">Terms</text></g><g class="nd u lvl l3"><rect x="363.0" y="432" width="161.5" height="44" rx="12"/><text x="443.75" y="460" text-anchor="middle">Cookie consent</text></g><g class="nd u lvl l3"><rect x="536.5" y="432" width="161.5" height="44" rx="12"/><text x="617.25" y="460" text-anchor="middle">CA privacy (CCPA)</text></g><g class="nd u lvl l3"><rect x="710.0" y="432" width="161.5" height="44" rx="12"/><text x="790.75" y="460" text-anchor="middle">Accessibility</text></g><g class="nd u lvl l3"><rect x="883.5" y="432" width="161.5" height="44" rx="12"/><text x="964.25" y="460" text-anchor="middle">Redirects</text></g><g class="nd u lvl l3"><rect x="1057.0" y="432" width="161.5" height="44" rx="12"/><text x="1137.75" y="460" text-anchor="middle">404 page</text></g><g class="nd u lvl l3"><rect x="1230.5" y="432" width="161.5" height="44" rx="12"/><text x="1311.25" y="460" text-anchor="middle">sitemap.xml</text></g></svg></div>
-  <div class="legend rise d3"><span><i style="background:#fff;border:2.5px dashed var(--blue)"></i>Where people come in</span><span><i style="background:var(--lime)"></i>Gets found</span><span><i style="background:var(--blue-soft);border-color:var(--blue)"></i>Builds trust</span><span><i style="background:var(--ink)"></i>Gets the call</span><span><i style="background:#fff;border-color:var(--line)"></i>Compliance + behind the scenes</span></div>
-</section>
-
 <section class="slide s10 glow center">
   <div class="eyebrow rise"><span class="pill">Q&amp;A</span>Questions I get a lot</div>
   <h2 class="rise d1">What I'd recommend depends on where you're at.</h2>
@@ -971,7 +989,7 @@ body.showui .navbtns{opacity:1}
   <div class="foot"><span>Kaizen Agency</span><span>11</span></div>
 </section>
 
-<section class="slide s17 dots">
+<section class="slide s17 rolesS dots">
   <div class="eyebrow rise"><span class="pill">Who's behind it</span>More than a website</div>
   <h2 class="rise d1">You're not just getting a website.</h2>
   <div class="roles">
@@ -1067,6 +1085,7 @@ body.showui .navbtns{opacity:1}
     </div>
   </div>
 </section>
+
 
 
 
