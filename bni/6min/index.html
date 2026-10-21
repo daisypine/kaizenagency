@@ -813,6 +813,36 @@ body.showui .navbtns{opacity:1}
   .lg.sam span{font-size:15px}.lg.more{grid-column:auto}
   .rolesS .role b{font-size:19px}.rolesS .role span{font-size:15px}
 }
+
+/* v6 */
+.cl .cols{flex:1;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;margin-top:20px;min-height:0;align-items:start}
+.cl .logos{grid-template-columns:repeat(4,1fr);grid-auto-rows:78px;gap:10px;margin-top:0;flex:none}
+.cl .lg{padding:8px 12px;border-radius:14px}
+.cl .lg img{max-height:54px}
+.cl .lg.sam span{font-size:19px}
+.cl .side{display:grid;gap:14px}
+.cl .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cl .nums div{background:var(--white);border:3px solid var(--ink);border-radius:16px;padding:12px}
+.cl .nums div:first-child{background:var(--lime)}
+.cl .nums b{display:block;font:700 30px var(--display);letter-spacing:-.02em}
+.cl .nums span{font-size:14px;line-height:1.3;color:var(--ink-2);display:block;margin-top:4px}
+.cl .grow{font:600 18px/1.4 var(--head);color:var(--ink-2)}
+.pf{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:14px 16px;box-shadow:6px 6px 0 var(--lime);display:grid;gap:10px}
+.pf small{font:700 11px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.pf b{font:800 19px/1.3 var(--head)}
+.pf .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+.pf .ba div{position:relative;border:2px solid var(--ink);border-radius:10px;overflow:hidden}
+.pf .ba img{display:block;width:100%;aspect-ratio:16/8;object-fit:cover;object-position:left top}
+.pf .ba span.t{position:absolute;left:6px;top:6px;font:700 10px var(--display);letter-spacing:.08em;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:2px 7px}
+.pf .ba em{font-style:normal;font:700 20px var(--display)}
+.pf .meta{display:flex;flex-wrap:wrap;gap:6px}
+.pf .meta span{font:600 13px var(--body);border:2px solid var(--line);border-radius:999px;padding:3px 10px}
+@media (max-width:700px), (orientation:portrait) and (max-width:1000px){
+  .cl .cols{display:flex;flex-direction:column}
+  .cl .logos{grid-template-columns:repeat(3,1fr);grid-auto-rows:62px}
+  .cl .lg.more{grid-column:auto}
+  .cl .nums b{font-size:22px}
+}
 </style>
 </head>
 <body>
@@ -835,6 +865,7 @@ body.showui .navbtns{opacity:1}
       <div class="bits">
         <div class="bit rise d3"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6"/><path d="M9 4h6l-3 4z"/></svg></i><span>Started working weddings at 17. Coordinated <b>200+ weddings</b> over 6 years.</span></div>
                 <div class="bit rise d4"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14l20-8-6 14-3-6z"/><path d="M13 14l9-8"/></svg></i><span>I love traveling. <b>17 countries and 30+ cities</b>, and a lot of them solo.</span></div>
+        <div class="bit rise d5"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></i><span><b>Why websites?</b> It's the one thing a business owns, and how they show up. I love showcasing brands, and the technical side is fun for me too.</span></div>
       </div>
     </div>
     <div class="photos2" aria-label="Personal photos">
@@ -845,25 +876,12 @@ body.showui .navbtns{opacity:1}
   <div class="foot"><span>Kaizen Agency</span><span>03</span></div>
 </section>
 
-<section class="slide whyw2 dots">
-  <div class="eyebrow rise"><span class="pill">Why websites?</span>Recent work</div>
-  <h2 class="rise d1">Every website has a different job. <span class="blue">Any look familiar?</span></h2>
-  <div class="sites6">
-    <div class="rise d1"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>falcon-roofing.com</span></div><img src="../img/site-falcon.jpg" alt="Falcon Roofing homepage"></div><div class="cap">Falcon Roofing <small>Gets estimate requests</small></div></div>
-    <div class="rise d2"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>sunwestpainting.net</span></div><img src="../img/site-sunwest.jpg" alt="Sunwest Painting homepage"></div><div class="cap">Sunwest Painting <small>Gets painting quotes</small></div></div>
-    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siliconproplumbing.com</span></div><img src="../img/site-siliconpro.jpg" alt="Silicon Pro Plumbing homepage"></div><div class="cap">Silicon Pro Plumbing <small>Gets the emergency call</small></div></div>
-    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>motorbody.com</span></div><img src="../img/site-motorbody.jpg" alt="Motor Body Company homepage"></div><div class="cap"><span>Motor Body <span class="soon">Launching</span></span><small>Gets roadside calls</small></div></div>
-    <div class="rise d4"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>bryanknowslending.com</span></div><img src="../img/site-bryan.jpg" alt="Bryan Knows Lending homepage"></div><div class="cap">Bryan Knows Lending <small>Gets loan inquiries</small></div></div>
-    <div class="rise d5"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>johnnywindows.com</span></div><img src="../img/site-johnny.jpg" alt="Johnny Windows homepage"></div><div class="cap">Johnny Windows <small>Gets quote requests</small></div></div>
-  </div>
-  <div class="common rise d6"><div><b>What they all have in common:</b> it's the one thing the business owns, and it's how they show up. I love showcasing people's brands this way, and the technical side is fun for me too.</div></div>
-</section>
-
-<section class="slide s3">
-  <div class="eyebrow rise"><span class="pill">Clients</span>Businesses I've worked with</div>
+<section class="slide cl dots">
+  <div class="eyebrow rise"><span class="pill">Clients</span>Close to 50 businesses</div>
   <h2 class="rise d1">Every business comes in at a different stage.</h2>
   <p class="spec rise d2"><b>Mostly trades.</b> Also healthcare and med spas.</p>
-  <div class="logos">
+  <div class="cols">
+    <div class="logos">
     <div class="lg rise d1"><img src="../img/logo-adapt-h.jpg" alt="Adapt"></div>
     <div class="lg dk rise d1"><img src="../img/logo-falcon.jpg" alt="Falcon Roofing"></div>
     <div class="lg rise d1"><img src="../img/logo-sunwest.jpg" alt="Sunwest Painting"></div>
@@ -884,7 +902,15 @@ body.showui .navbtns{opacity:1}
     <div class="lg sam rise d6"><span>Sammy Obeid</span></div>
     <div class="lg more rise d7">+ more</div>
   </div>
-  <div class="foot"><span>Kaizen Agency</span><span>04</span></div>
+    <div class="side">
+      <div class="nums rise d3"><div><b>~50</b><span>clients so far</span></div><div><b>4+ yrs</b><span>with some clients, a few months with others</span></div><div><b>20</b><span>recurring clients at once, at my busiest</span></div></div>
+      <p class="grow rise d4">I'm learning to grow while keeping the quality where it should be.</p>
+      <div class="pf rise d5"><small>Custom portfolio</small><b>Send me a referral and I'll put together work that fits their business.</b>
+        <div class="ba"><div><img src="../img/hp-old-hero.jpg" alt="Before"><span class="t">BEFORE</span></div><em>→</em><div><img src="../img/hp-hero.jpg" alt="After"><span class="t">AFTER</span></div></div>
+        <div class="meta"><span>Fonts: Futura Condensed + DM Sans</span><span>Colors</span><span>Before &amp; after</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="slide s17 tr dots">
@@ -962,8 +988,7 @@ body.showui .navbtns{opacity:1}
       <div class="acard rise d4"><small>Google impressions · 9 months</small>
         <svg class="graph" viewBox="0 0 300 96" preserveAspectRatio="none"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#004BFF" stop-opacity=".22"/><stop offset="1" stop-color="#004BFF" stop-opacity="0"/></linearGradient></defs>
         <path class="area" d="M0 88 C40 86 60 82 90 76 S150 64 180 50 S240 22 300 6 L300 96 L0 96Z"/><path class="ln" d="M0 88 C40 86 60 82 90 76 S150 64 180 50 S240 22 300 6"/></svg></div>
-      <div class="acard rise d5"><small>Leads → CRM → booked</small><div class="crm"><span class="on">New lead</span><em>→</em><span class="on">Follow-up</span><em>→</em><span class="on">Booked</span><em>→</em><span>Rebooked</span></div><div class="swr"><i style="background:#1C7460"></i><i style="background:#66BFAB"></i><i style="background:#fff"></i><span style="font-size:13px;color:var(--ink-2);align-self:center">Brand colors on every piece</span></div></div>
-      <div class="note rise d5"><small>ALSO HANDLED</small>Organized the team photo shoot, so every page and post uses their real people.</div>
+      <div class="acard rise d5" style="grid-column:1/-1"><small>Leads → CRM → booked</small><div class="crm"><span class="on">New lead</span><em>→</em><span class="on">Follow-up</span><em>→</em><span class="on">Booked</span><em>→</em><span>Rebooked</span></div><div class="swr"><i style="background:#1C7460"></i><i style="background:#66BFAB"></i><i style="background:#fff"></i><span style="font-size:13px;color:var(--ink-2);align-self:center">Brand colors on every piece</span></div></div>
       <div class="aposts">
         <div class="ph rise d5"><img src="../img/social-adapt-1.jpg" alt="Adapt social post"></div>
         <div class="ph rise d6"><img src="../img/social-adapt-2.jpg" alt="Adapt carousel"></div>
@@ -1092,6 +1117,7 @@ body.showui .navbtns{opacity:1}
 
 
 
+
 </div>
 </div>
 
@@ -1110,7 +1136,7 @@ body.showui .navbtns{opacity:1}
   const h=parseInt((location.hash||'').replace(/\D/g,''),10);
   if(h>=1&&h<=slides.length) i=h-1;
   const mq=window.matchMedia('(max-width:700px), (orientation:portrait) and (max-width:1000px)');
-  function fit(){ stage.style.transform=mq.matches?'none':'scale('+Math.max(window.innerWidth/1600, window.innerHeight/900)+')'; }
+  function fit(){ const a=window.innerWidth/1600,b=window.innerHeight/900;stage.style.transform=mq.matches?'none':'scale('+Math.min(Math.max(a,b),Math.min(a,b)*1.04)+')'; }
   function show(n){
     i=Math.max(0,Math.min(slides.length-1,n));
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
