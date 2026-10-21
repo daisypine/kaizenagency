@@ -7,7 +7,7 @@
 <meta name="description" content="Losi Taunaholo of MMT Electric. BNI Premiere feature presentation, October 21, 2026.">
 <link rel="icon" type="image/png" href="img/mascot-sm.png">
 <meta property="og:title" content="MMT Electric | Meet Losi">
-<meta property="og:description" content="Losi Taunaholo, licensed electrical contractor in Union City. BNI Premiere feature presentation.">
+<meta property="og:description" content="Losi Taunaholo, licensed electrical contractor in Union City. Panel upgrades, custom builds and emergency calls.">
 <meta property="og:image" content="https://daisypine.github.io/kaizenagency/mmt.electric/bni/img/og.jpg">
 <meta property="og:url" content="https://daisypine.github.io/kaizenagency/mmt.electric/bni/">
 <meta property="og:type" content="website">
@@ -177,6 +177,29 @@ h1 em,h2 em{font-style:normal;color:var(--red)}
 .contact a{color:inherit;text-decoration:none}
 .contact div b{display:block;font:700 40px/1.1 var(--head);letter-spacing:.5px;margin-top:8px;color:var(--ink)}
 
+
+/* ===== top 3 + big before/after ===== */
+.svc.top3{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr}
+.svc.top3 .cap{font-size:40px;padding:90px 28px 26px}
+.svc.top3 .cap small{font-size:22px}
+.num{position:absolute;left:22px;top:20px;font:800 64px/1 var(--head);color:#fff;background:var(--red);border-radius:14px;padding:8px 14px 6px;letter-spacing:-1px}
+.big-ba .ph{flex:1}
+/* ===== Q&A site screenshots ===== */
+.s-qa .in{grid-template-columns:1fr 760px}
+.s-qa .r.site{background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:40px 46px 150px 56px}
+.site-lbl{font:700 22px/1 var(--head);letter-spacing:3px;text-transform:uppercase;color:#fff;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.site-lbl:before{content:"";width:12px;height:12px;border-radius:50%;background:#3BD16F;box-shadow:0 0 0 6px rgba(59,209,111,.2)}
+.browser{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);width:600px}
+.bbar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#E9EAEE}
+.bbar i{width:11px;height:11px;border-radius:50%;background:#C9CBD2}
+.bbar span{margin-left:12px;flex:1;background:#fff;border-radius:999px;padding:5px 14px;font:500 15px/1 var(--body);color:var(--text)}
+.browser img{width:100%;height:auto}
+.phone{position:absolute;right:40px;bottom:120px;width:200px;border:9px solid #0b0f17;border-radius:30px;overflow:hidden;background:#000;box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.phone img{width:100%;height:auto}
+html.m .svc.top3{grid-template-columns:1fr}html.m .svc.top3 .ph{height:200px}html.m .num{font-size:30px;padding:6px 10px;left:12px;top:12px}
+html.m .svc.top3 .cap small{display:block;font-size:14px}
+html.m .s-qa .r.site{height:auto;padding:28px 18px 30px}html.m .browser{width:100%}html.m .phone{display:none}
+
 /* ===== on-screen controls ===== */
 .nav-btn{position:fixed;bottom:78px;z-index:10;border:1px solid rgba(255,255,255,.25);background:rgba(13,18,28,.7);color:#fff;font:600 15px var(--body);padding:10px 16px;border-radius:999px;cursor:pointer;opacity:0;transition:opacity .2s}
 body:hover .nav-btn{opacity:.9}
@@ -298,32 +321,42 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
   </div>
 </section>
 
-<!-- 4 · SERVICES -->
+<!-- 4 · TOP 3 -->
 <section class="slide" data-sec="1">
-  <div class="kicker"><img class="ki" src="img/icons/panel-upgrades.png" alt="">What I do</div>
-  <h2>If it runs on power, <em>I got you.</em></h2>
-  <div class="svc">
-    <div class="ph"><img src="img/panel-after.jpg" alt=""><div class="cap">Panel upgrades<small>Old fuse box? Adding an EV charger?</small></div></div>
-    <div class="ph"><img src="img/lit-steps-exterior.jpg" alt=""><div class="cap">Residential<small>Lighting, outlets, rewires, the weird stuff</small></div></div>
-    <div class="ph"><img src="img/restaurant-after.jpg" alt=""><div class="cap">Commercial<small>Restaurants, shops, gyms, offices</small></div></div>
-    <div class="ph"><img src="img/remodel-rough-in.jpg" alt=""><div class="cap">New construction &amp; remodels<small>From bare studs to final inspection</small></div></div>
-    <div class="ph"><img src="img/night-call.jpg" alt=""><div class="cap">Emergency<small>Lights out? Call me.</small></div></div>
-    <div class="ph"><img src="img/onyx-island.jpg" alt=""><div class="cap">Custom work<small>My favorite part of the job</small></div></div>
+  <div class="kicker"><img class="ki" src="img/icons/panel-upgrades.png" alt="">What I specialize in</div>
+  <h2>Three things I do <em>best.</em></h2>
+  <div class="svc top3">
+    <div class="ph"><img src="img/panel-after.jpg" alt="New electrical panel"><span class="num">01</span><div class="cap">Major panel upgrades<small>Old fuse box, maxed-out panel, adding an EV charger</small></div></div>
+    <div class="ph"><img src="img/onyx-island.jpg" alt="Backlit onyx island" style="object-position:40% center"><span class="num">02</span><div class="cap">Custom builds &amp; remodels<small>New custom homes and big remodels, wired like art</small></div></div>
+    <div class="ph"><img src="img/night-call.jpg" alt="Night emergency call"><span class="num">03</span><div class="cap">Emergency calls<small>Lights out? Call me. I pick up.</small></div></div>
   </div>
 </section>
 
-<!-- 5 · DIVIDER -->
-<section class="slide s-div" data-sec="2" data-dark>
+<!-- 5 · #1 PANEL UPGRADES -->
+<section class="slide" data-sec="1">
+  <div class="head-row">
+    <div><div class="kicker"><img class="ki" src="img/icons/service-upgrades.png" alt="">01 &middot; Panel upgrades</div><h2>Out with <em>the old.</em></h2></div>
+    <p class="lead">Major service upgrades. Permitted, inspected and labeled when we leave.</p>
+  </div>
+  <div class="ba big-ba">
+    <div class="ph"><img src="img/panel-before.jpg" alt="Old panel before upgrade"><span class="tag">Before</span></div>
+    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    <div class="ph"><img src="img/panel-after.jpg" alt="New panel after upgrade"><span class="tag red">After</span></div>
+  </div>
+</section>
+
+<!-- 6 · DIVIDER -->
+<section class="slide s-div" data-sec="1" data-dark>
   <div class="bg"><img src="img/onyx-tv-wall.jpg" alt=""></div>
   <div class="in">
-    <div class="kicker"><img class="ki" src="img/icons/custom-work.png" alt="">Custom work</div>
+    <div class="kicker"><img class="ki" src="img/icons/custom-work.png" alt="">02 &middot; Custom builds &amp; remodels</div>
     <h1 class="q">&ldquo;When you get into custom work, the whole electrical is an art.&rdquo;</h1>
     <p class="lead"><span class="attrib">Losi</span></p>
   </div>
 </section>
 
-<!-- 6 · BACKLIT STONE -->
-<section class="slide" data-sec="2">
+<!-- 7 · BACKLIT STONE -->
+<section class="slide" data-sec="1">
   <div class="head-row">
     <div><div class="kicker"><img class="ki" src="img/icons/residential.png" alt="">Custom residential</div><h2>Making things <em>glow.</em></h2></div>
     <p class="lead">Backlit onyx walls and a lit-up island. You won&rsquo;t find a single wire.</p>
@@ -335,8 +368,8 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
   </div>
 </section>
 
-<!-- 7 · PLANNED LIGHTING -->
-<section class="slide" data-sec="2">
+<!-- 8 · PLANNED LIGHTING -->
+<section class="slide" data-sec="1">
   <div class="head-row">
     <div><div class="kicker"><img class="ki" src="img/icons/lighting.png" alt="">Designing lighting</div><h2>Light it up <em>right.</em></h2></div>
     <p class="lead">I love designing lighting. Where it lands, what it&rsquo;s for, no wires tangled everywhere.</p>
@@ -348,45 +381,10 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
   </div>
 </section>
 
-<!-- 8 · COMMERCIAL BUILD-OUT -->
-<section class="slide" data-sec="2">
+<!-- 9 · ON THE JOB -->
+<section class="slide" data-sec="1">
   <div class="head-row">
-    <div><div class="kicker"><img class="ki" src="img/icons/commercial.png" alt="">Commercial build-outs</div><h2>Bare walls <em>&rarr; open doors.</em></h2></div>
-    <p class="lead">Restaurants, gyms and showrooms. Wired up and ready for opening day.</p>
-  </div>
-  <div class="ba">
-    <div class="ph"><img src="img/buildout-before.jpg" alt="Empty commercial space before"><span class="tag">Before</span></div>
-    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-    <div class="ph" style="flex:1.25"><img src="img/restaurant-after.jpg" alt="Finished restaurant"><span class="tag red">After</span></div>
-    <div class="side">
-      <div class="ph"><img src="img/gym-after.jpg" alt="Gym lighting"></div>
-      <div class="ph"><img src="img/showroom-1.jpg" alt="Furniture showroom"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 9 · PANELS & POWER -->
-<section class="slide" data-sec="2">
-  <div class="head-row">
-    <div><div class="kicker"><img class="ki" src="img/icons/service-upgrades.png" alt="">Panels &amp; power</div><h2>Out with <em>the old.</em></h2></div>
-    <p class="lead">New panels, meter banks, generators and battery backup.</p>
-  </div>
-  <div class="ba">
-    <div class="ph"><img src="img/panel-before.jpg" alt="Old panel before upgrade"><span class="tag">Before</span></div>
-    <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-    <div class="ph"><img src="img/panel-after.jpg" alt="New panel after upgrade"><span class="tag red">After</span></div>
-    <div class="ph" style="margin-left:18px"><img src="img/meter-bank.jpg" alt="Commercial meter bank"></div>
-    <div class="side">
-      <div class="ph"><img src="img/generac.jpg" alt="Generac transfer switch"></div>
-      <div class="ph"><img src="img/battery-backup.jpg" alt="Battery backup install"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 10 · ON THE JOB -->
-<section class="slide" data-sec="2">
-  <div class="head-row">
-    <div><div class="kicker"><img class="ki" src="img/icons/emergency.png" alt="">On the job</div><h2 style="white-space:normal">When the lights go out,<br><em>we come to the rescue.</em></h2></div>
+    <div><div class="kicker"><img class="ki" src="img/icons/emergency.png" alt="">03 &middot; Emergency calls</div><h2 style="white-space:normal">When the lights go out,<br><em>we come to the rescue.</em></h2></div>
     <img class="hero-mascot" src="img/mascot.png" alt="MMT Electric mascot">
   </div>
   <div class="collage">
@@ -395,6 +393,20 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
     <div class="ph"><img src="img/on-the-ladder.jpg" alt="Exterior lighting install"></div>
     <div class="ph"><img src="img/ceiling-rough-in.jpg" alt="Commercial ceiling rough-in"></div>
     <div class="ph"><img src="img/network-rack.jpg" alt="Low-voltage and network rack"></div>
+  </div>
+</section>
+
+<!-- 10 · OTHER SERVICES -->
+<section class="slide" data-sec="2">
+  <div class="kicker"><img class="ki" src="img/icons/commercial.png" alt="">Other services</div>
+  <h2>If it runs on power, <em>I got you.</em></h2>
+  <div class="svc">
+    <div class="ph"><img src="img/lit-steps-exterior.jpg" alt=""><div class="cap">Residential<small>Lighting, outlets, rewires, the weird stuff</small></div></div>
+    <div class="ph"><img src="img/restaurant-after.jpg" alt=""><div class="cap">Commercial build-outs<small>Restaurants, gyms, showrooms, offices</small></div></div>
+    <div class="ph"><img src="img/showroom-2.jpg" alt=""><div class="cap">Lighting design<small>Where it lands and what it&rsquo;s for</small></div></div>
+    <div class="ph"><img src="img/generac.jpg" alt=""><div class="cap">Generators &amp; battery backup<small>Keep the power on</small></div></div>
+    <div class="ph"><img src="img/meter-bank.jpg" alt=""><div class="cap">Meter banks<small>Multi-unit and commercial</small></div></div>
+    <div class="ph"><img src="img/network-rack.jpg" alt=""><div class="cap">Low voltage &amp; network<small>Data, racks and clean runs</small></div></div>
   </div>
 </section>
 
@@ -421,11 +433,15 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
       <div class="contact">
         <div><span>Call or text me</span><b><a href="tel:+15108252513">510-825-2513</a></b></div>
         <div><span>Email</span><b><a href="mailto:losi@mmt-electric.com">losi@mmt-electric.com</a></b></div>
-        <div><span>Web</span><b>mmt-electric.com</b></div>
+        <div><span>Web</span><b><a href="https://mmt-electric.com" target="_blank" rel="noopener">mmt-electric.com</a></b></div>
         <div><span>License</span><b>CSLB #1002637</b></div>
       </div>
     </div>
-    <div class="r"><img src="img/lit-stairs.jpg" alt=""></div>
+    <div class="r site">
+      <div class="site-lbl">The new site is live</div>
+      <div class="browser"><div class="bbar"><i></i><i></i><i></i><span>mmt-electric.com</span></div><img src="img/site-desktop.jpg" alt="MMT Electric website homepage on desktop"></div>
+      <div class="phone"><img src="img/site-phone-panels.jpg" alt="MMT Electric panel upgrades page on a phone"></div>
+    </div>
   </div>
 </section>
 
@@ -437,7 +453,7 @@ html.m .s-qa .r{height:300px}html.m .s-qa .r .mk{width:170px;right:16px;bottom:1
 <button class="nav-btn" id="fs">Full screen (F)</button>
 
 <script>
-var SECTIONS=['Meet Losi','Services','The work','Referrals','Q&A'];
+var SECTIONS=['Meet Losi','Top 3','Other work','Referrals','Q&A'];
 var deck=document.getElementById('deck');
 var slides=[].slice.call(deck.querySelectorAll('.slide'));
 var idx=0;
