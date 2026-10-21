@@ -843,6 +843,26 @@ body.showui .navbtns{opacity:1}
   .cl .lg.more{grid-column:auto}
   .cl .nums b{font-size:22px}
 }
+
+/* v7 */
+.ind{display:grid;gap:10px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ind small{font:700 11px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.ind .row{display:flex;gap:8px;width:max-content;animation:marq 26s linear infinite}
+.ind .row.r2{animation-direction:reverse;animation-duration:30s}
+.ind .row span{font:700 16px var(--head);background:var(--white);border:2px solid var(--ink);border-radius:999px;padding:7px 14px;white-space:nowrap}
+.ind .row span:nth-child(3n){background:var(--lime)}
+.ind .row span:nth-child(4n){background:var(--blue-soft);border-color:var(--blue)}
+@keyframes marq{to{transform:translateX(-50%)}}
+.cl .nums{grid-template-columns:1fr 1fr}
+.details{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.details b{font:700 12px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-right:4px}
+.details span{font:600 15px var(--head);background:var(--white);border:2px solid var(--ink);border-radius:999px;padding:5px 12px}
+.details span.k{background:var(--lime)}
+.fmts{display:flex;gap:6px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.fmts span{font:700 13px var(--head);border:2px solid var(--ink);border-radius:10px;padding:6px 10px;background:#E8F4F0}
+.fmts em{font-style:normal;font-weight:800}
+.acard p{font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.35}
+.kz .lead{margin-top:10px;font-size:20px;max-width:none}
 </style>
 </head>
 <body>
@@ -877,7 +897,7 @@ body.showui .navbtns{opacity:1}
 </section>
 
 <section class="slide cl dots">
-  <div class="eyebrow rise"><span class="pill">Clients</span>Close to 50 businesses</div>
+  <div class="eyebrow rise"><span class="pill">Clients</span>50+ businesses across the states</div>
   <h2 class="rise d1">Every business comes in at a different stage.</h2>
   <p class="spec rise d2"><b>Mostly trades.</b> Also healthcare and med spas.</p>
   <div class="cols">
@@ -903,12 +923,9 @@ body.showui .navbtns{opacity:1}
     <div class="lg more rise d7">+ more</div>
   </div>
     <div class="side">
-      <div class="nums rise d3"><div><b>~50</b><span>clients so far</span></div><div><b>4+ yrs</b><span>with some clients, a few months with others</span></div><div><b>20</b><span>recurring clients at once, at my busiest</span></div></div>
+      <div class="nums rise d3"><div><b>50+</b><span>clients across the states</span></div><div><b>20</b><span>recurring clients and projects at once</span></div></div>
       <p class="grow rise d4">I'm learning to grow while keeping the quality where it should be.</p>
-      <div class="pf rise d5"><small>Custom portfolio</small><b>Send me a referral and I'll put together work that fits their business.</b>
-        <div class="ba"><div><img src="../img/hp-old-hero.jpg" alt="Before"><span class="t">BEFORE</span></div><em>→</em><div><img src="../img/hp-hero.jpg" alt="After"><span class="t">AFTER</span></div></div>
-        <div class="meta"><span>Fonts: Futura Condensed + DM Sans</span><span>Colors</span><span>Before &amp; after</span></div>
-      </div>
+      <div class="ind rise d5"><small>Industries I've built for</small><div class="row"><span>Roofing</span><span>Plumbing</span><span>Painting</span><span>Electrical</span><span>Towing & roadside</span><span>Landscaping</span><span>Garage doors</span><span>Window cleaning</span><span>Roofing</span><span>Plumbing</span><span>Painting</span><span>Electrical</span><span>Towing & roadside</span><span>Landscaping</span><span>Garage doors</span><span>Window cleaning</span></div><div class="row r2"><span>Home cleaning</span><span>Organizing</span><span>Home care</span><span>Health & wellness</span><span>Med spas</span><span>Mortgage lending</span><span>Comedy</span><span>Business networking</span><span>Marketing</span><span>Home cleaning</span><span>Organizing</span><span>Home care</span><span>Health & wellness</span><span>Med spas</span><span>Mortgage lending</span><span>Comedy</span><span>Business networking</span><span>Marketing</span></div></div>
     </div>
   </div>
 </section>
@@ -961,8 +978,9 @@ body.showui .navbtns{opacity:1}
 <section class="slide s9 dots">
   <div class="eyebrow rise"><span class="pill">The art of a website</span>Sitemap</div>
   <h2 class="rise d1">A real website is a whole map, <span class="hl">not one page.</span></h2>
-  <p class="lead rise d2" style="margin-top:12px">Every page has a job, and people land on different ones depending on where they come from.</p>
+  
   <div class="smap" style="margin-top:20px"><svg viewBox="0 0 1408 480"><path class="in lvl l0" d="M1230 38 C1230 60 704.0 50 704.0 80"/><path class="in lvl l0" d="M950 38 C950 160 985.6000000000001 150 985.6000000000001 180"/><path class="in lvl l0" d="M600 38 C600 60 704.0 50 704.0 80"/><path class="in lvl l0" d="M330 38 C330 160 422.40000000000003 150 422.40000000000003 180"/><path class="in lvl l0" d="M90 38 C90 160 140.8 150 140.8 180"/><path class="lvl l1" d="M704.0 124 C704.0 156 140.8 150 140.8 180"/><path class="lvl l2" d="M140.8 224 L140.8 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 422.40000000000003 150 422.40000000000003 180"/><path class="lvl l2" d="M422.40000000000003 224 L422.40000000000003 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 704.0 150 704.0 180"/><path class="lvl l2" d="M704.0 224 L704.0 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 985.6000000000001 150 985.6000000000001 180"/><path class="lvl l2" d="M985.6000000000001 224 L985.6000000000001 390"/><path class="lvl l1" d="M704.0 124 C704.0 156 1267.2 150 1267.2 180"/><path class="lvl l2" d="M1267.2 224 L1267.2 390"/><g class="src lvl l0"><rect x="1125.0" y="0" width="210" height="38" rx="19"/><text x="1230" y="25" text-anchor="middle">Yelp · directories</text></g><g class="src lvl l0"><rect x="875.0" y="0" width="150" height="38" rx="19"/><text x="950" y="25" text-anchor="middle">AI answers</text></g><g class="src lvl l0"><rect x="485.0" y="0" width="230" height="38" rx="19"/><text x="600" y="25" text-anchor="middle">Instagram · Facebook</text></g><g class="src lvl l0"><rect x="255.0" y="0" width="150" height="38" rx="19"/><text x="330" y="25" text-anchor="middle">Google Maps</text></g><g class="src lvl l0"><rect x="10.0" y="0" width="160" height="38" rx="19"/><text x="90" y="25" text-anchor="middle">Google search</text></g><g class="nd h lvl l0"><rect x="614.0" y="80" width="180" height="44" rx="12"/><text x="704.0" y="108" text-anchor="middle">Home</text></g><g class="nd f lvl l1"><rect x="45.80000000000001" y="180" width="190" height="44" rx="12"/><text x="140.8" y="208" text-anchor="middle">Services</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="260" width="160" height="44" rx="12"/><text x="140.8" y="288" text-anchor="middle">Service A</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="314" width="160" height="44" rx="12"/><text x="140.8" y="342" text-anchor="middle">Service B</text></g><g class="nd f lvl l2"><rect x="60.80000000000001" y="368" width="160" height="44" rx="12"/><text x="140.8" y="396" text-anchor="middle">Service C</text></g><g class="nd f lvl l1"><rect x="327.40000000000003" y="180" width="190" height="44" rx="12"/><text x="422.40000000000003" y="208" text-anchor="middle">Areas</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="260" width="160" height="44" rx="12"/><text x="422.40000000000003" y="288" text-anchor="middle">San Jose</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="314" width="160" height="44" rx="12"/><text x="422.40000000000003" y="342" text-anchor="middle">Campbell</text></g><g class="nd f lvl l2"><rect x="342.40000000000003" y="368" width="160" height="44" rx="12"/><text x="422.40000000000003" y="396" text-anchor="middle">Los Gatos</text></g><g class="nd t lvl l1"><rect x="609.0" y="180" width="190" height="44" rx="12"/><text x="704.0" y="208" text-anchor="middle">About</text></g><g class="nd t lvl l2"><rect x="624.0" y="260" width="160" height="44" rx="12"/><text x="704.0" y="288" text-anchor="middle">Our team</text></g><g class="nd t lvl l2"><rect x="624.0" y="314" width="160" height="44" rx="12"/><text x="704.0" y="342" text-anchor="middle">Reviews</text></g><g class="nd t lvl l2"><rect x="624.0" y="368" width="160" height="44" rx="12"/><text x="704.0" y="396" text-anchor="middle">Gallery</text></g><g class="nd t lvl l1"><rect x="890.6000000000001" y="180" width="190" height="44" rx="12"/><text x="985.6000000000001" y="208" text-anchor="middle">Resources</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="260" width="160" height="44" rx="12"/><text x="985.6000000000001" y="288" text-anchor="middle">Blog</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="314" width="160" height="44" rx="12"/><text x="985.6000000000001" y="342" text-anchor="middle">FAQ</text></g><g class="nd t lvl l2"><rect x="905.6000000000001" y="368" width="160" height="44" rx="12"/><text x="985.6000000000001" y="396" text-anchor="middle">Guides</text></g><g class="nd c lvl l1"><rect x="1172.2" y="180" width="190" height="44" rx="12"/><text x="1267.2" y="208" text-anchor="middle">Contact</text></g><g class="nd c lvl l2"><rect x="1187.2" y="260" width="160" height="44" rx="12"/><text x="1267.2" y="288" text-anchor="middle">Get a quote</text></g><g class="nd c lvl l2"><rect x="1187.2" y="314" width="160" height="44" rx="12"/><text x="1267.2" y="342" text-anchor="middle">Book online</text></g><g class="nd c lvl l2"><rect x="1187.2" y="368" width="160" height="44" rx="12"/><text x="1267.2" y="396" text-anchor="middle">Thank you</text></g><g class="nd u lvl l3"><rect x="16.0" y="432" width="161.5" height="44" rx="12"/><text x="96.75" y="460" text-anchor="middle">Privacy policy</text></g><g class="nd u lvl l3"><rect x="189.5" y="432" width="161.5" height="44" rx="12"/><text x="270.25" y="460" text-anchor="middle">Terms</text></g><g class="nd u lvl l3"><rect x="363.0" y="432" width="161.5" height="44" rx="12"/><text x="443.75" y="460" text-anchor="middle">Cookie consent</text></g><g class="nd u lvl l3"><rect x="536.5" y="432" width="161.5" height="44" rx="12"/><text x="617.25" y="460" text-anchor="middle">CA privacy (CCPA)</text></g><g class="nd u lvl l3"><rect x="710.0" y="432" width="161.5" height="44" rx="12"/><text x="790.75" y="460" text-anchor="middle">Accessibility</text></g><g class="nd u lvl l3"><rect x="883.5" y="432" width="161.5" height="44" rx="12"/><text x="964.25" y="460" text-anchor="middle">Redirects</text></g><g class="nd u lvl l3"><rect x="1057.0" y="432" width="161.5" height="44" rx="12"/><text x="1137.75" y="460" text-anchor="middle">404 page</text></g><g class="nd u lvl l3"><rect x="1230.5" y="432" width="161.5" height="44" rx="12"/><text x="1311.25" y="460" text-anchor="middle">sitemap.xml</text></g></svg></div>
+  <div class="details rise d3"><b>Little details</b><span class="k">Search Console, so Google indexes it</span><span class="k">Google Analytics</span><span>Favicon</span><span>Title tags</span><span>Social sharing preview</span><span>Page speed</span></div>
   <div class="legend rise d3"><span><i style="background:#fff;border:2.5px dashed var(--blue)"></i>Where people come in</span><span><i style="background:var(--lime)"></i>Gets found</span><span><i style="background:var(--blue-soft);border-color:var(--blue)"></i>Builds trust</span><span><i style="background:var(--ink)"></i>Gets the call</span><span><i style="background:#fff;border-color:var(--line)"></i>Compliance + behind the scenes</span></div>
 </section>
 
@@ -978,16 +996,14 @@ body.showui .navbtns{opacity:1}
       </div>
       <div class="jstats">
         <div class="js on rise d4"><b>70 → 240</b><span>five-star Google reviews</span></div>
-        <div class="js rise d5"><b>~6×</b><span>Google impressions in 9 months</span></div>
+        <div class="js rise d5"><b>1 look</b><span>across site, email, social and print</span></div>
         <div class="js rise d6"><b>4 years</b><span>and still growing together</span></div>
       </div>
     </div>
     <div class="aboard">
       <div class="rebrand rise d2"><div class="lgx old"><img src="../img/logo-adapt-old.jpg" alt="Previous Adapt logo"></div><span class="arr">→</span><div class="lgx new"><img src="../img/logo-adapt-h.jpg" alt="Current Adapt logo"></div></div>
       <div class="acard rise d3"><small>Google reviews</small><div class="rv"><b class="cnt" data-from="70" data-to="240">240</b><span>★★★★★</span></div><div class="rbar"><i></i></div><div style="font-size:14px;color:var(--ink-2);margin-top:8px">Review campaigns after every visit</div></div>
-      <div class="acard rise d4"><small>Google impressions · 9 months</small>
-        <svg class="graph" viewBox="0 0 300 96" preserveAspectRatio="none"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#004BFF" stop-opacity=".22"/><stop offset="1" stop-color="#004BFF" stop-opacity="0"/></linearGradient></defs>
-        <path class="area" d="M0 88 C40 86 60 82 90 76 S150 64 180 50 S240 22 300 6 L300 96 L0 96Z"/><path class="ln" d="M0 88 C40 86 60 82 90 76 S150 64 180 50 S240 22 300 6"/></svg></div>
+      <div class="acard rise d4"><small>Campaigns that bring patients back</small><div class="fmts"><span>Website</span><em>→</em><span>Email</span><em>→</em><span>Text</span><em>→</em><span>Social</span><em>→</em><span>Flyer</span></div><p>Same info from the site, in different forms. Same fonts, colors and look, so people know it's them.</p></div>
       <div class="acard rise d5" style="grid-column:1/-1"><small>Leads → CRM → booked</small><div class="crm"><span class="on">New lead</span><em>→</em><span class="on">Follow-up</span><em>→</em><span class="on">Booked</span><em>→</em><span>Rebooked</span></div><div class="swr"><i style="background:#1C7460"></i><i style="background:#66BFAB"></i><i style="background:#fff"></i><span style="font-size:13px;color:var(--ink-2);align-self:center">Brand colors on every piece</span></div></div>
       <div class="aposts">
         <div class="ph rise d5"><img src="../img/social-adapt-1.jpg" alt="Adapt social post"></div>
@@ -1016,7 +1032,7 @@ body.showui .navbtns{opacity:1}
 
 <section class="slide s17 rolesS dots">
   <div class="eyebrow rise"><span class="pill">Who's behind it</span>More than a website</div>
-  <h2 class="rise d1">You're not just getting a website.</h2>
+  <h2 class="rise d1">Why people aren't getting <span class="hl">“just a website”</span> with me.</h2>
   <div class="roles">
     <div class="role rise d1"><i>Direction</i><b>Strategy &amp; tone</b><span>What you need next, how you should sound, how it should feel.</span></div>
     <div class="role rise d2"><i>Brand</i><b>Brand guide</b><span>Logo, colors and fonts, so everything matches.</span></div>
@@ -1024,7 +1040,7 @@ body.showui .navbtns{opacity:1}
     <div class="role rise d4"><i>Design</i><b>Web design</b><span>Desktop and mobile, built around your main goal.</span></div>
     <div class="role rise d4"><i>Build</i><b>Development</b><span>Fast, secure, forms that work, tracking set up.</span></div>
     <div class="role rise d5"><i>Google</i><b>SEO &amp; local</b><span>Google profile, reviews, pages for each service and area.</span></div>
-    <div class="role rise d6"><i>Keeping it moving</i><b>Project management</b><span>Basil keeps every project on schedule.</span></div>
+    <div class="role rise d6"><i>Keeping it moving</i><b>Project management</b><span>Every project stays organized and on schedule.</span></div>
     <div class="role all rise d7"><i style="color:var(--ink)">All of it</i><b>One person to call: me.</b><span>A team I've trained for years, and I'm hands-on in every project.</span></div>
   </div>
   <div class="foot"><span>Kaizen Agency</span><span>12</span></div>
@@ -1033,6 +1049,7 @@ body.showui .navbtns{opacity:1}
 <section class="slide kz dots">
   <div class="eyebrow rise"><span class="pill">Examples of the process</span>Kaizen Agency</div>
   <h2 class="rise d1">What the process looks like, on my own brand.</h2>
+  <p class="lead rise d2">Many times I have to recreate this, because people come to me with nothing but an old logo. This is what it takes to build a cohesive brand online.</p>
   <div class="kgrid">
     <div class="ph k1 rise d2"><img src="../img/kz-primary.jpg" alt="Kaizen primary logo"><span class="lbl">Logo system</span></div>
     <div class="ph k2 rise d3"><img src="../img/kz-icons.jpg" alt="Kaizen icon versions"><span class="lbl">Icon + favicon</span></div>
@@ -1067,7 +1084,6 @@ body.showui .navbtns{opacity:1}
       </ul>
     </div>
   </div>
-  <div class="howl rise d5"><b>How I've grown:</b> every client so far came from a referral or found me online. I've never cold-called someone saying "I already built your site, call me to see it," and I've never typed one AI prompt and said "here it is."</div>
   <div class="foot"><span>From my launch checklist</span><span>15</span></div>
 </section>
 
@@ -1110,6 +1126,7 @@ body.showui .navbtns{opacity:1}
     </div>
   </div>
 </section>
+
 
 
 
