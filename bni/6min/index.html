@@ -670,6 +670,114 @@ p{margin:0}
   .kz .kgrid{display:flex;flex-direction:column}
   .kz .k1,.kz .k2,.kz .k5{height:auto;aspect-ratio:auto}.kz .ph img{height:auto}
 }
+
+/* v3 */
+body,.viewport{background:var(--paper)!important}
+.stage{box-shadow:none!important}
+.slide.blank{background:var(--paper)}
+.slide.blank::before{background-image:radial-gradient(rgba(17,17,17,.10) 2px,transparent 2.4px)}
+.navbtns{opacity:0;transition:opacity .3s}
+body.showui .navbtns{opacity:1}
+.foot{display:none}
+.aboutlogo{display:block;width:340px;margin-bottom:26px}
+/* why websites */
+.whyw .sites{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:28px}
+.whyw .browser img{aspect-ratio:1040/600}
+.whyw .cap{font-size:19px}
+.whyw .cap small{font-size:16px;color:var(--blue);font-weight:700}
+.whyw .three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.whyw .three div{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:16px 20px;font-size:18px;line-height:1.4;color:var(--ink-2)}
+.whyw .three div:last-child{background:var(--lime);color:var(--ink)}
+.whyw .three b{display:block;font:800 22px var(--head);color:var(--ink);margin-bottom:4px}
+/* traffic spacing */
+.own p{margin-top:22px!important}
+.own{margin-bottom:10px}
+.tr .lead{margin-top:12px;font-size:22px}
+.tr .srcs{margin-top:22px}
+.tr .flow{height:70px}
+/* stages */
+.s5 .step:nth-child(1){height:280px}.s5 .step:nth-child(2){height:330px}.s5 .step:nth-child(3){height:400px}.s5 .step:nth-child(4){height:500px}.s5 .step:nth-child(5){height:590px}
+.bm{display:inline-block;align-self:flex-start;font:700 11px var(--display);letter-spacing:.06em;text-transform:uppercase;background:var(--blue);color:#fff;border-radius:999px;padding:4px 10px;margin-top:2px}
+/* adapt logo */
+.aboard .rebrand{display:grid;grid-template-columns:.8fr auto 1.6fr;gap:14px;align-items:center}
+.aboard .rebrand .lgx{height:110px}
+.aboard .rebrand .lgx img{height:70px}
+.aboard .rebrand .lgx.new img{height:84px;max-width:100%}
+/* home pros brand */
+.hpb .cols{flex:1;display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;margin-top:22px;min-height:0}
+.hpb .panel{background:var(--white);border:3px solid var(--ink);border-radius:20px;padding:16px;box-shadow:7px 7px 0 var(--ink);display:flex;flex-direction:column;gap:12px}
+.hpb .panel.before{box-shadow:7px 7px 0 var(--line);border-color:#9a9c94}
+.hpb .tagk{align-self:flex-start;font:700 12px var(--display);letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--ink);border-radius:999px;padding:4px 12px;background:var(--lime)}
+.hpb .before .tagk{background:#eee}
+.hpb .before img{width:100%;display:block;border-radius:10px;border:2px solid var(--line)}
+.hpb .before .why{font-size:16px;color:var(--ink-2);line-height:1.4}
+.hpb .after .lgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hpb .after .lgs img{width:100%;border-radius:10px;border:2px solid var(--line);display:block}
+.hpb .row3{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hpb .mini{border:2px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--ink-2)}
+.hpb .mini b{display:block;font:900 24px/1 "Arial Narrow",var(--head);font-stretch:condensed;text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+.hpb .mini .sw{display:flex;gap:6px;margin-bottom:6px}.hpb .mini .sw i{flex:1;height:34px;border-radius:8px;border:2px solid var(--ink)}
+.hpb .nx{display:grid;grid-template-columns:150px 1fr 120px;gap:14px;align-items:center;background:var(--lime-soft);border:3px solid var(--ink);border-radius:16px;padding:12px 14px}
+.hpb .nx img{width:100%;display:block;border-radius:10px;border:2px solid var(--line);background:#fff}
+.hpb .nx p{font:600 16px/1.35 var(--head)}
+/* home pros backend */
+.hpx .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:22px;align-items:start}
+.calc2{background:var(--white);border:3px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;cursor:default}
+.calc2 .in{padding:20px;display:flex;flex-direction:column;gap:12px}
+.calc2 small{font:700 11px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.calc2 .svc{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.calc2 button{font:700 15px var(--head);border:2px solid var(--line);background:var(--paper);border-radius:12px;padding:10px;cursor:pointer;text-align:left}
+.calc2 button.sel{border-color:var(--ink);background:var(--lime)}
+.calc2 .qty{display:flex;align-items:center;gap:12px}
+.calc2 .qty button{width:40px;height:40px;text-align:center;padding:0;font-size:20px}
+.calc2 .qty b{font:700 26px var(--display);min-width:30px;text-align:center}
+.calc2 label{display:flex;gap:10px;align-items:center;font:600 15px var(--body);cursor:pointer}
+.calc2 label input{width:20px;height:20px;accent-color:#2D2D2D}
+.calc2 .out{background:#2D2D2D;color:#fff;padding:20px;display:flex;flex-direction:column;gap:10px}
+.calc2 .out small{color:#c9cbc2}
+.calc2 .tot{font:800 64px/1 "Arial Narrow",var(--head);font-stretch:condensed;color:#C2D841}
+.calc2 .lines{font-size:14px;color:#e4e4dc;display:grid;gap:4px;border-top:1px solid #555;padding-top:10px}
+.calc2 .lines div{display:flex;justify-content:space-between}
+.calc2 .go{margin-top:auto;background:#C2D841;color:#111;border:none;border-radius:999px;font:800 15px var(--head);padding:13px;text-align:center}
+.calc2 .note{font-size:11px;color:#a9aba2;transform:none;background:none;border:none;box-shadow:none;padding:0}
+.pipe{display:grid;gap:12px}
+.pipe .pc{display:flex;gap:14px;align-items:center;background:var(--white);border:3px solid var(--ink);border-radius:16px;padding:12px 16px;opacity:.25;transition:opacity .4s,transform .4s;transform:translateX(10px)}
+.pipe .pc.lit{opacity:1;transform:none}
+.pipe .pc i{flex:none;width:40px;height:40px;border-radius:12px;background:var(--lime);border:2.5px solid var(--ink);display:grid;place-items:center;font-style:normal;font-size:19px}
+.pipe .pc b{display:block;font:800 19px var(--head)}
+.pipe .pc span{font-size:15px;color:var(--ink-2)}
+.pipe .lead2{font:600 17px var(--head);color:var(--ink-2);margin-bottom:2px}
+.hpx .mob{display:flex;gap:14px;align-items:center;margin-top:16px}
+.hpx .mob .mph2{width:120px;height:250px;border:3px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:6px 6px 0 var(--lime);flex:none}
+.hpx .mob .mph2 img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hpx .mob p{font-size:17px;color:var(--ink-2);line-height:1.4}
+.howl{margin-top:26px;background:var(--white);border:3px dashed var(--ink);border-radius:18px;padding:16px 22px;font-size:19px;line-height:1.45;color:var(--ink-2)}
+.howl b{color:var(--ink);font-family:var(--head)}
+.pipe .pc.data{background:var(--lime-soft)}
+.pipe .pc{padding:10px 14px}.pipe .pc b{font-size:18px}.pipe .pc span{font-size:14px}
+/* who + hear */
+.wh .cols{flex:1;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;margin-top:22px;align-items:start}
+.wh .refs3{grid-template-columns:1fr;gap:12px;margin-top:0}
+.wh .quotes{grid-template-columns:1fr 1fr;gap:14px;margin-top:0}
+.wh .qt{padding:16px 18px}.wh .qt b{font-size:20px}.wh .qt b:before{font-size:40px;margin-bottom:4px}
+/* close + ask */
+.s18 h1{font-size:76px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font:700 15px var(--head);background:var(--white);border:2px solid var(--ink);border-radius:999px;padding:6px 12px}
+.introl{margin-top:22px;font:700 13px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+@media (max-width:700px), (orientation:portrait) and (max-width:1000px){
+  .navbtns{opacity:1}
+  .aboutlogo{width:240px}
+  .whyw .sites,.whyw .three{grid-template-columns:1fr}
+  .s5 .step:nth-child(n){height:auto}
+  .aboard .rebrand{grid-template-columns:1fr auto 1.4fr}.aboard .rebrand .lgx{height:80px}.aboard .rebrand .lgx img,.aboard .rebrand .lgx.new img{height:50px}
+  .hpb .cols,.hpx .cols,.wh .cols{display:flex;flex-direction:column}
+  .hpb .nx{grid-template-columns:1fr}
+  .calc2{grid-template-columns:1fr}.calc2 .tot{font-size:48px}
+  .hpx .mob .mph2{width:100px;height:200px}
+  .wh .quotes{grid-template-columns:1fr}
+  .s18 h1{font-size:40px}
+}
 </style>
 </head>
 <body>
@@ -682,23 +790,10 @@ p{margin:0}
 <!-- 1 TITLE -->
 <section class="slide blank"></section>
 
-<section class="slide s1">
-  <div class="l">
-    <div class="logo rise"><span class="pillbtn">KAIZEN AGENCY</span>
-      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#111" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="#111" stroke-width="2"/><path d="M12 12 L36 22 L25 25 L30 36 L26 38 L21 27 L14 34 Z" fill="#111"/></svg></div>
-    <h1 class="rise d1">Your website should <span class="blue">grow up</span> with your business.</h1>
-    <div class="meta rise d2"><b>Daisy</b><i></i><span>Kaizen Agency</span><i></i><span>Website development</span></div>
-  </div>
-  <div class="r" aria-hidden="true">
-    <div class="browser tilt b1 rise d2"><div class="bar"><i></i><i></i><i></i><span>adaptchiropracticwellness.com</span></div><img src="../img/site-adapt.jpg" alt=""></div>
-    <div class="browser tilt b2 rise d3"><div class="bar"><i></i><i></i><i></i><span>sammyobeid.com</span></div><img src="../img/site-sammy.jpg" alt=""></div>
-    <div class="browser tilt b3 rise d4"><div class="bar"><i></i><i></i><i></i><span>falcon-roofing.com</span></div><img src="../img/site-falcon.jpg" alt=""></div>
-  </div>
-</section>
-
 <section class="slide s2 dots">
   <div class="wrap">
     <div>
+      <img class="aboutlogo rise" src="../img/kz-primary.jpg" alt="Kaizen Agency logo">
       <div class="eyebrow rise"><span class="pill">About me</span>Hi, I'm Daisy</div>
       <h2 class="rise d1">Kaizen means <span class="blue">continuous improvement.</span></h2>
       <p class="lead rise d2" style="margin-top:20px">That's what I want for my life, my business, and the businesses I work with. We grow together. We rise together.</p>
@@ -715,58 +810,25 @@ p{margin:0}
   <div class="foot"><span>Kaizen Agency</span><span>03</span></div>
 </section>
 
-<section class="slide s3">
-  <div class="eyebrow rise"><span class="pill">Clients</span>Businesses I've worked with</div>
-  <h2 class="rise d1">Every business comes in at a different stage.</h2>
-  <p class="spec rise d2"><b>Mostly trades.</b> Also healthcare, med spas and <em>apparently, comedians.</em></p>
-  <div class="logos">
-    <div class="lg rise d1"><img src="../img/logo-adapt.jpg" alt="Adapt"></div>
-    <div class="lg dk rise d1"><img src="../img/logo-falcon.jpg" alt="Falcon Roofing"></div>
-    <div class="lg rise d1"><img src="../img/logo-sunwest.jpg" alt="Sunwest Painting"></div>
-    <div class="lg rise d2"><img src="../img/logo-siliconpro.jpg" alt="Silicon Pro Plumbing"></div>
-    <div class="lg rise d2"><img src="../img/logo-mmt.jpg" alt="MMT Electric"></div>
-    <div class="lg rise d2"><img src="../img/logo-johnny.jpg" alt="Johnny Windows"></div>
-    <div class="lg dk rise d3"><img src="../img/logo-motorbody.jpg" alt="Motor Body Company"></div>
-    <div class="lg dk rise d3"><img src="../img/logo-bryan.jpg" alt="Bryan Knows Lending"></div>
-    <div class="lg rise d3"><img src="../img/logo-comforcare.jpg" alt="ComForCare Home Care"></div>
-    <div class="lg dk rise d3"><img src="../img/logo-lova.jpg" alt="LOVA"></div>
-    <div class="lg rise d4"><img src="../img/logo-homepros.jpg" alt="Home Pros"></div>
-    <div class="lg dk rise d4"><img src="../img/logo-organizingpros.jpg" alt="Organizing Pros"></div>
-    <div class="lg rise d4"><img src="../img/logo-nexus.jpg" alt="Nexus Networking"></div>
-    <div class="lg rise d4"><img src="../img/logo-americasgarage.jpg" alt="America's Garage Doors"></div>
-    <div class="lg gg rise d5"><img src="../img/logo-growthgrabber.jpg" alt="Growth Grabber"></div>
-    <div class="lg bl rise d5"><img src="../img/logo-trustedtrades.jpg" alt="Trusted Trades"></div>
-    <div class="lg rise d5"><img src="../img/logo-alongi.jpg" alt="Alongi Brothers"></div>
-    <div class="lg dk rise d6"><img src="../img/logo-jdh.jpg" alt="JDH Garden Services"></div>
-    <div class="lg sky rise d6"><img src="../img/logo-sammy.jpg" alt="Sammy Obeid"></div>
-    <div class="lg more rise d7">+ more</div>
+<section class="slide whyw dots">
+  <div class="eyebrow rise"><span class="pill">Why websites?</span>Why I do this</div>
+  <h2 class="rise d1">Every business uses its website <span class="hl">differently.</span></h2>
+  <div class="sites">
+    <div class="rise d2"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>sammyobeid.com</span></div><img src="../img/site-sammy.jpg" alt="Sammy Obeid website"></div><div class="cap">A comedian <small>Sells tickets, grows his list</small></div></div>
+    <div class="rise d3"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>falcon-roofing.com</span></div><img src="../img/site-falcon.jpg" alt="Falcon Roofing website"></div><div class="cap">A roofer <small>Gets estimate requests</small></div></div>
+    <div class="rise d4"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>siliconproplumbing.com</span></div><img src="../img/site-siliconpro.jpg" alt="Silicon Pro Plumbing website"></div><div class="cap">A plumber <small>Gets the emergency call</small></div></div>
   </div>
-  <div class="foot"><span>Kaizen Agency</span><span>04</span></div>
+  <div class="three">
+    <div class="rise d4"><b>It's what you own</b>Social, ads and listings can change overnight. Your website is yours.</div>
+    <div class="rise d5"><b>It's how you show up</b>The one place your business looks and sounds exactly like you.</div>
+    <div class="rise d6"><b>It's fun for me</b>I love showcasing people's brands this way, and the technical side is fun too.</div>
+  </div>
 </section>
 
-<section class="slide s4">
-  <div class="eyebrow rise"><span class="pill">Why it matters</span>Your online visibility</div>
-  <div class="wrap">
-    <div>
-      <h2 class="rise d1">What you look like online <span class="hl">matters.</span></h2>
-      <p class="lead rise d2">A lot of the time, we just need to clean up your online visibility. And most of that starts with your website.</p>
-    </div>
-    <div class="phone2 rise d2" aria-hidden="true">
-      <div class="notch"></div>
-      <div class="sb"><span>9:41</span><i></i></div>
-      <div class="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><span class="ph-hint">Search</span><span class="typed">restaurant near me</span><span class="caret"></span><span class="tap"></span></div>
-      <div class="result r1"><div class="t">Another Spot</div><div class="stars">★★★☆☆</div><div class="bar" style="width:80%"></div></div>
-      <div class="result win r2"><div class="t">Your Business Name</div><div class="stars">★★★★★</div><div class="bar" style="width:88%;background:#bccbff"></div><div class="acts"><span class="call">Website</span><span>Call</span><span>Directions</span></div><span class="tap"></span></div>
-      <div class="result r3"><div class="t">Directory Listing</div><div class="stars">★★★★☆</div><div class="bar" style="width:70%"></div></div>
-      <div class="result r4"><div class="t">No Website</div><div class="bar" style="width:50%"></div></div>
-    </div>
-  </div>
-  <div class="foot"><span>Kaizen Agency</span><span>05</span></div>
-</section>
-
-<section class="slide s17 dots">
-  <div class="eyebrow rise"><span class="pill">How people find you</span>Traffic sources</div>
-  <h2 class="rise d1">However they find you, it all lands on <span class="hl">your website.</span></h2>
+<section class="slide s17 tr dots">
+  <div class="eyebrow rise"><span class="pill">Why it matters</span>How people find you</div>
+  <h2 class="rise d1">What you look like online <span class="hl">matters.</span></h2>
+  <p class="lead rise d2">However people find you, it all lands on your website. A lot of the time we just need to clean that up.</p>
   <div class="srcs">
     <div class="src build"><h3><i>01</i>Ads</h3><div class="mini">
       <div class="row me"><span>Your Business Name</span><span class="spons">Sponsored</span></div>
@@ -801,15 +863,15 @@ p{margin:0}
     <div class="step build"><span class="n">Stage 1</span><h3>Landing page</h3><p>Who you are and how to reach you.</p><span class="rec">What I'd start with</span><ul><li>Own your domain</li><li>A clear call button</li></ul></div>
     <div class="step build"><span class="n">Stage 2</span><h3>Funnel</h3><p>One offer, one clear path.</p><span class="rec">Add</span><ul><li>One offer, one form</li><li>Track every lead</li></ul></div>
     <div class="step build"><span class="n">Stage 3</span><h3>Local SEO site</h3><p>A page for each service and city.</p><span class="rec">Add</span><ul><li>Google Business Profile</li><li>A review campaign</li><li>New photos</li></ul></div>
-    <div class="step build"><span class="n">Stage 4</span><h3>Authority site</h3><p>Your story, team, reviews and work.</p><span class="rec">Add</span><ul><li>A CRM or sales process for leads</li><li>Real reviews and work on the site</li></ul></div>
-    <div class="step build"><span class="n">Stage 5</span><h3>Connected</h3><p>Your site, list and CRM working together.</p><span class="rec">Add</span><ul><li>Segment your list</li><li>Email and text campaigns</li><li>Automated follow-up</li></ul></div>
+    <div class="step build"><span class="n">Stage 4</span><h3>Authority site</h3><span class="bm">Branding matters more here</span><p>Your story, team, reviews and work.</p><span class="rec">Add</span><ul><li>A CRM or sales process for leads</li><li>Real reviews and work on the site</li><li>Posting on social media</li></ul></div>
+    <div class="step build"><span class="n">Stage 5</span><h3>Connected</h3><span class="bm">Branding matters most here</span><p>Your site, list and CRM working together.</p><span class="rec">Add</span><ul><li>Segment your list</li><li>Email and text campaigns</li><li>Automated follow-up</li><li>A team managing reviews, directories and posts</li></ul></div>
   </div>
   <div class="ground"></div>
   <div class="foot"><span>Kaizen Agency</span><span>07</span></div>
 </section>
 
 <section class="slide s7 s7b dots">
-  <div class="eyebrow rise"><span class="pill">Story time</span>Adapt · Health &amp; wellness</div>
+  <div class="eyebrow rise"><span class="pill">Example</span>Adapt · Health &amp; wellness</div>
   <div class="journey">
     <div>
       <h2 class="rise d1" style="margin-top:14px">Two rebrands. A few moves. Still growing.</h2>
@@ -825,7 +887,7 @@ p{margin:0}
       </div>
     </div>
     <div class="aboard">
-      <div class="rebrand rise d2"><div class="lgx old"><img src="../img/logo-adapt-old.jpg" alt="Previous Adapt logo"></div><span class="arr">→</span><div class="lgx"><img src="../img/logo-adapt.jpg" alt="Current Adapt logo"></div></div>
+      <div class="rebrand rise d2"><div class="lgx old"><img src="../img/logo-adapt-old.jpg" alt="Previous Adapt logo"></div><span class="arr">→</span><div class="lgx new"><img src="../img/logo-adapt-h.jpg" alt="Current Adapt logo"></div></div>
       <div class="acard rise d3"><small>Google reviews</small><div class="rv"><b class="cnt" data-from="70" data-to="240">240</b><span>★★★★★</span></div><div class="rbar"><i></i></div><div style="font-size:14px;color:var(--ink-2);margin-top:8px">Review campaigns after every visit</div></div>
       <div class="acard rise d4"><small>Google impressions · 9 months</small>
         <svg class="graph" viewBox="0 0 300 96" preserveAspectRatio="none"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#004BFF" stop-opacity=".22"/><stop offset="1" stop-color="#004BFF" stop-opacity="0"/></linearGradient></defs>
@@ -841,6 +903,35 @@ p{margin:0}
     </div>
   </div>
   <div class="foot"><span>Website · Google · CRM · email &amp; text · print · social</span><span>08</span></div>
+</section>
+
+<section class="slide s3">
+  <div class="eyebrow rise"><span class="pill">Clients</span>Businesses I've worked with</div>
+  <h2 class="rise d1">Every business comes in at a different stage.</h2>
+  <p class="spec rise d2"><b>Mostly trades.</b> Also healthcare, med spas and <em>apparently, comedians.</em></p>
+  <div class="logos">
+    <div class="lg rise d1"><img src="../img/logo-adapt.jpg" alt="Adapt"></div>
+    <div class="lg dk rise d1"><img src="../img/logo-falcon.jpg" alt="Falcon Roofing"></div>
+    <div class="lg rise d1"><img src="../img/logo-sunwest.jpg" alt="Sunwest Painting"></div>
+    <div class="lg rise d2"><img src="../img/logo-siliconpro.jpg" alt="Silicon Pro Plumbing"></div>
+    <div class="lg rise d2"><img src="../img/logo-mmt.jpg" alt="MMT Electric"></div>
+    <div class="lg rise d2"><img src="../img/logo-johnny.jpg" alt="Johnny Windows"></div>
+    <div class="lg dk rise d3"><img src="../img/logo-motorbody.jpg" alt="Motor Body Company"></div>
+    <div class="lg dk rise d3"><img src="../img/logo-bryan.jpg" alt="Bryan Knows Lending"></div>
+    <div class="lg rise d3"><img src="../img/logo-comforcare.jpg" alt="ComForCare Home Care"></div>
+    <div class="lg dk rise d3"><img src="../img/logo-lova.jpg" alt="LOVA"></div>
+    <div class="lg rise d4"><img src="../img/logo-homepros.jpg" alt="Home Pros"></div>
+    <div class="lg dk rise d4"><img src="../img/logo-organizingpros.jpg" alt="Organizing Pros"></div>
+    <div class="lg rise d4"><img src="../img/logo-nexus.jpg" alt="Nexus Networking"></div>
+    <div class="lg rise d4"><img src="../img/logo-americasgarage.jpg" alt="America's Garage Doors"></div>
+    <div class="lg gg rise d5"><img src="../img/logo-growthgrabber.jpg" alt="Growth Grabber"></div>
+    <div class="lg bl rise d5"><img src="../img/logo-trustedtrades.jpg" alt="Trusted Trades"></div>
+    <div class="lg rise d5"><img src="../img/logo-alongi.jpg" alt="Alongi Brothers"></div>
+    <div class="lg dk rise d6"><img src="../img/logo-jdh.jpg" alt="JDH Garden Services"></div>
+    <div class="lg sky rise d6"><img src="../img/logo-sammy.jpg" alt="Sammy Obeid"></div>
+    <div class="lg more rise d7">+ more</div>
+  </div>
+  <div class="foot"><span>Kaizen Agency</span><span>04</span></div>
 </section>
 
 <section class="slide s8">
@@ -896,26 +987,60 @@ p{margin:0}
   <div class="foot"><span>Kaizen Agency</span><span>12</span></div>
 </section>
 
-<section class="slide hp dots">
-  <div class="wrap">
-    <div>
-      <div class="eyebrow rise"><span class="pill">Coming up</span>Home Pros rebuild</div>
-      <h2 class="rise d1">Rebuilding Home Pros, one brand everywhere.</h2>
-      <div class="guide rise d2">
-        <small>Brand guide</small>
-        <div class="lgs"><img src="../img/hp-logo-light.jpg" alt="Home Pros logo on light"><img src="../img/hp-logo-dark.jpg" alt="Home Pros logo on dark"></div>
-        <div class="sws"><div><i style="background:#C2D841"></i>Lime #C2D841</div><div><i style="background:#2D2D2D"></i>Charcoal #2D2D2D</div><div><i style="background:#F6F6F1"></i>Off-white</div></div>
-        <div class="ty"><div><b>Revive your home</b><span>Headlines: Futura Condensed</span></div><div><b class="dm">Clean and friendly</b><span>Body: DM Sans</span></div></div>
-      </div>
-      <div class="nexus rise d4">Cohesive with Nexus, the owner's other business, so both brands feel like family.</div>
+<section class="slide hpb dots">
+  <div class="eyebrow rise"><span class="pill">Coming up</span>Home Pros rebuild</div>
+  <h2 class="rise d1">Making Home Pros bolder, and <span class="hl">one brand everywhere.</span></h2>
+  <div class="cols">
+    <div class="panel before rise d2"><span class="tagk">Before</span>
+      <img src="../img/hp-old-logo.jpg" alt="Earlier Home Pros logo" style="width:46%">
+      <img src="../img/hp-old-hero.jpg" alt="Earlier Home Pros homepage direction">
+      <p class="why">An earlier direction. Clean, but it didn't match how bold she is in person.</p>
     </div>
-    <div class="hpvis">
-      <div class="browser rise d2"><div class="bar"><i></i><i></i><i></i><span>homepros.casa</span></div><img src="../img/hp-hero.jpg" alt="Home Pros homepage redesign"></div>
-      <div class="ph calc rise d4"><img src="../img/hp-calc.jpg" alt="Home Pros estimate calculator"><span class="lbl">Estimate calculator, priced by project</span></div>
-      <div class="mph rise d3"><img src="../img/hp-m-hero.jpg" alt="Home Pros mobile view"></div>
+    <div class="panel after rise d3"><span class="tagk">After</span>
+      <div class="lgs"><img src="../img/hp-logo-light.jpg" alt="Home Pros logo on light"><img src="../img/hp-logo-dark.jpg" alt="Home Pros logo on dark"></div>
+      <div class="row3">
+        <div class="mini"><b>Revive your home</b>Custom lettering, with the house-H from her original mark</div>
+        <div class="mini"><div class="sw"><i style="background:#C2D841"></i><i style="background:#2D2D2D"></i><i style="background:#F6F6F1"></i></div>Lime, charcoal and off-white. Futura Condensed + DM Sans</div>
+      </div>
+      <div class="nx"><img src="../img/logo-nexus.jpg" alt="Nexus Networking logo"><p>Cohesive with Nexus, her other business. Same colors and feel, so both brands look like family.</p><img src="../img/print-trustedtrades-front.jpg" alt="Nexus Trusted Trades door hanger" style="height:120px;object-fit:cover;object-position:top"></div>
     </div>
   </div>
-  <div class="foot"><span>Kaizen Agency</span><span>13</span></div>
+</section>
+
+<section class="slide hpx dots">
+  <div class="eyebrow rise"><span class="pill">Coming up</span>Home Pros · behind the scenes</div>
+  <h2 class="rise d1">The website does the work <span class="hl">before she picks up the phone.</span></h2>
+  <div class="cols">
+    <div class="rise d2">
+      <div class="calc2 interactive" id="calc2">
+        <div class="in">
+          <small>1. Service</small>
+          <div class="svc"><button class="sel" data-p="68" data-u="room">Carpet</button><button data-p="85" data-u="piece">Upholstery</button><button data-p="90" data-u="area">Tile &amp; grout</button><button data-p="120" data-u="room">House cleaning</button></div>
+          <small>2. How many?</small>
+          <div class="qty"><button data-d="-1">−</button><b id="cq">3</b><button data-d="1">+</button><span id="cu" style="font-size:14px;color:var(--ink-2)">rooms</span></div>
+          <small>3. Add-ons</small>
+          <label><input type="checkbox" id="cs" checked> Stairs / landing (+$129)</label>
+        </div>
+        <div class="out">
+          <small>Estimated total</small>
+          <div class="tot" id="ct">$333</div>
+          <div class="lines"><div><span id="cl1">Carpet · 3 rooms</span><b id="cl1v">$204</b></div><div id="cl2r"><span>Stairs / landing</span><b>$129</b></div></div>
+          <button class="go" id="cgo">Get my exact quote →</button>
+          <span class="note">Sample numbers for the demo</span>
+        </div>
+      </div>
+      <div class="mob"><div class="mph2"><img src="../img/hp-m-calc.jpg" alt="Calculator on mobile"></div><p>Built for the phone first, since that's where most people will use it.</p></div>
+    </div>
+    <div class="pipe rise d3" id="pipe">
+      <div class="lead2">Click "Get my exact quote" and watch:</div>
+      <div class="pc"><i>📥</i><div><b>Inquiry captured</b><span id="pq">Carpet · 3 rooms · est. $333</span></div></div>
+      <div class="pc"><i>🗂️</i><div><b>Saved to her CRM</b><span>Name, number, job and estimate in one place</span></div></div>
+      <div class="pc"><i>📱</i><div><b>She gets a text right away</b><span>"New quote request: Carpet, 3 rooms"</span></div></div>
+      <div class="pc"><i>✉️</i><div><b>The customer gets a confirmation</b><span>So they know someone's on it</span></div></div>
+      <div class="pc"><i>⏰</i><div><b>Follow-up if no reply</b><span>A reminder goes out, so no lead slips through</span></div></div>
+      <div class="pc data"><i>📊</i><div><b>Then the data works for her</b><span>We track which jobs bring in the most revenue, then market more of those in future campaigns.</span></div></div>
+    </div>
+  </div>
 </section>
 
 <section class="slide kz dots">
@@ -955,24 +1080,20 @@ p{margin:0}
       </ul>
     </div>
   </div>
+  <div class="howl rise d5"><b>How I've grown:</b> every client so far came from a referral or found me online. I've never cold-called someone saying "I already built your site, call me to see it," and I've never typed one AI prompt and said "here it is."</div>
   <div class="foot"><span>From my launch checklist</span><span>15</span></div>
 </section>
 
-<section class="slide s17 who dots center">
-  <div class="eyebrow rise"><span class="pill">Who to send me</span>My ideal client</div>
+<section class="slide s17 wh dots">
+  <div class="eyebrow rise"><span class="pill">Who to send me</span>And what you'll hear</div>
   <h2 class="rise d1">A local business that's been around a while, and <span class="hl">the website shows it.</span></h2>
-  <div class="refs3">
+  <div class="cols">
+    <div class="refs3">
     <div class="ref rise d2"><b>Established</b><span>In business 5+ years. The work is steady, the website isn't keeping up.</span></div>
     <div class="ref rise d3"><b>Local</b><span>South Bay and the Bay Area. Mostly trades, healthcare and wellness, but I'm open.</span></div>
     <div class="ref rise d4"><b>Ready for what's next</b><span>Rebranding, moving, adding a service or a new location.</span></div>
   </div>
-  <div class="foot"><span>Kaizen Agency</span><span>16</span></div>
-</section>
-
-<section class="slide s17 dots">
-  <div class="eyebrow rise"><span class="pill">How to spot it</span>What you'll hear</div>
-  <h2 class="rise d1">If you hear one of these, <span class="hl">send them my way.</span></h2>
-  <div class="quotes">
+    <div class="quotes">
     <div class="qt rise d1"><b>I don't even know who has the login to my website.</b><span>Ownership and access</span></div>
     <div class="qt rise d2"><b>My site is so old, I don't like sending people to it.</b><span>Needs a cleanup or refresh</span></div>
     <div class="qt rise d3"><b>We're changing our name / moving / adding a location.</b><span>Rebrand or expansion</span></div>
@@ -980,22 +1101,7 @@ p{margin:0}
     <div class="qt rise d5"><b>I pay someone every month and I'm not sure what they do.</b><span>Wants a second set of eyes</span></div>
     <div class="qt rise d6"><b>We get calls, but the website never brings in leads.</b><span>Site isn't working for them</span></div>
   </div>
-  <div class="foot"><span>Kaizen Agency</span><span>17</span></div>
-</section>
-
-<section class="slide s17 ask dots center">
-  <div class="eyebrow rise"><span class="pill">My ask</span>Who I'd love to meet</div>
-  <h2 class="rise d1">People who already talk to business owners about growing.</h2>
-  <div class="partners">
-    <div class="pp rise d2"><b>Accountants &amp; bookkeepers</b><span>They see who's growing and who's stuck.</span></div>
-    <div class="pp rise d3"><b>Insurance agents</b><span>They hear about new locations and new services first.</span></div>
-    <div class="pp rise d4"><b>Business coaches &amp; consultants</b><span>Their clients are already working on what's next.</span></div>
-    <div class="pp rise d5"><b>Printers &amp; sign shops</b><span>New signs and cards usually mean a new look.</span></div>
-    <div class="pp rise d6"><b>Commercial real estate</b><span>A new space means updating everything online.</span></div>
-    <div class="pp rise d7"><b>Photographers &amp; videographers</b><span>Great photos deserve a site that shows them off.</span></div>
   </div>
-  <div class="best rise d7"><span class="tag">Easy ask</span><div><b>Know someone whose website shows its age? Introduce us.</b><span>No pressure. I'll take a look and tell them where they're at.</span></div></div>
-  <div class="foot"><span>Kaizen Agency</span><span>18</span></div>
 </section>
 
 <section class="slide s18 glow">
@@ -1003,7 +1109,9 @@ p{margin:0}
     <div>
       <div class="eyebrow rise"><span class="pill">Thank you</span></div>
       <h1 class="rise d1" style="margin-top:22px">Your website should grow up with your business.</h1>
-      <div class="close-ask rise d2"><b>Know a business that's been around a while and the website shows it?</b> Introduce us.</div>
+      <div class="introl rise d2">I'd love intros to</div>
+      <div class="chips rise d2"><span>Accountants &amp; bookkeepers</span><span>Insurance agents</span><span>Business coaches</span><span>Printers &amp; sign shops</span><span>Commercial real estate</span><span>Photographers</span></div>
+      <div class="close-ask rise d3"><b>Know a business that's been around a while and the website shows it?</b> Introduce us.</div>
     </div>
     <div class="card contact rise d2">
       <div class="logo"><span class="pillbtn">KAIZEN AGENCY</span></div>
@@ -1019,11 +1127,12 @@ p{margin:0}
 
 
 
+
 </div>
 </div>
 
 <nav class="navbtns" aria-label="Slide controls">
-  <span class="count" id="count">1 / 19</span>
+  <span class="count" id="count">1 / 17</span>
   <button id="prev" aria-label="Previous slide">←</button>
   <button id="next" aria-label="Next slide">→</button>
   <button id="fsBtn">Full screen (F)</button>
@@ -1037,7 +1146,7 @@ p{margin:0}
   const h=parseInt((location.hash||'').replace(/\D/g,''),10);
   if(h>=1&&h<=slides.length) i=h-1;
   const mq=window.matchMedia('(max-width:700px), (orientation:portrait) and (max-width:1000px)');
-  function fit(){ stage.style.transform=mq.matches?'none':'scale('+Math.min(window.innerWidth/1600, window.innerHeight/900)+')'; }
+  function fit(){ stage.style.transform=mq.matches?'none':'scale('+Math.max(window.innerWidth/1600, window.innerHeight/900)+')'; }
   function show(n){
     i=Math.max(0,Math.min(slides.length-1,n));
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
@@ -1064,13 +1173,32 @@ p{margin:0}
     else if(e.key==='f'||e.key==='F')fs();
   });
   // click anywhere: right two-thirds = next, left third = back
-  document.getElementById('viewport').addEventListener('click',e=>{ go(e.clientX>window.innerWidth/3?1:-1); });
+  document.getElementById('viewport').addEventListener('click',e=>{ if(e.target.closest('.interactive'))return; go(e.clientX>window.innerWidth/3?1:-1); });
   let sx=null;
   document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
   document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(dx<0?1:-1);sx=null});
   window.addEventListener('hashchange',()=>{const n=parseInt(location.hash.replace(/\D/g,''),10);if(n&&n-1!==i)show(n-1)});
   window.addEventListener('resize',fit);
   fit(); show(i);
+  // show controls only when the mouse moves
+  let ht;document.addEventListener('mousemove',()=>{document.body.classList.add('showui');clearTimeout(ht);ht=setTimeout(()=>document.body.classList.remove('showui'),1800)});
+  // interactive calculator + inquiry pipeline
+  const c=document.getElementById('calc2');
+  if(c){let p=68,u='room',q=3;
+    const units={room:['room','rooms'],piece:['piece','pieces'],area:['area','areas']};
+    function upd(){const st=document.getElementById('cs').checked?129:0;const base=p*q;
+      document.getElementById('cq').textContent=q;document.getElementById('cu').textContent=units[u][q===1?0:1];
+      const name=c.querySelector('.svc .sel').textContent;
+      document.getElementById('cl1').textContent=name+' · '+q+' '+units[u][q===1?0:1];document.getElementById('cl1v').textContent='$'+base;
+      document.getElementById('cl2r').style.display=st?'flex':'none';document.getElementById('ct').textContent='$'+(base+st);
+      document.getElementById('pq').textContent=name+' · '+q+' '+units[u][q===1?0:1]+' · est. $'+(base+st);
+      document.querySelectorAll('#pipe .pc').forEach(x=>x.classList.remove('lit'));}
+    c.querySelectorAll('.svc button').forEach(b=>b.addEventListener('click',()=>{c.querySelectorAll('.svc button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');p=+b.dataset.p;u=b.dataset.u;upd()}));
+    c.querySelectorAll('.qty button').forEach(b=>b.addEventListener('click',()=>{q=Math.max(1,Math.min(12,q+ +b.dataset.d));upd()}));
+    document.getElementById('cs').addEventListener('change',upd);
+    document.getElementById('cgo').addEventListener('click',()=>{const pcs=[...document.querySelectorAll('#pipe .pc')];pcs.forEach(x=>x.classList.remove('lit'));pcs.forEach((x,k)=>setTimeout(()=>x.classList.add('lit'),250+k*550))});
+    c.addEventListener('keydown',e=>e.stopPropagation());
+  }
 })();
 </script>
 
