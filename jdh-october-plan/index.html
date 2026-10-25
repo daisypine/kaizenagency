@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>JDH November Update</title>
+<title>JDH October Update</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,22 +48,21 @@
   h3{font-size:17px; font-weight:600; margin:26px 0 6px}
   p{margin:0 0 14px}
   .muted{color:var(--muted)}
+  .small{font-size:14px}
 
   .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px}
   .qcard{display:block; background:var(--tint); border:1px solid var(--tint-line); border-radius:10px; padding:16px 18px; text-decoration:none}
   .qcard b{display:block; color:var(--green-dark); font-weight:600; margin-bottom:4px}
   .qcard span{display:block; color:var(--muted); font-size:14px; line-height:1.5}
+  .qcard.wide{grid-column:1 / -1}
 
-  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:22px 0 4px}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:22px 0 4px}
   .stat .n{font-family:Outfit, sans-serif; font-size:30px; font-weight:600; color:var(--green); line-height:1.1}
   .stat .c{font-size:13px; color:var(--muted); line-height:1.45; margin-top:4px}
 
   ul.clean{list-style:none; margin:0 0 14px; padding:0}
   ul.clean li{position:relative; padding-left:22px; margin-bottom:9px}
   ul.clean li:before{content:""; position:absolute; left:0; top:.62em; width:7px; height:7px; border-radius:50%; background:var(--green)}
-
-  ol.steps{margin:0 0 14px; padding-left:20px}
-  ol.steps li{margin-bottom:10px}
 
   .tag{display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
        padding:3px 9px; border-radius:999px; background:var(--tint); color:var(--green-dark); border:1px solid var(--tint-line); vertical-align:2px; margin-left:8px}
@@ -73,8 +72,13 @@
   .callout p{color:#D7E3D9; margin:0}
   .callout a{color:#A9D98B}
 
+  .ask{background:var(--tint); border:1px solid var(--tint-line); border-radius:12px; padding:22px 24px}
+  .ask h3{margin:0 0 8px; font-size:19px}
+  .ask p:last-child{margin-bottom:0}
+
   .month{border-left:3px solid var(--tint-line); padding-left:18px; margin-bottom:22px}
   .month .label{font-family:Outfit,sans-serif; font-weight:600; font-size:15px; color:var(--green-dark); margin-bottom:4px}
+  .month p{margin:0}
 
   .signoff{margin-top:6px}
   .signoff .name{font-family:Outfit,sans-serif; font-weight:600; font-size:17px}
@@ -97,21 +101,21 @@
 <div class="wrap">
   <div class="card">
 
-    <p class="eyebrow">November 2026 update</p>
+    <p class="eyebrow">October 2026 update</p>
     <h1>Your site is live<br>+ the plan through December</h1>
-    <p class="lede">Everything in one place: what got done in October, what I'm working on now, what's coming, and the few things I need from you. Bookmark this one (:</p>
+    <p class="lede">Everything in one place: what got done, your links, what's coming, and the one thing I need from you. I'll update this page each month, so it's worth a bookmark (:</p>
 
     <hr>
 
-    <h2>Quick links</h2>
+    <h2>Your links</h2>
     <div class="grid2">
-      <a class="qcard" href="https://jdhgardenservices.com/">
+      <a class="qcard" href="https://www.jdhgardenservices.com/">
         <b>Your new website</b>
         <span>Live, secure, and the domain is fully in your name now.</span>
       </a>
       <a class="qcard" href="https://g.page/r/CbKdtuYqFN7aEBM/review">
         <b>Ask a customer for a review</b>
-        <span>Send this link to anyone you've just finished a job for. This is the big one right now.</span>
+        <span>Send this to anyone you've just finished a job for. This is the big one right now.</span>
       </a>
       <a class="qcard" href="https://share.google/Kxa1bQuLyVZBX7Uu0">
         <b>Your Google Business Profile</b>
@@ -121,27 +125,31 @@
         <b>Your Yelp page</b>
         <span>159 reviews at 4.5 stars. Worth keeping an eye on and replying to.</span>
       </a>
+      <a class="qcard wide" href="https://www.networksolutions.com/my-account/login">
+        <b>Network Solutions login</b>
+        <span>Where your domain lives. Account 119756442, with Jose as the owner and me as administrative contact.</span>
+      </a>
     </div>
+    <p class="muted small" style="margin-top:14px">Your passwords are in the Bitwarden link in my email. Open it once and save them somewhere safe, since that link expires.</p>
 
     <hr>
 
     <h2>Where you're starting from</h2>
-    <p class="muted">Google Analytics and Search Console only went live this month, so there are no traffic numbers yet. These are the baseline we'll measure against from here.</p>
+    <p class="muted">Google Analytics and Search Console only went live this month, so there are no traffic numbers yet. This is the baseline we'll measure against from here.</p>
     <div class="stats">
       <div class="stat"><div class="n">14</div><div class="c">pages live on the new site</div></div>
-      <div class="stat"><div class="n">4.5</div><div class="c">Yelp rating across 159 reviews</div></div>
+      <div class="stat"><div class="n">159</div><div class="c">Yelp reviews, averaging 4.5 stars</div></div>
       <div class="stat"><div class="n">0</div><div class="c">Google reviews so far</div></div>
-      <div class="stat"><div class="n">40</div><div class="c">pages planned by end of December</div></div>
     </div>
 
     <hr>
 
-    <h2>What got done in October <span class="tag">Done</span></h2>
+    <h2>What's done <span class="tag">Done</span></h2>
 
     <h3>You own everything now</h3>
     <ul class="clean">
       <li>Got access to your domain at Network Solutions, and it's in your name</li>
-      <li>Pointed it at the new website and moved your DNS off Mopro, so you can cancel them whenever you like</li>
+      <li>Pointed it at the new website and moved your DNS off Mopro. You can contact Mopro and cancel the subscription whenever you like, they don't have access to anything of yours now</li>
       <li>Your email moved across with no downtime and nothing changed on your end</li>
       <li>SSL and HTTPS active, so the site is secure and Google treats it properly</li>
     </ul>
@@ -159,74 +167,62 @@
 
     <h3>Legal and privacy</h3>
     <ul class="clean">
-      <li>Privacy Policy, Cookie Policy, Terms &amp; Conditions and Accessibility pages all written and published</li>
+      <li>Privacy Policy, Cookie Policy, Terms &amp; Conditions and Accessibility pages all written and posted, per California rules</li>
       <li>Cookie consent banner set up for California privacy rules</li>
       <li>Worth having a lawyer glance over these when you get a chance. They're a solid starting point, not a substitute for legal review</li>
     </ul>
 
     <h3>Getting you findable</h3>
     <ul class="clean">
-      <li>Google Search Console and Google Analytics connected, so for the first time we can see your traffic and what people search to find you</li>
+      <li>Google Search Console and Google Analytics are both connected now, so for the first time we can actually see your numbers: what people search to find you, and where they go once they land</li>
       <li>Your Google Business Profile had <strong>no website attached at all</strong>. That's now fixed, so people who find you on Google can actually reach your site</li>
       <li>Profile renamed to JDH Garden Services so it matches your license, your Yelp page and your website. Mismatched names hurt how you rank locally</li>
     </ul>
 
     <hr>
 
-    <h2>The one thing that would help most</h2>
+    <h2>One thing worth noting</h2>
     <div class="callout">
       <h3>Your reviews are on the wrong platform</h3>
-      <p>You have 159 reviews at 4.5 stars on Yelp, and zero on Google. Google is where most people look first, so right now that reputation isn't working for you where it counts. Jose, if you send <a href="https://g.page/r/CbKdtuYqFN7aEBM/review">this review link</a> to customers as you finish their jobs, that will move the needle faster than anything else on this page. Happy to set up a QR code your crew can carry, and to run a request through Jobber to the customers already in there.</p>
+      <p>Your Yelp page has 159 reviews at 4.5 stars. Your Google profile has zero, and Google is where most people look first. If you start sending <a href="https://g.page/r/CbKdtuYqFN7aEBM/review">that review link</a> to customers you've just finished with, that would build visibility quickly, faster than anything else on this page. I can assist on Jobber if needed.</p>
     </div>
 
     <hr>
 
-    <h2>What I'm working on now</h2>
+    <h2>The game plan</h2>
+
+    <div class="month">
+      <div class="label">October</div>
+      <p>Finishing the cleanup and getting more pages up. We have the right foundation, now we build on it.</p>
+    </div>
 
     <div class="month">
       <div class="label">November</div>
-      <ul class="clean">
-        <li>New service pages for Irrigation &amp; Drainage, Hardscaping &amp; Patios, and Sod &amp; Drought-Tolerant Landscaping</li>
-        <li>City pages for Menlo Park, Palo Alto and Atherton</li>
-        <li>The Menlo Park backyard job Jose walked me through, written up as a full project page with before and afters</li>
-        <li>First blog posts going up</li>
-      </ul>
+      <p>Continuing with new pages for Irrigation, Hardscaping and Sod, plus city pages to expand into other cities, and blog articles to help support those pages.</p>
     </div>
 
     <div class="month">
       <div class="label">December</div>
-      <ul class="clean">
-        <li>City pages for San Mateo, Mountain View, Woodside and San Carlos</li>
-        <li>Pages for the specific searches that bring in real work, like drainage and paver patios</li>
-        <li>More project write-ups, grouped by the city each job was in</li>
-        <li>Commercial property care page</li>
-      </ul>
+      <p>See what traffic is being brought in and adjust. Help with the Google Business Profile, reviews, and email and text campaigns heading into the new year.</p>
     </div>
 
-    <p class="muted">All of this is per our statement of work. The short version of why: every page is one more specific thing someone can search and find you for. Right now you have one page covering everything, which means you compete for nothing in particular.</p>
+    <p class="muted">This is all per our statement of work. Each page and work piece is one more way for people to find you online, and more visibility means more customers in.</p>
 
     <hr>
 
-    <h2>Two things I need from you</h2>
-    <ol class="steps">
-      <li><strong>Photos, with the city each one was taken in.</strong> Before and afters especially. Jose, the batch you texted is a great start. Every city page needs real local work on it to be credible, so this is what unlocks most of November and December.</li>
-      <li><strong>Access to Jobber.</strong> Your CRM can feed the website's estimate form straight in instead of into an inbox, and it's also where we'd run the review request to your existing customers.</li>
-    </ol>
+    <h2>One thing I need from you</h2>
+    <div class="ask">
+      <h3>Access to Jobber</h3>
+      <p>I can create a form that sends leads from the website straight into Jobber instead of into an inbox. This can be done on your account as well, so I can pay a visit, or you can grant me admin access.</p>
+      <p>I can also assist in asking past clients for Google reviews, or run an email campaign to showcase recent work and maybe a deal for the winter and slow season.</p>
+    </div>
 
     <hr>
 
-    <h2>A few things on me</h2>
-    <p>Not part of what we agreed, but you've been great to work with and I'm coming by the office anyway, so these are included as we go:</p>
-    <ul class="clean">
-      <li>A cleaned-up version of your logo in the same style, with versions sized for print and marketing</li>
-      <li>A QR code your crew can carry to ask for reviews on the spot</li>
-      <li>Help tidying up marketing materials as time allows, like business cards and flyers</li>
-    </ul>
+    <h2>Invoicing</h2>
+    <p>I'll send the invoice this week along with our previous agreement so it's all in one place. If you can have it settled by the end of the month we'll stay right on schedule.</p>
 
-    <hr>
-
-    <h2>Billing and check-ins</h2>
-    <p>I'll send the invoice this week with our previous agreement attached so it's all in one place. If you can have it settled by the end of the month we'll stay right on schedule.</p>
+    <h2 style="margin-top:30px">Meetings</h2>
     <p>I'd also like to meet once a month to keep things moving, and I'm happy to help at the office with whatever you need while I'm there.</p>
 
     <hr>
