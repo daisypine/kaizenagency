@@ -1,63 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Sitemap + hub - Kaizen Basil hub</title><style>
-:root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;--warn:#B5532E}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-a{color:var(--lime-deep);font-weight:700;text-decoration:none;border-bottom:1px solid #cfe08f}
-a:hover{border-bottom-color:var(--lime-deep)}
-.topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
-.topbar-inner{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
-.brand{display:flex;align-items:center;gap:11px;margin-right:auto;border:0;color:#fff}
-.pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
-.brand b{font-size:15px}
-.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)}
-nav{display:flex;flex-wrap:wrap;gap:6px}
-nav a{color:#e9ebe0;border:1px solid #3a3e30;border-radius:9px;padding:6px 11px;font-size:13px;font-weight:600}
-nav a:hover,nav a.on{border-color:var(--lime);color:var(--lime)}
-main{max-width:1000px;margin:0 auto;padding:22px 20px 70px}
-h1{font-size:28px;line-height:1.2;margin:6px 0 8px}
-.lede{color:var(--ink-soft);font-size:16px;margin:0 0 22px;max-width:720px}
-h2{font-size:19px;margin:30px 0 10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px}
-.card h3{margin:0 0 4px;font-size:15.5px}
-.card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
-a.card{display:block;border-bottom:1px solid var(--line);color:var(--ink);font-weight:400}
-a.card:hover{border-color:var(--lime-deep)}
-a.card h3{color:var(--ink)}
-.eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime-deep)}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:0 0 14px}
-.box ul,.box ol{margin:6px 0;padding-left:20px}.box li{margin:4px 0}
-.note{background:#f4f8e3;border:1px solid #cfe08f;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
-.warn{background:#fbf3ef;border:1px solid #e3c7bb;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
-.own{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px}
-.o-d{background:var(--ink);color:var(--lime)}.o-b{background:#e6eefc;color:#2f5fb0}.o-c{background:#f3ead9;color:#8a5a12}
-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:13.5px}
-th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:#eef0e6;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
-td .grp{font-size:11px;color:var(--ink-soft)}
-.prose{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 22px}
-.prose h1{font-size:24px;margin-top:18px}.prose h2{font-size:18px;margin-top:26px;padding-top:12px;border-top:1px solid var(--line)}.prose h3{font-size:15.5px;margin-top:18px}
-.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
-.prose pre{background:#1b1d16;color:#e9ebe0;border-radius:10px;padding:12px 14px;overflow:auto}.prose pre code{background:none;color:inherit}
-.prose li{margin:4px 0}.prose table{margin:10px 0;display:block;overflow-x:auto}.prose code{overflow-wrap:anywhere}.prose{overflow-wrap:anywhere}
-.prompt{background:#1b1d16;border-radius:12px;margin:10px 0 18px;overflow:hidden;border:1px solid #2b2f24}
-.prompt .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;background:#22241c}
-.prompt .ph span{color:var(--lime);font-size:12.5px;font-weight:700}
-.prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
-.prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
-.prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
-.when{font-size:13px;color:var(--ink-soft);margin:-4px 0 6px}
-code{overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
-footer{max-width:1000px;margin:0 auto;padding:0 20px 50px;color:var(--ink-soft);font-size:12.5px}
-@media (max-width:620px){h1{font-size:23px}.prose{padding:4px 16px 18px}table{display:block;overflow-x:auto}}
-</style></head><body>
-<header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="pill">KAIZEN</span><span><small>Basil hub · draft</small><b>Run the agency when Daisy's out</b></span></a>
-<nav><a href="../index.html">Start here</a><a href="../clients.html">Clients</a><a href="../playbooks/" class="on">Playbooks</a><a href="../prompts.html">Prompts</a><a href="../../index.html">Team checklist</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
-<main><p class="eyebrow">Playbook · checklist stage 2 · Sitemap</p>
-<div class="note"><b>Use it with Claude:</b> start a chat and paste <code>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-sitemap-builder.html and follow it for [client]. Ask me questions before you start.</code> This page is a copy of Daisy's <b>kaizen-sitemap-builder</b> skill, rebuilt from it so the team can read it. If something here is wrong, tell Daisy so the skill gets fixed too.</div><div class="prose"><h1>Kaizen Sitemap Builder</h1>
+<title>Sitemap + hub - Kaizen team</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/kz.css"></head>
+<body data-base="../../">
+<header class="bar"><div class="bar-in"><a class="mark" href="../../hub/index.html"><span class="key">KAIZEN</span><span>Team</span></a><nav class="nav" aria-label="Main"><a href="../../hub/index.html">Home</a><a href="../../process/index.html">Process</a><a href="../../hub/clients.html">Clients</a><a href="../../hub/playbooks/index.html" aria-current="page">Playbooks</a><a href="../../hub/prompts.html">Prompts</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
+<main class="wrap narrow"><h1 class="page-title">Sitemap + hub</h1><p class="lede">Playbook for stage 2 · Sitemap. A readable copy of Daisy's <b>kaizen-sitemap-builder</b> skill.</p>
+<div class="callout"><b>Use it with Claude:</b> start a chat and paste <code>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-sitemap-builder.html and follow it for [client]. Ask me questions before you start.</code> If something here is wrong, tell Daisy so the skill gets fixed too.</div><div class="prose"><h1>Kaizen Sitemap Builder</h1>
 <p>Every Kaizen client gets ONE sitemap + project hub: a Google Sheet in the client's own Drive folder, named <code>Sitemap - &lt;Client&gt; (Master)</code>. It is the single source of truth for every page on the site, what's live, what's planned by month, and every link the team needs. Never keep a second sitemap or a side status tab; merge into the master and trash the duplicate (it stays recoverable in Drive trash).</p>
 <p>Reference hubs (copy their look exactly):</p>
 <ul>
@@ -206,6 +155,7 @@ If someone just says "build the sitemap for X", still ask these first. Don't sta
 <p>Record any new lesson in the SOP (Client learnings log) and the relevant skill.</p>
 </li>
 </ul></div></main>
-<footer>Public page: no passwords, keys, client contact details or prices here. Those live in Drive and the workspace. Last built Oct 26, 2026.</footer>
+<footer class="foot">Public page. No passwords, keys, client contact details or prices here; those live in Drive and the workspace.</footer>
+
 <script>document.querySelectorAll(".prompt .copy").forEach(b=>b.addEventListener("click",()=>{const p=b.closest(".prompt").querySelector("pre");if(p&&navigator.clipboard){navigator.clipboard.writeText(p.textContent);b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1300);}}));</script>
 </body></html>

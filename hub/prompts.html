@@ -1,68 +1,17 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Prompts - Kaizen Basil hub</title><style>
-:root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;--warn:#B5532E}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-a{color:var(--lime-deep);font-weight:700;text-decoration:none;border-bottom:1px solid #cfe08f}
-a:hover{border-bottom-color:var(--lime-deep)}
-.topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
-.topbar-inner{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
-.brand{display:flex;align-items:center;gap:11px;margin-right:auto;border:0;color:#fff}
-.pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
-.brand b{font-size:15px}
-.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)}
-nav{display:flex;flex-wrap:wrap;gap:6px}
-nav a{color:#e9ebe0;border:1px solid #3a3e30;border-radius:9px;padding:6px 11px;font-size:13px;font-weight:600}
-nav a:hover,nav a.on{border-color:var(--lime);color:var(--lime)}
-main{max-width:1000px;margin:0 auto;padding:22px 20px 70px}
-h1{font-size:28px;line-height:1.2;margin:6px 0 8px}
-.lede{color:var(--ink-soft);font-size:16px;margin:0 0 22px;max-width:720px}
-h2{font-size:19px;margin:30px 0 10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px}
-.card h3{margin:0 0 4px;font-size:15.5px}
-.card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
-a.card{display:block;border-bottom:1px solid var(--line);color:var(--ink);font-weight:400}
-a.card:hover{border-color:var(--lime-deep)}
-a.card h3{color:var(--ink)}
-.eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime-deep)}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:0 0 14px}
-.box ul,.box ol{margin:6px 0;padding-left:20px}.box li{margin:4px 0}
-.note{background:#f4f8e3;border:1px solid #cfe08f;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
-.warn{background:#fbf3ef;border:1px solid #e3c7bb;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
-.own{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px}
-.o-d{background:var(--ink);color:var(--lime)}.o-b{background:#e6eefc;color:#2f5fb0}.o-c{background:#f3ead9;color:#8a5a12}
-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:13.5px}
-th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:#eef0e6;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
-td .grp{font-size:11px;color:var(--ink-soft)}
-.prose{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 22px}
-.prose h1{font-size:24px;margin-top:18px}.prose h2{font-size:18px;margin-top:26px;padding-top:12px;border-top:1px solid var(--line)}.prose h3{font-size:15.5px;margin-top:18px}
-.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
-.prose pre{background:#1b1d16;color:#e9ebe0;border-radius:10px;padding:12px 14px;overflow:auto}.prose pre code{background:none;color:inherit}
-.prose li{margin:4px 0}.prose table{margin:10px 0;display:block;overflow-x:auto}.prose code{overflow-wrap:anywhere}.prose{overflow-wrap:anywhere}
-.prompt{background:#1b1d16;border-radius:12px;margin:10px 0 18px;overflow:hidden;border:1px solid #2b2f24}
-.prompt .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;background:#22241c}
-.prompt .ph span{color:var(--lime);font-size:12.5px;font-weight:700}
-.prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
-.prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
-.prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
-.when{font-size:13px;color:var(--ink-soft);margin:-4px 0 6px}
-code{overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
-footer{max-width:1000px;margin:0 auto;padding:0 20px 50px;color:var(--ink-soft);font-size:12.5px}
-@media (max-width:620px){h1{font-size:23px}.prose{padding:4px 16px 18px}table{display:block;overflow-x:auto}}
-</style></head><body>
-<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="pill">KAIZEN</span><span><small>Basil hub · draft</small><b>Run the agency when Daisy's out</b></span></a>
-<nav><a href="index.html">Start here</a><a href="clients.html">Clients</a><a href="playbooks/">Playbooks</a><a href="prompts.html" class="on">Prompts</a><a href="../index.html">Team checklist</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
-<main><h1>Prompt library</h1><p class="lede">Copy a prompt, paste it into Claude, fill in the [BRACKETS]. The ones that start with "Read ..." point Claude at a playbook page so it follows the same process Daisy's skills do.</p>
-<div class="warn"><b>Before anything goes to a client or goes live:</b> a person reads it and checks every fact against the client's own words. Never paste passwords, API keys or card details into Claude.</div><h2>Every task</h2><div class="prompt"><div class="ph"><span>Start any Claude chat for a client</span><button class="copy" type="button">Copy</button></div><pre>You&#x27;re helping Kaizen Agency, a web design and local SEO agency for trades and local service businesses (Daisy is the owner, I&#x27;m Basil, her project manager).
+<title>Prompts - Kaizen team</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kz.css"></head>
+<body data-base="../">
+<header class="bar"><div class="bar-in"><a class="mark" href="../hub/index.html"><span class="key">KAIZEN</span><span>Team</span></a><nav class="nav" aria-label="Main"><a href="../hub/index.html">Home</a><a href="../process/index.html">Process</a><a href="../hub/clients.html">Clients</a><a href="../hub/playbooks/index.html">Playbooks</a><a href="../hub/prompts.html" aria-current="page">Prompts</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
+<main class="wrap narrow"><h1 class="page-title">Prompt library</h1><p class="lede">Copy a prompt, paste it into Claude, fill in the [BRACKETS]. The ones that start with "Read ..." point Claude at a playbook page so it follows the same process Daisy's skills do.</p>
+<div class="callout warn"><b>Before anything goes to a client or goes live:</b> a person reads it and checks every fact against the client's own words. Never paste passwords, API keys or card details into Claude.</div><h2 class="sec">Every task</h2><div class="prompt"><div class="ph"><b>Start any Claude chat for a client</b><button class="btn copy" type="button">Copy</button></div><pre>You&#x27;re helping Kaizen Agency, a web design and local SEO agency for trades and local service businesses (Daisy is the owner, I&#x27;m Basil, her project manager).
 Client: [CLIENT]
 Task: [WHAT I NEED]
 Their hub sheet: [HUB LINK]  ·  Copy doc: [COPY DOC LINK]
 How we work: https://daisypine.github.io/kaizenagency/  (team checklist)  and the playbooks at https://daisypine.github.io/kaizenagency/hub/playbooks/
-Rules: real facts only, never invent numbers, licenses, reviews or quotes. Short hyphens only, no long dashes. Ask me questions before you start, then tell me your plan before doing anything.</pre></div><h2>1 · Discovery</h2><div class="prompt"><div class="ph"><span>Kickoff transcript to a one-page brief</span><button class="copy" type="button">Copy</button></div><pre>Here&#x27;s the kickoff call transcript with [CLIENT]. Turn it into a one-page brief:
+Rules: real facts only, never invent numbers, licenses, reviews or quotes. Short hyphens only, no long dashes. Ask me questions before you start, then tell me your plan before doing anything.</pre></div><h2 class="sec">1 · Discovery</h2><div class="prompt"><div class="ph"><b>Kickoff transcript to a one-page brief</b><button class="btn copy" type="button">Copy</button></div><pre>Here&#x27;s the kickoff call transcript with [CLIENT]. Turn it into a one-page brief:
 - What they do (services they DO and DON&#x27;T do, in their words)
 - Service area (exact cities)
 - Best jobs + ideal customer
@@ -72,33 +21,34 @@ Rules: real facts only, never invent numbers, licenses, reviews or quotes. Short
 - Open questions for Daisy
 Only use what&#x27;s in the transcript. Mark anything unclear as [CONFIRM: ...].
 
-[PASTE TRANSCRIPT]</pre></div><div class="prompt"><div class="ph"><span>Audit an existing site</span><button class="copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-site-audit.html and follow it for [CLIENT] ([SITE URL]).
+[PASTE TRANSCRIPT]</pre></div><div class="prompt"><div class="ph"><b>Audit an existing site</b><button class="btn copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-site-audit.html and follow it for [CLIENT] ([SITE URL]).
 I&#x27;ll be the one logged in to WordPress - tell me exactly what to click and what to read back to you.
-Write every finding as a Cleanup Log row: Priority | Item | Where | Status | Owner | Needs OK from | Notes. Most urgent first.</pre></div><h2>2 · Sitemap</h2><div class="prompt"><div class="ph"><span>Build the sitemap + hub</span><button class="copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-sitemap-builder.html and follow it for [CLIENT].
+Write every finding as a Cleanup Log row: Priority | Item | Where | Status | Owner | Needs OK from | Notes. Most urgent first.</pre></div><h2 class="sec">2 · Sitemap</h2><div class="prompt"><div class="ph"><b>Build the sitemap + hub</b><button class="btn copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-sitemap-builder.html and follow it for [CLIENT].
 Ask me the Step 0 questions first. Here&#x27;s what I have: [TRANSCRIPT / EMAILS / GSC EXPORT / COMPETITOR URL].
-Give me the sitemap as a table I can paste into the hub&#x27;s Sitemap tab: # | Phase | Section | Page Title | URL | Template | Status | Primary Keyword | Owner.</pre></div><h2>4 · Copy</h2><div class="prompt"><div class="ph"><span>Write one page of copy</span><button class="copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-copy-doc.html. Using the brief and sitemap row below, write the copy for ONE page: [PAGE NAME + URL].
+Give me the sitemap as a table I can paste into the hub&#x27;s Sitemap tab: # | Phase | Section | Page Title | URL | Template | Status | Primary Keyword | Owner.</pre></div><h2 class="sec">4 · Copy</h2><div class="prompt"><div class="ph"><b>Write one page of copy</b><button class="btn copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-copy-doc.html. Using the brief and sitemap row below, write the copy for ONE page: [PAGE NAME + URL].
 Only use facts from the brief. Leave [CONFIRM: ...] where we don&#x27;t know. Short hyphens only. No made-up testimonials, no homeowner names.
 
 Brief: [PASTE]
-Sitemap row: [PASTE]</pre></div><h2>5 · Build</h2><div class="prompt"><div class="ph"><span>Walk me through the clone reset</span><button class="copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-build-base.html. I just cloned the Kaizen Base for [CLIENT] at [STAGING URL].
-Walk me through the clone-reset section one step at a time. Wait for me to say &quot;done&quot; (or paste what I see) before the next step. Stop and flag anything that doesn&#x27;t match the playbook.</pre></div><div class="prompt"><div class="ph"><span>Pre-launch check</span><button class="copy" type="button">Copy</button></div><pre>Read the &quot;Pre-launch content and form audit&quot; section of https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-build-base.html.
+Sitemap row: [PASTE]</pre></div><h2 class="sec">5 · Build</h2><div class="prompt"><div class="ph"><b>Walk me through the clone reset</b><button class="btn copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-build-base.html. I just cloned the Kaizen Base for [CLIENT] at [STAGING URL].
+Walk me through the clone-reset section one step at a time. Wait for me to say &quot;done&quot; (or paste what I see) before the next step. Stop and flag anything that doesn&#x27;t match the playbook.</pre></div><div class="prompt"><div class="ph"><b>Pre-launch check</b><button class="btn copy" type="button">Copy</button></div><pre>Read the &quot;Pre-launch content and form audit&quot; section of https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-build-base.html.
 Here is the page list and what I see on each page: [PASTE].
-Check for: lorem or placeholder text, &quot;#&quot; links, [CONFIRM] tags, phone links not in tel:+1XXXXXXXXXX format, missing alt text, wrong business name, phone or hours. Give me a fix list, most urgent first.</pre></div><h2>6 · Forms</h2><div class="prompt"><div class="ph"><span>Set up and test a form</span><button class="copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-lead-routing.html. Set up the forms for [CLIENT] with me.
-Ask me the &quot;Ask first&quot; questions, then give me the exact Fluent Forms + FluentSMTP settings to enter, and a test plan (one real test per form from a phone, checked in the client&#x27;s inbox and spam).</pre></div><h2>7 · Monthly</h2><div class="prompt"><div class="ph"><span>A week of Google Business Profile posts</span><button class="copy" type="button">Copy</button></div><pre>Write [NUMBER] Google Business Profile posts for [CLIENT] for the week of [DATE].
+Check for: lorem or placeholder text, &quot;#&quot; links, [CONFIRM] tags, phone links not in tel:+1XXXXXXXXXX format, missing alt text, wrong business name, phone or hours. Give me a fix list, most urgent first.</pre></div><h2 class="sec">6 · Forms</h2><div class="prompt"><div class="ph"><b>Set up and test a form</b><button class="btn copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-lead-routing.html. Set up the forms for [CLIENT] with me.
+Ask me the &quot;Ask first&quot; questions, then give me the exact Fluent Forms + FluentSMTP settings to enter, and a test plan (one real test per form from a phone, checked in the client&#x27;s inbox and spam).</pre></div><h2 class="sec">7 · Monthly</h2><div class="prompt"><div class="ph"><b>A week of Google Business Profile posts</b><button class="btn copy" type="button">Copy</button></div><pre>Write [NUMBER] Google Business Profile posts for [CLIENT] for the week of [DATE].
 Use these real photos/jobs: [DESCRIBE PHOTOS + JOBS].
-Rules: no phone number in the post text, no text overlays on photos, link only to [CLIENT DOMAIN], any offer needs a start and end date. 100-200 words each, plain and friendly, short hyphens only. Suggest which photo goes with each.</pre></div><div class="prompt"><div class="ph"><span>Reply to new reviews</span><button class="copy" type="button">Copy</button></div><pre>Draft replies to these reviews for [CLIENT], in the owner&#x27;s voice: warm, short, specific to what the reviewer said.
+Rules: no phone number in the post text, no text overlays on photos, link only to [CLIENT DOMAIN], any offer needs a start and end date. 100-200 words each, plain and friendly, short hyphens only. Suggest which photo goes with each.</pre></div><div class="prompt"><div class="ph"><b>Reply to new reviews</b><button class="btn copy" type="button">Copy</button></div><pre>Draft replies to these reviews for [CLIENT], in the owner&#x27;s voice: warm, short, specific to what the reviewer said.
 5 stars: thank them by first name, mention the job, invite them back.
 1-3 stars: thank them, take it seriously, invite them to call [OWNER NAME] directly - no arguing, no private details.
 Never offer discounts or admit fault without Daisy&#x27;s OK.
 
-[PASTE REVIEWS]</pre></div><div class="prompt"><div class="ph"><span>Blog post</span><button class="copy" type="button">Copy</button></div><pre>Write a blog post for [CLIENT] that answers one question their customers actually ask: &quot;[QUESTION]&quot;.
+[PASTE REVIEWS]</pre></div><div class="prompt"><div class="ph"><b>Blog post</b><button class="btn copy" type="button">Copy</button></div><pre>Write a blog post for [CLIENT] that answers one question their customers actually ask: &quot;[QUESTION]&quot;.
 600-900 words, plain language, short hyphens only. Link to: [SERVICE PAGE URL], [PROJECT PAGE URL] and the quote page. End with 3-4 FAQs.
-Only use facts I give you: [PASTE FACTS]. Give me an SEO title (under 60 characters) and meta description (under 155).</pre></div><div class="prompt"><div class="ph"><span>Monthly report + gameplan page</span><button class="copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-client-update.html and build [CLIENT]&#x27;s [MONTH] report + gameplan page.
+Only use facts I give you: [PASTE FACTS]. Give me an SEO title (under 60 characters) and meta description (under 155).</pre></div><div class="prompt"><div class="ph"><b>Monthly report + gameplan page</b><button class="btn copy" type="button">Copy</button></div><pre>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-client-update.html and build [CLIENT]&#x27;s [MONTH] report + gameplan page.
 Here&#x27;s last month&#x27;s data: [GA4 / GSC / GBP NUMBERS], what we did: [LIST], next month&#x27;s plan: [LIST], what we need from them: [LIST].
-Copy the layout of https://daisypine.github.io/kaizenagency/AHC-ACW/september-october.html. Then draft the email that sends it, in Daisy&#x27;s voice (warm, casual, short paragraphs).</pre></div><h2>Daily</h2><div class="prompt"><div class="ph"><span>My morning summary</span><button class="copy" type="button">Copy</button></div><pre>Here&#x27;s the Command Center board right now: [PASTE OR SCREENSHOT].
-Give me: 1) anything overdue or blocked, 2) my top 3 for today (max 3 active projects: one finish-and-launch, one next cash project, one recurring client deliverable), 3) decisions only Daisy can make (strategy, money, unusual technical risk), 4) a 5-line summary I can post to Daisy: done / next / blocked / decisions needed.</pre></div><h2>Any</h2><div class="prompt"><div class="ph"><span>Email a client in Daisy&#x27;s voice</span><button class="copy" type="button">Copy</button></div><pre>Draft an email to [CLIENT FIRST NAME] about [TOPIC], written as Daisy.
+Copy the layout of https://daisypine.github.io/kaizenagency/AHC-ACW/september-october.html. Then draft the email that sends it, in Daisy&#x27;s voice (warm, casual, short paragraphs).</pre></div><h2 class="sec">Daily</h2><div class="prompt"><div class="ph"><b>My morning summary</b><button class="btn copy" type="button">Copy</button></div><pre>Here&#x27;s the Command Center board right now: [PASTE OR SCREENSHOT].
+Give me: 1) anything overdue or blocked, 2) my top 3 for today (max 3 active projects: one finish-and-launch, one next cash project, one recurring client deliverable), 3) decisions only Daisy can make (strategy, money, unusual technical risk), 4) a 5-line summary I can post to Daisy: done / next / blocked / decisions needed.</pre></div><h2 class="sec">Any</h2><div class="prompt"><div class="ph"><b>Email a client in Daisy&#x27;s voice</b><button class="btn copy" type="button">Copy</button></div><pre>Draft an email to [CLIENT FIRST NAME] about [TOPIC], written as Daisy.
 Voice: warm and casual, short paragraphs, hyphens for asides, an occasional (: smiley, light exclamation points. Nothing stiff or corporate, no &quot;I hope this finds you well&quot;.
 Points to cover: [LIST]. Keep it under 150 words. I&#x27;ll send it to Daisy to approve first.</pre></div></main>
-<footer>Public page: no passwords, keys, client contact details or prices here. Those live in Drive and the workspace. Last built Oct 26, 2026.</footer>
+<footer class="foot">Public page. No passwords, keys, client contact details or prices here; those live in Drive and the workspace.</footer>
+
 <script>document.querySelectorAll(".prompt .copy").forEach(b=>b.addEventListener("click",()=>{const p=b.closest(".prompt").querySelector("pre");if(p&&navigator.clipboard){navigator.clipboard.writeText(p.textContent);b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1300);}}));</script>
 </body></html>
