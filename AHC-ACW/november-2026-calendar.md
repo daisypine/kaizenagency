@@ -11,6 +11,8 @@
 | Nov 23 | Achilles blog **published** (B) | **Post:** Why chiro didn't work | — | Thanksgiving | **Post:** Black Friday graphic · report due Sat Nov 28 (B) |
 | Nov 30 | — | **Report sent** to Dr. Mike (D) | | | |
 
+**Extra ideas, no date yet:** burnout + hyperbaric chamber (HBOT) posts from Dr. Kyndra. These are swap-ins whenever there's room; see "Extra ideas" on the [social media page](november-2026-social.html).
+
 ## Basil's calendar
 
 **Done vs. live:** "Done" means the work is finished and ready to go. "Live," "Publish" and "Send" mean it's actually on the site or out the door. Aim to finish 1–2 days before the live date in case you want to talk anything through. Finishing and publishing on the same day is fine too — just make sure it actually goes live.

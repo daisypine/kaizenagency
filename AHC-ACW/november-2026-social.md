@@ -27,6 +27,21 @@ Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026
 
 **Moved to December** (shoot only if there's time tomorrow): Sleeping positions ranked · "How have you been?" · Still hurting after the season? carousel · 4 things I'd never do.
 
+## Extra ideas: burnout + HBOT (from Dr. Kyndra)
+
+Dr. Kyndra wants a "burnout" video to promote the hyperbaric chamber (HBOT), which isn't being used much lately. These are ready to go whenever there's a slot, or as a swap-in this month. If there's time tomorrow, grab the B-roll so we have it.
+
+| Idea | Format | Who's in it | Inspired by | Adapt spin |
+| --- | --- | --- | --- | --- |
+| **"They said relax. I heard 'bring your laptop.'"** | Reel, 6–8 sec | Dr. Kyndra (or a willing patient with a signed release) | [@avni](https://www.instagram.com/p/DeDWPOfvJ3N/) (1.3K likes, 6.5 sec selfie in a chamber) | Selfie-angle shot lying in the chamber, then the camera tips down to a laptop or phone full of emails. Caption: "Burnt out but your inbox isn't? 60 minutes in the chamber is the only meeting you should take today." **Only show a laptop/phone if Adapt's chamber allows electronics inside.** If not, switch the joke to "they said relax, I heard 'answer 47 emails'" with her hands empty |
+| **What a session in our hyperbaric chamber actually looks like** | Carousel, 5 slides (B-roll stills) | Dr. Kyndra | [@onebasehealth](https://www.instagram.com/p/DZYZYlCDYRx/) "What 60 minutes of HBOT does to a burnt-out brain" | Keep it about the experience, not medical claims: 1. "Burnt out? Here's 60 minutes of doing nothing" · 2. You lie back and get comfy · 3. Your ears pop like on a plane · 4. You rest, read or nap · 5. "Who uses it here: athletes in recovery + anyone who needs a reset · Text (408) 673-2432" |
+| **How athletes use HBOT in recovery** | Carousel or 15-sec reel | Dr. Kyndra + B-roll | [@henshaw_hyperbarics](https://www.instagram.com/p/DcNlpThoB9N/) | Fits the athlete theme: "Your recovery routine: sleep · fuel · strength · chamber time." B-roll of the chamber door closing and someone relaxing inside |
+| **"What do patients notice after HBOT?"** | Carousel | Real patients (quotes only) | [example post](https://www.instagram.com/p/DaBRIvzjLAe/) "What do people actually notice after HBOT?" | Later month. Only real quotes from patients who said yes to being quoted, never made up |
+
+**B-roll to grab tomorrow, if there's time:** the chamber from the outside · the door closing · someone lying inside, relaxed (Dr. Kyndra) · a close-up of the pressure dial or control panel · the room.
+
+**Watch the wording.** The FDA clears hyperbaric oxygen for a specific list of medical conditions, and burnout, stress and brain fog aren't on it. So these posts sell the *experience* (rest, a reset, recovery) and not a cure. No "treats burnout" or "heals your brain" claims. Dr. Kyndra checks every HBOT post before it goes to Dr. Mike.
+
 ## Tomorrow's shoot: Tue Oct 27, 11:30–1:00
 
 Grouped by setup so nobody moves twice. Each block lists what Daisy captures and what the doctors do.
@@ -39,7 +54,7 @@ Grouped by setup so nobody moves twice. Each block lists what Daisy captures and
 | 12:20–12:30 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) · **Oreo stacks** on a clean white surface (5 setups, below) | Each doctor takes their own mirror selfie · both hold out hands · Dr. Kyndra checks the Oreo labels make sense |
 | 12:30–12:42 | **Reintro portraits** | 3 photos per doctor + 1 together (list below) · voice memo the intro questions | Answer 5 quick questions each (about 2 minutes) |
 | 12:42–12:55 | **B-roll** | Shockwave on an elbow + a heel · adjustment · soft tissue · a strength move · front sign · front desk · treatment room empty. 5–10 seconds each, slow and steady | Act it out on each other (no patients unless they've signed a photo/video release) |
-| 12:55–1:00 | **Bonus (December, only if time)** | Sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
+| 12:55–1:00 | **Bonus (only if time)** | HBOT B-roll (chamber, door closing, Dr. Kyndra relaxing inside) · sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
 
 ### Daisy's checklist
 
