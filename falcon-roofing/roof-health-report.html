@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html data-theme="light" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +19,6 @@
   --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E0E0D; --surface:#1A1A18; --fg:#EFEEE8; --muted:#A8A79E; --line:#2E2E29;
-  --accent:#E8B923; --accent-dark:#F2CB4E; --accent-soft:#2B2412; --accent-fg:#141414;
-  --warn:#F0A07A; --warn-soft:#33201A; --grey-soft:#26261F; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0E0E0D; --surface:#1A1A18; --fg:#EFEEE8; --muted:#A8A79E; --line:#2E2E29;
   --accent:#E8B923; --accent-dark:#F2CB4E; --accent-soft:#2B2412; --accent-fg:#141414;
@@ -146,12 +142,35 @@ footer.site .fr{font-size:12.5px;letter-spacing:.04em}
 .funnel{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .funnel span{background:var(--accent-soft);color:var(--accent);font-weight:600;border-radius:8px;padding:6px 12px;font-size:14px}
 .funnel i{font-style:normal;color:var(--muted)}
+
+/* ---- Light version (Falcon cream + yellow) ---- */
+:root,:root[data-theme="dark"]{--bg:#FAF8F1;--surface:#FFFFFF;--fg:#1E1E1E;--muted:#5E5D56;--line:#E8E4D3;
+ --accent:#7A6A00;--accent-dark:#5E5200;--accent-soft:#FBF7C9;--accent-fg:#1E1E1E;--gold:#E7DB03;--black:#1E1E1E;--cream:#EDE9D0;
+ --warn:#9A3B12;--warn-soft:#FCEBE2;--grey-soft:#F1EEE2;color-scheme:light}
+.top{background:#FFFFFF;color:var(--fg);border-bottom:4px solid var(--gold);box-shadow:0 1px 0 var(--line)}
+.brand,.wordmark{color:var(--fg)}
+.brand img{background:none!important;padding:0!important}
+nav.pn a{color:#3A3A36}
+nav.pn a:hover{color:#000}
+nav.pn a[aria-current]{color:#000;border-bottom-color:var(--gold)}
+.band{background:var(--cream);color:var(--fg);border-bottom:1px solid #DCD6B6}
+.band h1{color:#1E1E1E}
+.band .lede{color:#4A4943}
+.band .eyebrow,.band .tagline{color:#6B5F00}
+.tile.feat{background:#FFFFFF;border:2px solid var(--gold);color:var(--fg);box-shadow:0 6px 18px rgba(30,30,30,.06)}
+.tile.feat strong{color:#1E1E1E}
+.tile.feat .d,.tile.feat span{color:inherit}
+.mh{background:var(--gold);color:#1E1E1E}
+.mh h3{color:#1E1E1E}
+.flow li::before,.steps li::before{background:var(--gold);color:#1E1E1E}
+.ci em{background:var(--gold);color:#1E1E1E}
+.ty.blog{background:var(--gold);border-color:var(--gold);color:#1E1E1E}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap">
   <a class="brand" href="index.html"><img style="background:#f4f1e4;padding:5px 9px;border-radius:6px;box-sizing:content-box" src="https://falcon-roofing.com/wp-content/uploads/2026/02/logo.webp" alt="Falcon Roofing" onerror="this.hidden=true;document.getElementById('wm').hidden=false"><span class="wordmark" id="wm" hidden>FALCON <i>ROOFING</i></span></a>
-  <nav class="pn" aria-label="Falcon pages"><a href="index.html">Hub</a><a href="october-november.html">October report</a><a href="gameplan.html">Gameplan</a><a href="roof-health-report.html" aria-current="page">Roof Health Report</a></nav>
+  <nav class="pn" aria-label="Falcon pages"><a href="index.html">Report &amp; plan</a><a href="roof-health-report.html" aria-current="page">Roof Health Report</a></nav>
 </div></div>
 
 <div class="page"><div class="wrap"><div class="card">
