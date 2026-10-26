@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Falcon Roof Health Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+/* Falcon Roofing client pages. Black #141414 + Falcon gold. Headings: Michroma (closest Google match to Falcon's Handel Gothic), body: Poppins */
+:root{
+  --bg:#F4F3EF; --surface:#FFFFFF; --fg:#141414; --muted:#5E5D56; --line:#E4E2DA;
+  --accent:#8A6400; --accent-dark:#6E5000; --accent-soft:#FBF1D3; --accent-fg:#FFFFFF;
+  --gold:#E8B923; --black:#141414;
+  --warn:#9A3B12; --warn-soft:#FCEBE2; --grey-soft:#EEEDE8;
+  --display:"Michroma","Arial Black",system-ui,sans-serif;
+  --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E0E0D; --surface:#1A1A18; --fg:#EFEEE8; --muted:#A8A79E; --line:#2E2E29;
+  --accent:#E8B923; --accent-dark:#F2CB4E; --accent-soft:#2B2412; --accent-fg:#141414;
+  --warn:#F0A07A; --warn-soft:#33201A; --grey-soft:#26261F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E0E0D; --surface:#1A1A18; --fg:#EFEEE8; --muted:#A8A79E; --line:#2E2E29;
+  --accent:#E8B923; --accent-dark:#F2CB4E; --accent-soft:#2B2412; --accent-fg:#141414;
+  --warn:#F0A07A; --warn-soft:#33201A; --grey-soft:#26261F; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65;overflow-wrap:break-word}
+.wrap{max-width:780px;margin:0 auto}
+.wrap.wide{max-width:980px}
+.top,.page,.band{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{background:var(--black);color:#EFEEE8;padding-block:14px;border-bottom:3px solid var(--gold)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;text-decoration:none;color:#fff;min-width:0}
+.brand img{height:42px;width:auto;max-width:100%;display:block}
+.wordmark{font-family:var(--display);font-size:15px;letter-spacing:.08em;color:#fff}
+.wordmark i{font-style:normal;color:var(--gold)}
+nav.pn{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13.5px}
+nav.pn a{color:#D9D7CF;text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+nav.pn a:hover{color:#fff}
+nav.pn a[aria-current]{color:var(--gold);border-bottom-color:var(--gold)}
+.band{background:var(--black);color:#EFEEE8;padding-block:34px 38px}
+.band .eyebrow{color:var(--gold)}
+.band h1{color:#fff}
+.band .lede{color:#C9C7BE}
+.band .tagline{font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+.page{padding-block:28px 56px}
+.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;border:1px solid var(--line)}
+@media (max-width:520px){.card{padding:4px 18px 8px}}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;line-height:1.25;margin:0;color:var(--fg)}
+h3{font-family:var(--body);font-weight:600;font-size:17px;line-height:1.3;margin:0}
+.hero{padding-block:26px;display:grid;gap:12px}
+.eyebrow{font-family:var(--body);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
+h1{font-size:clamp(22px,4.4vw,34px)}
+h2{font-size:clamp(17px,3vw,21px)}
+.lede{color:var(--muted);max-width:60ch;margin:0}
+section{padding-block:30px;border-top:1px solid var(--line);display:grid;gap:14px}
+.hero + section{border-top:1px solid var(--line)}
+p{margin:0;max-width:65ch}
+ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
+.link{display:grid;gap:4px;padding:16px 18px;background:var(--accent-soft);border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
+.link:hover{border-color:var(--accent)}
+.link strong{font-weight:600;font-size:16.5px;color:var(--accent)}
+.link span{font-size:14px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:start}
+.stat{padding:14px 16px;border:1px solid var(--line);border-radius:10px;min-width:0;border-top:3px solid var(--gold)}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:24px;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1.4}
+.stat span{font-size:13.5px;color:var(--muted)}
+.rows{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:120px 1fr;gap:4px 16px}
+.row .k{font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;padding-top:3px}
+.row > div{min-width:0;display:grid;gap:6px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+.cal{display:grid;gap:8px}
+.cal > div{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:baseline}
+.cal .d{font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:8px;text-align:center;padding:3px 0;font-size:14px;font-variant-numeric:tabular-nums}
+.cal > div > span:last-child{min-width:0}
+.done{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:13px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.done::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.flag{background:var(--warn-soft);color:var(--fg);border-radius:10px;padding:14px 16px}
+.flag b{color:var(--warn)}
+.cta{display:inline-block;background:var(--gold);color:#141414;text-decoration:none;font-weight:600;padding:10px 18px;border-radius:999px;justify-self:start}
+.cta:hover{background:#141414;color:var(--gold)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.contact div{border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:0}
+.contact b{display:block;font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.contact span{font-size:18px;font-weight:500;user-select:all}
+.need{counter-reset:n;list-style:none;padding:0;gap:14px}
+.need li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.need li::before{content:counter(n);font-weight:600;width:28px;height:28px;border-radius:8px;background:var(--gold);color:#141414;display:grid;place-items:center;font-size:14px}
+.need li > div{min-width:0}
+.steps{counter-reset:s;list-style:none;padding:0;gap:12px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.steps li::before{content:counter(s);font-weight:600;width:28px;height:28px;border-radius:50%;background:var(--black);color:var(--gold);display:grid;place-items:center;font-size:14px}
+.steps li > div{min-width:0}
+footer.site{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center;display:grid;gap:6px}
+footer.site .fr{font-size:12.5px;letter-spacing:.04em}
+
+.gets{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.get{border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:10px;padding:12px 14px;display:grid;gap:2px;min-width:0}
+.get b{font-weight:600;line-height:1.35}
+.get span{font-size:13.5px;color:var(--muted)}
+.ratings{display:flex;flex-wrap:wrap;gap:8px}
+.rate{font-weight:600;font-size:14px;border-radius:999px;padding:4px 14px}
+.rate.good{background:#E3F1E4;color:#24602B}
+.rate.watch{background:var(--accent-soft);color:var(--accent)}
+.rate.act{background:var(--warn-soft);color:var(--warn)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rate.good{background:#1C2E1E;color:#9BD3A1}}
+:root[data-theme="dark"] .rate.good{background:#1C2E1E;color:#9BD3A1}
+.checklist{display:grid;gap:8px}
+.ci{display:grid;grid-template-columns:160px 1fr auto;gap:4px 14px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
+.ci:last-child{border-bottom:none}
+.ci b{font-weight:600}
+.ci span{font-size:14.5px;min-width:0}
+.ci em{font-style:normal;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--black);color:var(--gold);border-radius:999px;padding:2px 9px;white-space:nowrap}
+@media (max-width:560px){.ci{grid-template-columns:1fr auto}.ci span{grid-column:1 / -1}}
+.mock{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px}
+.sheet{background:#fff;color:#141414;border:1px solid var(--line);border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:16px;display:grid;gap:8px;font-size:12.5px;line-height:1.45;align-content:start}
+.sheet .sh{display:flex;justify-content:space-between;gap:8px;align-items:center;background:#141414;color:#E8B923;margin:-16px -16px 4px;padding:10px 14px;border-radius:6px 6px 0 0;font-family:var(--display);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.sheet .sh small{color:#C9C7BE;font-family:var(--body);letter-spacing:0;text-transform:none;font-size:10.5px}
+.sheet .ln{display:grid;grid-template-columns:96px 1fr;gap:8px;border-bottom:1px dashed #DDD;padding-bottom:5px}
+.sheet .ln b{font-weight:600;color:#5E5D56;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.sheet .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.sheet .ph{aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#EEE 0 6px,#E4E4E4 6px 12px);border-radius:3px}
+.sheet .cap{font-size:11px;color:#5E5D56;font-style:italic}
+.sheet .ft{font-size:11px;color:#5E5D56;border-top:1px solid #DDD;padding-top:6px}
+.flow{list-style:none;padding:0;display:grid;gap:0;counter-reset:f}
+.flow li{counter-increment:f;display:grid;grid-template-columns:40px 1fr;gap:14px;position:relative;padding-bottom:18px}
+.flow li:last-child{padding-bottom:0}
+.flow li::before{content:counter(f);width:36px;height:36px;border-radius:50%;background:var(--black);color:var(--gold);display:grid;place-items:center;font-weight:600;position:relative;z-index:1}
+.flow li::after{content:"";position:absolute;left:17px;top:36px;bottom:0;width:2px;background:var(--gold)}
+.flow li:last-child::after{display:none}
+.flow li > div{min-width:0;display:grid;gap:2px;padding-top:5px}
+.flow .t{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.funnel{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.funnel span{background:var(--accent-soft);color:var(--accent);font-weight:600;border-radius:8px;padding:6px 12px;font-size:14px}
+.funnel i{font-style:normal;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="brand" href="index.html"><img src="https://falcon-roofing.com/wp-content/uploads/2026/02/logo.webp" alt="Falcon Roofing" onerror="this.hidden=true;document.getElementById('wm').hidden=false"><span class="wordmark" id="wm" hidden>FALCON <i>ROOFING</i></span></a>
+  <nav class="pn" aria-label="Falcon pages"><a href="index.html">Hub</a><a href="october-november.html">October report</a><a href="gameplan.html">Gameplan</a><a href="roof-health-report.html" aria-current="page">Roof Health Report</a></nav>
+</div></div>
+
+<div class="page"><div class="wrap"><div class="card">
+
+<div class="hero">
+  <div class="eyebrow">For the Falcon team · Approved Oct 25, 2026</div>
+  <h1>The Falcon Roof Health Report</h1>
+  <p class="lede">A free, written, photographed inspection of the whole roof, with an honest answer on how many years it has left, what needs doing now, what can wait, and what each would cost. The homeowner keeps it whether they hire Falcon or not.</p>
+</div>
+
+<section id="why">
+  <h2>Why we're doing it</h2>
+  <p>Everyone offers a "free estimate". This gives the homeowner something they can actually hold, so Falcon gets in the door before the rain and the report sells the work on its own. It's the free offer on the mailer, every email and the new Roof Health Report page on the site.</p>
+</section>
+
+<section id="gets">
+  <h2>What the homeowner gets</h2>
+  <div class="gets">
+    <div class="get"><b>A 2-page report</b><span>PDF, emailed within 2 business days of the visit (to confirm)</span></div>
+    <div class="get"><b>8-15 labelled photos</b><span>Of what we found, each with a one-line caption</span></div>
+    <div class="get"><b>A simple rating</b><span>Good, Watch or Act now</span></div>
+    <div class="get"><b>Years of life left</b><span>An honest estimate, like "8-10 years"</span></div>
+    <div class="get"><b>Repairs ranked by urgency</b><span>Each with a price range</span></div>
+    <div class="get"><b>Repair vs. replace</b><span>In plain English</span></div>
+  </div>
+  <div class="ratings" aria-label="Rating scale"><span class="rate good">Good</span><span class="rate watch">Watch</span><span class="rate act">Act now</span></div>
+</section>
+
+<section id="checklist">
+  <h2>What we check on site</h2>
+  <p class="muted">The inspector's checklist. Drone shots are a bonus on 2-story or steep roofs.</p>
+  <div class="checklist"><div class="ci"><b>Roof covering</b><em>Wide + close-ups</em><span>Material, age, shingle wear and granule loss, cracked, missing or lifted shingles or tiles, moss, soft spots</span></div><div class="ci"><b>Flashing</b><em>Photo</em><span>Chimney, skylights, walls, valleys: rust, gaps, failed sealant</span></div><div class="ci"><b>Penetrations</b><em>Photo</em><span>Vent pipe boots, exhaust vents, solar mounts. Cracked boots are the #1 small leak.</span></div><div class="ci"><b>Flat / low-slope</b><em>Photo</em><span>Ponding, blisters, seams, drains</span></div><div class="ci"><b>Gutters + downspouts</b><em>Photo</em><span>Clogs, sagging, leaks, granules in gutters, water hitting fascia</span></div><div class="ci"><b>Fascia, soffit + eaves</b><em>Photo</em><span>Dry rot, pest damage, peeling paint</span></div><div class="ci"><b>Attic (if safe)</b><em>Photo</em><span>Daylight, water stains, wet insulation, ventilation, decking</span></div><div class="ci"><b>Inside</b><em>If any</em><span>Ceiling stains, especially top floor and closets. Ask the homeowner.</span></div><div class="ci"><b>Solar (if any)</b><em>Photo</em><span>Roof age under panels, mounts, whether to re-roof before adding or replacing panels</span></div></div>
+  <div class="flag"><b>Never photograph the house number</b> or anything that shows the address.</div>
+</section>
+
+<section id="template">
+  <h2>What the report looks like</h2>
+  <div class="mock">
+    <div class="sheet" aria-label="Page 1 summary layout">
+      <div class="sh">Roof Health Report<small>Page 1 · Summary</small></div>
+      <div class="ln"><b>Header</b><span>Falcon logo, date, inspector, CA Lic. #703286</span></div>
+      <div class="ln"><b>Property</b><span>City and roof type only</span></div>
+      <div class="ln"><b>Rating</b><span>Good / Watch / Act now</span></div>
+      <div class="ln"><b>Life left</b><span>e.g. "8-10 years"</span></div>
+      <div class="ln"><b>Do now</b><span>1-3 items before the rains, with price ranges</span></div>
+      <div class="ln"><b>Can wait</b><span>Next 1-3 years, with price ranges</span></div>
+      <div class="ln"><b>Our take</b><span>Repair, replace or do nothing, in 2-3 sentences</span></div>
+      <div class="ft">This report is yours to keep. Questions? Call Mario at (650) 961-3200. Plus the 10-year workmanship warranty line.</div>
+    </div>
+    <div class="sheet" aria-label="Page 2 photos layout">
+      <div class="sh">Roof Health Report<small>Page 2 · Photos</small></div>
+      <div class="grid"><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+      <div class="cap">"Cracked vent boot, north slope. Common leak source. Do now."</div>
+      <div class="ft">8-15 photos in a grid, each with a one-line caption.</div>
+    </div>
+  </div>
+  <p class="muted small">Fastest build: a Housecall Pro estimate template or checklist with the photos attached. If that PDF doesn't look good enough, I'll make a fill-in template. <a href="https://docs.google.com/document/d/11zoTk_4wX0OEy8ouhzIH4LqV7_4tyCYn1naFM9OYwcc/edit" target="_blank" rel="noopener">See the template</a>.</p>
+</section>
+
+<section id="flow">
+  <h2>How it runs, booking to follow-up</h2>
+  <ol class="flow">
+    <li><div><span class="t">BOOKING</span><b>Booked into Housecall Pro</b><span>From the website, an email reply ("REPORT"), the mailer or a phone call. It goes in as a job type called "Roof Health Report" so we can count them.</span></div></li>
+    <li><div><span class="t">CONFIRM</span><b>Text confirmation + reminder</b><span>The office texts a confirmation and a reminder the day before. Housecall Pro does this automatically.</span></div></li>
+    <li><div><span class="t">VISIT · 45-60 MIN</span><b>Walk the roof, check the attic, take photos</b><span>Then talk to the homeowner for 5 minutes at the end. No hard sell.</span></div></li>
+    <li><div><span class="t">WRITE-UP · 20-30 MIN</span><b>Fill the template in the office</b><span>Attach the photos and add the price ranges.</span></div></li>
+    <li><div><span class="t">SEND · WITHIN 2 BUSINESS DAYS</span><b>Email the PDF</b><span>If there's an "Act now" item, call too.</span></div></li>
+    <li><div><span class="t">FOLLOW UP</span><b>Open-estimate follow-up kicks in</b><span>Day 2, 7 and 21, from the <a href="https://docs.google.com/document/d/1hlJ3oS9eAhqxDz7YTAEojVGWEPZwwadXsqo0hZn9noE/edit" target="_blank" rel="noopener">email plan</a>.</span></div></li>
+  </ol>
+</section>
+
+<section id="pm">
+  <h2>Property managers + HOAs</h2>
+  <p>Same report, one per building, plus a one-page summary across all buildings ranked by priority, so the manager can take it straight to an owner or a board.</p>
+</section>
+
+<section id="rules">
+  <h2>The rules</h2>
+  <ul>
+    <li><b>No dollar value on the report</b> and no discounts or referral rewards (California B&amp;P §7157).</li>
+    <li><b>Be honest.</b> If the roof is fine, say so. That's what earns the next job and the review.</li>
+    <li><b>Warranty wording is 10-year workmanship.</b> The September mailer copy still says "lifetime", so it has to change before it prints.</li>
+    <li><b>Photos from reports</b> can be used in marketing only with the homeowner's OK, by neighborhood, never with the address.</li>
+  </ul>
+</section>
+
+<section id="measure">
+  <h2>How we'll measure it</h2>
+  <div class="funnel"><span>Reports booked</span><i>→</i><span>Reports done</span><i>→</i><span>Jobs sold from a report</span><i>→</i><span>Revenue</span></div>
+  <p class="muted">Pulled from Housecall Pro every month for the report.</p>
+</section>
+
+<section id="decisions">
+  <h2>Decisions for Mario</h2>
+  <ol class="need">
+    <li><div><b>How many a week in November?</b> I'd start with 8-10, about 2 a day.</div></li>
+    <li><div><b>Who does them:</b> Mario, or an estimator?</div></li>
+    <li><div><b>Turnaround:</b> is 2 business days OK for the written report?</div></li>
+    <li><div><b>Report format:</b> Housecall Pro estimate PDF, or a template I make?</div></li>
+    <li><div><b>The mailer:</b> has it gone to print, and does it still say "lifetime"?</div></li>
+  </ol>
+  <a class="cta" href="https://docs.google.com/document/d/1uAHHHVeYELZEdPzEGnucAVtzxcpil05c6A8Bnk5YzSM/edit" target="_blank" rel="noopener">Read the full write-up</a>
+</section>
+
+</div>
+<footer class="site">
+  <div>If there's something you want moved up the list, just say the word!<br>Daisy · Kaizen Agency</div>
+  <div class="fr">Falcon Roofing · No leaks. No drips. No errors. · Family-owned since 1993 · CA Lic. #703286 · Mountain View</div>
+</footer>
+
+</div></div>
+</body>
+</html>
