@@ -10,7 +10,7 @@ Every page, blog, email, text and carousel this month points to the same few inj
 
 ## Who does what in November
 
-**It's just Daisy and Basil this month.** Daisy owns all social (scripts, shooting, editing, graphics, carousels, posting), and everything that goes to Dr. Mike. Basil owns the website and the email: page refreshes, blogs, the November email blast, and getting the new pages built and live with the developer. Basil writes all the copy and publishes on his own — he doesn't wait on Daisy — and aims to finish 1–2 days before each date in case they want to talk it through.
+**It's just Daisy and Basil this month.** Daisy owns all social (scripts, shooting, editing, graphics, carousels, posting), and everything that goes to Dr. Mike. Basil owns the website and the email: page refreshes, blogs, the November email blast, and building the new pages himself with Claude (from existing pages as templates), bringing in the developer only for things Claude can't do. Basil writes all the copy and publishes on his own — he doesn't wait on Daisy — and aims to finish 1–2 days before each date in case they want to talk it through.
 
 - **Dates, calendars and checklists for Daisy and Basil:** [Calendar](november-2026-calendar.html)
 - **Instagram posting plan, shoot day, scripts, graphics and inspiration links:** [Social media](november-2026-social.html)

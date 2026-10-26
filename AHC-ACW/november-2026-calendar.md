@@ -22,14 +22,14 @@
 | Mon Nov 2 | Shockwave page refresh | Done |
 | Wed Nov 4 | Shockwave page refresh | Live |
 | Thu Nov 5 | Blog: "Shockwave vs. a cortisone shot" | Done |
-| Fri Nov 6 | Tennis elbow page built by the developer | Done |
+| Fri Nov 6 | Tennis elbow page built (Claude, using the knee pain page as the template) | Done |
 | Mon Nov 9 | Sports injury hub refresh | Done |
 | Mon Nov 9 | Blog: shockwave vs. cortisone | Publish |
 | Tue Nov 10 | Tennis elbow page | Live |
 | Thu Nov 12 | Sports injury hub refresh | Live |
 | Thu Nov 12 | Email to the tagged list (once Dr. Mike approves) | Send |
 | Thu Nov 12 | Blog: "Why your elbow still hurts after 6 weeks of rest" | Done |
-| Fri Nov 13 | Achilles page built by the developer | Done |
+| Fri Nov 13 | Achilles page built (Claude, using the tennis elbow page as the template) | Done |
 | Mon Nov 16 | Blog: elbow | Publish |
 | Tue Nov 17 | Achilles page | Live |
 | Thu Nov 19 | Blog: "Achilles pain after running" | Done |
