@@ -142,6 +142,27 @@ Four graphic posts, 1080x1440 in Figma with the Post Footer, brand green #019877
 
 Dr. Kyndra checks the wording on the shockwave and Oreo slides before they're scheduled.
 
+## Inspiration links
+
+The original reels and posts each November piece is based on, all saved from the Kaizen and personal Instagram DMs. Watch them before Tuesday's shoot.
+
+| Our post | Inspired by |
+| --- | --- |
+| "What makes you different?" (reel) | [@occhiropractor](https://www.instagram.com/p/DVM4gRFgVwt/) |
+| Things I don't care about as your chiropractor (reel) | [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/) |
+| 4 red flags at a chiropractor (reel) | [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/) |
+| "Have you moved today?" desk check-in (reel) | [@alexathechiro — "How have you been?"](https://www.instagram.com/p/DLnl4YmBGgn/) · [@alexathechiro — movement-break post](https://www.instagram.com/p/Dcyq3e7Gx6q/) |
+| Sleeping positions ranked (reel) | [@completewellness_nyc](https://www.instagram.com/p/DdZre1Uo-hw/) |
+| "Chiro didn't work for you?" (reel) | [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/) |
+| Rock, paper, scissors (graphic) | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) |
+| Spine conditions with Oreos (graphic) | [@drwajeehapt — part 1](https://www.instagram.com/p/DeWoXBuiJKL/) · [@drwajeehapt — spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) |
+| 5 things I'd never do to my back (December) | [@thecontentdoctors](https://www.instagram.com/p/Dd1TZNeiAQr/) · [@dr.suzischulman](https://www.instagram.com/p/CxG9cjGO2Bq/) |
+| Blind-spot neck drill (December) | [@christinemarie.fit](https://www.instagram.com/p/De1LESMRObJ/) |
+
+**Saved for later months** (need Eli, Nathalia, Dr. Paris or the full team): [@occhiropractor posture POV](https://www.instagram.com/p/DeNpizSJTzc/) · [@movement.chiropractic "unpopular things"](https://www.instagram.com/p/DdrQ_JhlAT6/) · [@medispine.ca team trend](https://www.instagram.com/p/DZmtIkbRJGy/) · [@balancedbodyjm massage POV](https://www.instagram.com/p/De0eI47zx6T/) · [@lonestarsportsrehab.btx massage humor](https://www.instagram.com/p/Dd2VKjUAN76/) · [@thatchirowithtattoos shoulder follow-along](https://www.instagram.com/p/Dd1mbt5vPuS/) · [@cassiethechiro](https://www.instagram.com/p/DdldqGiTqrq/) · [@atlanta_spine](https://www.instagram.com/p/DcLnx4vgoXj/)
+
+**For us (content strategy, not to recreate):** [@dariamedric (post 1)](https://www.instagram.com/p/Dd1cu21iGF1/) · [@dariamedric (post 2)](https://www.instagram.com/p/Dd39h_ziJzb/) · [@dariamedric (post 3)](https://www.instagram.com/p/Deg6NTJCLy9/) · [@therealbrianmark — call-out hooks](https://www.instagram.com/p/DewsR-_mwfT/)
+
 ## Competitor snapshot
 
 Adapt has the most Google reviews nearby (244). The gap is pages and offers, not reputation. Most competitors chase car accidents; only Positive Motion owns the athlete space.
