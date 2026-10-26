@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Archive - Working On (Eventually)</title><style>
+  :root{
+    --ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;
+    --line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--done-bg:#F4F8E3;
+    --shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);
+    --radius:14px;--warn:#B5532E;--warn-soft:#e3c7bb;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
+  .topbar-inner{max-width:960px;margin:0 auto;padding:14px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
+  .brand h1{font-size:15px;font-weight:700;margin:0}
+  .brand .eyebrow{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1px}
+  .btn{border:1px solid #3a3e30;background:#1f221a;color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:8px 13px;border-radius:9px;cursor:pointer}
+  .btn:hover{border-color:var(--lime)}
+  .btn:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+  .progress-wrap{max-width:960px;margin:0 auto;padding:0 22px 14px}
+  .progress-row{display:flex;align-items:center;gap:14px}
+  .progress-track{flex:1;height:10px;background:#2b2f24;border-radius:999px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:var(--lime);border-radius:999px;transition:width .3s ease}
+  .progress-pct{font-size:13px;font-weight:700;color:#fff;min-width:108px;text-align:right;font-variant-numeric:tabular-nums}
+  .progress-pct b{color:var(--lime)}
+
+  main{max-width:960px;margin:0 auto;padding:18px 22px 70px}
+
+  .routes{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:13px 18px;margin-bottom:16px}
+  .routes h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft)}
+  .route-grp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0}
+  .route-grp .glabel{font-size:12.5px;font-weight:700;min-width:74px;color:var(--ink)}
+  .seg{display:inline-flex;background:#eef0e6;border-radius:9px;padding:3px;gap:3px;flex-wrap:wrap}
+  .seg button{border:none;background:transparent;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--ink-soft);padding:6px 12px;border-radius:7px;cursor:pointer}
+  .seg button.on{background:var(--ink);color:var(--lime)}
+  .seg button:focus-visible{outline:2px solid var(--lime);outline-offset:1px}
+
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:18px;-webkit-overflow-scrolling:touch}
+  .tab{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:var(--surface);border:1.5px solid var(--line);border-radius:11px;padding:9px 15px;cursor:pointer;font-family:inherit;text-align:left;transition:.15s}
+  .tab .tab-owner{font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .tab .tab-title{font-size:14px;font-weight:700;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px}
+  .tab .tab-pct{font-size:10.5px;font-weight:800;color:var(--ink-soft);background:var(--paper);border-radius:20px;padding:1px 7px;font-variant-numeric:tabular-nums}
+  .tab:hover{border-color:#c9ccbe}
+  .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink)}
+  .tab[aria-selected="true"] .tab-owner{color:var(--lime)}
+  .tab[aria-selected="true"] .tab-title{color:#fff}
+  .tab[aria-selected="true"] .tab-pct{background:var(--lime);color:var(--ink)}
+  .tab.complete{border-color:var(--lime-deep)}
+  .tab.complete .tab-pct{color:var(--lime-deep)}
+  .tab[aria-selected="true"].complete .tab-pct{color:var(--ink)}
+
+  .stage{display:none}
+  .stage.active{display:block}
+  .stage-note{font-size:13px;color:var(--ink-soft);margin:0 2px 16px;line-height:1.5}
+  .stage-note b{color:var(--ink)}
+
+  .section{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden}
+  .section.donot{border-color:var(--warn-soft)}
+  .section.hide{display:none}
+  .section-head{display:flex;align-items:center;gap:13px;padding:15px 18px;cursor:pointer;border-bottom:1px solid transparent;user-select:none}
+  .section.open .section-head{border-bottom-color:var(--line)}
+  .sec-letter{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:800;font-size:12px;text-align:center;line-height:1}
+  .section.donot .sec-letter{background:var(--warn);color:#fff}
+  .section.complete .sec-letter{background:var(--lime);color:var(--ink)}
+  .section.donot.complete .sec-letter{background:var(--warn);color:#fff}
+  .sec-title{font-weight:700;font-size:15.5px;margin:0;flex:1;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .sec-count{font-size:12px;font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .sec-count.done{color:var(--lime-deep)}
+  .chev{flex:none;width:17px;height:17px;color:var(--ink-soft);transition:transform .2s}
+  .section.open .chev{transform:rotate(90deg)}
+  .items{padding:5px 18px 12px;display:none}
+  .section.open .items{display:block}
+
+  .item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:10px;margin:2px -6px;transition:background .15s}
+  .item.hide{display:none}
+  .item:hover{background:#fafbf5}
+  .item.checked{background:var(--done-bg)}
+  .item input{position:absolute;opacity:0;width:1px;height:1px}
+  .box{flex:none;margin-top:1px;width:20px;height:20px;border-radius:6px;border:2px solid #c5c8ba;background:#fff;display:grid;place-items:center;transition:all .15s}
+  .box svg{width:12px;height:12px;opacity:0;transform:scale(.6);transition:all .15s}
+  .item.checked .box{background:var(--lime);border-color:var(--lime-deep)}
+  .item.checked .box svg{opacity:1;transform:scale(1)}
+  .item input:focus-visible + .box{outline:2px solid var(--ink);outline-offset:2px}
+  .label-wrap{flex:1;cursor:pointer;min-width:0}
+  .label-main{font-size:14.5px;line-height:1.4}
+  .item.checked .label-main{color:var(--ink-soft)}
+  .label-hint{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+  .label-path{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#eef0e6;border-radius:5px;padding:1px 6px;color:#3a3d33;white-space:nowrap}
+
+  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:5px;vertical-align:middle}
+  .tag-seo{background:#e7ecd6;color:var(--lime-deep)}
+  .tag-live{background:#e6eefc;color:#2f5fb0}
+  .tag-opt{background:#efe8f5;color:#7a4ea8}
+
+  .stack-strip{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:13px 16px;margin:0 0 14px}
+  .stack-strip h4{margin:0 0 9px;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:800}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{display:inline-flex;align-items:baseline;gap:5px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font-size:12.5px}
+  .chip b{font-weight:700;color:var(--ink)}
+  .chip span{color:var(--ink-soft);font-size:11.5px}
+  .chip.adv{border-color:#d8c9e6;background:#f6f1fb}
+
+  .rm-banner{background:#f6f1fb;border:1px solid #d8c9e6;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:13.5px;color:#5a4a6e}
+  .rm-banner b{color:#4a2f6e}
+  .rm-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin:0 0 14px}
+  .rm-card h3{margin:0 0 3px;font-size:16px;font-weight:800;color:var(--ink)}
+  .rm-card .rm-sub{font-size:12.5px;color:var(--ink-soft);margin:0 0 10px}
+  .rm-card h4{margin:13px 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--lime-deep);font-weight:800}
+  .rm-card ul{margin:0;padding-left:18px}
+  .rm-card li{margin:4px 0;line-height:1.45;font-size:14px}
+  .rm-card li b{color:var(--ink)}
+  .prompt{background:#1b1d16;border-radius:12px;margin:10px 0;overflow:hidden;border:1px solid #2b2f24}
+  .prompt .ph{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:#22241c}
+  .prompt .ph span{color:var(--lime);font-size:12px;font-weight:700;letter-spacing:.03em}
+  .prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font-family:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
+  .prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
+  .prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+
+  footer{max-width:960px;margin:0 auto;padding:0 22px 60px;color:var(--ink-soft);font-size:12.5px;line-height:1.55}
+  footer b{color:var(--ink)}
+
+  @media (max-width:620px){.progress-pct{min-width:auto}.route-grp .glabel{min-width:auto;width:100%}}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto}}
+  @media print{
+    body{background:#fff}
+    .topbar{position:static;border-bottom:2px solid #000}
+    .no-print,.chev,.btn,.tabs,.seg button:not(.on),.prompt .copy{display:none !important}
+    .progress-track{border:1px solid #000}
+    .stage{display:block !important}
+    .section{break-inside:avoid;box-shadow:none;border-color:#999;margin-bottom:10px}
+    .section.hide,.item.hide{display:none !important}
+    .items{display:block !important}
+    .item:hover{background:none}
+    .prompt{border:1px solid #999}.prompt pre,.prompt .ph{color:#000;background:#f3f3f3}.prompt .ph span{color:#000}
+  }
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><span class="pill">KAIZEN</span><div><span class="eyebrow">Archive · Sept 2026</span><h1>Working On (Eventually)</h1></div></div><a class="btn" href="../index.html" style="text-decoration:none">Back to checklist</a></div></header>
+<main><div class="rm-banner"><b>Archived Oct 2026.</b> Old roadmap and prompt pack. It still mentions Rank Math, UpdraftPlus and Seraphinite, which are no longer in the stack. The current process is the team checklist and the Basil hub.</div>
+<div class="rm-banner"><b>Not active yet — reference only.</b> The plan is to turn custom builds into a repeatable clone-and-toggle system. Currently testing the base approach on <b>JDH</b> and <b>Sunwest</b>.</div>
+
+<div class="rm-card">
+  <h3>1 · Build the Kaizen Base Install (one-time)</h3>
+  <p class="rm-sub">On a fresh SiteGround temp URL — the master you only ever clone, never edit.</p>
+  <h4>Core WP</h4>
+  <ul>
+    <li>Install WP, strong admin, admin email = ops inbox, permalinks = Post name</li>
+    <li>Dynamic Caching ON, frontend OFF (dev step), Security Optimizer ON (default rules)</li>
+    <li>SSL + HTTPS forced, “Discourage search engines” ON</li>
+  </ul>
+  <h4>The “always” stack (install)</h4>
+  <ul>
+    <li>Hello theme · Elementor (free) · Unlimited Elements (Business, licensed) · Complianz (configured post-dev)</li>
+    <li>UpdraftPlus → Kaizen Google Drive + weekly schedule (off-site copy)</li>
+    <li>Imagify — only if image-heavy; otherwise SiteGround handles images · Seraphinite — advanced sites only</li>
+  </ul>
+  <h4>Premium defaults</h4>
+  <ul>
+    <li>Elementor Pro + Rank Math Pro installed &amp; licensed, minimal global config (title format, schema defaults, sitemap ON, robots defaults)</li>
+    <li>Base 404, Privacy, Terms, Cookie pages</li>
+  </ul>
+  <h4>Global layout — Hello + Elementor</h4>
+  <ul>
+    <li>Global colors + fonts in Elementor → Site Settings (Hello ships none)</li>
+    <li>Theme Builder: one Header (logo, nav, CTA) + one Footer (NAP, links, hybrid CTA)</li>
+    <li>Base Page/Single template — full width, no sidebar · neutral “contractor” styling pre-branding</li>
+  </ul>
+  <h4>Page templates (structure-only, saved in Elementor)</h4>
+  <ul>
+    <li>Home · Service · City / Service-Area · Gallery · Reviews · FAQ · Contact (Elementor Pro Form) · Blog Post</li>
+    <li>Build with Flexbox containers — lighter than legacy sections</li>
+  </ul>
+  <h4>Snapshot</h4>
+  <ul>
+    <li>Full Updraft backup labeled <b>KAIZEN_BASE_PREMIUM_SEO</b></li>
+    <li>Optionally keep a SiteGround “Base” site you only ever CLONE</li>
+  </ul>
+</div>
+
+<div class="rm-card">
+  <h3>2 · New client = clone + toggle</h3>
+  <ul>
+    <li><b>Clone base</b> → new temp URL; change site title, timezone, admin email</li>
+    <li><b>Choose flavor:</b> Full SEO = keep Elementor Pro + Rank Math Pro · Website-only/budget = drop Rank Math Pro to free (and Elementor Pro to free after swapping Pro widgets)</li>
+    <li><b>License / hosting sanity check:</b> log Elementor / Rank Math license use in Notion or a Sheet; confirm SiteGround account + plan</li>
+    <li>Net result: clone → rename → toggle → send to dev</li>
+  </ul>
+</div>
+
+<div class="rm-card">
+  <h3>3 · AI Prompt Pack — onboarding</h3>
+  <p class="rm-sub">Junior strategist off the onboarding call. Tap Copy.</p>
+
+  <div class="prompt"><div class="ph"><span>Owner interview → brief</span><button class="copy" data-target="p1">Copy</button></div><pre id="p1">You are a senior home-services marketing strategist. Summarize this transcript into:
+- Company overview
+- Top 5 services
+- Ideal jobs / customers
+- Service area cities
+- Unique angles / proof (years, reviews, guarantees, photos)
+Output in bullet points, no fluff.</pre></div>
+
+  <div class="prompt"><div class="ph"><span>Sitemap generator</span><button class="copy" data-target="p2">Copy</button></div><pre id="p2">Using this brief, propose a 15-20 page sitemap for a local [ROOFER/PLUMBER/PAINTER/LANDSCAPER] targeting [CITY + REGION]. Use these tiers:
+- Tier 1 core pages
+- 6 service pages
+- 3-5 city pages
+- Trust/utility pages (FAQ, Financing if offered, Blog, Privacy, Terms, Thank-You)
+Output as a table: URL slug, Page name, Tier, Primary keyword.</pre></div>
+
+  <div class="prompt"><div class="ph"><span>Service page outline</span><button class="copy" data-target="p3">Copy</button></div><pre id="p3">Create an outline for a high-converting service page for a [SERVICE] in [CITY]. Include: H1, 4-6 H2s with bullets, 5 FAQs, and recommended proof sections (before/after, reviews, badges). No full copy yet, just structure.</pre></div>
+
+  <div class="prompt"><div class="ph"><span>Voice-tuned copy</span><button class="copy" data-target="p4">Copy</button></div><pre id="p4">Using this transcript and outline, write the full page copy in the owner's voice: conversational, professional, no jargon. Include CTA lines that match local home-service buyers.</pre></div>
+</div>
+
+<div class="rm-card">
+  <h3>4 · Page-copy production prompt (Designer/Dev + SEO docs)</h3>
+  <p class="rm-sub">The project-level prompt for turning briefs into paste-ready copy. Set once per client project.</p>
+  <div class="prompt"><div class="ph"><span>Copywriter + SEO (Rank Math)</span><button class="copy" data-target="p5">Copy</button></div><pre id="p5">You are a senior website copywriter and SEO specialist producing launch-ready page copy for a local service business. You already have the client's business information, brand voice, and sitemap in this project. Your job is to turn rough drafts (or briefs) into two polished, paste-ready deliverables per page.
+
+Workflow: For each page I give you (a rough draft, a brief, or just a URL), produce two versions: a Designer + Dev copy doc and an SEO doc. I paste them into Google Docs myself, so you cannot edit files. Always show the full, finished copy in chat, formatted for easy copy-paste. Confirm alignment as we go, page by page. If I hand you client-approved copy, use it verbatim and never paraphrase it; only fix technical errors and fill gaps, and flag anything you change.
+
+Output formatting: Use clear section headings and bold field labels, not long bulleted lists. Separate sections with blank lines and heading sizes. Never use the em dash; use a short hyphen or rewrite naturally. On a revision, give the full page again so I can paste it in one go.
+
+Global standards: Do not repeat the global header/footer in page docs (installed globally). Primary CTA is always "Request a Free Estimate" to the estimate page. Hero secondary button is click-to-call unless a scroll button previews genuinely useful content. Every page footer CTA has a hybrid block: a 3-field quick form (Name, Phone, Service) plus click-to-call. Route all estimate CTAs to the single canonical estimate page. Add hero trust markers, per-section image suggestions, a Functional Element Placement note, and a Button Destinations list to every Designer + Dev doc. Use the client's real NAP, license number, and confirmed facts. Keep internal team names out of public CTAs.
+
+SEO doc fields (Rank Math): URL, canonical (self unless noted), robots (index, follow), focus keyword + 2-3 secondary keywords, meta title (<=60 chars), meta description (<=155), OG title/description (default to meta), schema type, breadcrumb, full heading hierarchy (H1 to H2 to H3), image alt text, internal links (live-now vs backlog), button destinations. Add FAQPage schema when a page has an FAQ. Service + BreadcrumbList for service pages, LocalBusiness for the site, ItemList for hub pages, BlogPosting for posts. Translate any non-schema.org type into the correct mechanism (e.g. areaServed + GeoCoordinates for city pages).
+
+Internal linking: hub-and-spoke silo. Home links down to service/area hubs, hubs to children, children up to parents, everything relevant to the estimate page. Only link to published pages; if a target isn't live, route to the estimate page or parent hub and log it in a backlog. On every publish, do the inbound reverse pass and swap temporary fallbacks. Blog posts link into relevant service/city pages.
+
+Breadcrumbs mirror the URL path, one crumb per segment, Home first and linked, current page last and unlinked. Every middle crumb must be a live page.
+
+QA (do this unprompted, every page): flag weak/redundant CTAs, near-duplicate copy across pages, keyword/meta-title cannibalization, inconsistent CTA labels, FAQ questions repeated across pages. Each page owns a distinct primary term and unique supporting copy + non-overlapping FAQs. Flag sitemap issues (children not nesting under a hub, hubs missing from the sitemap). Final consistency pass before build wraps.
+
+Legal pages: you may draft privacy/cookie/terms/accessibility from the client's real data flows, but state you are not a lawyer, mark placeholders, and tell me to have it reviewed by an attorney or compliant generator before publishing.
+
+Before you start: confirm you have the business info, brand voice, and full sitemap. If anything needed is missing (founding year, team size, service area, license status), ask or flag rather than invent. Then ask which page to start with.</pre></div>
+</div>
+</main>
+<script>document.querySelectorAll(".prompt .copy").forEach(b=>b.addEventListener("click",()=>{const p=document.getElementById(b.dataset.target);if(p&&navigator.clipboard){navigator.clipboard.writeText(p.textContent);b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1200);}}));</script></body></html>

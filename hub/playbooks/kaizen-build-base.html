@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Build base - Kaizen Basil hub</title><style>
+:root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;--warn:#B5532E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--lime-deep);font-weight:700;text-decoration:none;border-bottom:1px solid #cfe08f}
+a:hover{border-bottom-color:var(--lime-deep)}
+.topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
+.topbar-inner{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto;border:0;color:#fff}
+.pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
+.brand b{font-size:15px}
+.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav a{color:#e9ebe0;border:1px solid #3a3e30;border-radius:9px;padding:6px 11px;font-size:13px;font-weight:600}
+nav a:hover,nav a.on{border-color:var(--lime);color:var(--lime)}
+main{max-width:1000px;margin:0 auto;padding:22px 20px 70px}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px}
+.lede{color:var(--ink-soft);font-size:16px;margin:0 0 22px;max-width:720px}
+h2{font-size:19px;margin:30px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px}
+.card h3{margin:0 0 4px;font-size:15.5px}
+.card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+a.card{display:block;border-bottom:1px solid var(--line);color:var(--ink);font-weight:400}
+a.card:hover{border-color:var(--lime-deep)}
+a.card h3{color:var(--ink)}
+.eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime-deep)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:0 0 14px}
+.box ul,.box ol{margin:6px 0;padding-left:20px}.box li{margin:4px 0}
+.note{background:#f4f8e3;border:1px solid #cfe08f;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.warn{background:#fbf3ef;border:1px solid #e3c7bb;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.own{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px}
+.o-d{background:var(--ink);color:var(--lime)}.o-b{background:#e6eefc;color:#2f5fb0}.o-c{background:#f3ead9;color:#8a5a12}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:13.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eef0e6;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+td .grp{font-size:11px;color:var(--ink-soft)}
+.prose{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 22px}
+.prose h1{font-size:24px;margin-top:18px}.prose h2{font-size:18px;margin-top:26px;padding-top:12px;border-top:1px solid var(--line)}.prose h3{font-size:15.5px;margin-top:18px}
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+.prose pre{background:#1b1d16;color:#e9ebe0;border-radius:10px;padding:12px 14px;overflow:auto}.prose pre code{background:none;color:inherit}
+.prose li{margin:4px 0}.prose table{margin:10px 0;display:block;overflow-x:auto}.prose code{overflow-wrap:anywhere}.prose{overflow-wrap:anywhere}
+.prompt{background:#1b1d16;border-radius:12px;margin:10px 0 18px;overflow:hidden;border:1px solid #2b2f24}
+.prompt .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;background:#22241c}
+.prompt .ph span{color:var(--lime);font-size:12.5px;font-weight:700}
+.prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
+.prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
+.prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.when{font-size:13px;color:var(--ink-soft);margin:-4px 0 6px}
+code{overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+footer{max-width:1000px;margin:0 auto;padding:0 20px 50px;color:var(--ink-soft);font-size:12.5px}
+@media (max-width:620px){h1{font-size:23px}.prose{padding:4px 16px 18px}table{display:block;overflow-x:auto}}
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="pill">KAIZEN</span><span><small>Basil hub · draft</small><b>Run the agency when Daisy's out</b></span></a>
+<nav><a href="../index.html">Start here</a><a href="../clients.html">Clients</a><a href="../playbooks/" class="on">Playbooks</a><a href="../prompts.html">Prompts</a><a href="../../index.html">Team checklist</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
+<main><p class="eyebrow">Playbook · checklist stage 5 · Build + launch</p>
+<div class="note"><b>Use it with Claude:</b> start a chat and paste <code>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-build-base.html and follow it for [client]. Ask me questions before you start.</code> This page is a copy of Daisy's <b>kaizen-build-base</b> skill, rebuilt from it so the team can read it. If something here is wrong, tell Daisy so the skill gets fixed too.</div><div class="prose"><h1>Kaizen Build Base</h1>
+<p>Every new Kaizen client site is cloned from the <strong>Kaizen Base</strong> site, not built from scratch. The base is permanently noindexed and password-protected and never belongs to a client. WordPress + Elementor is settled; do not suggest a different platform.</p>
+<p>This skill owns the technical path from clone to handback. Copy and content standards live in <code>kaizen-copy-doc</code>. This skill is self-contained on purpose so it works in any chat or Project; a longer process doc may exist in Daisy's Kaizen Project or Drive, but never block on it.</p>
+<p><strong>Rough timings</strong>, so a day can be planned: clone-reset 30-45 min · migration 15-45 min depending on site size · DNS zone build 30 min · launch-day cutover 1-2 hrs including propagation · Complianz wizard 15 min · analytics and Search Console 30 min · post-launch audit 20 min · handback 15 min.</p>
+<p>Before cloning: signed agreement + cleared deposit, and the sitemap signed off. If either is missing, stop and ask Daisy.</p>
+<h2>How to verify anything (read this first)</h2>
+<p>The expensive mistakes on a Kaizen launch are rarely wrong actions. They are <strong>wrong verifications</strong>, and they compound: one bad conclusion becomes the lens for every symptom after it. Four rules:</p>
+<ol>
+<li>
+<p><strong>Check the live site from outside the browser you have been working in.</strong> A build browser carries sessions, caches and redirects no visitor has. An external redirect checker, or a phone on cellular, is the only honest test of "is it up".</p>
+</li>
+<li>
+<p><strong>Vary the URL on every re-check.</strong> Fetchers and DNS lookup tools cache per URL for minutes. Re-running an identical check returns your own stale answer, indistinguishable from "nothing changed yet". Add a throwaway query parameter.</p>
+</li>
+<li>
+<p><strong>A direct reading beats an inference.</strong> If a settings field says X and your theory says it secretly means Y, the field is right. Test the theory before building anything on it.</p>
+</li>
+<li>
+<p><strong>Re-read state after every UI action.</strong> Count the rows, re-fetch the page, confirm the value. Several WordPress and Elementor controls fail silently and still look like they worked.</p>
+</li>
+</ol>
+<p><strong>Fetch the front end logged out.</strong> An admin-session fetch includes the admin bar and plugin notices, so a scan for third-party domains picks up Wordfence, Code Snippets and PageSpeed URLs that no visitor ever loads. Use a credential-less request before concluding anything about what the public site contains.</p>
+<p><strong>A failed <code>fetch()</code> does not mean a site is down.</strong> Browser <code>fetch()</code> is subject to CORS, and <code>www.clientdomain.com</code> is a different origin from <code>clientdomain.com</code>. Running <code>fetch('https://www.clientdomain.com/')</code> from a page served on the apex fails every time, on a perfectly healthy site, and the error looks identical to the server being unreachable. This has already produced a false "www is broken" alarm and an invented SSL problem on a site whose wildcard cert was fine. To test a hostname, <strong>navigate to it</strong> and read the resulting address bar, or use a server-side fetch. Only trust a scripted fetch when it is same-origin.</p>
+<p><strong>Scripted checks are only as good as their selector.</strong> Before reporting that something is absent, confirm the selector finds anything at all on a page where you know it exists. A scan of <code>input[type=checkbox]</code> on a Complianz screen, or of top-level widget settings on an Elementor page, returns an empty list that reads as "clean" when it actually means "looked in the wrong place".</p>
+<h2>Base site contents</h2>
+<p>Theme and plugins (all licences are Kaizen-owned and Kaizen-paid):</p>
+<ul>
+<li>
+<p>Hello Elementor (free). Not Astra.</p>
+</li>
+<li>
+<p>Elementor Pro (Expert licence, 25 sites, seats are limited)</p>
+</li>
+<li>
+<p>Unlimited Elements Pro</p>
+</li>
+<li>
+<p>All in One SEO (free tier)</p>
+</li>
+<li>
+<p>Fluent Forms, with the 2 standard form templates saved. Forminator only for builds that need file uploads or payments, and only after Daisy approves.</p>
+</li>
+<li>
+<p>FluentSMTP (installed, unconfigured)</p>
+</li>
+<li>
+<p>Complianz (consent; also places the GA4 tag via its Statistics wizard)</p>
+</li>
+<li>
+<p>SG Optimizer</p>
+</li>
+<li>
+<p>Wordfence</p>
+</li>
+</ul>
+<p>Settings:</p>
+<ul>
+<li>
+<p>Elementor global colours and typography on a neutral, swappable palette</p>
+</li>
+<li>
+<p>Container widths and breakpoints set</p>
+</li>
+<li>
+<p>Privacy Policy, Accessibility Statement and 404 pages built</p>
+</li>
+<li>
+<p>Permalinks: Post name</p>
+</li>
+<li>
+<p>Comments disabled</p>
+</li>
+<li>
+<p>Discourage search engines: ON</p>
+</li>
+<li>
+<p>No GA4, GTM or other tracking IDs on the base</p>
+</li>
+<li>
+<p>Default themes and sample content deleted (Hello World, Sample Page, Akismet, Hello Dolly)</p>
+</li>
+<li>
+<p>AI Agent by SiteGround deleted</p>
+</li>
+<li>
+<p>Labelled backup taken</p>
+</li>
+</ul>
+<p><strong>Confirm Complianz is actually present and active after any clone or migration.</strong> It is easy to assume it came across with the base. If the plugin search screen offers "Activate" rather than "Install", the files are already on disk and only the activation is missing.</p>
+<h2>Never install</h2>
+<p>WP Rocket (conflicts with SG Optimizer), Yoast or Rank Math (conflict with AIOSEO), Smush, MonsterInsights, Site Kit (GA4 goes through Complianz), and AI Agent by SiteGround. Delete AI Agent by SiteGround on every site, new or existing, active or not: once connected it can install plugins, edit content and change settings.</p>
+<p>When GA4 offers "Install with WordPress (recommended)" during tag setup, <strong>choose Install manually</strong> and take only the Measurement ID. The recommended path installs Site Kit and double-tags the site.</p>
+<p>Yoast or Rank Math that were ever installed leave orphaned <code>*_yoast_*</code> and <code>*_rank_math_*</code> database tables behind after removal. They are harmless but worth dropping at handback.</p>
+<h2>Clone reset (30-45 min)</h2>
+<p>Run immediately after cloning, before any build work:</p>
+<ol>
+<li>
+<p>Site title, tagline, admin email, <strong>timezone</strong>, date format, language, site icon. Timezone is the one people skip: a base clone often carries UTC+0, which throws every post date, scheduled publish and form-notification timestamp off by 7-8 hours for a California client. Set America/Los_Angeles and confirm "Local time" reads correctly before moving on.</p>
+</li>
+<li>
+<p>Create a named Administrator account for each person on the build, then delete the base admin account (otherwise every client site shares one login)</p>
+</li>
+<li>
+<p>Regenerate security keys/salts; re-save permalinks</p>
+</li>
+<li>
+<p><code>wp search-replace '&lt;old&gt;' '&lt;new&gt;' --dry-run</code>, then run it for real</p>
+</li>
+<li>
+<p>Then <code>wp elementor replace-urls &lt;old&gt; &lt;new&gt;</code> (plain search-replace misses Elementor data)</p>
+</li>
+<li>
+<p>Elementor &gt; Tools &gt; Regenerate CSS &amp; Data, then purge SG Optimizer cache (it will keep serving old URLs otherwise)</p>
+</li>
+<li>
+<p>Deactivate and reactivate Elementor Pro and Unlimited Elements against this site's own seat</p>
+</li>
+<li>
+<p>Check for carried-over tracking: Complianz Statistics settings, any GA4/GTM ID, header/footer code. Remove anything not belonging to this client</p>
+</li>
+<li>
+<p>FluentSMTP credentials swapped to this client's sender; form notification addresses repointed; send one test submission per form and confirm it lands (check junk)</p>
+</li>
+<li>
+<p>AIOSEO site name, organisation details, social profiles</p>
+</li>
+<li>
+<p>Confirm Discourage search engines is still ON</p>
+</li>
+<li>
+<p>Confirm staging password protection is ON (SiteGround Site Tools &gt; Protected URLs). This is what actually keeps staging out of Google; Discourage search engines is only advisory. If you ever drop one, keep the password</p>
+</li>
+<li>
+<p>Delete AI Agent by SiteGround if it reappeared</p>
+</li>
+<li>
+<p>Add team members at their roles: Daisy admin + hosting owner; Basil admin, no hosting access; developer admin for the build only (downgrade at hand-back); designer no WordPress account; SEO/content Editor; client nothing until after launch</p>
+</li>
+</ol>
+<h2>Security audit: run on any site Kaizen did not build alone (15 min)</h2>
+<p>Run this on any site an outside contractor touched, any site inherited from another agency, and once before every launch. A compromised site migrates perfectly - the copy carries the backdoor with it - so audit the SOURCE before migrating, not the destination after.</p>
+<p><strong>The hidden-admin check, which is the highest-value one minute in this whole skill.</strong> Open <code>wp-admin/users.php</code> and compare the filter count against the item count. "All (2)" next to "3 items" means a user is being hidden from the list. Visit <code>wp-admin/user-edit.php?user_id=N</code> directly to see a hidden account. Tells:</p>
+<ul>
+<li>
+<p>An email on a domain that cannot receive mail (<code>.invalid</code>, <code>.local</code>, <code>.test</code>)</p>
+</li>
+<li>
+<p>A generic job-title username (<code>content_operator</code>, <code>wp_support</code>, <code>seo_manager</code>)</p>
+</li>
+<li>
+<p>Administrator role, zero posts, no name, no bio</p>
+</li>
+</ul>
+<p>Concealment is usually PHP injected into a legitimate plugin's own file - clean, unobfuscated, hardcoding a user ID into <code>pre_get_posts</code> and <code>template_redirect</code>. Malware scanners that diff against the WordPress.org repo cannot catch it in a PREMIUM addon, because there is no public copy to diff against.</p>
+<p>Also check: Code Snippets entries, wp-content drop-ins (only <code>advanced-cache.php</code> and <code>object-cache.php</code> are expected from SG Optimizer), mu-plugins, and theme <code>functions.php</code>.</p>
+<p>Then rotate every credential - WordPress admins, hosting, FTP/SSH, database - and remove contractor accounts. A contractor who was themselves breached hands the attacker access to every site that contractor touched, so scope the sweep by "which sites did they work on", not "which sites do we own".</p>
+<p>Re-run the count check at handback, and turn on Wordfence 2FA for every remaining admin. Wordfence's "Prevent discovery of usernames through '/?author=N' scans, the oEmbed API, the WordPress REST API, and WordPress XML Sitemaps" is ON by default - confirm rather than assume, but don't spend time re-enabling it.</p>
+<h2>Host malware quarantine: deleting the plugin is not enough</h2>
+<p>When SiteGround flags a file it changes its permissions to non-executable and starts a 3-day clock. Critically: <strong>WordPress can no longer delete those files.</strong> Deleting the plugin from the admin appears to work - it vanishes from the plugin list - but the directory stays on disk, the next scan re-flags it, and the warning escalates.</p>
+<p>So after removing any flagged plugin: <strong>open Site Tools &gt; Site &gt; File Manager and confirm the directory is really gone</strong> from <code>public_html/wp-content/plugins/</code>. Delete it there if it is still present. Only then request the rescan, via Client Area &gt; Home &gt; Important Notifications &gt; Review &gt; <strong>MORE ↓ &gt; Request Scan</strong> (it is in the dropdown, not one of the three main buttons).</p>
+<p>The incident panel's evidence list does not refresh after a rescan - do not read a stale entry as proof the file is still there, or its absence as proof it is gone. The filesystem is the only reliable check. Read the incident text rather than the red banner: the banner says "temporarily suspended" as boilerplate while the incident is often still inside a 3-day grace period, which is a very different level of urgency.</p>
+<h2>Moving a site between hosts or domains (15-45 min)</h2>
+<p><strong>If both sides are on SiteGround, use SiteGround Migrator.</strong> Free, pulls server to server with no size cap, and rewrites URLs on the way in. Site Tools &gt; WordPress &gt; Migrator on the DESTINATION generates a token; install the SiteGround Migrator plugin on the SOURCE and paste it there.</p>
+<p><strong>Kaizen also owns an All-in-One WP Migration licence</strong> (Unlimited Extension; the billing receipt is in Daisy's personal Gmail, not the agency account). Use it when the source is NOT on SiteGround, when the Migrator fails, or when a portable <code>.wpress</code> file is wanted as a backup artifact.</p>
+<p>Before any migration:</p>
+<ul>
+<li>
+<p><strong>Run the security audit above on the SOURCE.</strong> A migration copies a compromise faithfully</p>
+</li>
+<li>
+<p>Deactivate Broken Link Checker on the source. It bloats the database with its own tables and is the first suspect when a migration stalls</p>
+</li>
+<li>
+<p>Take a labelled backup on the source</p>
+</li>
+<li>
+<p>Confirm the destination is empty; a migration overwrites it</p>
+</li>
+</ul>
+<p>After the migration lands:</p>
+<ul>
+<li>
+<p>Run clone-reset steps 6 through 10 against the new URL</p>
+</li>
+<li>
+<p>Confirm Discourage search engines is still ON</p>
+</li>
+<li>
+<p>Confirm Complianz survived and is active</p>
+</li>
+<li>
+<p>Check the footer, contact blocks and form notification addresses for a rewritten email like <code>info@&lt;old-domain&gt;</code></p>
+</li>
+<li>
+<p><strong>Release the Pro licences from the OLD location.</strong> Deactivate Elementor Pro and Unlimited Elements Pro on the source site, then remove that domain from both licence dashboards</p>
+</li>
+<li>
+<p>Delete the SG Migrator plugin from both sites once the transfer is confirmed good</p>
+</li>
+</ul>
+<h3>The SiteGround temp host: the biggest trap in this document</h3>
+<p>SiteGround gives the destination a hostname like <code>1792700227-xxxx.wp-transfer.sgvps.net</code>. Understand exactly what it does, because getting this wrong takes a live site down.</p>
+<ul>
+<li>
+<p><strong>The migration sets WordPress's Site Address and WordPress Address (Settings &gt; General) to the temp host.</strong> Everything below follows from that one fact. The database is NOT on the real domain.</p>
+</li>
+<li>
+<p><strong>It rewrites the domain in output AND on input.</strong> Content typed into Elementor through the temp host is stored with the temp hostname substituted in. You can type <code>jose@clientdomain.com</code>, watch it save, verify it on screen, and still have <code>jose@1792700227-...sgvps.net</code> in the database. Verifying an edit through the temp host proves nothing.</p>
+</li>
+<li>
+<p>Links built on the real domain - the Site Tools auto-login button, WordPress password-reset emails - 403 while DNS still points elsewhere. Swap the hostname for the temp domain and they work; reset keys live in the database and are not host-bound.</p>
+</li>
+</ul>
+<p><strong>The failure mode, which is severe:</strong> once DNS moves to SiteGround, WordPress's canonical redirect sends every visitor from the real domain to the temp host, which then redirects to itself. <code>http://domain</code> → <code>https://domain</code> → <code>https://temp-host</code> → <strong>loop</strong>. The site is unreachable for everyone, and an external redirect checker is the only thing that shows it.</p>
+<p>These symptoms are all the same bug, not separate ones. Do not explain any of them away as a browser cookie:</p>
+<ul>
+<li>
+<p>getting logged out of wp-admin on nearly every save</p>
+</li>
+<li>
+<p>the front end returning ERR_TOO_MANY_REDIRECTS</p>
+</li>
+<li>
+<p>the real domain bouncing to the temp host in any browser, including Incognito and on a phone</p>
+</li>
+</ul>
+<p><strong>So before DNS cutover, always, in this order:</strong></p>
+<ol>
+<li>
+<p>Settings &gt; General - set <strong>Site Address and WordPress Address to the real domain</strong>, typed by hand, never pasted from what is displayed</p>
+</li>
+<li>
+<p>Install <strong>Better Search Replace</strong> (free, WordPress.org) and replace <code>&lt;temp-host&gt;</code> → <code>&lt;real domain&gt;</code>. Dry run first. Elementor stores JSON so a string replace is safe, and the plugin handles serialised data too</p>
+</li>
+<li>
+<p><strong>Run the replace from the real domain's wp-admin, never from the temp host</strong> - otherwise the rewrite puts the temp hostname straight back as it saves</p>
+</li>
+<li>
+<p>Re-crawl every page and grep the HTML for <code>sgvps.net</code>. Expect zero. It hides in the footer <code>mailto:</code>, in uploaded image URLs, and in the sitemap link in every page head</p>
+</li>
+<li>
+<p>Delete Better Search Replace</p>
+</li>
+<li>
+<p>Only now migrate the Unlimited Elements licence, and stop using the temp host entirely</p>
+</li>
+</ol>
+<p><strong>Unlimited Elements enters safe mode</strong> after a migration, having spotted a duplicate install. <strong>Do not click "Migrate License" while on the temp hostname</strong> - it burns a seat on a host that dies in 48 hours and you will do it twice. Choose <strong>Duplicate Website</strong>, which keeps premium functionality for roughly two weeks, then migrate the licence once, at the real domain, after cutover.</p>
+<h2>DNS: build the zone BEFORE pointing nameservers (30 min)</h2>
+<p>When a client domain is added to SiteGround, <strong>SiteGround auto-creates its own mail configuration</strong>: MX at <code>mx10/20/30.antispam.mailspamprotection.com</code>, its own SPF TXT, a <code>default._domainkey</code> DKIM CNAME, and A records for <code>mail</code>, <code>autoconfig</code> and <code>autodiscover</code>.</p>
+<p>Repoint nameservers with that default zone in place and <strong>all of the client's email routes to SiteGround instead of their real mail host</strong>.</p>
+<p>In this order, every time:</p>
+<ol>
+<li>
+<p>Inventory the CURRENT live zone - MX, SPF, DKIM selectors, DMARC, autodiscover, any verification TXT tokens, and the A/CNAME records</p>
+</li>
+<li>
+<p>Add the domain to SiteGround as its OWN website entry</p>
+</li>
+<li>
+<p>Delete every auto-created mail record listed above</p>
+</li>
+<li>
+<p>Recreate the real records exactly, including verification TXT tokens whose purpose nobody remembers - cheap to carry, expensive to lose</p>
+</li>
+<li>
+<p>Only then repoint nameservers at the registrar</p>
+</li>
+<li>
+<p>Verify with live DNS lookups that MX, SPF and autodiscover resolve correctly, then send a real test email both directions before calling it done</p>
+</li>
+</ol>
+<p>To move DNS control without touching the website, point the A records at the CURRENT host's IPs. Control transfers, the existing site keeps serving, and going live later is a one-record change.</p>
+<p><strong>Get the server IP from Site Tools &gt; Dashboard &gt; Site Information, not from memory or an old note.</strong> The Dashboard also shows "Your domain's A record is not pointed to this website" until it is - a free confirmation, though it lags behind real propagation because it reads a cached resolver.</p>
+<p><strong>Check for more than one A record on the apex.</strong> Hosts often run two in round-robin. Edit one and leave the other and roughly half of visitors land on the old site at random. Delete the spares FIRST, while the remaining record still points at the old host, then repoint what is left.</p>
+<p><strong>When checking propagation, change the query each time.</strong> Lookup tools and fetchers cache responses per URL for several minutes; re-running the identical query returns your own stale answer and looks exactly like "not propagated yet". Vary a parameter, or use a second resolver.</p>
+<h2>Pre-launch content and form audit (15 min)</h2>
+<p>Run this before the site is made indexable. Both of these have shipped live on a real Kaizen launch.</p>
+<p><strong>Grep every page in the sitemap for placeholder text.</strong> Fetch each URL logged out, strip tags, and count <code>Lorem ipsum</code>. Template pages that nobody rewrote - a Projects page, a leftover duplicate like <code>/project-page/</code> - stay published and go straight into the sitemap. Decide per page: write real content, trash it, or noindex it. Do not leave the decision for after launch.</p>
+<p><strong>Read the actual field list of every form, from the rendered HTML, not from the Elementor canvas.</strong> Pull <code>name</code>, <code>type</code>, <code>placeholder</code> and <code>required</code> for each field. Things that look right in the editor and are wrong on the page:</p>
+<ul>
+<li>
+<p>a field still named <code>form_fields[email]</code> that has been switched to <code>type="tel"</code> with a "Phone" placeholder, so the form shows <strong>two identical required Phone boxes and captures no email address at all</strong></p>
+</li>
+<li>
+<p>a "Preferred contact method" option offering Email when there is no email input</p>
+</li>
+<li>
+<p>a required field the client never meant to make required</p>
+</li>
+</ul>
+<p>The field <code>name</code> is the giveaway: it keeps the original field's id even after someone changes the type, so a <code>[email]</code> field of type <code>tel</code> is always a mis-edit. Send one real test submission per form and read what actually arrives.</p>
+<p><strong>Every content image gets alt text AND a description - no exceptions.</strong> Before a site goes indexable, list every image attachment from <code>/wp-json/wp/v2/media?per_page=100&amp;_fields=id,source_url,alt_text,caption,description,title</code> (page through all of them) and fix any with an empty <code>alt_text</code> or empty <code>description</code>. Then crawl every page logged out and assert every <code>&lt;img&gt;</code> inside page content has a non-empty <code>alt</code>. Rules:</p>
+<ul>
+<li>
+<p><strong>Alt text</strong> describes what is in the picture plus the service and city where true, in under ~125 characters: <code>Two-story stucco home exterior repainted in San Jose</code>. Never keyword-stuff, never "image of", never the filename</p>
+</li>
+<li>
+<p><strong>Description</strong> (the media library field) is one or two plain sentences on what the photo shows and which page or project it belongs to. It is what the team and future AI work read to reuse the photo correctly</p>
+</li>
+<li>
+<p><strong>Title</strong> is cleaned up from the filename (<code>IMG_4432</code> → <code>Westmont hallway repaint</code>)</p>
+</li>
+<li>
+<p>Never name a private homeowner, street address or person in alt text unless the client approved it</p>
+</li>
+<li>
+<p>Purely decorative images (dividers, background shapes) get <code>alt=""</code> on purpose, but still get a description in the library</p>
+</li>
+<li>
+<p>Elementor image widgets pull alt from the media library at render time, so fix the library entry, not the widget. Background images have no alt at all - if a photo carries meaning, it belongs in an image widget, not a section background</p>
+</li>
+<li>
+<p>Set alt and description <strong>at upload</strong>, every time a photo is added, not as a later sweep. Write them through the REST API (<code>POST /wp-json/wp/v2/media/{id}</code> with <code>alt_text</code>, <code>description</code>, <code>title</code>) when uploading in bulk</p>
+</li>
+</ul>
+<h2>Launch day (early morning, 1-2 hrs)</h2>
+<ol start="0">
+<li>
+<p><strong>Confirm Site Address and WordPress Address are the real domain, and the temp-host search-replace is done and verified at zero.</strong> If this is skipped, the cutover takes the site down - see the temp host section above</p>
+</li>
+<li>
+<p>Change only the A record and the www record. Check for an AAAA record pointing at the old host; leave MX, TXT (SPF, DKIM, DMARC), SRV and mail CNAMEs exactly as they are</p>
+</li>
+<li>
+<p>Wait for the TTL. Note it beforehand - a 14400s TTL means up to 4 hours where some visitors still reach the old site. Dropping the TTL to 300 a few hours ahead of the switch makes the cutover near-instant, and is worth doing whenever the old and new sites differ enough that a split audience matters</p>
+</li>
+<li>
+<p>Issue SSL for apex and www (SiteGround auto-issues a Let's Encrypt wildcard by DNS validation once its nameservers are in place - check Site Tools &gt; Security &gt; SSL Manager before assuming you need to do anything)</p>
+</li>
+<li>
+<p><strong>Turn on Site Tools &gt; Security &gt; HTTPS Enforce.</strong> This is a separate server-level toggle and it is the step people skip: an active certificate does NOT redirect http to https on its own. Verify the toggle is on for the domain rather than inferring it from the certificate, and purge cache afterwards so no http pages stay cached</p>
+</li>
+<li>
+<p>Pick a canonical host (apex or www) and 301 the other to it. Default to the bare domain unless the client's print, email and Google Business Profile already use www. <strong>Whichever you pick, make the copy docs match</strong> - a doc that specifies <code>www.clientdomain.com</code> against a site that serves the apex quietly seeds the wrong URL into schema blocks and every future page</p>
+</li>
+<li>
+<p>Remove staging password protection</p>
+</li>
+<li>
+<p><strong>Turn OFF Discourage search engines.</strong> A site that launches still noindexed ranks for nothing and nobody notices for weeks</p>
+</li>
+<li>
+<p>Check the other two places a noindex hides: AIOSEO &gt; Search Appearance, and <code>/robots.txt</code> for a <code>Disallow: /</code></p>
+</li>
+<li>
+<p>Purge cache</p>
+</li>
+<li>
+<p><strong>Read the sitemap and delete what should not be in it.</strong> A clone that was not fully reset ships <code>/hello-world/</code>, <code>/sample-page/</code>, <code>/category/uncategorized/</code> and <code>/author/&lt;admin-username&gt;/</code> to Google the moment you make it indexable. The author archive is the worst of them: its page title is the administrator's username. Trashing the default post and page drops all four from the AIOSEO sitemap automatically. Rather than hiding the author archive, give every admin a non-obvious username at creation (they can sign in with their email address instead), and delete the agency account at handback</p>
+</li>
+<li>
+<p>Redirect map: if the client had an existing site, 301 its top URLs to the new equivalents</p>
+</li>
+<li>
+<p>Submit <code>/sitemap.xml</code> in Search Console; confirm GA4 is firing on the live domain; re-run the Complianz cookie scan</p>
+</li>
+</ol>
+<p><strong>Then verify the launch from outside the build browser.</strong> Run the domain through an external redirect checker and confirm the chain is exactly <code>http://domain</code> → 301 → <code>https://domain</code> → <strong>200</strong>, with no third hop. Then load it on a phone on cellular. A site is not "live" until that chain is clean - the build browser will happily show a working site that no visitor can reach.</p>
+<p>48 hours later, run <code>site:clientdomain.com</code> in Google. Nothing at all means a noindex is still live somewhere.</p>
+<h2>Post-launch audit (2-3 days after launch, 20 min)</h2>
+<p>Launch day proves the site is reachable. This proves it is <strong>correct</strong>. Run it a few days after every launch, and again before sending any client progress report - a report that lists work done on a site with a dead phone link is worse than no report.</p>
+<p>Everything below was found on a site that had already launched cleanly and looked finished.</p>
+<p><strong>Enumerate pages from the WordPress REST API, not the XML sitemap.</strong> <code>/wp-json/wp/v2/pages?per_page=100&amp;status=publish&amp;_fields=id,link,title</code> gives you IDs and URLs in one call. Fetching <code>/page-sitemap.xml</code> from inside a page context and regexing <code>&lt;loc&gt;</code> has returned zero matches on a sitemap that was fine, which reads as "no pages" and is badly misleading. Get the post count too: <code>/wp-json/wp/v2/posts</code> returning <code>[]</code> on a site whose nav has a Blog link is its own finding.</p>
+<p>Then crawl every URL logged out and check:</p>
+<p><strong>1. Click-to-call links.</strong> Collect every <code>a[href^="tel:"]</code> and assert each one equals exactly <code>tel:+1XXXXXXXXXX</code>. Parentheses, spaces and encoded <code>%20</code> break dialling on many phones, and local service sites convert mostly on mobile taps. One real site carried three different malformed formats at once - <code>tel:(650) 362-4373</code>, <code>tel:+1 (650) 362-4373</code> and the encoded variants - across the header, the footer, six page bodies and four legal pages. 57 links, several broken, on a site that looked perfect. Leave the <strong>visible text</strong> in whatever human format the design uses; only the href has to be strict.</p>
+<p><strong>2. JSON-LD against the real business facts.</strong> Read the raw HTML for <code>script[type="application/ld+json"]</code> and actually read the values. A <code>ContactPage</code> block was telling Google <strong>Mon-Sat 07:00-17:00</strong> while the footer and the client both said Mon-Fri 8-5 and Sat 8-2. Schema is what Google shows in results, so wrong hours there are worse than wrong hours in body copy, and nobody looks at it. Check <code>openingHoursSpecification</code>, <code>telephone</code>, <code>@id</code> and <code>url</code> - the URLs in schema often still carry the host the copy doc specified rather than the one the site actually serves.</p>
+<p><strong>3. Placeholder text.</strong> Re-run the Lorem ipsum grep. It comes back: a Projects page shipped with 13 instances and a giant <code>LOREM IPSUM</code> headline above a grid of real photos.</p>
+<p><strong>4. Nav items that go nowhere.</strong> Pull every nav and header link and flag any <code>href="#"</code> or empty href. A Blog item pointing at <code>#</code> sat in the main nav of a live site. Either ship the page or remove the item.</p>
+<p><strong>5. Internal 404s.</strong> Status-check every internal link found on the homepage and on each page. Also directly check any URL the footer or copy doc promises but that may not be built yet.</p>
+<p><strong>6. Consistency against the copy doc.</strong> Email address, phone, hours and business name, compared between the live site and the Designer+Dev doc. These drift: one site had <code>info@</code> in the doc and <code>jose@</code> live, and hours that disagreed between the footer, the estimate page and the schema.</p>
+<p><strong>7. Google Business Profile.</strong> Open it signed in as the managing account and confirm a website is actually attached - a profile showing "Add website" is the single highest-value fix available and is easy to assume was done. Check the profile name matches the licence, Yelp and the site exactly; a profile called "JDH Landscaping" against a business called "JDH Garden Services, Inc." is a NAP mismatch that costs local ranking. Note that GBP edits go into a pending review of up to ~10 minutes, and <strong>do not stack a name change, a website change and an hours change in one batch</strong> - make the important ones, let them land, then do the rest.</p>
+<p><strong>8. Staging is not indexed.</strong> Run <code>site:staging-host</code> in Google. A full copy of the client site indexed on a Kaizen staging subdomain competes directly with the live domain.</p>
+<p><strong>9. Image alt text and descriptions.</strong> Re-run the media library check and the <code>&lt;img alt&gt;</code> crawl from the pre-launch audit. Pages added after launch are where images ship without alt text - every new project, industry, city page and blog post must come back at zero missing.</p>
+<p>Finally, re-run the whole crawl after the fixes and assert the counts, rather than assuming a template edit propagated. See the Elementor widget-ID trap below for why it often does not.</p>
+<h2>Adding pages to a live site (buildout and restructure)</h2>
+<p>Most post-launch SEO work is adding pages: industries, projects, city pages, service pages, blog posts. This is the order that worked on a real 25-page night (Sunwest Painting, Oct 2026), and the traps it hit.</p>
+<p><strong>Plan in the master sitemap first.</strong> One Google Sheet per client, in the client's Drive folder, named <code>Sitemap - &lt;Client&gt; (Master)</code>, columns <code># | Section | Page | URL | Status | Month | Template | Owner | Notes</code>. Status values: Live, Live - needs photos, In progress, Planned, Backlog, Dropped. Never keep a second sitemap or a status tab beside it - merge into the master and trash the duplicate. Update it the same night pages go live.</p>
+<p><strong>Facts come only from the client.</strong> Build a short copy brief first (business facts, banned claims, approved CTAs, URL map, project notes in the client's own words) and write every page from it. No invented stats, certifications, quotes or timelines; no written-up testimonials; no private homeowner names. Pages with thin facts are kept shorter rather than padded.</p>
+<p><strong>Hubs and children.</strong> When a single page sits at <code>/industries/</code>, <code>/projects/</code> or <code>/locations/</code>, move it to a child URL (<code>/industries/property-management-painting/</code>) and build a hub at the original URL with a card grid linking every child. 301 nothing - the hub keeps the old URL alive.</p>
+<p><strong>Clone, don't rebuild.</strong> Copy an existing page's <code>_elementor_data</code> through REST (<code>GET /wp-json/wp/v2/pages/{id}?context=edit</code>), swap the text and image IDs in the JSON, then create the new page with <code>template: 'elementor_header_footer'</code> and meta <code>_elementor_page_settings: {hide_title: 'yes'}</code>. Set the SEO title and description with <code>POST /wp-json/aioseo/v1/post {id, title, description}</code>.</p>
+<p><strong>Internal links on every new page:</strong> up to its hub, across to 2-3 siblings, to 1 related project or service, and to the quote/bid page. Then go back and add links TO the new page from the existing pages that should mention it. A page nobody links to is invisible.</p>
+<p><strong>Nav.</strong> Add hubs as header dropdown parents with children under them (<code>wp/v2/menu-items</code>, <code>parent</code> = the hub item). WordPress menu items follow the page title unless given an explicit title, so renaming a page silently renames its nav item - always set the menu item title explicitly.</p>
+<p><strong>Drafts and links.</strong> A link to a draft page is a 404 for every visitor. Either publish together, or strip links to drafts and restore them on publish. Ask Daisy before publishing anything live; get the approval in words that match exactly what is going live.</p>
+<p><strong>After every batch:</strong> Elementor &gt; Tools &gt; Clear Files &amp; Data, then Purge SG Cache, then crawl every new URL logged out: status 200, no Lorem ipsum, no <code>href="#"</code>, all internal links 200, every image has alt text, JSON-LD reads right.</p>
+<p>Traps from that night:</p>
+<ul>
+<li>
+<p><strong>Better Search Replace edits can be overwritten.</strong> Elementor keeps its own copy of the content; opening the page in the editor afterwards can save the stale version back over the fix. Make text changes in Elementor JSON or the editor, not BSR</p>
+</li>
+<li>
+<p><strong>Element caching serves stale HTML after a REST write.</strong> Clearing Elementor files and data fixes it; the page is not broken</p>
+</li>
+<li>
+<p><strong>Hidden sections clone hidden.</strong> A section copied from a page where it is hidden on all devices (<code>hide_desktop</code>, <code>hide_tablet</code>, <code>hide_mobile</code>) stays invisible on the new page. Strip those flags when cloning, and flag the original to Daisy</p>
+</li>
+<li>
+<p><strong>Form notification emails default to "New message from WordPress".</strong> Set a real subject per form (<code>New quote request - &lt;Client&gt; website</code>) so leads are not filtered as noise</p>
+</li>
+<li>
+<p>Social profiles (Instagram, Facebook) are the fastest source of real project photos and project ideas - crawl them before asking the client, and make sure they are linked in the footer and in schema <code>sameAs</code></p>
+</li>
+</ul>
+<h2>Testimonials and reviews</h2>
+<p>Never publish a written-up testimonial. Every quote on a client site must come from a real customer - a Google or Yelp review, or something the client can produce in writing. The FTC's fake-review rule carries civil penalties per violation. If a new site has no reviews yet, leave the section out.</p>
+<p>When pulling from Yelp, use short excerpts with the reviewer's first name, last initial and city, link each one to the business's Yelp page, and pick quotes that cover different service lines rather than three versions of the same compliment. Republishing full review text is against Yelp's terms; a short attributed excerpt with a link back is the normal practice.</p>
+<p><strong>Check where the client's reviews already are before planning a review push.</strong> A business with 159 Yelp reviews at 4.5 stars and zero on Google does not have a reviews problem, it has a platform problem, and the fix is a review link in the client's hands rather than anything on the website. That comparison is also the most persuasive line you can put in a client report.</p>
+<h2>Legal pages and Complianz</h2>
+<p>Do not hand-write legal text, and do not launch a California client on placeholder text.</p>
+<p><strong>Know what the free tier actually does, because the plan matters here.</strong> On free Complianz, only the <strong>Cookie Policy</strong>, the <strong>consent banner</strong> and the <strong>Opt-out preferences</strong> page are generated. <strong>Privacy Statement, Imprint and Disclaimer are Premium</strong> - the wizard shows an "Upgrade" tag and only lets you point at an existing page. So a Kaizen site still needs its own Privacy Policy, Terms &amp; Conditions and Accessibility Statement pages; the base ships Privacy Policy and Accessibility Statement for exactly this reason. Point Complianz's Privacy Statement setting at the existing page rather than leaving it as None - the banner and the Cookie Policy both link to it.</p>
+<p><strong>Two Complianz features need domain authentication by email</strong>, and both are easy to assume are working when they are not:</p>
+<ul>
+<li>
+<p>the <strong>Website Scan</strong> (finds real cookies on the site) - free, but capped at the first 50 pages</p>
+</li>
+<li>
+<p>the <strong>cookiedatabase.org sync</strong> (writes the human descriptions of each cookie) - <strong>Premium only</strong></p>
+</li>
+</ul>
+<p>Without the sync the Cookie Policy still generates and is accurate about what you declared, but it will not describe the third-party services you ticked, so Google Fonts and Google Maps go undocumented. Premium is per-site-count: Personal 1 site, Professional 5, Agency 25. The registration also opts the address into a marketing drip, so it is Daisy's call, not an automatic yes. Flag it; do not sign her up.</p>
+<p><strong>Wizard answers for a typical California local-services client:</strong></p>
+<ul>
+<li>
+<p>Default privacy law: <strong>United States</strong>, then tick <strong>California (CPRA)</strong> under targeted states</p>
+</li>
+<li>
+<p>Restricted log-in area: <strong>No</strong></p>
+</li>
+<li>
+<p>Purposes: <strong>Contact</strong> (the quote form) and <strong>Compiling and analyzing statistics</strong> (GA4). Not Payments, not Sell/share data</p>
+</li>
+<li>
+<p>Data types - take these from the real form fields, not from habit: name, physical address (a property address for a quote), email, phone, photos if the form has an upload; plus IP address and internet activity for statistics</p>
+</li>
+<li>
+<p><strong>Respect Do Not Track and Global Privacy Control: Yes.</strong> CPRA expects GPC to be honoured and it costs nothing</p>
+</li>
+<li>
+<p>Consent per Service: No. Third-party services: <strong>Yes</strong> if the site loads Google Fonts from Google's CDN or embeds a Google Map - check the logged-out HTML rather than guessing. Embedded social media: No, if the Facebook and Yelp icons are plain links rather than pixels or timelines</p>
+</li>
+<li>
+<p>Legal Hub with Elementor Pro: <strong>No</strong> when the footer already links the legal pages, or you get a second route to the same documents</p>
+</li>
+<li>
+<p>Finish step: Show Consent Banner <strong>Yes</strong> and Enable cookie and script blocker <strong>Yes</strong>. The blocker will replace Google Maps embeds with a placeholder until consent - that is correct behaviour, but look at those pages afterwards</p>
+</li>
+</ul>
+<p><strong>Do not let the wizard put the opt-out page in the Main Menu.</strong> It offers to, and the only menu on a Kaizen build is the header nav. The CPRA opt-out link belongs in the footer with the other legal links; add it there by hand.</p>
+<p><strong>Complianz's own controls are custom <code>&lt;button&gt;</code> elements, not real <code>&lt;input&gt;</code>s.</strong> Scripted checks for <code>input[type=checkbox]</code> find nothing and read as "unselected". Read the checked state from the presence of the tick <code>&lt;svg&gt;</code> inside <code>.cmplz-checkbox-group__item</code>, and click by coordinate measured immediately before the click - the page reflows as answers unlock new questions, so a coordinate captured one step earlier lands on the wrong row.</p>
+<p><strong>California contractors must display their licence number in all advertising, websites included (B&amp;P Code §7030.5).</strong> Take the number from the client's own email signature or an official document, verify it against the CSLB register, and never transcribe it from a photo or a scanned business card - digits get misread, and a wrong licence number on a live site is worse than none.</p>
+<p><strong>A licence number inside the logo image does not count as displayed.</strong> One site carried the number, the PO Box, the phone and the email as microtext baked into a 220x66 PNG - unreadable to a visitor and invisible to Google. It has to be real selectable text, and the footer under the tagline is the natural home: <code>CA Contractors License #XXXXXXX · Licensed, bonded &amp; insured</code>.</p>
+<p><strong>Addresses on legal pages.</strong> Complianz requires an address for the documents. If the client has asked not to publish a street address, enter city, state and country only - it satisfies the field without exposing the address, and it matches what the contact page usually already says. Never invent a ZIP code to fill the box. Note that a Google Business Profile usually publishes the street address anyway, so tell the client that rather than letting them assume the address is private everywhere.</p>
+<h2>Analytics and Search Console (30 min)</h2>
+<ul>
+<li>
+<p><strong>Search Console: use a domain property, not a URL prefix.</strong> It verifies by TXT, covers www, non-www, http and https in one property, and survives the DNS cutover</p>
+</li>
+<li>
+<p><strong>GA4 goes in through Complianz's Statistics wizard</strong>, never Site Kit or MonsterInsights. Statistics step: "Yes, with Google Analytics"; Statistics configuration: "Yes" to let Complianz add it, then paste the Measurement ID into the Google Tag - Statistics field. Consent Mode V2 and force-in-header are Premium; leave them off</p>
+</li>
+<li>
+<p><strong>One GA account per client</strong>, named for the client, with the property named for the domain - matching the existing Falcon Roofing / MMT Electric / Sunwest Painting pattern. Set Reporting time zone to Los Angeles and currency USD at creation; they are a nuisance to change later</p>
+</li>
+<li>
+<p>Business details for a landscaper: industry <strong>Home &amp; Garden</strong>, size Small, objectives <strong>Generate leads</strong> + <strong>Understand web and/or app traffic</strong></p>
+</li>
+<li>
+<p>Leave <strong>"Google products &amp; services"</strong> data sharing unticked (that is the ad-personalization one). The other three defaults are fine</p>
+</li>
+<li>
+<p><strong>Google will show its Terms of Service before it creates the property, and that is Daisy's to accept, not an assistant's.</strong> Hand it over rather than clicking through; tick the GDPR Data Processing Terms alongside it</p>
+</li>
+<li>
+<p>The Measurement ID (<code>G-…</code>) is not the Stream ID. Open the stream, or choose "Install manually" on the Google tag screen, to read it</p>
+</li>
+<li>
+<p><strong>Re-check Enhanced measurement after creating the stream</strong> - it can come back switched off even when it was on in the creation flow, leaving only page views</p>
+</li>
+<li>
+<p>Access on both GSC and GA, kept identical: <strong>[Kaizen ops Google account - ask Daisy]</strong> as Administrator / Owner (not a personal gmail), <strong>basil@kaizenagency.org</strong> and the <strong>client</strong> at Full on GSC and Editor on GA. Editor is the GA equivalent of GSC Full: everything except managing users</p>
+</li>
+<li>
+<p><strong>Check which Google account actually owns each property before assuming.</strong> On one build GSC ended up owned by <code>daisy@kaizenagency.org</code> while GA was created under <code>[Daisy's personal Gmail]</code>. Both worked, but nobody could remember which login opened what. Consolidate before handback</p>
+</li>
+<li>
+<p>If the client's mailbox is Microsoft 365, their address still needs a Google account attached to it before they can actually open GSC or GA - tell them so rather than leaving a silent invitation</p>
+</li>
+<li>
+<p>Submit <code>/sitemap.xml</code> only after the site is live and indexable</p>
+</li>
+</ul>
+<h2>Handback and retiring (15 min)</h2>
+<ul>
+<li>
+<p>Downgrade or remove the developer's admin account; create the client's own Administrator account</p>
+</li>
+<li>
+<p><strong>Re-run the hidden-admin count check</strong></p>
+</li>
+<li>
+<p>Confirm the client owns hosting, domain, email, analytics and Google Business Profile, with Kaizen as collaborator</p>
+</li>
+<li>
+<p>Drop any orphaned <code>*_yoast_*</code> / <code>*_rank_math_*</code> tables left by plugins that were removed</p>
+</li>
+<li>
+<p>Rotate any credential that was ever sent in plaintext</p>
+</li>
+<li>
+<p><strong>Never send client passwords by email.</strong> Use a Bitwarden Send link that expires, or read them over the phone. Point the client at the "forgot password" link as the default route</p>
+</li>
+<li>
+<p>Retire the staging copy and remove its domain from the Elementor Pro and Unlimited Elements licence dashboards</p>
+</li>
+</ul>
+<h2>Traps to check</h2>
+<ul>
+<li>
+<p>Staging on <code>*.sg-host.com</code> burns an Elementor Pro seat; prefer <code>staging.clientdomain.com</code></p>
+</li>
+<li>
+<p>A client's live site should be its own website entry in SiteGround, never a parked domain or subdomain under a Kaizen staging plan. Parked domains alias the plan's MAIN site</p>
+</li>
+<li>
+<p>Never use shared logins; never send passwords in Slack or email</p>
+</li>
+<li>
+<p>Never create mailboxes on the hosting account for a domain whose mail lives elsewhere</p>
+</li>
+<li>
+<p>A domain can have only one SPF record; merge includes, never add a second</p>
+</li>
+<li>
+<p>Check the registrant contact email on the registrar account. If it is an address nobody can open, the account is one password reset away from being lost</p>
+</li>
+<li>
+<p>Registrar domain lock ON except during a deliberate transfer</p>
+</li>
+<li>
+<p><strong>AIOSEO Pro's settings screens can render blank</strong> (its own Vue bundle throwing on mount). The plugin keeps working and keeps emitting schema - only the settings UI is dead. Reinstall the plugin rather than assuming the feature is off</p>
+</li>
+<li>
+<p><strong>Markdown-converting fetchers strip <code>&lt;script&gt;</code> tags</strong>, so they cannot see JSON-LD and will report "no structured data" on a site that has plenty. Check schema by reading the raw HTML for <code>script[type="application/ld+json"]</code>, never from a text conversion</p>
+</li>
+<li>
+<p><strong>"X links unchecked" from Broken Link Checker means unchecked, not broken.</strong> It needs connecting to AIOSEO's service before it checks anything. Crawling the sitemap and status-checking every link yourself takes two minutes and gives a real answer</p>
+</li>
+</ul>
+<h2>Working in the WordPress and Elementor UI</h2>
+<p>These cost real time when learned the hard way:</p>
+<ul>
+<li>
+<p><strong>Elementor repeater items discard edits made while collapsed.</strong> Setting a link on six list items in one pass silently saves one. Expand each item, set its field, collapse it, move to the next - and verify on the front end afterwards</p>
+</li>
+<li>
+<p><strong>WordPress row-action links ("Move to Trash", "Edit") are hidden until the row is hovered.</strong> Clicking one programmatically does nothing and reports no error. Use the checkbox + Bulk actions + Apply path instead - or read the row's own <code>.submitdelete</code> href, which carries the nonce, and navigate straight to it</p>
+</li>
+<li>
+<p><strong>After any destructive UI action, re-read the count</strong> ("All (14) | Trash (2)") rather than trusting that the click worked. This is the same lesson as the quarantined plugin folder: the UI says done, the data says otherwise</p>
+</li>
+<li>
+<p><strong>In any long settings wizard, measure a control's position immediately before clicking it.</strong> Answering one question reveals or hides another and shifts everything below; a coordinate captured a step ago now lands on the neighbouring option, which looks like the click simply failed</p>
+</li>
+<li>
+<p>Elementor's own dropdowns ignore scripted <code>change</code> events; set them by clicking</p>
+</li>
+<li>
+<p><strong>To load local text into a browser page</strong> when the media library refuses <code>.txt</code> uploads, inject an <code>&lt;input type=file&gt;</code> into the page and read the file with <code>file.text()</code></p>
+</li>
+<li>
+<p><strong>Long scripted loops time out the tool call.</strong> Run them async, write results to a <code>window</code> variable, then poll it</p>
+</li>
+<li>
+<p>An AIOSEO content highlighter overlay intercepts clicks in the Elementor canvas. "Disable the highlighter for this post" in its tooltip clears it for the session</p>
+</li>
+</ul>
+<h3>Editing Elementor content programmatically</h3>
+<p>When a change spans many pages, the editor's own command API is far more reliable than clicking:</p>
+<ul>
+<li>
+<p>Open the page with <code>?action=elementor</code>, wait for <code>elementor.elements</code> to exist, then use <code>$e.run('document/elements/settings', {container: elementor.getContainer(id), settings: {...}})</code> and save with <code>$e.run('document/save/default')</code>. Confirm with <code>elementor.saver.isEditorChanged()</code> returning false</p>
+</li>
+<li>
+<p>This path does <strong>not</strong> suffer the collapsed-repeater bug, because it writes the whole array at once</p>
+</li>
+<li>
+<p><strong>Walk the settings recursively.</strong> A scan of top-level string values misses most of what you are looking for. Values hide in repeater arrays (<code>icon_list[0].link.url</code>), in link objects (<code>link.url</code>), and inside raw HTML and text-editor fields. A sweep that only checks strings will report a page clean and leave two broken links on it</p>
+</li>
+<li>
+<p><strong>Elementor preserves widget IDs when a section is copy-pasted between pages.</strong> The same widget ID appearing on six pages does <strong>not</strong> mean it is a global widget or lives in a template, and fixing it in one place does not propagate. Confirm by checking whether the ID exists in any <code>elementor_library</code> template; if it does not, every page carries its own copy and every page has to be walked. Global widgets do exist as an <code>elementor_library</code> type of "Global Widget" and cannot be opened directly with <code>?action=elementor</code> - edit them from inside a page that uses them</p>
+</li>
+<li>
+<p><strong>To reuse a design from another page</strong>, read the source container with <code>elementor.getContainer(id).model.toJSON()</code>, strip <code>id</code>, <code>editSettings</code>, <code>defaultEditSettings</code> and <code>isLocked</code> recursively, stash it in <code>localStorage</code> (both editors are same-origin), then recreate it on the target with <code>$e.run('document/elements/create', {container: elementor.documents.getCurrent().container, model, options:{edit:false}})</code>. This is how to get a new page that genuinely matches the existing design rather than an approximation - the background treatment, typography and colours all come with it. Copying a section heading this way is the quickest fix for a new widget rendering in a default colour</p>
+</li>
+<li>
+<p>Hide the theme's duplicate page title on a new Elementor page with <code>elementor.settings.page.model.set('hide_title','yes')</code> before saving</p>
+</li>
+<li>
+<p>After any batch edit, purge SG Optimizer cache, then re-crawl. If one page is clean and the rest are not, that is a data problem, not a cache problem - cache would not spare a single page</p>
+</li>
+</ul>
+<h2>Open decisions (ask Daisy, don't decide)</h2>
+<ul>
+<li>
+<p>Forminator vs Fluent Forms as default. Note that JDH was built on Elementor Pro Forms, which is neither</p>
+</li>
+<li>
+<p><strong>Who owns the GA4 and Search Console properties.</strong> This document has said the CLIENT's Google account with Kaizen as collaborator; JDH was actually built the other way round, under Kaizen's account with the client added. Pick one and make it the standard</p>
+</li>
+<li>
+<p>Whether the base has actually been built and where it lives; if no base site exists yet, say so and offer to build it from this spec rather than assuming one exists</p>
+</li>
+<li>
+<p>This document is getting long. Daisy plans to split it into separate skills later. The natural seams are <strong>migration</strong>, <strong>launch day</strong>, <strong>post-launch audit</strong>, <strong>security</strong> and <strong>handback</strong> - but every one of those needs the "How to verify anything" rules at the top, so whichever way it splits, those rules get duplicated into each file rather than living in one. Until then it stays one file</p>
+</li>
+</ul></div></main>
+<footer>Public page: no passwords, keys, client contact details or prices here. Those live in Drive and the workspace. Last built Oct 26, 2026.</footer>
+<script>document.querySelectorAll(".prompt .copy").forEach(b=>b.addEventListener("click",()=>{const p=b.closest(".prompt").querySelector("pre");if(p&&navigator.clipboard){navigator.clipboard.writeText(p.textContent);b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1300);}}));</script>
+</body></html>

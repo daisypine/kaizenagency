@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Sitemap + hub - Kaizen Basil hub</title><style>
+:root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;--warn:#B5532E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--lime-deep);font-weight:700;text-decoration:none;border-bottom:1px solid #cfe08f}
+a:hover{border-bottom-color:var(--lime-deep)}
+.topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
+.topbar-inner{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto;border:0;color:#fff}
+.pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
+.brand b{font-size:15px}
+.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav a{color:#e9ebe0;border:1px solid #3a3e30;border-radius:9px;padding:6px 11px;font-size:13px;font-weight:600}
+nav a:hover,nav a.on{border-color:var(--lime);color:var(--lime)}
+main{max-width:1000px;margin:0 auto;padding:22px 20px 70px}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px}
+.lede{color:var(--ink-soft);font-size:16px;margin:0 0 22px;max-width:720px}
+h2{font-size:19px;margin:30px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px}
+.card h3{margin:0 0 4px;font-size:15.5px}
+.card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+a.card{display:block;border-bottom:1px solid var(--line);color:var(--ink);font-weight:400}
+a.card:hover{border-color:var(--lime-deep)}
+a.card h3{color:var(--ink)}
+.eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime-deep)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:0 0 14px}
+.box ul,.box ol{margin:6px 0;padding-left:20px}.box li{margin:4px 0}
+.note{background:#f4f8e3;border:1px solid #cfe08f;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.warn{background:#fbf3ef;border:1px solid #e3c7bb;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.own{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px}
+.o-d{background:var(--ink);color:var(--lime)}.o-b{background:#e6eefc;color:#2f5fb0}.o-c{background:#f3ead9;color:#8a5a12}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:13.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eef0e6;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+td .grp{font-size:11px;color:var(--ink-soft)}
+.prose{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 22px}
+.prose h1{font-size:24px;margin-top:18px}.prose h2{font-size:18px;margin-top:26px;padding-top:12px;border-top:1px solid var(--line)}.prose h3{font-size:15.5px;margin-top:18px}
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+.prose pre{background:#1b1d16;color:#e9ebe0;border-radius:10px;padding:12px 14px;overflow:auto}.prose pre code{background:none;color:inherit}
+.prose li{margin:4px 0}.prose table{margin:10px 0;display:block;overflow-x:auto}.prose code{overflow-wrap:anywhere}.prose{overflow-wrap:anywhere}
+.prompt{background:#1b1d16;border-radius:12px;margin:10px 0 18px;overflow:hidden;border:1px solid #2b2f24}
+.prompt .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;background:#22241c}
+.prompt .ph span{color:var(--lime);font-size:12.5px;font-weight:700}
+.prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
+.prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
+.prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.when{font-size:13px;color:var(--ink-soft);margin:-4px 0 6px}
+code{overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+footer{max-width:1000px;margin:0 auto;padding:0 20px 50px;color:var(--ink-soft);font-size:12.5px}
+@media (max-width:620px){h1{font-size:23px}.prose{padding:4px 16px 18px}table{display:block;overflow-x:auto}}
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="pill">KAIZEN</span><span><small>Basil hub · draft</small><b>Run the agency when Daisy's out</b></span></a>
+<nav><a href="../index.html">Start here</a><a href="../clients.html">Clients</a><a href="../playbooks/" class="on">Playbooks</a><a href="../prompts.html">Prompts</a><a href="../../index.html">Team checklist</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
+<main><p class="eyebrow">Playbook · checklist stage 2 · Sitemap</p>
+<div class="note"><b>Use it with Claude:</b> start a chat and paste <code>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-sitemap-builder.html and follow it for [client]. Ask me questions before you start.</code> This page is a copy of Daisy's <b>kaizen-sitemap-builder</b> skill, rebuilt from it so the team can read it. If something here is wrong, tell Daisy so the skill gets fixed too.</div><div class="prose"><h1>Kaizen Sitemap Builder</h1>
+<p>Every Kaizen client gets ONE sitemap + project hub: a Google Sheet in the client's own Drive folder, named <code>Sitemap - &lt;Client&gt; (Master)</code>. It is the single source of truth for every page on the site, what's live, what's planned by month, and every link the team needs. Never keep a second sitemap or a side status tab; merge into the master and trash the duplicate (it stays recoverable in Drive trash).</p>
+<p>Reference hubs (copy their look exactly):</p>
+<ul>
+<li>
+<p>Falcon Roofing (original format): https://docs.google.com/spreadsheets/d/1lproWYjB34UBW6jjGZ0DN7Jqe_2aZO0kIgJAQZBxqDw/edit</p>
+</li>
+<li>
+<p>Sunwest Painting: https://docs.google.com/spreadsheets/d/1tR1z6zMymRx3_6F97EFxkytSw__yvIaSabP21qtLimI/edit</p>
+</li>
+</ul>
+<h2>Step 0 - Ask before running</h2>
+<p>Ask the team member (one message, max 6 questions):</p>
+<ol>
+<li>
+<p>Client name, domain, and the client's Drive folder link</p>
+</li>
+<li>
+<p>Is there an existing sitemap or copy doc to merge?</p>
+</li>
+<li>
+<p>Any call transcripts, onboarding forms or emails to read (or which inbox to search)?</p>
+</li>
+<li>
+<p>Search Console / GA4 access? (domain property name)</p>
+</li>
+<li>
+<p>Main competitor, or a site the client says they like</p>
+</li>
+<li>
+<p>Services the client does NOT want promoted, and cities they actually serve
+If someone just says "build the sitemap for X", still ask these first. Don't start building on guesses.</p>
+</li>
+</ol>
+<h2>Step 1 - Research (write findings to a scratch brief)</h2>
+<ul>
+<li>
+<p><strong>Crawl the live site</strong>: list every published page (WordPress REST <code>/wp-json/wp/v2/pages?per_page=100&amp;_fields=id,link,title</code> and posts), nav items, footer links, forms, phone/address/license as shown. Flag 404s, placeholder text, duplicate pages.</p>
+</li>
+<li>
+<p><strong>Business facts</strong>: license #, address, phone, years in business, owner/contact, services they do and don't do, service area, brand spelling. Only facts the client stated or that are on official records.</p>
+</li>
+<li>
+<p><strong>Client words</strong>: search email + transcripts for project stories, client names they approved, target customers, seasonal patterns.</p>
+</li>
+<li>
+<p><strong>Socials</strong>: Instagram/Facebook for real jobs and photos (project page candidates).</p>
+</li>
+<li>
+<p><strong>Search Console</strong>: last 28 days (or since setup) clicks, impressions, avg position, top queries with impressions but low CTR. These decide which service/city pages come first.</p>
+</li>
+<li>
+<p><strong>Competitor</strong>: fetch <code>&lt;competitor&gt;/sitemap.xml</code> (or the site the client admires). List their sections and page types. Note what they lack (e.g. no page for the client's home city).</p>
+</li>
+<li>
+<p><strong>Reviews</strong>: where they live (Google, Yelp, Angi) and counts.</p>
+</li>
+</ul>
+<h2>Step 2 - Plan the structure</h2>
+<ul>
+<li>
+<p>Hubs with child URLs: <code>/services/</code>, <code>/industries/</code> (if B2B), <code>/projects/</code>, <code>/locations/</code>, <code>/blog/</code>, plus About, Testimonials, FAQ, quote + bid forms, legal.</p>
+</li>
+<li>
+<p>A page earns a row only if it has something real behind it (a real service, a real job, a real local project). Everything else goes to Backlog with a note like "only with a real job".</p>
+</li>
+<li>
+<p>Phases: <code>Phase 1 - Live</code> (exists today), <code>Phase 2 - &lt;month&gt;</code>, <code>Phase 3 - &lt;month&gt;</code>, <code>Phase 4 - &lt;month&gt;</code>, <code>Backlog</code>. Put the money pages for the client's highest-impression queries first.</p>
+</li>
+<li>
+<p>Pages the client doesn't want (services they don't offer) are not rows; log the decision in the Cleanup Log.</p>
+</li>
+</ul>
+<h2>Step 3 - Build the hub sheet</h2>
+<ol>
+<li>
+<p>Create the sheet in the client's Drive folder (or reuse the existing one to keep its link).</p>
+</li>
+<li>
+<p>Copy these tabs from the Sunwest hub with <code>copy_sheet_to_another_spreadsheet</code> so the formatting, dropdowns and colors carry over: Overview, Sitemap, Cleanup Log, Competitor Gap, Project Inventory, Visual Sitemap, Templates, Content Calendar. Rename (drop "Copy of"), reorder, delete leftover tabs.</p>
+</li>
+<li>
+<p>Clear the copied values (keep formatting), then fill:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>Sitemap</strong> (<code># | Phase | Section | Page Title | URL | Template | Status | Primary Keyword | Owner | Figma | Copy / Notes | Live / Edit | Notes</code>). Row 2 holds the rule line. Use <code>HYPERLINK()</code> for Figma, copy doc and live links. Owner dropdown = Daisy, Basil, Team, Design, <client first name>.</p>
+</li>
+<li>
+<p><strong>Overview</strong>: title row, client line, KEY LINKS (live site, WP admin, task board, gameplan page, brand guide, Figma, Drive folder, photos, print files, copy doc, emails, GBP, Search Console, GA4, booking link, socials, SOP) and live <code>COUNTIF</code> counts by Status and Phase pointing at the Sitemap tab. Tabs list + RULE row at the bottom.</p>
+</li>
+<li>
+<p><strong>Cleanup Log</strong>: open fixes first (Critical/High/Medium), then Done items. Status = Done, To Do, In Progress, Waiting on Daisy, Waiting on <client>.</p>
+</li>
+<li>
+<p><strong>Competitor Gap</strong>: AREA | COMPETITOR | CLIENT TODAY | OUR MOVE | PRIORITY. Only what you actually saw; use "-" when unknown.</p>
+</li>
+<li>
+<p><strong>Project Inventory</strong>: real jobs only. Never private homeowner names or street addresses.</p>
+</li>
+<li>
+<p><strong>Visual Sitemap</strong>: tree by section with <code>INDEX/MATCH</code> formulas pulling Status and Phase from the Sitemap tab by page title.</p>
+</li>
+<li>
+<p><strong>Templates</strong>: the 6 templates (Home, Service, Industry/Materials, Project, Location, Content) with the page to clone and section order; PAGES column = <code>COUNTIF</code> on Sitemap.</p>
+</li>
+<li>
+<p><strong>Content Calendar</strong>: weekly GBP posts, review replies, blogs, monthly email, reports.</p>
+</li>
+</ul>
+<ol start="4">
+<li>
+<p>Update dropdown lists (<code>setDataValidation</code>) and add conditional colors for any new Section/Channel values.</p>
+</li>
+<li>
+<p>Verify with <code>get_values</code>: counts add up, no <code>#REF!</code>/<code>#N/A</code>, Visual Sitemap statuses resolve.</p>
+</li>
+</ol>
+<h2>Step 4 - Link it everywhere</h2>
+<ul>
+<li>
+<p>Workspace board: add/refresh the <code>🔗LINKS 🔗</code> list with link cards (title + URL field): sitemap hub, Drive folder, photos, Figma, copy doc, gameplan page, brand guide, print designs, design files, email docs, WP admin.</p>
+</li>
+<li>
+<p>Add the hub link to the client's gameplan page and SOP references.</p>
+</li>
+</ul>
+<h2>Rules</h2>
+<ul>
+<li>
+<p>Real facts only. No invented stats, certifications, quotes or projects.</p>
+</li>
+<li>
+<p>One sitemap per client, in the client's Drive folder.</p>
+</li>
+<li>
+<p>Don't name private homeowners; business clients only with permission.</p>
+</li>
+<li>
+<p>Workspace board cards for the team stay unassigned unless Daisy says otherwise.</p>
+</li>
+<li>
+<p>New pages stay WordPress drafts until Daisy approves.</p>
+</li>
+<li>
+<p>Record any new lesson in the SOP (Client learnings log) and the relevant skill.</p>
+</li>
+</ul></div></main>
+<footer>Public page: no passwords, keys, client contact details or prices here. Those live in Drive and the workspace. Last built Oct 26, 2026.</footer>
+<script>document.querySelectorAll(".prompt .copy").forEach(b=>b.addEventListener("click",()=>{const p=b.closest(".prompt").querySelector("pre");if(p&&navigator.clipboard){navigator.clipboard.writeText(p.textContent);b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1300);}}));</script>
+</body></html>

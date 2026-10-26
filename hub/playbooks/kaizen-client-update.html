@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Client update - Kaizen Basil hub</title><style>
+:root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;--warn:#B5532E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--lime-deep);font-weight:700;text-decoration:none;border-bottom:1px solid #cfe08f}
+a:hover{border-bottom-color:var(--lime-deep)}
+.topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
+.topbar-inner{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto;border:0;color:#fff}
+.pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
+.brand b{font-size:15px}
+.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav a{color:#e9ebe0;border:1px solid #3a3e30;border-radius:9px;padding:6px 11px;font-size:13px;font-weight:600}
+nav a:hover,nav a.on{border-color:var(--lime);color:var(--lime)}
+main{max-width:1000px;margin:0 auto;padding:22px 20px 70px}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px}
+.lede{color:var(--ink-soft);font-size:16px;margin:0 0 22px;max-width:720px}
+h2{font-size:19px;margin:30px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px}
+.card h3{margin:0 0 4px;font-size:15.5px}
+.card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+a.card{display:block;border-bottom:1px solid var(--line);color:var(--ink);font-weight:400}
+a.card:hover{border-color:var(--lime-deep)}
+a.card h3{color:var(--ink)}
+.eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime-deep)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:0 0 14px}
+.box ul,.box ol{margin:6px 0;padding-left:20px}.box li{margin:4px 0}
+.note{background:#f4f8e3;border:1px solid #cfe08f;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.warn{background:#fbf3ef;border:1px solid #e3c7bb;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.own{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px}
+.o-d{background:var(--ink);color:var(--lime)}.o-b{background:#e6eefc;color:#2f5fb0}.o-c{background:#f3ead9;color:#8a5a12}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:13.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eef0e6;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+td .grp{font-size:11px;color:var(--ink-soft)}
+.prose{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 22px}
+.prose h1{font-size:24px;margin-top:18px}.prose h2{font-size:18px;margin-top:26px;padding-top:12px;border-top:1px solid var(--line)}.prose h3{font-size:15.5px;margin-top:18px}
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+.prose pre{background:#1b1d16;color:#e9ebe0;border-radius:10px;padding:12px 14px;overflow:auto}.prose pre code{background:none;color:inherit}
+.prose li{margin:4px 0}.prose table{margin:10px 0;display:block;overflow-x:auto}.prose code{overflow-wrap:anywhere}.prose{overflow-wrap:anywhere}
+.prompt{background:#1b1d16;border-radius:12px;margin:10px 0 18px;overflow:hidden;border:1px solid #2b2f24}
+.prompt .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;background:#22241c}
+.prompt .ph span{color:var(--lime);font-size:12.5px;font-weight:700}
+.prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
+.prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
+.prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.when{font-size:13px;color:var(--ink-soft);margin:-4px 0 6px}
+code{overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+footer{max-width:1000px;margin:0 auto;padding:0 20px 50px;color:var(--ink-soft);font-size:12.5px}
+@media (max-width:620px){h1{font-size:23px}.prose{padding:4px 16px 18px}table{display:block;overflow-x:auto}}
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="pill">KAIZEN</span><span><small>Basil hub · draft</small><b>Run the agency when Daisy's out</b></span></a>
+<nav><a href="../index.html">Start here</a><a href="../clients.html">Clients</a><a href="../playbooks/" class="on">Playbooks</a><a href="../prompts.html">Prompts</a><a href="../../index.html">Team checklist</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
+<main><p class="eyebrow">Playbook · checklist stage 7 · Monthly</p>
+<div class="note"><b>Use it with Claude:</b> start a chat and paste <code>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-client-update.html and follow it for [client]. Ask me questions before you start.</code> This page is a copy of Daisy's <b>kaizen-client-update</b> skill, rebuilt from it so the team can read it. If something here is wrong, tell Daisy so the skill gets fixed too.</div><div class="prose"><h1>Kaizen Client Update (monthly report + gameplan)</h1>
+<p>Every retainer client gets one update page a month, sent on the first business day. House examples: Adapt <code>AHC-ACW/september-october.html</code> (client format), Adapt <code>AHC-ACW/aug-sept-oct.html</code> (internal format), JDH <code>jdh-october-plan/index.html</code>, Falcon <code>falcon-roofing/october-november.html</code>. Repo: github.com/daisypine/kaizenagency (GitHub Pages: daisypine.github.io/kaizenagency/).</p>
+<h2>Two formats</h2>
+<ul>
+<li>
+<p><strong>Client update (default):</strong> "[Client] [Month] Update". Warm, first person from Daisy, ~1,000 words. Goes to the client.</p>
+</li>
+<li>
+<p><strong>Internal gameplan:</strong> "[Client] - [Months] Gameplan (Internal)". Terse, tables, dark header, footer "Internal - Kaizen Agency. Client-facing version to be built separately." Never send to the client.</p>
+</li>
+</ul>
+<h2>1. Gather (before writing)</h2>
+<ul>
+<li>
+<p><strong>GA4</strong> (daisy@kaizenagency.org, authuser=...): Traffic acquisition for the month: sessions, organic sessions, key events (phone_call, lead_form_start). Use the property picker search; don't trust the property that opens by default.</p>
+</li>
+<li>
+<p><strong>GSC</strong> (sc-domain property): clicks, impressions, CTR, avg position for the month and the month before; top queries with high impressions and low CTR.</p>
+</li>
+<li>
+<p><strong>Looker Studio</strong>: if the client has a live report, screenshot the monthly chart into the client folder (e.g. <code>oct-2026-report.png</code>) and link it under Quick links. If not, add "set up Looker Studio" to next month (copy the Adapt report, swap the GA4 + GSC sources).</p>
+</li>
+<li>
+<p><strong>GBP</strong>: calls, direction requests, reviews this month if available.</p>
+</li>
+<li>
+<p><strong>CRM</strong> (Housecall Pro / Jobber / Jane): leads, booked jobs, revenue if the client's plan includes it.</p>
+</li>
+<li>
+<p><strong>Work done</strong>: the client's Cleanup Log, task board Done column, sent emails, Drive docs from the month.</p>
+</li>
+<li>
+<p><strong>Plan</strong>: the client's Content Calendar / sitemap phases, and any commitments in email.</p>
+</li>
+</ul>
+<h2>2. Client update structure (in order)</h2>
+<ol>
+<li>
+<p>Top bar: client logo (inline it as a data: URI if publishing as a Claude artifact; hotlink is fine on GitHub Pages) with a text wordmark fallback. Kaizen only in the footer.</p>
+</li>
+<li>
+<p>Hero: eyebrow "[Month] [Year] update"; H1 "Your [last month] report + the plan for [this month]"; lede addressing the client by name, ending "Bookmark this one (:"</p>
+</li>
+<li>
+<p><strong>Quick links</strong>: tiles for the live report and the month's working docs (email plan, content plan, sitemap sheet). Bold title + one-line "what it's for".</p>
+</li>
+<li>
+<p><strong>[Month] report</strong>: chart screenshot if there is one, 1-2 plain paragraphs leading with the good news and explaining any dip, then 4 stat tiles (big number + caption in client words). Name the single biggest opportunity.</p>
+</li>
+<li>
+<p><strong>What we did in [month]</strong>: bullets in client language (outcomes, not plugin names).</p>
+</li>
+<li>
+<p><strong>What we're working on in [month]</strong>: label/content rows: New pages, Site cleanup, Blogs, Reviews, Email + text, Social, Design, Google profile. Each item gets one sentence of "why" in client terms.</p>
+</li>
+<li>
+<p>Optional client-specific sections: an issue they raised ("Figured it out!"), sample social posts, an upsell idea with a CTA button, a "Done" badge for a resolved admin item, how-to steps.</p>
+</li>
+<li>
+<p><strong>Coming up</strong>: rows for the next 1-2 months.</p>
+</li>
+<li>
+<p><strong>What's in your monthly package</strong> (only if the client's package is documented; never invent it, never show prices or Kaizen fees).</p>
+</li>
+<li>
+<p><strong>Direct access to me</strong>: (408) 710-6718, daisy@kaizenagency.org.</p>
+</li>
+<li>
+<p><strong>What I need from you</strong>: numbered asks, bold lead + question. Max 6.</p>
+</li>
+<li>
+<p>Footer: "If there's something you want moved up the list, just say the word!<br>Daisy · Kaizen Agency".</p>
+</li>
+</ol>
+<h2>3. Design</h2>
+<ul>
+<li>
+<p>Single self-contained HTML, inline CSS, Outfit (display) + Poppins (body), <code>meta robots noindex</code>.</p>
+</li>
+<li>
+<p>Tokens: --bg, --surface, --fg, --muted, --line, --accent, --accent-dark, --accent-soft, --accent-fg. The accent is the CLIENT's brand color (Adapt green #008067; Falcon gold #8A6400 light / #E8B923 dark). Check contrast on white.</p>
+</li>
+<li>
+<p>Components: .links/.link, .shot, .stats/.stat, .rows/.row/.k, .cal (date pill + item), .done, .steps, .cta, .note, .flag (warning), .contact, .need. Card max-width 780px; rows stack under 520px.</p>
+</li>
+<li>
+<p>Copy: Daisy's voice: warm, casual, short paragraphs, "(:", light "!". Plain English, no jargon.</p>
+</li>
+</ul>
+<h2>4. Rules</h2>
+<ul>
+<li>
+<p>Only real numbers from GA4/GSC/CRM with the date range stated. If tracking is new, say it's the baseline.</p>
+</li>
+<li>
+<p>No customer names, street addresses or prices without OK. Reviews: real only, first name + city.</p>
+</li>
+<li>
+<p>No Kaizen fees. No referral rewards for contractors (CA B&amp;P 7157).</p>
+</li>
+<li>
+<p>Don't claim work that isn't done; check the Cleanup Log.</p>
+</li>
+</ul>
+<h2>5. Publish + send</h2>
+<ol>
+<li>
+<p>Draft as a private Claude artifact for Daisy's review.</p>
+</li>
+<li>
+<p>On her OK, commit to the repo: <code>&lt;client-folder&gt;/&lt;lastmonth&gt;-&lt;month&gt;.html</code> (+ report PNG beside it), then check the live GitHub Pages URL loads.</p>
+</li>
+<li>
+<p>Draft the email in Gmail (business account) to the client: short, Daisy's voice, 3-4 bullet highlights, the link, and the top 1-2 asks. Never send without Daisy's go-ahead.</p>
+</li>
+<li>
+<p>Log it: add the link to the client's sitemap sheet Overview and the Content Calendar row for the report.</p>
+</li>
+</ol></div></main>
+<footer>Public page: no passwords, keys, client contact details or prices here. Those live in Drive and the workspace. Last built Oct 26, 2026.</footer>
+<script>document.querySelectorAll(".prompt .copy").forEach(b=>b.addEventListener("click",()=>{const p=b.closest(".prompt").querySelector("pre");if(p&&navigator.clipboard){navigator.clipboard.writeText(p.textContent);b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1300);}}));</script>
+</body></html>

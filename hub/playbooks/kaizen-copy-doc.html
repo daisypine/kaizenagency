@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Copy doc - Kaizen Basil hub</title><style>
+:root{--ink:#14160F;--ink-soft:#5C6052;--paper:#F4F5EF;--surface:#FFFFFF;--line:#E4E6DB;--lime:#C3E84C;--lime-deep:#7E9C1F;--shadow:0 1px 2px rgba(20,22,15,.04),0 8px 24px rgba(20,22,15,.05);--radius:14px;--warn:#B5532E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--lime-deep);font-weight:700;text-decoration:none;border-bottom:1px solid #cfe08f}
+a:hover{border-bottom-color:var(--lime-deep)}
+.topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:3px solid var(--lime)}
+.topbar-inner{max-width:1000px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto;border:0;color:#fff}
+.pill{display:inline-block;background:#fff;color:var(--ink);font-weight:800;letter-spacing:.04em;font-size:12px;padding:5px 11px;border-radius:999px;border:2px solid var(--ink);box-shadow:0 2px 0 var(--lime)}
+.brand b{font-size:15px}
+.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--lime)}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav a{color:#e9ebe0;border:1px solid #3a3e30;border-radius:9px;padding:6px 11px;font-size:13px;font-weight:600}
+nav a:hover,nav a.on{border-color:var(--lime);color:var(--lime)}
+main{max-width:1000px;margin:0 auto;padding:22px 20px 70px}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px}
+.lede{color:var(--ink-soft);font-size:16px;margin:0 0 22px;max-width:720px}
+h2{font-size:19px;margin:30px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:15px 17px}
+.card h3{margin:0 0 4px;font-size:15.5px}
+.card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+a.card{display:block;border-bottom:1px solid var(--line);color:var(--ink);font-weight:400}
+a.card:hover{border-color:var(--lime-deep)}
+a.card h3{color:var(--ink)}
+.eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime-deep)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin:0 0 14px}
+.box ul,.box ol{margin:6px 0;padding-left:20px}.box li{margin:4px 0}
+.note{background:#f4f8e3;border:1px solid #cfe08f;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.warn{background:#fbf3ef;border:1px solid #e3c7bb;border-radius:12px;padding:12px 16px;margin:0 0 16px;font-size:14px}
+.own{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px}
+.o-d{background:var(--ink);color:var(--lime)}.o-b{background:#e6eefc;color:#2f5fb0}.o-c{background:#f3ead9;color:#8a5a12}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:13.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eef0e6;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+td .grp{font-size:11px;color:var(--ink-soft)}
+.prose{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:6px 26px 22px}
+.prose h1{font-size:24px;margin-top:18px}.prose h2{font-size:18px;margin-top:26px;padding-top:12px;border-top:1px solid var(--line)}.prose h3{font-size:15.5px;margin-top:18px}
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+.prose pre{background:#1b1d16;color:#e9ebe0;border-radius:10px;padding:12px 14px;overflow:auto}.prose pre code{background:none;color:inherit}
+.prose li{margin:4px 0}.prose table{margin:10px 0;display:block;overflow-x:auto}.prose code{overflow-wrap:anywhere}.prose{overflow-wrap:anywhere}
+.prompt{background:#1b1d16;border-radius:12px;margin:10px 0 18px;overflow:hidden;border:1px solid #2b2f24}
+.prompt .ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;background:#22241c}
+.prompt .ph span{color:var(--lime);font-size:12.5px;font-weight:700}
+.prompt .copy{border:1px solid #3a3e30;background:#1b1d16;color:#e9ebe0;font:inherit;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:7px;cursor:pointer}
+.prompt .copy:hover{border-color:var(--lime);color:var(--lime)}
+.prompt pre{margin:0;padding:13px 15px;color:#e9ebe0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.when{font-size:13px;color:var(--ink-soft);margin:-4px 0 6px}
+code{overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:#eef0e6;border-radius:5px;padding:1px 5px}
+footer{max-width:1000px;margin:0 auto;padding:0 20px 50px;color:var(--ink-soft);font-size:12.5px}
+@media (max-width:620px){h1{font-size:23px}.prose{padding:4px 16px 18px}table{display:block;overflow-x:auto}}
+</style></head><body>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="../index.html"><span class="pill">KAIZEN</span><span><small>Basil hub · draft</small><b>Run the agency when Daisy's out</b></span></a>
+<nav><a href="../index.html">Start here</a><a href="../clients.html">Clients</a><a href="../playbooks/" class="on">Playbooks</a><a href="../prompts.html">Prompts</a><a href="../../index.html">Team checklist</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
+<main><p class="eyebrow">Playbook · checklist stage 4 · Copy</p>
+<div class="note"><b>Use it with Claude:</b> start a chat and paste <code>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-copy-doc.html and follow it for [client]. Ask me questions before you start.</code> This page is a copy of Daisy's <b>kaizen-copy-doc</b> skill, rebuilt from it so the team can read it. If something here is wrong, tell Daisy so the skill gets fixed too.</div><div class="prose"><h1>Kaizen Copy Doc</h1>
+<p>You write website copy docs for Kaizen Agency. A copy doc is the Google Doc the designer and developer build pages from. They should be able to build a page from it without asking Daisy a single question. Follow this structure and this look exactly every time.</p>
+<p>The model to copy is the <strong>MMT Electric - Master Sheet</strong> (Google Doc id <code>1UCuleYubvAGTpNS1EsFIAcGULSXbrHAB2c0PJeUBzzY</code>). If Drive is connected and you're unsure how something should look, open its "Panel Upgrades" tab and match it.</p>
+<h2>0. Before you write anything</h2>
+<ol>
+<li>
+<p>Read what's available: the client's intake, call notes and transcripts, the existing sitemap, any earlier copy doc (search Drive for "[Client] - Master Sheet" or "Page Copy"), and the live site.</p>
+</li>
+<li>
+<p>Research the way Kaizen does in-house:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Look at the client's live site and Google Business Profile.</p>
+</li>
+<li>
+<p>Look at the 2-3 competitors actually ranking for each page's main search.</p>
+</li>
+<li>
+<p>For each page, note what the ranking pages cover, what they're missing, and how we beat them. Usually that's real specifics, real photos and clearer answers, not more words.</p>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p>If a fact isn't in the material, don't invent it. That includes phone numbers, addresses, license numbers, years in business, review counts, warranties, certifications, prices, service areas and hours. Write <code>[CONFIRM: what you need]</code> and list it in the questions at the end.</p>
+</li>
+<li>
+<p>Ask Daisy first if you can't tell which pages she wants, or whether the site is on AIOSEO free or Premium.</p>
+</li>
+</ol>
+<h2>1. One master doc per client, with tabs</h2>
+<p>Name it <strong>[Client] - Master Sheet</strong>. If one already exists, add tabs to it instead of making a new doc. Use Google Docs tabs, in this order:</p>
+<ol>
+<li><strong>Sitemap</strong>: table with columns <code># | Page | URL | Job it does | Design</code>. Design is one of:</li>
+</ol>
+<ul>
+<li>
+<p><strong>CUSTOM</strong>: designed from scratch.</p>
+</li>
+<li>
+<p><strong>SEMI</strong>: built from existing blocks.</p>
+</li>
+<li>
+<p><strong>TEMPLATE</strong>: reuses one approved page design.</p>
+</li>
+</ul>
+<p>Under the table, add a short "Custom vs template: where the design hours go" section with an H2 per group (e.g. "CUSTOM -  3 pages, designed from scratch"), an italic gray one-liner, then bold-lead bullets per page. Legal pages are listed separately in an italic gray note and don't count toward the page total.</p>
+<ol start="2">
+<li>
+<p><strong>Build order</strong>: what to build first and why. Separate pages built straight through, pages built off the approved template, and pages built off existing components. Each line is <code>Page name /url -  what to do</code>.</p>
+</li>
+<li>
+<p><strong>Keyword targets</strong>: table with columns <code>Page | Primary target | Also targets</code>.</p>
+</li>
+<li>
+<p><strong>Photos needed</strong>: table with columns <code>Page | What we need | How many</code>. Name the real jobs or photos to use when we have them.</p>
+</li>
+<li>
+<p><strong>One tab per page</strong>, named with just the page name (for example "Panel Upgrades"). Layout in section 2.</p>
+</li>
+<li>
+<p><strong>Build instructions</strong>: only on the first template page. Later pages say "Build instructions are in the [Page] tab and apply here too. These are the differences."</p>
+</li>
+<li>
+<p><strong>Questions for [client]</strong>: numbered list of every <code>[CONFIRM]</code> item across the doc, grouped by page.</p>
+</li>
+</ol>
+<h2>2. Page tab layout</h2>
+<p>Same order on every page.</p>
+<ol>
+<li>
+<p><strong>Client line</strong>: the client name (e.g. "MMT Electric").</p>
+</li>
+<li>
+<p><strong>Header card</strong>: a 1-row, 2-column table. Left cell: "PAGE" over the page number. Right cell: PAGE NAME in caps over <code>/url/ · NEW BUILD · [#] of [total]</code>.</p>
+</li>
+<li>
+<p><strong>Template line</strong>: bold lead, then regular text. "<strong>This page is the template.</strong> Once it is approved, [pages] are built from it." or "<strong>Built from the [Page] template.</strong> [What's different]."</p>
+</li>
+<li>
+<p><strong>H1 "SEO and build package"</strong>, containing these H2s:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>Metadata</strong> (key-value table):</p>
+<ul>
+<li>
+<p>URL</p>
+</li>
+<li>
+<p>Meta title (≤60 characters), with the count in parentheses, e.g. (52 characters)</p>
+</li>
+<li>
+<p>Meta description (≤155 characters), with the count</p>
+</li>
+<li>
+<p>Primary keyword</p>
+</li>
+<li>
+<p>Secondary keywords (4-6)</p>
+</li>
+<li>
+<p>Schema: Service, with provider pointing at the sitewide LocalBusiness. Do NOT add FAQPage schema unless Daisy says to (open decision). FAQ content still goes on the page.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Heading outline, build this before the copy</strong>: plain lines like <code>H1  ...</code>, <code>H2  ...</code>, and <code>H3  ...</code> (indented two spaces). Exactly one H1.</p>
+</li>
+<li>
+<p><strong>Menu placement</strong> (key-value table): Position · Dropdown order · Label in menu.</p>
+</li>
+<li>
+<p><strong>Internal links</strong>:</p>
+<ul>
+<li>
+<p>H3 "Links out of this page": bold-lead bullets, <code>**Page: **where it links from, /url/</code>.</p>
+</li>
+<li>
+<p>H3 "Links that should point in": bold-lead bullets. Call out any card or footer link that currently points to <code>#</code> or nowhere.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>External link</strong>: one authoritative outbound link where it helps, such as a city permit page, then a dev note <code>[DEV: verify the live URL yourself before publishing.]</code>.</p>
+</li>
+<li>
+<p><strong>Images</strong>: a dev note <code>[Filenames must be set BEFORE upload. WordPress keeps the uploaded filename permanently.]</code>, then a key-value table: <code>Spot | File: name.webp  |  Alt: description</code>. File names are lowercase-hyphenated .webp with the keyword and city. Alt text describes the actual photo.</p>
+</li>
+</ul>
+<ol start="5">
+<li><strong>H1 "Page copy"</strong>: numbered H2 sections (<code>1. Hero</code>, <code>2. ...</code>). Every field is its own line with a bold label and a colon, so the dev knows exactly which widget each line goes in:</li>
+</ol>
+<ul>
+<li>
+<p><strong>Eyebrow: / H1: / H2: / Lede: / Body: / Intro line: / Closing line: / List:</strong> (bullets follow)</p>
+</li>
+<li>
+<p><strong>Button 1:</strong> text <code>[-&gt; tel:+1XXXXXXXXXX]</code> · <strong>Button 2:</strong> text <code>[-&gt; /contact/]</code></p>
+</li>
+<li>
+<p><strong>Step 1 H3: / Step 1 body:</strong> for process steps</p>
+</li>
+<li>
+<p><strong>Trust line:</strong> license # · insured · free estimates, only what's confirmed</p>
+</li>
+<li>
+<p><strong>Inline CTA:</strong> text <code>[-&gt; /url/]</code></p>
+</li>
+<li>
+<p>FAQ questions are real H3 headings, with the answer as normal text under each.</p>
+</li>
+<li>
+<p>Notes for the designer or dev go in square brackets in the dev-note style, e.g. <code>[Real reviews from GBP only - do not write reviews]</code>.</p>
+</li>
+</ul>
+<p>Usual service page order: 1 Hero · 2 Problem / signs you need this · 3 What's included · 4 Local or trust section (permits, older homes, who we work with) · 5 How it works (3-4 steps, as H3s) · 6 See the work / reviews · 7 FAQ · 8 Closing CTA. Change it when the page needs something different.</p>
+<ol start="6">
+<li><strong>Wrap-up H1s</strong>, each with bold-lead bullets:</li>
+</ol>
+<ul>
+<li>
+<p><strong>Build notes</strong>: only what differs from the template, including any new block other pages can reuse.</p>
+</li>
+<li>
+<p><strong>Confirm before publishing</strong>: claims written that the client didn't say, and why each one matters.</p>
+</li>
+<li>
+<p><strong>Conflicts</strong>: things that disagree with each other or with the sitemap, plus a recommendation.</p>
+</li>
+<li>
+<p><strong>Found while working</strong>: competitor weaknesses, live-site bugs, future page ideas.</p>
+</li>
+</ul>
+<ol start="7">
+<li><strong>Footer line</strong>: <code>Kaizen Agency  |  Daisy Pineda  |  (408) 710-6718  |  daisy@kaizenagency.org</code></li>
+</ol>
+<h2>3. The look (house style, copy it exactly)</h2>
+<p>Black, lime and white, with Arial throughout. Bold carries the structure: every label, every table key and every bullet lead-in is bold, and the content after it is regular weight.</p>
+<p><strong>Page setup</strong>: US Letter. Margins 55pt left and right, 50pt top and bottom.</p>
+<p><strong>Colors</strong>
+| Name | Hex | Used for |
+|---|---|---|
+| Ink | #111111 | Headings, bold labels, dark table headers, header card left cell |
+| Body text | #1A1A1A | All regular text |
+| Lime | #BFDF32 | Header card right cell and page number, heading underlines, footer rule |
+| Lime tint | #F5F8EA | Banded table rows |
+| Gray | #555555 | Client line, URLs in tables, secondary keywords, italic notes, footer text |
+| Blue | #1D4AF5 | Row numbers, primary keywords, counts, CUSTOM tag |
+| Gold | #B8860B | SEMI tag |
+| Dev green | #0B7A3B | Dev notes and link targets |
+| Rule gray | #DDDDDD | Table borders |</p>
+<p><strong>Text styles</strong> (set every color explicitly; don't rely on Google's default blue heading colors)
+| Element | Style |
+|---|---|
+| Client line (top of page tabs) | Arial 13pt bold, gray #555555 |
+| Overview tab title (e.g. "MMT Electric - Final Sitemap") | Arial 19pt bold, ink |
+| H1 | Heading 1, Arial 15-16pt bold, ink, <strong>1.75pt lime #BFDF32 bottom border with 6pt padding</strong>. Use 14pt on overview tabs |
+| H2 | Heading 2, Arial 13pt bold, ink (11pt on overview tabs) |
+| H3 | Heading 3, Arial 11pt bold, ink |
+| Body | Arial 10pt, #1A1A1A (9pt on overview tabs) |
+| Field labels (Eyebrow:, H1:, Body:, Button 1:...) | Arial 10pt bold, ink, followed by the value in regular weight |
+| Bullet lead-ins | "Label: " bold, then regular text |
+| Italic notes / subtitles | Arial 9pt italic, gray #555555 |
+| Dev notes and link targets (<code>[-&gt; /url/]</code>, <code>[DEV: ...]</code>) | Courier New 9pt, dev green #0B7A3B |
+| Footer line | Arial 9pt, gray #555555, with a 1.5pt lime top border |</p>
+<p><strong>Header card</strong> (top of every page tab): 1 row × 2 columns, column widths 75pt and 393pt, cell padding 8pt top and 6pt left, vertically centered, no visible borders.</p>
+<ul>
+<li>
+<p>Left cell: background ink #111111. "PAGE" in Arial 9pt bold white, then the number in Arial 28pt bold lime.</p>
+</li>
+<li>
+<p>Right cell: background lime #BFDF32. PAGE NAME in Arial 23pt bold ink, all caps, then <code>/url/ · NEW BUILD · 2 of 9</code> in Arial 10pt ink.</p>
+</li>
+</ul>
+<p><strong>Key-value tables</strong> (Metadata, Menu placement, Images): 2 columns. Left column is the label in 10pt bold ink; right is the value in 10pt regular. Rows alternate lime tint #F5F8EA and white. Borders 0.5pt #DDDDDD.</p>
+<p><strong>Data tables</strong> (Sitemap, Keyword targets, Photos needed): header row background ink #111111 with white 9pt bold labels. Body rows alternate lime tint and white, 0.5pt #DDDDDD borders.</p>
+<ul>
+<li>
+<p>Row numbers: bold blue #1D4AF5.</p>
+</li>
+<li>
+<p>Page names: 9pt bold ink.</p>
+</li>
+<li>
+<p>URLs: 8pt gray.</p>
+</li>
+<li>
+<p>Descriptions: 8.5pt regular.</p>
+</li>
+<li>
+<p>Design tags in 7.5pt bold caps: CUSTOM blue #1D4AF5, SEMI gold #B8860B, TEMPLATE gray #555555.</p>
+</li>
+<li>
+<p>Keyword table: primary keyword 8.5pt blue, "also targets" 8pt gray.</p>
+</li>
+<li>
+<p>Counts ("6-8"): 8.5pt blue.</p>
+</li>
+</ul>
+<p><strong>Build order lines</strong>: page name 11pt bold ink, URL 11pt bold green #188038, then " -  " and the instruction in regular weight.</p>
+<p><strong>Headings must be real heading styles</strong> (Heading 1/2/3), not just big bold text, so the doc outline and tab navigation work.</p>
+<h2>4. Copy rules</h2>
+<ul>
+<li>
+<p>Write the way the client's customer talks. Plain, direct, short sentences. Lead with the customer's problem, not the company's history.</p>
+</li>
+<li>
+<p>Phone number above the fold on every page. Tap-to-call is the main action on trades sites; the form comes second.</p>
+</li>
+<li>
+<p>Use the service area and city names naturally. Never stuff keywords or write titles like "#1 Fremont, CALIFORNIA Electrician."</p>
+</li>
+<li>
+<p>No agency filler: "we pride ourselves," "unparalleled," "one-stop shop," "look no further," "in today's world."</p>
+</li>
+<li>
+<p>Short dashes ( - ) in website copy, never long em dashes. (The " -  " separators in the doc's own structure, like headings and build-order lines, are fine.)</p>
+</li>
+<li>
+<p>Confirmed claims only. No superlatives, founding years, crew or fleet numbers, family names, or license or association claims unless the client gave them in writing. A retracted claim is removed everywhere, including meta, alt text and schema.</p>
+</li>
+<li>
+<p>Never publish customer names, street addresses or prices without the client's OK.</p>
+</li>
+<li>
+<p>Never write fake reviews. Write <code>[3 real reviews from GBP]</code>.</p>
+</li>
+<li>
+<p>Each FAQ answer is 2-4 sentences and answers the question in its first sentence.</p>
+</li>
+<li>
+<p>As long as the page needs. Beat competitors on specifics, not word count.</p>
+</li>
+</ul>
+<h2>5. Build instructions (template page only)</h2>
+<p>Under an H1 "Build instructions", with H2s "Before you upload anything", "Elementor", "All in One SEO", "Forms", "Caching" and "Do not", each as bold-lead bullets:</p>
+<ul>
+<li>
+<p>Rename image files BEFORE upload; WordPress keeps the filename forever. WebP, nothing wider than 1920px. Set the slug when the page is created.</p>
+</li>
+<li>
+<p>Elementor: copy reused sections from Home instead of rebuilding. Once the template page is approved, save it as an Elementor template and build the other pages from it. Elementor defaults new headings to H2, so check every heading against the outline.</p>
+</li>
+<li>
+<p>AIOSEO: paste title and description by hand, never auto-generate. State whether the site is on free or Premium:</p>
+</li>
+<li>
+<p>Free has no Service or LocalBusiness schema, so hand-code it as JSON-LD.</p>
+</li>
+<li>
+<p>Premium handles it in the Schema tab.</p>
+</li>
+<li>
+<p>Forms: real labels on every field, honeypot on, consent line under the button, test on a real phone.</p>
+</li>
+<li>
+<p>Purge SG Cache after every edit.</p>
+</li>
+<li>
+<p><strong>Do not</strong>: publish with placeholders, add review schema before real reviews exist, install a second SEO, cache or image plugin, use stock photos in the "work" section, or change the slug after publishing.</p>
+</li>
+</ul>
+<h2>6. Where it goes and how to apply the look</h2>
+<ul>
+<li>
+<p><strong>Google Docs connected</strong>: create or update the doc in the client's Drive folder and apply the look with the Docs API (paragraph named styles, text styles, the H1 bottom border, table cell backgrounds and borders). After writing, read the doc back and check a header card, an H1, a key-value table and a dev note actually carry the styles. Send Daisy the link.</p>
+</li>
+<li>
+<p><strong>No Google connection</strong>: build a .docx with the same styles (use the docx skill) so it opens in Google Docs looking right. Plain pasted markdown loses the styling, so don't hand over markdown as the deliverable.</p>
+</li>
+<li>
+<p>These docs are team-visible. Never include Kaizen's fees, project prices, retainers or anything about what the agency makes. Client pricing that goes on the website itself is fine.</p>
+</li>
+<li>
+<p>When done, report in 2-3 lines: which tabs were added, how many <code>[CONFIRM]</code> items there are, and anything that blocks the build.</p>
+</li>
+</ul>
+<h2>7. Restyling an existing doc</h2>
+<p>When asked to bring an older copy doc into this format:</p>
+<ol>
+<li>
+<p>Read the whole doc first, every tab.</p>
+</li>
+<li>
+<p>Keep the wording. Don't rewrite copy unless it breaks a copy rule in section 4; list any such changes for Daisy instead of making them silently.</p>
+</li>
+<li>
+<p>Reorganize into the tab structure in section 1 and the page layout in section 2. Move SEO tables that live in separate "SEO" tabs into each page's "SEO and build package" section.</p>
+</li>
+<li>
+<p>Missing pieces (heading outline, menu placement, internal links, image file names, wrap-up sections) get added from what's in the doc and the live site. Anything you can't fill gets <code>[CONFIRM]</code>.</p>
+</li>
+<li>
+<p>Apply the look in section 3.</p>
+</li>
+<li>
+<p>Make a copy first, named "[original name] - restyled", unless Daisy says to edit the original. Keep any old tabs that don't fit at the end, prefixed "(OLD)".</p>
+</li>
+</ol></div></main>
+<footer>Public page: no passwords, keys, client contact details or prices here. Those live in Drive and the workspace. Last built Oct 26, 2026.</footer>
+<script>document.querySelectorAll(".prompt .copy").forEach(b=>b.addEventListener("click",()=>{const p=b.closest(".prompt").querySelector("pre");if(p&&navigator.clipboard){navigator.clipboard.writeText(p.textContent);b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1300);}}));</script>
+</body></html>
