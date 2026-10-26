@@ -198,15 +198,17 @@ footer{padding:36px 0 40px;text-align:center;color:var(--muted);font-size:13.5px
   </div>
   <p style="margin-top:10px;font-size:14px;color:var(--muted)">San Jose profile: 569 views, 6 actions, 0 reviews yet. That's the easiest win on this page: a few reviews there.</p>
 
-  <div class="src">Website <span class="tag">Google Analytics · Oct 1–25</span></div>
+  <div class="src">Website <span class="tag">Google Analytics · since Oct 1</span></div>
   <div class="stats">
     <div class="stat hi"><b>174</b><span>website visits</span></div>
-    <div class="stat"><b>7</b><span>phone taps + quote requests (tracked since Oct 16)</span></div>
+    <div class="stat"><b>7</b><span>phone taps + quote requests</span></div>
     <div class="stat"><b>32</b><span>visits from Google search</span></div>
     <div class="stat"><b>63%</b><span>of Google visitors actually engage (vs 28% direct)</span></div>
   </div>
 
-  <div class="src">Google search <span class="tag">Search Console · Oct 12–24</span></div>
+  <p style="margin-top:10px;font-size:14px;color:var(--muted)">We set up a new, separate Google Analytics account just for your site, so these numbers are clean and all yours.</p>
+
+  <div class="src">Google search <span class="tag">Search Console · since Oct 12</span></div>
   <div class="stats">
     <div class="stat hi"><b>1,990</b><span>times you showed up on Google</span></div>
     <div class="stat"><b>169</b><span>different searches you appeared for</span></div>
@@ -219,9 +221,8 @@ footer{padding:36px 0 40px;text-align:center;color:var(--muted);font-size:13.5px
   <div class="chart">
     <div class="bars" id="bars"></div>
     <div class="xl" id="xl"></div>
-    <div class="legend"><span><i style="background:#D9D3AE"></i>Old site</span><span><i style="background:repeating-linear-gradient(45deg,#E9E5CF,#E9E5CF 3px,#F6F3E4 3px,#F6F3E4 6px)"></i>New site, no tracking yet (Semrush fills the gap)</span><span><i style="background:var(--yellow)"></i>Now</span></div>
+    <div class="legend"><span><i style="background:#D9D3AE"></i>Visits from Google each month (estimated)</span><span><i style="background:var(--yellow)"></i>Last 2 months</span></div>
   </div>
-  <p style="margin-top:12px"><b>Google traffic is back and climbing:</b> about 7 visits in March when the new site launched, 115 in September, 108 so far in October. That's above where the old site was most of 2025 (about 57 a month). Semrush is an estimate, so we use it to fill the April–September gap when the new site had no tracking. From October on, the real Google numbers above are what count.</p>
 </section>
 
 <section id="leads">
@@ -344,7 +345,7 @@ const traffic=[["N",'24',60],["D",'24',100],["J",'25',38],["F",'25',60],["M",'25
 (function(){
   const max=Math.max(...traffic.map(t=>t[2]));const b=document.getElementById('bars'),x=document.getElementById('xl');
   traffic.forEach((t,i)=>{
-    const gap=(t[1]==='26'&&i>=17&&i<=22);const now=i>=22;
+    const gap=false;const now=i>=22;
     const d=document.createElement('div');d.className='bar'+(now?' now':gap?' gap':'');d.style.height=(t[2]/max*100)+'%';
     d.title=t[0]+" '"+t[1]+': ~'+t[2]+' visits';
     if(i===16||i===22||i===23||i===19)d.innerHTML='<i>'+t[2]+'</i>';
