@@ -6,8 +6,8 @@
 | --- | --- | --- | --- | --- | --- |
 | Oct 26 | — | **Shoot** with Dr. Mike + Dr. Kyndra (D) | Edit batch 1 (D) | Batch 1 ready · Search Console pull (D) | Batch 1 to Dr. Mike (D) · page copy written (B) · **email draft due Sat Oct 31** (B) |
 | Nov 2 | **Post:** Reintro set (pin all 3) · schedule batch 1 · email to Dr. Mike (D) · shockwave refresh done (B) | **Post:** What makes you different? | Shockwave page **live** (B) | **Post:** Rock, paper, scissors · shockwave blog done (B) | Batch 2 ready (D) · tennis elbow page built (B) |
-| Nov 9 | Batch 2 to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | **Post:** Elbow follow-along · schedule batch 2 (D) · tennis elbow page **live** (B) | — | **Post:** Things I don't care about · **Email sends** · hub **live** · elbow blog done (B) | Achilles page built (B) |
-| Nov 16 | **Post:** Desk workers follow-along · elbow blog **published** (B) | **Post:** Achilles follow-along · Achilles page **live** (B) | — | **Post:** 4 red flags · Achilles blog done (B) | — |
+| Nov 9 | Batch 2 to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | **Post:** Paddlers & golfers elbow follow-along · schedule batch 2 (D) · tennis elbow page **live** (B) | — | **Post:** Things I don't care about · **Email sends** · hub **live** · elbow blog done (B) | Achilles page built (B) |
+| Nov 16 | **Post:** Desk workers follow-along · elbow blog **published** (B) | **Post:** Runners Achilles follow-along · Achilles page **live** (B) | — | **Post:** 4 red flags · Achilles blog done (B) | — |
 | Nov 23 | Achilles blog **published** (B) | **Post:** Why chiro didn't work | — | Thanksgiving | **Post:** Black Friday graphic · report due Sat Nov 28 (B) |
 | Nov 30 | — | **Report sent** to Dr. Mike (D) | | | |
 

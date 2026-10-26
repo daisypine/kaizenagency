@@ -8,20 +8,20 @@ Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026
 
 ## Posting plan
 
-| Date | Post | Format | Who's in it | Length |
-| --- | --- | --- | --- | --- |
-| Mon Nov 2 | **Reintro set (post all 3, then pin):** Meet Dr. Mike · Meet Dr. Kyndra · What to expect at Adapt | 3 graphic carousels | Dr. Mike, Dr. Kyndra | 3–4 slides each |
-| Tue Nov 3 | "What makes you different?" | Reel | Dr. Mike | 5–7 sec |
-| Thu Nov 5 | Rock, paper, scissors: myth vs. fact | Carousel (1 photo) | Hands only | 7 slides |
-| Tue Nov 10 | Tennis & golf players: let's fix your elbow | Reel (follow-along) | Dr. Kyndra | 45–60 sec |
-| Thu Nov 12 | Things I don't care about as your chiropractor | Carousel (1 photo) | Dr. Kyndra | 6 slides |
-| Mon Nov 16 | All you desk workers: let's fix your neck | Reel (follow-along) | Dr. Mike | 45–60 sec |
-| Tue Nov 17 | Runners: let's fix your Achilles | Reel (follow-along) | Dr. Kyndra | 45–60 sec |
-| Thu Nov 19 | 4 red flags at a chiropractor | Reel | Dr. Mike + Dr. Kyndra | 12–15 sec |
-| Tue Nov 24 | Why you tried chiropractic and it didn't work | Carousel (1 photo) | Dr. Mike | 6 slides |
-| Fri Nov 27 | Black Friday: gift cards + use your HSA/FSA by Dec 31 | Graphic | — | 1 slide |
+| Date | Post | Format | Who's in it | Length | Inspired by |
+| --- | --- | --- | --- | --- | --- |
+| Mon Nov 2 | **Reintro set (post all 3, then pin):** Meet Dr. Mike · Meet Dr. Kyndra · What to expect at Adapt | 3 graphic carousels | Dr. Mike, Dr. Kyndra | 3–4 slides each | [@alexathechiro's 3 pinned posts](https://www.instagram.com/alexathechiro/) · arrows like [@drwajeehapt](https://www.instagram.com/p/DeWoXBuiJKL/) |
+| Tue Nov 3 | "What makes you different?" | Reel | Dr. Mike | 5–7 sec | [@occhiropractor](https://www.instagram.com/p/DVM4gRFgVwt/) |
+| Thu Nov 5 | Rock, paper, scissors: myth vs. fact | Carousel (1 photo) | Hands only | 7 slides | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) |
+| Tue Nov 10 | Pickleball, tennis & golf players: let's fix your elbow | Reel (follow-along) | Dr. Kyndra | 45–60 sec | [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) |
+| Thu Nov 12 | Things I don't care about as your chiropractor | Carousel (1 photo) | Dr. Kyndra | 6 slides | [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/) |
+| Mon Nov 16 | All you desk workers: let's fix your neck | Reel (follow-along) | Dr. Mike | 45–60 sec | [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) |
+| Tue Nov 17 | All you runners: let's fix your Achilles | Reel (follow-along) | Dr. Kyndra | 45–60 sec | [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) |
+| Thu Nov 19 | 4 red flags at a chiropractor | Reel | Dr. Mike + Dr. Kyndra | 12–15 sec | [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/) |
+| Tue Nov 24 | Why you tried chiropractic and it didn't work | Carousel (1 photo) | Dr. Mike | 6 slides | [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/) |
+| Fri Nov 27 | Black Friday: gift cards + use your HSA/FSA by Dec 31 | Graphic | — | 1 slide | — |
 
-The elbow and Achilles reels go out the same day their new pages go live. The email sends Thu Nov 12.
+**The follow-along series:** three reels in the same format, one for each crowd: pickleball, tennis & golf players (elbow), desk workers (neck) and runners (Achilles). The elbow and Achilles reels go out the same day their new pages go live. The email sends Thu Nov 12.
 
 **Moved to December** (shoot only if there's time tomorrow): Sleeping positions ranked · "How have you been?" · Oreo spine carousel · Still hurting after the season? carousel · 4 things I'd never do.
 
@@ -32,7 +32,7 @@ Grouped by setup so nobody moves twice. Each block lists what Daisy captures and
 | Time | Setup | Daisy captures | Doctors do |
 | --- | --- | --- | --- |
 | 11:30–11:40 | Set up | Tripod, ring light, lav mic, clean lens · tape the text cards to the wall behind the phone | Change into Adapt shirts |
-| 11:40–12:10 | **Chair + plain wall** | Elbow + Achilles follow-alongs (Dr. Kyndra) · Desk workers follow-along (Dr. Mike). Wide, vertical, full body in frame. Phone stays put | **Dr. Kyndra:** 8-second intro, then 3 moves each · **Dr. Mike:** same for the desk workers one. 2–3 reps per move |
+| 11:40–12:10 | **Chair + plain wall** | Pickleball/tennis/golf elbow + runners Achilles follow-alongs (Dr. Kyndra) · Desk workers follow-along (Dr. Mike). Wide, vertical, full body in frame. Phone stays put | **Dr. Kyndra:** 8-second intro, then 3 moves each · **Dr. Mike:** same for the desk workers one. 2–3 reps per move |
 | 12:10–12:20 | **Treatment table** | "What makes you different?" (3 takes) · Red flags clip (one 15-second continuous take, 2 angles) | **Dr. Mike:** lounge on the table · then adjust Dr. Kyndra |
 | 12:20–12:30 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) | Each doctor takes their own mirror selfie · both hold out hands |
 | 12:30–12:42 | **Reintro portraits** | 3 photos per doctor + 1 together (list below) · voice memo the intro questions | Answer 5 quick questions each (about 2 minutes) |
@@ -121,12 +121,12 @@ Inspired by [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) (5.5K like
 
 **Caption:** "We might be a little biased on which side wins 😏 Movement is medicine. What would you add?"
 
-### 6. Tennis & golf players: let's fix your elbow — reel, 45–60 sec
+### 6. Pickleball, tennis & golf players: let's fix your elbow — reel, 45–60 sec
 
 Inspired by [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) (41K likes): a short seated intro to camera, then each move with a label and "3 sets of 10" on screen. Tripod never moves.
 
-- **Title box (whole video):** *Tennis & Golf Players: Let's Fix Your Elbow*
-- **Dr. Kyndra, seated (off the cuff, about 8 sec):** "If your elbow's still sore after weeks of rest, let's work on it. Do these with me."
+- **Title box (whole video):** *Pickleball, Tennis & Golf Players: Let's Fix Your Elbow*
+- **Dr. Kyndra, seated (off the cuff, about 8 sec):** "All you paddlers, tennis and golf players, if your elbow's still sore after weeks of rest, let's fix it. Do these with me."
 - **Move 1:** *Wrist extensor stretch* · arm straight, palm down, pull the hand gently toward you · "Hold 30 sec, 3x"
 - **Move 2:** *Slow wrist lowering* · light dumbbell, lift with the other hand, lower slowly for a 3-count · "3 sets of 10"
 - **Move 3:** *Forearm roll* · massage ball on the table, roll the top of the forearm · "1 minute"
@@ -144,12 +144,12 @@ Inspired by [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/). One mirro
 - Slide 5: "If you show up straight from the gym. Sweaty is welcome here."
 - Slide 6: "What I DO care about? Getting you back to what you love 💚 Text (408) 673-2432"
 
-### 8. Runners: let's fix your Achilles — reel, 45–60 sec
+### 8. All you runners: let's fix your Achilles — reel, 45–60 sec
 
 Same setup and style as the elbow reel, filmed back to back.
 
-- **Title box:** *Runners: Let's Fix Your Achilles*
-- **Dr. Kyndra, seated (about 8 sec):** "Achilles sore every morning? Try these before your next run."
+- **Title box:** *All You Runners: Let's Fix Your Achilles*
+- **Dr. Kyndra, seated (about 8 sec):** "All you runners, if your Achilles is sore every morning, try these before your next run."
 - **Move 1:** *Wall calf stretch* · knee straight, then bent · "30 sec each, 2x"
 - **Move 2:** *Slow heel drops off a step* · up on both feet, lower on one for a 3-count · "3 sets of 10"
 - **Move 3:** *Ankle circles* · seated · "10 each way"
