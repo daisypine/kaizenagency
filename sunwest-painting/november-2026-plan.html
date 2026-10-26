@@ -13,11 +13,6 @@
 *{box-sizing:border-box}[hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
 .wrap{max-width:900px;margin:0 auto}
-.top{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);padding:12px 16px}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px}
-.logo{height:34px;width:auto;display:block}
-.wordmark{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:-.01em}
 .page{padding:28px 16px 64px}
 .card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 1px 2px rgba(29,27,25,.05)}
 @media (max-width:520px){.card{padding:4px 18px 8px}}
@@ -37,19 +32,25 @@ th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px sol
 th+th,td+td{border-left:1px solid #D9D5CF}
 th{background:var(--accent-soft);font-family:var(--display);font-weight:600}
 tr:last-child td{border-bottom:0}
-.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
-.tabs a{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;color:var(--muted);padding:8px 14px;border-radius:999px;white-space:nowrap}
-.tabs a:hover{color:var(--fg);background:var(--bg)}
-.tabs a.on{background:var(--accent);color:#fff}
 .flag{border-left:3px solid #A81B10;background:#FCEEEC;padding:12px 16px;border-radius:0 9px 9px 0;font-size:14.5px}
 .note{border-left:3px solid var(--grey);background:#F1F0EE;padding:12px 16px;border-radius:0 9px 9px 0;font-size:14.5px}
+.top{position:sticky;top:0;z-index:5;background:#515151;padding:12px 16px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{height:36px;width:auto;display:block}
+.wordmark{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+.tabs a{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;color:#ECEAE6;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.tabs a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.tabs a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111}
 </style>
 </head>
 <body>
 <div class="top"><div class="wrap topbar"><div class="brand">
-  <img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-5.svg" alt="Sunwest Painting" onerror="this.hidden=true;document.getElementById('wm').hidden=false">
+  <img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-4.svg" alt="Sunwest Painting" onerror="this.hidden=true;document.getElementById('wm').hidden=false">
   <div class="wordmark" id="wm" hidden>Sunwest Painting</div>
-</div><nav class="tabs" aria-label="November pages"><a href="november-2026-plan.html" class="on" aria-current="page">Plan</a><a href="november-2026-calendar.html">Calendar</a><a href="gameplan-internal.html">Nov - Jan</a></nav></div></div>
+</div><nav class="tabs" aria-label="Sunwest pages"><a href="november-2026-plan.html" class="on" aria-current="page">Plan</a><a href="november-2026-calendar.html">Calendar</a><a href="gameplan-internal.html">Nov - Jan</a><a href="brand-deck.html">Brand</a></nav></div></div>
 <main class="page"><div class="wrap"><div class="card">
 <div class="hero"><div class="eyebrow">Kaizen Agency · Internal plan</div><h1>November 2026 Plan</h1><div class="lede"><p>Oct 26, 2026 · Daisy</p>
 </div></div>

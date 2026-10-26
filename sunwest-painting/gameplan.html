@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Sunwest Painting — November to January Plan</title>
+<title>Sunwest Painting - November to January Plan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap">
@@ -21,10 +21,7 @@ color-scheme:light;
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
 .wrap{max-width:780px;margin:0 auto}
-.top{background:var(--surface);border-bottom:1px solid var(--line);padding:16px}
 .top .wrap{display:flex;align-items:center;gap:12px}
-.mark{width:34px;height:34px;border-radius:9px;background:var(--brand)}
-.wordmark{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.01em}
 .page{padding:28px 16px 64px}
 .card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 1px 2px rgba(17,17,17,.05)}
 @media (max-width:520px){.card{padding:4px 18px 8px}}
@@ -56,7 +53,7 @@ ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
 .row > div{min-width:0;display:grid;gap:6px}
 @media (max-width:520px){.row{grid-template-columns:1fr}}
 .month{border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.month-hd{background:var(--fg);color:#fff;padding:12px 18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.month-hd{background:#515151;color:#fff;padding:12px 18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
 .month-hd h3{color:#fff}
 .month-hd span{font-family:var(--display);font-size:13px;color:#F5C842}
 .month-bd{padding:6px 18px 14px;display:grid;gap:10px}
@@ -73,10 +70,23 @@ ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
 .need li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
 .need li::before{content:counter(n);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:14px}
 footer{padding:28px 0 0;color:var(--muted);font-size:14px;text-align:center}
+.top{position:sticky;top:0;z-index:5;background:#515151;padding:12px 16px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{height:36px;width:auto;display:block}
+.wordmark{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+.tabs a{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;color:#ECEAE6;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.tabs a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.tabs a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111}
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap"><div class="mark" aria-hidden="true"></div><div class="wordmark">Sunwest Painting</div></div></div>
+<div class="top"><div class="wrap topbar"><div class="brand">
+  <img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-4.svg" alt="Sunwest Painting" onerror="this.hidden=true;document.getElementById('wm').hidden=false">
+  <div class="wordmark" id="wm" hidden>Sunwest Painting</div>
+</div></div></div>
 
 <div class="page"><div class="wrap"><div class="card">
 

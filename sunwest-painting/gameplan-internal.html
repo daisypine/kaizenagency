@@ -3,176 +3,157 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Sunwest — Nov–Jan Gameplan (Internal)</title>
+<meta name="robots" content="noindex">
+<title>Sunwest Nov - Jan Gameplan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
 <style>
-:root{
-  --accent:#9F4E19;--accent-l:#FCF3ED;--sun:#F5C842;
-  --ink:#111111;--ink-2:#3D3A36;--ink-3:#6E6962;
-  --surface:#fff;--page:#F4F3F0;--line:#E3E1DD;--line-2:#EFEDE9;
-  --warn:#9A6A00;--warn-bg:#FDF6E3;--crit:#A81B10;--crit-bg:#FCEEEC;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--ink);font-family:'Poppins',-apple-system,sans-serif;font-size:14.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:'Outfit',sans-serif;margin:0;line-height:1.2;font-weight:600}
-a{color:var(--accent)}
-.wrap{max-width:960px;margin:0 auto;padding:0 24px 70px}
-header{background:linear-gradient(140deg,#151310,#2A1B10 55%,#5B2E0F);color:#fff;padding:34px 0 30px}
-.eyebrow{font-family:'Outfit',sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--sun);font-weight:700}
-header h1{font-size:30px;color:#fff;margin-top:10px}
-header p{color:#E6D3C4;font-size:14px;margin-top:8px}
-section{margin-top:36px}
-section>h2{font-size:21px;margin-bottom:14px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 24px;margin-bottom:12px}
-.card h4{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px}
-table{width:100%;border-collapse:collapse;font-size:13.5px}
-th{text-align:left;font-family:'Outfit',sans-serif;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:0 12px 8px 0;border-bottom:1.5px solid var(--line)}
-td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
-tr:last-child td{border-bottom:none}
-td.k{color:var(--ink);font-weight:500}
-td.d{font-family:'Outfit',sans-serif;font-weight:700;color:var(--accent);white-space:nowrap}
-.month{background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:12px}
-.month-hd{background:var(--ink);color:#fff;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-.month-hd h3{color:#fff;font-size:17px}
-.month-hd .th{font-size:12px;color:var(--sun);font-family:'Outfit',sans-serif}
-.month-body{padding:4px 22px 16px}
-.row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-2)}
-.row:last-child{border-bottom:none}
-.row .w{flex:0 0 110px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;color:var(--accent);padding-top:1px}
-.row .c{flex:1}
-.row .c b{font-size:14px}
-.row .c p{margin:3px 0 0;color:var(--ink-3);font-size:13px}
-.flag{border-left:3px solid var(--crit);background:var(--crit-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
-.warn{border-left:3px solid var(--warn);background:var(--warn-bg);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
-.good{border-left:3px solid var(--accent);background:var(--accent-l);padding:13px 17px;border-radius:0 9px 9px 0;margin:10px 0;font-size:13.5px}
-.flag b,.warn b,.good b{font-family:'Outfit',sans-serif}
-footer{margin-top:44px;padding:20px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:12px}
-@media(max-width:720px){header h1{font-size:24px}.row{flex-direction:column;gap:4px}.row .w{flex:none}}
+:root{--bg:#F4F3F0;--surface:#FFFFFF;--fg:#1D1B19;--muted:#5E5953;--line:#E3E1DD;--accent:#9F4E19;--accent-soft:#FCF3ED;--grey:#515151;
+--display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;--body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
+.wrap{max-width:900px;margin:0 auto}
+.page{padding:28px 16px 64px}
+.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 1px 2px rgba(29,27,25,.05)}
+@media (max-width:520px){.card{padding:4px 18px 8px}}
+a{color:var(--accent);text-underline-offset:3px}
+h1,h2{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+.hero{padding:26px 0;display:grid;gap:10px}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
+h1{font-size:clamp(30px,5.5vw,44px);font-weight:600}
+.lede,.lede p{color:var(--muted);margin:0}
+section{padding:30px 0;border-top:1px solid var(--line);display:grid;gap:14px}
+h2{font-size:24px;font-weight:600}
+p{margin:0;max-width:70ch}
+ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th+th,td+td{border-left:1px solid #D9D5CF}
+th{background:var(--accent-soft);font-family:var(--display);font-weight:600}
+tr:last-child td{border-bottom:0}
+.flag{border-left:3px solid #A81B10;background:#FCEEEC;padding:12px 16px;border-radius:0 9px 9px 0;font-size:14.5px}
+.note{border-left:3px solid var(--grey);background:#F1F0EE;padding:12px 16px;border-radius:0 9px 9px 0;font-size:14.5px}
+.top{position:sticky;top:0;z-index:5;background:#515151;padding:12px 16px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{height:36px;width:auto;display:block}
+.wordmark{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+.tabs a{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;color:#ECEAE6;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.tabs a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.tabs a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111}
 </style>
 </head>
 <body>
+<div class="top"><div class="wrap topbar"><div class="brand">
+  <img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-4.svg" alt="Sunwest Painting" onerror="this.hidden=true;document.getElementById('wm').hidden=false">
+  <div class="wordmark" id="wm" hidden>Sunwest Painting</div>
+</div><nav class="tabs" aria-label="Sunwest pages"><a href="november-2026-plan.html">Plan</a><a href="november-2026-calendar.html">Calendar</a><a href="gameplan-internal.html" class="on" aria-current="page">Nov - Jan</a><a href="brand-deck.html">Brand</a></nav></div></div>
+<main class="page"><div class="wrap"><div class="card">
+<div class="hero"><div class="eyebrow">Kaizen Agency · Internal plan</div><h1>November - January Gameplan</h1><div class="lede"><p>Updated Oct 26, 2026 · Daisy. Client version: <a href="gameplan.html">gameplan.html</a>. This month in detail: <a href="november-2026-plan.html">November plan</a> · <a href="november-2026-calendar.html">calendar</a>.</p></div></div>
 
-<header><div class="wrap">
-  <div class="eyebrow">Internal · Kaizen Agency</div>
-  <h1>Sunwest — November to January Gameplan</h1>
-  <p>Leads to Denise, service + city pages, weekly GBP, monthly email. Client version: <a href="gameplan.html" style="color:#F5C842">gameplan.html</a></p>
-</div></header>
-
-<div class="wrap">
-
-<section>
-  <h2>Monthly rhythm</h2>
-  <div class="card">
-    <table>
-      <tr><td class="d" style="width:60px">3-6</td><td class="k">New pages</td><td>From the Sitemap tab, in phase order. Only pages with real facts; city pages need a real local job</td></tr>
-      <tr><td class="d">4</td><td class="k">Blog posts</td><td>1 a week. Each links 1 service + 1 project + the quote page</td></tr>
-      <tr><td class="d">4</td><td class="k">GBP posts</td><td>1 a week, real job photo, no phone number or link-stuffing in the text</td></tr>
-      <tr><td class="d">1</td><td class="k">Email</td><td>To Denise's list. Text only to opted-in customers, max 1 a quarter</td></tr>
-      <tr><td class="d">1</td><td class="k">Report</td><td>First business day, using the kaizen-client-update skill</td></tr>
-      <tr><td class="d">1 hr</td><td class="k">Content session with Denise</td><td>Jobs, photos, approvals. Agenda is on the client page</td></tr>
-    </table>
-    <p style="font-size:13px;color:var(--ink-3);margin:12px 0 0"><b>Package:</b> confirm Sunwest's monthly deliverables against the April 20 service agreement before quoting numbers to Denise.</p>
-  </div>
+<section><h2>Monthly rhythm</h2>
+<div class="tw"><table>
+<thead><tr><th>How many</th><th>What</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>~10</td><td>New pages + blogs</td><td>From the Sitemap tab, in phase order. Only pages with real facts; city pages need a real local job</td></tr>
+<tr><td>4</td><td>Blog posts</td><td>1 a week. Each links 1 service + 1 project + the quote page</td></tr>
+<tr><td>4</td><td>Google profile posts</td><td>1 a week, real job photo, no phone number in the text</td></tr>
+<tr><td>1</td><td>Email</td><td>To Denise's list (Brevo). Texts only to opted-in customers, max 1 a quarter</td></tr>
+<tr><td>1</td><td>Print piece</td><td>Door hanger in November</td></tr>
+<tr><td>1</td><td>Report</td><td>First business day, using the kaizen-client-update skill</td></tr>
+<tr><td>1 hr</td><td>Content session with Denise</td><td>Jobs, photos, approvals</td></tr>
+</tbody>
+</table></div>
 </section>
 
-<section>
-  <h2>Baseline (Search Console, Oct 14-23)</h2>
-  <div class="card">
-    <table>
-      <tr><td class="k" style="width:220px">Impressions / clicks</td><td>1,650 / 7 (CTR 0.4%)</td></tr>
-      <tr><td class="k">Avg position</td><td>44.7</td></tr>
-      <tr><td class="k">Queries</td><td>239. Top non-brand by impressions: painting company (97), exterior painting company (53), residential exterior painters (48), commercial painter (40), painting contractor (37)</td></tr>
-      <tr><td class="k">Read</td><td>Google already associates the site with the money terms. The November service pages target exactly these</td></tr>
-    </table>
-  </div>
+<section><h2>Baseline (Search Console, Oct 14-23)</h2>
+<div class="tw"><table>
+<thead><tr><th>Metric</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Impressions / clicks</td><td>1,650 / 7 (CTR 0.4%)</td></tr>
+<tr><td>Avg position</td><td>44.7</td></tr>
+<tr><td>Queries</td><td>239. Top non-brand by impressions: painting company (97), exterior painting company (53), residential exterior painters (48), commercial painter (40), painting contractor (37)</td></tr>
+<tr><td>Read</td><td>Google already connects the site to the money searches. The November service pages target exactly these</td></tr>
+</tbody>
+</table></div>
 </section>
 
-<section>
-  <h2>Open before anything else</h2>
-  <div class="flag"><b>Lead routing.</b> Forms still email kaizenagencyacc@gmail.com. Switch both forms to denise@sunwestpainting.net + BCC Kaizen for 30 days. Daisy approved the approach; do it with the lead-routing checklist (honeypot, Turnstile, SMTP from her domain, real test submission).</div>
-  <div class="warn"><b>Sending domain.</b> Need a website@ address or Workspace access from Denise for SMTP + SPF/DKIM/DMARC. Ask in the meeting.</div>
-  <div class="warn"><b>Photos.</b> 4 project pages are live with placeholders. Every photo uploaded gets alt text + description.</div>
-  <div class="warn"><b>Homepage services grid</b> hidden on all devices. Daisy to decide unhide or remove.</div>
+<section><h2>Open before anything else</h2>
+<div class="flag"><b>Website leads.</b> Forms email kaizenagencyacc@gmail.com and Daisy forwards to Denise (tested and working Oct 26, 12:50am). Next: Brevo + FluentSMTP with domain records, test to Kaizen only, then switch every form to denise@sunwestpainting.net + BCC Kaizen for 30 days.</div>
+<div class="note"><b>Google profile access.</b> Daisy needs to be added back as a manager. Asked in the meeting email; 21 review replies are drafted and ready.</div>
+<div class="note"><b>Photos.</b> Project pages and the new homepage still use placeholders. Every photo uploaded gets alt text + description.</div>
+<div class="note"><b>Homepage v2.</b> Lighter, mid grey #515151 instead of black, bring back cut content. Review Mon Oct 26, show Denise, build on hidden /home-v2/.</div>
 </section>
 
-<section>
-  <h2>Calendar</h2>
-
-  <div class="month">
-    <div class="month-hd"><h3>Last week of October</h3><span class="th">Close out + meeting prep</span></div>
-    <div class="month-body">
-      <div class="row"><div class="w">Mon-Tue</div><div class="c"><b>Draft replies to every Google review</b><p>Daisy approves, then post in GBP. Personal, mention the type of job, no customer last names</p></div></div>
-      <div class="row"><div class="w">Mon-Tue</div><div class="c"><b>GBP posts weeks 1-4 drafted</b><p>Westmont, Hidden Hill Rd, Sunrise Terrace, winter interior booking</p></div></div>
-      <div class="row"><div class="w">Wed-Fri</div><div class="c"><b>Denise meeting</b><p>Walk through gameplan.html, get the 6 asks answered, book the monthly hour</p></div></div>
-      <div class="row"><div class="w">After OK</div><div class="c"><b>Lead routing live + test</b></div></div>
-    </div>
-  </div>
-
-  <div class="month">
-    <div class="month-hd"><h3>November</h3><span class="th">Service pages + city pages</span></div>
-    <div class="month-body">
-      <div class="row"><div class="w">Wk 1</div><div class="c"><b>Search Console: request indexing for the 25 Oct pages</b><p>Then check coverage weekly</p></div></div>
-      <div class="row"><div class="w">Wk 1-2</div><div class="c"><b>Commercial, Interior, Exterior, Cabinet, Deck &amp; Fence pages</b><p>Clone /residential-painting/. Commercial CTA = Request a Commercial Bid</p></div></div>
-      <div class="row"><div class="w">Wk 3-4</div><div class="c"><b>Services hub, About Us, Testimonials; Los Gatos, Saratoga, Campbell</b><p>About needs a real team photo. Testimonials = real reviews only</p></div></div>
-      <div class="row"><div class="w">Nov 5</div><div class="c"><b>Newsletter #1 (approved Version A)</b><p>Blocked on the list + sending tool</p></div></div>
-      <div class="row"><div class="w">Weekly</div><div class="c"><b>Blog + GBP post</b></div></div>
-      <div class="row"><div class="w">Wk 2</div><div class="c"><b>Looker Studio report</b><p>Copy the Adapt report, swap GA4 (G-GBWYX0SVT7) + GSC sources</p></div></div>
-      <div class="row"><div class="w">Dec 1</div><div class="c"><b>November report</b></div></div>
-    </div>
-  </div>
-
-  <div class="month">
-    <div class="month-hd"><h3>December</h3><span class="th">Winter interior work</span></div>
-    <div class="month-body">
-      <div class="row"><div class="w">Pages</div><div class="c"><b>Historic Restoration, Industrial, Color Consultation, FAQ, Safety &amp; Certifications, Church (VIVE)</b></div></div>
-      <div class="row"><div class="w">Cities</div><div class="c"><b>Palo Alto, Cupertino, Morgan Hill, Milpitas, Gilroy</b></div></div>
-      <div class="row"><div class="w">Dec 3</div><div class="c"><b>Holiday thank-you email + book January interior work</b></div></div>
-      <div class="row"><div class="w">Jan 5</div><div class="c"><b>December report + Q1 check-in</b></div></div>
-    </div>
-  </div>
-
-  <div class="month">
-    <div class="month-hd"><h3>January</h3><span class="th">Property managers plan the year</span></div>
-    <div class="month-body">
-      <div class="row"><div class="w">Pages</div><div class="c"><b>Pressure Washing, Wallpaper Removal, After-Hours Commercial; Retail + School only with real jobs</b></div></div>
-      <div class="row"><div class="w">Cities</div><div class="c"><b>Sunnyvale, Santa Clara, Mountain View</b></div></div>
-      <div class="row"><div class="w">Jan 7</div><div class="c"><b>Email: plan your property's repaint for the year</b><p>Property managers, HOAs, commercial</p></div></div>
-    </div>
-  </div>
+<section><h2>November: service pages + city pages</h2>
+<div class="tw"><table>
+<thead><tr><th>When</th><th>What</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Wed Oct 28 - Fri Oct 30</td><td>Denise meeting</td><td>Plan, homepage v2, questions list, Google profile access, email list, photos</td></tr>
+<tr><td>Nov 4 - Nov 12</td><td>Exterior, Commercial, Interior pages</td><td>Clone /residential-painting/. Commercial CTA = Request a Commercial Bid</td></tr>
+<tr><td>Nov 18 - Nov 25</td><td>Services hub, About Us, Los Gatos</td><td>About needs a real team photo and Denise's OK</td></tr>
+<tr><td>Thu Nov 12</td><td>Newsletter #1 (approved Version A)</td><td>Needs her list + Brevo</td></tr>
+<tr><td>Weekly</td><td>Blog + Google profile post</td><td>Mondays</td></tr>
+<tr><td>Nov 20</td><td>Door hanger final file</td><td>Real Sunwest photo</td></tr>
+<tr><td>Tue Dec 1</td><td>November report</td><td></td></tr>
+</tbody>
+</table></div>
 </section>
 
-<section>
-  <h2>GBP posts and reviews</h2>
-  <div class="card">
-    <p style="margin:0 0 10px">Posts taken down before are usually one of these. Avoid all of them:</p>
-    <table>
-      <tr><td class="k" style="width:220px">Phone numbers in the post text</td><td>Use the Call button instead</td></tr>
-      <tr><td class="k">Stock or reused photos</td><td>Real job photos only, no text overlays or logos covering the image</td></tr>
-      <tr><td class="k">Bulk scheduling from third-party tools</td><td>Several posts at once from a new tool can get flagged. Post natively, one a week</td></tr>
-      <tr><td class="k">Links that don't match the business</td><td>Only sunwestpainting.net pages</td></tr>
-      <tr><td class="k">Offer posts with missing details</td><td>Offers need dates and terms, or use a plain update post</td></tr>
-    </table>
-    <p style="font-size:13px;color:var(--ink-3);margin:12px 0 0">No new software needed. Draft in the Content Calendar, Daisy approves, post in GBP.</p>
-  </div>
+<section><h2>December: winter interior work</h2>
+<div class="tw"><table>
+<thead><tr><th>When</th><th>What</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Pages</td><td>Historic Restoration, Industrial, Color Consultation, FAQ, Safety &amp; Certifications, Testimonials, Church (VIVE)</td><td>Testimonials = real reviews only</td></tr>
+<tr><td>Cities</td><td>Saratoga, Campbell, Palo Alto, Cupertino, Morgan Hill</td><td>Real local jobs only</td></tr>
+<tr><td>Dec 3</td><td>Holiday thank-you email + book January interior work</td><td></td></tr>
+<tr><td>Jan 5</td><td>December report + Q1 check-in</td><td></td></tr>
+</tbody>
+</table></div>
 </section>
 
-<section>
-  <h2>Links</h2>
-  <div class="card">
-    <table>
-      <tr><td class="k" style="width:220px">Sitemap + project hub</td><td><a href="https://docs.google.com/spreadsheets/d/1tR1z6zMymRx3_6F97EFxkytSw__yvIaSabP21qtLimI/edit">Sitemap - Sunwest Painting (Master)</a></td></tr>
-      <tr><td class="k">Task board</td><td><a href="https://workspace.kaizenagency.org/boards/tskb_9ccf6390d580aaac24285ce1">Sunwest Painting Tasks</a> (LINKS list has everything)</td></tr>
-      <tr><td class="k">Drive</td><td><a href="https://drive.google.com/drive/folders/1C-wgpoiZN5uDQh67xiZ_Nbgevh3rU9Kz">SUNWEST PAINTING</a> · <a href="https://drive.google.com/drive/folders/1NeGIy4buRknBnyUzN6vJaHJHrtxlfF-l">Basil's design files</a></td></tr>
-      <tr><td class="k">SOP</td><td><a href="https://docs.google.com/document/d/1GPHDPD7sNF_uLWpwQRn2OAIwIvg_PIxBv9n6cFgvXb8/edit">Website Page Buildout &amp; SEO Expansion</a></td></tr>
-    </table>
-  </div>
+<section><h2>January: property managers plan the year</h2>
+<div class="tw"><table>
+<thead><tr><th>When</th><th>What</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Pages</td><td>After-Hours Commercial, Wallpaper Removal, Pressure Washing (prep); Retail + School only with real jobs</td><td>Don't promote low-margin services on their own</td></tr>
+<tr><td>Cities</td><td>Milpitas, Gilroy, Sunnyvale, Santa Clara, Mountain View</td><td></td></tr>
+<tr><td>Jan 7</td><td>Email: plan your property's repaint for the year</td><td>Property managers, HOAs, commercial</td></tr>
+</tbody>
+</table></div>
 </section>
 
-<footer>Internal - Kaizen Agency. Client-facing version: gameplan.html.</footer>
+<section><h2>Google profile posts and reviews</h2>
+<p>Posts taken down before are usually one of these. Avoid all of them:</p>
+<div class="tw"><table>
+<thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Phone numbers in the post text</td><td>Use the Call button instead</td></tr>
+<tr><td>Stock or reused photos</td><td>Real job photos only, no text overlays or logos covering the image</td></tr>
+<tr><td>Bulk scheduling from third-party tools</td><td>Post natively, one a week</td></tr>
+<tr><td>Links that don't match the business</td><td>Only sunwestpainting.net pages</td></tr>
+<tr><td>Offer posts with missing details</td><td>Offers need dates and terms, or use a plain update post</td></tr>
+</tbody>
+</table></div>
+<p>No new software needed. Draft in the Content Calendar, Daisy approves, post in the Google profile.</p>
+</section>
 
-</div>
-</body>
-</html>
+<section><h2>Links</h2>
+<div class="tw"><table>
+<thead><tr><th>What</th><th>Where</th></tr></thead>
+<tbody>
+<tr><td>Sitemap + project hub</td><td><a href="https://docs.google.com/spreadsheets/d/1tR1z6zMymRx3_6F97EFxkytSw__yvIaSabP21qtLimI/edit">Sitemap - Sunwest Painting (Master)</a></td></tr>
+<tr><td>Task board</td><td><a href="https://workspace.kaizenagency.org/boards/tskb_9ccf6390d580aaac24285ce1">Sunwest Painting Tasks</a> (LINKS list has everything)</td></tr>
+<tr><td>Drive</td><td><a href="https://drive.google.com/drive/folders/1C-wgpoiZN5uDQh67xiZ_Nbgevh3rU9Kz">SUNWEST PAINTING</a> · <a href="https://drive.google.com/drive/folders/1NeGIy4buRknBnyUzN6vJaHJHrtxlfF-l">Basil's design files</a></td></tr>
+<tr><td>Figma</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=20-15">Homepage v2 + footer</a></td></tr>
+<tr><td>Brand deck</td><td><a href="brand-deck.html">brand-deck.html</a> · full guide <a href="overview.html">overview.html</a></td></tr>
+<tr><td>SOP</td><td><a href="https://docs.google.com/document/d/1GPHDPD7sNF_uLWpwQRn2OAIwIvg_PIxBv9n6cFgvXb8/edit">Website Page Buildout &amp; SEO Expansion</a></td></tr>
+</tbody>
+</table></div>
+<p>Internal - Kaizen Agency. Client-facing version: gameplan.html.</p>
+</section>
+</div></div></main>
+</body></html>
