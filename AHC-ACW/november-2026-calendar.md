@@ -11,7 +11,7 @@
 | Nov 23 | Achilles blog **published** (B) | **Post:** Why chiro didn't work | — | Thanksgiving | **Post:** Black Friday graphic · report due Sat Nov 28 (B) |
 | Nov 30 | — | **Report sent** to Dr. Mike (D) | | | |
 
-**Extra ideas, no date yet:** burnout + hyperbaric chamber (HBOT) posts from Dr. Kyndra. These are swap-ins whenever there's room; see "Extra ideas" on the [social media page](november-2026-social.html).
+**Extra ideas, no date yet:** burnout + hyperbaric chamber (HBOT) posts from Dr. Kyndra, plus shockwave, laser, personal training and massage ideas. These are swap-ins whenever there's room; see "Extra ideas" on the [social media page](november-2026-social.html).
 
 ## Basil's calendar
 

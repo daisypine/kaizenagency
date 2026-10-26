@@ -27,13 +27,17 @@ Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026
 
 **Moved to December** (shoot only if there's time tomorrow): Sleeping positions ranked · "How have you been?" · Still hurting after the season? carousel · 4 things I'd never do.
 
-## Extra ideas: burnout + HBOT (from Dr. Kyndra)
+## Extra ideas
+
+Ready-to-go ideas to get more of Adapt's services on the feed. Use them as swap-ins this month, or to plan December. Each was found and watched on Oct 26.
+
+### Burnout + hyperbaric chamber (from Dr. Kyndra)
 
 Dr. Kyndra wants a "burnout" video to promote the hyperbaric chamber (HBOT), which isn't being used much lately. These are ready to go whenever there's a slot, or as a swap-in this month. If there's time tomorrow, grab the B-roll so we have it.
 
 | Idea | Format | Who's in it | Inspired by | Adapt spin |
 | --- | --- | --- | --- | --- |
-| **"They said relax. I heard 'bring your laptop.'"** | Reel, 6–8 sec | Dr. Kyndra (or a willing patient with a signed release) | [@avni](https://www.instagram.com/p/DeDWPOfvJ3N/) (1.3K likes, 6.5 sec selfie in a chamber) | Selfie-angle shot lying in the chamber, then the camera tips down to a laptop or phone full of emails. Caption: "Burnt out but your inbox isn't? 60 minutes in the chamber is the only meeting you should take today." **Only show a laptop/phone if Adapt's chamber allows electronics inside.** If not, switch the joke to "they said relax, I heard 'answer 47 emails'" with her hands empty |
+| **"They said relax. I heard 'bring your laptop.'"** | Reel, 6–8 sec | Dr. Kyndra (or a willing patient with a signed release) | [@avni](https://www.instagram.com/p/DeDWPOfvJ3N/) (1.3K likes, 6.5 sec selfie in a chamber) | Selfie-angle shot lying in the chamber, then the camera tips down to a laptop or phone full of emails. Caption: "Burnt out but your inbox isn't? 60 minutes in the chamber is the only meeting you should take today." Adapt's chamber allows laptops, so this works as-is |
 | **What a session in our hyperbaric chamber actually looks like** | Carousel, 5 slides (B-roll stills) | Dr. Kyndra | [@onebasehealth](https://www.instagram.com/p/DZYZYlCDYRx/) "What 60 minutes of HBOT does to a burnt-out brain" | Keep it about the experience, not medical claims: 1. "Burnt out? Here's 60 minutes of doing nothing" · 2. You lie back and get comfy · 3. Your ears pop like on a plane · 4. You rest, read or nap · 5. "Who uses it here: athletes in recovery + anyone who needs a reset · Text (408) 673-2432" |
 | **How athletes use HBOT in recovery** | Carousel or 15-sec reel | Dr. Kyndra + B-roll | [@henshaw_hyperbarics](https://www.instagram.com/p/DcNlpThoB9N/) | Fits the athlete theme: "Your recovery routine: sleep · fuel · strength · chamber time." B-roll of the chamber door closing and someone relaxing inside |
 | **"What do patients notice after HBOT?"** | Carousel | Real patients (quotes only) | [example post](https://www.instagram.com/p/DaBRIvzjLAe/) "What do people actually notice after HBOT?" | Later month. Only real quotes from patients who said yes to being quoted, never made up |
@@ -41,6 +45,25 @@ Dr. Kyndra wants a "burnout" video to promote the hyperbaric chamber (HBOT), whi
 **B-roll to grab tomorrow, if there's time:** the chamber from the outside · the door closing · someone lying inside, relaxed (Dr. Kyndra) · a close-up of the pressure dial or control panel · the room.
 
 **Watch the wording.** The FDA clears hyperbaric oxygen for a specific list of medical conditions, and burnout, stress and brain fog aren't on it. So these posts sell the *experience* (rest, a reset, recovery) and not a cure. No "treats burnout" or "heals your brain" claims. Dr. Kyndra checks every HBOT post before it goes to Dr. Mike.
+
+### Shockwave, laser, personal training + massage
+
+Most of these need Eli, Dr. Paris or Nathalia on camera, so they fit a December shoot. The shockwave and laser ones work with Dr. Mike or Dr. Kyndra, so grab that B-roll tomorrow if there's time.
+
+| Service | Idea | Format | Who's in it | Inspired by | Adapt spin |
+| --- | --- | --- | --- | --- | --- |
+| **All services** | **"Tell me you're Adapt without telling me"** | Graphic carousel | Dr. Mike or Dr. Kyndra (cut-out photo) | [@bodyworkdoc](https://www.instagram.com/p/DZx3ROrjf46/), "Tell me you're a chiropractor without telling me: my essential items" | Cut-out photo of a doctor surrounded by labeled photos of the gear: shockwave · laser · hyperbaric chamber · massage table · dumbbells and bands · adjusting table. Hand-drawn arrows and labels like the reintro posts. One post that shows off every service |
+| **Shockwave** | **"Is shockwave painful? Does this answer that?"** | Reel, about 13 sec | Dr. Kyndra treating Dr. Mike (or a willing patient) | [@drgabbycap](https://www.instagram.com/p/DSLRoHtkiq3/) | Close-up of shockwave on a back or elbow while the "patient" gives a calm thumbs up or a funny face. Caption: what it actually feels like and how the intensity gets adjusted to you |
+| **Shockwave** | **"Client: so what do you do when you're not looking after me?"** | Reel, about 11 sec | Dr. Kyndra | [@izzyintheclinic](https://www.instagram.com/p/DYNxpXRye14/) | Dr. Kyndra sitting on the table using the shockwave on her own knee or elbow, sipping coffee. Funny and shows the machine up close |
+| **Laser** | **Laser therapy explainer** | Reel, 30–45 sec | Dr. Mike next to the laser | [@juanpablochica](https://www.instagram.com/p/DaRPMB1qoz9/) (51 sec, talking head beside the laser) | Off-the-cuff: "Got an injury that's keeping you off the field? Here's what this does." Cut to B-roll of the laser on a knee or shoulder. Keep it to what laser is used for, no cure claims |
+| **Personal training** | **"POV: you try the exercises you give your athletes"** | Reel, about 7 sec | Eli or Dr. Paris | [@optimum.pt.missouricity](https://www.instagram.com/p/DI0JUIKMRE1/) (49K likes) | The trainer does a tough split squat or a single-leg move and wobbles or struggles. Funny and relatable, and it shows the rehab gym |
+| **Personal training** | **"POV: your trainer is good at their job"** | Reel, about 9 sec | Eli or Dr. Paris + a "client" | [@catcodedmoves](https://www.instagram.com/p/DbjvudZNkmY/) (10K likes) | Trainer: *"You don't have to do your exercises today, okay?"* The client immediately starts doing them. Reverse psychology humor |
+| **Personal training** | **"It's not just massages"** | Reel, about 14 sec | Eli or Dr. Paris | [@eliteptnj](https://www.instagram.com/p/DRw38T-AMt0/) (185K likes, "Physical therapy isn't just massages") | Spin: "Chiropractic isn't just cracking backs," then cuts of the strength training, rehab and the gym at Adapt |
+| **Massage** | **"POV: your first-time client says…"** | Reel, about 8 sec | Nathalia or Eli | [@balancedbodyjm](https://www.instagram.com/p/DZqFcjhJZcI/) (127K likes) | The therapist rubs their hands together excitedly. Text: *"POV: your first-time client says 'I've played softball for 20 years and never had a massage'"* |
+| **Massage** | **"POV: your client falls asleep 10 minutes into a 90-minute session"** | Reel, about 10 sec | Nathalia or Eli + a "client" | [@moshealthmassage](https://www.instagram.com/p/DXzUYTdNy54/) (54K likes) | The therapist standing next to the table looking at the camera, deadpan, while the client snores |
+| **Massage** | **"That exact moment your body tells me…"** | Reel, about 13 sec | Nathalia or Eli | [@torasavage_](https://www.instagram.com/p/DWZGLztp6z7/) (17K likes) | Close-up of hands finding a knot in the shoulder, with a knowing look at the camera. Caption: "You: I just have tight shoulders. Your body: 👀" |
+
+**B-roll to grab tomorrow, if there's time:** the laser on a knee or shoulder · a shockwave close-up (already on the list) · the gear for the "Tell me you're Adapt" post (each machine on its own, clean background).
 
 ## Tomorrow's shoot: Tue Oct 27, 11:30–1:00
 
@@ -54,7 +77,7 @@ Grouped by setup so nobody moves twice. Each block lists what Daisy captures and
 | 12:20–12:30 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) · **Oreo stacks** on a clean white surface (5 setups, below) | Each doctor takes their own mirror selfie · both hold out hands · Dr. Kyndra checks the Oreo labels make sense |
 | 12:30–12:42 | **Reintro portraits** | 3 photos per doctor + 1 together (list below) · voice memo the intro questions | Answer 5 quick questions each (about 2 minutes) |
 | 12:42–12:55 | **B-roll** | Shockwave on an elbow + a heel · adjustment · soft tissue · a strength move · front sign · front desk · treatment room empty. 5–10 seconds each, slow and steady | Act it out on each other (no patients unless they've signed a photo/video release) |
-| 12:55–1:00 | **Bonus (only if time)** | HBOT B-roll (chamber, door closing, Dr. Kyndra relaxing inside) · sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
+| 12:55–1:00 | **Bonus (only if time)** | HBOT B-roll (chamber, door closing, Dr. Kyndra relaxing inside) · laser B-roll · each machine on its own for the "Tell me you're Adapt" post · sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
 
 ### Daisy's checklist
 
