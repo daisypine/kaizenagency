@@ -4,7 +4,7 @@
 <title>Build base - Kaizen team</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/kz.css"></head>
 <body data-base="../../">
-<header class="bar"><div class="bar-in"><a class="mark" href="../../hub/index.html"><span class="key">KAIZEN</span><span>Team</span></a><nav class="nav" aria-label="Main"><a href="../../hub/index.html">Home</a><a href="../../process/index.html">Process</a><a href="../../hub/clients.html">Clients</a><a href="../../hub/playbooks/index.html" aria-current="page">Playbooks</a><a href="../../hub/prompts.html">Prompts</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
+<header class="bar"><div class="bar-in"><a class="mark" href="../../index.html"><span class="key">KAIZEN</span><span>Team</span></a><nav class="nav" aria-label="Main"><a href="../../index.html">Home</a><a href="../../hub/index.html">Guide</a><a href="../../hub/clients.html">Clients</a><a href="../../hub/playbooks/index.html" aria-current="page">Playbooks</a><a href="../../hub/prompts.html">Prompts</a><a href="https://workspace.kaizenagency.org/" target="_blank" rel="noopener">Workspace</a></nav></div></header>
 <main class="wrap narrow"><h1 class="page-title">Build base</h1><p class="lede">Playbook for stage 5 · Build + launch. A readable copy of Daisy's <b>kaizen-build-base</b> skill.</p>
 <div class="callout"><b>Use it with Claude:</b> start a chat and paste <code>Read https://daisypine.github.io/kaizenagency/hub/playbooks/kaizen-build-base.html and follow it for [client]. Ask me questions before you start.</code> If something here is wrong, tell Daisy so the skill gets fixed too.</div><div class="prose"><h1>Kaizen Build Base</h1>
 <p>Every new Kaizen client site is cloned from the <strong>Kaizen Base</strong> site, not built from scratch. The base is permanently noindexed and password-protected and never belongs to a client. WordPress + Elementor is settled; do not suggest a different platform.</p>
@@ -95,6 +95,118 @@
 </li>
 </ul>
 <p><strong>Confirm Complianz is actually present and active after any clone or migration.</strong> It is easy to assume it came across with the base. If the plugin search screen offers "Activate" rather than "Install", the files are already on disk and only the activation is missing.</p>
+<h2>Building the Kaizen Base from scratch (first build, Oct 2026, on L&amp;A House Cleaning)</h2>
+<p>The base did not exist yet, so it is being built on the first client that needed it (L&amp;A House Cleaning, staging <code>daisyp20.sg-host.com</code>) and saved as a labelled SiteGround backup, <strong>"Kaizen Base v1"</strong>, before any client content goes in. Until that backup exists there is nothing to clone, so new sites follow this list. Steps marked <strong>Daisy</strong> need her, because they involve licences, terms or passwords.</p>
+<ol>
+<li>
+<p><strong>Create the WordPress site in SiteGround, then click "Exit Wizard" on the starter wizard straight away.</strong> While it is open it blocks admin-ajax and plugin installs fail. Note the creation time: <strong>SiteGround backups are not available for about 6 hours after a site is created</strong>, so schedule the base backup for later rather than waiting on it.</p>
+</li>
+<li>
+<p>Install the free plugins from the WordPress directory (scripted: <code>POST /wp-json/wp/v2/plugins {slug, status:'active'}</code>). Delete Akismet, Hello Dolly, the default themes, the sample post and page, and AI Agent by SiteGround.</p>
+</li>
+<li>
+<p><strong>Daisy:</strong> upload the paid zips from Kaizen's accounts and connect their licences: Elementor Pro and <strong>Unlimited Elements Pro</strong>. Unlimited Elements is the easy one to forget, because it cannot be found in the plugin directory search.</p>
+</li>
+<li>
+<p>AIOSEO jumps to its own onboarding wizard on activation. Navigate away and configure it per client later.</p>
+</li>
+<li>
+<p><strong>Wordfence will not finish installing without a licence key.</strong> <strong>Daisy</strong> gets it, because it means accepting Wordfence's terms on wordfence.com:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Every site uses the agency account <strong>[Kaizen ops Google account - ask Daisy]</strong>: not a personal Gmail, not the client. One free key per site, all under that account.</p>
+</li>
+<li>
+<p>wordfence.com &gt; Licenses &gt; Get a Free License. It asks for the site URL: use the current (staging) URL. Keys are not domain-locked, so the same key survives the move to the live domain.</p>
+</li>
+<li>
+<p>Paste the key into the WordPress modal ("Install an existing license") and answer Yes to the security and vulnerability alerts.</p>
+</li>
+<li>
+<p>Connect each site to <strong>Wordfence Central</strong> (free) under the same account (Central &gt; Add New Site, then paste the code in Wordfence &gt; Dashboard), so every client site shows on one dashboard.</p>
+</li>
+<li>
+<p>Alerts go to [Kaizen ops Google account - ask Daisy], with a Gmail filter that labels them. Keep critical issues, admin logins from new devices and locked-out admins; turn off the routine "update available" and "IP blocked" alerts. Clients are not on alert emails; add them at handback only if they ask.</p>
+</li>
+</ul>
+<ol start="6">
+<li>
+<p>Settings: timezone America/Los_Angeles, Post name permalinks, comments and pingbacks closed, Discourage search engines ON.</p>
+</li>
+<li>
+<p><strong>Elementor kit (Site Settings) on neutral, swappable values:</strong> system colours Primary #1F2937, Secondary #4B5563, Text #374151, Accent #2563EB; custom colours Light Background #F3F4F6, White #FFFFFF, Dark Background #111827; Inter for all four global fonts; container width 1200px; breakpoints 768/1025; widget spacing 20px. Swap to the client's palette and fonts after the base backup.</p>
+</li>
+</ol>
+<ul>
+<li>Fast path: in any page's editor run <code>$e.run('panel/global/open')</code>, then <code>document/elements/settings</code> on <code>elementor.documents.get(elementor.config.kit_id).container</code>, then <code>document/save/update</code> with <code>{document: kit, force: true}</code>. Verify after a reload with <code>GET /wp-json/elementor/v1/globals</code>.</li>
+</ul>
+<ol start="8">
+<li><strong>404 page</strong> as an Elementor Pro theme-builder template (type <code>error-404</code>) with the condition Include &gt; 404 Page: a heading, one line of text and a "Back to the homepage" button on the global colours. Verify with a logged-out fetch of a made-up URL: status 404, template text present.</li>
+</ol>
+<ul>
+<li>
+<p>Scripted creation: read the fields from <code>#tmpl-elementor-new-template</code> on the Theme Builder screen and submit them as a <strong>GET</strong> to <code>/wp-admin/edit.php</code>. Submitting the same fields as a POST silently creates an ordinary draft post instead; delete it if that happens.</p>
+</li>
+<li>
+<p>In Elementor 4, <code>document/elements/create</code> into <code>elementor.documents.getCurrent().container</code> on a theme template silently adds nothing. Create into <code>elementor.getPreviewContainer()</code> instead and check <code>elementor.elements.length</code>.</p>
+</li>
+</ul>
+<ol start="9">
+<li>
+<p>Draft pages (template <code>elementor_header_footer</code>): Home, Privacy Policy, Terms of Service, Accessibility Statement. Legal text is written per client and is never placeholder at launch.</p>
+</li>
+<li>
+<p><strong>Fluent Forms:</strong> delete the two demo forms it installs (Subscription Form, Contact Form Demo) and replace them with the two standard forms:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>Get a Quote - Homeowners:</strong> Full name<em>, Phone</em> (type tel), Email, Service* (dropdown of the client's services plus "Not sure yet"), City, Message. Button "Get My Free Quote".</p>
+</li>
+<li>
+<p><strong>Commercial Bid Request:</strong> Full name<em>, Business name, Phone</em>, Email, Type of space* (Office / Retail / Medical-Dental / Other), City, Message. Button "Request a Commercial Bid".</p>
+</li>
+<li>
+<p>Notification on each: To the client's inbox, BCC [Kaizen ops Google account - ask Daisy] for the first 30 days, Reply-To <code>{inputs.email}</code>, From name "<Client> Website", subject <code>New quote request - &lt;Client&gt; website - {inputs.full_name}</code>, body <code>{all_data}</code> plus <code>{embed_post.permalink}</code>.</p>
+</li>
+<li>
+<p>Global Settings &gt; General &gt; Miscellaneous: <strong>Honeypot ON, Token Based Spam Protection ON, No-Conflict Mode ON</strong>, Disable Form Analytics ON. The switches look on before Save Settings is clicked, so reload and re-read them.</p>
+</li>
+<li>
+<p>Scripted path: <code>POST /wp-json/fluentform/v1/forms/{demoId}/duplicate</code>, then <code>POST /wp-json/fluentform/v1/forms/{newId}</code> (form-urlencoded <code>title</code>, <code>formFields</code> JSON, <code>status=published</code>). Notifications go through <code>POST /wp-json/fluentform/v1/settings/{id}</code> with <code>meta_key=notifications</code> and <code>value</code> as JSON. Read both back, and read the rendered field list from the preview URL <code>/?fluent_forms_pages=1&amp;design_mode=1&amp;preview_id={id}</code> (it only renders when logged in).</p>
+</li>
+<li>
+<p>In the base backup these forms carry the first client's addresses; clone-reset step 9 repoints them.</p>
+</li>
+</ul>
+<ol start="11">
+<li>
+<p><strong>FluentSMTP stays installed and unconfigured on the base.</strong> Per client, the sender is an address on the client's own domain (see <code>kaizen-lead-routing</code>). If the domain has no mailbox anywhere, create <code>website@&lt;domain&gt;</code> on SiteGround <strong>after</strong> the domain's DNS is on SiteGround, so SPF and DKIM come with it. Until then the forms send through the host's default mail on staging.</p>
+</li>
+<li>
+<p><strong>Daisy:</strong> turn Protected URLs on (Site Tools &gt; Security &gt; Protected URLs) and save the username and password in the password manager the moment they are created. Chrome shows its own sign-in prompt that an assistant cannot fill, so a forgotten password stops all browser work until it is reset under Protected URLs &gt; Users.</p>
+</li>
+<li>
+<p>SSL + HTTPS Enforce on the staging host too, so staging behaves like production.</p>
+</li>
+<li>
+<p><strong>Daisy:</strong> take the labelled backup "Kaizen Base v1" once SiteGround allows it. Only then swap the kit to the client's brand and start client content.</p>
+</li>
+</ol>
+<p>Things that cost time on this build:</p>
+<ul>
+<li>
+<p>The Site Tools site selector can silently switch to another site; it jumped to a different client's site mid-session. Read the selected site name before every change.</p>
+</li>
+<li>
+<p>The browser tool blocks any result containing nonce or query-string-looking data. Keep nonces in page variables and return only counts, IDs and statuses.</p>
+</li>
+<li>
+<p>The first admin was created with the email address as the username. Give admins non-obvious usernames at creation (see launch day, step 10).</p>
+</li>
+</ul>
 <h2>Never install</h2>
 <p>WP Rocket (conflicts with SG Optimizer), Yoast or Rank Math (conflict with AIOSEO), Smush, MonsterInsights, Site Kit (GA4 goes through Complianz), and AI Agent by SiteGround. Delete AI Agent by SiteGround on every site, new or existing, active or not: once connected it can install plugins, edit content and change settings.</p>
 <p>When GA4 offers "Install with WordPress (recommended)" during tag setup, <strong>choose Install manually</strong> and take only the Measurement ID. The recommended path installs Site Kit and double-tags the site.</p>
@@ -570,7 +682,7 @@
 <p><strong>In any long settings wizard, measure a control's position immediately before clicking it.</strong> Answering one question reveals or hides another and shifts everything below; a coordinate captured a step ago now lands on the neighbouring option, which looks like the click simply failed</p>
 </li>
 <li>
-<p>Elementor's own dropdowns ignore scripted <code>change</code> events; set them by clicking</p>
+<p>Elementor's own dropdowns ignore scripted <code>change</code> events; set them by clicking. (The theme-builder display-conditions dialog is an exception: its <code>sub_name</code> select does accept a scripted value plus a <code>change</code> event.)</p>
 </li>
 <li>
 <p><strong>To load local text into a browser page</strong> when the media library refuses <code>.txt</code> uploads, inject an <code>&lt;input type=file&gt;</code> into the page and read the file with <code>file.text()</code></p>
@@ -598,7 +710,7 @@
 <p><strong>Elementor preserves widget IDs when a section is copy-pasted between pages.</strong> The same widget ID appearing on six pages does <strong>not</strong> mean it is a global widget or lives in a template, and fixing it in one place does not propagate. Confirm by checking whether the ID exists in any <code>elementor_library</code> template; if it does not, every page carries its own copy and every page has to be walked. Global widgets do exist as an <code>elementor_library</code> type of "Global Widget" and cannot be opened directly with <code>?action=elementor</code> - edit them from inside a page that uses them</p>
 </li>
 <li>
-<p><strong>To reuse a design from another page</strong>, read the source container with <code>elementor.getContainer(id).model.toJSON()</code>, strip <code>id</code>, <code>editSettings</code>, <code>defaultEditSettings</code> and <code>isLocked</code> recursively, stash it in <code>localStorage</code> (both editors are same-origin), then recreate it on the target with <code>$e.run('document/elements/create', {container: elementor.documents.getCurrent().container, model, options:{edit:false}})</code>. This is how to get a new page that genuinely matches the existing design rather than an approximation - the background treatment, typography and colours all come with it. Copying a section heading this way is the quickest fix for a new widget rendering in a default colour</p>
+<p><strong>To reuse a design from another page</strong>, read the source container with <code>elementor.getContainer(id).model.toJSON()</code>, strip <code>id</code>, <code>editSettings</code>, <code>defaultEditSettings</code> and <code>isLocked</code> recursively, stash it in <code>localStorage</code> (both editors are same-origin), then recreate it on the target with <code>$e.run('document/elements/create', {container: elementor.documents.getCurrent().container, model, options:{edit:false}})</code>. This is how to get a new page that genuinely matches the existing design rather than an approximation - the background treatment, typography and colours all come with it. Copying a section heading this way is the quickest fix for a new widget rendering in a default colour. On Elementor 4 theme templates, create into <code>elementor.getPreviewContainer()</code> instead (see the base build, step 8)</p>
 </li>
 <li>
 <p>Hide the theme's duplicate page title on a new Elementor page with <code>elementor.settings.page.model.set('hide_title','yes')</code> before saving</p>
@@ -616,10 +728,13 @@
 <p><strong>Who owns the GA4 and Search Console properties.</strong> This document has said the CLIENT's Google account with Kaizen as collaborator; JDH was actually built the other way round, under Kaizen's account with the client added. Pick one and make it the standard</p>
 </li>
 <li>
-<p>Whether the base has actually been built and where it lives; if no base site exists yet, say so and offer to build it from this spec rather than assuming one exists</p>
+<p><strong>Base status:</strong> the Kaizen Base is being built for the first time on L&amp;A House Cleaning (Oct 2026); the "Kaizen Base v1" backup is pending. Until it exists, build new sites from "Building the Kaizen Base from scratch" above, and confirm with Daisy where the base lives once it is saved</p>
 </li>
 <li>
-<p>This document is getting long. Daisy plans to split it into separate skills later. The natural seams are <strong>migration</strong>, <strong>launch day</strong>, <strong>post-launch audit</strong>, <strong>security</strong> and <strong>handback</strong> - but every one of those needs the "How to verify anything" rules at the top, so whichever way it splits, those rules get duplicated into each file rather than living in one. Until then it stays one file</p>
+<p>Whether Cloudflare Turnstile goes on every form from day one (it needs a Cloudflare account to issue keys) or only once spam appears; Fluent Forms honeypot + token protection is the default until then</p>
+</li>
+<li>
+<p>This document is getting long. Daisy plans to split it into separate skills later. The natural seams are <strong>migration</strong>, <strong>launch day</strong>, <strong>post-launch audit</strong>, <strong>security</strong>, <strong>handback</strong> and now <strong>base build</strong> - but every one of those needs the "How to verify anything" rules at the top, so whichever way it splits, those rules get duplicated into each file rather than living in one. Until then it stays one file</p>
 </li>
 </ul></div></main>
 <footer class="foot">Public page. No passwords, keys, client contact details or prices here; those live in Drive and the workspace.</footer>
