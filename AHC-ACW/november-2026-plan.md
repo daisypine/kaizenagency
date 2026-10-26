@@ -77,6 +77,6 @@ Adapt's $225 first visit is the highest in the area. Search volumes weren't avai
 - [ ] Does Adapt offer kinesio taping, cupping, orthotics or decompression? Each could become a service page.
 - [ ] Is he open to a lower-cost first visit or a free 15-minute consult?
 - [ ] OK to send the HSA/FSA year-end email?
-- [ ] Approve the three carousels and the Black Friday graphic before posting.
+- [ ] Approve the reintro set, reels, carousels and the Black Friday graphic before posting (two batches: Fri Oct 30 and Mon Nov 9).
 
 Sources: competitor websites linked above, visited Oct 26, 2026.

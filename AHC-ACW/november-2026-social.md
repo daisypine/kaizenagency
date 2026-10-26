@@ -2,93 +2,190 @@
 
 Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026-calendar.html)
 
-**8 posts in November: 4 reels, 3 carousels and 1 Black Friday graphic.** That's two posts a week, on Tuesday and Thursday. Every post points to the same story as the website and the email: *pain that won't go away, for active people.* The two follow-along reels go out the same day their pages go live. Only Dr. Mike and Dr. Kyndra are on camera. Daisy writes, shoots, edits, designs and posts. Dr. Mike approves before anything goes live.
+**Short, fun and off the cuff.** Every inspiration post was rewatched for this plan, and the ones that work are tiny: one clip or one photo with text on top. Most reels are 5–15 seconds, and three of the four carousels reuse **one photo** on every slide. Only the two follow-along videos run longer. Nobody memorizes a script. The words go on screen and in the caption, not in anyone's mouth.
+
+**November = 11 posts:** a 3-post reintro set to pin at the top of the grid, 4 quick reels, 3 carousels and the Black Friday graphic. Daisy films, designs, edits and posts. Dr. Mike approves before anything goes live.
 
 ## Posting plan
 
-| Date | Post | Type | On camera | Ties to |
+| Date | Post | Format | Who's in it | Length |
 | --- | --- | --- | --- | --- |
-| Tue Nov 3 | "What makes you different?" | Reel | Dr. Mike + Dr. Kyndra | Brand intro |
-| Thu Nov 5 | Rock, paper, scissors: rest vs. shockwave vs. strength | Carousel | — | Shockwave page |
-| Tue Nov 10 | Tennis & golf players: let's fix your elbow | Reel (follow-along) | Dr. Kyndra | Tennis elbow page goes live |
-| Thu Nov 12 | Still hurting after the season? | Carousel | — | Email sends the same day |
-| Tue Nov 17 | Runners: let's fix your Achilles | Reel (follow-along) | Dr. Kyndra | Achilles page goes live |
-| Thu Nov 19 | Spine conditions explained with Oreos | Carousel | — | Back pain / sports injury hub |
-| Tue Nov 24 | "Chiro didn't work for you?" | Reel | Dr. Mike | Chiropractic + rehab |
-| Fri Nov 27 | Black Friday: gift cards + use your HSA/FSA by Dec 31 | Graphic | — | Year-end offer |
+| Mon Nov 2 | **Reintro set (post all 3, then pin):** Meet Dr. Mike · Meet Dr. Kyndra · What to expect at Adapt | 3 graphic carousels | Dr. Mike, Dr. Kyndra | 3–4 slides each |
+| Tue Nov 3 | "What makes you different?" | Reel | Dr. Mike | 5–7 sec |
+| Thu Nov 5 | Rock, paper, scissors: myth vs. fact | Carousel (1 photo) | Hands only | 7 slides |
+| Tue Nov 10 | Tennis & golf players: let's fix your elbow | Reel (follow-along) | Dr. Kyndra | 45–60 sec |
+| Thu Nov 12 | Things I don't care about as your chiropractor | Carousel (1 photo) | Dr. Kyndra | 6 slides |
+| Tue Nov 17 | Runners: let's fix your Achilles | Reel (follow-along) | Dr. Kyndra | 45–60 sec |
+| Thu Nov 19 | 4 red flags at a chiropractor | Reel | Dr. Mike + Dr. Kyndra | 12–15 sec |
+| Tue Nov 24 | Why you tried chiropractic and it didn't work | Carousel (1 photo) | Dr. Mike | 6 slides |
+| Fri Nov 27 | Black Friday: gift cards + use your HSA/FSA by Dec 31 | Graphic | — | 1 slide |
 
-**Why this mix:** fewer posts you can make well beats ten rushed ones. Two follow-along reels (the @thatchirowithtattoos format) give people a reason to save and share. The carousels need no doctor time.
+The elbow and Achilles reels go out the same day their new pages go live. The email sends Thu Nov 12.
 
-**Banked for December and January** (film on Tuesday only if there's time): Things I don't care about as your chiropractor · 4 red flags at a chiropractor · "Have you moved today?" desk check-in · Sleeping positions ranked · 5 things I'd never do to my back · Blind-spot neck drill.
+**Moved to December** (shoot only if there's time tomorrow): Sleeping positions ranked · "How have you been?" · Oreo spine carousel · Still hurting after the season? carousel · 4 things I'd never do.
 
-Schedule everything in Meta Business Suite in one sitting once Dr. Mike approves. Post any trend-style reels as Trial Reels from the phone instead, since Business Suite can't.
+## Tomorrow's shoot: Tue Oct 27, 11:30–1:00
 
-## Shoot day: Tuesday Oct 27, 90 minutes
+Grouped by setup so nobody moves twice. Each block lists what Daisy captures and what the doctors do.
 
-Must-haves first, so a short shoot still covers November. The bonus block at the end fills December.
+| Time | Setup | Daisy captures | Doctors do |
+| --- | --- | --- | --- |
+| 11:30–11:40 | Set up | Tripod, ring light, lav mic, clean lens · tape the text cards to the wall behind the phone | Change into Adapt shirts |
+| 11:40–12:00 | **Chair + plain wall** | Elbow follow-along · Achilles follow-along. Wide, vertical, full body in frame. Phone stays put | **Dr. Kyndra:** 8-second intro to camera, then 3 moves each, 2–3 reps per move |
+| 12:00–12:10 | **Treatment table** | "What makes you different?" (3 takes) · Red flags clip (one 15-second continuous take, 2 angles) | **Dr. Mike:** lounge on the table · then adjust Dr. Kyndra |
+| 12:10–12:20 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) | Each doctor takes their own mirror selfie · both hold out hands |
+| 12:20–12:35 | **Reintro portraits** | 3 photos per doctor + 1 together (list below) · voice memo the intro questions | Answer 5 quick questions each (about 2 minutes) |
+| 12:35–12:50 | **B-roll** | Shockwave on an elbow + a heel · adjustment · soft tissue · a strength move · front sign · front desk · treatment room empty. 5–10 seconds each, slow and steady | Act it out on each other (no patients unless they've signed a photo/video release) |
+| 12:50–1:00 | **Bonus (December)** | Sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
 
-| Time | What | Who |
+### Daisy's checklist
+
+- [ ] Phone charged, 20GB+ free, lens wiped
+- [ ] Tripod, phone clamp, ring light, lav mic
+- [ ] Printed text cards in big font (follow-along moves, red flags, intro questions)
+- [ ] Light dumbbell or water bottle, a step or box, a massage ball
+- [ ] A pillow (bonus sleeping reel)
+- [ ] Film everything vertical 9:16, 4K 30fps. Leave 2 seconds of stillness at the start and end of each clip
+- [ ] Photos: shoot each one portrait **and** with empty space above the head for text
+
+### What the doctors need
+
+- [ ] **Both:** Adapt shirts (bring a second color for the reintro photos), hair and face ready for close-ups, 90 minutes blocked off
+- [ ] **Dr. Kyndra:** look over the follow-along moves below and swap anything she'd rather show
+- [ ] **Dr. Mike:** think of 1–2 real "chiro didn't work for me" stories (no names) to use in the caption
+- [ ] **Both:** be ready to answer the 5 intro questions (below). Short answers are perfect
+- [ ] A clear mirror and a plain wall (any light color), and the treatment table cleared
+
+### Photo list
+
+| For | Shot | Notes |
 | --- | --- | --- |
-| 0:00–0:10 | Set up tripod, light, mic; test one take | Daisy |
-| 0:10–0:30 | Follow-alongs: Tennis & golf elbow · Runners Achilles (same seated setup, 3 takes each) | Dr. Kyndra |
-| 0:30–0:45 | "Chiro didn't work for you?" | Dr. Mike |
-| 0:45–1:00 | "What makes you different?" (Dr. Kyndra plays the patient on the table) | Both |
-| 1:00–1:15 | B-roll: shockwave on an elbow and a heel, adjustment, hands-on soft tissue, a training moment, clinic sign and front desk | Both |
-| 1:15–1:30 | Bonus for December: Things I don't care about (Dr. Kyndra) · 4 red flags (Dr. Mike) · Sleeping positions (Dr. Kyndra) | Whoever's free |
+| Meet Dr. Mike | 1 portrait against a plain wall, waist up, arms relaxed · 1 candid while adjusting · 1 laughing or mid-sentence | Leave room above and beside him for text and arrows |
+| Meet Dr. Kyndra | Same 3 as Dr. Mike | Same |
+| What to expect | Front sign · front desk · treatment room · shockwave close-up · the two of them together | Wide and bright |
+| Rock, paper, scissors | Dr. Mike's hand "scissors" from the left, Dr. Kyndra's hand "rock" from the right, against a plain wall | Wall gets tinted Adapt green (#019877) in editing. Hands only, no faces |
+| Things I don't care about | Dr. Kyndra mirror selfie, full body, phone covering half her face, smiling | One photo for all 6 slides |
+| Chiro didn't work | Dr. Mike mirror selfie, same style | One photo for all 6 slides |
 
-B-roll feeds the carousels, the shockwave page refresh, and fills gaps in edits.
+### Intro questions (voice memo, about 2 minutes each)
 
-**Bring:** phone with a clean lens and free storage, tripod, lav mic, ring light, printed scripts (big font), a chair against a plain clinic wall, a light dumbbell or water bottle, a step or box, a massage ball, a pillow (bonus sleeping reel), Adapt shirts for both doctors.
+1. Where are you from, and how long have you been in Campbell?
+2. Why did you become a chiropractor?
+3. What's the sport or activity you love most?
+4. What kind of patient do you love working with?
+5. One thing people would be surprised to know about you?
 
-**Film settings:** vertical 9:16, 4K 30fps, 3 takes of each hook. Leave 2 seconds of silence at the start and end of every take.
+## Every piece: script, text and shots
 
-## Reel scripts
+### 1–3. Reintro set (Mon Nov 2, then pin all 3)
 
-Each runs 15–40 seconds. Dr. Kyndra checks anything clinical before it posts. Put the title on screen as a white text box for the whole video, like @thatchirowithtattoos does.
+Inspired by [@alexathechiro's pinned trio](https://www.instagram.com/alexathechiro/): a photo on one side, a handwritten-style title and short text boxes on the other. Add hand-drawn arrows pointing at the photo, in brand green, like the [Oreo posts](https://www.instagram.com/p/DeWoXBuiJKL/). Fill in the blanks from tomorrow's voice memos.
 
-**1. "What makes you different?" — Dr. Mike + Dr. Kyndra** · [inspiration](https://www.instagram.com/p/DVM4gRFgVwt/)
+**Meet Dr. Mike** (3 slides)
+- Slide 1: portrait + title "Meet Dr. Mike" · arrows: "founder of Adapt" · "[sport he loves]" · "[surprising fact]"
+- Slide 2: candid adjusting photo · "Why I became a chiropractor: [his answer, 1–2 lines]"
+- Slide 3: laughing photo · "I love working with [his answer]. Chiropractic + rehab, so you get back to what you love." · Text (408) 673-2432
 
-- On screen: *Patient: "What makes you different from other chiropractors?"*
-- Dr. Kyndra (on the table) asks. Dr. Mike doesn't answer out loud. Quick cuts show the answer instead: exam, shockwave, soft tissue work, a strength exercise.
-- End on Dr. Mike: "We don't just adjust you and send you out the door."
-- Caption CTA: "Text us at (408) 673-2432 to book."
+**Meet Dr. Kyndra** (3 slides)
+- Same layout · arrows: "Dr. Kyndra Cervantes, D.C." · "[sport]" · "[surprising fact]"
 
-**2. Tennis & golf players: let's fix your elbow — Dr. Kyndra** · [inspiration](https://www.instagram.com/thatchirowithtattoos/reels/)
+**What to expect at Adapt** (4 slides)
+- Slide 1: front sign photo · "What to expect at your first visit"
+- Slide 2: treatment room · "1. We listen + do a real exam"
+- Slide 3: shockwave close-up · "2. Treatment that fits you: adjustments, soft tissue, shockwave, strength"
+- Slide 4: both doctors together · "3. A plan to get you back to your sport · 1475 S Bascom Ave #104, Campbell · Text (408) 673-2432"
 
-- On-screen title: *Tennis & Golf Players: Let's Fix Your Elbow*
-- Hook: "If your elbow still hurts after weeks of rest, do this with me."
-- Seated follow-along, about 10 seconds per move: wrist extensor stretch with the arm straight · slow lowering with a light dumbbell or water bottle (3-second count down) · forearm rolling with a massage ball.
-- Close: "Still there after 6 weeks? That's where shockwave comes in."
-- Caption: links to the new tennis elbow page · text (408) 673-2432.
+### 4. "What makes you different?" — reel, 5–7 sec
 
-**3. Runners: let's fix your Achilles — Dr. Kyndra** · [inspiration](https://www.instagram.com/thatchirowithtattoos/reels/)
+Inspired by [@occhiropractor](https://www.instagram.com/p/DVM4gRFgVwt/), 5.5 seconds and 7.2K likes. It's just him lying on his table, feet up, on his phone, with one line of text.
 
-- On-screen title: *Runners: Let's Fix Your Achilles*
-- Hook: "Achilles sore every morning? Try this before your next run."
-- Follow-along: wall calf stretch, knee straight then bent · slow heel raises off a step, lowering for 3 seconds · ankle circles.
-- Close: "If it's still sore after 2 weeks, get it checked."
-- Caption: links to the new Achilles page · text (408) 673-2432.
+- **On screen the whole time:** *CLIENT: "What makes you different from other chiropractors?"*
+- **Shot:** Dr. Mike on the treatment table on his stomach, feet kicked up, scrolling his phone. He slowly looks up at the camera and gives a little smirk. One take, no talking.
+- **Audio:** a trending sound
+- **Caption:** "Kick your feet up, you're in good hands 😌 Adjustments, soft tissue, shockwave + strength, all under one roof. Text (408) 673-2432 to book."
 
-**4. "Chiro didn't work for you?" — Dr. Mike** · [inspiration](https://www.instagram.com/p/DaESDA9mkNy/)
+### 5. Rock, paper, scissors: myth vs. fact — carousel, 7 slides
 
-- Hook: "Chiropractic didn't work for you? You might have been missing these."
-- Beats: a real diagnosis · soft tissue work, not just adjustments · strength training so it doesn't come back · enough visits to finish the job.
-- Close: his line, "That's why I do both chiropractic and rehab."
+Inspired by [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) (5.5K likes). Every slide is the **same photo**: scissors on the left (the myth) and rock on the right (the fact, which wins). Only the text changes.
 
-The bonus-block scripts (Things I don't care about, 4 red flags, sleeping positions, desk check-in, 5 things I'd never do, neck drill) are in the [Oct 26 version of this page](https://github.com/daisypine/kaizenagency/commits/main/AHC-ACW/november-2026-social.md). They're the same as before, just moved to December.
-
-## Carousels and graphic
-
-Daisy designs them at 1080x1440 in Figma with the Post Footer, brand green #019877. B-roll stills from Tuesday can go behind the text.
-
-| Post | Slides | Inspired by |
+| Slide | Scissors (top left) | Rock (bottom right) |
 | --- | --- | --- |
-| **Rock, paper, scissors: rest vs. shockwave vs. strength** | 1: hand-game cover · 2: Rest: fine for 2 weeks, then it stops working · 3: Shockwave: wakes up stuck tendons (elbow, heel, Achilles) · 4: Strength: keeps it from coming back · 5: "Best combo? All three." + text to book | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) |
-| **Still hurting after the season?** | Sell the moment, not the treatment. 1: "Still hurting after the season?" · 2: "Your rec league ended in October. Your knee didn't get the memo." · 3: "You skipped the Turkey Trot because of your heel." · 4: "You can't swing a club without thinking about your elbow." · 5: "Ski trip in January and your back already hurts." · 6: What we do: adjustments, soft tissue, shockwave, strength · 7: Text (408) 673-2432 | [@dariamedric](https://www.instagram.com/dariamedric/) (see idea bank) |
-| **Spine conditions explained with Oreos** | Healthy stack · bulging disc · herniated disc · kyphosis · scoliosis · "Which one sounds like you?" + text to book. Shoot real Oreo stacks on a phone at home, no doctor needed | [@drwajeehapt](https://www.instagram.com/p/DeWoXBuiJKL/) · [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) |
-| **Black Friday (Nov 27)** | Single graphic: gift cards, $100 or any amount · "Got HSA/FSA dollars left? Use them before Dec 31" | November plan |
+| 1 | Rock, paper, scissors | Adapt edition |
+| 2 | Pain is bad | Pain is information |
+| 3 | Rest is best | Movement is medicine |
+| 4 | Stop your sport | Modify your sport |
+| 5 | Ice it and wait | Get it checked |
+| 6 | Cookie-cutter care | A plan built for you |
+| 7 | Which side are you on? | Text (408) 673-2432 |
 
-"5 pains rest won't fix" is folded into the season carousel. Dr. Kyndra checks the wording on the shockwave and Oreo slides before they're scheduled.
+**Caption:** "We might be a little biased on which side wins 😏 Movement is medicine. What would you add?"
+
+### 6. Tennis & golf players: let's fix your elbow — reel, 45–60 sec
+
+Inspired by [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) (41K likes): a short seated intro to camera, then each move with a label and "3 sets of 10" on screen. Tripod never moves.
+
+- **Title box (whole video):** *Tennis & Golf Players: Let's Fix Your Elbow*
+- **Dr. Kyndra, seated (off the cuff, about 8 sec):** "If your elbow's still sore after weeks of rest, let's work on it. Do these with me."
+- **Move 1:** *Wrist extensor stretch* · arm straight, palm down, pull the hand gently toward you · "Hold 30 sec, 3x"
+- **Move 2:** *Slow wrist lowering* · light dumbbell, lift with the other hand, lower slowly for a 3-count · "3 sets of 10"
+- **Move 3:** *Forearm roll* · massage ball on the table, roll the top of the forearm · "1 minute"
+- **End card:** "Still there after 6 weeks? That's where shockwave comes in. Text (408) 673-2432"
+- **Caption:** link to the new tennis elbow page
+
+### 7. Things I don't care about as your chiropractor — carousel, 6 slides
+
+Inspired by [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/). One mirror selfie on every slide, with the title at the top and one line per slide. Dr. Kyndra should swap in her own answers. These are just starters.
+
+- Slide 1: "Things I don't care about as your chiropractor…"
+- Slide 2: "If your joints pop really loud. Honestly, it's kind of satisfying 😂"
+- Slide 3: "If you skipped your exercises this week. (Okay, maybe a little.)"
+- Slide 4: "If you've already seen 3 other people for this. We'll figure it out together."
+- Slide 5: "If you show up straight from the gym. Sweaty is welcome here."
+- Slide 6: "What I DO care about? Getting you back to what you love 💚 Text (408) 673-2432"
+
+### 8. Runners: let's fix your Achilles — reel, 45–60 sec
+
+Same setup and style as the elbow reel, filmed back to back.
+
+- **Title box:** *Runners: Let's Fix Your Achilles*
+- **Dr. Kyndra, seated (about 8 sec):** "Achilles sore every morning? Try these before your next run."
+- **Move 1:** *Wall calf stretch* · knee straight, then bent · "30 sec each, 2x"
+- **Move 2:** *Slow heel drops off a step* · up on both feet, lower on one for a 3-count · "3 sets of 10"
+- **Move 3:** *Ankle circles* · seated · "10 each way"
+- **End card:** "Still sore after 2 weeks? Get it checked. Text (408) 673-2432"
+- **Caption:** link to the new Achilles page
+
+### 9. 4 red flags at a chiropractor — reel, 12–15 sec
+
+Inspired by [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/). It's **one continuous clip** of an adjustment, with a text box that changes every 3 seconds. Nobody talks; the full explanation goes in the caption.
+
+- **0–3 sec:** "4 red flags to look out for at a chiropractor 🚩"
+- **3–6 sec:** "1. They spend 5 minutes with you and never ask about your life"
+- **6–9 sec:** "2. Everyone gets the exact same treatment"
+- **9–12 sec:** "3. No exercises or homework to keep it from coming back"
+- **12–15 sec:** "4. No plan for when you're done"
+- **Shot:** Dr. Mike treating Dr. Kyndra on the table: soft tissue, then an adjustment. Wide, steady, 15+ seconds
+- **Caption:** expand each red flag in 1–2 lines + "You deserve a plan, not just a pop."
+
+### 10. Why you tried chiropractic and it didn't work — carousel, 6 slides
+
+Inspired by [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/). It's one mirror selfie, darkened, with a numbered heading and a short paragraph on each slide.
+
+- Slide 1: "Why you tried chiropractic and it didn't work"
+- Slide 2: "1. You stopped too soon. Pain goes away before the problem does."
+- Slide 3: "2. You only got adjusted. No soft tissue work, no strength. The adjustment opens the door, but the rest keeps it open."
+- Slide 4: "3. Nobody figured out why. A real exam first, then treatment."
+- Slide 5: "4. You never got homework. A few minutes a day matters."
+- Slide 6: "That's why we do chiropractic AND rehab. Text (408) 673-2432"
+
+### 11. Black Friday — graphic
+
+- B-roll still of the front desk or gift card + "Give the gift of feeling good · Gift cards $100 or any amount · Got HSA/FSA dollars left? Use them before Dec 31."
+
+### December bonus scripts (only if there's time)
+
+- **Sleeping positions ranked** (from [@completewellness_nyc](https://www.instagram.com/p/DdZre1Uo-hw/), 309K likes, 75 sec): Dr. Mike talks to camera off the cuff and ranks each position 1–10. Daisy adds a 1–10 scale graphic in editing. Positions: stomach · side, no pillow between the knees · fetal · back · side with a pillow between the knees.
+- **"How have you been?"** (from [@alexathechiro](https://www.instagram.com/p/DLnl4YmBGgn/), 6 sec): Dr. Kyndra walks down the hallway toward the camera with the text *"How have you been?"*. Then quick cuts of the table, each with a patient-style quote: *"I PR'd my deadlift!"* · *"Finally played 18 holes"* · *"Ran my first half."*
 
 ## Hooks to steal
 
@@ -101,17 +198,24 @@ From [@therealbrianmark's hook list](https://www.instagram.com/p/DewsR-_mwfT/), 
 | Experience | "I used to think adjustments fixed everything, but…" · "If I could give one piece of advice to every runner…" |
 | Call-out | "Stop scrolling if you've had back pain for more than 2 weeks." · "You're probably doing this at your desk without realizing." |
 
-## Inspiration links (November posts)
+## Inspiration links
 
-| Our post | Inspired by |
-| --- | --- |
-| "What makes you different?" (reel) | [@occhiropractor](https://www.instagram.com/p/DVM4gRFgVwt/) |
-| Elbow + Achilles follow-alongs (reels) | [@thatchirowithtattoos reels](https://www.instagram.com/thatchirowithtattoos/reels/) · [shoulder follow-along](https://www.instagram.com/p/Dd1mbt5vPuS/) |
-| "Chiro didn't work for you?" (reel) | [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/) |
-| Rock, paper, scissors (carousel) | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) |
-| Still hurting after the season? (carousel) | [@dariamedric — post 1](https://www.instagram.com/p/Dd1cu21iGF1/) · [post 2](https://www.instagram.com/p/Dd39h_ziJzb/) · [post 3](https://www.instagram.com/p/Deg6NTJCLy9/) |
-| Spine conditions with Oreos (carousel) | [@drwajeehapt — part 1](https://www.instagram.com/p/DeWoXBuiJKL/) · [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) |
-| Banked reels | [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/) · [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/) · [@alexathechiro](https://www.instagram.com/p/DLnl4YmBGgn/) · [@completewellness_nyc](https://www.instagram.com/p/DdZre1Uo-hw/) · [@thecontentdoctors](https://www.instagram.com/p/Dd1TZNeiAQr/) · [@christinemarie.fit](https://www.instagram.com/p/De1LESMRObJ/) |
+Every post above was watched on Oct 26 before writing this.
+
+| Our post | Inspired by | What it actually is |
+| --- | --- | --- |
+| Reintro set | [@alexathechiro pinned trio](https://www.instagram.com/alexathechiro/) | 3 pinned posts: Hours · Specialties · What to expect. Photo + script title + text boxes |
+| What makes you different? | [@occhiropractor](https://www.instagram.com/p/DVM4gRFgVwt/) | 5.5 sec, one shot, one line of text |
+| Rock, paper, scissors | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) | 8 slides, same hands photo on a green wall |
+| Elbow + Achilles follow-alongs | [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) | 93 sec, seated intro then labeled exercises, fixed tripod |
+| Things I don't care about | [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/) | 9 slides, same mirror selfie |
+| 4 red flags | [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/) | 11 sec, one clip, changing text |
+| Chiro didn't work | [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/) | 7 slides, same darkened mirror selfie |
+| Sleeping positions (Dec) | [@completewellness_nyc](https://www.instagram.com/p/DdZre1Uo-hw/) | 75 sec talking head + 1–10 scale graphic |
+| How have you been? (Dec) | [@alexathechiro](https://www.instagram.com/p/DLnl4YmBGgn/) | 6 sec walk-in + quick quote cuts |
+| Oreo spine (Dec) | [@drwajeehapt](https://www.instagram.com/p/DeWoXBuiJKL/) · [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) | Photo carousel with hand-drawn labels |
+| Neck drill (later) | [@christinemarie.fit](https://www.instagram.com/p/De1LESMRObJ/) | 12 sec, 4 quick moves, tiny labels, music only |
+| 4 things I'd never do (later) | [@dr.suzischulman](https://www.instagram.com/p/CxG9cjGO2Bq/) | 52 sec skit: acts out each one on the table, voiceover |
 
 ## Idea bank
 
