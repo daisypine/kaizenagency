@@ -1,6 +1,6 @@
 # Adapt — November 2026 Plan
 
-Oct 26, 2026 · Daisy · Live doc: https://claude.ai/artifact/AzPY99mQmAtDaHLgzyiYxV
+Oct 26, 2026 · Daisy
 
 ## November focus
 
@@ -10,7 +10,7 @@ Every page, blog, email, text and carousel this month points to the same few inj
 
 ## Who does what in November
 
-**It's just Daisy and Basil this month.** Daisy owns all social (scripts, shooting, editing, graphics, carousels, posting), the email and text, and everything that goes to Dr. Mike. Basil owns the website: page refreshes, blogs, and getting the new pages built and live with the developer. Everything is ready for Daisy's review 2–4 days before it goes live.
+**It's just Daisy and Basil this month.** Daisy owns all social (scripts, shooting, editing, graphics, carousels, posting), and everything that goes to Dr. Mike. Basil owns the website and the email: page refreshes, blogs, the November email blast, and getting the new pages built and live with the developer. Everything is ready for Daisy's review 2–4 days before it goes live.
 
 - **Dates, calendars and checklists for Daisy and Basil:** [Calendar](november-2026-calendar.html)
 - **Instagram posting plan, shoot day, scripts, graphics and inspiration links:** [Social media](november-2026-social.html)
@@ -40,10 +40,9 @@ Three blogs, each linking to one of this month's pages. Byline Dr. Kyndra or Dr.
 
 Optional fourth: "Low back pain after lifting: 3 mistakes we see at the gym," linking to /conditions/back-pain/. Back pain and sciatica are the area's most searched topics, so this one brings in traffic.
 
-## Email and text
+## Email
 
-- **Email: "Still hurting after the season?"** The story goes: rest didn't fix it, here's why, and here's what Adapt does differently (adjustments, soft tissue work, shockwave, training). Add a year-end HSA/FSA reminder and a holiday gift card mention. Links to the two new pages and shockwave.
-- **Text (under 160 characters):** "Got FSA/HSA $ left? Use it before Dec 31 on care that keeps you moving. Book: [link] – Adapt Chiropractic & Wellness"
+- **Email: "Still hurting after the season?"** The story goes: rest didn't fix it, here's why, and here's what Adapt does differently (adjustments, soft tissue work, shockwave, training). Add a year-end HSA/FSA reminder and a holiday gift card mention. Links to the two new pages and shockwave. Basil builds it in TDC and sends it Thu Nov 12 after Dr. Mike approves. No text campaign this month.
 
 The tagged list goes first, not all contacts. Confirm which sending address is warmed before scheduling.
 
@@ -77,7 +76,7 @@ Adapt's $225 first visit is the highest in the area. Search volumes weren't avai
 - [ ] Which conditions does he treat with shockwave? We only build pages for what he actually does.
 - [ ] Does Adapt offer kinesio taping, cupping, orthotics or decompression? Each could become a service page.
 - [ ] Is he open to a lower-cost first visit or a free 15-minute consult?
-- [ ] OK to send the HSA/FSA year-end email and text?
+- [ ] OK to send the HSA/FSA year-end email?
 - [ ] Approve the two carousels before posting.
 
 Sources: competitor websites linked above, visited Oct 26, 2026.
