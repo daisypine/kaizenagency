@@ -23,7 +23,9 @@ Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026
 
 **The follow-along series:** three reels in the same format, one for each crowd: pickleball, tennis & golf players (elbow), desk workers (neck) and runners (Achilles). The elbow and Achilles reels go out the same day their new pages go live. The email sends Thu Nov 12.
 
-**Moved to December** (shoot only if there's time tomorrow): Sleeping positions ranked · "How have you been?" · Oreo spine carousel · Still hurting after the season? carousel · 4 things I'd never do.
+**Swap-in, ready to go:** Spine conditions explained with Oreos (carousel, photographed tomorrow). Use it if any post falls through, or post it in December.
+
+**Moved to December** (shoot only if there's time tomorrow): Sleeping positions ranked · "How have you been?" · Still hurting after the season? carousel · 4 things I'd never do.
 
 ## Tomorrow's shoot: Tue Oct 27, 11:30–1:00
 
@@ -34,7 +36,7 @@ Grouped by setup so nobody moves twice. Each block lists what Daisy captures and
 | 11:30–11:40 | Set up | Tripod, ring light, lav mic, clean lens · tape the text cards to the wall behind the phone | Change into Adapt shirts |
 | 11:40–12:10 | **Chair + plain wall** | Pickleball/tennis/golf elbow + runners Achilles follow-alongs (Dr. Kyndra) · Desk workers follow-along (Dr. Mike). Wide, vertical, full body in frame. Phone stays put | **Dr. Kyndra:** 8-second intro, then 3 moves each · **Dr. Mike:** same for the desk workers one. 2–3 reps per move |
 | 12:10–12:20 | **Treatment table** | "What makes you different?" (3 takes) · Red flags clip (one 15-second continuous take, 2 angles) | **Dr. Mike:** lounge on the table · then adjust Dr. Kyndra |
-| 12:20–12:30 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) | Each doctor takes their own mirror selfie · both hold out hands |
+| 12:20–12:30 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) · **Oreo stacks** on a clean white surface (5 setups, below) | Each doctor takes their own mirror selfie · both hold out hands · Dr. Kyndra checks the Oreo labels make sense |
 | 12:30–12:42 | **Reintro portraits** | 3 photos per doctor + 1 together (list below) · voice memo the intro questions | Answer 5 quick questions each (about 2 minutes) |
 | 12:42–12:55 | **B-roll** | Shockwave on an elbow + a heel · adjustment · soft tissue · a strength move · front sign · front desk · treatment room empty. 5–10 seconds each, slow and steady | Act it out on each other (no patients unless they've signed a photo/video release) |
 | 12:55–1:00 | **Bonus (December, only if time)** | Sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
@@ -46,6 +48,7 @@ Grouped by setup so nobody moves twice. Each block lists what Daisy captures and
 - [ ] Printed text cards in big font (all 3 follow-alongs' moves, red flags, intro questions)
 - [ ] Light dumbbell or water bottle, a step or box, a massage ball
 - [ ] A pillow (bonus sleeping reel)
+- [ ] **Oreos** (2 packs, so some can be twisted, broken or crumbled) + a white poster board or plate for the background
 - [ ] Film everything vertical 9:16, 4K 30fps. Leave 2 seconds of stillness at the start and end of each clip
 - [ ] Photos: shoot each one portrait **and** with empty space above the head for text
 
@@ -67,6 +70,7 @@ Grouped by setup so nobody moves twice. Each block lists what Daisy captures and
 | Rock, paper, scissors | Dr. Mike's hand "scissors" from the left, Dr. Kyndra's hand "rock" from the right, against a plain wall | Wall gets tinted Adapt green (#019877) in editing. Hands only, no faces |
 | Things I don't care about | Dr. Kyndra mirror selfie, full body, phone covering half her face, smiling | One photo for all 6 slides |
 | Chiro didn't work | Dr. Mike mirror selfie, same style | One photo for all 6 slides |
+| Oreo spine (swap-in) | 5 Oreo stacks on white, shot straight on at stack height, lots of empty space on the sides for labels | See the setups below. Labels and arrows get drawn on in editing |
 
 ### Intro questions (voice memo, about 2 minutes each)
 
@@ -191,6 +195,21 @@ Inspired by [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/). It's
 - Slide 5: "4. You never got homework. A few minutes a day matters."
 - Slide 6: "That's why we do chiropractic AND rehab. Text (408) 673-2432"
 
+### Swap-in: Spine conditions explained with Oreos — carousel, 6 slides
+
+Inspired by [@drwajeehapt part 1](https://www.instagram.com/p/DeWoXBuiJKL/) and [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/). Each slide is a stack of Oreos (the cookies are the vertebrae and the cream is the disc), with a bold blue title and hand-drawn arrows and labels in brand green. No doctor needed on camera. Dr. Kyndra checks the wording.
+
+| Slide | Oreo setup to photograph | Title + labels |
+| --- | --- | --- |
+| 1 | Neat straight stack of 6 | "Your spine, explained with Oreos 🍪" · arrows: "vertebra" (cookie) · "disc" (cream) |
+| 2 | Same straight stack | "Healthy spine" · "discs cushion every move" |
+| 3 | Stack with one cookie's cream squished out the side | "Herniated disc" · "disc pushes out and can press on a nerve" |
+| 4 | Stack leaning forward in a curve at the top | "Kyphosis" · "rounded upper back (hello, desk posture)" |
+| 5 | Stack zig-zagging side to side | "Scoliosis" · "sideways curve of the spine" |
+| 6 | One Oreo with a bite taken out, crumbs around it | "Which one sounds like you? Text (408) 673-2432" |
+
+**Caption:** "Spine conditions, explained with Oreos 🍪 Save this for later and send it to the friend who sits at a desk all day."
+
 ### 11. Black Friday — graphic
 
 - B-roll still of the front desk or gift card + "Give the gift of feeling good · Gift cards $100 or any amount · Got HSA/FSA dollars left? Use them before Dec 31."
@@ -226,7 +245,7 @@ Every post above was watched on Oct 26 before writing this.
 | Chiro didn't work | [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/) | 7 slides, same darkened mirror selfie |
 | Sleeping positions (Dec) | [@completewellness_nyc](https://www.instagram.com/p/DdZre1Uo-hw/) | 75 sec talking head + 1–10 scale graphic |
 | How have you been? (Dec) | [@alexathechiro](https://www.instagram.com/p/DLnl4YmBGgn/) | 6 sec walk-in + quick quote cuts |
-| Oreo spine (Dec) | [@drwajeehapt](https://www.instagram.com/p/DeWoXBuiJKL/) · [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) | Photo carousel with hand-drawn labels |
+| Oreo spine (swap-in) | [@drwajeehapt](https://www.instagram.com/p/DeWoXBuiJKL/) · [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) | Photo carousel with hand-drawn labels |
 | Neck drill (later) | [@christinemarie.fit](https://www.instagram.com/p/De1LESMRObJ/) | 12 sec, 4 quick moves, tiny labels, music only |
 | 4 things I'd never do (later) | [@dr.suzischulman](https://www.instagram.com/p/CxG9cjGO2Bq/) | 52 sec skit: acts out each one on the table, voiceover |
 
