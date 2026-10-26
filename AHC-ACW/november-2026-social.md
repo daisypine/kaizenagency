@@ -2,124 +2,128 @@
 
 Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026-calendar.html)
 
-**10 posts in November: 6 reels from Tuesday's shoot and 4 graphics,** so the feed doesn't depend only on video. Only Dr. Mike and Dr. Kyndra are on camera. Daisy writes the scripts, shoots, edits, designs and posts; Dr. Mike approves before anything goes live.
+**8 posts in November: 4 reels, 3 carousels and 1 Black Friday graphic.** That's two posts a week, on Tuesday and Thursday. Every post points to the same story as the website and the email: *pain that won't go away, for active people.* The two follow-along reels go out the same day their pages go live. Only Dr. Mike and Dr. Kyndra are on camera. Daisy writes, shoots, edits, designs and posts. Dr. Mike approves before anything goes live.
 
 ## Posting plan
 
-We film 8 reels Tuesday. Six go out in November, and two are banked for December.
+| Date | Post | Type | On camera | Ties to |
+| --- | --- | --- | --- | --- |
+| Tue Nov 3 | "What makes you different?" | Reel | Dr. Mike + Dr. Kyndra | Brand intro |
+| Thu Nov 5 | Rock, paper, scissors: rest vs. shockwave vs. strength | Carousel | — | Shockwave page |
+| Tue Nov 10 | Tennis & golf players: let's fix your elbow | Reel (follow-along) | Dr. Kyndra | Tennis elbow page goes live |
+| Thu Nov 12 | Still hurting after the season? | Carousel | — | Email sends the same day |
+| Tue Nov 17 | Runners: let's fix your Achilles | Reel (follow-along) | Dr. Kyndra | Achilles page goes live |
+| Thu Nov 19 | Spine conditions explained with Oreos | Carousel | — | Back pain / sports injury hub |
+| Tue Nov 24 | "Chiro didn't work for you?" | Reel | Dr. Mike | Chiropractic + rehab |
+| Fri Nov 27 | Black Friday: gift cards + use your HSA/FSA by Dec 31 | Graphic | — | Year-end offer |
 
-| Date | Post | Type | On camera |
-| --- | --- | --- | --- |
-| Tue Nov 3 | "What makes you different?" | Reel | Dr. Mike + Dr. Kyndra |
-| Thu Nov 5 | Rock, paper, scissors: rest vs. shockwave vs. strength | Graphic carousel | — |
-| Mon Nov 9 | Things I don't care about as your chiropractor | Reel | Dr. Kyndra |
-| Wed Nov 11 | 5 pains rest won't fix | Graphic carousel | — |
-| Fri Nov 13 | 4 red flags at a chiropractor | Reel | Dr. Mike |
-| Mon Nov 16 | "Have you moved today?" desk check-in | Reel | Dr. Kyndra |
-| Wed Nov 18 | Spine conditions explained with Oreos | Graphic carousel | — |
-| Fri Nov 20 | Sleeping positions ranked | Reel | Dr. Kyndra |
-| Mon Nov 23 | "Chiro didn't work for you?" | Reel | Dr. Mike |
-| Fri Nov 27 | Black Friday: gift cards + use your HSA/FSA by Dec 31 | Graphic | — |
+**Why this mix:** fewer posts you can make well beats ten rushed ones. Two follow-along reels (the @thatchirowithtattoos format) give people a reason to save and share. The carousels need no doctor time.
 
-Banked for December: "5 things I'd never do to my back" (Dr. Mike) and the blind-spot neck drill (Dr. Kyndra).
+**Banked for December and January** (film on Tuesday only if there's time): Things I don't care about as your chiropractor · 4 red flags at a chiropractor · "Have you moved today?" desk check-in · Sleeping positions ranked · 5 things I'd never do to my back · Blind-spot neck drill.
 
-Schedule all 10 in Meta Business Suite in one sitting once edits are approved. Post the humor or trend-style reels as Trial Reels from the phone instead, since Business Suite can't.
+Schedule everything in Meta Business Suite in one sitting once Dr. Mike approves. Post any trend-style reels as Trial Reels from the phone instead, since Business Suite can't.
 
-## Shoot day: Tuesday, 90 minutes
+## Shoot day: Tuesday Oct 27, 90 minutes
 
-Film each doctor's solo reels back to back so the other can see patients, then do the two-person reel and B-roll.
+Must-haves first, so a short shoot still covers November. The bonus block at the end fills December.
 
 | Time | What | Who |
 | --- | --- | --- |
 | 0:00–0:10 | Set up tripod, light, mic; test one take | Daisy |
-| 0:10–0:35 | Dr. Kyndra solo: Things I don't care about · Desk check-in · Sleeping positions · Neck drill (bank) | Dr. Kyndra |
-| 0:35–1:00 | Dr. Mike solo: 4 red flags · Chiro didn't work for you? · 5 things I'd never do (bank) | Dr. Mike |
-| 1:00–1:15 | Both: "What makes you different?" (Dr. Kyndra plays the patient on the table) | Both |
-| 1:15–1:30 | B-roll: shockwave on an elbow and heel, adjustment, hands-on soft tissue, a training moment, clinic sign and front desk | Both |
+| 0:10–0:30 | Follow-alongs: Tennis & golf elbow · Runners Achilles (same seated setup, 3 takes each) | Dr. Kyndra |
+| 0:30–0:45 | "Chiro didn't work for you?" | Dr. Mike |
+| 0:45–1:00 | "What makes you different?" (Dr. Kyndra plays the patient on the table) | Both |
+| 1:00–1:15 | B-roll: shockwave on an elbow and a heel, adjustment, hands-on soft tissue, a training moment, clinic sign and front desk | Both |
+| 1:15–1:30 | Bonus for December: Things I don't care about (Dr. Kyndra) · 4 red flags (Dr. Mike) · Sleeping positions (Dr. Kyndra) | Whoever's free |
 
-B-roll feeds the graphics, the shockwave page refresh, and fills gaps in edits.
+B-roll feeds the carousels, the shockwave page refresh, and fills gaps in edits.
 
-**Bring:** phone with clean lens and free storage, tripod, lav mic, ring light, printed scripts (big font), a pillow for the sleeping reel, Adapt shirts for both doctors.
+**Bring:** phone with a clean lens and free storage, tripod, lav mic, ring light, printed scripts (big font), a chair against a plain clinic wall, a light dumbbell or water bottle, a step or box, a massage ball, a pillow (bonus sleeping reel), Adapt shirts for both doctors.
 
-**Film settings:** vertical 9:16, 4K 30fps, 3 takes of each hook. Leave 2 seconds of silence at the start and end of every take for editing.
+**Film settings:** vertical 9:16, 4K 30fps, 3 takes of each hook. Leave 2 seconds of silence at the start and end of every take.
 
 ## Reel scripts
 
-Drafts for Daisy to tweak. Each runs 15–30 seconds. Dr. Kyndra reviews anything clinical before it posts.
+Each runs 15–40 seconds. Dr. Kyndra checks anything clinical before it posts. Put the title on screen as a white text box for the whole video, like @thatchirowithtattoos does.
 
 **1. "What makes you different?" — Dr. Mike + Dr. Kyndra** · [inspiration](https://www.instagram.com/p/DVM4gRFgVwt/)
 
 - On screen: *Patient: "What makes you different from other chiropractors?"*
-- Dr. Kyndra (on the table) asks the question. Dr. Mike doesn't answer — quick cuts show the answer instead: exam, shockwave, soft tissue work, a strength exercise.
+- Dr. Kyndra (on the table) asks. Dr. Mike doesn't answer out loud. Quick cuts show the answer instead: exam, shockwave, soft tissue work, a strength exercise.
 - End on Dr. Mike: "We don't just adjust you and send you out the door."
 - Caption CTA: "Text us at (408) 673-2432 to book."
 
-**2. Things I don't care about as your chiropractor — Dr. Kyndra** · [inspiration](https://www.instagram.com/p/DboYRaeCdQK/)
+**2. Tennis & golf players: let's fix your elbow — Dr. Kyndra** · [inspiration](https://www.instagram.com/thatchirowithtattoos/reels/)
 
-- Hook: "Things I don't care about as your chiropractor…"
-- Beats (one per cut): if your joints pop loud · if you can't touch your toes · if you skipped your stretches (okay, a little) · if you've seen three other people first.
-- Close: "What I care about? Getting you back to what you love."
+- On-screen title: *Tennis & Golf Players: Let's Fix Your Elbow*
+- Hook: "If your elbow still hurts after weeks of rest, do this with me."
+- Seated follow-along, about 10 seconds per move: wrist extensor stretch with the arm straight · slow lowering with a light dumbbell or water bottle (3-second count down) · forearm rolling with a massage ball.
+- Close: "Still there after 6 weeks? That's where shockwave comes in."
+- Caption: links to the new tennis elbow page · text (408) 673-2432.
 
-**3. 4 red flags at a chiropractor — Dr. Mike** · [inspiration](https://www.instagram.com/p/DH9cEhHpYXD/)
+**3. Runners: let's fix your Achilles — Dr. Kyndra** · [inspiration](https://www.instagram.com/thatchirowithtattoos/reels/)
 
-- Hook: "4 red flags at a chiropractor."
-- Beats: no real exam before the first adjustment · the same treatment for everyone · no exercises to do at home · no plan for when you're done.
-- Close: "Your care should have an end goal."
+- On-screen title: *Runners: Let's Fix Your Achilles*
+- Hook: "Achilles sore every morning? Try this before your next run."
+- Follow-along: wall calf stretch, knee straight then bent · slow heel raises off a step, lowering for 3 seconds · ankle circles.
+- Close: "If it's still sore after 2 weeks, get it checked."
+- Caption: links to the new Achilles page · text (408) 673-2432.
 
-**4. "Have you moved today?" desk check-in — Dr. Kyndra** · [inspiration](https://www.instagram.com/p/DLnl4YmBGgn/)
-
-- Walk-in wave to camera. On screen: *"Just checking you've stood up since your 9am meeting."*
-- One 10-second stretch demo: chin tucks, or a doorway chest stretch.
-- Caption: tag a coworker who needs this.
-
-**5. Sleeping positions ranked — Dr. Kyndra** · [inspiration](https://www.instagram.com/p/DdZre1Uo-hw/)
-
-- Hook: "Sleeping positions, ranked by a chiropractor."
-- Pillow prop on the exam table. Quick verdicts: stomach (worst for your neck) → side with no pillow between knees → back → side with a pillow between knees.
-- Dr. Kyndra checks the order before filming.
-
-**6. "Chiro didn't work for you?" — Dr. Mike** · [inspiration](https://www.instagram.com/p/DaESDA9mkNy/)
+**4. "Chiro didn't work for you?" — Dr. Mike** · [inspiration](https://www.instagram.com/p/DaESDA9mkNy/)
 
 - Hook: "Chiropractic didn't work for you? You might have been missing these."
 - Beats: a real diagnosis · soft tissue work, not just adjustments · strength training so it doesn't come back · enough visits to finish the job.
-- Close: his line — "That's why I do both chiropractic and rehab."
+- Close: his line, "That's why I do both chiropractic and rehab."
 
-**Banked for December**
+The bonus-block scripts (Things I don't care about, 4 red flags, sleeping positions, desk check-in, 5 things I'd never do, neck drill) are in the [Oct 26 version of this page](https://github.com/daisypine/kaizenagency/commits/main/AHC-ACW/november-2026-social.md). They're the same as before, just moved to December.
 
-- **5 things I'd never do to my back — Dr. Mike.** Lift with a rounded back · sit 4 hours straight · skip warm-ups · sleep on my stomach · ignore pain that lasts more than 2 weeks.
-- **Blind-spot neck drill — Dr. Kyndra.** Hook: "If you check your blind spot like a robot, try this." Three slow rotations and a chin tuck.
+## Carousels and graphic
 
-## Graphics
-
-Four graphic posts Daisy designs, 1080x1440 in Figma with the Post Footer, brand green #019877. Tuesday's B-roll stills can go behind text.
+Daisy designs them at 1080x1440 in Figma with the Post Footer, brand green #019877. B-roll stills from Tuesday can go behind the text.
 
 | Post | Slides | Inspired by |
 | --- | --- | --- |
-| **Rock, paper, scissors: rest vs. shockwave vs. strength** | 1: hand game cover · 2: Rest — fine for 2 weeks, then it stops working · 3: Shockwave — wakes up stuck tendons (elbow, heel, Achilles) · 4: Strength — keeps it from coming back · 5: "Best combo? All three." + text to book | @thephysiofix |
-| **5 pains rest won't fix** | One slide each: low back after lifting, leg pain that shoots down, heel pain in the morning, tennis elbow, Achilles · last slide: what we do about it | November plan |
-| **Spine conditions explained with Oreos** | Healthy stack · bulging disc · herniated disc · pinched nerve/sciatica · "Which one is you?" + text to book. Shoot the Oreo stacks on a phone at home, no doctor needed | @drwajeehapt |
-| **Black Friday (Nov 27)** | Single graphic: gift cards $100 or any amount · "Got HSA/FSA dollars left? Use them before Dec 31" | November plan |
+| **Rock, paper, scissors: rest vs. shockwave vs. strength** | 1: hand-game cover · 2: Rest: fine for 2 weeks, then it stops working · 3: Shockwave: wakes up stuck tendons (elbow, heel, Achilles) · 4: Strength: keeps it from coming back · 5: "Best combo? All three." + text to book | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) |
+| **Still hurting after the season?** | Sell the moment, not the treatment. 1: "Still hurting after the season?" · 2: "Your rec league ended in October. Your knee didn't get the memo." · 3: "You skipped the Turkey Trot because of your heel." · 4: "You can't swing a club without thinking about your elbow." · 5: "Ski trip in January and your back already hurts." · 6: What we do: adjustments, soft tissue, shockwave, strength · 7: Text (408) 673-2432 | [@dariamedric](https://www.instagram.com/dariamedric/) (see idea bank) |
+| **Spine conditions explained with Oreos** | Healthy stack · bulging disc · herniated disc · kyphosis · scoliosis · "Which one sounds like you?" + text to book. Shoot real Oreo stacks on a phone at home, no doctor needed | [@drwajeehapt](https://www.instagram.com/p/DeWoXBuiJKL/) · [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) |
+| **Black Friday (Nov 27)** | Single graphic: gift cards, $100 or any amount · "Got HSA/FSA dollars left? Use them before Dec 31" | November plan |
 
-Dr. Kyndra checks the wording on the shockwave and Oreo slides before they're scheduled.
+"5 pains rest won't fix" is folded into the season carousel. Dr. Kyndra checks the wording on the shockwave and Oreo slides before they're scheduled.
 
-## Inspiration links
+## Hooks to steal
 
-The original reels and posts each November piece is based on, all saved from the Kaizen and personal Instagram DMs. Watch them before Tuesday's shoot.
+From [@therealbrianmark's hook list](https://www.instagram.com/p/DewsR-_mwfT/), rewritten for Adapt. Swap these into captions or the first second of any reel.
+
+| Type | Hook |
+| --- | --- |
+| Curiosity | "No one talks about this, but your elbow pain probably isn't from tennis." · "Here's what actually happens when you rest an injury for 6 weeks." |
+| Contrarian | "The biggest lie you've been told about rest." · "Everyone gets this wrong about stretching." |
+| Experience | "I used to think adjustments fixed everything, but…" · "If I could give one piece of advice to every runner…" |
+| Call-out | "Stop scrolling if you've had back pain for more than 2 weeks." · "You're probably doing this at your desk without realizing." |
+
+## Inspiration links (November posts)
 
 | Our post | Inspired by |
 | --- | --- |
 | "What makes you different?" (reel) | [@occhiropractor](https://www.instagram.com/p/DVM4gRFgVwt/) |
-| Things I don't care about as your chiropractor (reel) | [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/) |
-| 4 red flags at a chiropractor (reel) | [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/) |
-| "Have you moved today?" desk check-in (reel) | [@alexathechiro — "How have you been?"](https://www.instagram.com/p/DLnl4YmBGgn/) · [@alexathechiro — movement-break post](https://www.instagram.com/p/Dcyq3e7Gx6q/) |
-| Sleeping positions ranked (reel) | [@completewellness_nyc](https://www.instagram.com/p/DdZre1Uo-hw/) |
+| Elbow + Achilles follow-alongs (reels) | [@thatchirowithtattoos reels](https://www.instagram.com/thatchirowithtattoos/reels/) · [shoulder follow-along](https://www.instagram.com/p/Dd1mbt5vPuS/) |
 | "Chiro didn't work for you?" (reel) | [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/) |
-| Rock, paper, scissors (graphic) | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) |
-| Spine conditions with Oreos (graphic) | [@drwajeehapt — part 1](https://www.instagram.com/p/DeWoXBuiJKL/) · [@drwajeehapt — spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) |
-| 5 things I'd never do to my back (December) | [@thecontentdoctors](https://www.instagram.com/p/Dd1TZNeiAQr/) · [@dr.suzischulman](https://www.instagram.com/p/CxG9cjGO2Bq/) |
-| Blind-spot neck drill (December) | [@christinemarie.fit](https://www.instagram.com/p/De1LESMRObJ/) |
+| Rock, paper, scissors (carousel) | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) |
+| Still hurting after the season? (carousel) | [@dariamedric — post 1](https://www.instagram.com/p/Dd1cu21iGF1/) · [post 2](https://www.instagram.com/p/Dd39h_ziJzb/) · [post 3](https://www.instagram.com/p/Deg6NTJCLy9/) |
+| Spine conditions with Oreos (carousel) | [@drwajeehapt — part 1](https://www.instagram.com/p/DeWoXBuiJKL/) · [spine terms](https://www.instagram.com/p/Deg8PDNiKnd/) |
+| Banked reels | [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/) · [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/) · [@alexathechiro](https://www.instagram.com/p/DLnl4YmBGgn/) · [@completewellness_nyc](https://www.instagram.com/p/DdZre1Uo-hw/) · [@thecontentdoctors](https://www.instagram.com/p/Dd1TZNeiAQr/) · [@christinemarie.fit](https://www.instagram.com/p/De1LESMRObJ/) |
 
-**Saved for later months** (need Eli, Nathalia, Dr. Paris or the full team): [@occhiropractor posture POV](https://www.instagram.com/p/DeNpizSJTzc/) · [@movement.chiropractic "unpopular things"](https://www.instagram.com/p/DdrQ_JhlAT6/) · [@medispine.ca team trend](https://www.instagram.com/p/DZmtIkbRJGy/) · [@balancedbodyjm massage POV](https://www.instagram.com/p/De0eI47zx6T/) · [@lonestarsportsrehab.btx massage humor](https://www.instagram.com/p/Dd2VKjUAN76/) · [@thatchirowithtattoos shoulder follow-along](https://www.instagram.com/p/Dd1mbt5vPuS/) · [@cassiethechiro](https://www.instagram.com/p/DdldqGiTqrq/) · [@atlanta_spine](https://www.instagram.com/p/DcLnx4vgoXj/)
+## Idea bank
 
-**For us (content strategy, not to recreate):** [@dariamedric (post 1)](https://www.instagram.com/p/Dd1cu21iGF1/) · [@dariamedric (post 2)](https://www.instagram.com/p/Dd39h_ziJzb/) · [@dariamedric (post 3)](https://www.instagram.com/p/Deg6NTJCLy9/) · [@therealbrianmark — call-out hooks](https://www.instagram.com/p/DewsR-_mwfT/)
+Ideas saved while scrolling, for us to recreate or learn from in later months. Click a screenshot to see it full size. Add new screenshots to the `inspo` folder and a row here.
 
+| Idea | How Adapt could use it | Format | Source | Screenshot |
+| --- | --- | --- | --- | --- |
+| **"[Job or sport]: let's fix your [body part]" series** | A recurring weekly follow-along: Golfers: low back · Lifters: shoulders · Cyclists: hips · Desk workers: neck · Pregnant mamas: hips (Dr. Kyndra, prenatal). One chair, one wall, easy to batch. His pinned ones hit 193K–711K views | Reel series | [@thatchirowithtattoos](https://www.instagram.com/thatchirowithtattoos/reels/) | <a href="inspo/thatchirowithtattoos-grid.jpg"><img src="inspo/thatchirowithtattoos-grid.jpg" width="60" style="border-radius:4px;margin:2px"></a> |
+| **Oreo spine, part 2** | Spondylolisthesis, ankylosing spondylitis, degenerative disc, pinched nerve | Carousel | [@drwajeehapt](https://www.instagram.com/drwajeehapt/) | <a href="inspo/oreo-kyphosis.jpg"><img src="inspo/oreo-kyphosis.jpg" width="60" style="border-radius:4px;margin:2px"></a> <a href="inspo/oreo-herniated-disc.jpg"><img src="inspo/oreo-herniated-disc.jpg" width="60" style="border-radius:4px;margin:2px"></a> <a href="inspo/drwajeehapt-grid.jpg"><img src="inspo/drwajeehapt-grid.jpg" width="60" style="border-radius:4px;margin:2px"></a> |
+| **Sell the moment, not the treatment** | Life-event series: "Half marathon in 12 weeks? When to get that knee checked" · "Before your ski trip" · "Pregnancy timeline: when prenatal chiro helps" · "The thing patients wish they'd done earlier" | Carousel series | [@dariamedric](https://www.instagram.com/dariamedric/) | <a href="inspo/daria-1.jpg"><img src="inspo/daria-1.jpg" width="60" style="border-radius:4px;margin:2px"></a> <a href="inspo/daria-3.jpg"><img src="inspo/daria-3.jpg" width="60" style="border-radius:4px;margin:2px"></a> <a href="inspo/daria-5.jpg"><img src="inspo/daria-5.jpg" width="60" style="border-radius:4px;margin:2px"></a> |
+| **Calm "exercise without flaring" follow-along** | Eli or Dr. Paris in the rehab area, soft light, a big serif text overlay: "Welcome to the side of the internet where we get you back to your sport without flaring up" | Reel | [@thenervoussystem.ot](https://www.instagram.com/thenervoussystem.ot/) | <a href="inspo/nervoussystem-flare-free.jpg"><img src="inspo/nervoussystem-flare-free.jpg" width="60" style="border-radius:4px;margin:2px"></a> |
+| **Hook list** | See "Hooks to steal" above. Pull one hook for every reel | Reference | [@therealbrianmark](https://www.instagram.com/p/DewsR-_mwfT/) | <a href="inspo/hooks-curiosity.jpg"><img src="inspo/hooks-curiosity.jpg" width="60" style="border-radius:4px;margin:2px"></a> <a href="inspo/hooks-contrarian.jpg"><img src="inspo/hooks-contrarian.jpg" width="60" style="border-radius:4px;margin:2px"></a> <a href="inspo/hooks-experience.jpg"><img src="inspo/hooks-experience.jpg" width="60" style="border-radius:4px;margin:2px"></a> <a href="inspo/hooks-callout.jpg"><img src="inspo/hooks-callout.jpg" width="60" style="border-radius:4px;margin:2px"></a> |
+| **6 types of educational posts** | A monthly mix checklist: common mistake · myth vs. fact · step-by-step · framework · quick tips · do's & don'ts. November covers 4 of 6 | Reference | [@personalbrandlaunch](https://www.instagram.com/personalbrandlaunch/) | <a href="inspo/educational-post-types.jpg"><img src="inspo/educational-post-types.jpg" width="60" style="border-radius:4px;margin:2px"></a> |
+
+**Saved for later months** (need Eli, Nathalia, Dr. Paris or the full team): [@occhiropractor posture POV](https://www.instagram.com/p/DeNpizSJTzc/) · [@movement.chiropractic "unpopular things"](https://www.instagram.com/p/DdrQ_JhlAT6/) · [@medispine.ca team trend](https://www.instagram.com/p/DZmtIkbRJGy/) · [@balancedbodyjm massage POV](https://www.instagram.com/p/De0eI47zx6T/) · [@lonestarsportsrehab.btx massage humor](https://www.instagram.com/p/Dd2VKjUAN76/) · [@cassiethechiro](https://www.instagram.com/p/DdldqGiTqrq/) · [@atlanta_spine](https://www.instagram.com/p/DcLnx4vgoXj/) · [@alexathechiro movement break](https://www.instagram.com/p/Dcyq3e7Gx6q/) · [@dr.suzischulman](https://www.instagram.com/p/CxG9cjGO2Bq/)

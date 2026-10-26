@@ -6,9 +6,9 @@
 | --- | --- | --- | --- | --- | --- |
 | Oct 26 | — | **Shoot** with Dr. Mike + Dr. Kyndra (D) | Edit batch 1 (D) | Batch 1 ready · Search Console pull (D) | Batch 1 to Dr. Mike (D) · page copy written (B) · **email draft due Sat Oct 31** (B) |
 | Nov 2 | Schedule batch 1 · email to Dr. Mike (D) · shockwave refresh done (B) | **Post:** What makes you different? | Shockwave page **live** (B) | **Post:** Rock, paper, scissors · shockwave blog done (B) | Batch 2 ready (D) · tennis elbow page built (B) |
-| Nov 9 | **Post:** Things I don't care about · batch 2 to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | Schedule batch 2 (D) · tennis elbow page **live** (B) | **Post:** 5 pains rest won't fix | **Email sends** · hub **live** · elbow blog done (B) | **Post:** 4 red flags · Achilles page built (B) |
-| Nov 16 | **Post:** Desk check-in · elbow blog **published** (B) | Achilles page **live** (B) | **Post:** Oreo spine carousel | Achilles blog done (B) | **Post:** Sleeping positions |
-| Nov 23 | **Post:** Chiro didn't work? · Achilles blog **published** (B) | — | — | Thanksgiving | **Post:** Black Friday graphic · report due Sat Nov 28 (B) |
+| Nov 9 | Batch 2 to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | **Post:** Elbow follow-along · schedule batch 2 (D) · tennis elbow page **live** (B) | — | **Post:** Still hurting after the season? · **Email sends** · hub **live** · elbow blog done (B) | Achilles page built (B) |
+| Nov 16 | Elbow blog **published** (B) | **Post:** Achilles follow-along · Achilles page **live** (B) | — | **Post:** Oreo spine carousel · Achilles blog done (B) | — |
+| Nov 23 | Achilles blog **published** (B) | **Post:** Chiro didn't work for you? | — | Thanksgiving | **Post:** Black Friday graphic · report due Sat Nov 28 (B) |
 | Nov 30 | — | **Report sent** to Dr. Mike (D) | | | |
 
 ## Basil's calendar
@@ -56,11 +56,11 @@
 | Date | What |
 | --- | --- |
 | Tue Oct 27 | Content shoot with Dr. Mike and Dr. Kyndra (90 min) |
-| Wed Oct 28 – Thu Oct 29 | Edit batch 1: 3 reels (Nov 3, 9, 13) + design 2 graphics (rock, paper, scissors · 5 pains rest won't fix) |
+| Wed Oct 28 – Thu Oct 29 | Edit batch 1: 2 reels (What makes you different · elbow follow-along) + 2 carousels (rock, paper, scissors · still hurting after the season?) |
 | Fri Oct 30 | Send batch 1 to Dr. Mike for approval |
 | Mon Nov 2 | Schedule batch 1 in Meta Business Suite · send Basil's email to Dr. Mike for approval |
 | Tue Nov 3 | First post goes live: "What makes you different?" |
-| Fri Nov 6 | Finish batch 2: 3 reels (Nov 16, 20, 23) + Oreo carousel + Black Friday graphic |
+| Fri Nov 6 | Finish batch 2: 2 reels (Achilles follow-along · chiro didn't work for you?) + Oreo carousel + Black Friday graphic |
 | Mon Nov 9 | Send batch 2 to Dr. Mike for approval |
 | Tue Nov 10 | Schedule batch 2 |
 | Fri Nov 27 | Black Friday graphic posts (scheduled) |
@@ -69,9 +69,9 @@
 ## Daisy's checklist
 
 - [ ] Final scripts printed for the shoot
-- [ ] Shoot done: 8 reels + B-roll
-- [ ] 6 November reels edited (captions on, hook in the first second)
-- [ ] 4 graphics designed: rock, paper, scissors · 5 pains rest won't fix · Oreo spine · Black Friday
+- [ ] Shoot done: 4 must-have reels + B-roll (bonus reels for December if time)
+- [ ] 4 November reels edited (captions on, hook in the first second)
+- [ ] 3 carousels + 1 graphic designed: rock, paper, scissors · still hurting after the season? · Oreo spine · Black Friday
 - [ ] Batch 1 approved by Dr. Mike and scheduled
 - [ ] Batch 2 approved by Dr. Mike and scheduled
 - [ ] Basil's email sent to Dr. Mike for approval
