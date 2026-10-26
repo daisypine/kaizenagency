@@ -8,53 +8,79 @@ November theme: **pain that won't go away, for active people.** Adapt leans into
 
 Every page, blog, email, text and carousel this month points to the same few injuries: elbow, heel, Achilles and stubborn back pain.
 
-## November deadlines
+## Who does what in November
 
-**Everything is ready for Daisy's review 2–4 days before it goes live.** Social is reviewed in two batches so Dr. Mike only approves twice. Site work goes live before the posts and emails that link to it.
+**It's just Daisy and Basil this month.** Daisy owns all social (scripts, shooting, editing, graphics, carousels, posting), the email and text, and everything that goes to Dr. Mike. Basil owns the website: page refreshes, blogs, and getting the new pages built and live with the developer. Everything is ready for Daisy's review 2–4 days before it goes live.
 
-| Date | What | Owner | Step |
-| --- | --- | --- | --- |
-| Tue Oct 27 | Content shoot (90 min) | Daisy, Dr. Mike, Dr. Kyndra | Shoot |
-| Thu Oct 29 | Social batch 1: 3 reels (Nov 3, 9, 13) + 2 graphics (Nov 5, 11) | Daisy (reels), Ayesha (graphics) | Ready for Daisy review |
-| Fri Oct 30 | Tennis elbow + Achilles page copy sent to Zawar | Daisy | Handoff |
-| Fri Oct 30 | Social batch 1 sent to Dr. Mike | Daisy | Approval |
-| Mon Nov 2 | Shockwave page refresh draft | Basil | Ready for Daisy review |
-| Mon Nov 2 | Social batch 1 scheduled in Meta Business Suite | Daisy | Scheduled |
-| Tue Nov 3 | First post: "What makes you different?" | Daisy | Post |
-| Wed Nov 4 | Shockwave page refresh | Basil | Live |
-| Thu Nov 5 | Blog: "Shockwave vs. a cortisone shot" draft | Basil | Ready for Daisy review |
-| Fri Nov 6 | Tennis elbow page build | Zawar | Ready for Daisy review |
-| Fri Nov 6 | Social batch 2: 3 reels (Nov 16, 20, 23) + 2 graphics (Nov 18, 27) | Daisy (reels), Ayesha (graphics) | Ready for Daisy review |
-| Mon Nov 9 | Sports injury hub refresh draft | Basil | Ready for Daisy review |
-| Mon Nov 9 | Blog: "Shockwave vs. a cortisone shot" | Basil | Publish |
-| Mon Nov 9 | Social batch 2 + "Still hurting" email sent to Dr. Mike | Daisy | Approval |
-| Tue Nov 10 | Tennis elbow page | Zawar, Basil | Live |
-| Tue Nov 10 | Social batch 2 scheduled | Daisy | Scheduled |
-| Thu Nov 12 | Sports injury hub refresh | Basil | Live |
-| Thu Nov 12 | Blog: "Why your elbow still hurts after 6 weeks of rest" draft | Basil | Ready for Daisy review |
-| Thu Nov 12 | Email "Still hurting after the season?" | Daisy | Send |
-| Fri Nov 13 | Achilles page build | Zawar | Ready for Daisy review |
-| Mon Nov 16 | Blog: elbow | Basil | Publish |
-| Tue Nov 17 | Achilles page | Zawar, Basil | Live |
-| Thu Nov 19 | Blog: "Achilles pain after running" draft | Basil | Ready for Daisy review |
-| Mon Nov 23 | Blog: Achilles | Basil | Publish |
-| Fri Nov 27 | Black Friday graphic | Daisy | Post |
-| Mon Nov 30 | HSA/FSA text | Daisy | Send |
-| Tue Dec 1 | November report + December plan | Daisy, Basil | Report |
+## Daisy's November calendar
 
-Thanksgiving is Thu Nov 26, so nothing is due that week except scheduled posts.
+| Date | What |
+| --- | --- |
+| Tue Oct 27 | Content shoot with Dr. Mike and Dr. Kyndra (90 min) |
+| Wed Oct 28 – Thu Oct 29 | Edit batch 1: 3 reels (Nov 3, 9, 13) + design 2 graphics (rock, paper, scissors · 5 pains rest won't fix) |
+| Fri Oct 30 | Send tennis elbow + Achilles page copy to Basil · send batch 1 to Dr. Mike for approval |
+| Mon Nov 2 | Schedule batch 1 in Meta Business Suite · review Basil's shockwave page draft |
+| Tue Nov 3 | First post goes live: "What makes you different?" |
+| Thu Nov 5 | Review shockwave vs. cortisone blog draft |
+| Fri Nov 6 | Finish batch 2: 3 reels (Nov 16, 20, 23) + Oreo carousel + Black Friday graphic · review tennis elbow page |
+| Mon Nov 9 | Send batch 2 + "Still hurting" email to Dr. Mike · review sports injury hub draft |
+| Tue Nov 10 | Schedule batch 2 |
+| Thu Nov 12 | Send "Still hurting after the season?" email · review elbow blog draft |
+| Fri Nov 13 | Review Achilles page |
+| Thu Nov 19 | Review Achilles blog draft |
+| Fri Nov 27 | Black Friday graphic posts (scheduled) |
+| Mon Nov 30 | Send HSA/FSA text |
+| Tue Dec 1 | November report + December plan to Dr. Mike |
 
-## Basil's November checklist
+## Daisy's checklist
 
-- [ ] **Mon Nov 2:** shockwave page refresh draft ready for Daisy (FAQs, what a session feels like, conditions, links to tendon pages, B-roll stills from the shoot).
-- [ ] **Wed Nov 4:** shockwave page live.
-- [ ] **Thu Nov 5:** shockwave vs. cortisone blog draft ready. Publish **Mon Nov 9**.
-- [ ] **Mon Nov 9:** sports injury hub draft ready. Live **Thu Nov 12**.
-- [ ] **Tue Nov 10:** help Zawar take the tennis elbow page live.
-- [ ] **Thu Nov 12:** elbow blog draft ready. Publish **Mon Nov 16**.
-- [ ] **Tue Nov 17:** help Zawar take the Achilles page live.
-- [ ] **Thu Nov 19:** Achilles blog draft ready. Publish **Mon Nov 23**.
-- [ ] **Tue Dec 1:** pull November numbers for the report.
+- [ ] Final scripts printed for the shoot
+- [ ] Shoot done: 8 reels + B-roll
+- [ ] Tennis elbow page copy written
+- [ ] Achilles page copy written
+- [ ] 6 November reels edited (captions on, hook in the first second)
+- [ ] 4 graphics designed: rock, paper, scissors · 5 pains rest won't fix · Oreo spine · Black Friday
+- [ ] Batch 1 approved by Dr. Mike and scheduled
+- [ ] Batch 2 approved by Dr. Mike and scheduled
+- [ ] Email written, approved and sent to the tagged list
+- [ ] HSA/FSA text sent (under 160 characters)
+- [ ] Reviewed every page and blog Basil sends before it goes live
+- [ ] 15 minutes replying to comments on each post day; share each reel to Stories
+- [ ] November report sent
+
+## Basil's November calendar
+
+| Date | What | Step |
+| --- | --- | --- |
+| Fri Oct 30 | Get tennis elbow + Achilles copy from Daisy, hand to the developer | Handoff |
+| Mon Nov 2 | Shockwave page refresh draft | Ready for Daisy |
+| Wed Nov 4 | Shockwave page refresh | Live |
+| Thu Nov 5 | Blog: "Shockwave vs. a cortisone shot" draft | Ready for Daisy |
+| Fri Nov 6 | Tennis elbow page built | Ready for Daisy |
+| Mon Nov 9 | Sports injury hub refresh draft | Ready for Daisy |
+| Mon Nov 9 | Blog: shockwave vs. cortisone | Publish |
+| Tue Nov 10 | Tennis elbow page | Live |
+| Thu Nov 12 | Sports injury hub refresh | Live |
+| Thu Nov 12 | Blog: "Why your elbow still hurts after 6 weeks of rest" draft | Ready for Daisy |
+| Fri Nov 13 | Achilles page built | Ready for Daisy |
+| Mon Nov 16 | Blog: elbow | Publish |
+| Tue Nov 17 | Achilles page | Live |
+| Thu Nov 19 | Blog: "Achilles pain after running" draft | Ready for Daisy |
+| Mon Nov 23 | Blog: Achilles | Publish |
+| Tue Dec 1 | November numbers for the report | Send to Daisy |
+
+Thanksgiving is Thu Nov 26, so nothing is due that week.
+
+## Basil's checklist
+
+- [ ] Shockwave page refresh live (FAQs, what a session feels like, conditions it helps, links to the tendon pages, B-roll stills from the shoot)
+- [ ] Sports injury hub refresh live (links to every injury page, shockwave and sports rehab)
+- [ ] Tennis elbow page built and live
+- [ ] Achilles page built and live
+- [ ] Blog published: shockwave vs. cortisone
+- [ ] Blog published: elbow
+- [ ] Blog published: Achilles
+- [ ] November numbers sent for the report
 
 **Every time something goes live:** title ends in "| Adapt Chiropractic" · meta description under 160 characters · alt text on every image · internal links to the sports injury hub and shockwave page · booking link points to adaptchiropracticwellness.janeapp.com · purge SiteGround cache · request indexing in Search Console · tell Daisy it's live.
 
