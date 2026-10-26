@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-theme="light" lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,434 +7,418 @@
 <title>Falcon Roofing × Kaizen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@400;500;600;700&display=swap">
-<style>/* Falcon Roofing client pages. Black #141414 + Falcon gold. Headings: Michroma (closest Google match to Falcon's Handel Gothic), body: Poppins */
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
 :root{
-  --bg:#F4F3EF; --surface:#FFFFFF; --fg:#141414; --muted:#5E5D56; --line:#E4E2DA;
-  --accent:#8A6400; --accent-dark:#6E5000; --accent-soft:#FBF1D3; --accent-fg:#FFFFFF;
-  --gold:#E8B923; --black:#141414;
-  --warn:#9A3B12; --warn-soft:#FCEBE2; --grey-soft:#EEEDE8;
-  --display:"Michroma","Arial Black",system-ui,sans-serif;
-  --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#FAF8F1; --card:#FFFFFF; --fg:#1E1E1E; --muted:#5E5D56; --line:#E8E4D3;
+  --yellow:#E7DB03; --yellow-soft:#FBF8CC; --cream:#EDE9D0; --ink:#1E1E1E;
+  --green:#1F7A3F; --green-soft:#E6F4EA; --red:#A33A12; --red-soft:#FCEBE2; --grey-soft:#F1EEE2;
   color-scheme:light;
 }
-:root[data-theme="dark"]{
-  --bg:#0E0E0D; --surface:#1A1A18; --fg:#EFEEE8; --muted:#A8A79E; --line:#2E2E29;
-  --accent:#E8B923; --accent-dark:#F2CB4E; --accent-soft:#2B2412; --accent-fg:#141414;
-  --warn:#F0A07A; --warn-soft:#33201A; --grey-soft:#26261F; color-scheme:dark}
 *{box-sizing:border-box}
-[hidden]{display:none!important}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65;overflow-wrap:break-word}
-.wrap{max-width:780px;margin:0 auto}
-.wrap.wide{max-width:980px}
-.top,.page,.band{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.top{background:var(--black);color:#EFEEE8;padding-block:14px;border-bottom:3px solid var(--gold)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 20px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;text-decoration:none;color:#fff;min-width:0}
-.brand img{height:42px;width:auto;max-width:100%;display:block}
-.wordmark{font-family:var(--display);font-size:15px;letter-spacing:.08em;color:#fff}
-.wordmark i{font-style:normal;color:var(--gold)}
-nav.pn{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13.5px}
-nav.pn a{color:#D9D7CF;text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
-nav.pn a:hover{color:#fff}
-nav.pn a[aria-current]{color:var(--gold);border-bottom-color:var(--gold)}
-.band{background:var(--black);color:#EFEEE8;padding-block:34px 38px}
-.band .eyebrow{color:var(--gold)}
-.band h1{color:#fff}
-.band .lede{color:#C9C7BE}
-.band .tagline{font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
-.page{padding-block:28px 56px}
-.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;border:1px solid var(--line)}
-@media (max-width:520px){.card{padding:4px 18px 8px}}
-a{color:var(--accent);text-underline-offset:3px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
-h1,h2{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;line-height:1.25;margin:0;color:var(--fg)}
-h3{font-family:var(--body);font-weight:600;font-size:17px;line-height:1.3;margin:0}
-.hero{padding-block:26px;display:grid;gap:12px}
-.eyebrow{font-family:var(--body);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
-h1{font-size:clamp(22px,4.4vw,34px)}
-h2{font-size:clamp(17px,3vw,21px)}
-.lede{color:var(--muted);max-width:60ch;margin:0}
-section{padding-block:30px;border-top:1px solid var(--line);display:grid;gap:14px}
-.hero + section{border-top:1px solid var(--line)}
-p{margin:0;max-width:65ch}
-ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
-.muted{color:var(--muted)}
-.small{font-size:14px}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
-.link{display:grid;gap:4px;padding:16px 18px;background:var(--accent-soft);border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
-.link:hover{border-color:var(--accent)}
-.link strong{font-weight:600;font-size:16.5px;color:var(--accent)}
-.link span{font-size:14px;color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:start}
-.stat{padding:14px 16px;border:1px solid var(--line);border-radius:10px;min-width:0;border-top:3px solid var(--gold)}
-.stat b{display:block;font-family:var(--display);font-weight:400;font-size:24px;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1.4}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+/* top bar */
+.top{background:#fff;border-bottom:4px solid var(--yellow);position:sticky;top:0;z-index:10}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;flex-wrap:wrap}
+.brand img{height:40px;display:block}
+.brand .wm{font-weight:700;letter-spacing:.06em}
+nav.pn{display:flex;gap:6px;flex-wrap:wrap}
+nav.pn a{font-size:14px;font-weight:500;text-decoration:none;padding:7px 12px;border-radius:999px}
+nav.pn a:hover{background:var(--grey-soft)}
+nav.pn a[aria-current]{background:var(--ink);color:#fff}
+/* hero */
+.hero{background:var(--cream);border-bottom:1px solid #DCD6B6}
+.hero .wrap{padding-top:36px;padding-bottom:32px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5E5400}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:6px 0 10px;font-weight:700}
+.hero p{margin:0;max-width:640px;color:#3F3E39;font-size:17px}
+.short{margin-top:20px;display:grid;gap:10px;max-width:720px}
+.short div{background:#fff;border-left:5px solid var(--yellow);padding:12px 16px;border-radius:8px;font-weight:500}
+.short b{font-weight:700}
+/* jump */
+.jump{display:flex;gap:8px;flex-wrap:wrap;padding:18px 0 0}
+.jump a{font-size:13.5px;font-weight:600;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.jump a:hover{border-color:var(--ink)}
+/* sections */
+section{padding:34px 0 8px;scroll-margin-top:76px}
+h2{font-size:24px;margin:0 0 6px;font-weight:700}
+h2 .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--yellow);font-size:15px;margin-right:10px;vertical-align:3px}
+.sub{color:var(--muted);margin:0 0 18px}
+h3{font-size:17px;margin:22px 0 10px}
+p{margin:0 0 12px}
+/* stat cards */
+.src{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:22px 0 10px}
+.src .tag{font-size:11px;background:var(--grey-soft);padding:2px 8px;border-radius:999px;text-transform:none;letter-spacing:0;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-size:30px;line-height:1.1;font-weight:700}
 .stat span{font-size:13.5px;color:var(--muted)}
-.rows{display:grid;gap:16px}
-.row{display:grid;grid-template-columns:120px 1fr;gap:4px 16px}
-.row .k{font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;padding-top:3px}
-.row > div{min-width:0;display:grid;gap:6px}
-@media (max-width:520px){.row{grid-template-columns:1fr}}
-.cal{display:grid;gap:8px}
-.cal > div{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:baseline}
-.cal .d{font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:8px;text-align:center;padding:3px 0;font-size:14px;font-variant-numeric:tabular-nums}
-.cal > div > span:last-child{min-width:0}
-.done{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:13px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
-.done::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent)}
-.note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
-.flag{background:var(--warn-soft);color:var(--fg);border-radius:10px;padding:14px 16px}
-.flag b{color:var(--warn)}
-.cta{display:inline-block;background:var(--gold);color:#141414;text-decoration:none;font-weight:600;padding:10px 18px;border-radius:999px;justify-self:start}
-.cta:hover{background:#141414;color:var(--gold)}
-.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
-.contact div{border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:0}
-.contact b{display:block;font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.contact span{font-size:18px;font-weight:500;user-select:all}
-.need{counter-reset:n;list-style:none;padding:0;gap:14px}
-.need li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
-.need li::before{content:counter(n);font-weight:600;width:28px;height:28px;border-radius:8px;background:var(--gold);color:#141414;display:grid;place-items:center;font-size:14px}
-.need li > div{min-width:0}
-.steps{counter-reset:s;list-style:none;padding:0;gap:12px}
-.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
-.steps li::before{content:counter(s);font-weight:600;width:28px;height:28px;border-radius:50%;background:var(--black);color:var(--gold);display:grid;place-items:center;font-size:14px}
-.steps li > div{min-width:0}
-footer.site{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center;display:grid;gap:6px}
-footer.site .fr{font-size:12.5px;letter-spacing:.04em}
-.hubhero{display:grid;gap:12px;max-width:980px;margin:0 auto}
-.hubhero h1{font-size:clamp(24px,5vw,40px)}
-.hubhero h1 i{font-style:normal;color:var(--gold)}
-.groups{display:grid;gap:34px}
-.group{display:grid;gap:12px}
-.group > h2{display:flex;align-items:center;gap:10px}
-.group > h2::before{content:"";width:22px;height:4px;background:var(--gold);border-radius:2px;flex:none}
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:12px}
-.tile{position:relative;display:grid;grid-template-rows:auto auto 1fr;gap:6px;padding:16px 18px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg);min-width:0;transition:border-color .15s,transform .15s}
-.tile:hover{border-color:var(--accent);transform:translateY(-2px)}
-.tile .ty{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.tile .ic{width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
-.tile .ic svg{width:17px;height:17px}
-.tile strong{font-size:16.5px;font-weight:600;line-height:1.3}
-.tile span.d{font-size:14px;color:var(--muted);line-height:1.5}
-.tiles.big{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
-.tile.feat{background:var(--black);border-color:var(--black);color:#EFEEE8;padding:22px 22px 24px}
-.tile.feat .ty{color:var(--gold)}
-.tile.feat .ic{background:var(--gold);color:#141414}
-.tile.feat strong{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:18px;letter-spacing:.02em;line-height:1.35;color:#fff}
-.tile.feat span.d{color:#C9C7BE}
-.tile.feat:hover{border-color:var(--gold)}
-.tile .go{font-size:13.5px;font-weight:600;color:var(--gold);margin-top:6px}
-.hubfoot{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
-.box .contact{grid-template-columns:1fr 1fr}
-@media (max-width:1000px){.box .contact{grid-template-columns:1fr}}
-.box .contact span{font-size:16px}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;gap:10px;align-content:start}
-
-.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:var(--muted)}
-.legend span{display:inline-flex;align-items:center;gap:7px}
-.legend i{width:14px;height:10px;border-radius:2px;display:inline-block}
-.sw-v{background:var(--gold)}
-.sw-g{background:var(--fg)}
-.tchart{display:grid;gap:14px;padding:16px;border:1px solid var(--line);border-radius:12px}
-.tr{display:grid;grid-template-columns:104px 1fr;gap:12px;align-items:center}
-.tr .p{font-size:13.5px;font-weight:600;line-height:1.3}
-.tr .p small{display:block;font-weight:400;color:var(--muted);font-size:12px}
-.bars{display:grid;gap:4px;min-width:0}
-.bar{display:flex;align-items:center;gap:8px;font-size:13px;font-variant-numeric:tabular-nums;min-width:0}
-.bar i{display:block;height:14px;border-radius:0 4px 4px 0;flex:none;width:calc((100% - 40px) * var(--v) / 920)}
-.bar.v i{background:var(--gold)}
-.bar.g i{background:var(--fg)}
-.bar.v b{font-weight:600}
-.none{border:1.5px dashed var(--muted);border-radius:6px;padding:6px 10px;font-size:12.5px;color:var(--muted);line-height:1.35}
-.tchart .axis{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
-@media (max-width:420px){.tr{grid-template-columns:84px 1fr;gap:8px}}
-.check{list-style:none;padding:0;display:grid;gap:8px}
-.check li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
-.check li::before{content:"";width:18px;height:18px;border:2px solid var(--accent);border-radius:5px;margin-top:3px}
-.check li > div{min-width:0}
-.who{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:6px;white-space:nowrap}
-.months{display:grid;gap:16px}
-.month{border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.mh{background:var(--black);color:#fff;padding:12px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:4px 14px;flex-wrap:wrap}
-.mh h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:16px;letter-spacing:.04em;color:#fff}
-.mh span{font-size:13.5px;color:var(--gold)}
-.mb{padding:6px 18px 12px}
-.mr{display:grid;grid-template-columns:76px 1fr auto;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line)}
-.mr:last-child{border-bottom:none}
-.mr .d{font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:8px;text-align:center;padding:2px 0;font-size:13.5px;font-variant-numeric:tabular-nums}
-.mr .d.any{background:transparent;border:1px dashed var(--line);color:var(--muted);font-weight:500;font-size:12.5px}
-.mr > span:nth-child(2){min-width:0}
-.mr small{display:block;color:var(--muted);font-size:13px;line-height:1.45}
-.ty{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:2px 9px;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
-.ty.email{background:var(--gold);border-color:var(--gold);color:#141414}
-.ty.nudge{border-color:var(--gold);color:var(--accent)}
-.ty.blog{background:var(--black);border-color:var(--black);color:var(--gold)}
-@media (max-width:520px){.mr{grid-template-columns:68px 1fr}.mr .ty{grid-column:2;justify-self:start;margin-top:-4px}}
-.legend{display:flex;flex-wrap:wrap;gap:8px}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
-.chip.done{background:var(--gold);color:#141414}
-.chip.prog{background:var(--accent-soft);color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
-.chip.wait{background:var(--warn-soft);color:var(--warn)}
-.chip.not{background:var(--grey-soft);color:var(--muted)}
-.prom{display:grid;gap:10px}
-.pi{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;align-items:start}
-.pi b{font-weight:600;line-height:1.4}
-.pi p{grid-column:1 / -1;font-size:14px;color:var(--muted);line-height:1.5}
-.pi .when{font-size:12.5px;color:var(--muted);white-space:nowrap}
-.pi .chip{justify-self:end}
-@media (max-width:520px){.pi{grid-template-columns:1fr}.pi .chip{justify-self:start;grid-row:1}}
-/* ---- Light version (Falcon cream + yellow) ---- */
-:root,:root[data-theme="dark"]{--bg:#FAF8F1;--surface:#FFFFFF;--fg:#1E1E1E;--muted:#5E5D56;--line:#E8E4D3;
- --accent:#7A6A00;--accent-dark:#5E5200;--accent-soft:#FBF7C9;--accent-fg:#1E1E1E;--gold:#E7DB03;--black:#1E1E1E;--cream:#EDE9D0;
- --warn:#9A3B12;--warn-soft:#FCEBE2;--grey-soft:#F1EEE2;color-scheme:light}
-.top{background:#FFFFFF;color:var(--fg);border-bottom:4px solid var(--gold);box-shadow:0 1px 0 var(--line)}
-.brand,.wordmark{color:var(--fg)}
-.brand img{background:none!important;padding:0!important}
-nav.pn a{color:#3A3A36}
-nav.pn a:hover{color:#000}
-nav.pn a[aria-current]{color:#000;border-bottom-color:var(--gold)}
-.band{background:var(--cream);color:var(--fg);border-bottom:1px solid #DCD6B6}
-.band h1{color:#1E1E1E}
-.band .lede{color:#4A4943}
-.band .eyebrow,.band .tagline{color:#6B5F00}
-.tile.feat{background:#FFFFFF;border:2px solid var(--gold);color:var(--fg);box-shadow:0 6px 18px rgba(30,30,30,.06)}
-.tile.feat strong{color:#1E1E1E}
-.tile.feat .d,.tile.feat span{color:inherit}
-.mh{background:var(--gold);color:#1E1E1E}
-.mh h3{color:#1E1E1E}
-.flow li::before,.steps li::before{background:var(--gold);color:#1E1E1E}
-.ci em{background:var(--gold);color:#1E1E1E}
-.ty.blog{background:var(--gold);border-color:var(--gold);color:#1E1E1E}
-.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
-.jump a{font-size:13px;font-weight:600;text-decoration:none;color:#1E1E1E;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
-.jump a:hover{border-color:var(--gold);background:var(--accent-soft)}
-section{scroll-margin-top:16px}
+.stat.hi{background:var(--yellow);border-color:var(--yellow)}
+.stat.hi span{color:#3A3600}
+.callout{background:#fff;border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:10px;padding:14px 16px;margin:16px 0}
+.callout b{font-weight:700}
+/* bar chart */
+.chart{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 16px 10px;margin-top:10px}
+.bars{display:flex;align-items:flex-end;gap:4px;height:170px;border-bottom:1px solid var(--line);padding-top:18px}
+.bar{flex:1;background:#D9D3AE;border-radius:4px 4px 0 0;position:relative;min-width:6px}
+.bar.now{background:var(--yellow)}
+.bar.gap{background:repeating-linear-gradient(45deg,#E9E5CF,#E9E5CF 4px,#F6F3E4 4px,#F6F3E4 8px)}
+.bar i{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:600;white-space:nowrap}
+.xl{display:flex;gap:4px;font-size:11px;color:var(--muted);margin-top:6px}
+.xl span{flex:1;text-align:center;min-width:6px}
+.legend{font-size:12.5px;color:var(--muted);margin-top:8px;display:flex;gap:14px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+/* table */
+.tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14.5px}
+.tbl th,.tbl td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{background:var(--grey-soft);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tbl td.r,.tbl th.r{text-align:right}
+.tbl tr:last-child td{border-bottom:0}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 18px;border-radius:10px;border:2px solid var(--ink);transition:transform .12s ease,box-shadow .12s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.btn.y{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.btn.o{background:#fff;color:var(--ink)}
+.btn svg{width:18px;height:18px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+/* steps */
+.flow{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px;counter-reset:f}
+.flow li{counter-increment:f;display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.flow li::before{content:counter(f);flex:none;width:28px;height:28px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-weight:700;font-size:14px}
+/* calendar */
+.cal{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:18px}
+.cal-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;background:var(--ink);color:#fff;padding:12px 16px}
+.cal-h h3{margin:0;color:#fff;font-size:18px}
+.cal-h span{font-size:13.5px;color:#E9E7DD}
+.grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.dow{font-size:11.5px;font-weight:600;text-transform:uppercase;color:var(--muted);padding:6px 8px;background:var(--grey-soft);border-bottom:1px solid var(--line)}
+.day{min-height:92px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px;font-size:12px}
+.day:nth-child(7n){border-right:0}
+.day .dn{font-weight:600;font-size:12.5px;color:var(--muted)}
+.day.out{background:#FBFAF5}
+.day.out .dn{color:#C9C5B4}
+.day.today .dn{background:var(--yellow);color:var(--ink);border-radius:999px;padding:0 6px}
+.ev{display:block;margin-top:4px;padding:3px 6px;border-radius:5px;line-height:1.3;font-weight:500}
+.ev.email{background:var(--yellow)}
+.ev.nudge{background:var(--yellow-soft)}
+.ev.blog{background:#E3ECFA}
+.ev.report{background:var(--green-soft)}
+.ev.mail{background:#F5E6FA}
+.ev.meet{background:var(--ink);color:#fff}
+.ev.decision{background:var(--red-soft)}
+.anyday{padding:12px 16px;border-top:1px solid var(--line);font-size:14px}
+.anyday b{display:block;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+.anyday ul{margin:0;padding-left:18px}
+.key{display:flex;gap:10px;flex-wrap:wrap;font-size:12.5px;margin:0 0 14px}
+.key span{display:inline-flex;align-items:center;gap:5px}
+.key i{width:12px;height:12px;border-radius:3px;display:inline-block}
+@media (max-width:640px){
+  .xl{font-size:8px;gap:2px}.bars{gap:2px}.bar i{font-size:9px}
+  .grid.month .dow{display:none}
+  .grid.month{grid-template-columns:1fr}
+  .day{min-height:0;border-right:0;display:none}
+  .day.has{display:flex;gap:10px;align-items:flex-start}
+  .day .dn{min-width:52px}
+  .day .dn::after{content:attr(data-full)}
+  .ev{margin-top:0}
+}
+/* checklists */
+.check{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.check li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px 11px 44px;position:relative}
+.check li::before{content:"";position:absolute;left:14px;top:14px;width:16px;height:16px;border:2px solid var(--ink);border-radius:4px}
+.check li.done{color:var(--muted)}
+.check li.done::before{background:var(--yellow);border-color:var(--yellow)}
+.who{font-size:11.5px;font-weight:600;background:var(--grey-soft);padding:1px 8px;border-radius:999px;margin-left:6px;white-space:nowrap}
+.ok{display:grid;gap:10px}
+.ok div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.ok div b{display:block}
+.ok div span{font-size:14px;color:var(--muted)}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:14px}
+details summary{cursor:pointer;font-weight:600}
+details .pi{padding:10px 0;border-top:1px solid var(--line);font-size:14.5px}
+details .pi:first-of-type{margin-top:10px}
+.chip{font-size:11.5px;font-weight:600;padding:1px 8px;border-radius:999px;margin-left:6px;white-space:nowrap}
+.chip.done{background:var(--yellow)}
+.chip.prog{background:var(--yellow-soft)}
+.chip.wait{background:var(--red-soft);color:var(--red)}
+.chip.not{background:var(--grey-soft)}
+/* link buttons */
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.lk{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease}
+.lk:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.08);border-color:var(--ink)}
+.lk .ic{flex:none;width:42px;height:42px;border-radius:10px;background:var(--yellow);display:grid;place-items:center}
+.lk .ic svg{width:22px;height:22px}
+.lk .tx{flex:1;min-width:0}
+.lk .tx b{display:block;font-size:15px}
+.lk .tx span{display:block;font-size:13px;color:var(--muted);line-height:1.4}
+.lk .go{flex:none;font-size:13px;font-weight:600;background:var(--grey-soft);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.lk:hover .go{background:var(--ink);color:#fff}
+.lk.team .ic{background:var(--ink);color:var(--yellow)}
+.grp{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:20px 0 8px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+footer{padding:36px 0 40px;text-align:center;color:var(--muted);font-size:13.5px}
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap wide">
-  <a class="brand" href="index.html"><img style="background:#f4f1e4;padding:5px 9px;border-radius:6px;box-sizing:content-box" src="https://falcon-roofing.com/wp-content/uploads/2026/02/logo.webp" alt="Falcon Roofing" onerror="this.hidden=true;document.getElementById('wm').hidden=false"><span class="wordmark" id="wm" hidden>FALCON <i>ROOFING</i></span></a>
+
+<div class="top"><div class="wrap">
+  <a class="brand" href="index.html"><img src="https://falcon-roofing.com/wp-content/uploads/2026/02/logo.webp" alt="Falcon Roofing" onerror="this.outerHTML='<span class=wm>FALCON ROOFING</span>'"></a>
   <nav class="pn" aria-label="Falcon pages"><a href="index.html" aria-current="page">Report &amp; plan</a><a href="roof-health-report.html">Roof Health Report</a></nav>
 </div></div>
 
-<div class="band"><div class="hubhero">
-  <div class="tagline">No leaks. No drips. No errors.</div>
-  <h1>Falcon Roofing <i>×</i> Kaizen</h1>
-  <p class="lede">Mario, Melissa: everything in one place. How October went, what's going out through January, where your leads stand, and every working doc. Bookmark this one (:</p>
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">October report · plan through January</div>
+  <h1>Falcon Roofing × Kaizen</h1>
+  <p>Mario, Melissa: here's where you stand, what's next and what I need from you. 3-minute read (:</p>
+  <div class="short">
+    <div><b>Google is sending people your way.</b> 352 calls, direction requests and website clicks from your Mountain View Google profile since May.</div>
+    <div><b>Leads are coming in. Follow-up is where they leak.</b> 157 of 161 Housecall Pro leads were never touched, and 17 website requests never made it in.</div>
+    <div><b>So this month = follow-up first, then more leads.</b> Call the list, use the pipeline, then the emails and mailers have somewhere to land.</div>
+  </div>
+  <nav class="jump" aria-label="On this page"><a href="#numbers">Numbers</a><a href="#leads">Leads</a><a href="#calendar">Calendar</a><a href="#week">This week</a><a href="#approve">Needs your OK</a><a href="#wednesday">Wednesday</a><a href="#links">All links</a></nav>
 </div></div>
-<div class="page"><div class="wrap wide">
-<nav class="jump" aria-label="On this page"><a href="#october">October report</a><a href="#leads">Your leads</a><a href="#this-week">This week</a><a href="#plan">Nov–Jan plan</a><a href="#promised">What we promised</a><a href="#need">What I need</a><a href="#links">All links</a></nav>
 
-<section id="october">
-  <h2>October report</h2>
-  <p>October was a set-up month. We turned on proper tracking in Google Analytics on Oct 16 and connected the full falcon-roofing.com domain in Google Search Console on Oct 12, so this is our starting line. From November on, every number gets compared to this.</p>
+<div class="wrap">
+
+<section id="numbers">
+  <h2><span class="n">1</span>The numbers</h2>
+  <p class="sub">Every source we have, in one place. Live dashboard at the bottom.</p>
+
+  <div class="src">Google Business Profile <span class="tag">Mountain View · May–Oct 2026</span></div>
   <div class="stats">
-    <div class="stat"><b>167</b><span>website visits, Oct 1-25</span></div>
-    <div class="stat"><b>7</b><span>phone taps + quote requests tracked since Oct 16</span></div>
-    <div class="stat"><b>1,910</b><span>times you showed up on Google (Oct 12-23)</span></div>
-    <div class="stat"><b>10.2</b><span>average Google position, top of page 2</span></div>
+    <div class="stat hi"><b>352</b><span>calls, directions + website clicks</span></div>
+    <div class="stat"><b>1,335</b><span>profile views</span></div>
+    <div class="stat"><b>265</b><span>direction requests</span></div>
+    <div class="stat"><b>66</b><span>clicks to your website</span></div>
+    <div class="stat"><b>21</b><span>calls from the profile</span></div>
+    <div class="stat"><b>5.0 ★</b><span>9 Google reviews</span></div>
   </div>
-  <p>The biggest opportunity: you're already showing up around <b>#2 on Google for "roofing mountain view ca"</b>, seen 212 times, but nobody clicked. That's about how your listing looks in Google, not your ranking. We rewrote your Google titles and descriptions on Oct 13, so they're brand new. I'm watching this one closely in November, and if the clicks don't pick up, I'll test a new version.</p>
-  <p class="muted">Most visits right now are people typing the site in directly (from your trucks, cards and referrals). The work below is about growing the Google side.</p>
-</section>
+  <p style="margin-top:10px;font-size:14px;color:var(--muted)">San Jose profile: 569 views, 6 actions, 0 reviews yet. That's the easiest win on this page: a few reviews there.</p>
 
-<section id="traffic">
-  <h2>Your website traffic, 2023 to now</h2>
-  <p class="muted">Average visits per month for each period.</p>
-  <div class="tchart" role="img" aria-label="Average monthly website visits and Google search visits. July to December 2023: 398 visits, 132 from Google search. 2024: 916 and 129. 2025: 583 and 83. January to March 2026: 485 and 85. April to September 2026: no tracking. October 1 to 25, 2026: 167 and 32.">
-    <div class="legend"><span><i class="sw-v"></i>All website visits</span><span><i class="sw-g"></i>From Google search</span></div>
-    <div class="tr"><div class="p">Jul–Dec 2023<small>old site</small></div><div class="bars"><div class="bar v" style="--v:398"><i></i><b>398</b></div><div class="bar g" style="--v:132"><i></i><span>132</span></div></div></div>
-    <div class="tr"><div class="p">2024<small>old site</small></div><div class="bars"><div class="bar v" style="--v:916"><i></i><b>916</b></div><div class="bar g" style="--v:129"><i></i><span>129</span></div></div></div>
-    <div class="tr"><div class="p">2025<small>old site</small></div><div class="bars"><div class="bar v" style="--v:583"><i></i><b>583</b></div><div class="bar g" style="--v:83"><i></i><span>83</span></div></div></div>
-    <div class="tr"><div class="p">Jan–Mar 2026<small>old site</small></div><div class="bars"><div class="bar v" style="--v:485"><i></i><b>485</b></div><div class="bar g" style="--v:85"><i></i><span>85</span></div></div></div>
-    <div class="tr"><div class="p">Apr–Sep 2026<small>new site</small></div><div class="none">No tracking. The new site launched without Google Analytics.</div></div>
-    <div class="tr"><div class="p">Oct 1–25 2026<small>new site, 25 days</small></div><div class="bars"><div class="bar v" style="--v:167"><i></i><b>167</b></div><div class="bar g" style="--v:32"><i></i><span>32</span></div></div></div>
-    <div class="axis">Visits per month</div>
+  <div class="src">Website <span class="tag">Google Analytics · Oct 1–25</span></div>
+  <div class="stats">
+    <div class="stat hi"><b>174</b><span>website visits</span></div>
+    <div class="stat"><b>7</b><span>phone taps + quote requests (tracked since Oct 16)</span></div>
+    <div class="stat"><b>32</b><span>visits from Google search</span></div>
+    <div class="stat"><b>63%</b><span>of Google visitors actually engage (vs 28% direct)</span></div>
   </div>
-  <ul>
-    <li>The old site was tracked by the previous web company's Google Analytics. That's where the 2023 to March 2026 numbers come from.</li>
-    <li>The new site launched at the end of March without Analytics, so there's no data for April to September.</li>
-    <li>New tracking has been live since mid-October, so October is our new starting line.</li>
-    <li>Visits from Google search dipped in 2025, from about 129 a month in 2024 to about 83. Growing that number back is what the plan below is about: new pages, blogs, your Google profiles and better Google listings.</li>
-  </ul>
-  <a class="cta" href="https://docs.google.com/spreadsheets/d/1-KXsUJh1n-PhVSN2v5iFAuxsc-20tJ3CH6LAgEtAuFM/edit" target="_blank" rel="noopener">Open the traffic history sheet</a>
-</section>
 
-<section id="october">
-  <h2>What we did in October</h2>
-  <ul>
-    <li>Cleaned up the whole site: removed the old Daly City and Walnut Creek numbers and office maps, fixed 38 broken links, and fixed typos ("since 2013" is now "since 1993")</li>
-    <li>Your warranty now says <b>10-year workmanship</b> everywhere</li>
-    <li>Turned the Walnut Creek page into an <b>East Bay + Tri-Valley</b> page, based on your Danville and Pleasanton work</li>
-    <li>Updated the website's plugins, removed 2 we didn't need, and took off an old chat widget nobody was using</li>
-    <li>Fixed your founding year in the behind-the-scenes info Google reads on your pages (it said 1990)</li>
-    <li>Set up Google Analytics to count phone taps and quote requests</li>
-    <li>Wrote the email plan, the Roof Health Report, and your new privacy policy</li>
-    <li>Pulled your past jobs from Housecall Pro to pick the best ones to show off</li>
-  </ul>
-</section>
-
-<section id="leads"><h2>How a lead moves through Falcon</h2>
-<p>We looked at every lead in Housecall Pro since June 19. The leads are coming in, but almost none of them get moved forward inside the system. That means nobody can see what was called back, and the work that brings leads in can't be measured.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0">
-<div style="background:#E7DB03;padding:16px;border-radius:10px"><b style="font-size:28px;display:block">161</b>leads in Housecall Pro since Jun 19</div>
-<div style="background:#f3f1e6;padding:16px;border-radius:10px"><b style="font-size:28px;display:block">157</b>still in "New Lead", unassigned</div>
-<div style="background:#f3f1e6;padding:16px;border-radius:10px"><b style="font-size:28px;display:block">4</b>moved to an estimate from the lead</div>
-<div style="background:#f3f1e6;padding:16px;border-radius:10px"><b style="font-size:28px;display:block">28</b>old website form leads (Mar–Sep), 17 never entered in HCP</div>
-</div>
-<p>Separately, the website's old forms got 117 submissions between March and September. 28 were real homeowners and 17 of them never made it into Housecall Pro. <a href="https://docs.google.com/spreadsheets/d/1sSQAHzFOm9Sg-Ymf57waKN8XUryhZ1j10n379R1LA8U/edit" target="_blank" rel="noopener">Here's the call-back list</a> (who, what they asked for, call order and a short script).</p>
-<p><b>Where leads come from:</b> 144 Yelp (109 are gutter cleaning), 11 website lead form, 6 entered by hand.</p>
-<p><b>Estimates:</b> 34 sent and waiting on an answer, 12 declined. These are the fastest wins: one follow-up call each.</p>
-<h3>The simple flow we're asking the team to follow</h3>
-<ol>
-<li><b>New lead lands</b> (website form, Yelp, phone) → it goes into Housecall Pro the same day. Phone calls too.</li>
-<li><b>Assign it</b> to one person and call back within 1 business day.</li>
-<li><b>Move the stage</b>: Contacted → Estimate scheduled → Estimate sent. Don't create the estimate outside the lead.</li>
-<li><b>Close it out</b>: mark it Won (job booked) or Lost with a reason. Never leave it sitting in New Lead.</li>
-<li><b>Follow up on every sent estimate</b> at 3 days and 10 days.</li>
-</ol>
-<p><a class="cta" href="https://docs.google.com/spreadsheets/d/1sSQAHzFOm9Sg-Ymf57waKN8XUryhZ1j10n379R1LA8U/edit" target="_blank" rel="noopener">Open the call-back list</a></p>
-</section>
-
-<section id="this-week">
-  <h2>This week · Oct 26 – Nov 1</h2>
-  <ul class="check">
-    <li><div>Publish the Roof Health Report page. The Oct 28 email links to it.</div></li>
-    <li><div>Send email 1 on Oct 28 from Housecall Pro, replacing Housecall Pro's sample "10% off" campaign.</div></li>
-    <li><div>Office calls the 17 missed leads that aren't in Housecall Pro. <a href="https://docs.google.com/spreadsheets/d/1sSQAHzFOm9Sg-Ymf57waKN8XUryhZ1j10n379R1LA8U/edit" target="_blank" rel="noopener">Call-back list</a>.<span class="who">Falcon</span></div></li>
-    <li><div><s>Publish the legal pages and switch the cookie banner.</s> <span class="done">Done Oct 25</span></div></li>
-    <li><div>Build the Looker Studio dashboard, and send Juan the traffic history + October report.</div></li>
-    <li><div>Confirm office@ access on Google Analytics, Search Console and both Google profiles.</div></li>
-    <li><div>Design the new postcards with real photos.</div></li>
-    <li><div>Answers from Mario: legal business name, Roof Health Reports per week, has the mailer printed, and the commercial domain.<span class="who">Falcon</span></div></li>
-  </ul>
-  <div class="cal">
-    <div><span class="d">Oct 28</span><span><b>Email 1:</b> a quick hello from Mario</span></div>
-    <div><span class="d">Nov 1</span><span>Nudge for email 1</span></div>
+  <div class="src">Google search <span class="tag">Search Console · Oct 12–24</span></div>
+  <div class="stats">
+    <div class="stat hi"><b>1,990</b><span>times you showed up on Google</span></div>
+    <div class="stat"><b>169</b><span>different searches you appeared for</span></div>
+    <div class="stat"><b>31</b><span>clicks</span></div>
+    <div class="stat"><b>10.4</b><span>average position (top of page 2)</span></div>
   </div>
+  <div class="callout"><b>Biggest opportunity:</b> you show up around #2 for "roofing mountain view ca", 214 times in 2 weeks, and nobody clicked yet. That's your Google title and description, not your ranking. We rewrote them Oct 13 and we're watching it.</div>
+
+  <div class="src">Google traffic, month by month <span class="tag">Semrush estimate</span></div>
+  <div class="chart">
+    <div class="bars" id="bars"></div>
+    <div class="xl" id="xl"></div>
+    <div class="legend"><span><i style="background:#D9D3AE"></i>Old site</span><span><i style="background:repeating-linear-gradient(45deg,#E9E5CF,#E9E5CF 3px,#F6F3E4 3px,#F6F3E4 6px)"></i>New site, no tracking yet (Semrush fills the gap)</span><span><i style="background:var(--yellow)"></i>Now</span></div>
+  </div>
+  <p style="margin-top:12px"><b>Google traffic is back and climbing:</b> about 7 visits in March when the new site launched, 115 in September, 108 so far in October. That's above where the old site was most of 2025 (about 57 a month). Semrush is an estimate, so we use it to fill the April–September gap when the new site had no tracking. From October on, the real Google numbers above are what count.</p>
 </section>
 
-<section id="plan">
-  <h2>The next three months</h2>
-  <div class="months">
-
-    <div class="month">
-      <div class="mh"><h3>November</h3><span>Fill the calendar before the rains</span></div>
-      <div class="mb">
-        <div class="mr"><span class="d">Nov 4</span><span>Free Roof Health Report before the rains</span><span class="ty email">Email</span></div>
-        <div class="mr"><span class="d any">Early Nov</span><span>Neighborhood postcard around the Los Altos Hills job</span><span class="ty ">Mail</span></div>
-        <div class="mr"><span class="d">Nov 8</span><span>Nudge for the Nov 4 email</span><span class="ty nudge">Nudge</span></div>
-        <div class="mr"><span class="d">Nov 10</span><span>Blog 1 under Mario's name<small>Linked to a page we want to move up on Google.</small></span><span class="ty blog">Blog</span></div>
-        <div class="mr"><span class="d">Nov 17</span><span>Blog 2</span><span class="ty blog">Blog</span></div>
-        <div class="mr"><span class="d">Nov 18</span><span>Featured job: Los Altos Hills hillside re-roof</span><span class="ty email">Email</span></div>
-        <div class="mr"><span class="d">Nov 22</span><span>Nudge for the Nov 18 email</span><span class="ty nudge">Nudge</span></div>
-        <div class="mr"><span class="d">Nov 24</span><span>Blog 3</span><span class="ty blog">Blog</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Los Altos Hills + Cambrian project pages<small>Real jobs with your drone photos and video, by neighborhood.</small></span><span class="ty ">Pages</span></div>
-        <div class="mr"><span class="d any">Weekly</span><span>A post on both Google profiles<small>Mountain View + San Jose.</small></span><span class="ty ">Google</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Automatic review requests turned on<small>After every job marked done in Housecall Pro.</small></span><span class="ty ">Reviews</span></div>
-        <div class="mr"><span class="d any">Date TBD</span><span>Team photo shoot<small>Mario, Gail, Christopher and Melissa.</small></span><span class="ty ">Photos</span></div>
-        <div class="mr"><span class="d any">All month</span><span>First Looker Studio report</span><span class="ty ">Report</span></div>
-      </div>
-    </div>
-
-    <div class="month">
-      <div class="mh"><h3>December</h3><span>Storm season + proof</span></div>
-      <div class="mb">
-        <div class="mr"><span class="d">Dec 1</span><span>November report<small>With leads by source and revenue from Housecall Pro.</small></span><span class="ty ">Report</span></div>
-        <div class="mr"><span class="d">Dec 2</span><span>5 things to check after the first big storm</span><span class="ty email">Email</span></div>
-        <div class="mr"><span class="d">Dec 6</span><span>Nudge for the Dec 2 email</span><span class="ty nudge">Nudge</span></div>
-        <div class="mr"><span class="d">Dec 16</span><span>Featured job: Cambrian solar re-roof + thank you</span><span class="ty email">Email</span></div>
-        <div class="mr"><span class="d">Dec 20</span><span>Nudge for the Dec 16 email</span><span class="ty nudge">Nudge</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Storm + leak page</span><span class="ty ">Pages</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Roof cost guide<small>Built from Mario's price ranges.</small></span><span class="ty ">Pages</span></div>
-        <div class="mr"><span class="d any">All month</span><span>HOA + property manager page</span><span class="ty ">Pages</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Commercial photos live on the site</span><span class="ty ">Photos</span></div>
-      </div>
-    </div>
-
-    <div class="month">
-      <div class="mh"><h3>January</h3><span>Plan the year + system decision</span></div>
-      <div class="mb">
-        <div class="mr"><span class="d any">Early Jan</span><span>Decide Jobber vs. Housecall Pro<small>If you move, I'll move the website forms and emails over too.</small></span><span class="ty ">Decision</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Campbell + Los Gatos pages</span><span class="ty ">Pages</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Tile roofing page</span><span class="ty ">Pages</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Second postcard drop</span><span class="ty ">Mail</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Trades co-op mailer pilot</span><span class="ty ">Mail</span></div>
-        <div class="mr"><span class="d any">All month</span><span>Q1 plan with Juan, using real numbers</span><span class="ty ">Plan</span></div>
-      </div>
-    </div>
-
+<section id="leads">
+  <h2><span class="n">2</span>Your leads</h2>
+  <p class="sub">This is the part that makes or loses money.</p>
+  <div class="stats">
+    <div class="stat hi"><b>161</b><span>leads in Housecall Pro since Jun 19</span></div>
+    <div class="stat"><b>157</b><span>still "New Lead", nobody assigned</span></div>
+    <div class="stat"><b>17</b><span>website requests that never made it into Housecall Pro</span></div>
+    <div class="stat"><b>34</b><span>estimates sent, waiting on a yes</span></div>
   </div>
-</section>
-
-<section id="promised">
-  <h2>What we promised</h2>
-  <p class="muted">Everything we talked about in our last two meetings and over email, and where each one stands as of Oct 25.</p>
-  <div class="legend">
-    <span class="chip done">Done · 3</span>
-    <span class="chip prog">In progress · 6</span>
-    <span class="chip wait">Waiting on Falcon · 3</span>
-    <span class="chip not">Not started · 6</span>
-  </div>
-  <div class="prom">
-    <div class="pi"><b>Real numbers for Juan: website traffic, Google data, what's working</b><span class="chip prog">In progress</span><p>The traffic history sheet (2023 to now) is done and goes out with the October report. <span class="when">· This week</span></p></div><div class="pi"><b>One dashboard with Google Analytics, Search Console and both Google profiles, with a link and login</b><span class="chip not">Not started</span><p>Building it in Looker Studio and sharing it with Mario and office@. <span class="when">· This week</span></p></div><div class="pi"><b>Save the old Google Analytics data in case it gets deleted</b><span class="chip done">Done</span><p>Monthly numbers are exported. Next, Mario asks Mike at iSolve to hand over ownership of the old account, since Mike answers to Mario. <span class="when">· This week</span></p></div><div class="pi"><b>office@ on Google Analytics, Search Console and both Google profiles, plus a list of which emails are connected</b><span class="chip prog">In progress</span><p>Confirming office@ is on all 4, then sending Mario and Melissa a one-page "who has access" list. <span class="when">· This week</span></p></div><div class="pi"><b>Privacy policy, terms, accessibility page and a California-ready cookie banner</b><span class="chip done">Done</span><p>All live on the site since Oct 25, linked in the footer, with a California opt-out cookie banner. <span class="when">· Done</span></p></div><div class="pi"><b>Lead reporting: how many leads came in, from where, were they followed up, did they turn into jobs</b><span class="chip prog">In progress</span><p>The missed-leads list is done (28 real homeowner requests, 17 never reached Housecall Pro). Starting with the November report: leads by source, booked jobs and revenue from Housecall Pro. <span class="when">· Nov report, Dec 1</span></p></div><div class="pi"><b>New postcards with real Falcon photos, mailed to the neighborhood around a finished job</b><span class="chip prog">In progress</span><p>Copy is done. Two lighter postcards (homeowner + property manager) are designed in Figma with real Falcon photos, waiting on your OK. <span class="when">· Mail early Nov</span></p></div><div class="pi"><b>A free inspection offer before the rainy season</b><span class="chip done">Done</span><p>The Roof Health Report is approved, the page is drafted, and the template and email plan are ready. <span class="when">· Page up by Oct 28</span></p></div><div class="pi"><b>Project and neighborhood pages from the new photos</b><span class="chip prog">In progress</span><p>Los Altos Hills draft exists. Finishing Los Altos Hills and Cambrian (San Jose), then Milpitas once the after-photos are in. <span class="when">· November</span></p></div><div class="pi"><b>Commercial photos (Sunnyvale job) and the Saratoga church</b><span class="chip wait">Waiting on Falcon</span><p>Christopher asks the owner for an OK so we can schedule the photographer. Mario shares his Saratoga church photos. <span class="when">· November</span></p></div><div class="pi"><b>Team photo shoot for the family-owned story</b><span class="chip not">Not started</span><p>Picking a date with Melissa, then photographer and headshots for the About / Team page. <span class="when">· November</span></p></div><div class="pi"><b>Blur the license plate on the truck photo</b><span class="chip not">Not started</span><p>Done before that photo goes anywhere public. <span class="when">· This week</span></p></div><div class="pi"><b>falconcommercialroofing.com</b><span class="chip wait">Waiting on Falcon</span><p>My recommendation: point it to the commercial roofing page on falcon-roofing.com now, and revisit a separate commercial site in 2027. Needs Mario's yes. <span class="when">· Decide this week</span></p></div><div class="pi"><b>Fill the empty "repairs / install guides" footer links with real pages</b><span class="chip prog">In progress</span><p>The links are switched off for now. The pages come in as we build out the site plan. <span class="when">· Nov–Jan</span></p></div><div class="pi"><b>Housecall Pro: multi-day jobs turning into separate jobs</b><span class="chip not">Not started</span><p>Emailing Housecall Pro support with an example job to ask about one job with multiple visits. <span class="when">· This week</span></p></div><div class="pi"><b>Asking for reviews at the right moment</b><span class="chip not">Not started</span><p>Turning on Housecall Pro's automatic review request when a job is marked done, plus a one-line script for Gail. <span class="when">· November</span></p></div><div class="pi"><b>Maintenance plans: what's included and the pricing</b><span class="chip wait">Waiting on Falcon</span><p>A short questionnaire for Mario. Needed for a maintenance page and the email list. <span class="when">· November</span></p></div><div class="pi"><b>Trades co-op mailer with partner trades</b><span class="chip not">Not started</span><p>Mario is OK with mail, not door drops. Parked until Falcon's own mailer has results. <span class="when">· January</span></p></div>
-  </div>
-</section>
-
-<section id="need">
-  <h2>What I need from you</h2>
-  <ol class="need">
-    <li><div><b>Roof Health Reports:</b> how many can you do a week in November, and who goes out, Mario or an estimator? I'd start with 8-10.</div></li>
-    <li><div><b>Report turnaround:</b> is 2 business days OK for the written report?</div></li>
-    <li><div><b>Storm calls:</b> how fast can you usually get out for an emergency tarp? It goes in the December email.</div></li>
-    <li><div><b>Your legal business name:</b> the public license records show <b>Falcon &amp; Renteria Roofing Contractor, Inc.</b> Can you confirm? It goes on the privacy policy.</div></li>
-    <li><div><b>The mailer:</b> the new, lighter postcards are in Figma with your own roof photos and the 10-year warranty. Has the old one gone to print?</div></li>
-    <li><div><b>Cost guide:</b> your price ranges for a repair, a re-roof and a flat roof, whenever you're ready.</div></li>
+  <p style="margin-top:14px">Where they come from: 144 Yelp (109 are gutter cleaning), 11 website form, 6 entered by hand. The team works jobs, but not inside the lead pipeline, so nobody can see what got called back.</p>
+  <div class="btns"><a class="btn y" href="https://docs.google.com/spreadsheets/d/1sSQAHzFOm9Sg-Ymf57waKN8XUryhZ1j10n379R1LA8U/edit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg>Open the call-back list</a></div>
+  <h3>The 5 rules for every new lead</h3>
+  <ol class="flow">
+    <li><span><b>Into Housecall Pro same day.</b> Website, Yelp, phone. All of it.</span></li>
+    <li><span><b>One owner.</b> Assign it, call back within 1 business day.</span></li>
+    <li><span><b>Move the stage.</b> Contacted → Estimate scheduled → Estimate sent.</span></li>
+    <li><span><b>Close it.</b> Won or Lost with a reason. Nothing sits in "New Lead".</span></li>
+    <li><span><b>Follow up every estimate</b> at day 3 and day 10.</span></li>
   </ol>
 </section>
 
-<section id="links"><h2>All links</h2>
-<div class="groups"><div class="group" id="marketing">
-  <h3>Marketing</h3>
-  <div class="tiles">
-    <a class="tile" href="https://docs.google.com/document/d/1hlJ3oS9eAhqxDz7YTAEojVGWEPZwwadXsqo0hZn9noE/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>Google Doc</span><strong>Email plan</strong><span class="d">All 5 emails, the follow-up nudges and the open-estimate follow-up, written in Mario's voice.</span></a>
-    <a class="tile" href="roof-health-report.html" ><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12l10-8 10 8"/><path d="M9 21v-6h6v6"/><path d="M5 10v11h14V10"/></svg></span>Page</span><strong>Roof Health Report, at a glance</strong><span class="d">One-page visual for the team: what it is, the checklist and how a visit runs.</span></a>
-    <a class="tile" href="https://docs.google.com/document/d/1uAHHHVeYELZEdPzEGnucAVtzxcpil05c6A8Bnk5YzSM/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>Google Doc</span><strong>Roof Health Report: how it runs</strong><span class="d">The full write-up: what's included, the inspection checklist, the step-by-step and the rules.</span></a>
-    <a class="tile" href="https://docs.google.com/document/d/11zoTk_4wX0OEy8ouhzIH4LqV7_4tyCYn1naFM9OYwcc/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>Google Doc</span><strong>Roof Health Report template</strong><span class="d">The 2-page report the homeowner gets: summary on page 1, photos on page 2.</span></a>
-    <a class="tile" href="https://docs.google.com/document/d/1bOyq6ufhCrfxWyF362I07A4CteAxpNq8dVHMj7KQilU/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>Google Doc</span><strong>Mailer copy</strong><span class="d">The postcard copy for homeowners and property managers.</span></a>
+<section id="calendar">
+  <h2><span class="n">3</span>Calendar: Nov – early Jan</h2>
+  <p class="sub">Everything going out, by date. Undated work is listed under each month.</p>
+  <div class="key"><span><i style="background:var(--yellow)"></i>Email</span><span><i style="background:var(--yellow-soft)"></i>Follow-up nudge</span><span><i style="background:#E3ECFA"></i>Blog</span><span><i style="background:#F5E6FA"></i>Mail</span><span><i style="background:var(--green-soft)"></i>Report</span><span><i style="background:var(--red-soft)"></i>Decision</span><span><i style="background:var(--ink)"></i>Meeting</span></div>
+  <div id="cals"></div>
+</section>
+
+<section id="week">
+  <h2><span class="n">4</span>This week · Oct 26 – Nov 1</h2>
+  <ul class="check">
+    <li class="done">Legal pages, cookie banner and form privacy notices live</li>
+    <li class="done">Lighter postcards designed with your own roof photos</li>
+    <li class="done">This report + live dashboard</li>
+    <li>Office calls the missed leads <span class="who">Falcon</span></li>
+    <li>Publish the Roof Health Report page <span class="who">your OK</span></li>
+    <li>Oct 28: send email 1 from Housecall Pro <span class="who">your OK</span></li>
+    <li>Confirm office@ has access to Analytics, Search Console + both Google profiles</li>
+    <li>Answers from Mario (below) <span class="who">Falcon</span></li>
+  </ul>
+</section>
+
+<section id="approve">
+  <h2><span class="n">5</span>Needs your OK</h2>
+  <p class="sub">A yes, no or change on each one is all I need.</p>
+  <div class="ok">
+    <div><b>Roof Health Report page goes live</b><span>Built and ready. The Oct 28 email points to it.</span></div>
+    <div><b>Email 1 goes out Oct 28</b><span>"A quick hello from Mario" to past customers, from Housecall Pro.</span></div>
+    <div><b>New postcards</b><span>Homeowner + property manager versions, lighter, real Falcon roofs, 10-year warranty. Print-ready once you sign off.</span></div>
+    <div><b>Los Altos Hills project page goes live</b><span>Plus the Projects page it sits under.</span></div>
+    <div><b>falconcommercialroofing.com</b><span>My recommendation: point it at your commercial roofing page for now.</span></div>
+    <div><b>Quick answers from Mario</b><span>Roof Health Reports per week (I'd start at 8–10) · 2-day report turnaround OK? · How fast for an emergency tarp? · Legal business name (license shows Falcon &amp; Renteria Roofing Contractor, Inc.) · Price ranges for the cost guide.</span></div>
   </div>
-</div>
-<div class="group" id="data">
-  <h3>Data</h3>
-  <div class="tiles">
-    <a class="tile" href="https://docs.google.com/spreadsheets/d/1sSQAHzFOm9Sg-Ymf57waKN8XUryhZ1j10n379R1LA8U/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg></span>Google Sheet · Team only</span><strong>Leads to call back</strong><span class="d">Website leads that never made it into Housecall Pro, plus open Housecall Pro leads, with call order and a script.</span></a>
-    <a class="tile" href="https://docs.google.com/spreadsheets/d/1-KXsUJh1n-PhVSN2v5iFAuxsc-20tJ3CH6LAgEtAuFM/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>Google Sheet</span><strong>Traffic history, 2023 to now</strong><span class="d">Website visits and Google search visits by month, old site and new.</span></a>
+</section>
+
+<section id="wednesday">
+  <h2><span class="n">6</span>Let's sit down Wednesday</h2>
+  <p class="sub">Can I come by the office Wednesday, Oct 28? 45 minutes. Here's what I want to cover:</p>
+  <ol class="flow">
+    <li><span><b>Leads:</b> walk the pipeline with Melissa so every lead has an owner.</span></li>
+    <li><span><b>Approvals:</b> the list above, in person, done in 10 minutes.</span></li>
+    <li><span><b>What we build for the rest of the year:</b> maintenance plans, the HOA + property manager page, the storm page and the cost guide.</span></li>
+    <li><span><b>Reviews:</b> turn on automatic review requests, and get the San Jose profile its first reviews.</span></li>
+    <li><span><b>Clean-up:</b> 2 duplicate unverified "Falcon Roofing" Google listings in San Jose to remove or merge.</span></li>
+    <li><span><b>January:</b> Jobber vs. Housecall Pro, and the Q1 plan with Juan using real numbers.</span></li>
+  </ol>
+  <details>
+    <summary>Everything we've promised and where it stands (18)</summary>
+    <div id="promises"></div>
+  </details>
+</section>
+
+<section id="links">
+  <h2><span class="n">7</span>All links</h2>
+  <p class="sub">Bookmark this page. Everything lives here.</p>
+
+  <div class="grp">Numbers</div>
+  <div class="links">
+    <a class="lk" id="looker" href="https://lookerstudio.google.com/reporting/86baeeb3-eb3f-48ae-a5d4-2c79fde8c6a3" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span><span class="tx"><b>Live dashboard</b><span>Google Analytics + Search Console, updates daily</span></span><span class="go">Open ↗</span></a>
+    <a class="lk" href="https://docs.google.com/spreadsheets/d/1-KXsUJh1n-PhVSN2v5iFAuxsc-20tJ3CH6LAgEtAuFM/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span class="tx"><b>Traffic history, 2023 to now</b><span>Old + new Google Analytics, month by month</span></span><span class="go">Open ↗</span></a>
   </div>
-</div>
-<div class="group" id="website">
-  <h3>Website</h3>
-  <div class="tiles">
-    <a class="tile" href="https://docs.google.com/spreadsheets/d/1lproWYjB34UBW6jjGZ0DN7Jqe_2aZO0kIgJAQZBxqDw/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg></span>Google Sheet</span><strong>Sitemap + cleanup log</strong><span class="d">Every page on the site, what's done and what's next, and the list of fixes.</span></a>
-    <a class="tile" href="https://docs.google.com/document/d/1GQDfkTYa1np4sRfxdsuJkOe7Cvj6DC1nivPZ6lWYwJc/edit" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></svg></span>Google Doc</span><strong>Legal pages</strong><span class="d">Live on the site. This is the editable draft behind them.</span></a>
-    <a class="tile" href="https://falcon-roofing.com" target="_blank" rel="noopener"><span class="ty"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span>Website</span><strong>falcon-roofing.com</strong><span class="d">The live site.</span></a>
+
+  <div class="grp">For the team</div>
+  <div class="links">
+    <a class="lk team" href="https://docs.google.com/spreadsheets/d/1sSQAHzFOm9Sg-Ymf57waKN8XUryhZ1j10n379R1LA8U/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg></span><span class="tx"><b>Call-back list</b><span>Missed leads, call order + a short script</span></span><span class="go">Open ↗</span></a>
+    <a class="lk team" href="roof-health-report.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><span class="tx"><b>Roof Health Report</b><span>What it is, the checklist, how a visit runs</span></span><span class="go">Open →</span></a>
+    <a class="lk team" href="https://docs.google.com/document/d/11zoTk_4wX0OEy8ouhzIH4LqV7_4tyCYn1naFM9OYwcc/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span><span class="tx"><b>Roof Health Report template</b><span>The 2-page report the homeowner gets</span></span><span class="go">Open ↗</span></a>
   </div>
-</div></div></section>
+
+  <div class="grp">Marketing</div>
+  <div class="links">
+    <a class="lk" href="https://docs.google.com/document/d/1hlJ3oS9eAhqxDz7YTAEojVGWEPZwwadXsqo0hZn9noE/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="tx"><b>Email plan</b><span>All 5 emails + follow-ups, in Mario's voice</span></span><span class="go">Open ↗</span></a>
+    <a class="lk" href="https://docs.google.com/document/d/1bOyq6ufhCrfxWyF362I07A4CteAxpNq8dVHMj7KQilU/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M14 9h4v3h-4z"/><path d="M6 10h5M6 13h5"/></svg></span><span class="tx"><b>Postcard copy</b><span>Homeowner + property manager versions</span></span><span class="go">Open ↗</span></a>
+  </div>
+
+  <div class="grp">Website</div>
+  <div class="links">
+    <a class="lk" href="https://falcon-roofing.com" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></span><span class="tx"><b>falcon-roofing.com</b><span>The live site</span></span><span class="go">Open ↗</span></a>
+    <a class="lk" href="https://docs.google.com/spreadsheets/d/1lproWYjB34UBW6jjGZ0DN7Jqe_2aZO0kIgJAQZBxqDw/edit" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg></span><span class="tx"><b>Site plan + cleanup log</b><span>Every page, what's done, what's next</span></span><span class="go">Open ↗</span></a>
+    <a class="lk" href="https://falcon-roofing.com/privacy-policy/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="tx"><b>Legal pages</b><span>Privacy, Terms, Accessibility. Live, CA-ready</span></span><span class="go">Open ↗</span></a>
+  </div>
+</section>
 
 <section id="contact">
-  <h2>Direct access to me</h2>
+  <h2>Questions? Just reach out</h2>
   <div class="contact">
-    <div><b>Call or text</b><span>(408) 710-6718</span></div>
-    <div><b>Email</b><span>daisy@kaizenagency.org</span></div>
+    <a class="lk" href="tel:+14087106718"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg></span><span class="tx"><b>(408) 710-6718</b><span>Call or text Daisy</span></span></a>
+    <a class="lk" href="mailto:daisy@kaizenagency.org"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="tx"><b>daisy@kaizenagency.org</b><span>Email</span></span></a>
   </div>
-  <p class="muted">And I'm always happy to come by the office in Mountain View.</p>
 </section>
-</div></div>
-<footer class="site">
-  <div>If there's something you want moved up the list, just say the word!<br>Daisy · Kaizen Agency</div>
-  <div class="fr">Falcon Roofing · No leaks. No drips. No errors. · Family-owned since 1993 · CA Lic. #703286 · Mountain View</div>
-</footer>
 
-</div></div>
+</div>
+<footer>Updated Oct 26, 2026 · Daisy · Kaizen Agency</footer>
+
+<script>
+/* Semrush monthly organic traffic estimate, falcon-roofing.com (pulled Oct 26, 2026). Dec 2024 tooltip missed; read from chart. */
+const traffic=[["N",'24',60],["D",'24',100],["J",'25',38],["F",'25',60],["M",'25',58],["A",'25',59],["M",'25',59],["J",'25',59],["J",'25',57],["A",'25',57],["S",'25',57],["O",'25',57],["N",'25',46],["D",'25',58],["J",'26',37],["F",'26',44],["M",'26',7],["A",'26',28],["M",'26',53],["J",'26',126],["J",'26',50],["A",'26',71],["S",'26',115],["O",'26',108]];
+(function(){
+  const max=Math.max(...traffic.map(t=>t[2]));const b=document.getElementById('bars'),x=document.getElementById('xl');
+  traffic.forEach((t,i)=>{
+    const gap=(t[1]==='26'&&i>=17&&i<=22);const now=i>=22;
+    const d=document.createElement('div');d.className='bar'+(now?' now':gap?' gap':'');d.style.height=(t[2]/max*100)+'%';
+    d.title=t[0]+" '"+t[1]+': ~'+t[2]+' visits';
+    if(i===16||i===22||i===23||i===19)d.innerHTML='<i>'+t[2]+'</i>';
+    b.appendChild(d);
+    const s=document.createElement('span');s.textContent=(t[0]==='J'&&(i===2||i===14))||i===0?t[0]+"'"+t[1]:t[0];x.appendChild(s);
+  });
+})();
+
+/* Calendar */
+const EV={
+ '2026-10-28':[['meet','Meet at the office?'],['email','Email 1: hello from Mario']],
+ '2026-11-01':[['nudge','Nudge: email 1']],
+ '2026-11-04':[['email','Free Roof Health Report before the rains']],
+ '2026-11-08':[['nudge','Nudge: Nov 4 email']],
+ '2026-11-10':[['blog','Blog 1 (Mario)']],
+ '2026-11-17':[['blog','Blog 2']],
+ '2026-11-18':[['email','Featured job: Los Altos Hills re-roof']],
+ '2026-11-22':[['nudge','Nudge: Nov 18 email']],
+ '2026-11-24':[['blog','Blog 3']],
+ '2026-12-01':[['report','November report']],
+ '2026-12-02':[['email','5 things to check after the first storm']],
+ '2026-12-06':[['nudge','Nudge: Dec 2 email']],
+ '2026-12-16':[['email','Featured job: Cambrian re-roof + thank you']],
+ '2026-12-20':[['nudge','Nudge: Dec 16 email']],
+ '2027-01-05':[['decision','Decide: Jobber vs. Housecall Pro']]
+};
+const MONTHS=[
+ {y:2026,m:10,title:'November',tag:'Fill the calendar before the rains',any:['Neighborhood postcard around the Los Altos Hills job (early Nov)','Los Altos Hills + Cambrian project pages','A post on both Google profiles every week','Automatic review requests turned on','Team photo shoot (date TBD)']},
+ {y:2026,m:11,title:'December',tag:'Storm season',any:['Storm + leak page','Roof cost guide (from Mario\'s price ranges)','HOA + property manager page','Commercial photos live on the site']},
+ {y:2027,m:0,title:'January',tag:'Plan Q1 with real numbers',any:['Campbell + Los Gatos pages','Tile roofing page','Second postcard drop','Trades co-op mailer pilot','Q1 plan with Juan'],until:14}
+];
+const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const pad=n=>String(n).padStart(2,'0');
+const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const today=new Date();const tkey=today.getFullYear()+'-'+pad(today.getMonth()+1)+'-'+pad(today.getDate());
+const wrap=document.getElementById('cals');
+MONTHS.forEach(M=>{
+  const first=new Date(M.y,M.m,1);const days=new Date(M.y,M.m+1,0).getDate();const last=M.until||days;
+  let h='<div class="cal"><div class="cal-h"><h3>'+M.title+(M.until?' (first 2 weeks)':'')+'</h3><span>'+M.tag+'</span></div><div class="grid month">';
+  DOW.forEach(d=>h+='<div class="dow">'+d+'</div>');
+  for(let i=0;i<first.getDay();i++){const d=new Date(M.y,M.m,1-first.getDay()+i);const k=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());const ev=M.m===10?(EV[k]||[]):[];h+='<div class="day out'+(ev.length?' has':'')+'"><span class="dn" data-full="">'+(d.getDate())+'</span>'+(ev.length?'<span>'+ev.map(e=>'<span class="ev '+e[0]+'">'+e[1]+'</span>').join('')+'</span>':'')+'</div>';}
+  for(let d=1;d<=last;d++){const k=M.y+'-'+pad(M.m+1)+'-'+pad(d);const ev=EV[k]||[];const wd=DOW[new Date(M.y,M.m,d).getDay()];
+    h+='<div class="day'+(ev.length?' has':'')+(k===tkey?' today':'')+'"><span class="dn" data-full="'+'">'+'<span class="dd">'+d+'</span></span>'+(ev.length?'<span>'+ev.map(e=>'<span class="ev '+e[0]+'">'+e[1]+'</span>').join('')+'</span>':'')+'</div>';}
+  const tail=(first.getDay()+last)%7;if(tail)for(let i=0;i<7-tail;i++)h+='<div class="day out"><span class="dn"></span></div>';
+  h+='</div><div class="anyday"><b>Anytime this month</b><ul>'+M.any.map(a=>'<li>'+a+'</li>').join('')+'</ul></div></div>';
+  wrap.insertAdjacentHTML('beforeend',h);
+});
+/* on phones, show "Nov 4" style labels */
+document.querySelectorAll('#cals .cal').forEach((c,i)=>{const M=MONTHS[i];c.querySelectorAll('.day.has:not(.out) .dd').forEach(s=>{s.setAttribute('data-m',MN[M.m]);});});
+const mq=window.matchMedia('(max-width:640px)');function lbl(){document.querySelectorAll('#cals .dd').forEach(s=>{const m=s.getAttribute('data-m');if(!s.dataset.n)s.dataset.n=s.textContent;s.textContent=(mq.matches&&m?m+' ':'')+s.dataset.n;});}
+lbl();mq.addEventListener?mq.addEventListener('change',lbl):mq.addListener(lbl);
+
+/* Promises */
+const P=[
+['done','Old Google Analytics data saved','Monthly numbers exported. Mario asks Mike at iSolve to hand over the old account.'],
+['done','Privacy policy, terms, accessibility + California cookie banner','Live since Oct 25, in the footer, with privacy notices on the forms.'],
+['done','Free inspection offer before the rains','Roof Health Report approved, page built, template + email plan ready.'],
+['done','Real numbers for Juan','This page, the traffic history sheet and the live dashboard.'],
+['done','One dashboard for Analytics + Search Console','Live. Google profile numbers are on this page until there\'s a free way to pipe them in.'],
+['prog','office@ on Analytics, Search Console + both Google profiles','Confirming all 4, then a one-page "who has access" list.'],
+['prog','Lead reporting: source, follow-up, booked jobs','Missed-leads list done. Starts properly with the November report.'],
+['prog','New postcards with real Falcon photos','Two lighter versions designed. Waiting on your OK, then print.'],
+['prog','Project + neighborhood pages','Los Altos Hills built. Cambrian next, then Milpitas once after-photos are in.'],
+['prog','Fill the empty footer guide links','Switched off for now. Pages come in Nov–Jan.'],
+['wait','Commercial photos (Sunnyvale) + Saratoga church','Christopher asks the owner; Mario shares the church photos.'],
+['wait','falconcommercialroofing.com','Point it at the commercial page for now. Needs Mario\'s yes.'],
+['wait','Maintenance plans: what\'s included + pricing','Short questionnaire for Mario.'],
+['not','Team photo shoot','Pick a date with Melissa.'],
+['not','Blur the license plate on the truck photo','Before that photo goes public.'],
+['not','Housecall Pro: multi-day jobs splitting into separate jobs','Asking HCP support with an example job.'],
+['not','Review requests at the right moment','Turn on automatic requests + a one-line script for Gail.'],
+['not','Trades co-op mailer','Parked until Falcon\'s own mailer has results.']];
+const L={done:'Done',prog:'In progress',wait:'Waiting on Falcon',not:'Not started'};
+document.getElementById('promises').innerHTML=P.map(p=>'<div class="pi"><b>'+p[1]+'</b><span class="chip '+p[0]+'">'+L[p[0]]+'</span><br><span style="color:var(--muted)">'+p[2]+'</span></div>').join('');
+</script>
 </body>
 </html>
