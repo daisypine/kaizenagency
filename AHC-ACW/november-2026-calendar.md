@@ -7,7 +7,7 @@
 | Oct 26 | — | **Shoot** with Dr. Mike + Dr. Kyndra (D) | Edit batch 1 (D) | Batch 1 ready · Search Console pull (D) | Batch 1 to Dr. Mike (D) · page copy written (B) · **email draft due Sat Oct 31** (B) |
 | Nov 2 | **Post:** Reintro set (pin all 3) · schedule batch 1 · email to Dr. Mike (D) · shockwave refresh done (B) | **Post:** What makes you different? | Shockwave page **live** (B) | **Post:** Rock, paper, scissors · shockwave blog done (B) | Batch 2 ready (D) · tennis elbow page built (B) |
 | Nov 9 | Batch 2 to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | **Post:** Elbow follow-along · schedule batch 2 (D) · tennis elbow page **live** (B) | — | **Post:** Things I don't care about · **Email sends** · hub **live** · elbow blog done (B) | Achilles page built (B) |
-| Nov 16 | Elbow blog **published** (B) | **Post:** Achilles follow-along · Achilles page **live** (B) | — | **Post:** 4 red flags · Achilles blog done (B) | — |
+| Nov 16 | **Post:** Desk workers follow-along · elbow blog **published** (B) | **Post:** Achilles follow-along · Achilles page **live** (B) | — | **Post:** 4 red flags · Achilles blog done (B) | — |
 | Nov 23 | Achilles blog **published** (B) | **Post:** Why chiro didn't work | — | Thanksgiving | **Post:** Black Friday graphic · report due Sat Nov 28 (B) |
 | Nov 30 | — | **Report sent** to Dr. Mike (D) | | | |
 
@@ -59,7 +59,7 @@
 | Wed Oct 28 – Thu Oct 29 | Batch 1: design the reintro set (3) + rock, paper, scissors + things I don't care about · edit 2 reels (what makes you different · elbow follow-along) |
 | Fri Oct 30 | Send batch 1 to Dr. Mike for approval |
 | Mon Nov 2 | Post + pin the reintro set · schedule the rest of batch 1 in Meta Business Suite · send Basil's email to Dr. Mike for approval |
-| Fri Nov 6 | Finish batch 2: Achilles follow-along + 4 red flags reels · chiro didn't work carousel · Black Friday graphic |
+| Fri Nov 6 | Finish batch 2: Achilles + desk workers follow-alongs + 4 red flags reels · chiro didn't work carousel · Black Friday graphic |
 | Mon Nov 9 | Send batch 2 to Dr. Mike for approval |
 | Tue Nov 10 | Schedule batch 2 |
 | Fri Nov 27 | Black Friday graphic posts (scheduled) |
@@ -68,9 +68,9 @@
 ## Daisy's checklist
 
 - [ ] Shot list, text cards and props packed for the shoot
-- [ ] Shoot done: 5 reel clips + reintro portraits + mirror selfies + hands photo + B-roll + intro voice memos
+- [ ] Shoot done: 6 reel clips + reintro portraits + mirror selfies + hands photo + B-roll + intro voice memos
 - [ ] Reintro set designed (Meet Dr. Mike · Meet Dr. Kyndra · What to expect) and pinned
-- [ ] 4 reels edited (text on screen, hook in the first second)
+- [ ] 5 reels edited (text on screen, hook in the first second)
 - [ ] 3 carousels + Black Friday graphic designed
 - [ ] Batch 1 approved by Dr. Mike and scheduled
 - [ ] Batch 2 approved by Dr. Mike and scheduled

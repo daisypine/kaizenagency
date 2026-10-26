@@ -4,7 +4,7 @@ Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026
 
 **Short, fun and off the cuff.** Every inspiration post was rewatched for this plan, and the ones that work are tiny: one clip or one photo with text on top. Most reels are 5–15 seconds, and three of the four carousels reuse **one photo** on every slide. Only the two follow-along videos run longer. Nobody memorizes a script. The words go on screen and in the caption, not in anyone's mouth.
 
-**November = 11 posts:** a 3-post reintro set to pin at the top of the grid, 4 quick reels, 3 carousels and the Black Friday graphic. Daisy films, designs, edits and posts. Dr. Mike approves before anything goes live.
+**November = 12 posts:** a 3-post reintro set to pin at the top of the grid, 5 quick reels, 3 carousels and the Black Friday graphic. Daisy films, designs, edits and posts. Dr. Mike approves before anything goes live.
 
 ## Posting plan
 
@@ -15,6 +15,7 @@ Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026
 | Thu Nov 5 | Rock, paper, scissors: myth vs. fact | Carousel (1 photo) | Hands only | 7 slides |
 | Tue Nov 10 | Tennis & golf players: let's fix your elbow | Reel (follow-along) | Dr. Kyndra | 45–60 sec |
 | Thu Nov 12 | Things I don't care about as your chiropractor | Carousel (1 photo) | Dr. Kyndra | 6 slides |
+| Mon Nov 16 | All you desk workers: let's fix your neck | Reel (follow-along) | Dr. Mike | 45–60 sec |
 | Tue Nov 17 | Runners: let's fix your Achilles | Reel (follow-along) | Dr. Kyndra | 45–60 sec |
 | Thu Nov 19 | 4 red flags at a chiropractor | Reel | Dr. Mike + Dr. Kyndra | 12–15 sec |
 | Tue Nov 24 | Why you tried chiropractic and it didn't work | Carousel (1 photo) | Dr. Mike | 6 slides |
@@ -31,18 +32,18 @@ Grouped by setup so nobody moves twice. Each block lists what Daisy captures and
 | Time | Setup | Daisy captures | Doctors do |
 | --- | --- | --- | --- |
 | 11:30–11:40 | Set up | Tripod, ring light, lav mic, clean lens · tape the text cards to the wall behind the phone | Change into Adapt shirts |
-| 11:40–12:00 | **Chair + plain wall** | Elbow follow-along · Achilles follow-along. Wide, vertical, full body in frame. Phone stays put | **Dr. Kyndra:** 8-second intro to camera, then 3 moves each, 2–3 reps per move |
-| 12:00–12:10 | **Treatment table** | "What makes you different?" (3 takes) · Red flags clip (one 15-second continuous take, 2 angles) | **Dr. Mike:** lounge on the table · then adjust Dr. Kyndra |
-| 12:10–12:20 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) | Each doctor takes their own mirror selfie · both hold out hands |
-| 12:20–12:35 | **Reintro portraits** | 3 photos per doctor + 1 together (list below) · voice memo the intro questions | Answer 5 quick questions each (about 2 minutes) |
-| 12:35–12:50 | **B-roll** | Shockwave on an elbow + a heel · adjustment · soft tissue · a strength move · front sign · front desk · treatment room empty. 5–10 seconds each, slow and steady | Act it out on each other (no patients unless they've signed a photo/video release) |
-| 12:50–1:00 | **Bonus (December)** | Sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
+| 11:40–12:10 | **Chair + plain wall** | Elbow + Achilles follow-alongs (Dr. Kyndra) · Desk workers follow-along (Dr. Mike). Wide, vertical, full body in frame. Phone stays put | **Dr. Kyndra:** 8-second intro, then 3 moves each · **Dr. Mike:** same for the desk workers one. 2–3 reps per move |
+| 12:10–12:20 | **Treatment table** | "What makes you different?" (3 takes) · Red flags clip (one 15-second continuous take, 2 angles) | **Dr. Mike:** lounge on the table · then adjust Dr. Kyndra |
+| 12:20–12:30 | **Mirror + wall photos** | Mirror selfies · rock, paper, scissors hands (10+ shots each, burst mode) | Each doctor takes their own mirror selfie · both hold out hands |
+| 12:30–12:42 | **Reintro portraits** | 3 photos per doctor + 1 together (list below) · voice memo the intro questions | Answer 5 quick questions each (about 2 minutes) |
+| 12:42–12:55 | **B-roll** | Shockwave on an elbow + a heel · adjustment · soft tissue · a strength move · front sign · front desk · treatment room empty. 5–10 seconds each, slow and steady | Act it out on each other (no patients unless they've signed a photo/video release) |
+| 12:55–1:00 | **Bonus (December, only if time)** | Sleeping positions ranked · "How have you been?" walk-in | **Dr. Mike:** rank 4 positions off the cuff |
 
 ### Daisy's checklist
 
 - [ ] Phone charged, 20GB+ free, lens wiped
 - [ ] Tripod, phone clamp, ring light, lav mic
-- [ ] Printed text cards in big font (follow-along moves, red flags, intro questions)
+- [ ] Printed text cards in big font (all 3 follow-alongs' moves, red flags, intro questions)
 - [ ] Light dumbbell or water bottle, a step or box, a massage ball
 - [ ] A pillow (bonus sleeping reel)
 - [ ] Film everything vertical 9:16, 4K 30fps. Leave 2 seconds of stillness at the start and end of each clip
@@ -155,6 +156,18 @@ Same setup and style as the elbow reel, filmed back to back.
 - **End card:** "Still sore after 2 weeks? Get it checked. Text (408) 673-2432"
 - **Caption:** link to the new Achilles page
 
+### 8b. All you desk workers: let's fix your neck — reel, 45–60 sec · Dr. Mike
+
+Same format as [@thatchirowithtattoos' "Hypermobile girlies, let's strengthen your shoulders"](https://www.instagram.com/p/Dd1mbt5vPuS/) (41K likes), with an Adapt spin: desk workers instead of hypermobile girlies, and Dr. Mike as the face. Same chair and wall, filmed right after Dr. Kyndra's two. Posts on a Monday, back-to-the-desk day.
+
+- **Title box (whole video):** *All You Desk Workers: Let's Fix Your Neck*
+- **Dr. Mike, seated (off the cuff, about 8 sec):** "All you desk workers, if your neck's tight by 3pm, let's fix it. Do these with me."
+- **Move 1:** *Chin tucks* · sit tall, glide the chin straight back, hold 3 sec · "10 reps"
+- **Move 2:** *Upper back extension over the chair* · hands behind head, lean back over the top of the chair · "10 reps"
+- **Move 3:** *Seated twist* · arms crossed, rotate slowly side to side · "10 each way"
+- **End card:** "Do this every afternoon. Still tight? Text (408) 673-2432"
+- **Caption:** "Tag the coworker who needs this 👀"
+
 ### 9. 4 red flags at a chiropractor — reel, 12–15 sec
 
 Inspired by [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/). It's **one continuous clip** of an adjustment, with a text box that changes every 3 seconds. Nobody talks; the full explanation goes in the caption.
@@ -207,7 +220,7 @@ Every post above was watched on Oct 26 before writing this.
 | Reintro set | [@alexathechiro pinned trio](https://www.instagram.com/alexathechiro/) | 3 pinned posts: Hours · Specialties · What to expect. Photo + script title + text boxes |
 | What makes you different? | [@occhiropractor](https://www.instagram.com/p/DVM4gRFgVwt/) | 5.5 sec, one shot, one line of text |
 | Rock, paper, scissors | [@thephysiofix](https://www.instagram.com/p/Deb6v1EmyKa/) | 8 slides, same hands photo on a green wall |
-| Elbow + Achilles follow-alongs | [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) | 93 sec, seated intro then labeled exercises, fixed tripod |
+| Elbow, Achilles + desk workers follow-alongs | [@thatchirowithtattoos](https://www.instagram.com/p/Dd1mbt5vPuS/) | 93 sec, seated intro then labeled exercises, fixed tripod |
 | Things I don't care about | [@drmollypluss](https://www.instagram.com/p/DboYRaeCdQK/) | 9 slides, same mirror selfie |
 | 4 red flags | [@dr.jessbrubaker](https://www.instagram.com/p/DH9cEhHpYXD/) | 11 sec, one clip, changing text |
 | Chiro didn't work | [@livingrootedchiro](https://www.instagram.com/p/DaESDA9mkNy/) | 7 slides, same darkened mirror selfie |
