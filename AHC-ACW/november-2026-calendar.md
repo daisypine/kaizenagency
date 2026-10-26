@@ -4,23 +4,23 @@
 
 | Week of | Mon | Tue | Wed | Thu | Fri |
 | --- | --- | --- | --- | --- | --- |
-| Oct 26 | — | **Shoot** with Dr. Mike + Dr. Kyndra (D) | Edit batch 1 (D) | Batch 1 ready · Search Console pull (D) | Batch 1 to Dr. Mike (D) · page copy written, to developer (B) |
-| Nov 2 | Schedule batch 1 (D) · shockwave refresh done (B) | **Post:** What makes you different? | Shockwave page **live** (B) | **Post:** Rock, paper, scissors · shockwave blog done (B) | Batch 2 ready (D) · tennis elbow page built · email draft done (B) |
-| Nov 9 | **Post:** Things I don't care about · batch 2 + email to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | Schedule batch 2 (D) · tennis elbow page **live** (B) | **Post:** 5 pains rest won't fix | **Email sends** · hub **live** · elbow blog done (B) | **Post:** 4 red flags · Achilles page built (B) |
+| Oct 26 | — | **Shoot** with Dr. Mike + Dr. Kyndra (D) | Edit batch 1 (D) | Batch 1 ready · Search Console pull (D) | Batch 1 to Dr. Mike (D) · page copy written, to developer (B) · **email draft due Sat Oct 31** (B) |
+| Nov 2 | Schedule batch 1 · email to Dr. Mike (D) · shockwave refresh done (B) | **Post:** What makes you different? | Shockwave page **live** (B) | **Post:** Rock, paper, scissors · shockwave blog done (B) | Batch 2 ready (D) · tennis elbow page built (B) |
+| Nov 9 | **Post:** Things I don't care about · batch 2 to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | Schedule batch 2 (D) · tennis elbow page **live** (B) | **Post:** 5 pains rest won't fix | **Email sends** · hub **live** · elbow blog done (B) | **Post:** 4 red flags · Achilles page built (B) |
 | Nov 16 | **Post:** Desk check-in · elbow blog **published** (B) | Achilles page **live** (B) | **Post:** Oreo spine carousel | Achilles blog done (B) | **Post:** Sleeping positions |
-| Nov 23 | **Post:** Chiro didn't work? · Achilles blog **published** (B) | — | — | Thanksgiving | **Post:** Black Friday graphic |
-| Nov 30 | — | **Nov report** (D + B) | | | |
+| Nov 23 | **Post:** Chiro didn't work? · Achilles blog **published** (B) | — | — | Thanksgiving | **Post:** Black Friday graphic · report due Sat Nov 28 (B) |
+| Nov 30 | — | **Report sent** to Dr. Mike (D) | | | |
 
 ## Basil's calendar
 
 | Date | What | Step |
 | --- | --- | --- |
 | Fri Oct 30 | Tennis elbow + Achilles page copy written, handed to the developer | Done |
+| Sat Oct 31 | Email "Still hurting after the season?" drafted in TDC | Done (Daisy sends to Dr. Mike Mon Nov 2) |
 | Mon Nov 2 | Shockwave page refresh | Done |
 | Wed Nov 4 | Shockwave page refresh | Live |
 | Thu Nov 5 | Blog: "Shockwave vs. a cortisone shot" | Done |
 | Fri Nov 6 | Tennis elbow page built by the developer | Done |
-| Fri Nov 6 | Email "Still hurting after the season?" drafted in TDC | Done (Daisy sends to Dr. Mike Mon Nov 9) |
 | Mon Nov 9 | Sports injury hub refresh | Done |
 | Mon Nov 9 | Blog: shockwave vs. cortisone | Publish |
 | Tue Nov 10 | Tennis elbow page | Live |
@@ -32,7 +32,7 @@
 | Tue Nov 17 | Achilles page | Live |
 | Thu Nov 19 | Blog: "Achilles pain after running" | Done |
 | Mon Nov 23 | Blog: Achilles | Publish |
-| Tue Dec 1 | November numbers for the report | Send to Daisy |
+| Sat Nov 28 | November report | Done (Daisy sends it Tue Dec 1) |
 
 ## Basil's checklist
 
@@ -44,8 +44,8 @@
 - [ ] Blog published: shockwave vs. cortisone
 - [ ] Blog published: elbow
 - [ ] Blog published: Achilles
-- [ ] Email "Still hurting after the season?" built in TDC and sent to the tagged list (warmed sender, links to the new pages and shockwave)
-- [ ] November numbers sent for the report
+- [ ] Email "Still hurting after the season?" drafted in TDC by Sat Oct 31, then sent Thu Nov 12 to the tagged list (warmed sender, links to the new pages and shockwave)
+- [ ] November report done by Sat Nov 28
 
 **Every time something goes live:** title ends in "| Adapt Chiropractic" · meta description under 160 characters · alt text on every image · internal links to the sports injury hub and shockwave page · booking link points to adaptchiropracticwellness.janeapp.com · purge SiteGround cache · request indexing in Search Console · tell Daisy it's live.
 
@@ -56,10 +56,10 @@
 | Tue Oct 27 | Content shoot with Dr. Mike and Dr. Kyndra (90 min) |
 | Wed Oct 28 – Thu Oct 29 | Edit batch 1: 3 reels (Nov 3, 9, 13) + design 2 graphics (rock, paper, scissors · 5 pains rest won't fix) |
 | Fri Oct 30 | Send batch 1 to Dr. Mike for approval |
-| Mon Nov 2 | Schedule batch 1 in Meta Business Suite |
+| Mon Nov 2 | Schedule batch 1 in Meta Business Suite · send Basil's email to Dr. Mike for approval |
 | Tue Nov 3 | First post goes live: "What makes you different?" |
 | Fri Nov 6 | Finish batch 2: 3 reels (Nov 16, 20, 23) + Oreo carousel + Black Friday graphic |
-| Mon Nov 9 | Send batch 2 + Basil's email to Dr. Mike for approval |
+| Mon Nov 9 | Send batch 2 to Dr. Mike for approval |
 | Tue Nov 10 | Schedule batch 2 |
 | Fri Nov 27 | Black Friday graphic posts (scheduled) |
 | Tue Dec 1 | November report + December plan to Dr. Mike |
