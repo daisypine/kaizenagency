@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sunwest Painting — November to January Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Layout: brand bar, then one light column of quiet sections. Sunwest ember orange is the one accent (text-safe #9F4E19 on white). */
+:root{
+--bg:#F4F3F0; --surface:#FFFFFF; --fg:#111111; --muted:#5A5650; --line:#E3E1DD;
+--accent:#9F4E19; --accent-dark:#7B3C13; --accent-soft:#FCF3ED; --accent-fg:#FFFFFF;
+--brand:linear-gradient(102deg,#F5C842 6%,#E07B39 108%);
+--display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+--body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
+.wrap{max-width:780px;margin:0 auto}
+.top{background:var(--surface);border-bottom:1px solid var(--line);padding:16px}
+.top .wrap{display:flex;align-items:center;gap:12px}
+.mark{width:34px;height:34px;border-radius:9px;background:var(--brand)}
+.wordmark{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.01em}
+.page{padding:28px 16px 64px}
+.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 1px 2px rgba(17,17,17,.05)}
+@media (max-width:520px){.card{padding:4px 18px 8px}}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+.hero{padding:26px 0;display:grid;gap:10px}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
+h1{font-size:clamp(30px,5.5vw,42px);font-weight:600}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+section{padding:30px 0;border-top:1px solid var(--line);display:grid;gap:14px}
+h2{font-size:24px;font-weight:600}
+h3{font-size:17px;font-weight:600}
+p{margin:0;max-width:65ch}
+ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.muted{color:var(--muted)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.link{display:grid;gap:4px;padding:16px 18px;background:var(--accent-soft);border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
+.link:hover{border-color:var(--accent)}
+.link strong{font-family:var(--display);font-weight:600;font-size:17px;color:var(--accent)}
+.link span{font-size:14px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:start}
+.stat{padding:14px 16px;border:1px solid var(--line);border-radius:10px}
+.stat b{display:block;font-family:var(--display);font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.stat span{font-size:13.5px;color:var(--muted)}
+.rows{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:130px 1fr;gap:4px 16px}
+.row .k{font-family:var(--display);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:12.5px;padding-top:3px}
+.row > div{min-width:0;display:grid;gap:6px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+.month{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.month-hd{background:var(--fg);color:#fff;padding:12px 18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.month-hd h3{color:#fff}
+.month-hd span{font-family:var(--display);font-size:13px;color:#F5C842}
+.month-bd{padding:6px 18px 14px;display:grid;gap:10px}
+.month-bd p b{font-family:var(--display);font-weight:600}
+.steps{counter-reset:s;list-style:none;padding:0;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-size:14px}
+.note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.contact div{border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.contact b{display:block;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contact span{font-family:var(--display);font-size:18px;font-weight:500;user-select:all}
+.need{counter-reset:n;list-style:none;padding:0;gap:14px}
+.need li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.need li::before{content:counter(n);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:14px}
+footer{padding:28px 0 0;color:var(--muted);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><div class="mark" aria-hidden="true"></div><div class="wordmark">Sunwest Painting</div></div></div>
+
+<div class="page"><div class="wrap"><div class="card">
+
+<div class="hero">
+<div class="eyebrow">November 2026 update</div>
+<h1>What we built in October + the plan through January</h1>
+<p class="lede">Hi Denise! Everything for our meeting is in one place: what's new on the site, your first Google numbers, the plan for November, December and January, and a few things I need from you. Bookmark this one (:</p>
+</div>
+
+<section id="links">
+<h2>Quick links</h2>
+<div class="links">
+<a class="link" href="https://sunwestpainting.net/" target="_blank" rel="noopener"><strong>Your website</strong><span>All the new pages are live. Try the Industries and Projects menus at the top.</span></a>
+<a class="link" href="https://docs.google.com/spreadsheets/d/1tR1z6zMymRx3_6F97EFxkytSw__yvIaSabP21qtLimI/edit" target="_blank" rel="noopener"><strong>Website plan (sitemap)</strong><span>Every page on the site and every page we're adding, month by month. Lives in your Drive folder.</span></a>
+<a class="link" href="https://docs.google.com/document/d/1TihNPKfd1o_NB4UMDBNWg4iabb92wxjv0iRS0-gY0uc/edit" target="_blank" rel="noopener"><strong>Your first newsletter</strong><span>The warm hello email you approved. Ready to send once we have your list.</span></a>
+<a class="link" href="https://drive.google.com/drive/folders/1ysFX0Z1ODDOvNw6u6JCFZCWgl3tFR5yc" target="_blank" rel="noopener"><strong>Photo drop folder</strong><span>Drop job photos here as-is. No editing or logos needed.</span></a>
+</div>
+</section>
+
+<section id="report">
+<h2>Your first Google numbers</h2>
+<p>Search Console started collecting data for sunwestpainting.net on October 14, so this is our starting line. In the first 10 days (Oct 14-23), you showed up in Google <b>1,650 times</b> across <b>239 different searches</b>, and 7 people clicked through.</p>
+<p>The exciting part: Google is already showing you for searches like "painting company", "exterior painting company", "commercial painter" and "residential painter". Right now you're on page 4-5 for those, which is why few people click. The new pages we're building in November are made for exactly those searches, so this is the number we're working to move.</p>
+<div class="stats">
+<div class="stat"><b>1,650</b><span>times you showed up on Google (Oct 14-23)</span></div>
+<div class="stat"><b>239</b><span>different searches you appeared for</span></div>
+<div class="stat"><b>7</b><span>clicks to your website from Google</span></div>
+<div class="stat"><b>44.7</b><span>average spot on Google (page 4-5). Goal: page 1</span></div>
+</div>
+<p class="muted">Next month I'll set up a live report connected to your Google Analytics and Search Console, so you can check your numbers anytime.</p>
+</section>
+
+<section id="october">
+<h2>What we did in October</h2>
+<ul>
+<li>Organized the site into clear sections: Industries, Projects and Locations, each with its own page and menu</li>
+<li>8 new industry pages: HOAs, apartments, affordable housing, senior living, warehouses, offices, medical and commercial real estate (your property management page now sits with them)</li>
+<li>6 new project pages from the jobs you sent over: Tierra Encantada, Sunrise Terrace, Westmont, Swenson, a Saratoga pre-sale with Colin, and a Los Gatos Craftsman Victorian, next to America West</li>
+<li>A new <b>Request a Commercial Bid</b> form for property managers and businesses</li>
+<li>4 blog posts written for property managers, HOAs and realtors</li>
+<li>Every button now says "Get a Quote", and "Cabinet Refinishing" is now "Cabinet Painting"</li>
+<li>Sunwest spelled as one word everywhere, address and footer links fixed</li>
+<li>Photo descriptions added so Google can read your pictures</li>
+<li>Business card updated with license #807426 and print-ready for Vijay</li>
+</ul>
+</section>
+
+<section id="plan">
+<h2>The plan: November to January</h2>
+<p class="muted">Every month follows the same rhythm: new pages for the searches you already show up for, one blog a week, weekly Google posts, one email, and a monthly report.</p>
+
+<div class="month">
+<div class="month-hd"><h3>November</h3><span>Get found for your main services</span></div>
+<div class="month-bd">
+<p><b>Leads straight to you.</b> Quote and bid requests go to your inbox (I'll get a copy for the first 30 days to make sure nothing gets missed), with spam protection on both forms.</p>
+<p><b>New service pages:</b> Commercial Painting, Interior, Exterior, Cabinet Painting, and Deck &amp; Fence Staining, plus a Services page, About Us and a Testimonials page with your real Google and Yelp reviews.</p>
+<p><b>City pages:</b> Los Gatos, Saratoga and Campbell, each with a real local job.</p>
+<p><b>Google profile:</b> a personal reply to every review, and one post a week with your job photos.</p>
+<p><b>Email:</b> your first newsletter (the warm hello you approved).</p>
+<p><b>Blogs:</b> best time to paint your exterior in the Bay Area, what a commercial bid should include, cabinet painting vs. replacing, and planning a repaint budget for property managers.</p>
+</div>
+</div>
+
+<div class="month">
+<div class="month-hd"><h3>December</h3><span>Fill the winter with interior work</span></div>
+<div class="month-bd">
+<p><b>New pages:</b> Historic Home Restoration, Industrial Painting, Color Consultation, an FAQ page, Safety &amp; Certifications, and a Church painting page (VIVE).</p>
+<p><b>City pages:</b> Palo Alto, Cupertino, Morgan Hill, Milpitas and Gilroy.</p>
+<p><b>Email:</b> a holiday thank-you that invites people to book January interior work. You mentioned account work keeps the winter steady, so this is the time to remind everyone.</p>
+<p><b>Report:</b> November numbers + your live report link.</p>
+</div>
+</div>
+
+<div class="month">
+<div class="month-hd"><h3>January</h3><span>Property managers plan their year</span></div>
+<div class="month-bd">
+<p><b>New pages:</b> Pressure Washing, Wallpaper Removal, After-Hours Commercial Painting, plus Sunnyvale, Santa Clara and Mountain View.</p>
+<p><b>Email:</b> "Plan your property's repaint for the year" for property managers, HOAs and commercial clients, with the bid form.</p>
+<p><b>Report:</b> December numbers and a Q1 check-in.</p>
+</div>
+</div>
+</section>
+
+<section id="email-text">
+<h2>Email + text marketing</h2>
+<p>One email a month, each with one job: say hello, show a recent project, or ask people to book before the busy season. Your first one is already written and approved, so we can start as soon as we have your list.</p>
+<div class="rows">
+<div class="row"><div class="k">November</div><div><p>Newsletter #1: the warm hello and a little of the family story. No selling.</p></div></div>
+<div class="row"><div class="k">December</div><div><p>Holiday thank-you + "book your January interior project".</p></div></div>
+<div class="row"><div class="k">January</div><div><p>Repaint planning for property managers and HOAs, with one project spotlight.</p></div></div>
+<div class="row"><div class="k">Text</div><div><p>Texts only go to customers who've said yes to texts. One short note a quarter works best, like "We have a few January interior openings". If you already text customers, I can write these for you.</p></div></div>
+</div>
+</section>
+
+<section id="monthly-hour">
+<h2>One hour a month together</h2>
+<p>To keep the site and Google profile full of real work, I'd love one hour with you each month. I come in with everything prepared, you bring the stories and photos, and I take it from there.</p>
+<ol class="steps">
+<li><div><b>Quick wins (10 min).</b> Leads that came in, new reviews, what's working.</div></li>
+<li><div><b>Jobs this month (25 min).</b> 3-5 recent jobs: city, type of property, what you did, and anything tricky you solved. Photos if you have them, and whether the client is OK being named.</div></li>
+<li><div><b>What's coming up (15 min).</b> Slow weeks you want to fill, offers, events, new partners like Colin.</div></li>
+<li><div><b>Approvals (10 min).</b> I'll show you the next month's pages, Google posts and email so you can OK them on the spot.</div></li>
+</ol>
+<div class="note">That one hour gives us the photos and stories for 4 Google posts, 4 blogs, 1 email and the new project pages each month.</div>
+</section>
+
+<section id="contact">
+<h2>Direct access to me</h2>
+<div class="contact">
+<div><b>Call or text</b><span>(408) 710-6718</span></div>
+<div><b>Email</b><span>daisy@kaizenagency.org</span></div>
+</div>
+</section>
+
+<section id="need">
+<h2>What I need from you</h2>
+<ol class="need">
+<li><div><b>Leads:</b> OK to send website leads straight to denise@sunwestpainting.net? And can we set up a website@ address (or access to your Google Workspace) so the site sends email from your domain and doesn't land in spam?</div></li>
+<li><div><b>Photos:</b> 4-6 photos each for Tierra Encantada, Sunrise Terrace, Swenson and the Los Gatos home. Drop them in the <a href="https://drive.google.com/drive/folders/1ysFX0Z1ODDOvNw6u6JCFZCWgl3tFR5yc" target="_blank" rel="noopener">photo folder</a> as-is.</div></li>
+<li><div><b>Instagram jobs:</b> a few details on VIVE church, the Rose Garden office building, the townhome community and the Queen Anne Victorian (city, scope, OK to name the client?).</div></li>
+<li><div><b>Your email list:</b> where your customer emails live today (QuickBooks, Gmail contacts, a spreadsheet) so we can send newsletter #1. And do you text customers today?</div></li>
+<li><div><b>Phone number:</b> is 408-623-1603 the one number you want everywhere? We found a few different ones on listings.</div></li>
+<li><div><b>Google profile:</b> if I'm not a manager on your Google Business Profile yet, can you add daisy@kaizenagency.org so I can reply to reviews and post weekly?</div></li>
+</ol>
+</section>
+
+</div>
+<footer>
+If there's something you want moved up the list, just say the word!<br>
+Daisy · Kaizen Agency
+</footer>
+</div></div>
+</body>
+</html>
