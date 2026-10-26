@@ -1,6 +1,6 @@
 # Adapt — November 2026 Calendar
 
-**D** = Daisy · **B** = Basil · **Post** = scheduled Instagram post. Basil writes and publishes the site work and the email himself — no waiting on Daisy. His "done" dates are 1–2 days before go-live so there's time to talk anything through. Daisy sends social and the email to Dr. Mike for approval.
+**D** = Daisy · **B** = Basil · **Post** = scheduled Instagram post · pink = Basil has something due that day. Basil writes and publishes the site work and the email himself — no waiting on Daisy. His "done" dates are 1–2 days before go-live so there's time to talk anything through. Daisy sends social and the email to Dr. Mike for approval.
 
 | Week of | Mon | Tue | Wed | Thu | Fri |
 | --- | --- | --- | --- | --- | --- |
