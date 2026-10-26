@@ -4,7 +4,7 @@
 
 | Week of | Mon | Tue | Wed | Thu | Fri |
 | --- | --- | --- | --- | --- | --- |
-| Oct 26 | — | **Shoot** with Dr. Mike + Dr. Kyndra (D) | Edit batch 1 (D) | Batch 1 ready · Search Console pull (D) | Batch 1 to Dr. Mike (D) · page copy written, to developer (B) · **email draft due Sat Oct 31** (B) |
+| Oct 26 | — | **Shoot** with Dr. Mike + Dr. Kyndra (D) | Edit batch 1 (D) | Batch 1 ready · Search Console pull (D) | Batch 1 to Dr. Mike (D) · page copy written (B) · **email draft due Sat Oct 31** (B) |
 | Nov 2 | Schedule batch 1 · email to Dr. Mike (D) · shockwave refresh done (B) | **Post:** What makes you different? | Shockwave page **live** (B) | **Post:** Rock, paper, scissors · shockwave blog done (B) | Batch 2 ready (D) · tennis elbow page built (B) |
 | Nov 9 | **Post:** Things I don't care about · batch 2 to Dr. Mike (D) · hub refresh done · shockwave blog **published** (B) | Schedule batch 2 (D) · tennis elbow page **live** (B) | **Post:** 5 pains rest won't fix | **Email sends** · hub **live** · elbow blog done (B) | **Post:** 4 red flags · Achilles page built (B) |
 | Nov 16 | **Post:** Desk check-in · elbow blog **published** (B) | Achilles page **live** (B) | **Post:** Oreo spine carousel | Achilles blog done (B) | **Post:** Sleeping positions |
@@ -13,9 +13,11 @@
 
 ## Basil's calendar
 
+**Done vs. live:** "Done" means the work is finished and ready to go. "Live," "Publish" and "Send" mean it's actually on the site or out the door. Aim to finish 1–2 days before the live date in case you want to talk anything through. Finishing and publishing on the same day is fine too — just make sure it actually goes live.
+
 | Date | What | Step |
 | --- | --- | --- |
-| Fri Oct 30 | Tennis elbow + Achilles page copy written, handed to the developer | Done |
+| Fri Oct 30 | Tennis elbow + Achilles page copy written | Done |
 | Sat Oct 31 | Email "Still hurting after the season?" drafted in TDC | Done (Daisy sends to Dr. Mike Mon Nov 2) |
 | Mon Nov 2 | Shockwave page refresh | Done |
 | Wed Nov 4 | Shockwave page refresh | Live |
@@ -36,7 +38,7 @@
 
 ## Basil's checklist
 
-- [ ] Tennis elbow + Achilles page copy written and handed to the developer (Fri Oct 30)
+- [ ] Tennis elbow + Achilles page copy written (Fri Oct 30)
 - [ ] Shockwave page refresh live (FAQs, what a session feels like, conditions it helps, links to the tendon pages, B-roll stills from the shoot)
 - [ ] Sports injury hub refresh live (links to every injury page, shockwave and sports rehab)
 - [ ] Tennis elbow page built and live
