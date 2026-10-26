@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunwest Painting Brand Deck</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ember-50:#FCF3ED;--ember-100:#F8E2D3;--ember-200:#F1C4A7;--ember-300:#EAA77B;--ember-400:#E58F57;
+  --ember-500:#E07B39;--ember-600:#C25F1E;--ember-700:#9F4E19;--ember-800:#7B3C13;--ember-900:#582B0E;
+  --sun-50:#FEF9EC;--sun-100:#FCF1CF;--sun-200:#FAE39E;--sun-300:#F7D56E;--sun-400:#F5C947;
+  --sun-500:#F5C842;--sun-600:#D5A20B;--sun-700:#AE8509;--sun-800:#886707;--sun-900:#614A05;
+  --ink-900:#111111;--ink-700:#333333;--ink-500:#515151;--ink-300:#8A8A8A;--ink-100:#E3E1DD;--ink-50:#F4F3F0;
+  --grad:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#2a2a2a;color:var(--ink-900);font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ember-700)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun-500);outline-offset:3px}
+
+/* ---------- slide frame ---------- */
+.deck{display:flex;flex-direction:column;align-items:center;gap:28px;padding:28px 0 90px}
+.slide{position:relative;width:min(96vw,calc((100vh - 56px) * 16 / 9));aspect-ratio:16/9;overflow:hidden;
+  background:#fff;container-type:inline-size;scroll-snap-align:center;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.in{position:absolute;inset:0;padding:6.5cqw 7cqw}
+.label{position:absolute;left:7cqw;top:5cqw;font-family:'Outfit',system-ui,sans-serif;font-weight:400;font-size:1.05cqw;letter-spacing:.32em;text-transform:uppercase;margin:0}
+.foot{position:absolute;left:7cqw;bottom:4cqw;font-size:.95cqw;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-300);font-family:'Outfit',system-ui,sans-serif}
+.pg{position:absolute;right:4cqw;bottom:4cqw;font-family:'Outfit',system-ui,sans-serif;font-size:.95cqw;color:var(--ink-300)}
+.dark{background:var(--ink-900);color:#fff}
+.dark .label{color:var(--sun-400)}
+.grad{background:var(--grad)}
+.paper{background:var(--ink-50)}
+h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;margin:0;letter-spacing:-.02em}
+p{margin:0}
+
+/* cover */
+.cover h1{font-weight:300;font-size:9cqw;line-height:.95;letter-spacing:.01em;position:absolute;left:7cqw;top:30%}
+.cover .sub{position:absolute;left:7.3cqw;top:63%;font-family:'Outfit',system-ui,sans-serif;letter-spacing:.6em;font-size:1.4cqw;color:#C9C7C2}
+.cover .bar{position:absolute;left:0;right:0;bottom:0;height:1.6cqw;background:var(--grad)}
+.cover .mark{position:absolute;right:7cqw;bottom:6cqw;font-family:'Outfit',system-ui,sans-serif;font-size:1.1cqw;letter-spacing:.3em;color:#8A8A8A}
+
+/* statement */
+.statement h2{position:absolute;left:7cqw;top:14%;font-weight:900;font-size:5.4cqw;line-height:1;max-width:72cqw}
+.pillars{position:absolute;left:7cqw;right:7cqw;bottom:10cqw;display:grid;grid-template-columns:repeat(4,1fr);gap:3cqw}
+.pillars div{font-size:1.45cqw;line-height:1.35;color:var(--ink-700)}
+.pillars div b{display:block;font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;font-weight:700;color:var(--ink-900);font-size:1.6cqw;margin-bottom:.4cqw}
+.pillars div::after{content:'';display:block;width:2cqw;height:.25cqw;background:var(--ember-500);margin-top:1.2cqw}
+
+/* who */
+.who{display:grid;grid-template-columns:1.1fr 1fr;height:100%}
+.who .l{padding:12cqw 5cqw 6cqw 7cqw}
+.who .l h2{font-weight:900;font-size:4.2cqw;line-height:1}
+.who .l p{font-size:1.45cqw;line-height:1.55;color:var(--ink-700);margin-top:2.4cqw;max-width:42cqw}
+.who .r{background:var(--ink-900);color:#fff;display:grid;grid-template-rows:repeat(4,1fr)}
+.who .r div{border-bottom:1px solid #2b2b2b;padding:0 4cqw;display:flex;align-items:center;gap:2.5cqw}
+.who .r b{font-family:'Outfit',system-ui,sans-serif;font-weight:900;font-size:4cqw;min-width:17cqw;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.who .r span{font-size:1.3cqw;color:#C9C7C2;line-height:1.35}
+
+/* logo */
+.logo-main{display:flex;align-items:center;justify-content:center;height:100%}
+.logo-main img{width:44cqw;max-height:50%;object-fit:contain}
+.ph{border:2px dashed var(--ink-300);color:var(--ink-500);font-size:1.4cqw;display:flex;align-items:center;justify-content:center;text-align:center;padding:2cqw}
+.logo-main .ph{width:44cqw;height:14cqw}
+.vars{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;height:100%}
+.vars>div{display:flex;align-items:center;justify-content:center;position:relative}
+.vars img{width:60%;max-height:55%;object-fit:contain}
+.vars .tag{position:absolute;left:2.5cqw;bottom:2cqw;font-family:'Outfit',system-ui,sans-serif;font-size:1cqw;letter-spacing:.24em;text-transform:uppercase}
+.vars .v1{background:#fff}.vars .v2{background:var(--ink-900)}.vars .v3{background:var(--grad)}.vars .v4{background:var(--ink-50)}
+.vars .v2 img{filter:brightness(0) invert(1)}.vars .v3 img,.vars .v4 img{filter:brightness(0)}
+.vars .v2 .tag{color:#C9C7C2}.vars .v1 .tag,.vars .v3 .tag,.vars .v4 .tag{color:var(--ink-700)}
+
+/* palette */
+.pal{display:grid;grid-template-columns:2.3fr 1.3fr 1.3fr 1.1fr 1fr;height:100%}
+.pal>div{position:relative;padding:3cqw 2.2cqw}
+.pal .meta{position:absolute;left:2.2cqw;bottom:3.4cqw;font-family:'Outfit',system-ui,sans-serif;font-size:1.05cqw;letter-spacing:.16em;text-transform:uppercase;line-height:1.7}
+.pal .split{display:grid;grid-template-rows:1fr 1fr;padding:0}
+.pal .split>div{position:relative}
+.pal .label{left:2.2cqw;top:3cqw}
+
+/* gradient */
+.gradslide .big{position:absolute;left:7cqw;bottom:18%;font-family:'Outfit',system-ui,sans-serif;font-weight:900;text-transform:uppercase;font-size:7cqw;line-height:.95}
+.gradslide .code{position:absolute;left:7cqw;bottom:11%;font-size:1.3cqw;color:rgba(17,17,17,.75)}
+.gradslide ul{position:absolute;right:7cqw;top:18%;width:32cqw;margin:0;padding:0;list-style:none}
+.gradslide li{font-size:1.4cqw;line-height:1.45;padding:1.1cqw 0;border-top:1px solid rgba(17,17,17,.2)}
+.gradslide .label{color:var(--ink-900)}
+
+/* ramps */
+.ramps{position:absolute;left:7cqw;right:7cqw;top:14cqw}
+.ramp-row{margin-bottom:3.2cqw}
+.ramp-row h3{font-weight:700;font-size:1.8cqw;margin-bottom:1cqw}
+.ramp-row h3 span{font-family:'Poppins',system-ui,sans-serif;text-transform:none;font-weight:400;color:var(--ink-300);font-size:1.2cqw;letter-spacing:0;margin-left:1cqw}
+.ramp{display:grid;grid-template-columns:repeat(10,1fr);height:6cqw}
+.ramp div{display:flex;align-items:flex-end;padding:.6cqw;font-size:.85cqw;font-family:'Outfit',system-ui,sans-serif}
+.rule-note{position:absolute;left:7cqw;bottom:6cqw;font-size:1.35cqw;color:var(--ink-700);max-width:70cqw}
+
+/* type */
+.spec{position:absolute;left:7cqw;right:7cqw;top:12cqw}
+.spec .abc{font-size:2.3cqw;letter-spacing:.05em;color:var(--ink-900)}
+.spec .num{font-size:5cqw;margin-top:1cqw}
+.spec .huge{font-size:11cqw;line-height:1;border-top:1px solid var(--ink-100);border-bottom:1px solid var(--ink-100);margin-top:2cqw;padding:.6cqw 0;display:flex;justify-content:space-between;align-items:center}
+.spec .huge small{font-family:'Poppins',system-ui,sans-serif;font-size:1.3cqw;text-align:right;line-height:1.45;color:var(--ink-500);font-weight:400;text-transform:none;letter-spacing:0}
+.spec .weights{display:flex;gap:4cqw;margin-top:2cqw;font-size:1.6cqw}
+.outfit{font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase}
+.poppins{font-family:'Poppins'}
+.scale{position:absolute;left:7cqw;right:7cqw;top:12cqw}
+.scale>div{display:grid;grid-template-columns:18cqw 1fr;align-items:baseline;border-top:1px solid var(--ink-100);padding:1.5cqw 0}
+.scale .k{font-size:1.1cqw;color:var(--ink-300)}
+.scale .k b{display:block;color:var(--ink-900);font-weight:600;font-size:1.25cqw}
+
+/* buttons */
+.btns{position:absolute;left:7cqw;right:7cqw;top:16cqw;display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+.btnpanel{padding:3.5cqw;display:flex;flex-direction:column;gap:2cqw;align-items:flex-start}
+.btnpanel.d{background:var(--ink-900)}
+.btn{font-family:'Poppins',system-ui,sans-serif;font-weight:700;text-transform:uppercase;font-size:1.45cqw;padding:1.3cqw 3cqw;border-radius:2.4cqw;display:inline-block;border:none}
+.b1{background:var(--grad);color:var(--ink-900)}
+.b2{background:var(--ember-700);color:#fff}
+.b3{border:.15cqw solid var(--ember-600);color:var(--ember-700)}
+.b4{border:.15cqw solid var(--sun-400);color:var(--sun-400)}
+.btnrules{position:absolute;left:7cqw;right:7cqw;bottom:6cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw;font-size:1.3cqw;color:var(--ink-700);line-height:1.45}
+.btnrules b{color:var(--ink-900)}
+
+/* voice */
+.voice{display:grid;grid-template-columns:1fr 1fr;height:100%}
+.voice .l{background:var(--ink-900);color:#fff;padding:12cqw 5cqw 6cqw 7cqw}
+.voice .l h2{font-weight:900;font-size:3.7cqw;line-height:1.02}
+.voice .l p{color:#C9C7C2;font-size:1.4cqw;line-height:1.55;margin-top:2.4cqw}
+.voice .l .spell{margin-top:3cqw;padding-top:2cqw;border-top:1px solid #333;font-size:1.25cqw}
+.voice .r{padding:8cqw 6cqw 5cqw 5cqw;display:flex;flex-direction:column;gap:2.4cqw}
+.voice h3{font-size:1.5cqw;font-weight:700}
+.voice ul{margin:.8cqw 0 0;padding:0;list-style:none}
+.voice li{font-size:1.3cqw;line-height:1.4;padding:.7cqw 0 .7cqw 2.2cqw;position:relative;color:var(--ink-700);border-bottom:1px solid var(--ink-100)}
+.voice li::before{content:'';position:absolute;left:0;top:1.4cqw;width:1.2cqw;height:.22cqw}
+.voice .yes li::before{background:#0B7A0B}.voice .no li::before{background:#C42B2B}
+
+/* audiences / services */
+.two{position:absolute;left:7cqw;right:7cqw;top:14cqw;display:grid;grid-template-columns:1fr 1fr;gap:5cqw}
+.two h3{font-weight:900;font-size:3cqw;margin-bottom:1.6cqw}
+.two ul{margin:0;padding:0;list-style:none}
+.two li{font-size:1.4cqw;line-height:1.4;padding:1cqw 0;border-top:1px solid var(--ink-100);color:var(--ink-700)}
+.two li b{color:var(--ink-900);font-weight:600}
+.dark .two li{border-color:#2f2f2f;color:#C9C7C2}.dark .two li b{color:#fff}
+.dark .two h3{color:#fff}
+.bottomline{position:absolute;left:7cqw;right:7cqw;bottom:5.5cqw;font-size:1.3cqw;color:var(--ink-500)}
+.dark .bottomline{color:#8A8A8A}
+
+/* funnel */
+.funnel{position:absolute;left:7cqw;right:7cqw;top:13cqw;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4cqw}
+.stage{padding:2cqw 1.8cqw;min-height:24cqw;display:flex;flex-direction:column}
+.stage h3{font-weight:900;font-size:2.1cqw;line-height:1}
+.stage .goal{font-size:1.15cqw;margin:.8cqw 0 1.4cqw;opacity:.8}
+.stage ul{margin:0;padding:0;list-style:none}
+.stage li{font-size:1.15cqw;line-height:1.35;padding:.55cqw 0;border-top:1px solid rgba(17,17,17,.15)}
+.s1{background:var(--sun-200)}.s2{background:var(--sun-400)}.s3{background:var(--ember-500)}
+.s4{background:var(--ink-900);color:#fff}.s4 li{border-color:#333}
+.funnel-note{position:absolute;left:7cqw;right:7cqw;bottom:4.5cqw;font-size:1.25cqw;color:var(--ink-700)}
+
+/* photo */
+.photo{display:grid;grid-template-columns:1fr 1fr;height:100%}
+.photo .l{padding:12cqw 5cqw 6cqw 7cqw}
+.photo .l h2{font-weight:900;font-size:3.8cqw;line-height:1}
+.photo .l p{font-size:1.4cqw;line-height:1.55;color:var(--ink-700);margin-top:2.2cqw}
+.photo .r{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.shot{position:relative;padding:2cqw;display:flex;align-items:flex-end;font-size:1.25cqw;line-height:1.35}
+.shot b{display:block;font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;font-size:1.6cqw;margin-bottom:.3cqw}
+.sh1{background:linear-gradient(90deg,#B9B4AA 50%,#F4F3F0 50%)}
+.sh2{background:var(--ink-900);color:#fff}
+.sh3{background:var(--ember-100)}
+.sh4{background:#3a3a3a;color:#fff}
+.sh1 span{background:rgba(255,255,255,.85);padding:1cqw;display:block}
+
+/* print */
+.mock{position:absolute;left:7cqw;right:7cqw;top:10cqw;display:grid;grid-template-columns:32cqw 13cqw 24cqw;gap:6cqw;align-items:end}
+.card{aspect-ratio:3.5/2;background:#fff;position:relative;box-shadow:0 1cqw 2.5cqw rgba(0,0,0,.18);padding:2cqw}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1cqw;background:var(--grad)}
+.card .n{font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;font-weight:900;font-size:2cqw}
+.card .t{font-size:1.05cqw;color:var(--ink-500);margin-top:.3cqw}
+.card .c{position:absolute;left:3cqw;bottom:2cqw;font-size:1cqw;line-height:1.5}
+.hanger{aspect-ratio:1/2.1;background:#fff;box-shadow:0 1cqw 2.5cqw rgba(0,0,0,.18);position:relative;overflow:hidden}
+.hanger .hole{width:3.2cqw;height:3.2cqw;border-radius:50%;background:var(--ink-50);margin:1.2cqw auto}
+.hanger .hd{background:var(--grad);padding:1cqw;font-family:'Outfit',system-ui,sans-serif;font-weight:900;text-transform:uppercase;font-size:1.15cqw;line-height:1.05}
+.hanger .ba{display:grid;grid-template-columns:1fr 1fr;height:7cqw}
+.hanger .ba div{display:flex;align-items:flex-end;padding:.5cqw;font-size:.8cqw;color:#fff}
+.hanger .ph2{font-size:.85cqw;padding:.9cqw 1cqw;line-height:1.5}
+.yard{aspect-ratio:1.4/1;background:var(--sun-500);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;box-shadow:0 1cqw 2.5cqw rgba(0,0,0,.18)}
+.yard b{font-family:'Outfit',system-ui,sans-serif;font-weight:900;text-transform:uppercase;font-size:2.6cqw}
+.yard span{font-family:'Outfit',system-ui,sans-serif;font-weight:700;font-size:2cqw}
+.mockcap{font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;font-size:1cqw;letter-spacing:.2em;color:var(--ink-500);margin-top:1.2cqw}
+.print-rules{position:absolute;left:7cqw;right:7cqw;bottom:5cqw;display:grid;grid-template-columns:repeat(4,1fr);gap:2.5cqw;font-size:1.15cqw;line-height:1.45;color:var(--ink-700)}
+.print-rules b{display:block;color:var(--ink-900);font-weight:600}
+
+/* links */
+.links{position:absolute;left:7cqw;right:7cqw;top:15cqw;display:grid;grid-template-columns:1fr 1fr;gap:1.6cqw 4cqw}
+.links a{display:block;text-decoration:none;color:#fff;border-top:1px solid #333;padding:1.5cqw 0}
+.links a b{display:block;font-family:'Outfit',system-ui,sans-serif;text-transform:uppercase;font-size:2cqw;font-weight:700}
+.links a span{font-size:1.15cqw;color:#8A8A8A}
+.links a:hover b{color:var(--sun-400)}
+.end{position:absolute;left:7cqw;bottom:6cqw;font-family:'Outfit',system-ui,sans-serif;font-weight:300;font-size:2.4cqw;letter-spacing:.04em}
+
+/* nav */
+.nav{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:5}
+.nav button{font-family:'Poppins',system-ui,sans-serif;font-weight:600;font-size:14px;border:none;border-radius:22px;padding:10px 16px;background:#fff;color:#111;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.nav .count{background:#111;color:#fff;cursor:default}
+
+/* phone: drop the fixed 16:9 frame, let slides grow */
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  .deck{gap:14px;padding:14px 0 80px}
+  .slide{width:calc(100vw - 32px);aspect-ratio:auto;min-height:0}
+  .in{position:relative;inset:auto;padding:56px 20px 44px}
+  .label{left:20px;top:20px;font-size:10px}
+  .foot,.pg{font-size:10px}
+  .foot{position:static;display:block;padding:12px 20px 40px;line-height:1.6}.pg{right:16px;bottom:14px}
+  .scale>div>p{max-width:none!important}
+  .cover{min-height:70vw}
+  .cover h1{position:static;font-size:44px;padding:110px 20px 0}
+  .cover .sub{position:static;font-size:12px;padding:14px 20px 60px}
+  .cover .bar{height:8px}.cover .mark{font-size:10px;right:20px;bottom:24px}
+  .statement h2{position:static;font-size:30px;padding:60px 20px 0}
+  .pillars{position:static;grid-template-columns:1fr 1fr;gap:18px;padding:28px 20px 50px}
+  .pillars div{font-size:13px}.pillars div b{font-size:14px}.pillars div::after{width:20px;height:2px;margin-top:10px}
+  .who,.voice,.photo{grid-template-columns:1fr;height:auto}
+  .who .l,.voice .l,.photo .l{padding:56px 20px 28px}
+  .who .l h2,.voice .l h2,.photo .l h2{font-size:26px}
+  .who .l p,.voice .l p,.photo .l p{font-size:14px;max-width:none}
+  .who .r div{padding:16px 20px;gap:16px}.who .r b{font-size:28px;min-width:110px}.who .r span{font-size:13px}
+  .logo-main{height:auto;padding:80px 20px}.logo-main img{width:80%}.logo-main .ph{width:100%;height:120px;font-size:13px}
+  .vars{height:auto;grid-template-rows:none}.vars>div{min-height:130px}.vars .tag{font-size:9px;left:12px;bottom:10px}
+  .pal{grid-template-columns:1fr;height:auto}.pal>div{min-height:90px}.pal .meta{font-size:10px;position:static;padding-top:30px}
+  .pal .split>div{min-height:90px;padding:14px 20px}
+  .gradslide .big,.gradslide .code,.gradslide ul,.ramps,.rule-note,.spec,.scale,.btns,.btnrules,.two,.bottomline,.funnel,.funnel-note,.mock,.print-rules,.links,.end{position:static}
+  .gradslide{padding:60px 20px 40px}.gradslide .big{font-size:34px}.gradslide .code{font-size:12px;margin-top:8px}
+  .gradslide ul{width:auto;margin-top:22px}.gradslide li{font-size:14px;padding:10px 0}
+  .ramps,.spec,.scale,.btns,.two,.funnel,.mock,.links{padding:56px 20px 0}
+  .ramp-row h3{font-size:16px}.ramp-row h3 span{font-size:12px}.ramp{grid-template-columns:repeat(5,1fr);height:auto}.ramp div{height:44px;font-size:10px}
+  .rule-note,.bottomline,.funnel-note{padding:12px 20px 44px;font-size:13px}
+  .spec .abc{font-size:15px}.spec .num{font-size:28px}.spec .huge{font-size:56px}.spec .huge small{font-size:11px}.spec .weights{font-size:14px;flex-wrap:wrap;gap:14px;padding-bottom:44px}
+  .scale>div{grid-template-columns:1fr;gap:6px;padding:12px 0}.scale .k{font-size:11px}.scale .k b{font-size:13px}
+  .scale>div>p{font-size:min(var(--m),9vw)!important}
+  .btns{grid-template-columns:1fr}.btnpanel{padding:20px;gap:12px}.btn{font-size:13px;padding:12px 24px;border-radius:24px}
+  .b3,.b4{border-width:1.5px}
+  .btnrules{grid-template-columns:1fr;gap:10px;padding:20px 20px 44px;font-size:13px}
+  .voice .r{padding:28px 20px 44px;gap:18px}.voice h3{font-size:15px}.voice li{font-size:13px;padding:8px 0 8px 20px}.voice li::before{top:15px;width:11px;height:2px}
+  .voice .l .spell{font-size:13px}
+  .two{grid-template-columns:1fr;gap:24px}.two h3{font-size:22px}.two li{font-size:13px;padding:9px 0}
+  .funnel{grid-template-columns:1fr;gap:10px}.stage{min-height:0;padding:18px}.stage h3{font-size:20px}.stage .goal,.stage li{font-size:13px}
+  .photo .r{grid-template-rows:none}.shot{min-height:140px;padding:14px;font-size:12px}.shot b{font-size:14px}.sh1 span{padding:8px}
+  .mock{grid-template-columns:1fr 1fr;gap:16px}.mock>div:first-child{grid-column:1/-1}
+  .card{padding:16px}.card::before{width:8px}.card .n{font-size:18px}.card .t{font-size:11px}.card .c{font-size:10px;left:24px;bottom:14px}
+  .hanger .hole{width:28px;height:28px;margin:10px auto}.hanger .hd{font-size:12px;padding:8px}.hanger .ba{height:70px}.hanger .ba div{font-size:9px}.hanger .ph2{font-size:9px;padding:8px}
+  .yard b{font-size:18px}.yard span{font-size:14px}.mockcap{font-size:9px}
+  .print-rules{grid-template-columns:1fr 1fr;gap:12px;padding:24px 20px 44px;font-size:12px}
+  .links{grid-template-columns:1fr;gap:4px}.links a{padding:12px 0}.links a b{font-size:16px}.links a span{font-size:12px}
+  .end{padding:28px 20px 50px;font-size:20px}
+  .nav{right:12px;bottom:12px}.nav button{font-size:12px;padding:8px 12px}
+}
+@media print{
+  html{scroll-snap-type:none}body{background:#fff}.nav{display:none}
+  .deck{padding:0;gap:0}.slide{width:100vw;box-shadow:none;break-after:page}
+  @page{size:landscape;margin:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<main class="deck" id="deck">
+
+<!-- 1 cover -->
+<section class="slide dark cover" aria-label="Cover">
+  <h1>Sunwest<br>Painting</h1>
+  <p class="sub">Branding</p>
+  <p class="mark">Kaizen Agency</p>
+  <div class="bar"></div>
+</section>
+
+<!-- 2 statement -->
+<section class="slide statement" aria-label="Brand statement">
+  <p class="label" style="color:var(--ember-700)">Brand guidelines</p>
+  <h2>A professional painting company, not a crew with a truck.</h2>
+  <div class="pillars">
+    <div><b>Craft</b>Trim, doors, custom homes and historic restorations. Work that holds up to a close look.</div>
+    <div><b>Communication</b>Prep checklists, updates during the job, a final walkthrough and sign-off.</div>
+    <div><b>Credentials</b>CSLB #807426. Licensed, bonded, insured. EPA RRP certified.</div>
+    <div><b>Family-owned</b>In San Jose since 2001, with multiple crews out of one shop.</div>
+  </div>
+  <span class="pg">02</span>
+</section>
+
+<!-- 3 who -->
+<section class="slide" aria-label="Who Sunwest is">
+  <div class="who">
+    <div class="l">
+      <p class="label" style="color:var(--ember-700)">Who we are</p>
+      <h2>Family-owned painters in San Jose</h2>
+      <p>Sunwest paints high-end homes and large commercial and institutional properties from one shop. Denise runs sales, her parents run project management and the books.</p>
+      <p>Sunwest is not the cheapest bid, often $3,000 to $5,000 above it on a home. The brand's job is to make that gap feel like the reason to choose them.</p>
+    </div>
+    <div class="r">
+      <div><b>2001</b><span>In business since</span></div>
+      <div><b>50/50</b><span>Residential and commercial</span></div>
+      <div><b>South Bay</b><span>San Jose base, serving the South Bay and Peninsula</span></div>
+      <div><b>#807426</b><span>CSLB license, EPA RRP certified</span></div>
+    </div>
+  </div>
+  <span class="pg">03</span>
+</section>
+
+<!-- 4 logo -->
+<section class="slide" aria-label="Logo">
+  <p class="label" style="color:var(--ember-700)">Logo</p>
+  <div class="logo-main">
+    <img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-5.svg" alt="Sunwest Painting logo" onerror="this.outerHTML='<div class=&quot;ph&quot;>Logo - pull from Brand Guide folder</div>'">
+  </div>
+  <p class="foot">Main usage. Give it clear space equal to the height of the S on every side.</p>
+  <span class="pg">04</span>
+</section>
+
+<!-- 5 logo variations -->
+<section class="slide" aria-label="Logo variations">
+  <div class="vars">
+    <div class="v1"><img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-5.svg" alt="Full color logo on white" onerror="this.outerHTML='<div class=&quot;ph&quot;>Logo - pull from Brand Guide folder</div>'"><span class="tag">Full color on white</span></div>
+    <div class="v2"><img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-5.svg" alt="White logo on Ink 900" onerror="this.outerHTML='<div class=&quot;ph&quot;>White logo</div>'"><span class="tag">White on Ink 900</span></div>
+    <div class="v3"><img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-5.svg" alt="Black logo on the Sunwest gradient" onerror="this.outerHTML='<div class=&quot;ph&quot;>Black logo</div>'"><span class="tag">Black on the gradient</span></div>
+    <div class="v4"><img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-5.svg" alt="One-color black logo" onerror="this.outerHTML='<div class=&quot;ph&quot;>One-color logo</div>'"><span class="tag">One color, for print and stamps</span></div>
+  </div>
+</section>
+
+<!-- 6 palette -->
+<section class="slide" aria-label="Color palette">
+  <div class="pal">
+    <div style="background:var(--ink-900);color:#fff"><p class="label" style="color:var(--sun-400)">Color palette</p><p class="meta">Ink 900<br>#111111<br>Headings, dark sections</p></div>
+    <div style="background:var(--ember-500)"><p class="meta">Ember 500<br>#E07B39<br>Brand orange, fills only</p></div>
+    <div style="background:var(--sun-500)"><p class="meta">Sun 500<br>#F5C842<br>Brand yellow, fills only</p></div>
+    <div style="background:var(--ember-700);color:#fff"><p class="meta">Ember 700<br>#9F4E19<br>Orange text and links</p></div>
+    <div class="split">
+      <div style="background:#fff"><p class="meta">White<br>#FFFFFF</p></div>
+      <div style="background:var(--ink-100)"><p class="meta">Ink 100<br>#E3E1DD</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 gradient -->
+<section class="slide grad gradslide" aria-label="The Sunwest gradient">
+  <p class="label">Signature</p>
+  <ul>
+    <li>Primary buttons, accent bars and section dividers.</li>
+    <li>Never a full-page background on the website.</li>
+    <li>Text on the gradient is always Ink 900. White text fails contrast (2.97:1). Near-black passes at 7.06:1.</li>
+  </ul>
+  <p class="big">The Sunwest<br>gradient</p>
+  <p class="code">linear-gradient(102.43deg, #F5C842 6.67%, #E07B39 107.96%)</p>
+</section>
+
+<!-- 8 ramps -->
+<section class="slide" aria-label="Color ramps">
+  <p class="label" style="color:var(--ember-700)">Full ramps</p>
+  <div class="ramps">
+    <div class="ramp-row"><h3>Ember<span>brand orange #E07B39</span></h3>
+      <div class="ramp">
+        <div style="background:#FCF3ED">50</div><div style="background:#F8E2D3">100</div><div style="background:#F1C4A7">200</div><div style="background:#EAA77B">300</div><div style="background:#E58F57">400</div><div style="background:#E07B39">500</div><div style="background:#C25F1E;color:#fff">600</div><div style="background:#9F4E19;color:#fff">700</div><div style="background:#7B3C13;color:#fff">800</div><div style="background:#582B0E;color:#fff">900</div>
+      </div></div>
+    <div class="ramp-row"><h3>Sun<span>brand yellow #F5C842</span></h3>
+      <div class="ramp">
+        <div style="background:#FEF9EC">50</div><div style="background:#FCF1CF">100</div><div style="background:#FAE39E">200</div><div style="background:#F7D56E">300</div><div style="background:#F5C947">400</div><div style="background:#F5C842">500</div><div style="background:#D5A20B">600</div><div style="background:#AE8509;color:#fff">700</div><div style="background:#886707;color:#fff">800</div><div style="background:#614A05;color:#fff">900</div>
+      </div></div>
+    <div class="ramp-row"><h3>Ink<span>neutrals</span></h3>
+      <div class="ramp" style="grid-template-columns:repeat(6,1fr)">
+        <div style="background:#111;color:#fff">900</div><div style="background:#333;color:#fff">700</div><div style="background:#515151;color:#fff">500</div><div style="background:#8A8A8A;color:#fff">300</div><div style="background:#E3E1DD">100</div><div style="background:#F4F3F0">50</div>
+      </div></div>
+  </div>
+  <p class="rule-note">Steps 400 and 500 are for fills. Use Ember 700 for orange text on white.</p>
+  <span class="pg">08</span>
+</section>
+
+<!-- 9 Outfit -->
+<section class="slide" aria-label="Display type: Outfit">
+  <p class="label" style="color:var(--ember-700)">Display type</p>
+  <div class="spec">
+    <p class="abc outfit">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+    <p class="num outfit" style="font-weight:300">0123456789</p>
+    <p class="huge outfit" style="font-weight:900">Outfit<small>Headlines, titles<br>and buttons.<br>Always uppercase,<br>tight tracking.</small></p>
+    <div class="weights outfit"><span style="font-weight:900">Black 900</span><span style="font-weight:700">Bold 700</span><span style="font-weight:400">Regular 400</span></div>
+  </div>
+  <span class="pg">09</span>
+</section>
+
+<!-- 10 Poppins + scale -->
+<section class="slide" aria-label="Body type and scale">
+  <p class="label" style="color:var(--ember-700)">Body type and scale</p>
+  <div class="scale">
+    <div><p class="k"><b>Hero</b>Outfit 900, 74px</p><p class="outfit" style="--m:30px;font-weight:900;font-size:4.6cqw;line-height:1">Painters in San Jose</p></div>
+    <div><p class="k"><b>Card title</b>Outfit 700, 26px</p><p class="outfit" style="--m:22px;font-weight:700;font-size:2.4cqw">Commercial painting</p></div>
+    <div><p class="k"><b>Lead</b>Poppins 600, 20px</p><p class="poppins" style="--m:17px;font-weight:600;font-size:1.9cqw">Trusted by property managers and contractors</p></div>
+    <div><p class="k"><b>Body</b>Poppins 400, 17px</p><p class="poppins" style="--m:15px;font-size:1.55cqw;line-height:1.45;max-width:58cqw">Detail-oriented painting for homes, businesses and commercial properties. Family-owned in San Jose since 2001.</p></div>
+  </div>
+  <p class="foot">Both fonts are free on Google Fonts. No license for vendors to buy.</p>
+  <span class="pg">10</span>
+</section>
+
+<!-- 11 buttons -->
+<section class="slide paper" aria-label="Buttons">
+  <p class="label" style="color:var(--ember-700)">Buttons</p>
+  <div class="btns">
+    <div class="btnpanel" style="background:#fff"><span class="btn b1">Request a quote</span><span class="btn b2">Get an estimate</span><span class="btn b3">View our projects</span></div>
+    <div class="btnpanel d"><span class="btn b1">Request a quote</span><span class="btn b4">View our projects</span></div>
+  </div>
+  <div class="btnrules">
+    <p><b>Primary.</b> Gradient fill, Ink 900 text, 28px radius. One per section.</p>
+    <p><b>Solid.</b> Ember 700 with white text, only when white text is needed.</p>
+    <p><b>Secondary.</b> Outline only. Never two primaries side by side.</p>
+  </div>
+  <span class="pg">11</span>
+</section>
+
+<!-- 12 voice -->
+<section class="slide" aria-label="Voice and tone">
+  <div class="voice">
+    <div class="l">
+      <p class="label">Voice and tone</p>
+      <h2>Direct, warm, and confident about price</h2>
+      <p>Sound like a family business that runs like a real company. Lead with the customer's problem, name the city, the building and the finish. "We're not the cheapest. Here's what that buys."</p>
+      <p class="spell">Always written <b style="color:#fff">Sunwest Painting</b>, one word with a capital S. Not "Sun West."</p>
+    </div>
+    <div class="r">
+      <div class="yes"><h3>Do</h3><ul>
+        <li>Be specific: Los Gatos Victorian, HOA exterior, after-hours office repaint</li>
+        <li>Show the prep, the checklist and the walkthrough</li>
+        <li>Use short hyphens, not long dashes</li>
+        <li>Use real photos of real Sunwest jobs</li>
+      </ul></div>
+      <div class="no"><h3>Don't</h3><ul>
+        <li>"Quality workmanship, satisfaction guaranteed"</li>
+        <li>Discounts, countdowns or fake urgency</li>
+        <li>Promise timelines to win a bid</li>
+        <li>Start every sentence with "we"</li>
+      </ul></div>
+    </div>
+  </div>
+  <span class="pg">12</span>
+</section>
+
+<!-- 13 audiences -->
+<section class="slide dark" aria-label="Who we talk to">
+  <p class="label">Who we talk to</p>
+  <div class="two">
+    <div><h3>Homeowners</h3><ul>
+      <li><b>Custom home owners</b> who value craft over the lowest price</li>
+      <li><b>Higher-end areas:</b> Los Gatos, Palo Alto, Los Altos, Saratoga</li>
+      <li><b>Pre-sale and vacant homes</b> that need a fast, clean interior</li>
+      <li><b>People burned by a cheaper painter</b> who want it done right</li>
+    </ul></div>
+    <div><h3>Commercial</h3><ul>
+      <li><b>Property managers</b> with multi-unit, repeat work</li>
+      <li><b>Facilities managers</b> with scheduled maintenance</li>
+      <li><b>General contractors</b> who need a reliable painting sub</li>
+      <li><b>HOA boards</b> on exterior refresh cycles</li>
+    </ul></div>
+  </div>
+  <p class="bottomline">Core area: San Jose, Santa Clara, Sunnyvale, Campbell, Los Gatos, Saratoga. Higher ticket: Palo Alto, Los Altos, Mountain View and up the Peninsula.</p>
+  <span class="pg">13</span>
+</section>
+
+<!-- 14 services -->
+<section class="slide" aria-label="Services to promote">
+  <p class="label" style="color:var(--ember-700)">What we promote</p>
+  <div class="two">
+    <div><h3 style="color:#0B7A0B">Promote</h3><ul>
+      <li>Residential interior and exterior painting</li>
+      <li>Commercial painting, all verticals</li>
+      <li>After-hours painting for occupied buildings</li>
+      <li>Historic home restoration in Palo Alto and Los Gatos</li>
+      <li>Epoxy floors, residential and warehouse</li>
+      <li>Color consultation</li>
+    </ul></div>
+    <div><h3 style="color:#C42B2B">Don't build pages for</h3><ul>
+      <li>Cabinet painting on its own</li>
+      <li>Popcorn ceiling or wallpaper removal</li>
+      <li>Pressure washing</li>
+      <li>Minor drywall repair on its own</li>
+      <li><b>Never:</b> full drywall installs or major texture work</li>
+    </ul></div>
+  </div>
+  <p class="bottomline">These are offered but low margin or high risk, so they stay off ads, pages and campaigns.</p>
+  <span class="pg">14</span>
+</section>
+
+<!-- 15 funnel -->
+<section class="slide" aria-label="The funnel">
+  <p class="label" style="color:var(--ember-700)">The funnel</p>
+  <div class="funnel">
+    <div class="stage s1"><h3>Get found</h3><p class="goal">Show up where neighbors and managers look</p><ul>
+      <li>Google Business Profile, weekly posts</li><li>Service, city and industry pages</li><li>Door hangers and yard signs at every job</li><li>EDDM mail to high-ticket routes</li></ul></div>
+    <div class="stage s2"><h3>Build trust</h3><p class="goal">Prove the craft before the call</p><ul>
+      <li>Project pages with real photos</li><li>Before and after pairs</li><li>Google reviews and owner replies</li><li>License, insurance and EPA RRP on every page</li></ul></div>
+    <div class="stage s3"><h3>Ask for the job</h3><p class="goal">One clear next step per page</p><ul>
+      <li>Request a quote form</li><li>Commercial bid request form</li><li>Call 408-623-1603</li><li>Thank-you page with what happens next</li></ul></div>
+    <div class="stage s4"><h3>Come back</h3><p class="goal">Turn every job into the next one</p><ul>
+      <li>Estimate follow-up by email and text</li><li>Review request after the walkthrough</li><li>Referral ask and monthly newsletter</li><li>Repaint reminder years later</li></ul></div>
+  </div>
+  <p class="funnel-note">Every piece of print gets a QR code and every form lands on the thank-you page, so each stage can be measured.</p>
+  <span class="pg">15</span>
+</section>
+
+<!-- 16 photography -->
+<section class="slide" aria-label="Photography">
+  <div class="photo">
+    <div class="l">
+      <p class="label" style="color:var(--ember-700)">Photography</p>
+      <h2>Real jobs, real crews, no stock</h2>
+      <p>Natural color, no heavy filters, straight verticals. Darken the photo behind text instead of outlining the type. Phone photos of real Sunwest work beat any stock library.</p>
+    </div>
+    <div class="r">
+      <div class="shot sh1"><span><b>Before and after</b>Same angle, same light</span></div>
+      <div class="shot sh2"><span><b>Detail</b>Cut lines, trim, clean edges</span></div>
+      <div class="shot sh3"><span><b>Crew at work</b>Branded gear, drop cloths down</span></div>
+      <div class="shot sh4"><span><b>Commercial scale</b>Lifts, facades, after-hours interiors</span></div>
+    </div>
+  </div>
+  <span class="pg">16</span>
+</section>
+
+<!-- 17 print -->
+<section class="slide paper" aria-label="Print">
+  <p class="label" style="color:var(--ember-700)">Print</p>
+  <div class="mock">
+    <div><div class="card"><p class="n">Sunwest Painting</p><p class="t">Denise Artache, Sales Director</p><p class="c">408-623-1603<br>sunwestpainting.net<br>CSLB #807426</p></div><p class="mockcap">Business card</p></div>
+    <div><div class="hanger"><div class="hole"></div><div class="hd">We're painting on your street</div><div class="ba"><div style="background:#8A8A8A">Before</div><div style="background:#515151">After</div></div><p class="ph2">Free estimates<br>408-623-1603<br>Scan for a quote</p></div><p class="mockcap">Door hanger</p></div>
+    <div><div class="yard"><b>Sunwest</b><span>408-623-1603</span></div><p class="mockcap">Yard sign</p></div>
+  </div>
+  <div class="print-rules">
+    <p><b>One headline per piece</b>Read in three seconds.</p>
+    <p><b>Gradient edge bar</b>On cards, flyers and folders.</p>
+    <p><b>QR on everything</b>Each piece gets its own landing page.</p>
+    <p><b>9pt minimum</b>For body copy in print.</p>
+  </div>
+  <span class="pg">17</span>
+</section>
+
+<!-- 18 links -->
+<section class="slide dark" aria-label="Where files live">
+  <p class="label">Where files live</p>
+  <div class="links">
+    <a href="https://drive.google.com/drive/folders/1C-wgpoiZN5uDQh67xiZ_Nbgevh3rU9Kz" target="_blank" rel="noopener"><b>Sunwest Drive folder</b><span>Docs, sitemap hub, photos, designs</span></a>
+    <a href="https://drive.google.com/drive/folders/1qIDSttc_D3T9AdUNIadtt4DrJMvEKsB0" target="_blank" rel="noopener"><b>Brand Guide folder</b><span>Logo files and brand assets</span></a>
+    <a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver" target="_blank" rel="noopener"><b>Figma designs</b><span>Website page designs</span></a>
+    <a href="https://daisypine.github.io/kaizenagency/sunwest-painting/overview.html" target="_blank" rel="noopener"><b>Full brand guide</b><span>Every spec, token and rule in detail</span></a>
+  </div>
+  <p class="end">Sunwest Painting, since 2001.</p>
+  <div class="cover" style="position:absolute;inset:auto 0 0 0"><div class="bar"></div></div>
+</section>
+
+</main>
+
+<nav class="nav" aria-label="Slide navigation">
+  <button type="button" id="prev" aria-label="Previous slide">Prev</button>
+  <button type="button" class="count" id="count" tabindex="-1" aria-live="polite">1 / 18</button>
+  <button type="button" id="next" aria-label="Next slide">Next</button>
+</nav>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var count=document.getElementById('count');
+  var cur=0;
+  function show(i){
+    cur=Math.max(0,Math.min(slides.length-1,i));
+    slides[cur].scrollIntoView({block:'center'});
+    count.textContent=(cur+1)+' / '+slides.length;
+  }
+  document.getElementById('prev').onclick=function(){show(cur-1)};
+  document.getElementById('next').onclick=function(){show(cur+1)};
+  document.addEventListener('keydown',function(e){
+    if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();show(cur+1)}
+    if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>-1){e.preventDefault();show(cur-1)}
+    if(e.key==='Home'){e.preventDefault();show(0)}
+    if(e.key==='End'){e.preventDefault();show(slides.length-1)}
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting&&en.intersectionRatio>.55){cur=slides.indexOf(en.target);count.textContent=(cur+1)+' / '+slides.length}
+    })},{threshold:[.55]});
+    slides.forEach(function(s){io.observe(s)});
+  }
+  count.textContent='1 / '+slides.length;
+})();
+</script>
+</body>
+</html>
