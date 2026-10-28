@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sunwest Redesign Calendar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F4F3F0;--surface:#FFFFFF;--fg:#1D1B19;--muted:#5E5953;--line:#E3E1DD;--accent:#9F4E19;--accent-soft:#FCF3ED;--grey:#515151;
+--display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;--body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
+.wrap{max-width:900px;margin:0 auto}
+.page{padding:28px 16px 64px}
+.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 1px 2px rgba(29,27,25,.05)}
+@media (max-width:520px){.card{padding:4px 18px 8px}}
+a{color:var(--accent);text-underline-offset:3px}
+h1,h2{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+.hero{padding:26px 0;display:grid;gap:10px}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
+h1{font-size:clamp(30px,5.5vw,44px);font-weight:600}
+.lede,.lede p{color:var(--muted);margin:0}
+section{padding:30px 0;border-top:1px solid var(--line);display:grid;gap:14px}
+h2{font-size:24px;font-weight:600}
+p{margin:0;max-width:70ch}
+ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th+th,td+td{border-left:1px solid #D9D5CF}
+th{background:var(--accent-soft);font-family:var(--display);font-weight:600}
+tr:last-child td{border-bottom:0}
+.flag{border-left:3px solid #A81B10;background:#FCEEEC;padding:12px 16px;border-radius:0 9px 9px 0;font-size:14.5px}
+.note{border-left:3px solid var(--grey);background:#F1F0EE;padding:12px 16px;border-radius:0 9px 9px 0;font-size:14.5px}
+.top{position:sticky;top:0;z-index:5;background:#515151;padding:12px 16px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{height:36px;width:auto;display:block}
+.wordmark{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+.tabs a{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;color:#ECEAE6;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.tabs a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.tabs a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111}
+
+.cal td,.cal th{font-size:13.5px;min-width:120px}
+.cal td:first-child,.cal th:first-child{min-width:72px;font-family:var(--display);font-weight:600}
+.cal td.b{background:#FCF3ED}
+.tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:11.5px;padding:1px 7px;border-radius:999px;margin-right:4px;vertical-align:1px}
+.tb{background:#FBE3D3;color:#7A3A10}.td{background:#E6E4E0;color:#3B3936}
+.kind{font-size:12.5px;color:var(--muted)}
+.check{list-style:none;padding-left:0}
+.legend{font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap topbar"><div class="brand">
+  <img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-4.svg" alt="Sunwest Painting" onerror="this.hidden=true;document.getElementById('wm').hidden=false">
+  <div class="wordmark" id="wm" hidden>Sunwest Painting</div>
+</div><nav class="tabs" aria-label="Sunwest pages"><a href="november-2026-plan.html">Plan</a><a href="november-2026-calendar.html">Calendar</a><a href="redesign-calendar.html" class="on" aria-current="page">Redesign</a><a href="gameplan-internal.html">Nov - Jan</a><a href="brand-deck.html">Brand</a></nav></div></div>
+<main class="page"><div class="wrap"><div class="card">
+<div class="hero"><div class="eyebrow">Kaizen Agency · Internal plan</div><h1>Site Redesign Calendar</h1><div class="lede"><p>Updated Oct 27 · Daisy + Basil · Every page moves onto the new templates from the Home v2.3 design, Nov 2 - Dec 9.</p></div></div>
+
+<section><h2>Where everything is</h2>
+<div class="tw"><table><tbody>
+<tr><td>Designs</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=65-15" target="_blank" rel="noopener">Figma: Templates - Nov 2026</a> (desktop + mobile for every template) · <a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=40-630" target="_blank" rel="noopener">Home v2.3</a></td></tr>
+<tr><td>Copy</td><td><a href="https://docs.google.com/document/d/1PwZzkdicXVQzYMdtV4kjVPOaJBlSZxH1gXmUO-pPQHI/edit" target="_blank" rel="noopener">Copy - Sunwest Painting</a>, one tab per page. This is the source of truth, the Figma frames only show one example page.</td></tr>
+<tr><td>Dates + status</td><td><a href="https://docs.google.com/spreadsheets/d/1tR1z6zMymRx3_6F97EFxkytSw__yvIaSabP21qtLimI/edit" target="_blank" rel="noopener">Sitemap sheet</a>: columns J (Figma), N (Due) and O (Redesign / build)</td></tr>
+<tr><td>Tasks</td><td><a href="https://workspace.kaizenagency.org" target="_blank" rel="noopener">Kaizen workspace board</a></td></tr>
+</tbody></table></div>
+</section>
+
+<section><h2>How a rebuild works</h2>
+<ol>
+<li>Duplicate the live page as a draft. Never edit the live page directly.</li>
+<li>Build it on the template, using the copy from that page's tab in the copy doc. Keep every fact, photo, FAQ and link that's on the page now.</li>
+<li>Keep the same URL, SEO title and meta description.</li>
+<li>Send Daisy the draft link. Once she OKs it, move the new layout onto the live page, purge the SiteGround cache and check it logged out on a phone.</li>
+<li>Update the Status column in the sitemap.</li>
+</ol>
+<p class="note">Arrows: circled diagonal arrows on hero buttons, industry tiles, portfolio cards and "View more projects". Plain horizontal arrows on service and city link lists. No arrows in the quote form section. No emojis. Short hyphens only.</p>
+</section>
+
+<section><h2>Calendar</h2>
+<p class="legend"><span class="tag tb">B</span>Basil · <span class="tag td">D</span>Daisy · shaded = Basil has something due. The first page on each template is the master; get it right and the rest go faster.</p>
+<div class="tw"><table class="cal"><thead><tr><th>Week of</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th></tr></thead><tbody><tr><td>Oct 26</td><td class=""></td><td class=""><span class="tag td">D</span>Templates to Basil</td><td class=""><span class="tag td">D</span>Denise meeting window opens: show Home v2.3 + templates</td><td class=""><span class="tag td">D</span>Meeting window</td><td class=""><span class="tag td">D</span>Meeting window</td></tr><tr><td>Nov 2</td><td class="b"><span class="tag td">D</span>Global colors, fonts, buttons + header/footer in Elementor<br><span class="tag tb">B</span>Blog live</td><td class=""></td><td class="b"><span class="tag tb">B</span>Exterior page live (first build on Service template)</td><td class="b"><span class="tag tb">B</span>Residential rebuilt on Service template</td><td class="b"><span class="tag tb">B</span>Commercial page live</td></tr><tr><td>Nov 9</td><td class="b"><span class="tag tb">B</span>Property Management rebuilt (Industry master)<br><span class="tag tb">B</span>Blog live</td><td class="b"><span class="tag tb">B</span>HOA + Apartment rebuilt</td><td class="b"><span class="tag tb">B</span>Affordable + Senior Living rebuilt</td><td class="b"><span class="tag tb">B</span>Interior page live</td><td class="b"><span class="tag tb">B</span>Industrial + Office rebuilt</td></tr><tr><td>Nov 16</td><td class="b"><span class="tag tb">B</span>Medical + CRE rebuilt · Industries hub rebuilt<br><span class="tag tb">B</span>Blog live</td><td class="b"><span class="tag tb">B</span>Projects hub rebuilt<br><span class="tag td">D</span>Home v2.3 built on hidden /home-v2/</td><td class="b"><span class="tag tb">B</span>Services hub live</td><td class="b"><span class="tag tb">B</span>Blog hub rebuilt</td><td class="b"><span class="tag tb">B</span>Locations hub rebuilt<br><span class="tag td">D</span>Swap homepage after Denise OK</td></tr><tr><td>Nov 23</td><td class="b"><span class="tag tb">B</span>About Us live (Service layout)<br><span class="tag tb">B</span>Blog live</td><td class="b"><span class="tag tb">B</span>San Jose rebuilt (Location master)</td><td class="b"><span class="tag tb">B</span>Los Gatos page live</td><td class="">Thanksgiving</td><td class=""></td></tr><tr><td>Nov 30</td><td class="b"><span class="tag tb">B</span>America West + Westmont rebuilt (Project master)</td><td class="b"><span class="tag tb">B</span>Hidden Hill Rd rebuilt<br><span class="tag td">D</span>November report to Denise</td><td class=""></td><td class=""></td><td class=""></td></tr><tr><td>Dec 7</td><td class="b"><span class="tag tb">B</span>4 older blog posts rebuilt on Blog post template</td><td class=""></td><td class="b"><span class="tag tb">B</span>Get a Quote + Commercial Bid rebuilt</td><td class=""><span class="tag td">D</span>Final check of every rebuilt page, logged out, mobile</td><td class=""></td></tr></tbody></table></div>
+<p class="flag"><strong>Heads up on Basil's load.</strong> November now has the 6 new pages, 4 blogs, the newsletter, directory listings and the report, plus about 15 rebuilds. Rebuilds after each master should take about an hour each, since the copy is already written. If a week slips, the project and city rebuilds move to December first. The new pages stay on schedule.</p>
+</section>
+
+<section><h2>Basil's build list</h2>
+<div class="tw"><table><thead><tr><th>Due</th><th>Page</th><th>Type</th><th>Template</th></tr></thead><tbody><tr><td>Wed Nov 4</td><td>Exterior Painting</td><td class="kind">New</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=65-18" target="_blank" rel="noopener">Service</a></td></tr><tr><td>Thu Nov 5</td><td>Residential Painting</td><td class="kind">Rebuild (master for service pages)</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=65-18" target="_blank" rel="noopener">Service</a></td></tr><tr><td>Fri Nov 6</td><td>Commercial Painting</td><td class="kind">New</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=65-18" target="_blank" rel="noopener">Service</a></td></tr><tr><td>Mon Nov 9</td><td>Property Management</td><td class="kind">Rebuild (master for industry pages)</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=68-380" target="_blank" rel="noopener">Industry</a></td></tr><tr><td>Tue Nov 10</td><td>HOA · Apartment Complexes</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=68-380" target="_blank" rel="noopener">Industry</a></td></tr><tr><td>Wed Nov 11</td><td>Affordable Housing · Senior Living</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=68-380" target="_blank" rel="noopener">Industry</a></td></tr><tr><td>Thu Nov 12</td><td>Interior Painting</td><td class="kind">New</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=65-18" target="_blank" rel="noopener">Service</a></td></tr><tr><td>Fri Nov 13</td><td>Industrial · Office Buildings</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=68-380" target="_blank" rel="noopener">Industry</a></td></tr><tr><td>Mon Nov 16</td><td>Medical Facilities · Commercial Real Estate</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=68-380" target="_blank" rel="noopener">Industry</a></td></tr><tr><td>Mon Nov 16</td><td>Industries hub</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=70-703" target="_blank" rel="noopener">Hub (industries)</a></td></tr><tr><td>Tue Nov 17</td><td>Projects hub</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=70-1093" target="_blank" rel="noopener">Hub (projects)</a></td></tr><tr><td>Wed Nov 18</td><td>Services hub</td><td class="kind">New</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=70-703" target="_blank" rel="noopener">Hub (industries)</a></td></tr><tr><td>Thu Nov 19</td><td>Blog hub</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=71-1677" target="_blank" rel="noopener">Hub (blog)</a></td></tr><tr><td>Fri Nov 20</td><td>Locations hub</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=71-1303" target="_blank" rel="noopener">Hub (locations)</a></td></tr><tr><td>Mon Nov 23</td><td>About Us</td><td class="kind">New, Service layout</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=65-18" target="_blank" rel="noopener">Service</a></td></tr><tr><td>Tue Nov 24</td><td>San Jose</td><td class="kind">Rebuild (master for city pages)</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=73-2056" target="_blank" rel="noopener">Location</a></td></tr><tr><td>Wed Nov 25</td><td>Los Gatos</td><td class="kind">New</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=73-2056" target="_blank" rel="noopener">Location</a></td></tr><tr><td>Mon Nov 30</td><td>America West · Westmont Senior Living</td><td class="kind">Rebuild (master for project pages)</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=72-1780" target="_blank" rel="noopener">Project</a></td></tr><tr><td>Tue Dec 1</td><td>Hidden Hill Rd</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=72-1780" target="_blank" rel="noopener">Project</a></td></tr><tr><td>Mon Dec 7</td><td>4 older blog posts</td><td class="kind">Rebuild</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=74-2367" target="_blank" rel="noopener">Blog post</a></td></tr><tr><td>Wed Dec 9</td><td>Get a Quote · Request a Commercial Bid</td><td class="kind">Rebuild (no form changes without Daisy)</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=75-2527" target="_blank" rel="noopener">Quote / Bid</a></td></tr><tr><td>Mondays Nov 2, 9, 16, 23</td><td>4 new blogs</td><td class="kind">New</td><td><a href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=74-2367" target="_blank" rel="noopener">Blog post</a></td></tr></tbody></table></div>
+<p class="legend">Projects without real photos yet, the December and January city pages, and Cabinet and Deck (on hold) are in the sitemap with their dates.</p>
+</section>
+
+<section><h2>Daisy's part</h2>
+<div class="tw"><table><thead><tr><th>Due</th><th>What</th></tr></thead><tbody><tr><td>Tue Oct 27</td><td>Send templates, copy doc and this calendar to Basil</td></tr><tr><td>Wed Oct 28 - Fri Oct 30</td><td>Denise meeting: Home v2.3, templates, questions, GBP access</td></tr><tr><td>Mon Nov 2</td><td>Global colors, fonts and button styles in Elementor Site Settings + new header and footer, so Basil builds on them</td></tr><tr><td>Each build day</td><td>Review Basil's draft the same or next day, OK it before it replaces the live page</td></tr><tr><td>Tue Nov 17</td><td>Build Home v2.3 on hidden /home-v2/</td></tr><tr><td>Fri Nov 20</td><td>Swap the homepage once Denise OKs it</td></tr><tr><td>Thu Dec 10</td><td>Final logged-out and mobile check of every rebuilt page</td></tr></tbody></table></div>
+</section>
+</div></div></main>
+</body></html>
