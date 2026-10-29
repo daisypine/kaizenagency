@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sunwest 6-Month Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Layout: brand bar, then one light column of quiet sections. Sunwest ember orange is the one accent (text-safe #9F4E19 on white). */
+:root{
+--bg:#F4F3F0; --surface:#FFFFFF; --fg:#111111; --muted:#5A5650; --line:#E3E1DD;
+--accent:#9F4E19; --accent-dark:#7B3C13; --accent-soft:#FCF3ED; --accent-fg:#FFFFFF;
+--brand:linear-gradient(102deg,#F5C842 6%,#E07B39 108%);
+--display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+--body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
+.wrap{max-width:780px;margin:0 auto}
+.top .wrap{display:flex;align-items:center;gap:12px}
+.page{padding:28px 16px 64px}
+.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 1px 2px rgba(17,17,17,.05)}
+@media (max-width:520px){.card{padding:4px 18px 8px}}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+.hero{padding:26px 0;display:grid;gap:10px}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
+h1{font-size:clamp(30px,5.5vw,42px);font-weight:600}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+section{padding:30px 0;border-top:1px solid var(--line);display:grid;gap:14px}
+h2{font-size:24px;font-weight:600}
+h3{font-size:17px;font-weight:600}
+p{margin:0;max-width:65ch}
+ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.muted{color:var(--muted)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.link{display:grid;gap:4px;padding:16px 18px;background:var(--accent-soft);border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--fg);min-width:0}
+.link:hover{border-color:var(--accent)}
+.link strong{font-family:var(--display);font-weight:600;font-size:17px;color:var(--accent)}
+.link span{font-size:14px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:start}
+.stat{padding:14px 16px;border:1px solid var(--line);border-radius:10px}
+.stat b{display:block;font-family:var(--display);font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.stat span{font-size:13.5px;color:var(--muted)}
+.rows{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:130px 1fr;gap:4px 16px}
+.row .k{font-family:var(--display);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:12.5px;padding-top:3px}
+.row > div{min-width:0;display:grid;gap:6px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+.month{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.month-hd{background:#515151;color:#fff;padding:12px 18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.month-hd h3{color:#fff}
+.month-hd span{font-family:var(--display);font-size:13px;color:#F5C842}
+.month-bd{padding:6px 18px 14px;display:grid;gap:10px}
+.month-bd p b{font-family:var(--display);font-weight:600}
+.steps{counter-reset:s;list-style:none;padding:0;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-size:14px}
+.note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.contact div{border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.contact b{display:block;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contact span{font-family:var(--display);font-size:18px;font-weight:500;user-select:all}
+.need{counter-reset:n;list-style:none;padding:0;gap:14px}
+.need li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.need li::before{content:counter(n);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:14px}
+footer{padding:28px 0 0;color:var(--muted);font-size:14px;text-align:center}
+.top{position:sticky;top:0;z-index:5;background:#515151;padding:12px 16px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{height:36px;width:auto;display:block}
+.wordmark{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+.tabs a{font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;color:#ECEAE6;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.tabs a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.tabs a.on{background:linear-gradient(102.43deg,#F5C842 6.67%,#E07B39 107.96%);color:#111}
+
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.tag{display:inline-block;font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{background:var(--accent-soft);font-family:var(--display);font-weight:600}
+tr:last-child td{border-bottom:0}
+.check{list-style:none;padding:0}
+.check li::before{content:"\2713";color:var(--accent);font-weight:700;margin-right:8px}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap topbar"><div class="brand">
+  <img class="logo" src="https://sunwestpainting.net/wp-content/uploads/2026/06/image-4.svg" alt="Sunwest Painting" onerror="this.hidden=true;document.getElementById('wm').hidden=false">
+  <div class="wordmark" id="wm" hidden>Sunwest Painting</div>
+</div></div></div>
+
+<div class="page"><div class="wrap"><div class="card">
+
+<div class="hero">
+<div class="eyebrow">6 months together · October 29, 2026</div>
+<h1>Where we are and where we're going next</h1>
+<p class="lede">Hi Denise! We're six months in, so here's everything in one place: what we've built, what the numbers say so far, a first look at the new website design, and how I'd love the next six months to go. Nothing here is set in stone - I want to hear what matters most to you.</p>
+</div>
+
+<section>
+<h2>The quick version</h2>
+<div class="stats">
+<div class="stat"><b>30</b><span>pages live on the new site, up from 6 at launch in July</span></div>
+<div class="stat"><b>~36</b><span>local quote requests through the website since July 18 (spam and vendor pitches removed)</span></div>
+<div class="stat"><b>297</b><span>different Google searches already showing Sunwest, in just the first two weeks we could measure</span></div>
+<div class="stat"><b>#11</b><span>for "painters San Jose" - one spot away from Google's first page</span></div>
+</div>
+<p class="muted">Quote requests by month: late July 2 · August 13 · September 8 · October 13 so far.</p>
+</section>
+
+<section>
+<h2>What we've built in 6 months</h2>
+<ul class="check">
+<li><b>A new website</b> on a faster, easier-to-update platform (rebuilt at no extra cost), live since July 18</li>
+<li><b>30 pages</b> - your residential and quote pages, 9 industry pages (property management, HOAs, senior living, medical and more), 7 project pages, San Jose, and 4 helpful blog posts</li>
+<li><b>Quote and commercial bid forms</b> with spam protection and a thank-you page, and every real lead sent straight over to you</li>
+<li><b>Google Search Console and Analytics</b> connected (Oct 14), so from here on we can show you real numbers every month</li>
+<li><b>Print pieces</b> - business cards (now at the printer), door hanger, flyer, trifold and folder</li>
+<li><b>Your first newsletter</b>, written and approved</li>
+<li><b>A brand guide</b> so everything looks like Sunwest, everywhere</li>
+<li><b>A full website redesign</b>, ready for your OK (below)</li>
+</ul>
+</section>
+
+<section>
+<h2>Where SEO is right now</h2>
+<p>SEO is the slow-and-steady part, and I want to be upfront about it. Google takes a few months to trust a new website, and we only started measuring on October 14, so this is our starting line, not the finish.</p>
+<div class="tw"><table>
+<thead><tr><th>Google search</th><th>Where Sunwest shows up</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td>commercial painter</td><td>Position 1</td><td>Already at the top for nearby searches</td></tr>
+<tr><td>interior painters near me</td><td>Position 9</td><td>First page, and getting clicks</td></tr>
+<tr><td>painters san jose</td><td>Position 11</td><td>One spot from page one - a big focus for November</td></tr>
+<tr><td>exterior painting company</td><td>Position 34</td><td>The new Exterior page (Nov 13) is built for this</td></tr>
+<tr><td>painting company</td><td>Position 42</td><td>Showing up 222 times in two weeks - room to climb</td></tr>
+</tbody></table></div>
+<p class="muted">Source: Google Search Console, Oct 14 - 27, 2026. Starting December 1, you'll get a short monthly report with these numbers and how they've moved.</p>
+</section>
+
+<section>
+<h2>First look: your new website</h2>
+<p>Same content you know, with a cleaner, lighter design that's easier to use on a phone. It leads with your family story, real job photos, and clear paths for homeowners and for property managers.</p>
+<div class="links">
+<a class="link" href="https://sunwestpainting.net/home-new/" target="_blank" rel="noopener"><strong>New homepage (working preview)</strong><span>Built on your site, not live to the public yet</span></a>
+<a class="link" href="https://www.figma.com/design/A3tBG5GLNwT9dCwp35oUKo/Sunwest---Daisy-ver?node-id=65-15" target="_blank" rel="noopener"><strong>Every page design</strong><span>Service, industry, project and city pages</span></a>
+</div>
+<p><b>Once you OK it,</b> we swap in the new homepage and move every page over by November 12. Then six new pages go up by November 20: Exterior, Commercial and Interior Painting, a Services page, About Us and Los Gatos.</p>
+</section>
+
+<section>
+<h2>The next 6 months</h2>
+<div class="month"><div class="month-hd"><h3>November</h3><span>New look + leads straight to you</span></div><div class="month-bd">
+<p>New design on every page by Nov 12, then 6 new pages by Nov 20. Website leads go straight to your inbox. Google profile reconnected, a reply to every review, and a post each week with your job photos.</p></div></div>
+<div class="month"><div class="month-hd"><h3>December</h3><span>More cities + winter interiors</span></div><div class="month-bd">
+<p>City pages for Saratoga, Campbell, Palo Alto, Cupertino, Morgan Hill, Milpitas and Gilroy. Historic Home Restoration and Color Consultation pages. A holiday thank-you email that invites people to book winter interior work. Your first monthly report.</p></div></div>
+<div class="month"><div class="month-hd"><h3>January - February</h3><span>Property managers plan their year</span></div><div class="month-bd">
+<p>A "plan your repaint for the year" push to property managers and HOAs. Project case studies with your real photos. A simple way to ask happy customers for Google reviews after every job.</p></div></div>
+<div class="month"><div class="month-hd"><h3>March - April</h3><span>Spring exterior season</span></div><div class="month-bd">
+<p>Exterior content and Google posts timed for when homeowners start calling. More city pages where you have real jobs. A 12-month review of what's working, so we double down on it.</p></div></div>
+<p><b>What I'm aiming for by April:</b> first page on Google for "painters San Jose" and "commercial painting San Jose", in the top 3 of the Google map results near your office, and more quote requests each month than this fall.</p>
+</section>
+
+<section>
+<h2>Ideas I'd love to talk through</h2>
+<ul>
+<li><b>Social media that helps SEO.</b> Turning your job photos into a few posts a week on Google, Instagram, Facebook and LinkedIn. Google notices an active business, and property managers check LinkedIn.</li>
+<li><b>A simple lead tracker.</b> Since there's no CRM, a shared list of every website lead and whether it turned into a job. That's how we'll know what the website is really bringing in.</li>
+<li><b>Reviews on autopilot.</b> A short text or email after each job asking for a Google review.</li>
+<li><b>Getting to know the business better.</b> How a job flows from first call to final walkthrough, your busy and slow seasons, and which jobs you want more of, so the marketing brings you the right work.</li>
+</ul>
+</section>
+
+<section>
+<h2>What I need from you</h2>
+<ol class="need">
+<li><div><b>Google Business Profile access</b> (daisy@kaizenagency.org as a manager). Your map listing is where most local calls start, and it needs to link to the website so the two boost each other.</div></li>
+<li><div><b>Your OK on the new website design.</b></div></li>
+<li><div><b>Job photos</b>, especially Westmont, America West, Tierra Encantada, Sunrise Terrace and Swenson. Phone photos are perfect.</div></li>
+<li><div><b>Your customer email list</b> for the newsletter.</div></li>
+<li><div><b>A few quick answers</b> - business hours, paint brands, the 866 number. I'll send the short list after today.</div></li>
+</ol>
+</section>
+
+<section>
+<h2>How we'll stay in touch</h2>
+<div class="rows">
+<div class="row"><div class="k">Leads</div><div><p>Straight to your inbox the moment someone fills out the form.</p></div></div>
+<div class="row"><div class="k">Monthly</div><div><p>A short report on the first business day: numbers, what we did, what's next.</p></div></div>
+<div class="row"><div class="k">Check-in</div><div><p>A 30-minute call each month, or whenever you need me.</p></div></div>
+</div>
+</section>
+
+<footer>Daisy Pineda · Kaizen Agency · daisy@kaizenagency.org</footer>
+</div></div></div>
+</body></html>
