@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>XP360 SEO Audit | Kaizen Agency</title>
+<meta name="description" content="An outside-in SEO audit of xp360fit.com and the XP360 Boxing Academy pages, prepared by Kaizen Agency.">
+<style>
+  :root{
+    --bg:#FAFAF7; --white:#FFFFFF; --ink:#111111; --muted:#55554F; --line:#111111;
+    --lime:#BFDF32; --blue:#1D4AF5; --red:#E5484D; --amber:#F5A524; --soft:#F1F1EC;
+    --shadow:4px 4px 0 var(--ink); --shadow-lg:6px 6px 0 var(--ink);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:72px 0}
+  h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+  h2{font-size:clamp(28px,4vw,42px);margin-bottom:14px}
+  h3{font-size:21px;margin-bottom:8px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;background:var(--ink);color:var(--lime);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .lede{font-size:19px;color:var(--muted);max-width:720px}
+
+  /* nav */
+  nav.top{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:2px solid var(--ink)}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+  .brand{font-weight:800;font-size:18px;text-decoration:none;color:var(--ink)}
+  .brand span{background:var(--lime);padding:0 6px;border-radius:6px}
+  .navlinks{display:flex;gap:18px;font-size:14px;font-weight:600}
+  .navlinks a{color:var(--ink);text-decoration:none}
+  .navlinks a:hover{color:var(--blue)}
+  @media(max-width:760px){.navlinks{display:none}}
+
+  /* hero */
+  .hero{position:relative;background:var(--white);border-bottom:2px solid var(--ink);overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--lime) 2px,transparent 2px);background-size:22px 22px;opacity:.55;-webkit-mask-image:linear-gradient(120deg,transparent 35%,#000 100%);mask-image:linear-gradient(120deg,transparent 35%,#000 100%)}
+  .hero .wrap{position:relative;padding-top:84px;padding-bottom:84px}
+  .hero h1{font-size:clamp(36px,6.4vw,68px);max-width:880px;margin-bottom:22px}
+  .hero h1 mark{background:var(--lime);padding:0 8px;border-radius:8px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .pill{font-size:14px;font-weight:600;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;background:var(--white)}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;padding:14px 22px;border:2px solid var(--ink);border-radius:12px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);background:var(--lime);transition:transform .12s,box-shadow .12s}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-lg)}
+  .btn.alt{background:var(--white)}
+
+  /* scorecard */
+  .score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+  @media(max-width:900px){.score-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.score-grid{grid-template-columns:1fr}}
+  .card{background:var(--white);border:2px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+  .score .label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .score .big{font-size:40px;font-weight:800;line-height:1.1;margin:8px 0 6px}
+  .score p{font-size:15px;color:var(--muted)}
+  .tag{display:inline-block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:999px;border:2px solid var(--ink)}
+  .tag.good{background:var(--lime)}
+  .tag.bad{background:var(--red);color:#fff}
+  .tag.warn{background:var(--amber)}
+
+  /* big idea */
+  .idea{background:var(--ink);color:var(--white)}
+  .idea h2{color:var(--white)}
+  .idea .lede{color:#D6D6CF}
+  .idea strong{color:var(--lime)}
+
+  /* findings */
+  .finding{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-top:44px;padding-top:44px;border-top:2px dashed #C9C9C2}
+  .finding:first-of-type{border-top:none;padding-top:0}
+  @media(max-width:860px){.finding{grid-template-columns:1fr;gap:22px}}
+  .finding .num{font-size:14px;font-weight:800;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  .finding h3{font-size:26px;margin-bottom:12px}
+  .finding p{margin-bottom:12px}
+  .finding ul{margin:6px 0 14px 20px}
+  .finding li{margin-bottom:6px}
+  .why{background:var(--soft);border-left:5px solid var(--lime);padding:12px 16px;border-radius:8px;font-size:16px}
+  .why b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+  .fix{background:#EEF2FF;border-left:5px solid var(--blue);padding:12px 16px;border-radius:8px;font-size:16px;margin-top:12px}
+  .fix b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;color:var(--blue)}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:var(--soft);padding:2px 6px;border-radius:6px;overflow-wrap:anywhere}
+
+  /* screenshots */
+  figure.shot{background:var(--white);border:2px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .shot .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:2px solid var(--ink);background:var(--soft)}
+  .shot .dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink)}
+  .shot .dot:nth-child(1){background:var(--red)}.shot .dot:nth-child(2){background:var(--amber)}.shot .dot:nth-child(3){background:var(--lime)}
+  .shot .url{margin-left:8px;font-size:12px;font-family:ui-monospace,Menlo,monospace;background:var(--white);border:1.5px solid var(--ink);border-radius:6px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+  .shot .frame{max-height:520px;overflow:hidden;position:relative}
+  .shot img{display:block;width:100%;height:auto}
+  .shot .missing{display:none;padding:40px 20px;text-align:center;color:var(--muted);font-size:15px}
+  .shot figcaption{padding:10px 14px;font-size:14px;color:var(--muted);border-top:2px solid var(--ink)}
+
+  /* tables */
+  .table-wrap{overflow-x:auto;border:2px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);background:var(--white);margin-top:28px}
+  table{width:100%;border-collapse:collapse;min-width:620px}
+  th{background:var(--ink);color:var(--white);text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:.08em;padding:12px 14px}
+  td{padding:12px 14px;border-top:1.5px solid #DADAD3;font-size:15px;vertical-align:top}
+  tr.us td{background:#F6FBE3;font-weight:600}
+
+  /* keyword chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chip{border:2px solid var(--ink);border-radius:999px;padding:8px 14px;background:var(--white);font-weight:600;font-size:15px;box-shadow:2px 2px 0 var(--ink)}
+  .chip.main{background:var(--lime)}
+
+  /* options */
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  @media(max-width:900px){.opts{grid-template-columns:1fr}}
+  .opt h3{font-size:20px}
+  .opt .sub{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+  .opt ul{margin:10px 0 0 18px;font-size:15px}
+  .opt li{margin-bottom:5px}
+  .opt.rec{background:#F6FBE3;position:relative}
+  .opt.rec::after{content:"Our pick";position:absolute;top:-14px;right:16px;background:var(--blue);color:#fff;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:999px;border:2px solid var(--ink)}
+
+  /* timeline */
+  .timeline{margin-top:34px;position:relative;padding-left:28px}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:4px;background:var(--lime);border:1.5px solid var(--ink);border-radius:4px}
+  .step{position:relative;margin-bottom:22px}
+  .step::before{content:"";position:absolute;left:-26px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--white);border:3px solid var(--ink)}
+  .week{display:inline-block;background:var(--ink);color:var(--lime);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:8px}
+  .step ul{margin:8px 0 0 18px;font-size:16px}
+
+  /* faq */
+  details{background:var(--white);border:2px solid var(--ink);border-radius:12px;box-shadow:var(--shadow);padding:16px 18px;margin-top:14px}
+  summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:22px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:10px;color:var(--muted)}
+
+  /* cta */
+  .cta{background:var(--lime);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+  .cta-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0}
+  @media(max-width:820px){.cta-steps{grid-template-columns:1fr}}
+  .cta-steps .card .n{font-size:34px;font-weight:800;color:var(--blue)}
+
+  footer{padding:36px 0 50px;font-size:14px;color:var(--muted)}
+  footer .method{max-width:820px}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="https://kaizenagency.org">Kaizen <span>Agency</span></a>
+    <div class="navlinks">
+      <a href="#snapshot">Snapshot</a>
+      <a href="#numbers">Numbers</a>
+      <a href="#findings">Findings</a>
+      <a href="#competition">Competition</a>
+      <a href="#ownership">Owning it</a>
+      <a href="#plan">The plan</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">SEO Audit · XP360 Strength &amp; Conditioning</span>
+    <h1>Your boxing program is great. <mark>Google just can't see it yet.</mark></h1>
+    <p class="lede">We looked at xp360fit.com and the new XP360 Boxing Academy pages the way Google and a new Sunnyvale student would. Here's where things stand, what's holding the boxing pages back, and how to keep building with AI while everything stays on your own domain.</p>
+    <div class="meta">
+      <span class="pill">Prepared Nov 3, 2026</span>
+      <span class="pill">xp360fit.com (Squarespace)</span>
+      <span class="pill">xp360-boxing-academy.lovable.app</span>
+    </div>
+  </div>
+</header>
+
+<!-- SNAPSHOT -->
+<section id="snapshot">
+  <div class="wrap">
+    <span class="eyebrow">Where you're at</span>
+    <h2>The 30-second snapshot</h2>
+    <p class="lede">The reputation is already there. The website just isn't turning it into boxing traffic.</p>
+    <div class="score-grid">
+      <div class="card score">
+        <span class="tag good">Strong</span>
+        <div class="big">5.0★</div>
+        <div class="label">Yelp · 39 reviews</div>
+        <p>Plus 4.9★ from 131 ratings on ClassPass. Rumble Boxing Sunnyvale, which does show up, sits at 3.9★ on Yelp.</p>
+      </div>
+      <div class="card score">
+        <span class="tag bad">Missing</span>
+        <div class="big">0 / 2</div>
+        <div class="label">Boxing searches</div>
+        <p>XP360 didn't show up in the top 10 for "boxing classes Sunnyvale" or "beginner boxing gym Sunnyvale CA."</p>
+      </div>
+      <div class="card score">
+        <span class="tag bad">Broken</span>
+        <div class="big">2 of 3</div>
+        <div class="label">Homepage program links</div>
+        <p>Boxing Conditioning and 1-on-1 Boxing both lead to "page not found."</p>
+      </div>
+      <div class="card score">
+        <span class="tag warn">Off-site</span>
+        <div class="big">3 pages</div>
+        <div class="label">Boxing Academy</div>
+        <p>The new boxing pages live on lovable.app, not xp360fit.com, so your domain doesn't get credit for them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG IDEA -->
+<section class="idea">
+  <div class="wrap">
+    <span class="eyebrow">The big idea</span>
+    <h2>Every boxing page should build up <span style="color:var(--lime)">xp360fit.com</span></h2>
+    <p class="lede">Right now the best boxing content you have (the Academy, Fundamentals I and II) sits on a Lovable web address. Google treats <strong>xp360-boxing-academy.lovable.app</strong> as a different website from <strong>xp360fit.com</strong>. So every visit and every link that points at those pages builds up Lovable's address instead of yours. Fix where the pages live and the rest of this audit gets a lot easier.</p>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numbers">
+  <div class="wrap">
+    <span class="eyebrow">By the numbers · Semrush, Nov 3 2026</span>
+    <h2>Your search traffic comes from people who already know your name</h2>
+    <p class="lede">Semrush estimates about 224 organic visits a month. The biggest source by far is one search, "xp360 strength &amp; conditioning," and the non-brand terms it shows bring close to zero. People who don't know the name yet, like someone searching for a boxing class, aren't finding you.</p>
+
+    <div class="score-grid">
+      <div class="card score">
+        <span class="tag bad">Low</span>
+        <div class="big">8</div>
+        <div class="label">Authority Score</div>
+        <p>Semrush flags this as low authority, so Google has little reason to rank the site for competitive terms yet.</p>
+      </div>
+      <div class="card score">
+        <span class="tag warn">Branded</span>
+        <div class="big">~93 / 224</div>
+        <div class="label">Visits from your name</div>
+        <p>Your top keyword alone brings about 93 estimated visits. The rest of the top keywords bring close to zero.</p>
+      </div>
+      <div class="card score">
+        <span class="tag bad">Dropping</span>
+        <div class="big">~70 → 35</div>
+        <div class="label">Ranking keywords</div>
+        <p>Keywords peaked around June 2026 and have fallen by about half since.</p>
+      </div>
+      <div class="card score">
+        <span class="tag bad">Not cited</span>
+        <div class="big">0</div>
+        <div class="label">Google AI answers</div>
+        <p>No mentions in Google AI Overviews, AI Mode or Gemini. ChatGPT mentions XP360 twice.</p>
+      </div>
+    </div>
+
+    <div class="finding" style="border-top:none;padding-top:0">
+      <div>
+        <h3>What the keyword list says</h3>
+        <p>The keywords Semrush shows are brand searches and general gym terms, mostly sitting on page 2 or lower:</p>
+        <ul>
+          <li><b>xp360 strength &amp; conditioning</b>: #1 (your name)</li>
+          <li><b>crossfit sunnyvale</b>: #13</li>
+          <li><b>sunnyvale gym</b>: #25, the biggest local term in the list at 480 searches a month</li>
+          <li><b>personal trainer sunnyvale ca</b>: #45</li>
+        </ul>
+        <p>No boxing terms show up in the top keywords. Every one of these points to the homepage, because there's no strong boxing page on xp360fit.com for Google to send people to.</p>
+        <div class="why"><b>Worth checking</b>The drop started around June 2026. The sitemap shows <code>/new-page</code> (the new homepage) and the About page were both last changed on June 3, 2026, and the root homepage URL disappeared from the sitemap. A homepage swap like that can cost rankings. Search Console access would confirm it.</div>
+        <div class="why" style="margin-top:12px"><b>Also worth a look</b>Semrush counts 1.8K referring domains and 2.2K backlinks, which is a lot for an Authority Score of 8. That usually means many of those links are low quality. A quick backlink review would confirm it.</div>
+      </div>
+      <div style="display:grid;gap:18px">
+        <figure class="shot">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Semrush · Domain Overview</span></div>
+          <div class="frame"><img src="img/semrush-overview.png" alt="Semrush domain overview for xp360fit.com"></div>
+          <figcaption>Authority Score 8, about 224 organic visits a month, 35 ranking keywords.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Semrush · Keyword trend</span></div>
+          <div class="frame"><img src="img/semrush-keyword-trend.png" alt="Semrush chart of ranking keywords over two years"></div>
+          <figcaption>Ranking keywords peaked around June 2026, then slid back down.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <figure class="shot" style="margin-top:36px">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">Semrush · Organic positions</span></div>
+      <div class="frame" style="max-height:none"><img src="img/semrush-positions.png" alt="Semrush organic positions for xp360fit.com"></div>
+      <figcaption>Every ranking keyword points to the homepage. No boxing terms in the top list.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- FINDINGS -->
+<section id="findings">
+  <div class="wrap">
+    <span class="eyebrow">What we found</span>
+    <h2>Five things holding the boxing pages back</h2>
+    <p class="lede">Ordered by how much each one is costing you. The first two are the big ones.</p>
+
+    <!-- 1 -->
+    <div class="finding">
+      <div>
+        <div class="num">Finding 01 · High impact</div>
+        <h3>The Boxing Academy lives on someone else's address</h3>
+        <p>The menu link <code>xp360fit.com/boxing-academy</code> sends people to <code>xp360-boxing-academy.lovable.app</code> using a <b>302 (temporary) redirect</b>. That tells Google "the real page is somewhere else, for now," so it never fully credits either one.</p>
+        <ul>
+          <li>The Lovable site has no <code>robots.txt</code> (it returns a 404) and no sitemap.</li>
+          <li>None of the Lovable pages declare a canonical URL pointing back to xp360fit.com.</li>
+          <li>The Squarespace sitemap doesn't list the Boxing Academy or the Fundamentals pages at all.</li>
+        </ul>
+        <div class="why"><b>Why it matters</b>These are your most detailed, most boxing-focused pages, and they're working for a free subdomain instead of your domain.</div>
+        <div class="fix"><b>The fix</b>Put the Academy on your own domain. See <a href="#ownership">Owning it</a> below for three ways to do that, including one that keeps the Lovable/AI workflow.</div>
+      </div>
+      <figure class="shot">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">xp360-boxing-academy.lovable.app</span></div>
+        <div class="frame"><img src="img/02-boxing-academy-lovable.png" alt="XP360 Boxing Academy page hosted on a lovable.app address" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="missing">Screenshot: Boxing Academy on lovable.app</div></div>
+        <figcaption>Clicking "Boxing Academy" on xp360fit.com lands here, on a lovable.app address.</figcaption>
+      </figure>
+    </div>
+
+    <!-- 2 -->
+    <div class="finding">
+      <div>
+        <div class="num">Finding 02 · High impact</div>
+        <h3>Two of the three homepage programs lead to a dead end</h3>
+        <p>The "Our Programs" section on the homepage has three cards. Only Strength &amp; Conditioning works. The two boxing cards are broken:</p>
+        <ul>
+          <li><b>Boxing Conditioning</b> → <code>/our-programssection</code> → page not found</li>
+          <li><b>1 on 1 Boxing Coaching</b> → <code>/1-on-1-boxing</code> → page not found</li>
+        </ul>
+        <div class="why"><b>Why it matters</b>Someone interested in boxing clicks once and hits an error. Google sees homepage links pointing at missing pages, which drags down trust in the whole site.</div>
+        <div class="fix"><b>The fix</b>Point both cards at live boxing pages (on your domain) today. In Squarespace that's a two-minute link edit, and add 301 redirects for the old URLs under Settings → URL Mappings.</div>
+      </div>
+      <figure class="shot">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">xp360fit.com/1-on-1-boxing</span></div>
+        <div class="frame"><img src="img/03-broken-boxing-link.png" alt="Page not found error on the 1-on-1 boxing link" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="missing">Screenshot: 404 page from the 1-on-1 Boxing link</div></div>
+        <figcaption>Where the homepage's "1 on 1 Boxing Coaching" card goes today.</figcaption>
+      </figure>
+    </div>
+
+    <!-- 3 -->
+    <div class="finding">
+      <div>
+        <div class="num">Finding 03 · Medium impact</div>
+        <h3>The homepage barely mentions boxing</h3>
+        <p>Google reads the title and main headline first. Right now they're about strength, not boxing:</p>
+        <ul>
+          <li>Page title: <code>HOME | Xp360 Strength &amp; Conditioning Gym | Sunnyvale, CA</code>. The "HOME |" wastes the most valuable words.</li>
+          <li>Main headline: "Confidence Starts with Strength." Boxing doesn't appear until the program cards.</li>
+          <li>The meta description is printed twice back-to-back, which looks like a Squarespace settings duplicate.</li>
+        </ul>
+        <div class="fix"><b>The fix</b>Something like <code>Strength &amp; Boxing Gym in Sunnyvale, CA | XP360</code> for the title, a subheadline that names beginner boxing, and one clean meta description.</div>
+      </div>
+      <figure class="shot">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">xp360fit.com</span></div>
+        <div class="frame"><img src="img/01-homepage.png" alt="Current xp360fit.com homepage" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="missing">Screenshot: xp360fit.com homepage</div></div>
+        <figcaption>The homepage today. Great story, but nothing above the fold says "boxing."</figcaption>
+      </figure>
+    </div>
+
+    <!-- 4 -->
+    <div class="finding">
+      <div>
+        <div class="num">Finding 04 · Medium impact</div>
+        <h3>Old and duplicate pages are still out there</h3>
+        <ul>
+          <li>The sitemap doesn't list the homepage (<code>xp360fit.com/</code>) at all. In its place, with top priority, is <code>/new-page</code>, which shows the exact same content. That usually means a new homepage was built as "new-page" and set as the homepage without changing its URL. Google now sees two addresses for one page and is being told the wrong one matters.</li>
+          <li>The whole sitemap is only 12 pages, and none of them is a working boxing page.</li>
+          <li><code>/boxing-workshop</code> still advertises an April 26, 2025 workshop, and its title repeats the brand three times.</li>
+          <li><code>/covid-19</code> is still in the sitemap.</li>
+          <li>On Lovable, Fundamentals I says the Summer 2026 session is sold out, and Fundamentals II lists an August 11, 2026 start date.</li>
+        </ul>
+        <div class="why"><b>Why it matters</b>Outdated dates make a busy gym look inactive, and duplicates confuse Google about which page to rank.</div>
+        <div class="fix"><b>The fix</b>Make sure the homepage lives only at <code>xp360fit.com/</code> (rename the page's slug and 301 <code>/new-page</code> to the root), and retire <code>/covid-19</code>. Turn the workshop page into an evergreen "Beginner Boxing in Sunnyvale" page. Swap fixed dates for "Next session starts…" plus a waitlist.</div>
+      </div>
+      <figure class="shot">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">xp360-boxing-academy.lovable.app/fundamentals-2</span></div>
+        <div class="frame"><img src="img/04-fundamentals-2.png" alt="Fundamentals II page on lovable.app" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="missing">Screenshot: Fundamentals II page</div></div>
+        <figcaption>Fundamentals II: strong page, but it's off-domain and the start date has passed.</figcaption>
+      </figure>
+    </div>
+
+    <!-- 5 -->
+    <div class="finding">
+      <div>
+        <div class="num">Finding 05 · Quick wins</div>
+        <h3>Small things a new visitor notices</h3>
+        <ul>
+          <li>The newsletter block at the bottom of the homepage shows an unfinished setup message to visitors ("This newsletter signup form needs a storage option").</li>
+          <li>Image file names use pipes and no extensions (like <code>xp360|boxing+conditioning|...</code>), so image search can't read them well.</li>
+          <li>Messy URLs like <code>/faqs-1</code> and <code>/our-programssection</code>.</li>
+          <li>Most Squarespace sitemap pages haven't been updated since mid-2025.</li>
+        </ul>
+        <div class="fix"><b>The fix</b>Remove or connect the newsletter block, rename key images (<code>beginner-boxing-class-sunnyvale.jpg</code>), and clean up slugs with redirects.</div>
+      </div>
+      <figure class="shot">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">xp360fit.com · bottom of homepage</span></div>
+        <div class="frame"><img src="img/05-newsletter-block.png" alt="Unfinished newsletter block visible at the bottom of the homepage" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="missing">Screenshot: unfinished newsletter block</div></div>
+        <figcaption>The unfinished newsletter form that every visitor sees.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITION -->
+<section id="competition" style="background:var(--white);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)">
+  <div class="wrap">
+    <span class="eyebrow">Who's showing up instead</span>
+    <h2>The boxing results you're missing from</h2>
+    <p class="lede">Searching "boxing classes Sunnyvale" and "beginner boxing gym Sunnyvale CA" turned up these. XP360's reviews hold up against every one of them. What they have is a clear boxing page on their own domain.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Gym</th><th>Where</th><th>What they have that XP360 doesn't (yet)</th></tr></thead>
+        <tbody>
+          <tr><td>Rumble Boxing</td><td>Sunnyvale</td><td>A dedicated Sunnyvale location page on its own domain. Yelp rating is 3.9 from 63 reviews.</td></tr>
+          <tr><td>UFC GYM Sunnyvale</td><td>Sunnyvale</td><td>Location page listing boxing classes by name, like "Boxing Skills and Technique."</td></tr>
+          <tr><td>Relentless Boxing</td><td>Santa Clara</td><td>A homepage built around beginner small-group boxing.</td></tr>
+          <tr><td>Smash Gyms</td><td>Sunnyvale / Milpitas</td><td>Service pages per discipline (kickboxing, Muay Thai) with "Sunnyvale" in the page name.</td></tr>
+          <tr><td>Sunnyvale Boxing Club</td><td>Sunnyvale</td><td>A simple page with "Sunnyvale Boxing" in the title.</td></tr>
+          <tr class="us"><td>XP360</td><td>Sunnyvale</td><td>Best reviews of the group, a USA Boxing certified head coach and a structured beginner path. Missing an on-domain boxing page.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:44px;font-size:24px">Boxing searches to go after</h3>
+    <p style="color:var(--muted);max-width:720px">These match what XP360 actually offers. Each one deserves a page (or a strong section) on xp360fit.com.</p>
+    <div class="chips">
+      <span class="chip main">boxing classes Sunnyvale</span>
+      <span class="chip main">beginner boxing Sunnyvale</span>
+      <span class="chip">boxing gym Sunnyvale</span>
+      <span class="chip">adult boxing classes near me</span>
+      <span class="chip">1 on 1 boxing coach Sunnyvale</span>
+      <span class="chip">private boxing lessons Sunnyvale</span>
+      <span class="chip">boxing conditioning class</span>
+      <span class="chip">boxing for beginners Santa Clara</span>
+      <span class="chip">boxing classes Mountain View</span>
+      <span class="chip">boxing classes North San Jose</span>
+    </div>
+  </div>
+</section>
+
+<!-- OWNERSHIP -->
+<section id="ownership">
+  <div class="wrap">
+    <span class="eyebrow">Owning your stuff</span>
+    <h2>Keep building with AI, keep it on your domain</h2>
+    <p class="lede">You already own the domain and the Squarespace site. The gap is that new AI-built pages get published somewhere else. There are three clean ways to close it.</p>
+    <div class="opts">
+      <div class="card opt">
+        <div class="sub">Fastest · this week</div>
+        <h3>A. Put Lovable on a subdomain</h3>
+        <p>Connect <code>boxing.xp360fit.com</code> to the Lovable project. Lovable supports this on paid plans, and the DNS record goes in Squarespace.</p>
+        <ul>
+          <li>Keeps your Lovable workflow</li>
+          <li>Pages carry your name, not lovable.app</li>
+          <li>Subdomains still split some credit from the main site</li>
+        </ul>
+      </div>
+      <div class="card opt rec">
+        <div class="sub">Best for ranking · 2–3 weeks</div>
+        <h3>B. Rebuild the boxing pages in Squarespace</h3>
+        <p>Use AI to write and design the pages, then build them as real Squarespace pages at <code>xp360fit.com/boxing</code>, <code>/boxing/fundamentals-1</code> and so on.</p>
+        <ul>
+          <li>All credit goes to xp360fit.com</li>
+          <li>One site, one sitemap, one login</li>
+          <li>Fixes the broken homepage links at the same time</li>
+        </ul>
+      </div>
+      <div class="card opt">
+        <div class="sub">Long game</div>
+        <h3>C. Move the whole site to an owned build</h3>
+        <p>Rebuild xp360fit.com on a fast, fully owned site so AI-made pages can be added straight to your domain anytime.</p>
+        <ul>
+          <li>Total control, no platform limits</li>
+          <li>Best for speed and future pages</li>
+          <li>Bigger project, so it makes sense once A or B is done</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section id="plan" style="background:var(--white);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)">
+  <div class="wrap">
+    <span class="eyebrow">The plan</span>
+    <h2>What we'd do, in order</h2>
+    <div class="timeline">
+      <div class="step">
+        <span class="week">Week 1</span>
+        <h3>Stop the leaks</h3>
+        <ul>
+          <li>Fix the two broken homepage boxing links and add 301 redirects</li>
+          <li>Switch <code>/boxing-academy</code> to a permanent setup (subdomain or Squarespace page)</li>
+          <li>Put the homepage back at <code>xp360fit.com/</code> (301 <code>/new-page</code>), retire <code>/covid-19</code>, remove the unfinished newsletter block</li>
+          <li>Rewrite the homepage title and description to include boxing</li>
+        </ul>
+      </div>
+      <div class="step">
+        <span class="week">Weeks 2–3</span>
+        <h3>Build the boxing hub on xp360fit.com</h3>
+        <ul>
+          <li>Main page: "Boxing Classes in Sunnyvale" (the Academy story + pathway)</li>
+          <li>Child pages: Fundamentals I, Fundamentals II, Boxing Conditioning, 1-on-1 Boxing</li>
+          <li>Evergreen "next session" sections instead of fixed dates</li>
+          <li>Gym business details added in the background so Google can read address, hours and classes</li>
+        </ul>
+      </div>
+      <div class="step">
+        <span class="week">Week 4</span>
+        <h3>Connect it to Google</h3>
+        <ul>
+          <li>Submit the updated sitemap in Google Search Console and request indexing</li>
+          <li>Add the boxing pages and "Boxing gym" category to the Google Business Profile</li>
+          <li>Ask happy Fundamentals students for reviews that mention boxing</li>
+        </ul>
+      </div>
+      <div class="step">
+        <span class="week">Ongoing</span>
+        <h3>Grow it</h3>
+        <ul>
+          <li>Nearby-city pages (Santa Clara, Mountain View, North San Jose)</li>
+          <li>Monthly check on boxing rankings and new students from search</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Questions</span>
+    <h2>Good to know</h2>
+    <details>
+      <summary>Do we have to stop using Lovable?</summary>
+      <p>No. AI tools are a great way to draft pages fast. The only change is where the finished page gets published: on xp360fit.com (or a subdomain of it), not on a lovable.app address.</p>
+    </details>
+    <details>
+      <summary>Will moving the pages hurt anything that's working now?</summary>
+      <p>Not if it's done with proper 301 redirects. Anyone with an old link still lands on the right page, and Google transfers credit to the new address.</p>
+    </details>
+    <details>
+      <summary>How fast will rankings change?</summary>
+      <p>The Week 1 fixes are picked up within days to a few weeks once Google recrawls. New boxing pages typically take 1–3 months to settle into local results. Your strong reviews help speed that up.</p>
+    </details>
+    <details>
+      <summary>Do we keep owning everything?</summary>
+      <p>Yes. Domain, Squarespace account, Google Business Profile and Search Console stay in your name. We work as a collaborator on your accounts.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow">Next steps</span>
+    <h2>Let's get the boxing pages ranking</h2>
+    <div class="cta-steps">
+      <div class="card"><div class="n">1</div><h3>Quick call</h3><p>Walk through this audit together and pick option A, B or C.</p></div>
+      <div class="card"><div class="n">2</div><h3>Week 1 fixes</h3><p>Broken links, redirects and homepage basics, done fast.</p></div>
+      <div class="card"><div class="n">3</div><h3>Boxing hub</h3><p>All boxing pages live on xp360fit.com and connected to Google.</p></div>
+    </div>
+    <a class="btn" href="mailto:daisy@kaizenagency.org?subject=XP360%20SEO%20audit">Book the walkthrough →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="method"><b>How this audit was done:</b> an outside-in review on November 3, 2026, using only what's publicly visible. That means a crawl of xp360fit.com and the Lovable pages, their sitemaps and redirects, public review sites, live web searches for boxing terms around Sunnyvale, and Semrush data pulled the same day (Semrush traffic numbers are estimates). Search results vary by person and location, so treat the "who shows up" section as a snapshot, not exact Google rankings. With Search Console access we can confirm indexing and real search data.</p>
+    <p style="margin-top:16px">Prepared by <a href="https://kaizenagency.org">Kaizen Agency</a> for XP360 Strength &amp; Conditioning.</p>
+  </div>
+</footer>
+
+</body>
+</html>
