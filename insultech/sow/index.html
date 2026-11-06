@@ -77,13 +77,16 @@ table{width:100%;border-collapse:collapse;font-size:15px}
 .pill.free{background:var(--lime)}
 .phase .when{font-size:14px;color:var(--ink-soft);margin:6px 0 0}
 /* price */
-.price{background:var(--ink);color:var(--paper);border-radius:16px;padding:clamp(24px,4vw,38px);box-shadow:8px 8px 0 var(--blue)}
-.price h2{color:var(--paper)}
-.price table td{padding:13px 0;border-top:1px solid #333;color:var(--paper)}
+.price{background:var(--white);color:var(--ink);border:2px solid var(--ink);border-radius:16px;padding:clamp(24px,4vw,38px);box-shadow:8px 8px 0 var(--lime)}
+.price .inner{background:var(--white)}
+.price h2{color:var(--ink)}
+.price table td{padding:13px 0;border-top:1px solid var(--line);color:var(--ink)}
 .price table td:last-child{text-align:right;font-weight:700;white-space:nowrap}
-.price .sub{color:#cfcfc8;font-size:14px;display:block;font-weight:400}
-.price .total td{border-top:2px solid var(--lime);font-family:"Unbounded",sans-serif;font-size:18px}
-.lime-t{color:var(--lime)}
+.price .sub{color:var(--ink-soft);font-size:14px;display:block;font-weight:400}
+.price .total td{border-top:2px solid var(--ink);font-family:"Unbounded",sans-serif;font-size:18px}
+.price .free-row td{background:#F3F8DC}
+.lime-t{color:var(--ink)}
+.lime-t span{background:var(--lime);padding:4px 12px;border-radius:999px;border:2px solid var(--ink)}
 /* terms */
 ol.terms{padding-left:20px;margin:0}
 ol.terms li{margin-bottom:12px}
@@ -116,7 +119,7 @@ footer{border-top:3px solid var(--ink);padding:28px 0 44px;font-size:14px;color:
 </header>
 
 <nav class="toc"><div class="wrap">
-  <a href="#overview">1 · Overview</a><a href="#today">2 · Where you are</a><a href="#scope">3 · Scope</a><a href="#timeline">4 · Timeline</a><a href="#notincluded">5 · Not included</a><a href="#you">6 · From you</a><a href="#investment">7 · Investment</a><a href="#terms">8 · Terms</a><a href="#accept">9 · Acceptance</a>
+  <a href="#overview">1 · Overview</a><a href="#today">2 · Where you are</a><a href="#scope">3 · Scope</a><a href="#timeline">4 · Timeline</a><a href="#notincluded">5 · Not included</a><a href="#you">6 · From you</a><a href="#investment">7 · Investment</a><a href="#terms">8 · Terms</a><a href="#accept">9 · Next steps</a>
 </div></nav>
 
 <!-- 1 -->
@@ -283,18 +286,18 @@ footer{border-top:3px solid var(--ink);padding:28px 0 44px;font-size:14px;color:
 <!-- 7 -->
 <section id="investment">
   <div class="wrap">
-    <div class="price">
-      <span class="eyebrow lime">07 · Investment</span>
+    <div class="price"><div class="inner">
+      <span class="eyebrow">07 · Investment</span>
       <h2>$1,000/month, and your first month is on us</h2>
       <table style="margin-top:20px">
-        <tr><td>Deposit: Phase 1, foundation + San Jose setup<span class="sub">Covers all work from signing through early January 2027, including your free month</span></td><td>$1,000</td></tr>
+        <tr class="free-row"><td>Deposit: Phase 1, foundation + San Jose setup<span class="sub">Covers all work from signing through early January 2027, including your free month</span></td><td>$1,000</td></tr>
         <tr><td>Month 2: January 2027<span class="sub">Recommended build work continues</span></td><td>$1,000</td></tr>
         <tr><td>Month 3: February 2027<span class="sub">Recommended build work continues + 90-day report</span></td><td>$1,000</td></tr>
-        <tr class="total"><td>Total for the sprint</td><td class="lime-t">$3,000</td></tr>
+        <tr class="total"><td>Total for the sprint</td><td class="lime-t"><span>$3,000</span></td></tr>
       </table>
-      <p style="color:#cfcfc8;margin-top:18px;font-size:15px">No setup fee. The deposit is due at signing to reserve your start. Months 2 and 3 are billed to the card saved at checkout, or by bank transfer, Zelle or check if you prefer. After month 3 it's month to month at $1,000, and you can stop anytime with 30 days' notice.</p>
+      <p style="color:var(--ink-soft);margin-top:18px;font-size:15px">No setup fee. The deposit is due at signing to reserve your start. Months 2 and 3 are billed to the card saved at checkout, or by bank transfer, Zelle or check if you prefer. After month 3 it's month to month at $1,000, and you can stop anytime with 30 days' notice.</p>
       <p style="margin:22px 0 0"><a class="btn" href="https://buy.stripe.com/7sY00ien6eWv7In44rbjW0P">Pay the $1,000 deposit</a></p>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -318,27 +321,13 @@ footer{border-top:3px solid var(--ink);padding:28px 0 44px;font-size:14px;color:
 <section id="accept">
   <div class="wrap">
     <div class="sec-head">
-      <h2><span class="num">09</span>Acceptance &amp; next steps</h2>
+      <h2><span class="num">09</span>Next steps</h2>
       <p>Three steps and we're going.</p>
     </div>
     <div class="grid three" style="margin-bottom:34px">
       <div class="card"><h3>1 · Say yes</h3><p style="margin-top:8px">Reply to the email, or tell me what you'd change. Nothing is locked.</p></div>
-      <div class="card"><h3>2 · Sign + deposit</h3><p style="margin-top:8px">Sign the agreement and pay the $1,000 deposit to reserve your start.</p></div>
+      <div class="card"><h3>2 · Sign + deposit</h3><p style="margin-top:8px">I'll send the agreement through PandaDoc to sign online, then pay the $1,000 deposit to reserve your start.</p></div>
       <div class="card"><h3>3 · Access + kickoff</h3><p style="margin-top:8px">Share Google Business Profile, website and CRM access, and Phase 1 starts that week.</p></div>
-    </div>
-    <div class="card sig">
-      <div>
-        <h3>Insul Techs, Inc.</h3>
-        <div class="line"></div><small>Signature</small>
-        <div class="line"></div><small>Name &amp; title</small>
-        <div class="line"></div><small>Date</small>
-      </div>
-      <div>
-        <h3>Kaizen Agency</h3>
-        <div class="line"></div><small>Signature</small>
-        <div class="line"></div><small>Daisy Pineda, Founder</small>
-        <div class="line"></div><small>Date</small>
-      </div>
     </div>
     <p style="margin-top:28px"><a class="btn blue" href="mailto:daisy@kaizenagency.org">Email Daisy</a> &nbsp; <span class="note">daisy@kaizenagency.org · (408) 710-6718</span></p>
   </div>
