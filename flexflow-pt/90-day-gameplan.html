@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>FlexFlow PT: 90-Day Gameplan (Jan to Mar 2027)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Layout: white logo bar, purple hero band, then one light column of sections. FlexFlow purple is the accent; coral is decoration only. */
+:root{
+  --bg:#F7F4FA; --surface:#FFFFFF; --fg:#24113F; --muted:#5E5470; --line:#E8E1F0;
+  --accent:#6B2FB3; --accent-dark:#330968; --accent-soft:#F3ECFB; --accent-fg:#FFFFFF;
+  --brand:#B461E4; --coral:#FE6161;
+  --display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.65}
+.wrap{max-width:780px;margin:0 auto}
+.top{background:var(--surface);border-bottom:1px solid var(--line);padding-inline:16px;padding-block:12px}
+.logo{height:64px;width:auto;display:block}
+.wordmark{font-family:var(--display);font-weight:600;font-size:20px;color:var(--accent-dark)}
+.band{background:linear-gradient(135deg,var(--accent-dark) 0%,#5A1F9C 60%,var(--brand) 100%);color:#fff;padding-inline:16px;padding-block:44px 84px}
+.band .eyebrow{color:#F1DDFF}
+.band h1{color:#fff}
+.band .lede{color:#EADCF8}
+.page{padding-inline:16px;padding-block:0 64px;margin-top:-56px}
+.card{background:var(--surface);border-radius:14px;padding:6px 28px 10px;box-shadow:0 6px 24px rgba(51,9,104,.08)}
+@media (max-width:520px){.card{padding:4px 18px 8px}}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0;color:var(--fg)}
+.hero{display:grid;gap:12px}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;color:var(--accent)}
+h1{font-size:clamp(30px,5.5vw,46px);font-weight:600}
+.lede{max-width:60ch;margin:0}
+section{padding-block:30px;border-top:1px solid var(--line);display:grid;gap:14px}
+section:first-child{border-top:0}
+h2{font-size:24px;font-weight:600}
+h3{font-size:17px;font-weight:600}
+p{margin:0;max-width:65ch}
+ul,ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.muted{color:var(--muted)}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.pillar{background:var(--accent-soft);border-radius:12px;padding:16px 18px;display:grid;gap:6px;align-content:start}
+.pillar b{font-family:var(--display);font-weight:600;font-size:18px;color:var(--accent-dark)}
+.pillar span{font-size:14.5px;color:var(--muted)}
+.pillar i{font-style:normal;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--accent)}
+.rows{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:130px 1fr;gap:4px 16px}
+.row .k{font-family:var(--display);font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-size:12.5px;padding-top:3px}
+.row > div{min-width:0;display:grid;gap:6px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+.phase{border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;gap:12px}
+.phase header{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}
+.pill{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:#fff;border-radius:999px;padding:3px 12px}
+.pill.soft{background:var(--accent-soft);color:var(--accent)}
+.theme{font-family:var(--display);font-weight:600;font-size:19px;color:var(--accent-dark)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--coral);margin-right:8px;vertical-align:middle}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td,th{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{font-family:var(--display);font-weight:600;color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em}
+td:first-child{font-weight:500;color:var(--accent-dark)}
+.scroll{overflow-x:auto}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:var(--display);font-weight:500;font-size:14px}
+.flow span{background:var(--accent-soft);color:var(--accent-dark);border-radius:8px;padding:6px 10px}
+.flow em{font-style:normal;color:var(--brand)}
+.note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
+.flag{border-left:4px solid var(--coral);background:#FFF4F4;border-radius:0 10px 10px 0;padding:14px 16px}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.split > div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:8px;align-content:start}
+.split h3{color:var(--accent)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.contact div{border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.contact b{display:block;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contact span{font-family:var(--display);font-size:18px;font-weight:500;user-select:all}
+.steps{counter-reset:s;list-style:none;padding:0;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-size:14px}
+.need{counter-reset:n;list-style:none;padding:0;gap:14px}
+.need li{counter-increment:n;display:grid;grid-template-columns:30px 1fr;gap:10px}
+.need li::before{content:counter(n);font-family:var(--display);font-weight:600;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:14px}
+footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <img class="logo" src="https://static.wixstatic.com/media/49062b_bd298b54d44748fa8553f4d83a11f854~mv2.png/v1/fill/w_209,h_164,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/FlexFlow_insta%20-%20Edited.png" alt="FlexFlow Physical Therapy" onerror="this.hidden=true;document.getElementById('wm').hidden=false">
+  <div class="wordmark" id="wm" hidden>FlexFlow Physical Therapy</div>
+</div></div>
+
+<div class="band"><div class="wrap hero">
+  <div class="eyebrow">90-day gameplan &middot; January to March 2027</div>
+  <h1>Systems first, then the content that runs on them</h1>
+  <p class="lede">Hi Payal! Here's everything we talked about in one place: what we set up together in November and December, and what the first 90 days of the new year look like once it's live. Bookmark this one (:</p>
+</div></div>
+
+<div class="page"><div class="wrap"><div class="card">
+
+<section id="now">
+  <h2>Where you're at</h2>
+  <p>Honestly? A really good spot. Your niche is clear (Bay Area professionals with back pain and sciatica), people love working with you, and you've already built two free guides and a GoHighLevel account that's about 60% set up. Most practices your size don't have any of that.</p>
+  <p>What's slowing you down is that the pieces don't talk to each other yet:</p>
+  <ul>
+    <li>Emails go out from Wix while your contacts and workflows live in GoHighLevel.</li>
+    <li>Referrals come in from all over, and there's no one place that shows who sent who.</li>
+    <li>There's no brand guide, so every post and email starts from a blank page.</li>
+  </ul>
+  <p>The goal for the next 90 days is to make FlexFlow <strong>run like the established practice it already is</strong>: one home base, a list that keeps hearing from you, and content that's quick to make.</p>
+</section>
+
+<section id="pillars">
+  <h2>The three things we're building</h2>
+  <div class="pillars">
+    <div class="pillar"><i>01</i><b>GoHighLevel as home base</b><span>Every lead, patient, referral, email and text in one place, with automations doing the follow-up for you.</span></div>
+    <div class="pillar"><i>02</i><b>Your list</b><span>A steady email + text rhythm so past patients and guide downloads keep you top of mind and come back.</span></div>
+    <div class="pillar"><i>03</i><b>A brand kit</b><span>Colors, fonts, voice and ready-made templates so a post or email takes minutes, not an evening.</span></div>
+  </div>
+  <p class="muted">You'll notice SEO isn't the headline here. Your site already has a solid base, and for a one-on-one practice your list and your referrals will move the needle faster. We'll keep the Google basics healthy along the way.</p>
+</section>
+
+<section id="setup">
+  <h2>November &amp; December: the setup sprint</h2>
+  <p>This is where I jump into your Wix and GoHighLevel accounts and do the heavy lifting, so January starts with everything already working. <strong>Nothing goes live until you've looked it over and said yes</strong>: I'll send each workflow over for approval first.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Review</div><div><p>Walk through what's already in GoHighLevel and finish the other 40%, instead of rebuilding what you've done.</p></div></div>
+    <div class="row"><div class="k">Move off Wix</div><div><p>Bring your contact list and website forms over to GoHighLevel, so every new lead lands in one place and Wix is just your website.</p></div></div>
+    <div class="row"><div class="k">Sending setup</div><div><p>Set up your email sending domain so emails from FlexFlow land in inboxes instead of spam, and register your number for business texting (carriers require this now).</p></div></div>
+    <div class="row"><div class="k">Privacy check</div><div><p>Make sure GoHighLevel is set up the right way for patient info before we start texting and emailing patients. There's a HIPAA side to this for a PT practice, so it's worth doing before anything goes out.</p></div></div>
+    <div class="row"><div class="k">Pipeline</div><div><p>One clear patient journey you can see at a glance (below).</p></div></div>
+    <div class="row"><div class="k">Referrals</div><div><p>A "how did you hear about us?" field on every form and contact, plus a referral partner list, so you finally know where your best patients come from.</p></div></div>
+    <div class="row"><div class="k">Brand kit</div><div><p>Pull your logo, colors and fonts together, nail down your voice, and set up Canva templates for posts, carousels and email headers.</p></div></div>
+    <div class="row"><div class="k">Quick site fixes</div><div><p>Small Wix cleanups: one booking link everywhere, your Good Faith Estimate linked in the footer, a couple of typos, and more of your patient reviews on the site.</p></div></div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <h2>Your patient pipeline</h2>
+  <p>Every person moves through the same stages, so you can see who needs a nudge and nobody falls through the cracks.</p>
+  <div class="flow">
+    <span>New lead</span><em>&rarr;</em><span>Free consult booked</span><em>&rarr;</em><span>Consult done</span><em>&rarr;</em><span>First visit booked</span><em>&rarr;</em><span>Active patient</span><em>&rarr;</em><span>Finished plan</span><em>&rarr;</em><span>Alumni</span>
+  </div>
+</section>
+
+<section id="workflows">
+  <h2>The automations</h2>
+  <p>These do the follow-up you'd otherwise do by hand. I'll build them, you approve them, then they run on their own.</p>
+  <div class="scroll"><table>
+    <tr><th>Automation</th><th>Starts when</th><th>What it does</th></tr>
+    <tr><td>Back pain guide</td><td>Someone downloads the guide</td><td>Sends the PDF, then a short email series with tips and your story, ending with an invite to a free consult.</td></tr>
+    <tr><td>Tech neck guide</td><td>Someone downloads it</td><td>Same idea, tuned to neck, shoulder and desk pain.</td></tr>
+    <tr><td>New lead alert</td><td>A form or chat comes in</td><td>Adds them to the pipeline, tags the source, and pings you so you can reply fast.</td></tr>
+    <tr><td>Consult reminders</td><td>A free consult is booked</td><td>Reminder texts and emails so people actually show up.</td></tr>
+    <tr><td>Didn't book yet</td><td>Consult done, no first visit</td><td>A friendly check-in a few days later, then one more.</td></tr>
+    <tr><td>Welcome</td><td>First visit booked</td><td>What to expect, where to park, what to wear in the garage studio.</td></tr>
+    <tr><td>Review request</td><td>A few visits in, or plan finished</td><td>Asks happy patients for a Google review with a one-tap link.</td></tr>
+    <tr><td>Check-in</td><td>60 to 90 days after their last visit</td><td>"How's your back holding up?" with an easy way to book a tune-up.</td></tr>
+    <tr><td>Referral thank-you</td><td>A contact is tagged as referred</td><td>Reminds you to thank whoever sent them, and logs the referral partner.</td></tr>
+  </table></div>
+  <div class="flag"><strong>One note on referrals:</strong> we'll keep thank-yous to a heartfelt note, not gift cards or discounts for sending patients. California has rules about paying for healthcare referrals, so it's worth a quick check with whoever advises you before we add any rewards.</div>
+</section>
+
+<section id="ninety">
+  <h2>The 90 days: one topic a month</h2>
+  <p>Each month has one topic, and the emails, texts, social posts and blog all point to it. People hear the same message everywhere, and it means less for you to think about.</p>
+
+  <div class="phase">
+    <header><span class="pill">January</span><span class="theme">New year, desk reset: back pain + sitting</span></header>
+    <ul>
+      <li><strong>Launch:</strong> both guide email series and all the automations go live.</li>
+      <li><strong>Email:</strong> the first monthly newsletter goes out from GoHighLevel to your whole list.</li>
+      <li><strong>Text:</strong> a "new year tune-up" text to past patients.</li>
+      <li><strong>Social:</strong> 2 to 3 posts a week from the brand kit templates.</li>
+      <li><strong>Promote:</strong> push the back pain guide on Instagram, LinkedIn and Facebook.</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <header><span class="pill">February</span><span class="theme">Tech neck, wrists + RSI</span></header>
+    <ul>
+      <li><strong>Email:</strong> the February newsletter plus one quick tip email.</li>
+      <li><strong>Text:</strong> a check-in to anyone who downloaded a guide but hasn't booked.</li>
+      <li><strong>Social:</strong> desk-setup carousels and short "try this at your desk" videos.</li>
+      <li><strong>Promote:</strong> the tech neck guide takes the spotlight.</li>
+      <li><strong>Review:</strong> look at the first month of numbers and tweak whatever isn't landing.</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <header><span class="pill">March</span><span class="theme">Cricket season prep</span></header>
+    <ul>
+      <li><strong>Email:</strong> the March newsletter plus a cricket injury-prevention email.</li>
+      <li><strong>Text:</strong> a preseason "get checked before you play" offer for athletes on your list.</li>
+      <li><strong>Social:</strong> warm-up and injury-prevention content for bowlers and batters.</li>
+      <li><strong>Referrals:</strong> reach out to local cricket clubs and coaches as referral partners.</li>
+      <li><strong>Wrap-up:</strong> a 90-day review and the plan for April to June.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="rhythm">
+  <h2>What goes out each month</h2>
+  <div class="scroll"><table>
+    <tr><th>Channel</th><th>How often</th><th>What it is</th></tr>
+    <tr><td>Newsletter</td><td>1 a month</td><td>The month's topic, a tip, a patient win (with OK), and an easy way to book.</td></tr>
+    <tr><td>Tip email</td><td>1 a month</td><td>Short and useful. One stretch, one desk fix, one thing to try tonight.</td></tr>
+    <tr><td>Texts</td><td>1 to 2 a month</td><td>Kept rare so they feel personal: tune-ups, openings, seasonal offers.</td></tr>
+    <tr><td>Social</td><td>2 to 3 a week</td><td>Made from the brand kit templates and the month's topic.</td></tr>
+    <tr><td>Automations</td><td>Always on</td><td>Guides, reminders, reviews and check-ins, running in the background.</td></tr>
+  </table></div>
+</section>
+
+<section id="split">
+  <h2>Who does what</h2>
+  <div class="split">
+    <div><h3>Me</h3><ul>
+      <li>Build and finish the GoHighLevel setup</li>
+      <li>Write the email series, newsletters and texts</li>
+      <li>Put the brand kit and templates together</li>
+      <li>Wix cleanups</li>
+      <li>A monthly check-in on what's working</li>
+    </ul></div>
+    <div><h3>You</h3><ul>
+      <li>Approve each workflow and email before it goes live</li>
+      <li>About 20 to 30 minutes a month on that month's topic: tips, stories, short videos</li>
+      <li>Reply to new leads when GoHighLevel pings you</li>
+      <li>Keep being amazing with patients (:</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="track">
+  <h2>How we'll know it's working</h2>
+  <p>Once GoHighLevel is the home base, we can finally see these in one place. December's numbers become our starting point, and we'll compare every month from there.</p>
+  <ul>
+    <li>Email + text list size</li>
+    <li>Guide downloads</li>
+    <li>Free consults booked, and how many become first visits</li>
+    <li>Where new patients came from (referral, Google, Instagram, a guide...)</li>
+    <li>New Google reviews</li>
+    <li>Past patients who came back</li>
+  </ul>
+</section>
+
+<section id="site">
+  <h2>What about the website?</h2>
+  <p>For these 90 days, we keep your Wix site and clean it up. A full redesign on a new platform at the same time as all of this would be a lot to take on, and your systems will make you more money sooner.</p>
+  <p>When you're ready for a true redesign, I'd move you off Wix to a custom-built site that's faster, easier to grow and works seamlessly with GoHighLevel. Let's revisit it at the 90-day wrap-up in March.</p>
+</section>
+
+<section id="start">
+  <h2>Getting started</h2>
+  <ol class="steps">
+    <li><span><strong>Lock in your spot</strong> with a deposit this month or in December. I'm filling my January calendar now.</span></li>
+    <li><span><strong>Share access:</strong> add me as a collaborator on Wix and as an admin user in GoHighLevel (daisy@kaizenagency.org).</span></li>
+    <li><span><strong>Kickoff call:</strong> a quick walk-through of what's already in GoHighLevel so I pick up where you left off.</span></li>
+  </ol>
+</section>
+
+<section id="need">
+  <h2>What I need from you</h2>
+  <ol class="need">
+    <li><span><strong>The plan:</strong> does this feel right? Anything you'd move up, swap or skip?</span></li>
+    <li><span><strong>Access:</strong> Wix collaborator + GoHighLevel admin invites to daisy@kaizenagency.org.</span></li>
+    <li><span><strong>Your list:</strong> where does your most up-to-date contact list live right now: Wix, GoHighLevel, or both?</span></li>
+    <li><span><strong>Digital products:</strong> beyond the two free guides, is there anything you sell (programs, videos, PDFs)? I'll build their automations too.</span></li>
+    <li><span><strong>Referrals today:</strong> who sends you the most patients right now (doctors, trainers, clubs, past patients)?</span></li>
+    <li><span><strong>Brand files:</strong> your logo files, any fonts or colors you love, and your favorite photos of you and the studio.</span></li>
+  </ol>
+  <div class="contact">
+    <div><b>Text or call</b><span>(408) 710-6718</span></div>
+    <div><b>Email</b><span>daisy@kaizenagency.org</span></div>
+  </div>
+</section>
+
+</div>
+<footer>If there's something you want moved up the list, just say the word!<br>Daisy &middot; Kaizen Agency</footer>
+</div></div>
+</body>
+</html>
