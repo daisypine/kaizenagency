@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Online Visibility Snapshot — Real House Plumbing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--blue:#1D4AF5;--lime:#BFDF32;--paper:#FAFAF7;--muted:#5d5d58;--line:#111;--red:#E5484D;--soft:#EEF1FE}
+*{box-sizing:border-box}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:56px 0;border-bottom:2px solid var(--ink)}
+h1,h2,h3{line-height:1.08;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4.4vw,44px);font-weight:800}
+h3{font-size:20px;font-weight:700}
+.eyebrow{display:inline-block;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:999px;margin-bottom:16px}
+.lede{font-size:18px;color:var(--muted);max-width:680px;margin:14px 0 0}
+.card{background:#fff;border:2px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:22px}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:700px){.g2{grid-template-columns:1fr}}
+.hl{background:linear-gradient(transparent 58%,var(--lime) 58%)}
+/* hero */
+.hero{background:#fff;position:relative;overflow:hidden;padding:48px 0 56px}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--lime) 2.2px,transparent 2.6px);background-size:22px 22px;opacity:.55;mask-image:linear-gradient(120deg,transparent 45%,#000 100%);-webkit-mask-image:linear-gradient(120deg,transparent 45%,#000 100%)}
+.hero .wrap{position:relative}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;margin-bottom:40px}
+.brand i{width:26px;height:26px;border-radius:7px;background:var(--blue);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--lime);display:inline-block}
+.hero h1{font-size:clamp(38px,6.5vw,72px);font-weight:800;max-width:860px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px;background:#fff}
+.pill.b{background:var(--blue);color:#fff}
+/* big stats */
+.stat .n{font-size:clamp(46px,7vw,68px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.stat .l{font-weight:700;margin-top:8px}
+.stat .s{color:var(--muted);font-size:14px;margin-top:6px}
+.stat.zero .n{color:var(--red)}
+.stat.zero{border-top:10px solid var(--red)}
+/* scorecard */
+.score{display:flex;align-items:center;gap:18px}
+.dial{flex:none;width:86px;height:86px}
+.score .v{font-size:30px;font-weight:800}
+.score .k{font-weight:700}
+.score .s{font-size:14px;color:var(--muted)}
+/* bars */
+.bars{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+.bar .top{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:15px;flex-wrap:wrap}
+.bar .top span:last-child{font-variant-numeric:tabular-nums}
+.track{height:30px;border:2px solid var(--ink);border-radius:8px;background:#fff;margin-top:6px;overflow:hidden;position:relative}
+.fill{height:100%;background:var(--blue);border-right:2px solid var(--ink)}
+.fill.you{background:var(--red)}
+.fill.zero{width:0!important;border:none}
+.track .zero-lbl{position:absolute;left:10px;top:3px;font-size:13px;font-weight:700;color:var(--red)}
+.bar .sub{font-size:13px;color:var(--muted);margin-top:4px}
+/* table */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;background:var(--ink);color:#fff;font-weight:700;padding:11px 12px;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+th.r,td.r{text-align:right}
+td{padding:11px 12px;border-bottom:1.5px solid #e4e4de;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+.tbl{border:2px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);background:#fff;overflow-x:auto}
+.pg{display:inline-block;min-width:62px;text-align:center;font-weight:700;font-size:13px;padding:3px 8px;border-radius:999px;background:#FDECEC;color:#B4232A;border:1.5px solid #B4232A}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.flag{background:var(--lime);border:1.5px solid var(--ink);border-radius:6px;font-size:12px;font-weight:700;padding:1px 6px;margin-left:6px;white-space:nowrap}
+/* opportunity */
+.opp{background:var(--blue);color:#fff}
+.opp .lede{color:#dfe5ff}
+.opp .card{color:var(--ink)}
+.big-money{font-size:clamp(52px,9vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--lime);text-shadow:4px 4px 0 var(--ink)}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:28px}
+.calc .card{padding:18px}
+.calc .n{font-size:30px;font-weight:800}
+.calc .l{font-size:14px;color:var(--muted)}
+.toggle{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:#fff;margin-top:24px}
+.toggle button{font:inherit;font-weight:700;border:0;background:#fff;padding:8px 16px;cursor:pointer;color:var(--ink)}
+.toggle button.on{background:var(--lime)}
+/* findings */
+.find{display:flex;gap:16px;align-items:flex-start}
+.find .ic{flex:none;width:40px;height:40px;border-radius:10px;border:2px solid var(--ink);display:grid;place-items:center;font-weight:800;background:var(--lime)}
+.find p{margin:6px 0 0;color:var(--muted);font-size:15px}
+/* access */
+.chk{list-style:none;padding:0;margin:14px 0 0}
+.chk li{padding:8px 0 8px 30px;position:relative;font-size:15px}
+.chk li:before{content:"";position:absolute;left:0;top:11px;width:18px;height:18px;border-radius:5px;border:2px solid var(--ink);background:var(--lime)}
+/* cta */
+.cta{background:var(--ink);color:#fff;border-bottom:none}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:30px}
+.step{border:2px solid #fff;border-radius:14px;padding:20px;box-shadow:5px 5px 0 var(--lime)}
+.step b{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--lime);color:var(--ink);font-weight:800;margin-bottom:10px}
+.btn{display:inline-block;margin-top:30px;background:var(--lime);color:var(--ink);font-weight:800;text-decoration:none;padding:14px 24px;border:2px solid #fff;border-radius:12px;box-shadow:5px 5px 0 #fff}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:30px}
+@media (max-width:700px){.shots{grid-template-columns:1fr}}
+.shot{margin:0;background:#fff;border:2px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);overflow:hidden}
+.shot a{display:block;border-bottom:2px solid var(--ink);background:#f1f1ec}
+.shot img{display:block;width:100%;height:220px;object-fit:cover;object-position:top left}
+.shot figcaption{padding:14px 16px;font-size:14px;color:var(--muted)}
+.shot figcaption b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.shots.small img{height:170px}
+footer{padding:36px 0 60px;font-size:13px;color:var(--muted);background:var(--paper)}
+footer ol{padding-left:18px}
+footer li{margin:4px 0}
+@media (max-width:560px){section{padding:40px 0}.card{padding:18px}td,th{padding:9px 8px}.score{gap:12px}}
+@media print{.toggle{display:none}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<script>
+/* ============================================================
+   KAIZEN VISIBILITY SNAPSHOT — edit this block for each prospect
+   ============================================================ */
+const CONFIG = {
+  business: "Real House Plumbing",
+  domain: "realhouseplumbing.com",
+  city: "Palo Alto, CA",
+  trade: "plumber",
+  date: "November 2026",
+  preparedBy: "Kaizen Agency",
+  contact: "kaizenagency.org",
+
+  // From Semrush + Search Atlas (Nov 8–9, 2026)
+  you: { visits: 0, keywords: 29, keywordsTop10: 0, authority: 2, domainPower: 1, backlinks: "1.9K", refDomains: "1.8K", aiMentions: 0 },
+
+  // Where they rank today (Semrush Organic Positions)
+  rankings: [
+    ["plumber berkeley ca", 74, 210],
+    ["plumbing in dublin", 78, 110],
+    ["water heater installation carnelian bay", 80, 50, "Lake Tahoe — ~200 miles from Palo Alto"],
+    ["emergency plumber dublin", 83, 70],
+    ["camera inspection san jose", 84, 40],
+    ["plumbers dublin ca", 64, 30],
+  ],
+
+  // Competitors (est. monthly organic visits, keywords, keywords in top 10)
+  competitors: [
+    { name: "EJ Home Services", domain: "ejplumbing.com", visits: 2247, keywords: 830, top10: 229, note: "Bay Area-wide domain" },
+    { name: "Palo Alto Plumbing Heating & Air", domain: "paloaltoplumbing.net", visits: 536, keywords: 1758, top10: 43 },
+    { name: "PRO Plumbers of Palo Alto", domain: "proplumberpaloalto.com", visits: 2, keywords: 9, top10: 0 },
+  ],
+
+  // Cost per click a business pays on Google Ads (DataForSEO / Google Ads data, US, last 12 months)
+  marketKeywords: [
+    ["plumber san jose", 2400, 44.11],
+    ["emergency plumber san jose", 1000, 68.47],
+    ["plumber sunnyvale", 880, 22.68],
+    ["plumber san mateo", 720, 24.85],
+    ["plumber mountain view", 590, 28.92],
+    ["plumber palo alto", 480, 36.47],
+    ["plumber redwood city", 480, 37.35],
+    ["plumber menlo park", 170, 43.92],
+  ],
+  conservativeCPC: 25,   // what we value a free visit at (below the local average, on purpose)
+  captureRates: [0.05, 0.10],
+};
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="brand"><i></i><span data-k="preparedBy"></span></div>
+    <span class="eyebrow">Online Visibility Snapshot</span>
+    <h1>How <span class="hl" data-k="business"></span> shows up when locals search for a <span data-k="trade"></span>.</h1>
+    <p class="lede">A plain-English look at where you stand on Google and in AI search, how you compare to the plumbers winning those customers, and what that traffic is worth in real dollars.</p>
+    <div class="meta">
+      <span class="pill b" data-k="domain"></span>
+      <span class="pill" data-k="city"></span>
+      <span class="pill">Prepared <span data-k="date"></span></span>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM LINE -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">The bottom line</span>
+    <h2>Right now, Google isn't sending you customers.</h2>
+    <p class="lede">These are the three numbers that matter most. Every one of them is zero today.</p>
+    <div class="grid g3" style="margin-top:30px">
+      <div class="card stat zero"><div class="n" id="s-visits"></div><div class="l">Visitors a month from Google search</div><div class="s">People who found your site by searching, not by typing your name.</div></div>
+      <div class="card stat zero"><div class="n" id="s-value"></div><div class="l">What that traffic is worth</div><div class="s">What you'd pay Google Ads to get the same visitors. Your competitors get theirs for free.</div></div>
+      <div class="card stat zero"><div class="n" id="s-ai"></div><div class="l">Mentions in AI search</div><div class="s">ChatGPT, Gemini, Google AI Overviews and AI Mode don't recommend you yet.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Your scorecard</span>
+    <h2>Google sees a brand-new site it doesn't trust yet.</h2>
+    <p class="lede">Authority is Google's trust level for your website. It's built from real links, real reviews and real, useful content, and it decides who shows up first.</p>
+    <div class="grid g2" style="margin-top:30px">
+      <div class="card score"><svg class="dial" viewBox="0 0 36 36" id="d-auth"></svg><div><div class="v"><span id="v-auth"></span><span style="font-size:16px;color:var(--muted)"> / 100</span></div><div class="k">Authority Score (Semrush)</div><div class="s">Scored 0–100. A 2 means Google has almost no reason to trust the site yet.</div></div></div>
+      <div class="card score"><svg class="dial" viewBox="0 0 36 36" id="d-dp"></svg><div><div class="v"><span id="v-dp"></span><span style="font-size:16px;color:var(--muted)"> / 100</span></div><div class="k">Domain Power (Search Atlas)</div><div class="s">A second tool, the same story.</div></div></div>
+      <div class="card score"><div class="dial" style="display:grid;place-items:center;border:2px solid var(--ink);border-radius:50%;font-weight:800;font-size:26px;background:var(--lime)" id="v-kw"></div><div><div class="v"><span id="v-top10"></span> <span style="font-size:16px;color:var(--muted)">on page 1</span></div><div class="k">Keywords you rank for</div><div class="s">Every one of them is on page 7 to page 10 of Google. Almost nobody clicks past page 1.</div></div></div>
+      <div class="card score"><div class="dial" style="display:grid;place-items:center;border:2px solid var(--ink);border-radius:50%;font-weight:800;font-size:19px;background:#FDECEC" id="v-bl"></div><div><div class="v">Links aren't counting</div><div class="k">Backlinks from <span id="v-rd"></span> sites</div><div class="s">Lots of links but an authority of <span id="v-auth2"></span> usually means low-quality or automated links. Google ignores them, or worse.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RANKINGS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Where you rank today</span>
+    <h2>Showing up on page 8 is the same as not showing up.</h2>
+    <p class="lede">A sample of the searches Google ranks your site for. Notice the cities: the site targets 27 cities across three counties, and Google is testing it in places far from where you work.</p>
+    <div class="tbl" style="margin-top:28px"><table id="t-rank"><thead><tr><th>Search</th><th class="r">Your position</th><th class="r">Google page</th><th class="r">Searches / mo</th></tr></thead><tbody></tbody></table></div>
+    <p class="note">The top 3 results get most of the clicks. Positions 64–97 get almost none, which is why traffic is 0.</p>
+  </div>
+</section>
+
+<!-- COMPETITORS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">You vs. the competition</span>
+    <h2>Other local plumbers are getting these customers for free.</h2>
+    <p class="lede">Estimated visitors each site gets from Google every month, and what that same traffic would cost on Google Ads.</p>
+    <div class="grid g2" style="margin-top:30px">
+      <div class="card"><h3>Monthly visitors from Google</h3><div class="bars" id="b-visits"></div></div>
+      <div class="card"><h3>What that traffic is worth / month</h3><div class="bars" id="b-value"></div><p class="note">Valued at a conservative <b>$<span data-k="conservativeCPC"></span>/click</b>. The real average for plumbing searches in your cities is <b id="avgcpc"></b>.</p></div>
+    </div>
+    <div class="tbl" style="margin-top:26px"><table id="t-comp"><thead><tr><th>Business</th><th class="r">Keywords</th><th class="r">On page 1</th><th class="r">Visitors / mo</th></tr></thead><tbody></tbody></table></div>
+  </div>
+</section>
+
+<!-- AD COSTS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">What a click costs here</span>
+    <h2>In your area, one Google Ads click costs <span class="hl" id="h-avg"></span> on average.</h2>
+    <p class="lede">That's what plumbers pay every time someone taps their ad, whether or not that person calls. Ranking organically means getting those same clicks without paying for each one.</p>
+    <div class="tbl" style="margin-top:28px"><table id="t-cpc"><thead><tr><th>Search</th><th class="r">Searches / mo</th><th class="r">Cost per click</th><th class="r">Cost to buy every click</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+    <p class="note">Cost per click is Google's average for the last 12 months. These 8 searches alone add up to <b id="h-vol"></b> searches a month across your main cities.</p>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="opp">
+  <div class="wrap">
+    <span class="eyebrow" style="background:var(--lime);color:var(--ink)">The opportunity</span>
+    <h2>If you earned even a small share of those searches…</h2>
+    <p class="lede">We're not promising #1 everywhere. This is what a modest slice of the searches in your core cities is worth every month.</p>
+    <div class="toggle" role="group" aria-label="Share of searches"><button data-r="0" class="on">5% of searches</button><button data-r="1">10% of searches</button></div>
+    <div style="margin-top:26px"><div class="big-money" id="o-money"></div><div style="font-weight:700;font-size:18px;margin-top:10px">a month in traffic you wouldn't have to pay Google for</div></div>
+    <div class="calc">
+      <div class="card"><div class="n" id="o-vol"></div><div class="l">searches a month in your core cities</div></div>
+      <div class="card"><div class="n" id="o-visits"></div><div class="l">new visitors a month at that share</div></div>
+      <div class="card"><div class="n" id="o-calls"></div><div class="l">likely calls or form requests (5–10% of visitors)</div></div>
+      <div class="card"><div class="n" id="o-year"></div><div class="l">ad-equivalent value per year</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Why the site isn't ranking</span>
+    <h2>The site looks like every other plumber, and Google can tell.</h2>
+    <p class="lede">The site was built quickly with an AI website builder. That's a fine start, but Google rewards real, specific information about a real business, and right now there's very little of it.</p>
+    <div class="grid g2" style="margin-top:30px">
+      <div class="card find"><div class="ic">1</div><div><h3>Leftover template text</h3><p>When the site is shared on Facebook, text or Google, the preview title reads <b>"Your Plumbing Company | Palo Alto, CA"</b>, the builder's placeholder, not your name.</p></div></div>
+      <div class="card find"><div class="ic">2</div><div><h3>AI-generated photos, no real ones</h3><p>The photos on the homepage are ChatGPT-generated images, and the same image file is used twice. No photos of your team, trucks or jobs.</p></div></div>
+      <div class="card find"><div class="ic">3</div><div><h3>27 copy-paste city pages</h3><p>One page per city across San Mateo, Santa Clara and Alameda counties, all saying roughly the same thing. Google treats that as thin content, which is why it ranks you around Berkeley and Dublin instead of around Palo Alto.</p></div></div>
+      <div class="card find"><div class="ic">4</div><div><h3>Details that don't match</h3><p>The homepage says <b>15+ years</b>; the site's share description says <b>20 years</b>. The $200-off water heater coupon uses the code <b>HEAT100</b>. Two sections ("Why Homeowners Call Us First", "Trusted By Local Businesses") have headings but no content.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section>
+  <div class="wrap">
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <span class="eyebrow">What we used</span>
+        <h2>These numbers come from the outside looking in.</h2>
+        <p class="lede">This snapshot uses the paid SEO tools agencies rely on: <b>Semrush</b> (an Adobe company) and <b>Search Atlas</b>, plus Google Ads pricing data. Those tools start at $99–$199 a month each if a business subscribes on its own. We cover that.</p>
+      </div>
+      <div class="card">
+        <h3>With access to your Google accounts, we'd see exact numbers:</h3>
+        <ul class="chk">
+          <li><b>Google Search Console</b>: every search you show up for, and how many people click</li>
+          <li><b>Google Analytics</b>: where visitors come from and what they do on the site</li>
+          <li><b>Google Business Profile</b>: calls, direction requests and profile views from Maps</li>
+          <li><b>Map heatmaps</b>: where in town you show up in the Google Maps top 3, block by block</li>
+        </ul>
+        <p class="note">Estimates are where we start. Your own Google data is how we measure progress month to month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Straight from the tools</span>
+    <h2>Don't take our word for it.</h2>
+    <p class="lede">These are the actual screens behind the numbers in this report. Tap any one to see it full size.</p>
+    <div class="shots">
+      <figure class="shot"><a href="img/semrush-overview.jpg" target="_blank" rel="noopener"><img src="img/semrush-overview.jpg" alt="Semrush · Domain Overview" loading="lazy"></a><figcaption><b>Semrush · Domain Overview</b>Authority Score 2, organic traffic 0, AI visibility 0 across ChatGPT, Google AI Overview, AI Mode and Gemini.</figcaption></figure>
+      <figure class="shot"><a href="img/semrush-positions.jpg" target="_blank" rel="noopener"><img src="img/semrush-positions.jpg" alt="Semrush · Organic Positions" loading="lazy"></a><figcaption><b>Semrush · Organic Positions</b>Each keyword the site ranks for, its position (64–97), and its monthly searches.</figcaption></figure>
+      <figure class="shot"><a href="img/semrush-trend.jpg" target="_blank" rel="noopener"><img src="img/semrush-trend.jpg" alt="Semrush · Keywords Trend" loading="lazy"></a><figcaption><b>Semrush · Keywords Trend</b>No rankings at all until October 2026, and 0 traffic since.</figcaption></figure>
+      <figure class="shot"><a href="img/searchatlas-overview.jpg" target="_blank" rel="noopener"><img src="img/searchatlas-overview.jpg" alt="Search Atlas · Site Explorer" loading="lazy"></a><figcaption><b>Search Atlas · Site Explorer</b>A second tool, the same picture: Domain Power 1, 29 keywords, 0 traffic, $0 value.</figcaption></figure>
+    </div>
+    <h3 style="margin-top:40px">What these tools cost a business on its own</h3>
+    <div class="shots small">
+      <figure class="shot"><a href="img/semrush-pricing.jpg" target="_blank" rel="noopener"><img src="img/semrush-pricing.jpg" alt="Semrush pricing" loading="lazy"></a><figcaption><b>Semrush pricing</b>Starter plan from $199/month.</figcaption></figure>
+      <figure class="shot"><a href="img/searchatlas-pricing.jpg" target="_blank" rel="noopener"><img style="object-position:50% 62%" src="img/searchatlas-pricing.jpg" alt="Search Atlas pricing" loading="lazy"></a><figcaption><b>Search Atlas pricing</b>Starter plan from $99/month.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow" style="background:var(--lime);color:var(--ink)">Next steps</span>
+    <h2>Let's turn this into calls.</h2>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Connect Google</h3><p>Give us access to Search Console, Analytics and your Business Profile so we're working from real data, not estimates.</p></div>
+      <div class="step"><b>2</b><h3>Fix the foundation</h3><p>Real photos, your real story, consistent details, and focused pages for the cities you actually want work in.</p></div>
+      <div class="step"><b>3</b><h3>Build trust with Google</h3><p>Quality local links, reviews and Maps optimization, tracked every month so you can see it working.</p></div>
+    </div>
+    <a class="btn" href="https://kaizenagency.org" target="_blank" rel="noopener">Book a call with <span data-k="preparedBy"></span> →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Sources &amp; method</b>
+    <ol>
+      <li>Your rankings, keywords, authority score, backlinks and AI visibility: Semrush Domain Overview &amp; Organic Rankings (US, desktop), Nov 8–9, 2026. Domain Power: Search Atlas Site Explorer.</li>
+      <li>Competitor visitors and keyword counts: third-party organic traffic estimates (Adyntel), Nov 2026. These are estimates for each whole domain, the same kind Semrush shows.</li>
+      <li>Searches per month and cost per click: Google Ads keyword data via DataForSEO, US, Oct 2025–Sep 2026.</li>
+      <li>"Worth" values multiply estimated visits by a cost per click. Competitor values use a conservative $25/click; the opportunity uses the average cost per click for the 8 searches listed.</li>
+      <li>Website observations: review of the live homepage and its share settings, Nov 9, 2026.</li>
+    </ol>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const C = CONFIG, $ = s => document.querySelector(s);
+  const usd = n => "$" + Math.round(n).toLocaleString("en-US");
+  const num = n => Math.round(n).toLocaleString("en-US");
+  document.querySelectorAll("[data-k]").forEach(el => el.textContent = C[el.dataset.k]);
+
+  // headline stats
+  $("#s-visits").textContent = num(C.you.visits);
+  $("#s-value").textContent = usd(C.you.visits * C.conservativeCPC);
+  $("#s-ai").textContent = num(C.you.aiMentions);
+
+  // dials
+  function dial(id, val){
+    const r=15.9, c=2*Math.PI*r, p=Math.max(val,1.5)/100*c;
+    $(id).innerHTML = `<circle cx="18" cy="18" r="${r}" fill="#fff" stroke="#e4e4de" stroke-width="4"/>
+      <circle cx="18" cy="18" r="${r}" fill="none" stroke="#E5484D" stroke-width="4" stroke-dasharray="${p} ${c}" transform="rotate(-90 18 18)" stroke-linecap="round"/>
+      <circle cx="18" cy="18" r="17.9" fill="none" stroke="#111" stroke-width="0.6"/>`;
+  }
+  dial("#d-auth", C.you.authority); dial("#d-dp", C.you.domainPower);
+  $("#v-auth").textContent = C.you.authority; $("#v-auth2").textContent = C.you.authority;
+  $("#v-dp").textContent = C.you.domainPower;
+  $("#v-kw").textContent = C.you.keywords; $("#v-top10").textContent = C.you.keywordsTop10;
+  $("#v-bl").textContent = C.you.backlinks; $("#v-rd").textContent = C.you.refDomains;
+
+  // rankings table
+  const rb = $("#t-rank tbody");
+  [...C.rankings].sort((a,b)=>a[1]-b[1]).forEach(([k,pos,vol,flag]) => {
+    const tr = document.createElement("tr");
+    const td1 = document.createElement("td"); td1.textContent = k;
+    if (flag){ const f=document.createElement("span"); f.className="flag"; f.textContent=flag; td1.appendChild(f); }
+    const td2 = document.createElement("td"); td2.className="r"; td2.textContent = "#"+pos;
+    const td3 = document.createElement("td"); td3.className="r"; td3.innerHTML = '<span class="pg"></span>'; td3.firstChild.textContent = "Page "+Math.ceil(pos/10);
+    const td4 = document.createElement("td"); td4.className="r"; td4.textContent = num(vol);
+    tr.append(td1,td2,td3,td4); rb.appendChild(tr);
+  });
+
+  // competitors
+  const rows = [...C.competitors, {name: C.business, domain: C.domain, visits: C.you.visits, keywords: C.you.keywords, top10: C.you.keywordsTop10, you:true}]
+    .sort((a,b)=>b.visits-a.visits);
+  const maxV = Math.max(...rows.map(r=>r.visits),1);
+  function bars(el, fmt, valFn){
+    rows.forEach(r=>{
+      const v = valFn(r), w = v/ (valFn({visits:maxV})) * 100;
+      const d = document.createElement("div"); d.className="bar";
+      d.innerHTML = `<div class="top"><span></span><span></span></div><div class="track"><div class="fill"></div></div>`;
+      d.querySelector(".top span").textContent = r.you ? r.name+" (you)" : r.name;
+      d.querySelector(".top span:last-child").textContent = fmt(v);
+      const f = d.querySelector(".fill");
+      if (v===0){ f.classList.add("zero"); const z=document.createElement("span"); z.className="zero-lbl"; z.textContent="Nothing yet"; d.querySelector(".track").appendChild(z); }
+      else { f.style.width = Math.max(w,1.2)+"%"; if(r.you) f.classList.add("you"); }
+      el.appendChild(d);
+    });
+  }
+  bars($("#b-visits"), num, r=>r.visits);
+  bars($("#b-value"), usd, r=>r.visits*C.conservativeCPC);
+  const cb = $("#t-comp tbody");
+  rows.forEach(r=>{
+    const tr=document.createElement("tr");
+    [ (r.you? r.name+" (you)" : r.name) + (r.note? " · "+r.note : ""), num(r.keywords), num(r.top10), num(r.visits)].forEach((t,i)=>{
+      const td=document.createElement("td"); if(i) td.className="r"; td.textContent=t; if(r.you) td.style.fontWeight="700"; tr.appendChild(td);
+    });
+    cb.appendChild(tr);
+  });
+
+  // CPC table
+  const vol = C.marketKeywords.reduce((s,k)=>s+k[1],0);
+  const spend = C.marketKeywords.reduce((s,k)=>s+k[1]*k[2],0);
+  const avg = spend/vol;
+  const avgTxt = "$"+avg.toFixed(2);
+  $("#avgcpc").textContent = avgTxt+"/click"; $("#h-avg").textContent = avgTxt;
+  $("#h-vol").textContent = num(vol);
+  const kb = $("#t-cpc tbody");
+  C.marketKeywords.forEach(([k,v,c])=>{
+    const tr=document.createElement("tr");
+    [k, num(v), "$"+c.toFixed(2), usd(v*c)].forEach((t,i)=>{const td=document.createElement("td"); if(i) td.className="r"; td.textContent=t; tr.appendChild(td);});
+    kb.appendChild(tr);
+  });
+  const ft=document.createElement("tr");
+  ["Total", num(vol), avgTxt+" avg", usd(spend)+"/mo"].forEach((t,i)=>{const td=document.createElement("td"); if(i) td.className="r"; td.textContent=t; td.style.fontWeight="800"; td.style.borderTop="2px solid #111"; ft.appendChild(td);});
+  $("#t-cpc tfoot").appendChild(ft);
+
+  // opportunity
+  function opp(i){
+    const rate=C.captureRates[i], visits=vol*rate, money=visits*avg;
+    $("#o-money").textContent = usd(money);
+    $("#o-vol").textContent = num(vol);
+    $("#o-visits").textContent = num(visits);
+    $("#o-calls").textContent = num(visits*0.05)+"–"+num(visits*0.10);
+    $("#o-year").textContent = usd(money*12);
+    document.querySelectorAll(".toggle button").forEach(b=>b.classList.toggle("on", +b.dataset.r===i));
+  }
+  document.querySelectorAll(".toggle button").forEach(b=>b.addEventListener("click",()=>opp(+b.dataset.r)));
+  opp(0);
+})();
+</script>
+</body>
+</html>
