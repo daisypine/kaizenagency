@@ -31,6 +31,24 @@ Back to the [November plan](november-2026-plan.html) · [Calendar](november-2026
 
 Ready-to-go ideas to get more of Adapt's services on the feed. Use them as swap-ins this month, or to plan December. Each was found and watched on Oct 26.
 
+### Shorter days, colder mornings (winter carousel)
+
+Inspired by an AG1 email Daisy liked ("Don't let shorter days drag you down"): a big serif headline over an outdoor photo, one line on why this time of year is hard, then a dark-green grid of 3 benefit cards. Short, seasonal, and about Adapt's services instead of a product.
+
+| Slide | Text | Visual |
+| --- | --- | --- |
+| 1 | **Don't let shorter days slow you down.** | Patient or Dr. Kyndra outdoors in a jacket (Los Gatos Creek Trail or the clinic patio), big serif headline over the photo |
+| 2 | Cold mornings, less daylight, more time at a desk. This time of year asks a lot of your body. | Photo or B-roll still of a stiff morning stretch |
+| 3 | **What a visit at Adapt covers:** | Dark Adapt-green background (#019877 or darker) with 3 cream cards, like the AG1 grid |
+| 4 | **Stiff joints** · Adjustments + soft tissue work to get you moving on cold mornings | Card 1 with a small line icon |
+| 5 | **Low energy, tired muscles** · Massage and the hyperbaric chamber to help you recover and reset | Card 2 |
+| 6 | **Staying active all winter** · Strength training with Eli or Dr. Paris so your routine keeps up | Card 3 |
+| 7 | **Your routine doesn't have to hibernate.** Book before the holidays · Text (408) 673-2432 | Clinic photo + green button-style CTA |
+
+**Caption:** "Shorter days and colder mornings hit different 🥶 If your back's stiffer than usual or your routine's slipping, we've got you. Text (408) 673-2432 to book."
+
+**Format:** 1080x1440 in Figma or Canva. Can also run as a single graphic using just slides 1 + 3. Post late November or early December. Keep it about how people feel, not medical claims.
+
 ### Burnout + hyperbaric chamber (from Dr. Kyndra)
 
 Dr. Kyndra wants a "burnout" video to promote the hyperbaric chamber (HBOT), which isn't being used much lately. These are ready to go whenever there's a slot, or as a swap-in this month. If there's time tomorrow, grab the B-roll so we have it.
