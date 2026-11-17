@@ -71,6 +71,19 @@ td:first-child{font-weight:500;color:var(--accent-dark)}
 .flow em{font-style:normal;color:var(--brand)}
 .note{background:var(--accent-soft);border-radius:10px;padding:14px 16px}
 .core{display:inline-block;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:#fff;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+.pk{width:100%;min-width:600px;font-size:14.5px}
+.pk th,.pk td{padding:10px 10px}
+.pk thead th{font-size:13px;text-transform:none;letter-spacing:0;color:var(--fg);vertical-align:bottom}
+.pk thead th small{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px}
+.pk td:first-child{color:var(--muted);font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:.04em;width:22%}
+.pk .rec{background:var(--accent-soft)}
+.pk thead .rec{border-top:4px solid var(--accent);border-radius:8px 8px 0 0}
+.pk .price td:not(:first-child){font-family:var(--display);font-weight:600;font-size:22px;color:var(--accent-dark)}
+.tag{display:inline-block;font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:#fff;border-radius:999px;padding:2px 9px;margin-bottom:4px}
+.yes{color:var(--accent);font-weight:600}
+.swipe{display:none;font-size:13px;color:var(--accent);font-weight:500}
+@media (max-width:640px){.swipe{display:block}}
+.no{color:#A79DB5}
 .flag{border-left:4px solid var(--coral);background:#FFF4F4;border-radius:0 10px 10px 0;padding:14px 16px}
 .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
 .split > div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:8px;align-content:start}
@@ -97,7 +110,7 @@ footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
 <div class="band"><div class="wrap hero">
   <div class="eyebrow">FlexFlow 90-Day Patient Growth Systems Implementation</div>
   <h1>Systems first. Then the content and follow-up that activate them.</h1>
-  <p class="lede">Hi Payal! This is the full, ideal version of what we talked about: the implementation sprint in November and December, then 90 days of activation from January to March. We don't have to do all of it at once. Everything is built in pieces, so we can shape it around what makes sense for FlexFlow right now (:</p>
+  <p class="lede">Hi Payal! Here's the full plan we talked about, plus three ways to make it happen: completely hands off, side by side with me, or on your own with my roadmap. Pricing is near the bottom (:</p>
 </div></div>
 
 <div class="page"><div class="wrap"><div class="card">
@@ -197,7 +210,7 @@ footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
   <div class="phase">
     <header><span class="pill">February</span><span class="theme">Tech neck, wrists + RSI</span></header>
     <ul>
-      <li><strong>Email:</strong> the February newsletter plus one quick tip email.</li>
+      <li><strong>Email:</strong> the February newsletter.</li>
       <li><strong>Text:</strong> a check-in to anyone who downloaded a guide but hasn't booked.</li>
       <li><strong>Promote:</strong> the tech neck guide takes the spotlight.</li>
       <li><strong>Review:</strong> look at the first month of numbers and tweak whatever isn't landing.</li>
@@ -207,7 +220,7 @@ footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
   <div class="phase">
     <header><span class="pill">March</span><span class="theme">Cricket season prep</span></header>
     <ul>
-      <li><strong>Email:</strong> the March newsletter plus a cricket injury-prevention email.</li>
+      <li><strong>Email:</strong> the March newsletter, focused on cricket injury prevention.</li>
       <li><strong>Text:</strong> a preseason "get checked before you play" offer for athletes on your list.</li>
       <li><strong>Referrals:</strong> reach out to local cricket clubs and coaches as referral partners.</li>
       <li><strong>Wrap-up:</strong> a 90-day review and the plan for April to June.</li>
@@ -220,9 +233,7 @@ footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
   <div class="scroll"><table>
     <tr><th>Channel</th><th>How often</th><th>What it is</th></tr>
     <tr><td>Newsletter</td><td>1 a month</td><td>The month's topic, a tip, a patient win (with OK), and an easy way to book.</td></tr>
-    <tr><td>Tip email</td><td>1 a month</td><td>Short and useful. One stretch, one desk fix, one thing to try tonight.</td></tr>
-    <tr><td>Texts</td><td>1 to 2 a month</td><td>Kept rare so they feel personal: tune-ups, openings, seasonal offers.</td></tr>
-    <tr><td>Report</td><td>1 a month</td><td>A short read on leads, consults, bookings and where patients came from.</td></tr>
+    <tr><td>Text</td><td>1 a month</td><td>Only to people who've opted in: tune-ups, openings, seasonal offers.</td></tr>
     <tr><td>Automations</td><td>Always on</td><td>Guides, reminders, reviews and check-ins, running in the background.</td></tr>
   </table></div>
 </section>
@@ -269,32 +280,52 @@ footer{padding-block:28px 0;color:var(--muted);font-size:14px;text-align:center}
     <li><strong>Approvals within 3 business days.</strong> Later approvals push the schedule back by the same amount.</li>
     <li><strong>You supply</strong> the photos, videos and patient stories, and the clinical approvals on content.</li>
     <li><strong>Software costs are yours, paid directly to each vendor:</strong> GoHighLevel, texting and messaging fees, texting registration, and compliance add-ons like the HIPAA features.</li>
-    <li><strong>Not included:</strong> social media posting or management, a website redesign, SEO, new website copy, new software integrations, and patient care advice.</li>
+    <li><strong>Not included:</strong> social media posting or management, SEO campaigns, new software integrations, and patient care advice. The website rebuild is part of Done for you only.</li>
   </ul>
 </section>
 
 <section id="site">
-  <h2>What about the website?</h2>
-  <p>For these 90 days, we keep your Wix site and clean it up. A full redesign on a new platform at the same time as all of this would be a lot to take on, and your systems will make you more money sooner.</p>
-  <p>When you're ready for a true redesign, I'd move you off Wix to a custom-built site that's faster, easier to grow and works seamlessly with GoHighLevel. Let's revisit it at the 90-day wrap-up in March.</p>
+  <h2>Your new website (Done for you)</h2>
+  <p>Your site is small, which makes it the perfect time to move it off Wix. In Done for you, once GoHighLevel is up and running, I rebuild it in February and March:</p>
+  <ul>
+    <li><strong>Custom-coded and refreshed:</strong> faster, cleaner and easier to grow, keeping your purple brand.</li>
+    <li><strong>Connected properly:</strong> forms, chat and booking go straight into GoHighLevel, with no Wix in the middle.</li>
+    <li><strong>Nothing lost:</strong> your pages and blog posts come over with redirects so Google keeps finding them, plus your Good Faith Estimate, privacy policy and texting consent pages.</li>
+    <li><strong>Taken care of after:</strong> I host and maintain it for <strong>$125/mo</strong>, which replaces your Wix plan.</li>
+  </ul>
+  <p class="muted">We do GoHighLevel first and the website second, so only one thing changes at a time and nothing slips through the cracks.</p>
 </section>
 
 <section id="fit">
-  <h2>Let's make it fit FlexFlow</h2>
-  <p>This is the full picture, and you don't have to take it all on at once. Depending on where you're at, we can:</p>
-  <ul>
-    <li><strong>Done for you:</strong> I build the whole system, then run your emails and texts from January to March. Completely hands off for you.</li>
-    <li><strong>Start with the core:</strong> I build the essentials (the pipeline, the core automations, your list and referral tracking), train you, and hand it off.</li>
-    <li><strong>Build it together:</strong> I give you the maps, checklists and copy, and we meet while you build it in GoHighLevel yourself.</li>
-  </ul>
-  <div class="note"><strong>Let's talk it through.</strong> Call or text me anytime Tuesday at <strong>(408) 710-6718</strong>, and we'll figure out what makes the most sense for you right now.</div>
+  <h2>Three ways to make it happen</h2>
+  <p>Same plan, three levels of involvement. Pick how hands-on you want to be:</p>
+  <p class="swipe">Swipe the table to compare all three &rarr;</p>
+  <div class="scroll"><table class="pk">
+    <thead><tr><th></th>
+      <th class="rec"><span class="tag">Recommended</span><br>Done for you<small>I handle it. I only come to you for approvals.</small></th>
+      <th>Done with you<small>I guide you hand in hand while you build it.</small></th>
+      <th>DIY roadmap<small>The steps, maps and copy to do it yourself.</small></th></tr></thead>
+    <tr><td>GoHighLevel setup</td><td class="rec">I finish it for you</td><td>We build it on weekly calls</td><td>Step-by-step checklist</td></tr>
+    <tr><td>Core automations</td><td class="rec">I build them, you approve</td><td>We build them together</td><td>Workflow maps + copy</td></tr>
+    <tr><td>List + forms off Wix</td><td class="rec">I move them</td><td>I walk you through it</td><td>Checklist</td></tr>
+    <tr><td>Referral tracking</td><td class="rec">I set it up</td><td>We set it up together</td><td>Template</td></tr>
+    <tr><td>Jan to Mar emails + texts</td><td class="rec">I write and schedule them</td><td>We write them together</td><td>Templates</td></tr>
+    <tr><td>Brand kit</td><td class="rec"><span class="yes">&#10003;</span></td><td><span class="yes">&#10003;</span></td><td><span class="no">&mdash;</span></td></tr>
+    <tr><td>New website off Wix</td><td class="rec"><span class="yes">&#10003;</span> Custom-coded</td><td><span class="no">&mdash;</span></td><td><span class="no">&mdash;</span></td></tr>
+    <tr><td>Calls</td><td class="rec">Kickoff, approvals, training + handoff</td><td>Weekly working sessions, 3 months</td><td>1 strategy session</td></tr>
+    <tr class="price"><td>Investment</td><td class="rec">$5,000</td><td>$2,250</td><td>$750</td></tr>
+    <tr><td>Payments</td><td class="rec">$1,000 to start, then $500/mo for 8 months</td><td>$750/mo for 3 months</td><td>One payment</td></tr>
+    <tr><td>After</td><td class="rec">Hosting + maintenance $125/mo</td><td><span class="no">&mdash;</span></td><td><span class="no">&mdash;</span></td></tr>
+  </table></div>
+  <div class="flag"><strong>Before any patient texts or emails go out</strong> (in every option): GoHighLevel's HIPAA add-on, a signed BAA with them, and opt-in consent need to be in place. Those are on your GoHighLevel account, and I'll help you get them set up.</div>
+  <div class="note"><strong>Let's talk it through.</strong> I'd love to hop on a quick call to walk you through these and answer any questions. Text or call me at <strong>(408) 710-6718</strong>.</div>
 </section>
 
 <section id="start">
   <h2>Getting started</h2>
   <ol class="steps">
-    <li><span><strong>Pick your version:</strong> a quick call to decide what fits, then a deposit to hold your spot. I'm filling my January calendar now.</span></li>
-    <li><span><strong>Share access:</strong> add me as a collaborator on Wix and as an admin user in GoHighLevel (daisy@kaizenagency.org).</span></li>
+    <li><span><strong>Pick your package:</strong> a quick call to answer questions, then the agreement and first payment to hold your spot. I'm filling my January calendar now.</span></li>
+    <li><span><strong>Share access:</strong> add me as a collaborator on Wix and as an admin user in GoHighLevel (daisy@kaizenagency.org), plus your domain login for Done for you.</span></li>
     <li><span><strong>Kickoff call:</strong> a quick walk-through of what's already in GoHighLevel so I pick up where you left off.</span></li>
   </ol>
 </section>
