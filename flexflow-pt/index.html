@@ -281,6 +281,12 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
 .need li::before{content:counter(n);width:28px;height:28px;border-radius:50%;background:var(--lime);border:2px solid var(--ink);display:grid;place-items:center;font-weight:800;font-size:13px}
 .addon .row{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;justify-content:space-between}
 .small{font-size:14px;color:var(--grey)}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:700;font-size:14.5px}
+.flow span{background:#fff;border:2px solid var(--ink);border-radius:4px;padding:7px 11px}
+.flow em{font-style:normal;color:var(--blue);font-weight:800}
+td.c{text-align:center;font-weight:800;white-space:nowrap}
+td.c.y{color:#2F7A1F}td.c.n{color:#B5B5B0}
+.pkh{font-size:12px}
 </style>
 </head>
 <body>
@@ -290,6 +296,7 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
     <span class="sp"></span>
     <a class="lnk" href="#today">Where you're at</a>
     <a class="lnk" href="#plan">The 90 days</a>
+    <a class="lnk" href="#autos">Automations</a>
     <a class="lnk" href="#options">Options</a>
     <a class="lnk" href="#start">To get started</a>
     <a class="btn" href="#options">Pick an option</a>
@@ -306,7 +313,7 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
       <a class="btn" href="#options">See the three options</a>
       <a class="btn ghost" href="#today">Where you're at today</a>
     </div>
-    <div class="rec"><b>What I recommend: Done with you</b>You learn the system, I handle the technical pieces, and we meet weekly. $750/month for 3 months.</div>
+    <div class="rec"><b>What I recommend: Done with you</b>You learn the system, I handle the technical pieces, and we meet every other week. $650/month for 3 months.</div>
   </div>
 </header>
 
@@ -354,11 +361,11 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
         </ul>
       </div>
       <div class="card">
-        <span class="tag">January &middot; Reactivation</span>
+        <span class="tag">January &middot; Reactivation + back pain</span>
         <h3>Bring past patients back</h3>
         <ul class="tight">
           <li><b>Reactivation campaign</b> to anyone you haven't seen in 90+ days</li>
-          <li><b>First newsletter</b> sent from GoHighLevel</li>
+          <li><b>First newsletter</b> from GoHighLevel: New year, desk reset</li>
           <li>Review requests turned on for happy patients</li>
           <li>Every new patient tagged by where they came from</li>
         </ul>
@@ -368,12 +375,50 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
         <h3>Grow what's working</h3>
         <ul class="tight">
           <li><b>Referral partner list</b> and tracking (doctors, trainers, cricket clubs)</li>
-          <li>Tech neck campaign to your list</li>
+          <li>Tech neck + RSI campaign, with your tech neck guide</li>
           <li><b>New website design</b> ready to review</li>
           <li>90-day review and a plan for what's next</li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="autos">
+  <div class="wrap">
+    <h2>Your patient pipeline + automations</h2>
+    <p class="sub">Every person moves through the same stages, and the automations do the follow-up you'd otherwise do by hand. You approve each one before it goes live.</p>
+    <div class="flow" style="margin-bottom:26px">
+      <span>New lead</span><em>&rarr;</em><span>Free consult booked</span><em>&rarr;</em><span>Consult done</span><em>&rarr;</em><span>First visit booked</span><em>&rarr;</em><span>Active patient</span><em>&rarr;</em><span>Finished plan</span><em>&rarr;</em><span>Alumni</span>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Automation</th><th>What it does</th><th class="n pkh">Done for you</th><th class="n pkh">Done with you</th><th class="n pkh">DIY</th></tr></thead>
+      <tbody>
+        <tr><td><b>New lead alert</b></td><td>Adds them to the pipeline, tags the source, and pings you to reply fast</td><td class="c y">&#10003;</td><td class="c y">&#10003;</td><td class="c y">Map</td></tr>
+        <tr><td><b>Consult reminders</b></td><td>Texts and emails so people actually show up</td><td class="c y">&#10003;</td><td class="c y">&#10003;</td><td class="c y">Map</td></tr>
+        <tr><td><b>Guide follow-up</b></td><td>Sends your back pain or tech neck guide, then a short series inviting a free consult</td><td class="c y">&#10003;</td><td class="c y">&#10003;</td><td class="c y">Map</td></tr>
+        <tr><td><b>Review request</b></td><td>Asks happy patients for a Google review with a one-tap link</td><td class="c y">&#10003;</td><td class="c y">&#10003;</td><td class="c y">Map</td></tr>
+        <tr><td><b>Didn't book yet</b></td><td>A friendly check-in after a consult with no first visit</td><td class="c y">&#10003;</td><td class="c n">Later</td><td class="c n">&mdash;</td></tr>
+        <tr><td><b>Reactivation</b></td><td>"How's your back holding up?" to anyone you haven't seen in 90+ days</td><td class="c y">&#10003;</td><td class="c n">Later</td><td class="c n">&mdash;</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small" style="margin-top:14px">Ready when you are: a new-patient welcome series, referral thank-you reminders and a missed-appointment follow-up. Thank-yous for referrals stay heartfelt, not gift cards or discounts &ndash; California has rules about paying for healthcare referrals.</p>
+  </div>
+</section>
+
+<section class="alt" id="monthly">
+  <div class="wrap">
+    <h2>What goes out each month</h2>
+    <p class="sub">Kept simple so your list hears from you without it feeling like a lot.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>What</th><th class="n">How often</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><b>Email</b></td><td class="n">1 a month</td><td>The month's topic, a tip, a patient win (with their OK), and an easy way to book</td></tr>
+        <tr><td><b>Text</b></td><td class="n">1 a month</td><td>Only to people who've opted in: tune-ups, openings, seasonal offers</td></tr>
+        <tr><td><b>Automations</b></td><td class="n">Always on</td><td>Reminders, guides, reviews and check-ins running in the background</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small" style="margin-top:14px">Done for you: I write and schedule these. Done with you: I give you templates and review what you write. DIY: you get the templates.</p>
   </div>
 </section>
 
@@ -387,19 +432,20 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
         <div class="opt-head">
           <p class="opt-name">Done for you</p>
           <p class="opt-note">I handle everything. You approve.</p>
-          <div class="price">$4,500<small>$1,500 to start, then $500/mo for 6 months</small></div>
+          <div class="price">$3,900<small>$1,200 to start, then $450/mo for 6 months</small></div>
         </div>
         <div class="opt-body">
           <h4>Includes</h4>
           <ul class="tight">
-            <li><b>Everything in the 90 days</b>, done by me</li>
-            <li><b>I write and schedule</b> your monthly email and text &ndash; you approve each one</li>
+            <li><b>I do the setup</b>: texting fix, email setup, list move, forms and booking</li>
+            <li><b>6 automations</b> built and turned on</li>
+            <li><b>1 email + 1 text a month</b>, written and scheduled &ndash; you approve each one</li>
             <li><b>New custom-designed website</b>, connected to GoHighLevel</li>
-            <li>Weekly progress recap, training and handoff</li>
+            <li>Check-ins every other week, training and handoff</li>
           </ul>
           <p class="who"><b>Your time:</b> approvals, about 20 min a month.</p>
         </div>
-        <div class="opt-foot"><a class="btn ghost" href="https://buy.stripe.com/6oUaEWen6bKj3s71WjbjW10" target="_blank" rel="noopener">Go with Done for you</a></div>
+        <div class="opt-foot"><a class="btn ghost" href="https://buy.stripe.com/fZudR8en64hRfaP8kHbjW13" target="_blank" rel="noopener">Go with Done for you</a></div>
       </div>
 
       <div class="opt pick">
@@ -407,19 +453,19 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
         <div class="opt-head">
           <p class="opt-name">Done with you</p>
           <p class="opt-note">You learn it. I handle the technical pieces.</p>
-          <div class="price">$2,250<small>$750/mo for 3 months</small></div>
+          <div class="price">$1,950<small>$650/mo for 3 months</small></div>
         </div>
         <div class="opt-body">
           <h4>Includes</h4>
           <ul class="tight">
-            <li><b>Weekly working sessions</b> for 90 days</li>
-            <li><b>I do the technical setup</b>: texting fix, email setup, list move, forms, booking, automations</li>
-            <li><b>We plan and write</b> your emails and texts together</li>
-            <li>Weekly progress recap</li>
+            <li><b>I do the technical setup</b>: texting fix, email setup, list move, forms and booking</li>
+            <li><b>4 core automations</b> built together</li>
+            <li><b>Email + text templates</b> &ndash; you write, I review</li>
+            <li><b>60-min working sessions</b> every other week, plus questions by email</li>
           </ul>
-          <p class="who"><b>Your time:</b> about 1 hour a week.</p>
+          <p class="who"><b>Your time:</b> about 1&ndash;2 hours a week.</p>
         </div>
-        <div class="opt-foot"><a class="btn" href="https://buy.stripe.com/9B69ASbaU9CbaUz58vbjW0Z" target="_blank" rel="noopener">Go with Done with you</a></div>
+        <div class="opt-foot"><a class="btn" href="https://buy.stripe.com/bJe5kC5QA4hR8Mr58vbjW14" target="_blank" rel="noopener">Go with Done with you</a></div>
       </div>
 
       <div class="opt plain">
@@ -427,29 +473,29 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
         <div class="opt-head">
           <p class="opt-name">DIY roadmap</p>
           <p class="opt-note">You build it with my steps.</p>
-          <div class="price">$750<small>one payment</small></div>
+          <div class="price">$600<small>one payment</small></div>
         </div>
         <div class="opt-body">
           <h4>Includes</h4>
           <ul class="tight">
             <li><b>Step-by-step checklist</b> built from your account</li>
             <li>Steps to fix your texting registration</li>
-            <li>Workflow maps and copy for each email and text</li>
-            <li>One 60-minute strategy session</li>
+            <li>Workflow maps and copy for the 4 core automations</li>
+            <li>One 45-minute strategy session</li>
           </ul>
           <p class="who"><b>Your time:</b> all of the build.</p>
         </div>
-        <div class="opt-foot"><a class="btn ghost" href="https://buy.stripe.com/cNibJ05QA5lV6EjcAXbjW11" target="_blank" rel="noopener">Go with DIY roadmap</a></div>
+        <div class="opt-foot"><a class="btn ghost" href="https://buy.stripe.com/28EaEW2Eog0z9QveJ5bjW15" target="_blank" rel="noopener">Go with DIY roadmap</a></div>
       </div>
     </div>
 
     <div class="addon">
       <div class="row">
         <div>
-          <b style="font-size:18px">Add a website redesign &middot; <span class="p">$1,500</span></b>
+          <b style="font-size:18px">Add a website redesign &middot; <span class="p">$1,200</span></b>
           <p class="small" style="margin:6px 0 0;max-width:62ch">For Done with you or DIY (already included in Done for you). A custom design in your brand, your pages and blog posts moved off Wix with redirects so Google keeps finding them, and forms and booking connected straight to GoHighLevel. Hosting and care is $40/month after launch.</p>
         </div>
-        <a class="btn ghost" href="https://buy.stripe.com/cNi3cuceYcOn7In0SfbjW12" target="_blank" rel="noopener">Add the website</a>
+        <a class="btn ghost" href="https://buy.stripe.com/eVqeVc1Ak6pZ7In7gDbjW16" target="_blank" rel="noopener">Add the website</a>
       </div>
     </div>
     <div class="callout">
@@ -489,7 +535,35 @@ footer img{height:26px;width:auto;display:block;margin-bottom:12px}
   </div>
 </section>
 
-<section id="start">
+<section id="rules">
+  <div class="wrap">
+    <h2>Ground rules + what you'll have</h2>
+    <p class="sub">So we both know what to expect.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">After 90 days you'll have</span>
+        <ul class="tight">
+          <li><b>Your automations live</b> and running on their own</li>
+          <li><b>Every lead source tracked</b>, so you know where patients come from</li>
+          <li><b>Your list in GoHighLevel</b>, sorted by past patients, guide downloads, leads and athletes</li>
+          <li>Three months of email and text sent, a baseline to measure from, and a plan for what's next</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Ground rules</span>
+        <ul class="tight">
+          <li><b>One round of revisions</b> per automation and campaign</li>
+          <li><b>Approvals within 3 business days</b> &ndash; later approvals move the schedule by the same amount</li>
+          <li><b>Software is paid by you</b> directly to each vendor: GoHighLevel, texting fees, the HIPAA add-on</li>
+          <li><b>HIPAA:</b> I set up the tools; compliance decisions are yours to confirm with your advisor and GoHighLevel</li>
+          <li>Not included: social media, ads, SEO campaigns, patient care advice</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="start">
   <div class="wrap">
     <h2>What I'll need from you to start</h2>
     <p class="sub">Most of this takes a few minutes. We'll go through it together at kickoff.</p>
